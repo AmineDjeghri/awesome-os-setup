@@ -27,7 +27,7 @@ even it it fails the first time, let it continue to run, it will find a KMS serv
 - Mail: add your mail accounts to Windows Mail
 - Others: CCleaner, Speccy,
 - Adobe: Photoshop, illustrator, premiere pro, XD
-
+- VPN: ProtonVPN
 ### Windows design and UX: 
 - You can convert a website to an application , for exemple: Mattermost in chrome, go to plus d'outils -> creer un racourcie , and check window mode, it will run like an app in your windows desktop
 ( I took the example of mattermost because using their windows application causes WIFI disconnect issues, so ihave to use the website instead of the app)
