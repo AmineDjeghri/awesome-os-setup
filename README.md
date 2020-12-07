@@ -12,8 +12,8 @@ Some windows tips to improve your UX experience when using windows
 ### Software 
 -  Anaconda: install it and check add path 
 - Sublime Text: install it before installing git bash (to make git bash uses sublime as an editor and not vim)
-- Git-Bash: to have the same commands as in linux 
-( to check if it workds: run 'python --version' in git bash to see if anaconda added python to the path, you can now use it like linux, 'pip install ' ect.. will work  )
+- Git-Bash: You can use linux commands in windows ! Download gitbash to have the same commands as in linux, you can even personalize your terminal
+( to check if linux commands work: run 'python --version' in gitbash to see if anaconda added python to the path, you can now use it like linux, 'pip install ' ect.. will work  )
 git bash works in every directory, right lick in any directory and you can have a bash with that path 
 
 - Google Sync Drive:  download it on windows and put your git repositories inside it, you can use vscode to run the codes in your pc and also google colab 
