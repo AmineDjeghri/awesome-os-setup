@@ -52,3 +52,7 @@ even it it fails the first time, let it continue to run, it will find a KMS serv
 1. search for it in the search bar
 2. In the "Mode" drop down, choose the kind of screenshot shape you want — you can choose anything from full screen to rectangular to a free-form shape
 
+### More  
+ - task manager -> startup -> deactivate software that you don't want it to run at startup ( do the same in ccleaner)
+ - windows partition: use the windows partition integrated software to create , delete or format partitions
+ - You can change your power management options (when windows will be put on sleep, what happens when you close your laptop ..ect)
