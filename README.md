@@ -15,7 +15,7 @@ Some windows tips to improve your UX experience when using windows
 - Git-Bash: You can use linux commands in windows ! Download gitbash to have the same commands as in linux, you can even personalize your terminal
 ( to check if linux commands work: run 'python --version' in gitbash to see if anaconda added python to the path, you can now use it like linux, 'pip install ' ect.. will work  )
 git bash works in every directory, right lick in any directory and you can have a bash with that path 
-
+- VScode: enable sync profile, and add gitbash as the default terminal of vscode to replace the powershell 
 - Google Sync Drive:  download it on windows and put your git repositories inside it, you can use vscode to run the codes in your pc and also google colab 
 - Microsoft word 2016 buy it or ...., install it, than convert the activation.txt to .bat, run it as an administrator and make sure internet is on, 
 even it it fails the first time, let it continue to run, it will find a KMS server after.
