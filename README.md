@@ -19,7 +19,7 @@ git bash works in every directory, right lick in any directory and you can have 
 - Google Sync Drive:  download it on windows and put your git repositories inside it, you can use vscode to run the codes in your pc and also google colab 
 - Microsoft word 2016 buy it or ...., install it, than convert the activation.txt to .bat, run it as an administrator and make sure internet is on, 
 even it it fails the first time, let it continue to run, it will find a KMS server after.
-- SSH: 
+- SSH: https://gist.github.com/jherax/979d052ad5759845028e6742d4e2343b
 - wget: doesn't work, you should use your browser to download it or use an alternative library
 - Browser : Brave
 - Browser extension: uBlock Origin, pocket, Free Download Manager, Google translate, Google Dictionnary, Stream video downloader, colorZilla
@@ -28,6 +28,7 @@ even it it fails the first time, let it continue to run, it will find a KMS serv
 - Others: CCleaner, Speccy,
 - Adobe: Photoshop, illustrator, premiere pro, XD
 - VPN: ProtonVPN
+
 ### Windows design and UX: 
 - You can convert a website to an application , for exemple: Mattermost in chrome, go to plus d'outils -> creer un racourcie , and check window mode, it will run like an app in your windows desktop
 ( I took the example of mattermost because using their windows application causes WIFI disconnect issues, so ihave to use the website instead of the app)
