@@ -17,11 +17,15 @@ ProxyCommand ssh ppti -W $(basename %h .ppti):%p
 #### Créer une clé shh d’abord `ssh-keygen -o`
 documentation: https://git-scm.com/book/en/v2/Git-on-the-Server-Generating-Your-SSH-Public-Key
 
+#### Tester SSH
+- Deux salles de la ppti sont équipées de bons GPUs : la 502 et la 407. Pour se connecter, en ssh en passant par la passerelle ssh.ufr-info-p6.jussieu.fr,  puis ppti-14-502-XX (XX=01 à 16) ou ppti-14-407-XX, saisir la commande :
+`ssh -L8888:localhost:8888 -L6006:localhost:6006 ppti-14-502-03.ppti` 
+(j'ai mis deux ports au cas où, pour jupyter et tensorboard)
+
 
 •  Avant chaque TME, penser à exécuter pip install -r http://webia.lip6.fr/~bpiwowar/requirements-amal.txt afin de profiter de l’environnement avec tous les modules installés. 
 •  Sur les machines de la ppti, l’environnement peut être activé en exécutant : source /users/nfs/Enseignants/piwowarski/venv/3.7/amal/bin/activate
-•  Deux salles de la ppti sont équipées de bons GPUs : la 502 et la 407. Pour se connecter, en ssh en passant par la passerelle ssh.ufr-info-p6.jussieu.fr,  puis ppti-14-502-XX (XX=01 à 16) ou ppti-14-407-XX. 
-
+•  
 
 •  Vous pouvez lancer un jupyter lab a distance sur ces machines : 
 faire ssh -L8888:localhost:8888 ppti-14-502-XX.ppti
