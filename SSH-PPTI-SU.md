@@ -31,7 +31,7 @@ Une fois connecté, il vous demandera votre mot de passe de votre compte étudia
 - Sur les machines de la ppti, l’environnement peut être activé en exécutant : source /users/nfs/Enseignants/piwowarski/venv/3.7/amal/bin/activate
 
 
-Puis lancer jupyter lab sur la machine à distance avec ‘jupyter notebook’ ceci vous donnera une adresse avec un token, copiez la sur votre navigateur de votre pc personnel et vous aurez accès à la machine à distance
+Puis lancer jupyter lab sur la machine à distance avec, executez `jupyter notebook` ceci vous donnera une adresse avec un token, copiez la sur votre navigateur de votre pc personnel et vous aurez accès à la machine à distance
 - Si vous voulez utiliser l'environnement du prof:  
  faire : source /users/nfs/Enseignants/piwowarski/venv/3.7/amal/bin/activate pour avoir l’environnement de AMAL si vous n’avez pas les trucs installés sur votre environnement  
 
