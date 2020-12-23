@@ -45,7 +45,8 @@ Biensur vérifier les ports, si jupyter se lance sur un autre port, il faut que 
 En plus du /tmp, vous avez également un répertoire /tempory qui est semi-permanent (n’est pas nettoyé à chaque reboot, mais plus rarement) de plus de 300Go, dans lequel vous pouvez travailler quand vous avez besoin de place.
 
 #### Pour utiliser github :
-sur les machines à distance et pouvoir cloner un répo, il faut ajouter une clé ssh et ajouter  :  ssh.ufr-info-p6.jussieu.fr  dans le fichier de git config si je me souviens bien
+sur les machines à distance et pouvoir cloner un répo, il faut ajouter une clé ssh et ajouter  :  
+ssh.ufr-info-p6.jussieu.fr  dans le fichier de git config si je me souviens bien
 
 #### Pour installer des packages avec pip :
 export http_proxy=proxy:3128
