@@ -5,11 +5,8 @@
 - Il faut pour cela rajouter dans votre .ssh/config `cd .ssh` les lignes en bas 
 
 
-Host ppti
-
-
-User votre_login
-
+Host ppti  
+User votre_login  
 Hostname ssh.ufr-info-p6.jussieu.fr
 <br/><br/>
 Host *.ppti
