@@ -6,11 +6,16 @@
 
 
 Host ppti
-User votre_login
-Hostname ssh.ufr-info-p6.jussieu.fr
 
-Host *.ppti
+
 User votre_login
+
+Hostname ssh.ufr-info-p6.jussieu.fr
+<br/><br/>
+Host *.ppti
+
+User votre_login
+
 ProxyCommand ssh ppti -W $(basename %h .ppti):%p
 
 
