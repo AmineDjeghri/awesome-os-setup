@@ -1,13 +1,7 @@
 ## Utiliser Jupyter notebook sur votre propre navigateur en ssh tunnel via les PCs de l'université (ppti) 
 
 - installer gitbash
-Il faut pour cela rajouter dans votre .ssh/config : 
-`cd .ssh`
-ou: 
-`cd ` # pour aller à la racine
-`ls -a` # Pour afficher , si .ssh n'existe pas, creer le avec `mkdir` creer le fichier config dedans
-
-ajouter dans le fichier config ces lignes:
+- Il faut pour cela rajouter dans votre .ssh/config `cd .ssh` les lignes en bas 
 
 `
 
