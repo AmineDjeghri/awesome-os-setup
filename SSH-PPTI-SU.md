@@ -31,11 +31,13 @@ Une fois connecté, il vous demandera votre mot de passe de votre compte étudia
 - Sur les machines de la ppti, l’environnement peut être activé en exécutant : source /users/nfs/Enseignants/piwowarski/venv/3.7/amal/bin/activate
 
 
-Puis lancer jupyter lab sur la machine à distance avec, executez `jupyter notebook` ceci vous donnera une adresse avec un token, copiez la sur votre navigateur de votre pc personnel et vous aurez accès à la machine à distance
+Puis lancer jupyter lab sur la machine à distance avec, executez `jupyter notebook` sur le terminal ceci vous donnera une adresse avec un token, copiez la sur votre navigateur de votre pc personnel et vous aurez accès à la machine à distance
 - Si vous voulez utiliser l'environnement du prof:  
  faire : source /users/nfs/Enseignants/piwowarski/venv/3.7/amal/bin/activate pour avoir l’environnement de AMAL si vous n’avez pas les trucs installés sur votre environnement  
 
-Biensur vérifier les ports, si jupyter se lance sur un autre port, il faut que le ssh avec les ports correspond à celui de jupyter, n’oubliez pas de fermer jupyter si vous avez perdu votre conx et que vous n’avez pas fermer la session, sinon il va se lancer sur un autre port
+Biensur vérifier les ports dans la machine à distance, si jupyter se lance sur un autre port, il faut que le ssh avec les ports correspond à celui de jupyter, 
+Exemple : si jupyter est lancé sur le port 8899 et que votre ssh est sur le port 8888, ça ne marchera pas, il faut le meme port 
+n’oubliez pas de fermer jupyter si vous avez perdu votre conx et que vous n’avez pas fermer la session, sinon il va se lancer sur un autre port
 -	jupyter notebook list
 -	jupyter notebook stop 8888
 
