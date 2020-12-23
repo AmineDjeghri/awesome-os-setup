@@ -3,22 +3,15 @@
 - installer gitbash
 - Il faut pour cela rajouter dans votre .ssh/config `cd .ssh` les lignes en bas 
 
-`
 
 Host ppti
-
 User votre_login
-
 Hostname ssh.ufr-info-p6.jussieu.fr
 
-
-
 Host *.ppti
-
 User votre_login
-
 ProxyCommand ssh ppti -W $(basename %h .ppti):%p
-`
+
 
 
 #### Créer une clé shh d’abord `ssh-keygen -o`
