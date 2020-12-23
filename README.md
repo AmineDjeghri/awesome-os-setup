@@ -22,7 +22,7 @@ git bash works in every directory, right lick in any directory and you can have 
 - Google Sync Drive:  download it on windows and put your git repositories inside it, you can use vscode to run the codes in your pc and also google colab 
 - Microsoft word 2016 buy it or ...., install it, than convert the activation.txt to .bat, run it as an administrator and make sure internet is on, 
 even it it fails the first time, let it continue to run, it will find a KMS server after.
-- SSH: https://gist.github.com/jherax/979d052ad5759845028e6742d4e2343b
+- SSH: https://github.com/AmineDjeghri/BetterWindowsUX/blob/master/SSH-PPTI-SU.md
 - wget: doesn't work, you should use your browser to download it or use an alternative library
 - Browser : Brave
 - Browser extension: uBlock Origin, pocket, Free Download Manager, Google translate, Google Dictionnary, Stream video downloader, colorZilla
