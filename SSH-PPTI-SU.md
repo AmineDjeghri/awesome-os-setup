@@ -27,21 +27,17 @@ documentation: https://git-scm.com/book/en/v2/Git-on-the-Server-Generating-Your-
 Une fois connecté, il vous demandera votre mot de passe de votre compte étudiant, deux fois
 
 
-•  Avant chaque TME, penser à exécuter pip install -r http://webia.lip6.fr/~bpiwowar/requirements-amal.txt afin de profiter de l’environnement avec tous les modules installés. 
-•  Sur les machines de la ppti, l’environnement peut être activé en exécutant : source /users/nfs/Enseignants/piwowarski/venv/3.7/amal/bin/activate
-•  
+- Avant chaque TME, penser à exécuter pip install -r http://webia.lip6.fr/~bpiwowar/requirements-amal.txt afin de profiter de l’environnement avec tous les modules installés. 
+- Sur les machines de la ppti, l’environnement peut être activé en exécutant : source /users/nfs/Enseignants/piwowarski/venv/3.7/amal/bin/activate
 
-•  Vous pouvez lancer un jupyter lab a distance sur ces machines : 
-faire ssh -L8888:localhost:8888 ppti-14-502-XX.ppti
-Puis lancer jupyter lab sur la machine distance avec ‘jupyter notebook’ ceci vous donnera une adresse avec un token,
- copiez la sur votre navigateur de votre pc personnelle et vous aurez accès à la machine à dtistance
-N’oubliez avant de faire ça de faire : source /users/nfs/Enseignants/piwowarski/venv/3.7/amal/bin/activate pour avoir l’environnement de AMAL si vous n’avez pas les trucs installés sur votre environnement
-En local, vous utilisez l’adresse habituelle de jupyter, http://localhost:8888.
+
+Puis lancer jupyter lab sur la machine à distance avec ‘jupyter notebook’ ceci vous donnera une adresse avec un token, copiez la sur votre navigateur de votre pc personnel et vous aurez accès à la machine à distance
+- Si vous voulez utiliser l'environnement du prof:  
+ faire : source /users/nfs/Enseignants/piwowarski/venv/3.7/amal/bin/activate pour avoir l’environnement de AMAL si vous n’avez pas les trucs installés sur votre environnement  
+
 Biensur vérifier les ports, si jupyter se lance sur un autre port, il faut que le ssh avec les ports correspond à celui de jupyter, n’oubliez pas de fermer jupyter si vous avez perdu votre conx et que vous n’avez pas fermer la session, sinon il va se lancer sur un autre port
 -	jupyter notebook list
 -	jupyter notebook stop 8888
--	
-
 
 En plus du /tmp, vous avez également un répertoire /tempory qui est semi-permanent (n’est pas nettoyé à chaque reboot, mais plus rarement) de plus de 300Go, dans lequel vous pouvez travailler quand vous avez besoin de place.
 
@@ -59,6 +55,6 @@ pip install -r http://webia.lip6.fr/~bpiwowar/requirements-amal.txt
 ncdu 
 vider le .cache avec la lettre d
 
--	Vous pouvez utilisez jupyter notebook pour créer des fichiers txt, utiliser le termional et visualiser vos documents
+-	Vous pouvez utilisez jupyter notebook pour créer des fichiers txt, utiliser le terminal et visualiser vos documents
 too old :
 https://www-ppti.ufr-info-p6.jussieu.fr/index.php/faq/technique#pip-tme
