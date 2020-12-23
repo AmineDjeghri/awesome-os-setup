@@ -11,9 +11,9 @@ Host *.ppti
 User votre_login
 ProxyCommand ssh ppti -W $(basename %h .ppti):%p
 
-#### Créer une clé shh d’abord
-https://git-scm.com/book/en/v2/Git-on-the-Server-Generating-Your-SSH-Public-Key
-ssh-keygen -o
+#### Créer une clé shh d’abord `ssh-keygen -o`
+documentation: https://git-scm.com/book/en/v2/Git-on-the-Server-Generating-Your-SSH-Public-Key
+
 
 •  Avant chaque TME, penser à exécuter pip install -r http://webia.lip6.fr/~bpiwowar/requirements-amal.txt afin de profiter de l’environnement avec tous les modules installés. 
 •  Sur les machines de la ppti, l’environnement peut être activé en exécutant : source /users/nfs/Enseignants/piwowarski/venv/3.7/amal/bin/activate
