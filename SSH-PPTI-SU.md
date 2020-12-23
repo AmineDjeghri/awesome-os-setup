@@ -47,9 +47,9 @@ En plus du /tmp, vous avez également un répertoire /tempory qui est semi-perma
 sur les machines à distance et pouvoir cloner un répo, il faut ajouter une clé ssh et ajouter  :  
 ssh.ufr-info-p6.jussieu.fr  dans le fichier de git config si je me souviens bien
 
-#### Pour installer des packages avec pip :
-export http_proxy=proxy:3128
-export https_proxy=proxy:3128
+#### Pour installer des packages avec pip :  
+export http_proxy=proxy:3128  
+export https_proxy=proxy:3128  
 Faire la commande : 
 pip install -r http://webia.lip6.fr/~bpiwowar/requirements-amal.txt
 
