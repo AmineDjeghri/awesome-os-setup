@@ -17,6 +17,8 @@ User votre_login
 
 Hostname ssh.ufr-info-p6.jussieu.fr
 
+
+
 Host *.ppti
 
 User votre_login
