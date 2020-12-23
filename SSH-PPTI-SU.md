@@ -9,13 +9,9 @@ Host ppti
 User votre_login  
 Hostname ssh.ufr-info-p6.jussieu.fr
 <br/><br/>
-Host *.ppti
-
-User votre_login
-
-ProxyCommand ssh ppti -W $(basename %h .ppti):%p
-
-
+Host *.ppti  
+User votre_login  
+ProxyCommand ssh ppti -W $(basename %h .ppti):%p  
 
 #### Créer une clé shh d’abord `ssh-keygen -o`
 documentation: https://git-scm.com/book/en/v2/Git-on-the-Server-Generating-Your-SSH-Public-Key
