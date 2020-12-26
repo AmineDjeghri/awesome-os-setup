@@ -10,7 +10,7 @@ Some windows tips to improve your UX experience when using windows
  - When placing an external monitor that runs 144hz, make sure to activate the `144Hz` in display settings 
  
 ### Software 
--  Anaconda: install it and check add path 
+-  Anaconda (for python and jupyter): install it and check add path, make sure to delete every avaible python version on your system 
 - Sublime Text: install it before installing git bash (to make git bash uses sublime as an editor and not vim)
 Go to Control Panel > System and Security > System > Advanced system settings and add C:\Program Files\Sublime Text 3 to the PATH environment variable.
 
@@ -18,6 +18,7 @@ Check that the PATH variable does not already contain the path to subl.exe so to
 - Git-Bash: You can use linux commands in windows ! Download gitbash to have the same commands as in linux, you can even personalize your terminal
 ( to check if linux commands work: run 'python --version' in gitbash to see if anaconda added python to the path, you can now use it like linux, 'pip install ' ect.. will work  )
 git bash works in every directory, right lick in any directory and you can have a bash with that path 
+- install Hinterland extension (for autocomlete) in jupyter https://towardsdatascience.com/jupyter-notebook-extensions-517fa69d2231
 - VScode: enable sync profile, and add gitbash as the default terminal of vscode to replace the powershell 
 - Google Sync Drive:  download it on windows and put your git repositories inside it, you can use vscode to run the codes in your pc and also google colab 
 - Microsoft word 2016 buy it or ...., install it, than convert the activation.txt to .bat, run it as an administrator and make sure internet is on, 
