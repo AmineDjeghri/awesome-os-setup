@@ -48,10 +48,13 @@ sur les machines à distance et pouvoir cloner un répo, il faut ajouter une cl�
 ssh.ufr-info-p6.jussieu.fr  dans le fichier de git config si je me souviens bien
 
 #### Pour installer des packages avec pip :  
+faire  à chaque fois pour ma part dans le terminal les deux commandes:
 export http_proxy=proxy:3128  
 export https_proxy=proxy:3128  
 Faire la commande : 
 pip install -r http://webia.lip6.fr/~bpiwowar/requirements-amal.txt
+
+- pour upgrade torch, il faut supprimer manuellement avec ncdu, le package torch dans .lib car torch demande énormément d'esapce pour etre mis à jour et ça dépassera le quota
 
 #### pour le quota :
 ncdu 
