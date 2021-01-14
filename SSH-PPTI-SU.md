@@ -49,6 +49,7 @@ ssh.ufr-info-p6.jussieu.fr  dans le fichier de git config si je me souviens bien
 
 #### Pour installer des packages avec pip :  
 faire  à chaque fois pour ma part dans le terminal les deux commandes:
+
 export http_proxy=proxy:3128  
 export https_proxy=proxy:3128  
 Faire la commande : 
