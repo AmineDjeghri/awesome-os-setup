@@ -4,6 +4,8 @@ Some windows tips to improve your UX experience when using windows
 
 
 ### Windows config
+ - If you are a student, maybe you are eligible to have a free windows and a lot of others microsoft softwares (it only depends on the partnership between your University and Microsoft)
+To check if you are eligible: follow this link https://azureforeducation.microsoft.com/devtools
  - Connect windows with your outlook account to save and link the key to your account (if you are a student, you may have a free windows 10 education key in Azure dev tools for teaching
  - Activate localization on windows
  - Activate bitlocker to encrypt your data (Exists only on windows pro, education and entreprise edition)
