@@ -14,6 +14,7 @@ First step          |  Second step    | Third step
 
 
 - If you successfully got a free student plan, got here to see all the avaible softwares including windows 10 Education: https://portal.azure.com/#blade/Microsoft_Azure_Education/EducationMenuBlade/software 
+- If windows 10 doesn't appear but you have an azure student account and credits, it means that you can use azure the credits but your university didn't manage to have the free softwares 
 <img src="Azure steps/CaptureEN3.PNG">
 
 (also If you‘ve reached the end of your 12 months and are still a student, you‘ll be able to renew your Azure for Students offer. )
