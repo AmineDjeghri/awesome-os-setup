@@ -2,11 +2,12 @@
 Some windows tips to improve your UX experience when using windows
 
 
-
 ### Windows config
- - If you are a student, maybe you are eligible to have a free windows and a lot of others microsoft softwares (it only depends on the partnership between your University and Microsoft)
-To check if you are eligible: follow this link https://azureforeducation.microsoft.com/devtools
- - Connect windows with your outlook account to save and link the key to your account (if you are a student, you may have a free windows 10 education key in Azure dev tools for teaching
+ - If you are a student, maybe you are eligible to have a free windows key and a lot of others microsoft softwares (it only depends on the partnership between your University and Microsoft)
+To check if you are eligible: follow this link https://azureforeducation.microsoft.com/devtools and to directly access Azure, login here and select Azure for Students: https://portal.azure.com/#home 
+(also If you‘ve reached the end of your 12 months and are still a student, you‘ll be able to renew your Azure for Students offer. )
+- If you successfully got a free student plan, got here to see all the avaible softwares including windows 10 Education: https://portal.azure.com/#blade/Microsoft_Azure_Education/EducationMenuBlade/software 
+ - Connect windows with your outlook account to save and link the key to your account 
  - Activate localization on windows
  - Activate bitlocker to encrypt your data (Exists only on windows pro, education and entreprise edition)
  - When placing an external monitor that runs 144hz, make sure to activate the `144Hz` in display settings 
