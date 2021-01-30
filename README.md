@@ -10,6 +10,7 @@ Some windows tips to improve your UX experience when using windows
 (also If you‘ve reached the end of your 12 months and are still a student, you‘ll be able to renew your Azure for Students offer. )
 - Then activate the key in windows (if you had a version that is not education, it will ask your for an update) or download windows education and install it, do not login with your account when installing it because it will ask you your university email and it's better to save your key to your microsoft account. when the installation is finished, link your account in windows settings 
 
+
 #### 1.2 Save your key to you microsoft account
  - Connect windows with your outlook account to save and link the key to your account 
  - Activate localization on windows
@@ -64,6 +65,10 @@ even it it fails the first time, let it continue to run, it will find a KMS serv
 1. search for it in the search bar
 2. In the "Mode" drop down, choose the kind of screenshot shape you want — you can choose anything from full screen to rectangular to a free-form shape
 
+### Wifi :
+if your pc keeps switching between 5ghz and 2.4ghz do the following:
+- If you don't have the persmission to modify the routers and there a multiple routers : in device manager put ghz as preffered
+- If it's your wifi: split your WiFi into 2 access points, one for 5Ghz and the other for 2.4Ghz. After that make your PC connect to the 5Ghz one only 
 ### More  
  - task manager -> startup -> deactivate software that you don't want it to run at startup ( do the same in ccleaner)
  - windows partition: use the windows partition integrated software to create , delete or format partitions
