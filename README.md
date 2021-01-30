@@ -8,7 +8,9 @@ Some windows tips to improve your UX experience when using windows
 - Follow this link https://azureforeducation.microsoft.com/devtools .To directly access Azure, login here and select Azure for Students: https://portal.azure.com/#blade/Microsoft_Azure_Education/EducationMenuBlade/overview
 - If you successfully got a free student plan, got here to see all the avaible softwares including windows 10 Education: https://portal.azure.com/#blade/Microsoft_Azure_Education/EducationMenuBlade/software 
 (also If you‘ve reached the end of your 12 months and are still a student, you‘ll be able to renew your Azure for Students offer. )
-#### Save your key to you microsoft account
+- Then activate the key in windows (if you had a version that is not education, it will ask your for an update) or download windows education and install it, do not login with your account when installing it because it will ask you your university email and it's better to save your key to your microsoft account. when the installation is finished, link your account in windows settings 
+
+#### 1.2 Save your key to you microsoft account
  - Connect windows with your outlook account to save and link the key to your account 
  - Activate localization on windows
  - Activate bitlocker to encrypt your data (Exists only on windows pro, education and entreprise edition)
