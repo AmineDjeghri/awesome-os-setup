@@ -52,7 +52,10 @@ pytorch install with gitbash :
 pip install torch===1.7.1+cu110 torchvision===0.8.2+cu110 torchaudio===0.7.2 -f https://download.pytorch.org/whl/torch_stable.html
 - pytorch without gpu: pip install torch==1.7.1+cpu torchvision==0.8.2+cpu torchaudio===0.7.2 -f https://download.pytorch.org/whl/torch_stable.html
 - there is a requirements.txt that contains the principal data science libraries (without pytorch as you have installed it from the previous line, just do `pip install -r https://github.com/AmineDjeghri/BetterWindowsUX/blob/master/requirements.txt`
-- Google Sync Drive:  download it on windows and put your git repositories inside it, you can use vscode to run the codes in your pc and also google colab 
+
+### Advanced Software
+- Google Sync Drive:  download it on windows and put the files and folder that you want to be automatically saved on your drive, you won't need to everytime open google drive in your browser and manually put your files there
+- Google COlab you can either put your git repositories inside google drive to use them in colab, or directly import git repo inside colab without google drive 
 - Microsoft word 2016 buy it or ...., install it, than convert the activation.txt to .bat, run it as an administrator and make sure internet is on, 
 even it it fails the first time, let it continue to run, it will find a KMS server after.
 - SSH: https://github.com/AmineDjeghri/BetterWindowsUX/blob/master/SSH-PPTI-SU.md
