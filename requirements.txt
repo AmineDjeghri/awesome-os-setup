@@ -1,0 +1,38 @@
+# ML
+# ATTENTION !---- UNCOMMENT ONE OF THE FOLLOWING TORCH INSTALLATION
+# 1- torch without gpu
+#torch 
+#torchvision
+
+# OR
+# 2-torch with nvidia gpu cuda 11.0
+# pip install torch===1.7.1+cu110 torchvision===0.8.2+cu110 torchaudio===0.7.2 -f https://download.pytorch.org/whl/torch_stable.html
+
+
+
+tensorboard
+tensorflow
+optuna
+
+# Misc
+
+jupyter
+future
+pyyaml
+tqdm
+click
+
+# Scientific
+
+matplotlib
+seaborn
+sklearn
+pandas
+
+# NLP
+
+conllu
+spacy
+bs4
+sentencepiece
+
