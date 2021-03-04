@@ -44,7 +44,8 @@ git bash works in every directory, right lick in any directory and you can have 
 - VSCode: enable sync profile, and add gitbash as the default terminal of vscode to replace the powershell 
 - Becareful when installing vscode, it can install another python interpreter for you and you will have 2 python on your pc, make sure to delete the vscode one.
 
-
+### Pytorch 
+- use gitbash to install packages with pip install
 - pytorch windows 10 with nvidia GPU that supports cuda:
 install the right cuda for pytorch, example cuda 11: 
 https://developer.nvidia.com/cuda-11.0-update1-download-archive?target_os=Windows&target_arch=x86_64&target_version=10&target_type=exelocal
@@ -52,6 +53,22 @@ pytorch install with gitbash :
 pip install torch===1.7.1+cu110 torchvision===0.8.2+cu110 torchaudio===0.7.2 -f https://download.pytorch.org/whl/torch_stable.html
 - pytorch without gpu: pip install torch==1.7.1+cpu torchvision==0.8.2+cpu torchaudio===0.7.2 -f https://download.pytorch.org/whl/torch_stable.html
 - there is a requirements.txt that contains the principal data science libraries (without pytorch as you have installed it from the previous line, just do `pip install -r https://github.com/AmineDjeghri/BetterWindowsUX/blob/master/requirements.txt`
+- Check if you succeeded to install pytorch : create a project in PyCharm, select conda python environement (base that have pytorch or a new one where you will install again pytorch and other libraries), and copy this code in main.py and run it
+
+```
+import torch
+# setting device on GPU if available, else CPU
+device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
+print('Using device:', device)
+print()
+
+#Additional Info when using cuda
+if device.type == 'cuda':
+    print(torch.cuda.get_device_name(0))
+    print('Memory Usage:')
+    print('Allocated:', round(torch.cuda.memory_allocated(0)/1024**3,1), 'GB')
+    print('Cached:   ', round(torch.cuda.memory_reserved(0)/1024**3,1), 'GB')
+```
 
 ### Advanced Software
 - Google Sync Drive:  download it on windows and put the files and folder that you want to be automatically saved on your drive, you won't need to everytime open google drive in your browser and manually put your files there
