@@ -95,9 +95,10 @@ even it it fails the first time, let it continue to run, it will find a KMS serv
 
 ### Wifi :
 if your pc keeps switching between 5ghz and 2.4ghz do the following:
-- If you don't have the persmission to modify the routers and there a multiple routers : in device manager put ghz as preffered
 - If it's your wifi: split your WiFi into 2 access points, one for 5Ghz and the other for 2.4Ghz. After that make your PC connect to the 5Ghz one only 
+- If it's not your wifi but you have an ethernet port, you can always buy a router( example HONOR ROUTER 3 WIFI 6) and you will have your own private network and can split the wifi into 2 access points like i mentionnned it in the section above.
 ### More  
  - task manager -> startup -> deactivate software that you don't want it to run at startup ( do the same in ccleaner)
  - windows partition: use the windows partition integrated software to create , delete or format partitions
  - You can change your power management options (when windows will be put on sleep, what happens when you close your laptop ..ect)
+ - If you consider buying a laptop with a GPU for Deep Learning, go for an NVIDIA laptop with with a GPU that supports CUDA. You can always use the cloud solutions for GPU computing: Google Colab, 100$ Free Azure Credits...ect. Just DON'T buy a laptop with an AMD GPU for Deep Learning.
