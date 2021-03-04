@@ -28,7 +28,7 @@ First step          |  Second step    | Third step
  - When placing an external monitor that runs 144hz, make sure to activate the `144Hz` in display settings 
  
 ### Software 
--  Anaconda (for python and jupyter, you can always install python without anaconda, but i prefer to install python via anaconda in windows even if i use only pip with it): install it and check add path, make sure to delete every avaible python version on your system 
+-  Anaconda (for python and jupyter, you can always install python without anaconda, but i prefer to install python via anaconda in windows even if i use only pip with it): install it and CHECK add path to environnement variables, make sure to delete every avaible python version on your system 
 - Sublime Text: install it before installing git bash (to make git bash uses sublime as an editor and not vim)
 Go to Control Panel > System and Security > System > Advanced system settings and add C:\Program Files\Sublime Text 3 to the PATH environment variable.
 
