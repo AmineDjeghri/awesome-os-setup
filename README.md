@@ -28,7 +28,7 @@ First step          |  Second step    | Third step
  - When placing an external monitor that runs 144hz, make sure to activate the `144Hz` in display settings 
  
 ### Software 
--  Anaconda (for python and jupyter): install it and check add path, make sure to delete every avaible python version on your system 
+-  Anaconda (for python and jupyter, you can always install python without anaconda, but i prefer to install python via anaconda in windows even if i use only pip with it): install it and check add path, make sure to delete every avaible python version on your system 
 - Sublime Text: install it before installing git bash (to make git bash uses sublime as an editor and not vim)
 Go to Control Panel > System and Security > System > Advanced system settings and add C:\Program Files\Sublime Text 3 to the PATH environment variable.
 
@@ -37,7 +37,7 @@ Check that the PATH variable does not already contain the path to subl.exe so to
 ( to check if linux commands work: run 'python --version' in gitbash to see if anaconda added python to the path, you can now use it like linux, 'pip install ' ect.. will work  )
 git bash works in every directory, right lick in any directory and you can have a bash with that path 
 - install Hinterland extension (for autocomlete) in jupyter https://towardsdatascience.com/jupyter-notebook-extensions-517fa69d2231
-- PyCharm or VScode: I prefer PyCharm but here are the config for both:
+- PyCharm or VScode: I prefer PyCharm but here are the config for both, BECAREFUL when creating a project to use the anaconda python and not another one (that's why you need to make sure to have only the anaconda python installed)
 - pycharm : add gitbash to pycharm. file->settings->tools->terminal 
  in shell path add C:\Users\Amine DJEGHRI\AppData\Local\Programs\Git\bin\sh.exe
 (sh.exe to have the console directly integrated in pycharm console)
