@@ -69,6 +69,8 @@ if device.type == 'cuda':
     print('Allocated:', round(torch.cuda.memory_allocated(0)/1024**3,1), 'GB')
     print('Cached:   ', round(torch.cuda.memory_reserved(0)/1024**3,1), 'GB')
 ```
+- PyCharm envs: You can clean out old PyCharm interpreters that are no longer associated with a project via Settings -> Project Interpreter, click on the gear in the top right, then click "More". This gives you a listing where you can get rid of old virtualenvs that PyCharm thinks are still around (https://stackoverflow.com/a/34993725)
+
 
 ### Advanced Software
 - Google Sync Drive:  download it on windows and put the files and folder that you want to be automatically saved on your drive, you won't need to everytime open google drive in your browser and manually put your files there
