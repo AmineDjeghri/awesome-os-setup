@@ -69,7 +69,7 @@ if device.type == 'cuda':
     print('Allocated:', round(torch.cuda.memory_allocated(0)/1024**3,1), 'GB')
     print('Cached:   ', round(torch.cuda.memory_reserved(0)/1024**3,1), 'GB')
 ```
-- PyCharm envs: You can clean out old PyCharm interpreters that are no longer associated with a project see the image here .
+- PyCharm envs: You can clean out old PyCharm interpreters that are no longer associated with a project see the image [here](https://github.com/AmineDjeghri/BetterWindowsUX/blob/master/pycharm_interpreters.PNG) .
 - This gives you a listing where you can get rid of old virtualenvs that PyCharm thinks are still around 
 
 
