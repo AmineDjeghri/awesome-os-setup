@@ -37,7 +37,21 @@ Check that the PATH variable does not already contain the path to subl.exe so to
 ( to check if linux commands work: run 'python --version' in gitbash to see if anaconda added python to the path, you can now use it like linux, 'pip install ' ect.. will work  )
 git bash works in every directory, right lick in any directory and you can have a bash with that path 
 - install Hinterland extension (for autocomlete) in jupyter https://towardsdatascience.com/jupyter-notebook-extensions-517fa69d2231
-- VScode: enable sync profile, and add gitbash as the default terminal of vscode to replace the powershell 
+- PyCharm or VScode: I prefer PyCharm but here are the config for both:
+- pycharm : add gitbash to pycharm. file->settings->tools->terminal 
+ in shell path add C:\Users\Amine DJEGHRI\AppData\Local\Programs\Git\bin\sh.exe
+(sh.exe to have the console directly integrated in pycharm console)
+- VSCode: enable sync profile, and add gitbash as the default terminal of vscode to replace the powershell 
+- Becareful when installing vscode, it can install another python interpreter for you and you will have 2 python on your pc, make sure to delete the vscode one.
+
+
+- pytorch windows 10 with nvidia GPU that supports cuda:
+install the right cuda for pytorch, example cuda 11: 
+https://developer.nvidia.com/cuda-11.0-update1-download-archive?target_os=Windows&target_arch=x86_64&target_version=10&target_type=exelocal
+pytorch install with gitbash :
+pip install torch===1.7.1+cu110 torchvision===0.8.2+cu110 torchaudio===0.7.2 -f https://download.pytorch.org/whl/torch_stable.html
+- pytorch without gpu: pip install torch==1.7.1+cpu torchvision==0.8.2+cpu torchaudio===0.7.2 -f https://download.pytorch.org/whl/torch_stable.html
+- there is a requirements.txt that contains the principal data science libraries (without pytorch as you have installed it from the previous line, just do `pip install -r https://github.com/AmineDjeghri/BetterWindowsUX/blob/master/requirements.txt`
 - Google Sync Drive:  download it on windows and put your git repositories inside it, you can use vscode to run the codes in your pc and also google colab 
 - Microsoft word 2016 buy it or ...., install it, than convert the activation.txt to .bat, run it as an administrator and make sure internet is on, 
 even it it fails the first time, let it continue to run, it will find a KMS server after.
@@ -45,6 +59,7 @@ even it it fails the first time, let it continue to run, it will find a KMS serv
 - wget: doesn't work, you should use your browser to download it or use an alternative library
 - Browser : Brave
 - Browser extension: uBlock Origin, pocket, Free Download Manager, Google translate, Google Dictionnary, Stream video downloader, colorZilla
+- Other browser extensions if you care about your data and privacy you can limit websites to collect your data:  ClearURLs, Cookie Auto Delete, HTTPS Everywhere, Decentralayes
 - Antivirus: Kaspersky Cloud free
 - Mail: add your mail accounts to Windows Mail
 - Others: CCleaner, Speccy,
