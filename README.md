@@ -50,8 +50,11 @@ git bash works in every directory, right lick in any directory and you can have 
 install the right cuda for pytorch, example cuda 11: 
 https://developer.nvidia.com/cuda-11.0-update1-download-archive?target_os=Windows&target_arch=x86_64&target_version=10&target_type=exelocal
 pytorch install with gitbash :
-pip install torch===1.7.1+cu110 torchvision===0.8.2+cu110 torchaudio===0.7.2 -f https://download.pytorch.org/whl/torch_stable.html
-- pytorch without gpu: pip install torch==1.7.1+cpu torchvision==0.8.2+cpu torchaudio===0.7.2 -f https://download.pytorch.org/whl/torch_stable.html
+
+`pip install torch===1.7.1+cu110 torchvision===0.8.2+cu110 torchaudio===0.7.2 -f https://download.pytorch.org/whl/torch_stable.html`
+- pytorch without gpu: 
+
+`pip install torch==1.7.1+cpu torchvision==0.8.2+cpu torchaudio===0.7.2 -f https://download.pytorch.org/whl/torch_stable.html`
 - there is a requirements.txt that contains the principal data science libraries (without pytorch as you have installed it from the previous line, just do `pip install -r https://raw.githubusercontent.com/AmineDjeghri/BetterWindowsUX/master/requirements.txt`
 - Check if you succeeded to install pytorch : create a project in PyCharm, select PREVIOUSLY configured interpreter for using the existing one (if you choose NEW environement  yu will have a clean environement with no packages installed and need to install pytoch in this environement with gitbash terminal in PyCharm Project) and copy this code in main.py and run it (You should see the name of your gpu in the console if you have one and successfully installed pytorch with cuda, if you don't have a gpu you will see 'cpu' in the console) :
 
