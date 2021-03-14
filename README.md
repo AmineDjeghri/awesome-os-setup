@@ -4,22 +4,7 @@ Some windows tips to improve your UX experience when using windows
 
 ### 1- Windows config
 #### 1.1- Get a free windows 10 and others softwares if you are a student with Azure
- - If you are a student, maybe you are eligible to have a free windows key and a lot of others microsoft softwares (it only depends on the partnership between your University and Microsoft)
-- Follow this link https://azureforeducation.microsoft.com/devtools .To directly access Azure, login here and select Azure for Students: https://portal.azure.com/#blade/Microsoft_Azure_Education/EducationMenuBlade/overview
-
-First step          |  Second step    | Third step
-:-------------------------:|:-------------------:|:---------------:
-<img src="Azure steps/CaptureEN0.PNG" >  |  <img src="Azure steps/CaptureEN1.PNG" > |  <img src="Azure steps/CaptureEN2.PNG" > 
-
-
-
-- If you successfully got a free student plan, got here to see all the avaible softwares including windows 10 Education: https://portal.azure.com/#blade/Microsoft_Azure_Education/EducationMenuBlade/software 
-- If windows 10 doesn't appear but you have an azure student account and credits, it means that you can use azure the credits but your university didn't manage to have the free softwares 
-<img src="Azure steps/CaptureEN3.PNG">
-
-(also If you‘ve reached the end of your 12 months and are still a student, you‘ll be able to renew your Azure for Students offer. )
-- Then activate the key in windows (if you had a version that is not education, it will ask your for an update) or download windows education and install it, do not login with your account when installing it because it will ask you your university email and it's better to save your key to your microsoft account. when the installation is finished, link your account in windows settings 
-
+ [Follow this guide](https://github.com/AmineDjeghri/BetterWindowsUX/blob/master/Free-windows-key.md)
 
 #### 1.2 Save your key to you microsoft account
  - Connect windows with your outlook account to save and link the key to your account 
@@ -77,20 +62,23 @@ if device.type == 'cuda':
 
 
 ### Advanced Software
-- Google Sync Drive:  download it on windows and put the files and folder that you want to be automatically saved on your drive, you won't need to everytime open google drive in your browser and manually put your files there
-- Google COlab you can either put your git repositories inside google drive to use them in colab, or directly import git repo inside colab without google drive 
-- Microsoft word 2016 buy it or ...., install it, than convert the activation.txt to .bat, run it as an administrator and make sure internet is on, 
-even it it fails the first time, let it continue to run, it will find a KMS server after.
-- SSH: https://github.com/AmineDjeghri/BetterWindowsUX/blob/master/SSH-PPTI-SU.md
-- wget: doesn't work, you should use your browser to download it or use an alternative library
+
 - Browser : Brave
 - Browser extension: uBlock Origin, pocket, Free Download Manager, Google translate, Google Dictionnary, Stream video downloader, colorZilla
 - Other browser extensions if you care about your data and privacy you can limit websites to collect your data:  ClearURLs, Cookie Auto Delete, HTTPS Everywhere, Decentralayes
+- Agenda: Google agenda, -> create an app shortcut with brave, it will act like an app in windows
 - Antivirus: Kaspersky Cloud free
 - Mail: add your mail accounts to Windows Mail
 - Others: CCleaner, Speccy,
 - Adobe: Photoshop, illustrator, premiere pro, XD
 - VPN: ProtonVPN
+- PowerToys: https://github.com/microsoft/PowerToys
+- Google Sync Drive:  download it on windows and put the files and folder that you want to be automatically saved on your drive, you won't need to everytime open google drive in your browser and manually put your files there
+- Google Colab you can either put your git repositories inside google drive to use them in colab, or directly import git repo inside colab without google drive 
+- Microsoft word 2016 buy it or ...., install it, than convert the activation.txt to .bat, run it as an administrator and make sure internet is on, 
+even it it fails the first time, let it continue to run, it will find a KMS server after.
+- SSH: https://github.com/AmineDjeghri/BetterWindowsUX/blob/master/SSH-PPTI-SU.md
+- wget: doesn't work, you should use your browser to download it or use an alternative library
 
 ### Windows design and UX: 
 - You can convert a website to an application , for exemple: Mattermost in chrome, go to plus d'outils -> creer un racourcie , and check window mode, it will run like an app in your windows desktop
