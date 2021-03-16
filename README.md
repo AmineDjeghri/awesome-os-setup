@@ -5,7 +5,7 @@ Some windows tips to improve your UX experience when using windows
 ### 1- Windows config
 #### 1.1- Get a free windows 10 and others softwares if you are a student with Azure
  - [Free Windows 10 Education/Entreprise](https://github.com/AmineDjeghri/BetterWindowsUX/blob/master/Free-windows-key.md)
- - [Free Microsoft Office 365 Web only](https://www.microsoft.com/en-us/education/products/office)
+ - [Free Microsoft Office 365 Web only depends on your university](https://www.microsoft.com/en-us/education/products/office)
 #### 1.2 Save your key to you microsoft account
  - Connect windows with your outlook account to save and link the key to your account 
  - Activate localization on windows
