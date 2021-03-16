@@ -89,7 +89,8 @@ even it it fails the first time, let it continue to run, it will find a KMS serv
              - if it's not on the start up menu, search for it then add it to start menu then drag it to desktop
 - Hide the Windows taskbar (right click on the taskbar -> taskbar settings). You can and make it centered and transparent with [TaskbarX]([https://chrisandriessen.nl/taskbarx)
 - Use windows touchpad gestures, it really improves the experience and saves time, for exemple create a desktop and open a windows inside it, then you can create another desktop and put another window in it, after this you can fast switch between the two desktops using your four fingers and swap from the left to right 
-
+- Use Quiet Hours and add only the applications that you want them to send you a notification, (Brave will still send you notifications to get BAT but it will never appear ;) )
+- 
 ### Screen recorder :
 - You can use the integrated screen recorder of windows, press `windows key + G` 
 - Use other free software like: OBS, Streamlabs
