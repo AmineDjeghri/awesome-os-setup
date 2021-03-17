@@ -80,7 +80,8 @@ even it it fails the first time, let it continue to run, it will find a KMS serv
 - SSH: https://github.com/AmineDjeghri/BetterWindowsUX/blob/master/SSH-PPTI-SU.md
 - wget: doesn't work, you should use your browser to download it or use an alternative library
 - Online Storage: Google Drive (15gb), Mega Drive (50GB) ...ect. Use these Drives to store non personanal Data ! It's better to have an NAS or an external HDD to store your personal data.
-- 
+- TaskbarX [link](https://chrisandriessen.nl/taskbarx), also hide windows taskbar (right click on the taskbar -> taskbar settings-> hide in desktop mode)
+
 ### Windows design and UX: 
 - You can convert a website to an application , for exemple: Mattermost in chrome, go to plus d'outils -> creer un racourcie , and check window mode, it will run like an app in your windows desktop
 ( I took the example of mattermost because using their windows application causes WIFI disconnect issues, so ihave to use the website instead of the app)
