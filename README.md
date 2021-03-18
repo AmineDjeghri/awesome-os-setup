@@ -1,6 +1,7 @@
 # BetterWindowsUX
-Some windows tips to improve your UX experience when using windows
-
+Some windows tips to improve your User experience when using windows
+- A guide to help you set up a windows environement to maximum your productivity 
+- Spend some hours setting this up (a full guide to configure many things including, linux commands in windows no need for dualboot anymore, SSH, SFTP with interface to reach a maximum level of productivity)
 
 ### 1- Windows config
 #### 1.1- Get a free windows 10 and others softwares if you are a student with Azure
@@ -12,24 +13,47 @@ Some windows tips to improve your UX experience when using windows
  - Activate bitlocker to encrypt your data (Exists only on windows pro, education and entreprise edition)
  - When placing an external monitor that runs 144hz, make sure to activate the `144Hz` in display settings 
  
-### Software 
--  Anaconda (for python and jupyter, you can always install python without anaconda, but i prefer to install python via anaconda in windows even if i use only pip with it): install it and CHECK add path to environnement variables, make sure to delete every avaible python version on your system 
-- Sublime Text: install it before installing git bash (to make git bash uses sublime as an editor and not vim)
+### 2- Software 
+-  <ins>Anaconda</ins> (for python and jupyter, you can always install python without anaconda, but i prefer to install python via anaconda in windows even if i use only pip with it): install it and CHECK add path to environnement variables, make sure to delete every avaible python version on your system 
+- <ins>Sublime Text</ins>: install it before installing git bash (to make git bash uses sublime as an editor and not vim)
 Go to Control Panel > System and Security > System > Advanced system settings and add C:\Program Files\Sublime Text 3 to the PATH environment variable.
 
 Check that the PATH variable does not already contain the path to subl.exe so to avoid adding it twice.
-- Git-Bash: You can use linux commands in windows ! Download gitbash to have the same commands as in linux, you can even personalize your terminal
+- <ins>Git-Bash</ins>: You can use linux commands in windows ! Download gitbash to have the same commands as in linux, you can even personalize your terminal
 ( to check if linux commands work: run 'python --version' in gitbash to see if anaconda added python to the path, you can now use it like linux, 'pip install ' ect.. will work  )
 git bash works in every directory, right lick in any directory and you can have a bash with that path 
-- install Hinterland extension (for autocomlete) in jupyter https://towardsdatascience.com/jupyter-notebook-extensions-517fa69d2231
-- PyCharm or VScode: I prefer PyCharm but here are the config for both, BECAREFUL when creating a project to use the anaconda python and not another one (that's why you need to make sure to have only the anaconda python installed)
+- <ins>Jupyter autocomplete</ins>install Hinterland extension (for autocomlete) in jupyter https://towardsdatascience.com/jupyter-notebook-extensions-517fa69d2231
+- <ins>PyCharm or VScode</ins>: I prefer PyCharm but here are the config for both, BECAREFUL when creating a project to use the anaconda python and not another one (that's why you need to make sure to have only the anaconda python installed)
 - pycharm : add gitbash to pycharm. file->settings->tools->terminal 
  in shell path add C:\Users\Amine DJEGHRI\AppData\Local\Programs\Git\bin\sh.exe
 (sh.exe to have the console directly integrated in pycharm console)
 - VSCode: enable sync profile, and add gitbash as the default terminal of vscode to replace the powershell 
 - Becareful when installing vscode, it can install another python interpreter for you and you will have 2 python on your pc, make sure to delete the vscode one.
 
-### Pytorch 
+#### Advanced Software
+
+- <ins>Browser</ins>: Brave
+- <ins>Browser extensions</ins> : uBlock Origin, pocket, Free Download Manager, Google translate, Google Dictionnary, Stream video downloader, colorZilla
+- <ins>Privacy extensions</ins> : if you care about your data and privacy (even if you use windows lol) you can limit websites to collect your data:  ClearURLs, Cookie Auto Delete, HTTPS Everywhere, Decentralayes
+- <ins>Agenda</ins> : Google agenda, -> create an app shortcut with brave, it will act like an app in windows
+- <ins>Antivirus</ins> : Kaspersky Cloud free
+- <ins>Mail</ins>: add your mail accounts to Windows Mail
+- <ins>Others</ins>: CCleaner, Speccy,
+- <ins>Adobe</ins> : Photoshop, illustrator, premiere pro, XD
+- <ins>VPN</ins> : ProtonVPN
+- <ins>PowerToys</ins> : https://github.com/microsoft/PowerToys
+- <ins>Google Sync Drive</ins> :  download it on windows and put the files and folder that you want to be automatically saved on your drive, you won't need to everytime open google drive in your browser and manually put your files there
+- <ins>Free Cloud GPU </ins> Google Colab you can either put your git repositories inside google drive to use them in colab, or directly import git repo inside colab without google drive 
+- <ins>Microsoft Office 2016</ins>  buy it or ...., install it, than convert the activation.txt to .bat, run it as an administrator and make sure internet is on, 
+even it it fails the first time, let it continue to run, it will find a KMS server after.
+
+- wget: doesn't work, you should use your browser to download it or use an alternative library
+- <ins>Online Storage</ins> : Google Drive (15gb), Mega Drive (50GB) ...ect. Use these Drives to store non personanal Data ! It's better to have an NAS or an external HDD to store your personal data.
+- TaskbarX [link](https://chrisandriessen.nl/taskbarx), also hide windows taskbar (right click on the taskbar -> taskbar settings-> hide in desktop mode)
+
+### SSH (needs to be updated and fileZilla)
+ - https://github.com/AmineDjeghri/BetterWindowsUX/blob/master/SSH-PPTI-SU.md
+### 3- Pytorch 
 - use gitbash to install packages with pip install
 - pytorch windows 10 with nvidia GPU that supports cuda:
 install the right cuda for pytorch, example cuda 11: 
@@ -61,27 +85,6 @@ if device.type == 'cuda':
 - This gives you a listing where you can get rid of old virtualenvs that PyCharm thinks are still around 
 
 
-### Advanced Software
-
-- Browser : Brave
-- Browser extension: uBlock Origin, pocket, Free Download Manager, Google translate, Google Dictionnary, Stream video downloader, colorZilla
-- Other browser extensions if you care about your data and privacy you can limit websites to collect your data:  ClearURLs, Cookie Auto Delete, HTTPS Everywhere, Decentralayes
-- Agenda: Google agenda, -> create an app shortcut with brave, it will act like an app in windows
-- Antivirus: Kaspersky Cloud free
-- Mail: add your mail accounts to Windows Mail
-- Others: CCleaner, Speccy,
-- Adobe: Photoshop, illustrator, premiere pro, XD
-- VPN: ProtonVPN
-- PowerToys: https://github.com/microsoft/PowerToys
-- Google Sync Drive:  download it on windows and put the files and folder that you want to be automatically saved on your drive, you won't need to everytime open google drive in your browser and manually put your files there
-- Google Colab you can either put your git repositories inside google drive to use them in colab, or directly import git repo inside colab without google drive 
-- Microsoft word 2016 buy it or ...., install it, than convert the activation.txt to .bat, run it as an administrator and make sure internet is on, 
-even it it fails the first time, let it continue to run, it will find a KMS server after.
-- SSH: https://github.com/AmineDjeghri/BetterWindowsUX/blob/master/SSH-PPTI-SU.md
-- wget: doesn't work, you should use your browser to download it or use an alternative library
-- Online Storage: Google Drive (15gb), Mega Drive (50GB) ...ect. Use these Drives to store non personanal Data ! It's better to have an NAS or an external HDD to store your personal data.
-- TaskbarX [link](https://chrisandriessen.nl/taskbarx), also hide windows taskbar (right click on the taskbar -> taskbar settings-> hide in desktop mode)
-
 ### Windows design and UX: 
 - You can convert a website to an application , for exemple: Mattermost in chrome, go to plus d'outils -> creer un racourcie , and check window mode, it will run like an app in your windows desktop
 ( I took the example of mattermost because using their windows application causes WIFI disconnect issues, so ihave to use the website instead of the app)
@@ -112,7 +115,7 @@ if your pc keeps switching between 5ghz and 2.4ghz do the following:
 - If it's your wifi: split your WiFi into 2 access points, one for 5Ghz and the other for 2.4Ghz. After that make your PC connect to the 5Ghz one only 
 - If it's not your wifi but you have an ethernet port, you can always buy a router( example HONOR ROUTER 3 WIFI 6) and you will have your own private network and can split the wifi into 2 access points like i mentionnned it in the section above.
 ### More  
- - task manager -> startup -> deactivate software that you don't want it to run at startup ( do the same in ccleaner)
- - windows partition: use the windows partition integrated software to create , delete or format partitions
+ - <ins>Deactivate startup programs</ins>:task manager -> startup -> deactivate software that you don't want it to run at startup ( do the same in ccleaner)
+ - <ins>Windows partition</ins>: use the windows partition integrated software to create , delete or format partitions
  - You can change your power management options (when windows will be put on sleep, what happens when you close your laptop ..ect)
  - If you consider buying a laptop with a GPU for Deep Learning, go for an NVIDIA laptop with with a GPU that supports CUDA. You can always use the cloud solutions for GPU computing: Google Colab, 100$ Free Azure Credits...ect. Just DON'T buy a laptop with an AMD GPU for Deep Learning.
