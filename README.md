@@ -87,7 +87,7 @@ if device.type == 'cuda':
 
 ### Windows design and UX: 
 - You can convert a website to an application , for exemple: Google Agenda  in Brave/Chrome, go to plus d'outils -> creer un racourcie , and check window mode, it will run like an app in your windows desktop
-( I took the example of mattermost because using their windows application causes WIFI disconnect issues, so ihave to use the website instead of the app)
+( I took the example of mattermost because there is no free Google Agenda app in windows )
 - Remove unnecessary programs, unnecessary icons from the start menu and add others like google maps, meteo calendar
 - App shortcut : some apps don't provide a desktop shortcut, even if you try to find where they are you can't (like Netflix), they only give you the choice to add them to the start menu or the taskbar . But there is a solution :
              - if an app doesn't want to be added to the desktop like netflix, you can drag it from the start menu to the desktop
