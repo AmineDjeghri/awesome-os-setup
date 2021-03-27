@@ -26,7 +26,11 @@ git bash works in every directory, right lick in any directory and you can have 
 - <ins>PyCharm or VScode</ins>: I prefer PyCharm but here are the config for both, BECAREFUL when creating a project to use the anaconda python and not another one (that's why you need to make sure to have only the anaconda python installed)
 - pycharm : add gitbash to pycharm. file->settings->tools->terminal 
  in shell path add C:\Users\Amine DJEGHRI\AppData\Local\Programs\Git\bin\sh.exe
+ Enabling automatic upload: As soon as a default server is set, you can make upload to this server automatic. This can be done in the following two ways:
+
+Open the deployment Options (Settings/Preferences | Deployment | Options or Tools | Deployment | Options from the main menu), and in the Upload changed files automatically to the default server field choose Always, or On explicit save action. The difference between these two choices is explained in the field description.
 (sh.exe to have the console directly integrated in pycharm console)
+
 - VSCode: enable sync profile, and add gitbash as the default terminal of vscode to replace the powershell 
 - Becareful when installing vscode, it can install another python interpreter for you and you will have 2 python on your pc, make sure to delete the vscode one.
 
