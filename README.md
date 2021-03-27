@@ -27,14 +27,12 @@ git bash works in every directory, right lick in any directory and you can have 
 - pycharm : add gitbash to pycharm. file->settings->tools->terminal 
  in shell path add C:\Users\Amine DJEGHRI\AppData\Local\Programs\Git\bin\sh.exe (sh.exe to have the console directly integrated in pycharm console)
 
-Defining a server as default﻿
+Defining a server as default:
 A deployment server is considered default if its settings apply by default during automatic upload of changed files. To define a deployment server as the default one, follow these steps:
 
-Choose the desired server on the Deployment page (in our case, MyRemoteServer ). You can open this page it two possible ways: either Settings/Preferences | Build, Execution, Deployment | Deployment, or Tools | Deployment | Configuration from the main menu.
+Choose the desired server on the Deployment page. You can open this page it two possible ways: either Settings/Preferences | Build, Execution, Deployment | Deployment, or Tools | Deployment | You will see your servers, right click on the one you want to set it as default, and click 'use as default' 
 
-Click the Use as default button.
-
-Enabling automatic upload﻿
+Enabling automatic upload:
 As soon as the default server is set, you can make upload to this server automatic. This can be done in the following two ways:
 
 Open the deployment Options (Settings/Preferences | Deployment | Options or Tools | Deployment | Options from the main menu), and in the Upload changed files automatically to the default server field choose Always, or On explicit save action. The difference between these two choices is explained in the field description.
