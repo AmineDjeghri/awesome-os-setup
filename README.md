@@ -25,11 +25,21 @@ git bash works in every directory, right lick in any directory and you can have 
 - <ins>Jupyter autocomplete</ins>install Hinterland extension (for autocomlete) in jupyter https://towardsdatascience.com/jupyter-notebook-extensions-517fa69d2231
 - <ins>PyCharm or VScode</ins>: I prefer PyCharm but here are the config for both, BECAREFUL when creating a project to use the anaconda python and not another one (that's why you need to make sure to have only the anaconda python installed)
 - pycharm : add gitbash to pycharm. file->settings->tools->terminal 
- in shell path add C:\Users\Amine DJEGHRI\AppData\Local\Programs\Git\bin\sh.exe
- Enabling automatic upload: As soon as a default server is set, you can make upload to this server automatic. This can be done in the following two ways:
+ in shell path add C:\Users\Amine DJEGHRI\AppData\Local\Programs\Git\bin\sh.exe (sh.exe to have the console directly integrated in pycharm console)
+
+Defining a server as default﻿
+A deployment server is considered default if its settings apply by default during automatic upload of changed files. To define a deployment server as the default one, follow these steps:
+
+Choose the desired server on the Deployment page (in our case, MyRemoteServer ). You can open this page it two possible ways: either Settings/Preferences | Build, Execution, Deployment | Deployment, or Tools | Deployment | Configuration from the main menu.
+
+Click the Use as default button.
+
+Enabling automatic upload﻿
+As soon as the default server is set, you can make upload to this server automatic. This can be done in the following two ways:
 
 Open the deployment Options (Settings/Preferences | Deployment | Options or Tools | Deployment | Options from the main menu), and in the Upload changed files automatically to the default server field choose Always, or On explicit save action. The difference between these two choices is explained in the field description.
-(sh.exe to have the console directly integrated in pycharm console)
+
+In the main menu, select Tools | Deployment | Automatic upload. Note that automatic upload in this case is performed in the Always mode.
 
 - VSCode: enable sync profile, and add gitbash as the default terminal of vscode to replace the powershell 
 - Becareful when installing vscode, it can install another python interpreter for you and you will have 2 python on your pc, make sure to delete the vscode one.
