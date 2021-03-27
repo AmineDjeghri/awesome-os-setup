@@ -64,3 +64,11 @@ vider le .cache avec la lettre d
 -	Vous pouvez utilisez jupyter notebook pour créer des fichiers txt, utiliser le terminal et visualiser vos documents
 too old :
 https://www-ppti.ufr-info-p6.jussieu.fr/index.php/faq/technique#pip-tme
+
+
+
+### Need to add a new version with the support of pycharm and auto deploy :
+Enabling automatic upload:
+As soon as the default server is set, you can make upload to this server automatic. This can be done in the following two ways:
+
+Open the deployment Options (Settings/Preferences | Deployment | Options or Tools | Deployment | Options from the main menu), and in the Upload changed files automatically to the default server field choose Always, or On explicit save action. The difference between these two choices is explained in the field description.
