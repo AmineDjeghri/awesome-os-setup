@@ -46,8 +46,8 @@ En plus du /tmp, vous avez également un répertoire /tempory qui est semi-perma
 #### Pour utiliser github :
 Sur les machines à distance et pour pouvoir cloner un répo, saisir dans le terminal:
 
-`git config --global http.proxy http://proxy.ufr-info-p6.jussieu.fr:3128`
-`git config --global https.proxy https://proxy.ufr-info-p6.jussieu.fr:3128`
+- `git config --global http.proxy http://proxy.ufr-info-p6.jussieu.fr:3128`
+- `git config --global https.proxy https://proxy.ufr-info-p6.jussieu.fr:3128`
 
 #### Pour installer des packages avec pip :  
 faire  à chaque fois pour ma part dans le terminal les deux commandes:
