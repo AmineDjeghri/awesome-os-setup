@@ -1,4 +1,4 @@
-## Graphic Acces to PPTI with FileZilla (drag and drop files, rename, and more ...Ect) 
+## Graphic Acces to PPTI with FileZilla (download, upload, drag and drop files, rename, and more ...Ect) 
 
 - Download putty and filezilla: 
 - Open filezilla
