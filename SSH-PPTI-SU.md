@@ -72,3 +72,6 @@ Enabling automatic upload:
 As soon as the default server is set, you can make upload to this server automatic. This can be done in the following two ways:
 
 Open the deployment Options (Settings/Preferences | Deployment | Options or Tools | Deployment | Options from the main menu), and in the Upload changed files automatically to the default server field choose Always, or On explicit save action. The difference between these two choices is explained in the field description.
+
+[PPTI Official doc](https://www-ppti.ufr-info-p6.jussieu.fr/index.php/support/connexions-distantes)
+https://www-ppti.ufr-info-p6.jussieu.fr/images/doc/connexions-windows.pdf
