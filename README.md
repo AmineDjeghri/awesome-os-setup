@@ -61,7 +61,8 @@ even it it fails the first time, let it continue to run, it will find a KMS serv
 
 - wget: doesn't work, you should use your browser to download it or use an alternative library
 - <ins>Online Storage</ins> : Google Drive (15gb), Mega Drive (50GB) ...ect. Use these Drives to store non personanal Data ! It's better to have an NAS or an external HDD to store your personal data.
-- TaskbarX [link](https://chrisandriessen.nl/taskbarx), also hide windows taskbar (right click on the taskbar -> taskbar settings-> hide in desktop mode)
+- TaskbarX [link] (https://chrisandriessen.nl/taskbarx), also hide windows taskbar (right click on the taskbar -> taskbar settings-> hide in desktop mode)
+- Fences [link] (https://store.steampowered.com/app/607380/Fences/?l=french) doesn't need steam to autostartup 
 
 ### SSH (needs to be updated and fileZilla)
  - https://github.com/AmineDjeghri/BetterWindowsUX/blob/master/SSH-PPTI-SU.md
