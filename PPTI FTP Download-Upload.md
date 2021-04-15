@@ -6,6 +6,8 @@
 - in username: your student number, 
 - password: your student password, 
 - in port: `22` (it is important to not leave this port empty)
+- Left panels are your pc folders, right panels are the remote folders and files
+- Drag and drop, rename, CTRL + A to select all and more ! Enjoy !
 
 <img src="Azure steps/PPTI-FileZilla steps/filezilla ppti-part 1 .png" >
 <img src="Azure steps/PPTI-FileZilla steps/filezilla ppti-part 2 .png" >
