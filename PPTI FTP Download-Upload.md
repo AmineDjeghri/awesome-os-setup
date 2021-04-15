@@ -1,6 +1,6 @@
 ## Graphic Acces to PPTI Sorbonne Université with FileZilla (download, upload, drag and drop files, rename, and more ...Ect) 
 
-- Download putty and filezilla: 
+- Download filezilla without manuel, https://filezilla-project.org/download.php , 
 - Open filezilla
 - In host copy this adress: `ssh.ufr-info-p6.jussieu.fr`, 
 - in username: your student number, 
