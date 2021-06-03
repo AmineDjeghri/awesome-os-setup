@@ -1,6 +1,7 @@
 # How to use pycharm to run your code on PPTI GPU:
 Open terminal: 
 `ssh -L 6000:ppti-14-502-03.ufr-info-p6.jussieu.fr:22 LOGIN@ssh.ufr-info-p6.jussieu.fr`
+Keep this terminal open 
 
 Open Pycharm:
 
