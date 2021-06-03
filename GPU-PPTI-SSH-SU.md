@@ -1,12 +1,12 @@
-# How to use pycharm to run your code on PPTI GPU:
+# How to use pycharm to run your code on PPTI with GPUs:
 Open terminal: 
 `ssh -L 6000:ppti-14-502-03.ufr-info-p6.jussieu.fr:22 LOGIN@ssh.ufr-info-p6.jussieu.fr`
-Keep this terminal open 
+Replace LOGIN by your student number and Keep the terminal open (You can also change the number of the room (502-03)
 
 Open Pycharm:
 
 SSH Server: 
-- login: same login 
+- login: LOGIN
 - port: 6000 
 - Host: localhost 
 - changer le nom en: ssh ppti su
@@ -14,9 +14,9 @@ SSH Server:
 Deployment: 
 - root: /tempory 
 - project path : name project
-- changer le nom: ssh-deploy
+- change the name le nom: ssh-deploy
 
-pyhton interpreter : 
+Pyhton interpreter: 
 - same ssh config
 - python interpreter path: /usr/bin/python3
 - name it: PPTI env
