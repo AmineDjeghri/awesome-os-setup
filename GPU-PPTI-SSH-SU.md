@@ -9,12 +9,18 @@ SSH Server:
 - login: same login 
 - port: 6000 
 - Host: localhost 
+- changer le nom en: ssh ppti su
 
 Deployment: 
 - root: /tempory 
 - project path : name project
+- changer le nom: ssh-deploy
 
 pyhton interpreter : 
 - same ssh config
 - python interpreter path: /usr/bin/python3
-- name: PPTI env
+- name it: PPTI env
+
+
+## Make the deployment the default one and in options check the `send when save`
+## Use the new interpreter 
