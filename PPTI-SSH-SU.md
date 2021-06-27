@@ -50,11 +50,15 @@ Sur les machines à distance et pour pouvoir cloner un répo, saisir dans le ter
 - `git config --global https.proxy https://proxy.ufr-info-p6.jussieu.fr:3128`
 
 #### Pour installer des packages avec pip :  
-faire  à chaque fois pour ma part dans le terminal les deux commandes:
+- `vim .bash_profile`
+- Add the export command for every environment variable you want to persist, in our case:
+`export http_proxy=proxy:3128` and  
+`export https_proxy=proxy:3128`
+- Save your changes and exit, then apply the export immediatly with: `source .bash_profile`
+faire  à chaque fois dans le terminal les deux commandes:
 
-export http_proxy=proxy:3128  
-export https_proxy=proxy:3128  
-Faire la commande : 
+
+Pour installer l'environnement de piwowarsky faire la commande : 
 pip install -r http://webia.lip6.fr/~bpiwowar/requirements-amal.txt
 
 - pour upgrade torch, il faut supprimer manuellement avec ncdu, le package torch dans .lib car torch demande énormément d'esapce pour etre mis à jour et ça dépassera le quota
