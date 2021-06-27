@@ -52,7 +52,7 @@ In the main menu, select Tools | Deployment | Automatic upload. Note that automa
 - <ins>Mail</ins>: add your mail accounts to Windows Mail
 - <ins>Others</ins>: CCleaner, Speccy,
 - <ins>Adobe</ins> : Photoshop, illustrator, premiere pro, XD
-- <ins>VPN</ins> : ProtonVPN
+- <ins>VPN</ins> : ProtonVPN or NordVPN
 - <ins>PowerToys</ins> : https://github.com/microsoft/PowerToys
 - <ins>Google Sync Drive</ins> :  download it on windows and put the files and folder that you want to be automatically saved on your drive, you won't need to everytime open google drive in your browser and manually put your files there
 - <ins>Free Cloud GPU </ins> Google Colab you can either put your git repositories inside google drive to use them in colab, or directly import git repo inside colab without google drive 
