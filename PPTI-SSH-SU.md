@@ -63,15 +63,19 @@ pip install -r http://webia.lip6.fr/~bpiwowar/requirements-amal.txt
 
 - pour upgrade torch, il faut supprimer manuellement avec ncdu, le package torch dans .lib car torch demande énormément d'esapce pour etre mis à jour et ça dépassera le quota
 
-#### pour le quota :
-ncdu 
-vider le .cache avec la lettre d
-- Pour installer des packages lourds (comme pytorch: 800mb la wheel + 1.6gb le package), télécharger la wheel directement dans /tempory (accès disponible avec les machines 407 et 502 uniquement) puis installez cette wheel avec pip .
+#### Problème de quota ?
+è la commande `ncdu` sert à visualier et à vider le .cache (avec la lettre d)
+- Pour installer des packages lourds (comme une nouvelle version pytorch: 800mb la wheel + 1.6gb le package), supprimez l'ancienne version et télécharger la wheel directement dans /tempory (accès disponible avec les machines 407 et 502 uniquement) puis installez cette wheel avec pip .
+
+####Et pour le transfert de fichier ?
+-	Autre que la commande SCP, vous pouvez utiliser le logiciel FileZilla pour un transfert rapide de vos fichiers en plus d'une interface !
 -	Vous pouvez utilisez jupyter notebook pour créer des fichiers txt, utiliser le terminal et visualiser vos documents
+
 too old :
 https://www-ppti.ufr-info-p6.jussieu.fr/index.php/faq/technique#pip-tme
 
-
+## Bonus:
+- Utilisez Pycharm Professional edition (gratuit pour les étudiants) et n'ont pas VSCode !
 
 ### Need to add a new version with the support of pycharm and auto deploy :
 Enabling automatic upload:
