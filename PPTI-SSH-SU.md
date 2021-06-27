@@ -66,7 +66,7 @@ pip install -r http://webia.lip6.fr/~bpiwowar/requirements-amal.txt
 #### pour le quota :
 ncdu 
 vider le .cache avec la lettre d
-
+- Pour installer des packages lourds (comme pytorch: 800mb la wheel + 1.6gb le package), télécharger la wheel directement dans /tempory (accès disponible avec les machines 407 et 502 uniquement) puis installez cette wheel avec pip .
 -	Vous pouvez utilisez jupyter notebook pour créer des fichiers txt, utiliser le terminal et visualiser vos documents
 too old :
 https://www-ppti.ufr-info-p6.jussieu.fr/index.php/faq/technique#pip-tme
