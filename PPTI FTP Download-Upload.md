@@ -22,4 +22,4 @@
 - Open Filezilla and configure a new connection with: 
 username: student number, password: your password, port: 6000, host: localhost, and change also the protocole to : SFTP SSH ...Ect
 
-now you can browse the folders and even find the files of the /tempory folder 
+now you can browse the folders manually and even find the files of the /tempory folder, or use the search bar and search `/tempory`
