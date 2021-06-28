@@ -11,3 +11,15 @@
 
 <img src="Azure steps/PPTI-FileZilla steps/filezilla ppti-part 1 .png" >
 <img src="Azure steps/PPTI-FileZilla steps/filezilla ppti-part 2 .png" >
+
+
+
+
+## Accès Machines Salle 407 et 502:
+- Use this command for port forwarding in a terminal `ssh -L 6000:ppti-14-502-03.ufr-info-p6.jussieu.fr:22 LOGIN@ssh.ufr-info-p6.jussieu.fr
+` 
+- Change the login with yoru student number, and enter your password
+- Open Filezilla and configure a new connection with: 
+username: student number, password: your password, port: 6000, host: localhost, and change also the protocole to : SFTP SSH ...Ect
+
+now you can browse the folders and even find the files of the /tempory folder 
