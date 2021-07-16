@@ -23,6 +23,8 @@ Check that the PATH variable does not already contain the path to subl.exe so to
 ( to check if linux commands work: run 'python --version' in gitbash to see if anaconda added python to the path, you can now use it like linux, 'pip install ' ect.. will work  )
 - Use windows terminal : if you installed git-bash, it will be addded to windows terminal (customize the theme: https://ohmyposh.dev/docs/pwsh and https://www.nerdfonts.com/)
 git bash works in every directory, right lick in any directory and you can have a bash with that path 
+- Tutorial of windows terminal: https://www.youtube.com/watch?v=ialuEXkoKr0 
+
 - <ins>Jupyter autocomplete</ins>install Hinterland extension (for autocomlete) in jupyter https://towardsdatascience.com/jupyter-notebook-extensions-517fa69d2231
 - <ins>PyCharm or VScode</ins>: I prefer PyCharm but here are the config for both, BECAREFUL when creating a project to use the anaconda python and not another one (that's why you need to make sure to have only the anaconda python installed)
 - pycharm : add gitbash to pycharm. file->settings->tools->terminal 
