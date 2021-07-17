@@ -21,9 +21,6 @@ Go to Control Panel > System and Security > System > Advanced system settings an
 Check that the PATH variable does not already contain the path to subl.exe so to avoid adding it twice.
 - <ins>Git-Bash</ins>: You can use linux commands in windows ! Download gitbash to have the same commands as in linux, you can even personalize your terminal
 ( to check if linux commands work: run 'python --version' in gitbash to see if anaconda added python to the path, you can now use it like linux, 'pip install ' ect.. will work  )
-- Use windows terminal : if you installed git-bash, it will be addded to windows terminal (customize the theme: https://ohmyposh.dev/docs/pwsh and https://www.nerdfonts.com/)
-git bash works in every directory, right lick in any directory and you can have a bash with that path 
-- Tutorial of windows terminal: https://www.youtube.com/watch?v=ialuEXkoKr0 
 
 - <ins>Jupyter autocomplete</ins>install Hinterland extension (for autocomlete) in jupyter https://towardsdatascience.com/jupyter-notebook-extensions-517fa69d2231
 - <ins>PyCharm or VScode</ins>: I prefer PyCharm but here are the config for both, BECAREFUL when creating a project to use the anaconda python and not another one (that's why you need to make sure to have only the anaconda python installed)
@@ -60,11 +57,15 @@ In the main menu, select Tools | Deployment | Automatic upload. Note that automa
 - <ins>PowerToys</ins> : https://github.com/microsoft/PowerToys
 - <ins>Google Sync Drive</ins> :  download it on windows and put the files and folder that you want to be automatically saved on your drive, you won't need to everytime open google drive in your browser and manually put your files there
 - <ins>Free Cloud GPU </ins> Google Colab you can either put your git repositories inside google drive to use them in colab, or directly import git repo inside colab without google drive 
+- <ins>Online Storage</ins> : Google Drive (15gb), Mega Drive (50GB) ...ect. Use these Drives to store non personanal Data ! It's better to have an NAS or an external HDD to store your personal data.
 - <ins>Microsoft Office 2016</ins>  buy it or ...., install it, than convert the activation.txt to .bat, run it as an administrator and make sure internet is on, 
 even it it fails the first time, let it continue to run, it will find a KMS server after.
-
-- wget: https://www.programmersought.com/article/90723524682/
-- <ins>Online Storage</ins> : Google Drive (15gb), Mega Drive (50GB) ...ect. Use these Drives to store non personanal Data ! It's better to have an NAS or an external HDD to store your personal data.
+#### Costumize your windows:
+- if you have installed git-bash, it will be addded to windows terminal
+- Customize windows terminal : https://ohmyposh.dev/docs/pwsh and https://www.nerdfonts.com/)
+- windows terminal works in every directory, right lick in any directory and you can have a bash with that path 
+- Tutorial of windows terminal: https://www.youtube.com/watch?v=ialuEXkoKr0 
+- wget: add it to your temrinal: https://www.programmersought.com/article/90723524682/
 - TaskbarX [link] (https://chrisandriessen.nl/taskbarx), also hide windows taskbar (right click on the taskbar -> taskbar settings-> hide in desktop mode)
 - Fences [link] (https://store.steampowered.com/app/607380/Fences/?l=french) doesn't need steam to autostartup 
 
