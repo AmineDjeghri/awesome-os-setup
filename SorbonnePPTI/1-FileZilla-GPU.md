@@ -9,17 +9,16 @@
 - Left panels are your pc folders, right panels are the remote folders and files
 - Drag and drop, rename, CTRL + A to select all and more ! Enjoy !
 
-<img src="Azure steps/PPTI-FileZilla steps/filezilla ppti-part 1 .png" >
-<img src="Azure steps/PPTI-FileZilla steps/filezilla ppti-part 2 .png" >
+<img src="img/filezilla ppti-part 1.png" >
+<img src="img/filezilla ppti-part 2.png" >
 
 
 
 
 ## Accès Machines Salle 407 et 502:
-- Use this command for port forwarding in a terminal `ssh -L 6000:ppti-14-502-03.ufr-info-p6.jussieu.fr:22 LOGIN@ssh.ufr-info-p6.jussieu.fr
-` 
-- Change the login with yoru student number, and enter your password
+- Use this command for port forwarding in a terminal and change the login with yoru student number, and enter your password `ssh -L 6000:ppti-14-502-03.ufr-info-p6.jussieu.fr:22 LOGIN@ssh.ufr-info-p6.jussieu.fr`
+- keep the terminal open 
 - Open Filezilla and configure a new connection with: 
-username: student number, password: your password, port: 6000, host: localhost, and change also the protocole to : SFTP SSH ...Ect
+username: student number, password: your password, port: 6000, host: localhost, and change also the protocole to : `SFTP-SSH File Transfer Protocol`
 
 now you can browse the folders manually and even find the files of the /tempory folder, or use the search bar and search `/tempory`
