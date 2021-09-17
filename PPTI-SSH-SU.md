@@ -11,7 +11,9 @@ In our case it will be : `ssh -J 3801757@ssh.ufr-info-p6.jussieu.fr 3801757@ppti
 
 ### Port forwarding 
 We can jupyter notebooks and tensorboards on the remote machine, and forward the output to our local machine. 
-To do this, we just need to use the port forwading `ssh -L local_port:destination_server_ip:remote_port ssh_server_hostname`
+- To do this, we just need to use the port forwading `ssh -L local_port:destination_server_ip:remote_port ssh_server_hostname`.
+- So to use jupyternotebook in our machine will do `ssh -L 8888:localhost:8888 ssh_server_hostname` (localhost for our machine, 8888 because jupyter uses this as default but you can change it)
+- In our case an dto use it with the PPTI machines `ssh -J -L 8888:localhost:8888 3801757@ssh.ufr-info-p6.jussieu.fr 3801757@ppti-14-407-03.ufr-info-p6.jussieu.fr`
 
 In our case, it will be 
 
