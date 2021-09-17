@@ -8,7 +8,7 @@
 - check if the gpu is available in the machines : nvidia-smi
 - to change the room and machines : replace the YY and XX in ppti-14-YY-XX.ufr-info-p6.jussieu.fr , YY: 407 or 502, XX:01 to 10
 
-## Explaination
+## Explanation
 ### 1-Proxy Jump
 To connect to the PPTI machines that have GPUs (407 and 502) you need to:
 - first : connect to the PPTI gateway (ssh.ufr-info-p6.jussieu.fr)
