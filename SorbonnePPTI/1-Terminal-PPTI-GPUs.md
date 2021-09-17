@@ -6,7 +6,7 @@
 `ssh -L 8888:localhost:8888 -L 6006:localhost:6006  -J LOGIN@ssh.ufr-info-p6.jussieu.fr LOGIN@ppti-14-407-03.ufr-info-p6.jussieu.fr`
 - enter two times the password 
 - check if the gpu is available in the machines : nvidia-smi
-- to change the room and machines : LOGIN@ppti-14-YY-XX.ufr-info-p6.jussieu.fr , YY: 407 or 502, XX:01 to 10
+- to change the room and machines : replace the YY and XX in ppti-14-YY-XX.ufr-info-p6.jussieu.fr , YY: 407 or 502, XX:01 to 10
 
 ## Explaination
 ### 1-Proxy Jump
