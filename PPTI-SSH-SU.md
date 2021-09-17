@@ -9,6 +9,12 @@ To do this we can connect to the gateweway, and from inside it connect to the ma
 
 In our case it will be : `ssh -J 3801757@ssh.ufr-info-p6.jussieu.fr 3801757@ppti-14-407-03.ufr-info-p6.jussieu.fr`
 
+### Port forwarding 
+We can jupyter notebooks and tensorboards on the remote machine, and forward the output to our local machine. 
+To do this, we just need to use the port forwading `ssh -L local_port:destination_server_ip:remote_port ssh_server_hostname`
+
+In our case, it will be 
+
 ## Utiliser Jupyter notebook sur votre propre navigateur en ssh tunnel via les PCs de l'université (ppti) 
 
 #### installer gitbash
