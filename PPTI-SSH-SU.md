@@ -1,3 +1,14 @@
+## SSH vers les salles GPUs de la PPTI
+#### Intro
+To connect to the PPTI machines that have GPUs (407 and 502) you need to:
+- first : connect to the PPTI gateway (ssh.ufr-info-p6.jussieu.fr)
+- second : inside the ppti gateway, connect to the machines 
+
+To do this we can connect to the gateweway, and from inside it connect to the machines, or we can do a proxy jump to directly connect to machines
+`ssh -J user@<bastion:port> <user@remote:port>`
+
+In our case it will be : `ssh -J 3801757@ssh.ufr-info-p6.jussieu.fr 3801757@ppti-14-407-03.ufr-info-p6.jussieu.fr`
+
 ## Utiliser Jupyter notebook sur votre propre navigateur en ssh tunnel via les PCs de l'université (ppti) 
 
 #### installer gitbash
