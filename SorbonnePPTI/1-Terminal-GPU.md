@@ -23,5 +23,5 @@ In our case it will be : `ssh -J LOGIN@ssh.ufr-info-p6.jussieu.fr LOGIN@ppti-14-
 We can jupyter notebooks and tensorboards on the remote machine, and forward the output to our local machine. 
 - To do this, we just need to use the port forwading `-L` to forward the output of the app `ssh -L local_port:destination_server_ip:remote_port ssh_server_hostname`.
 - So to use jupyternotebook in our machine will do `ssh -L 8888:localhost:8888 ssh_server_hostname` (localhost for our machine, 8888 because jupyter uses this as default but you can change it)
-- In our case to use it with the PPTI machines `ssh -L 8888:localhost:8888 -J 3801757@ssh.ufr-info-p6.jussieu.fr LOGIN@ppti-14-407-03.ufr-info-p6.jussieu.fr`
+- In our case to use it with the PPTI machines `ssh -L 8888:localhost:8888 -J LOGIN@ssh.ufr-info-p6.jussieu.fr LOGIN@ppti-14-407-03.ufr-info-p6.jussieu.fr`
 - For two apps (tensorboard and Jupyter notebook) : `ssh -L 8888:localhost:8888 -L 6006:localhost:6006  -J LOGIN@ssh.ufr-info-p6.jussieu.fr LOGIN@ppti-14-407-03.ufr-info-p6.jussieu.fr`
