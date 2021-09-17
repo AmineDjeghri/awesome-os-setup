@@ -1,7 +1,8 @@
 # SSH to connect to the GPU machines of PPTI 
 
 ## TLDR; 
-- use this command if you want to connect the GPUs rooms of the PPTI and change the LOGIN with your student number
+- use this command if you want to connect the GPUs rooms of the PPTI and change the LOGIN with your student number :
+
 `ssh -L 8888:localhost:8888 -L 6006:localhost:6006  -J LOGIN@ssh.ufr-info-p6.jussieu.fr LOGIN@ppti-14-407-03.ufr-info-p6.jussieu.fr`
 - enter two times the password 
 - check if the gpu is available in the machines : nvidia-smi
