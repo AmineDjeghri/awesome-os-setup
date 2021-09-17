@@ -22,7 +22,7 @@ documentation: https://git-scm.com/book/en/v2/Git-on-the-Server-Generating-Your-
 #### Tester SSH
 - Deux salles de la ppti sont équipées de bons GPUs : la 502 et la 407. Pour se connecter, en ssh en passant par la passerelle ssh.ufr-info-p6.jussieu.fr,  puis ppti-14-502-XX (XX=01 à 16) ou ppti-14-407-XX, saisir la commande dans gitbash: 
 
-`ssh -L8888:localhost:8888 -L6006:localhost:6006 ppti-14-502-03.ppti` 
+`ssh -L8888:localhost:8888 -L6006:localhost:6006 ppti-14-407-03.ppti` 
 (j'ai mis deux ports au cas où, pour jupyter et tensorboard)  
 Une fois connecté, il vous demandera votre mot de passe de votre compte étudiant, deux fois
 
