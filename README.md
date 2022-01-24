@@ -102,7 +102,7 @@ if device.type == 'cuda':
 - PyCharm envs: You can clean out old PyCharm interpreters that are no longer associated with a project see the image [here](https://github.com/AmineDjeghri/BetterWindowsUX/blob/master/pycharm_interpreters.PNG) .
 - This gives you a listing where you can get rid of old virtualenvs that PyCharm thinks are still around 
 
-
+- Use windows terminal and make it the default terminal
 ### Windows design and UX: 
 - You can convert a website to an application , for exemple: Google Agenda  in Brave/Chrome, go to plus d'outils -> creer un racourcie , and check window mode, it will run like an app in your windows desktop
 ( I took the example of mattermost because there is no free Google Agenda app in windows )
