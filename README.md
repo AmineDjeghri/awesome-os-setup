@@ -1,17 +1,19 @@
-# BetterWindowsUX
-Some windows tips to improve your User experience when using windows
+# BetterWindows11
+
+!! Updated for windows 11 !!
+
+Some tips to improve your User experience when using windows
 - A guide to help you set up a windows environement to maximum your productivity 
 - Spend some hours setting this up (a full guide to configure many things including, linux commands in windows no need for dualboot anymore, SSH, SFTP with interface to reach a maximum level of productivity)
 
 ### 1- Windows config
 #### 1.1- Get a free windows 10 and others softwares if you are a student with Azure
- - [Free Windows 10 Education/Entreprise](https://github.com/AmineDjeghri/BetterWindowsUX/blob/master/Free-windows-key.md)
- - [Free Microsoft Office 365 Web only depends on your university](https://www.microsoft.com/en-us/education/products/office)
-#### 1.2 Save your key to you microsoft account
+#### 1.2 Save your key to you microsoft account (important)
  - Connect windows with your outlook account to save and link the key to your account 
- - Activate localization on windows
+ - Activate localization on windows (if you want to localize your device)
  - Activate bitlocker to encrypt your data (Exists only on windows pro, education and entreprise edition)
- - When placing an external monitor that runs 144hz, make sure to activate the `144Hz` in display settings 
+ - When placing an external monitor that runs 144hz, make sure to activate the `144Hz` in display settings
+ - (Skip if you are on laptop) if you have a 3200mhz RAM and it runs bellow this frequency, activate XMP profile in the BIOS
  
 ### 2- Software 
 -  <ins>Anaconda</ins> (for python and jupyter, you can always install python without anaconda, but i prefer to install python via anaconda in windows even if i use only pip with it): install it and CHECK add path to environnement variables, make sure to delete every avaible python version on your system 
@@ -20,9 +22,10 @@ Go to Control Panel > System and Security > System > Advanced system settings an
 
 Check that the PATH variable does not already contain the path to subl.exe so to avoid adding it twice.
 - <ins>Git-Bash</ins>: You can use linux commands in windows ! Download gitbash to have the same commands as in linux, you can even personalize your terminal
-( to check if linux commands work: run 'python --version' in gitbash to see if anaconda added python to the path, you can now use it like linux, 'pip install ' ect.. will work  )
-
-- <ins>Jupyter autocomplete</ins>install Hinterland extension (for autocomlete) in jupyter https://towardsdatascience.com/jupyter-notebook-extensions-517fa69d2231
+( to check if linux commands work: run 'python --version' in gitbash to see if anaconda added python to the path, you can now use it like linux, 'pip install ' ect.. will work  ) 
+- After the installation of conda, restart your pc
+- Run windows terminal(previously named powershell)(always use windows terminal instead of cmd or somethig else)
+- run `conda list` to verify if conda has been correctly installed. also run `python` to see if python has been added to the path
 - <ins>PyCharm or VScode</ins>: I prefer PyCharm but here are the config for both, BECAREFUL when creating a project to use the anaconda python and not another one (that's why you need to make sure to have only the anaconda python installed)
 - pycharm : add gitbash to pycharm. file->settings->tools->terminal 
  in shell path add C:\Users\Amine DJEGHRI\AppData\Local\Programs\Git\bin\sh.exe (sh.exe to have the console directly integrated in pycharm console)
@@ -102,7 +105,6 @@ if device.type == 'cuda':
 - PyCharm envs: You can clean out old PyCharm interpreters that are no longer associated with a project see the image [here](https://github.com/AmineDjeghri/BetterWindowsUX/blob/master/pycharm_interpreters.PNG) .
 - This gives you a listing where you can get rid of old virtualenvs that PyCharm thinks are still around 
 
-- Use windows terminal and make it the default terminal
 ### Windows design and UX: 
 - You can convert a website to an application , for exemple: Google Agenda  in Brave/Chrome, go to plus d'outils -> creer un racourcie , and check window mode, it will run like an app in your windows desktop
 ( I took the example of mattermost because there is no free Google Agenda app in windows )
