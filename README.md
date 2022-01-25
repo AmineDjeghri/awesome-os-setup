@@ -25,16 +25,12 @@ Then go to : System Properties -> Advanced System Settings -> Advanced -> Enviro
 - <ins>Git-Bash</ins>: You can use linux commands in window like SSH and Git ! Download gitbash to have these commands added to windows Terminal. Open a new Windows terminal after the installation and run this command `git status` you should see the following message `fatal: not a git repository (or any of the parent directories): .git`. that means the git command works !
 
 - <ins>PyCharm or VScode</ins>: I prefer to use PyCharm (Education version which is free) but here are the config for both, BECAREFUL when creating a project, you should use the anaconda python and not another one (that's why you need to make sure to have only the anaconda python installed)
-- pycharm : add gitbash to pycharm. file->settings->tools->terminal 
- in shell path add C:\Users\Amine DJEGHRI\AppData\Local\Programs\Git\bin\sh.exe (sh.exe to have the console directly integrated in pycharm console)
-
 
 
 #### Advanced Software
-
 - <ins>Browser</ins>: Brave
-- <ins>Browser extensions</ins> : uBlock Origin, pocket, Free Download Manager, Google translate, Google Dictionnary, Stream video downloader, colorZilla
-- <ins>Privacy extensions</ins> : if you care about your data and privacy (even if you use windows lol) you can limit websites to collect your data:  ClearURLs, Cookie Auto Delete, HTTPS Everywhere, Decentralayes
+- <ins>Browser extensions</ins> : uBlock Origin, pocket, Free Download Manager, Google translate, Google Dictionnary, colorZilla, Reddit enhacement Suite, Pocket, Enhacer for Youtube, Augmented Steam, Read Aloud.
+- <ins>Privacy extensions</ins> : if you care about your data and privacy (even if you use windows lol) you can limit websites to collect your data:  ClearURLs, Cookie Auto Delete, HTTPS Everywhere, Decentralayes, Privacy badger, Ugly Email. 
 - <ins>Agenda</ins> : Google agenda, -> create an app shortcut with brave, it will act like an app in windows
 - <ins>Antivirus</ins> : Kaspersky Cloud free
 - <ins>Mail</ins>: add your mail accounts to Windows Mail
