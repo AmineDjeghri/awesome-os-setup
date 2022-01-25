@@ -1,15 +1,7 @@
 # ML
 
 # Pytorch-------------------------------------------------------------
-# ATTENTION !---- UNCOMMENT ONE OF THE FOLLOWING TORCH INSTALLATION
-# 1- torch without gpu
-#torch 
-#torchvision
-
-# OR 
-
-# 2-torch 1.7 with nvidia gpu cuda 11.0
-# pip install torch===1.7.1+cu110 torchvision===0.8.2+cu110 torchaudio===0.7.2 -f https://download.pytorch.org/whl/torch_stable.html
+# to install pytorch, please visit : https://github.com/AmineDjeghri/BetterWindows/blob/master/README.md#3-python-pytorch-and-cuda-installation
 #-----------------------------------------------------------------------
 
 
