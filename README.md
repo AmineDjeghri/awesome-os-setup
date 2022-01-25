@@ -27,22 +27,20 @@ Then go to : System Properties -> Advanced System Settings -> Advanced -> Enviro
 - <ins>PyCharm or VScode</ins>: I prefer to use PyCharm (Education version which is free) but here are the config for both, BECAREFUL when creating a project, you should use the anaconda python and not another one (that's why you need to make sure to have only the anaconda python installed)
 - 
 ### Python, Pytorch and Cuda installation: 
-- Always use `pip` command in Windows Terminal to install python packages 
-#### Pytorch without GPU : 
 
 #### Pytorch with Nvidia GPU
 - Important : Pytorch 1.10.1 works with CUDA 11.3 and visual studio 2019
 - Download [VSCode Community 2019](https://docs.microsoft.com/en-us/visualstudio/releases/2019/release-notes).
 - Install it and check `Desktop Development with C++` and `.NET` (size will be 11GB approxiamtly) 
-- You need to install the right cuda version for a pytorch, Pytorch 1.10.1 needs CUDA 11.3.
 - Download and install [CUDA 11.3](https://developer.nvidia.com/cuda-11.3.0-download-archive?target_os=Windows&target_arch=x86_64&target_version=10&target_type=exe_local)
-- Install Pytorch https://pytorch.org/get-started/locally/ (run this command `pip3 install torch==1.10.1+cu113 torchvision==0.11.2+cu113 torchaudio===0.10.1+cu113 -f https://download.pytorch.org/whl/cu113/torch_stable.html`
+- Install [Pytorch 1.10.1](https://pytorch.org/get-started/locally/) by running this command `pip3 install torch==1.10.1+cu113 torchvision==0.11.2+cu113 torchaudio===0.10.1+cu113 -f https://download.pytorch.org/whl/cu113/torch_stable.html`
 
 #### Pytorch without gpu: 
-
-`pip install torch==1.7.1+cpu torchvision==0.8.2+cpu torchaudio===0.7.2 -f https://download.pytorch.org/whl/torch_stable.html`
+`pip install torch torchvision torchaudio`
+#### Python packages:
+- Always use `pip` command in Windows Terminal to install python packages 
 - there is a requirements.txt that contains the principal data science libraries (without pytorch as you have installed it from the previous line, just do `pip install -r https://raw.githubusercontent.com/AmineDjeghri/BetterWindowsUX/master/requirements.txt`
-- Check if you succeeded to install pytorch : create a project in PyCharm, select PREVIOUSLY configured interpreter for using the existing one (if you choose NEW environement  yu will have a clean environement with no packages installed and need to install pytoch in this environement with gitbash terminal in PyCharm Project) and copy this code in main.py and run it (You should see the name of your gpu in the console if you have one and successfully installed pytorch with cuda, if you don't have a gpu you will see 'cpu' in the console) :
+- Check if you succeeded to install pytorch, run the following python code: 
 
 ```
 import torch
@@ -128,6 +126,8 @@ if your pc keeps switching between 5ghz and 2.4ghz do the following:
  - You can change your power management options (when windows will be put on sleep, what happens when you close your laptop ..ect)
  - If you consider buying a laptop with a GPU for Deep Learning, go for an NVIDIA laptop with with a GPU that supports CUDA. You can always use the cloud solutions for GPU computing: Google Colab, 100$ Free Azure Credits...ect. Just DON'T buy a laptop with an AMD GPU for Deep Learning.
 
+## Awesome Piracy : 
+https://github.com/Igglybuff/awesome-piracy
 
 ### Pycharm remote deployment : 
 Defining a server as default:
