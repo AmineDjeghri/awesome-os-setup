@@ -15,18 +15,19 @@ Some tips to improve your User experience when using windows
  - When placing an external monitor that runs 144hz, make sure to activate the `144Hz` in display settings
  - (Skip if you are on laptop) if you have a 3200mhz RAM and it runs bellow this frequency, activate XMP profile in the BIOS
  
-### 2- Software 
--  <ins>Anaconda</ins> (for python and jupyter, you can always install python without anaconda, but i prefer to install python via anaconda in windows even if i use only pip with it): install it and CHECK add path to environnement variables, make sure to delete every avaible python version on your system 
-- <ins>Sublime Text</ins>: install it before installing git bash (to make git bash uses sublime as an editor and not vim)
-Go to Control Panel > System and Security > System > Advanced system settings and add C:\Program Files\Sublime Text 3 to the PATH environment variable.
+### 2- Dev Software 
+-  <ins>Anaconda</ins> (for python and jupyter, you can always install python without anaconda, but i prefer to install python via anaconda in windows even if i use only pip with it): install it and CHECK add path to environnement variables, make sure to delete every avaible python version on your system.
+- After the installation of conda, restart your pc.
+- Run windows terminal (previously named powershell, always use windows terminal instead of cmd or somethig else)
+- run `conda list` to verify if conda has been correctly installed. also run `python` to see if python has been added to the path 
+- <ins>Sublime Text</ins>: install it before installing git bash (a software that adds linux and git commands to windows).
+Then add C:\Program Files\Sublime Text 3 to the PATH environment variable to make it accessible from the terminal.
 
 Check that the PATH variable does not already contain the path to subl.exe so to avoid adding it twice.
 - <ins>Git-Bash</ins>: You can use linux commands in windows ! Download gitbash to have the same commands as in linux, you can even personalize your terminal
-( to check if linux commands work: run 'python --version' in gitbash to see if anaconda added python to the path, you can now use it like linux, 'pip install ' ect.. will work  ) 
-- After the installation of conda, restart your pc
-- Run windows terminal(previously named powershell)(always use windows terminal instead of cmd or somethig else)
-- run `conda list` to verify if conda has been correctly installed. also run `python` to see if python has been added to the path
-- <ins>PyCharm or VScode</ins>: I prefer PyCharm but here are the config for both, BECAREFUL when creating a project to use the anaconda python and not another one (that's why you need to make sure to have only the anaconda python installed)
+
+
+- <ins>PyCharm or VScode</ins>: I prefer PyCharm (Education is professional and free) but here are the config for both, BECAREFUL when creating a project to use the anaconda python and not another one (that's why you need to make sure to have only the anaconda python installed)
 - pycharm : add gitbash to pycharm. file->settings->tools->terminal 
  in shell path add C:\Users\Amine DJEGHRI\AppData\Local\Programs\Git\bin\sh.exe (sh.exe to have the console directly integrated in pycharm console)
 
