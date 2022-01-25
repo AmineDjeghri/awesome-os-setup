@@ -21,30 +21,14 @@ Some tips to improve your User experience when using windows
 - Run windows terminal (previously named powershell, always use windows terminal instead of cmd or somethig else)
 - run `conda list` to verify if conda has been correctly installed. also run `python` to see if python has been added to the path 
 - <ins>Sublime Text</ins>: install it before installing git bash (a software that adds linux and git commands to windows).
-Then add C:\Program Files\Sublime Text 3 to the PATH environment variable to make it accessible from the terminal.
+Then go to : System Properties -> Advanced System Settings -> Advanced -> Environment Variables and add `C:\Program Files\Sublime Text` to the PATH environment variable to make it accessible from the terminal. Close the windows terminal and open a new one and run this command `subl`, it should open Sublime Text.
+- <ins>Git-Bash</ins>: You can use linux commands in window like SSH and Git ! Download gitbash to have these commands added to windows Terminal. Open a new Windows terminal after the installation and run this command `git status` you should see the following message `fatal: not a git repository (or any of the parent directories): .git`. that means the git command works !
 
-Check that the PATH variable does not already contain the path to subl.exe so to avoid adding it twice.
-- <ins>Git-Bash</ins>: You can use linux commands in windows ! Download gitbash to have the same commands as in linux, you can even personalize your terminal
-
-
-- <ins>PyCharm or VScode</ins>: I prefer PyCharm (Education is professional and free) but here are the config for both, BECAREFUL when creating a project to use the anaconda python and not another one (that's why you need to make sure to have only the anaconda python installed)
+- <ins>PyCharm or VScode</ins>: I prefer to use PyCharm (Education version which is free) but here are the config for both, BECAREFUL when creating a project, you should use the anaconda python and not another one (that's why you need to make sure to have only the anaconda python installed)
 - pycharm : add gitbash to pycharm. file->settings->tools->terminal 
  in shell path add C:\Users\Amine DJEGHRI\AppData\Local\Programs\Git\bin\sh.exe (sh.exe to have the console directly integrated in pycharm console)
 
-Defining a server as default:
-A deployment server is considered default if its settings apply by default during automatic upload of changed files. To define a deployment server as the default one, follow these steps:
 
-Choose the desired server on the Deployment page. You can open this page it two possible ways: either Settings/Preferences | Build, Execution, Deployment | Deployment, or Tools | Deployment | You will see your servers, right click on the one you want to set it as default, and click 'use as default' 
-
-Enabling automatic upload:
-As soon as the default server is set, you can make upload to this server automatic. This can be done in the following two ways:
-
-Open the deployment Options (Settings/Preferences | Deployment | Options or Tools | Deployment | Options from the main menu), and in the Upload changed files automatically to the default server field choose Always, or On explicit save action. The difference between these two choices is explained in the field description.
-
-In the main menu, select Tools | Deployment | Automatic upload. Note that automatic upload in this case is performed in the Always mode.
-
-- VSCode: enable sync profile, and add gitbash as the default terminal of vscode to replace the powershell 
-- Becareful when installing vscode, it can install another python interpreter for you and you will have 2 python on your pc, make sure to delete the vscode one.
 
 #### Advanced Software
 
@@ -140,3 +124,16 @@ if your pc keeps switching between 5ghz and 2.4ghz do the following:
  - <ins>Windows partition</ins>: use the windows partition integrated software to create , delete or format partitions
  - You can change your power management options (when windows will be put on sleep, what happens when you close your laptop ..ect)
  - If you consider buying a laptop with a GPU for Deep Learning, go for an NVIDIA laptop with with a GPU that supports CUDA. You can always use the cloud solutions for GPU computing: Google Colab, 100$ Free Azure Credits...ect. Just DON'T buy a laptop with an AMD GPU for Deep Learning.
+
+
+### Pycharm remote deployment : 
+Defining a server as default:
+A deployment server is considered default if its settings apply by default during automatic upload of changed files. To define a deployment server as the default one, follow these steps:
+
+Choose the desired server on the Deployment page. You can open this page it two possible ways: either Settings/Preferences | Build, Execution, Deployment | Deployment, or Tools | Deployment | You will see your servers, right click on the one you want to set it as default, and click 'use as default' 
+
+Enabling automatic upload:
+As soon as the default server is set, you can make upload to this server automatic. This can be done in the following two ways:
+
+Open the deployment Options (Settings/Preferences | Deployment | Options or Tools | Deployment | Options from the main menu), and in the Upload changed files automatically to the default server field choose Always, or On explicit save action. The difference between these two choices is explained in the field description.
+In the main menu, select Tools | Deployment | Automatic upload. Note that automatic upload in this case is performed in the Always mode.
