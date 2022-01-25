@@ -24,19 +24,20 @@ Some tips to improve your User experience when using windows
 Then go to : System Properties -> Advanced System Settings -> Advanced -> Environment Variables and add `C:\Program Files\Sublime Text` to the PATH environment variable to make it accessible from the terminal. Close the windows terminal and open a new one and run this command `subl`, it should open Sublime Text.
 - <ins>Git-Bash</ins>: You can use linux commands in window like SSH and Git ! Download gitbash to have these commands added to windows Terminal. Open a new Windows terminal after the installation and run this command `git status` you should see the following message `fatal: not a git repository (or any of the parent directories): .git`. that means the git command works !
 
-- <ins>PyCharm or VScode</ins>: I prefer to use PyCharm (Education version which is free) but here are the config for both, BECAREFUL when creating a project, you should use the anaconda python and not another one (that's why you need to make sure to have only the anaconda python installed)
+- <ins>PyCharm or VScode</ins>: I prefer to use PyCharm (Education version which is free) but here are the config for both, BECAREFUL when creating a project, you should use the anaconda python and not another one like virtualenv (that's why you need to make sure to have only the anaconda python installed)
 - 
-### Python, Pytorch and Cuda installation: 
+### 3-Python, Pytorch and Cuda installation: 
 
 #### Pytorch with Nvidia GPU
 - Important : Pytorch 1.10.1 works with CUDA 11.3 and visual studio 2019
 - Download [VSCode Community 2019](https://docs.microsoft.com/en-us/visualstudio/releases/2019/release-notes).
 - Install it and check `Desktop Development with C++` and `.NET` (size will be 11GB approxiamtly) 
 - Download and install [CUDA 11.3](https://developer.nvidia.com/cuda-11.3.0-download-archive?target_os=Windows&target_arch=x86_64&target_version=10&target_type=exe_local)
-- Install [Pytorch 1.10.1](https://pytorch.org/get-started/locally/) by running this command `pip3 install torch==1.10.1+cu113 torchvision==0.11.2+cu113 torchaudio===0.10.1+cu113 -f https://download.pytorch.org/whl/cu113/torch_stable.html`
+- Install [Pytorch 1.10.1](https://pytorch.org/get-started/locally/) by running this command `pip install torch==1.10.1+cu113 torchvision==0.11.2+cu113 torchaudio===0.10.1+cu113 -f https://download.pytorch.org/whl/cu113/torch_stable.html`
 
 #### Pytorch without gpu: 
 `pip install torch torchvision torchaudio`
+
 #### Python packages:
 - Always use `pip` command in Windows Terminal to install python packages 
 - there is a requirements.txt that contains the principal data science libraries (without pytorch as you have installed it from the previous line, just do `pip install -r https://raw.githubusercontent.com/AmineDjeghri/BetterWindowsUX/master/requirements.txt`
@@ -57,7 +58,7 @@ if device.type == 'cuda':
     print('Cached:   ', round(torch.cuda.memory_reserved(0)/1024**3,1), 'GB')
 ```
 
-#### 3- Advanced Software
+### 4-Advanced Software
 - <ins>Browser</ins>: Brave
 - <ins>Browser extensions</ins> : uBlock Origin, pocket, Free Download Manager, Google translate, Google Dictionnary, colorZilla, Reddit enhacement Suite, Pocket, Enhacer for Youtube, Augmented Steam, Read Aloud.
 - <ins>Privacy extensions</ins> : if you care about your data and privacy (even if you use windows lol) you can limit websites to collect your data:  ClearURLs, Cookie Auto Delete, HTTPS Everywhere, Decentralayes, Privacy badger, Ugly Email. 
