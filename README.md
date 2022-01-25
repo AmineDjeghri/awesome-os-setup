@@ -63,10 +63,9 @@ if device.type == 'cuda':
 - <ins>Browser</ins>: Brave
 - <ins>Browser extensions</ins> : uBlock Origin, pocket, Free Download Manager, Google translate, Google Dictionnary, colorZilla, Reddit enhacement Suite, Pocket, Enhacer for Youtube, Augmented Steam, Read Aloud.
 - <ins>Privacy extensions</ins> : if you care about your data and privacy (even if you use windows lol) you can limit websites to collect your data:  ClearURLs, Cookie Auto Delete, HTTPS Everywhere, Decentralayes, Privacy badger, Ugly Email. 
-- <ins>Agenda & Mail</ins> : Google agenda, Gmail, -> create an app shortcut with brave, it will act like an app in windows
+- <ins>Agenda & Mail</ins> : Google agenda, Gmail, -> create an app shortcut with brave, it will act like an app in windows, and activate the notifications.
 - <ins>Antivirus</ins> : Kaspersky Cloud free
-- <ins>Mail</ins>: add your mail accounts to Windows Mail
-- <ins>Others</ins>: CCleaner, Speccy,
+- <ins>Others</ins>: CCleaner, HWInfo
 - <ins>Adobe</ins> : Photoshop, illustrator, premiere pro, XD
 - <ins>VPN</ins> : ProtonVPN or NordVPN
 - <ins>SFTP</ins> : Filezilla (work with private key: add it in edit/connection/sftp or use pageant)
