@@ -31,15 +31,14 @@ Then go to : System Properties -> Advanced System Settings -> Advanced -> Enviro
 #### Pytorch without GPU : 
 
 #### Pytorch with Nvidia GPU
-- Download [VSCode Community](https://visualstudio.microsoft.com/), the purple one, not the blue one named Visual studio code. 
+- Important : Pytorch 1.10.1 works with CUDA 11.3 and visual studio 2019
+- Download [VSCode Community 2019](https://docs.microsoft.com/en-us/visualstudio/releases/2019/release-notes).
 - Install it and check `Desktop Development with C++` and `.NET` (size will be 11GB approxiamtly) 
 - You need to install the right cuda version for a pytorch, Pytorch 1.10.1 needs CUDA 11.3.
-- Download [CUDA 11.3](https://developer.nvidia.com/cuda-11.3.0-download-archive?target_os=Windows&target_arch=x86_64&target_version=10&target_type=exe_local)
+- Download and install [CUDA 11.3](https://developer.nvidia.com/cuda-11.3.0-download-archive?target_os=Windows&target_arch=x86_64&target_version=10&target_type=exe_local)
 - Install Pytorch https://pytorch.org/get-started/locally/ (run this command `pip3 install torch==1.10.1+cu113 torchvision==0.11.2+cu113 torchaudio===0.10.1+cu113 -f https://download.pytorch.org/whl/cu113/torch_stable.html`
 
-
-`pip3 install torch==1.10.1+cu113 torchvision==0.11.2+cu113 torchaudio===0.10.1+cu113 -f https://download.pytorch.org/whl/cu113/torch_stable.html`
-- pytorch without gpu: 
+#### Pytorch without gpu: 
 
 `pip install torch==1.7.1+cpu torchvision==0.8.2+cpu torchaudio===0.7.2 -f https://download.pytorch.org/whl/torch_stable.html`
 - there is a requirements.txt that contains the principal data science libraries (without pytorch as you have installed it from the previous line, just do `pip install -r https://raw.githubusercontent.com/AmineDjeghri/BetterWindowsUX/master/requirements.txt`
