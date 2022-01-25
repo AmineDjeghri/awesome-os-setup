@@ -76,7 +76,8 @@ if device.type == 'cuda':
 - <ins>Microsoft Office 2016</ins>  buy it or ...., install it, than convert the activation.txt to .bat, run it as an administrator and make sure internet is on, 
 even it it fails the first time, let it continue to run, it will find a KMS server after.
 - <ins>Netflix, Prime</ins>: windows store and browser (browser is better in terms of stability and vpn use, windwos store apps can handle 7.1 and 4k streaming). To add them in taskbar or desktop  (Press Windows key + R then enter shell:appsfolder then drag and drop)
-
+- <ins>Torrent client</ins>: qBitTorrent
+- 
 #### Costumize your windows:
 - if you have installed git-bash, it will be addded to windows terminal
 - Customize windows terminal : https://ohmyposh.dev/docs/pwsh and https://www.nerdfonts.com/)
