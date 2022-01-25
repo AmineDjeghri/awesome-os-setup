@@ -38,9 +38,6 @@ Then go to : System Properties -> Advanced System Settings -> Advanced -> Enviro
 #### Pytorch without gpu: 
 `pip install torch torchvision torchaudio`
 
-#### Python packages:
-- Always use `pip` command in Windows Terminal to install python packages 
-- there is a requirements.txt that contains the principal data science libraries (without pytorch as you have installed it from the previous line, just do `pip install -r https://raw.githubusercontent.com/AmineDjeghri/BetterWindowsUX/master/requirements.txt`
 - Check if you succeeded to install pytorch, run the following python code: 
 
 ```
@@ -57,6 +54,10 @@ if device.type == 'cuda':
     print('Allocated:', round(torch.cuda.memory_allocated(0)/1024**3,1), 'GB')
     print('Cached:   ', round(torch.cuda.memory_reserved(0)/1024**3,1), 'GB')
 ```
+
+#### Python packages:
+- Always use `pip` command in Windows Terminal to install python packages 
+- there is a requirements.txt that contains the principal data science libraries (without pytorch as you have installed it from the previous line, just do `pip install -r https://raw.githubusercontent.com/AmineDjeghri/BetterWindowsUX/master/requirements.txt`
 
 ### 4-Advanced Software
 - <ins>Browser</ins>: Brave
