@@ -25,44 +25,20 @@ Then go to : System Properties -> Advanced System Settings -> Advanced -> Enviro
 - <ins>Git-Bash</ins>: You can use linux commands in window like SSH and Git ! Download gitbash to have these commands added to windows Terminal. Open a new Windows terminal after the installation and run this command `git status` you should see the following message `fatal: not a git repository (or any of the parent directories): .git`. that means the git command works !
 
 - <ins>PyCharm or VScode</ins>: I prefer to use PyCharm (Education version which is free) but here are the config for both, BECAREFUL when creating a project, you should use the anaconda python and not another one (that's why you need to make sure to have only the anaconda python installed)
+- 
+### Python, Pytorch and Cuda installation: 
+- Always use `pip` command in Windows Terminal to install python packages 
+#### Pytorch without GPU : 
+
+#### Pytorch with Nvidia GPU
+- Download [VSCode Community](https://visualstudio.microsoft.com/), the purple one, not the blue one named Visual studio code. 
+- Install it and check `Desktop Development with C++` and `.NET` (size will be 11GB approxiamtly) 
+- You need to install the right cuda version for a pytorch, Pytorch 1.10.1 needs CUDA 11.3.
+- Download [CUDA 11.3](https://developer.nvidia.com/cuda-11.3.0-download-archive?target_os=Windows&target_arch=x86_64&target_version=10&target_type=exe_local)
+- Install Pytorch https://pytorch.org/get-started/locally/ (run this command `pip3 install torch==1.10.1+cu113 torchvision==0.11.2+cu113 torchaudio===0.10.1+cu113 -f https://download.pytorch.org/whl/cu113/torch_stable.html`
 
 
-#### Advanced Software
-- <ins>Browser</ins>: Brave
-- <ins>Browser extensions</ins> : uBlock Origin, pocket, Free Download Manager, Google translate, Google Dictionnary, colorZilla, Reddit enhacement Suite, Pocket, Enhacer for Youtube, Augmented Steam, Read Aloud.
-- <ins>Privacy extensions</ins> : if you care about your data and privacy (even if you use windows lol) you can limit websites to collect your data:  ClearURLs, Cookie Auto Delete, HTTPS Everywhere, Decentralayes, Privacy badger, Ugly Email. 
-- <ins>Agenda</ins> : Google agenda, -> create an app shortcut with brave, it will act like an app in windows
-- <ins>Antivirus</ins> : Kaspersky Cloud free
-- <ins>Mail</ins>: add your mail accounts to Windows Mail
-- <ins>Others</ins>: CCleaner, Speccy,
-- <ins>Adobe</ins> : Photoshop, illustrator, premiere pro, XD
-- <ins>VPN</ins> : ProtonVPN or NordVPN
-- <ins>SFTP</ins> : Filezilla (work with private key: add it in edit/connection/sftp or use pageant)
-- <ins>PowerToys</ins> : https://github.com/microsoft/PowerToys
-- <ins>Google Sync Drive</ins> :  download it on windows and put the files and folder that you want to be automatically saved on your drive, you won't need to everytime open google drive in your browser and manually put your files there
-- <ins>Free Cloud GPU </ins> Google Colab you can either put your git repositories inside google drive to use them in colab, or directly import git repo inside colab without google drive 
-- <ins>Online Storage</ins> : Google Drive (15gb), Mega Drive (50GB) ...ect. Use these Drives to store non personanal Data ! It's better to have an NAS or an external HDD to store your personal data.
-- <ins>Microsoft Office 2016</ins>  buy it or ...., install it, than convert the activation.txt to .bat, run it as an administrator and make sure internet is on, 
-even it it fails the first time, let it continue to run, it will find a KMS server after.
-#### Costumize your windows:
-- if you have installed git-bash, it will be addded to windows terminal
-- Customize windows terminal : https://ohmyposh.dev/docs/pwsh and https://www.nerdfonts.com/)
-- windows terminal works in every directory, right lick in any directory and you can have a bash with that path 
-- Tutorial of windows terminal: https://www.youtube.com/watch?v=ialuEXkoKr0 
-- wget: add it to your temrinal: https://www.programmersought.com/article/90723524682/
-- TaskbarX [link] (https://chrisandriessen.nl/taskbarx), also hide windows taskbar (right click on the taskbar -> taskbar settings-> hide in desktop mode)
-- Fences [link] (https://store.steampowered.com/app/607380/Fences/?l=french) doesn't need steam to autostartup 
-
-### SSH (needs to be updated and fileZilla)
- - https://github.com/AmineDjeghri/BetterWindowsUX/blob/master/SSH-PPTI-SU.md
-### 3- Pytorch 
-- use gitbash to install packages with pip install
-- pytorch windows 10 with nvidia GPU that supports cuda:
-install the right cuda for pytorch, example cuda 11: 
-https://developer.nvidia.com/cuda-11.0-update1-download-archive?target_os=Windows&target_arch=x86_64&target_version=10&target_type=exelocal
-pytorch install with gitbash :
-
-`pip install torch===1.7.1+cu110 torchvision===0.8.2+cu110 torchaudio===0.7.2 -f https://download.pytorch.org/whl/torch_stable.html`
+`pip3 install torch==1.10.1+cu113 torchvision==0.11.2+cu113 torchaudio===0.10.1+cu113 -f https://download.pytorch.org/whl/cu113/torch_stable.html`
 - pytorch without gpu: 
 
 `pip install torch==1.7.1+cpu torchvision==0.8.2+cpu torchaudio===0.7.2 -f https://download.pytorch.org/whl/torch_stable.html`
@@ -83,6 +59,38 @@ if device.type == 'cuda':
     print('Allocated:', round(torch.cuda.memory_allocated(0)/1024**3,1), 'GB')
     print('Cached:   ', round(torch.cuda.memory_reserved(0)/1024**3,1), 'GB')
 ```
+
+#### 3- Advanced Software
+- <ins>Browser</ins>: Brave
+- <ins>Browser extensions</ins> : uBlock Origin, pocket, Free Download Manager, Google translate, Google Dictionnary, colorZilla, Reddit enhacement Suite, Pocket, Enhacer for Youtube, Augmented Steam, Read Aloud.
+- <ins>Privacy extensions</ins> : if you care about your data and privacy (even if you use windows lol) you can limit websites to collect your data:  ClearURLs, Cookie Auto Delete, HTTPS Everywhere, Decentralayes, Privacy badger, Ugly Email. 
+- <ins>Agenda & Mail</ins> : Google agenda, Gmail, -> create an app shortcut with brave, it will act like an app in windows
+- <ins>Antivirus</ins> : Kaspersky Cloud free
+- <ins>Mail</ins>: add your mail accounts to Windows Mail
+- <ins>Others</ins>: CCleaner, Speccy,
+- <ins>Adobe</ins> : Photoshop, illustrator, premiere pro, XD
+- <ins>VPN</ins> : ProtonVPN or NordVPN
+- <ins>SFTP</ins> : Filezilla (work with private key: add it in edit/connection/sftp or use pageant)
+- <ins>PowerToys</ins> : https://github.com/microsoft/PowerToys
+- <ins>Google Sync Drive</ins> :  download it on windows and put the files and folder that you want to be automatically saved on your drive, you won't need to everytime open google drive in your browser and manually put your files there
+- <ins>Free Cloud GPU </ins> Google Colab you can either put your git repositories inside google drive to use them in colab, or directly import git repo inside colab without google drive 
+- <ins>Online Storage</ins> : Google Drive (15gb), Mega Drive (50GB) ...ect. Use these Drives to store non personanal Data ! It's better to have an NAS or an external HDD to store your personal data.
+- <ins>Microsoft Office 2016</ins>  buy it or ...., install it, than convert the activation.txt to .bat, run it as an administrator and make sure internet is on, 
+even it it fails the first time, let it continue to run, it will find a KMS server after.
+
+
+#### Costumize your windows:
+- if you have installed git-bash, it will be addded to windows terminal
+- Customize windows terminal : https://ohmyposh.dev/docs/pwsh and https://www.nerdfonts.com/)
+- windows terminal works in every directory, right lick in any directory and you can have a bash with that path 
+- Tutorial of windows terminal: https://www.youtube.com/watch?v=ialuEXkoKr0 
+- wget: add it to your temrinal: https://www.programmersought.com/article/90723524682/
+- TaskbarX [link] (https://chrisandriessen.nl/taskbarx), also hide windows taskbar (right click on the taskbar -> taskbar settings-> hide in desktop mode)
+- Fences [link] (https://store.steampowered.com/app/607380/Fences/?l=french) doesn't need steam to autostartup 
+
+### SSH (needs to be updated and fileZilla)
+ - https://github.com/AmineDjeghri/BetterWindowsUX/blob/master/SSH-PPTI-SU.md
+
 - PyCharm envs: You can clean out old PyCharm interpreters that are no longer associated with a project see the image [here](https://github.com/AmineDjeghri/BetterWindowsUX/blob/master/pycharm_interpreters.PNG) .
 - This gives you a listing where you can get rid of old virtualenvs that PyCharm thinks are still around 
 
