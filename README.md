@@ -79,6 +79,8 @@ even it it fails the first time, let it continue to run, it will find a KMS serv
 - <ins>Netflix, Prime</ins>: windows store and browser (browser is better in terms of stability and vpn use, windwos store apps can handle 7.1 and 4k streaming). To add them in taskbar or desktop  (Press Windows key + R then enter shell:appsfolder then drag and drop)
 
 #### Costumize your windows:
+- O&O ShutUp 10 : privacy control winwdows
+- Bing wallpaper
 - Pin some folders and drivers, Recycle Bin in the file explorer. Fast browsing: right click on the file explorer in the taskbar to show the shortcut to the pinned folders.
 - Desktop icons: Personalization->themes->desktop icon settings
 - WinAero Tweaker : customize the appearance and behavior of the operating system in a flexible way (context menu)
