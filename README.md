@@ -68,6 +68,7 @@ if device.type == 'cuda':
 - <ins>Others</ins>: CCleaner, HWInfo
 - <ins>Adobe</ins> : Photoshop, illustrator, premiere pro, XD
 - <ins>VPN</ins> : ProtonVPN or NordVPN
+- <ins>Torrent client</ins>: qBitTorrent
 - <ins>SFTP</ins> : Filezilla (work with private key: add it in edit/connection/sftp or use pageant)
 - <ins>PowerToys</ins> : https://github.com/microsoft/PowerToys
 - <ins>Google Sync Drive</ins> :  download it on windows and put the files and folder that you want to be automatically saved on your drive, you won't need to everytime open google drive in your browser and manually put your files there
@@ -76,9 +77,11 @@ if device.type == 'cuda':
 - <ins>Microsoft Office 2016</ins>  buy it or ...., install it, than convert the activation.txt to .bat, run it as an administrator and make sure internet is on, 
 even it it fails the first time, let it continue to run, it will find a KMS server after.
 - <ins>Netflix, Prime</ins>: windows store and browser (browser is better in terms of stability and vpn use, windwos store apps can handle 7.1 and 4k streaming). To add them in taskbar or desktop  (Press Windows key + R then enter shell:appsfolder then drag and drop)
-- <ins>Torrent client</ins>: qBitTorrent
-- 
+
 #### Costumize your windows:
+- Pin some folders and drivers, Recycle Bin in the file explorer. Fast browsing: right click on the file explorer in the taskbar to show the shortcut to the pinned folders.
+- Desktop icons: Personalization->themes->desktop icon settings
+- WinAero Tweaker : customize the appearance and behavior of the operating system in a flexible way (context menu)
 - if you have installed git-bash, it will be addded to windows terminal
 - Customize windows terminal : https://ohmyposh.dev/docs/pwsh and https://www.nerdfonts.com/)
 - windows terminal works in every directory, right lick in any directory and you can have a bash with that path 
