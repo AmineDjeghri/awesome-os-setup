@@ -82,12 +82,12 @@ even it it fails the first time, let it continue to run, it will find a KMS serv
 - image
 - Install powershell 7 from microsoft store (open windwordzs terminal, go to settings, startup and set it to powershell 7)
 - You should have installed git from above steps (if not, https://git-scm.com/download/win)
-- In your terminal run `winget install JanDeDobbeleer.OhMyPosh`
-- Run now `oh-my-posh --print-shell` . You should see a print saying 'pwsh'.
+- In your terminal run `Install-Module oh-my-posh -Scope CurrentUser`
+- Run now `Import-Module oh-my-posh` 
 - To try a theme run `cd ~\AppData\Local\Programs\oh-my-posh\themes\` 
-- then `oh-my-posh --init --shell pwsh --config aliens.omp.json | Invoke-Expression`
+- then `Set-PoshPrompt -Theme paradox`
 - You should see an example of a theme
-- run `Get-PoshThemes` and enter `~\AppData\Local\Programs\oh-my-posh\themes\`
+- run `Get-PoshThemes`, you will see some examples 
 
 - To fix the icons and caracters Install Caskaydia Cove Nerd Font font from: https://www.nerdfonts.com/font-downloads
 - Go to windows temrinal settings -> (left panel all down) Open json file then add this text :
@@ -98,7 +98,10 @@ even it it fails the first time, let it continue to run, it will find a KMS serv
             "fontSize": 12
         },
 }``
-- To make a theme definitive run `notepad $PROFILE` and add you custom theme like `C:\Users\Amine Djeghri\AppData\Local\Programs\oh-my-posh\themes`
+- To make a theme definitive run `notepad $PROFILE` and add you custom theme like 
+`Import-Module oh-my-posh
+Set-PoshPrompt -Theme microverse-power
+`
 
 #### Costumize your windows:
 - O&O ShutUp 10 : privacy control winwdows
