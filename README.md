@@ -77,6 +77,26 @@ if device.type == 'cuda':
 - <ins>Microsoft Office 2016</ins>  buy it or ...., install it, than convert the activation.txt to .bat, run it as an administrator and make sure internet is on, 
 even it it fails the first time, let it continue to run, it will find a KMS server after.
 - <ins>Netflix, Prime</ins>: windows store and browser (browser is better in terms of stability and vpn use, windwos store apps can handle 7.1 and 4k streaming). To add them in taskbar or desktop  (Press Windows key + R then enter shell:appsfolder then drag and drop)
+
+#### Windows Terminal 
+- image
+- You should have installed git from above steps (if not, https://git-scm.com/download/win)
+- In your terminal run `winget install JanDeDobbeleer.OhMyPosh`
+- Run now `oh-my-posh --print-shell` . You should see a print saying 'pwsh'.
+- To try a theme run `cd ~\AppData\Local\Programs\oh-my-posh\themes\` 
+- then `oh-my-posh --init --shell pwsh --config aliens.omp.json | Invoke-Expression`
+- You should see an example of a theme
+- To fix the icons and caracters Install Caskaydia Cove Nerd Font font from: https://www.nerdfonts.com/font-downloads
+- Go to windows temrinal settings -> (left panel all down) Open json file then add this text :
+``"profiles": {
+        "defaults": {
+            // Put settings here that you want to apply to all profiles.
+            "fontFace": "CaskaydiaCove NF",
+            "fontSize": 12
+        },
+}``
+- To make a theme definitive run `notepad $PROFILE` and add you custom theme like ``
+
 #### Costumize your windows:
 - O&O ShutUp 10 : privacy control winwdows
 - DS4Windows : https://github.com/Ryochan7/DS4Windows/releases
