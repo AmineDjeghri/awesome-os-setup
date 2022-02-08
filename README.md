@@ -102,7 +102,7 @@ even it it fails the first time, let it continue to run, it will find a KMS serv
 `Import-Module oh-my-posh
 Set-PoshPrompt -Theme microverse-power
 `
-
+- to remove the start message , https://stackoverflow.com/a/63695674
 #### Costumize your windows:
 - O&O ShutUp 10 : privacy control winwdows
 - DS4Windows : https://github.com/Ryochan7/DS4Windows/releases
