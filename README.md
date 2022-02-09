@@ -97,9 +97,9 @@ if device.type == 'cuda':
 # 5- UX Custommization
 #### Windows Terminal 
 ![windows terminal](https://github.com/AmineDjeghri/BetterWindows/blob/master/windows-terminal.png)
-- Install powershell 7 from microsoft store (open windows terminal, go to settings, startup and set it to powershell 7)
-- You should have installed git from above steps (if not, https://git-scm.com/download/win).
-- In your terminal run `Install-Module oh-my-posh -Scope CurrentUser`
+- (Optional) Install powershell 7 from microsoft store (open windows terminal, go to settings, startup and set it to powershell 7)
+- You should have installed git-bash from above steps (if not, https://git-scm.com/download/win).
+- In your windows terminal run `Install-Module oh-my-posh -Scope CurrentUser`
 - Run now `Import-Module oh-my-posh` 
 - To try a theme run `cd ~\AppData\Local\Programs\oh-my-posh\themes\` 
 - then `Set-PoshPrompt -Theme paradox`
