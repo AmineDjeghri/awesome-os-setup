@@ -55,6 +55,10 @@ Then go to : System Properties -> Advanced System Settings -> Advanced -> Enviro
 - Jupyter Notebook : Use the one provided in Pycharm. It provides better autocomplete.
 - <ins>Free Cloud GPU </ins> Google Colab you can either put your git repositories inside google drive to use them in colab, or directly import git repo inside colab without google drive 
 - <ins>SFTP</ins> : Filezilla (work with private key: add it in edit/connection/sftp or use pageant)
+- Git emojis: https://gitmoji.dev/ 
+- Latex Handwriting recognition: https://detexify.kirelabs.org/classify.html
+- Turn math equations and snipping to latex code: https://mathpix.com/
+- Overleaf: https://www.overleaf.com/
 
 
 ## 4-Python, Pytorch and Cuda installation: 
