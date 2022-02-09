@@ -37,7 +37,6 @@ Some tips to improve your User experience when using windows
 - <ins>Adobe</ins> : Photoshop, illustrator, premiere pro, XD
 - <ins>VPN</ins> : ProtonVPN or NordVPN
 - <ins>Torrent client</ins>: qBitTorrent
-- <ins>SFTP</ins> : Filezilla (work with private key: add it in edit/connection/sftp or use pageant)
 - <ins>Google Drive</ins> :  download it on windows and put the files and folder that you want to be automatically saved on your drive, you won't need to everytime open google drive in your browser and manually put your files there
 - <ins>Online Storage</ins> : Google Drive (15gb), Mega Drive (50GB) ...ect. Use these Drives to store non personanal Data ! It's better to have an NAS or an external HDD to store your personal data.
 - <ins>Microsoft Office 2016</ins> Buy it or ... Better than the 365 version.
@@ -53,7 +52,9 @@ Then go to : System Properties -> Advanced System Settings -> Advanced -> Enviro
 - <ins>Git-Bash</ins>: You can use linux commands in window like SSH and Git ! Download gitbash to have these commands added to windows Terminal. Open a new Windows terminal after the installation and run this command `git status` you should see the following message `fatal: not a git repository (or any of the parent directories): .git`. that means the git command works !
 - <ins>PyCharm or VScode</ins>: I prefer to use PyCharm (Education version which is free) but here are the config for both, BECAREFUL when creating a project, you should use the anaconda python and not another one like virtualenv (that's why you need to make sure to have only the anaconda python installed)
 - Sync pycharm settings : https://www.jetbrains.com/help/pycharm/sharing-your-ide-settings.html#IDE_settings_sync
+- Jupyter Notebook : Use the one provided in Pycharm. It provides better autocomplete.
 - <ins>Free Cloud GPU </ins> Google Colab you can either put your git repositories inside google drive to use them in colab, or directly import git repo inside colab without google drive 
+- <ins>SFTP</ins> : Filezilla (work with private key: add it in edit/connection/sftp or use pageant)
 
 
 ## 4-Python, Pytorch and Cuda installation: 
