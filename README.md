@@ -41,6 +41,7 @@ Some tips to improve your User experience when using windows
 - <ins>Online Storage</ins> : Google Drive (15gb), Mega Drive (50GB) ...ect. Use these Drives to store non personanal Data ! It's better to have an NAS or an external HDD to store your personal data.
 - <ins>Microsoft Office 2016</ins> Buy it or ... Better than the 365 version.
 - <ins>Netflix, Prime</ins>: windows store and browser (browser is better in terms of stability and vpn use, windows store apps can handle 7.1 and 4k streaming). To add windwos apps downloaded from windows store in the taskbar or the desktop :Press Windows key + R then enter shell:appsfolder then drag and drop .
+- <ins>Windows Terminal </ins> windows terminal works in every directory, right lick in any directory and you can have a bash with that path 
 
 ## 3- Dev Softwares
 -  <ins>Anaconda</ins> (for python and jupyter, you can always install python without anaconda, but i prefer to install python via anaconda in windows even if i use only pip with it): install it and CHECK add path to environnement variables, make sure to delete every avaible python version on your system.
@@ -59,7 +60,7 @@ Then go to : System Properties -> Advanced System Settings -> Advanced -> Enviro
 - Latex Handwriting recognition: https://detexify.kirelabs.org/classify.html
 - Turn math equations and snipping to latex code: https://mathpix.com/
 - Overleaf: https://www.overleaf.com/
-
+- wget: add it to your temrinal: https://www.programmersought.com/article/90723524682/
 
 ## 4-Python, Pytorch and Cuda installation: 
 #### 4.1.1 Pytorch with Nvidia GPU
@@ -96,8 +97,8 @@ if device.type == 'cuda':
 # 5- UX Custommization
 #### Windows Terminal 
 ![windows terminal](https://github.com/AmineDjeghri/BetterWindows/blob/master/windows-terminal.png)
-- Install powershell 7 from microsoft store (open windwordzs terminal, go to settings, startup and set it to powershell 7)
-- You should have installed git from above steps (if not, https://git-scm.com/download/win)
+- Install powershell 7 from microsoft store (open windows terminal, go to settings, startup and set it to powershell 7)
+- You should have installed git from above steps (if not, https://git-scm.com/download/win).
 - In your terminal run `Install-Module oh-my-posh -Scope CurrentUser`
 - Run now `Import-Module oh-my-posh` 
 - To try a theme run `cd ~\AppData\Local\Programs\oh-my-posh\themes\` 
@@ -119,24 +120,24 @@ if device.type == 'cuda':
 Import-Module oh-my-posh
 Set-PoshPrompt -Theme microverse-power
 ```
-
 - to remove the start message , https://stackoverflow.com/a/63695674
+- Or Follow this tutorial (https://docs.microsoft.com/en-us/windows/terminal/tutorials/custom-prompt-setup) 
+
+- #### Rainmeter: 
+![windows desktop](https://github.com/AmineDjeghri/BetterWindows/blob/master/windows-desktop.png)
+1- Install rainmeter
+2- Install https://github.com/mpurses/Sonder/releases
+3- Download this wallpaper https://raw.githubusercontent.com/mpurses/Sonder/master/Skins/Sonder/Wallpapers/Trees-22.jpg
+
 #### Costumize your windows:
-- O&O ShutUp 10 : privacy control winwdows
-- DS4Windows : https://github.com/Ryochan7/DS4Windows/releases
-- Bing wallpaper
+- O&O ShutUp 10 : privacy control windows
+- DS4Windows : make playstation controllers work on PC : https://github.com/Ryochan7/DS4Windows/releases
+- Bing wallpaper: https://www.microsoft.com/en-us/bing/bing-wallpaper?SilentAuth=1&wa=wsignin1.0
 - Pin some folders and drivers, Recycle Bin in the file explorer. Fast browsing: right click on the file explorer in the taskbar to show the shortcut to the pinned folders.
 - Desktop icons: Personalization->themes->desktop icon settings
 - WinAero Tweaker : customize the appearance and behavior of the operating system in a flexible way (context menu)
-- if you have installed git-bash, it will be addded to windows terminal
-- Customize windows terminal : https://ohmyposh.dev/docs/pwsh and https://www.nerdfonts.com/)
-- windows terminal works in every directory, right lick in any directory and you can have a bash with that path 
-- Tutorial of windows terminal: https://www.youtube.com/watch?v=ialuEXkoKr0 
-- wget: add it to your temrinal: https://www.programmersought.com/article/90723524682/
 - TaskbarX [link] (https://chrisandriessen.nl/taskbarx), also hide windows taskbar (right click on the taskbar -> taskbar settings-> hide in desktop mode)
 - Fences [link] (https://store.steampowered.com/app/607380/Fences/?l=french) doesn't need steam to autostartup 
-- Rainmeter: 
-![windows desktop](https://github.com/AmineDjeghri/BetterWindows/blob/master/windows-desktop.png)
 
 ### SSH (needs to be updated and fileZilla)
  - https://github.com/AmineDjeghri/BetterWindowsUX/blob/master/SSH-PPTI-SU.md
