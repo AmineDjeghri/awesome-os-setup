@@ -28,7 +28,7 @@ Some tips to improve your User experience when using windows
 - activate it on the new computer using `slmgr /ipk xxxxx-xxxxx-xxxxx-xxxxx-xxxxx`
 
 ## 2-Utility Softwares
-- <ins>Browser</ins>: Brave, Don't forget to change your sync settings to import your passwords...ect.
+- <ins>Browser</ins>: Brave, Don't forget to change your sync settings to import your passwords...ect. Deactivate Brave's notifications in windows notifications settings
 - <ins>Privacy extensions</ins> : if you care about your data and privacy (even if you use windows lol) you can limit websites to collect your data:  ClearURLs, Fast Forward, Cookie Auto Delete, HTTPS Everywhere, Decentralayes, Ugly Email (Privacy badge , but tends to block facebook api login in some websites)
 - <ins>Browser extensions</ins> : uBlock Origin, pocket, Free Download Manager, Google translate, Google Dictionnary, colorZilla, Reddit enhacement Suite, Pocket, Enhacer for Youtube, Augmented Steam, Read Aloud.
 - <ins>Agenda & Mail</ins> : Google agenda, Gmail, -> create an app shortcut with brave, it will act like an app in windows, and activate the notifications. Make BRave the default apps in windows for mailto and agenda then go to brave://settings/handlers and add gmailand agenda .
@@ -125,9 +125,9 @@ Set-PoshPrompt -Theme microverse-power
 
 - #### Rainmeter: 
 ![windows desktop](https://github.com/AmineDjeghri/BetterWindows/blob/master/windows-desktop.png)
-1- Install rainmeter
-2- Install https://github.com/mpurses/Sonder/releases
-3- Download this wallpaper https://raw.githubusercontent.com/mpurses/Sonder/master/Skins/Sonder/Wallpapers/Trees-22.jpg
+- Install rainmeter
+- Install https://github.com/mpurses/Sonder/releases
+- Download this wallpaper https://raw.githubusercontent.com/mpurses/Sonder/master/Skins/Sonder/Wallpapers/Trees-22.jpg
 
 #### Costumize your windows:
 - O&O ShutUp 10 : privacy control windows
@@ -138,7 +138,9 @@ Set-PoshPrompt -Theme microverse-power
 - WinAero Tweaker : customize the appearance and behavior of the operating system in a flexible way (context menu)
 - TaskbarX [link] (https://chrisandriessen.nl/taskbarx), also hide windows taskbar (right click on the taskbar -> taskbar settings-> hide in desktop mode)
 - Fences [link] (https://store.steampowered.com/app/607380/Fences/?l=french) doesn't need steam to autostartup 
+- Hide the Windows taskbar (right click on the taskbar -> taskbar settings). You can and make it centered and transparent with [TaskbarX]([https://chrisandriessen.nl/taskbarx)
 
+# NOT UPDATED YET
 ### SSH (needs to be updated and fileZilla)
  - https://github.com/AmineDjeghri/BetterWindowsUX/blob/master/SSH-PPTI-SU.md
 
@@ -152,7 +154,6 @@ Set-PoshPrompt -Theme microverse-power
 - App shortcut : some apps don't provide a desktop shortcut, even if you try to find where they are you can't (like Netflix), they only give you the choice to add them to the start menu or the taskbar . But there is a solution :
              - if an app doesn't want to be added to the desktop like netflix, you can drag it from the start menu to the desktop
              - if it's not on the start up menu, search for it then add it to start menu then drag it to desktop
-- Hide the Windows taskbar (right click on the taskbar -> taskbar settings). You can and make it centered and transparent with [TaskbarX]([https://chrisandriessen.nl/taskbarx)
 - Use windows touchpad gestures, it really improves the experience and saves time, for exemple create a desktop and open a windows inside it, then you can create another desktop and put another window in it, after this you can fast switch between the two desktops using your four fingers and swap from the left to right 
 - Use Quiet Hours and add only the applications that you want them to send you a notification, (Brave will still send you notifications to get BAT but it will never appear ;) )
 - 
