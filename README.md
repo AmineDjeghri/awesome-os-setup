@@ -6,22 +6,44 @@ Some tips to improve your User experience when using windows
 - A guide to help you set up a windows environement to maximum your productivity 
 - Spend some hours setting this up (a full guide to configure many things including, linux commands in windows no need for dualboot anymore, SSH, SFTP with interface to reach a maximum level of productivity)
 
-### 1- Windows config
-#### 1.1- Get a free windows 10 and others softwares if you are a student with Azure
-#### 1.2 Save your key to you microsoft account (important)
- - Connect windows with your outlook account to save and link the key to your account 
+# Summary 
+1. Windows Installation
+2. Utility Softwares : Browsers, exetensions, daily and usefull programs.
+3. Dev Softwares : All the softwares I recommand for developpement and coding.
+4. Pytorch and Cuda
+
+## 1- Windows configuration
+- First thing to do is to connect your windows to your microsoft account : Windows-> account -> connect
+### 1.1 Save your key to you microsoft account (important)
+ - Connect windows with your Microsoft-Outlook) account to save and link the key to your account 
  - Activate localization on windows (if you want to localize your device)
  - Activate bitlocker to encrypt your data (Exists only on windows pro, education and entreprise edition)
  - When placing an external monitor that runs 144hz, make sure to activate the `144Hz` in display settings
  - (Skip if you are on laptop) if you have a 3200mhz RAM and it runs bellow this frequency, activate XMP profile in the BIOS
 
-#### 1.3 To transfer your windows key
-- check if it's not an OEM key by using `Slmgr /dli`
-- get your licence key (if you fogot the serial number use a software like : 
+### 1.1 New PC ? transfer your windows key
+- On your old PC, check if the key is not an OEM by running  `Slmgr /dli`
+- Get your licence key (if you fogot the serial number use a software like : 
 - deactivate it windows terminal or cmd using administrator mode with `slmgr /cpky`
 - activate it on the new computer using `slmgr /ipk xxxxx-xxxxx-xxxxx-xxxxx-xxxxx`
 
-### 2- Dev Software 
+## 2-Utility Softwares
+- <ins>Browser</ins>: Brave, Don't forget to change your sync settings to import your passwords...ect.
+- <ins>Privacy extensions</ins> : if you care about your data and privacy (even if you use windows lol) you can limit websites to collect your data:  ClearURLs, Fast Forward, Cookie Auto Delete, HTTPS Everywhere, Decentralayes, Privacy badger, Ugly Email. 
+- <ins>Browser extensions</ins> : uBlock Origin, pocket, Free Download Manager, Google translate, Google Dictionnary, colorZilla, Reddit enhacement Suite, Pocket, Enhacer for Youtube, Augmented Steam, Read Aloud.
+- <ins>Agenda & Mail</ins> : Google agenda, Gmail, -> create an app shortcut with brave, it will act like an app in windows, and activate the notifications. Make BRave the default apps in windows for mailto and agenda then go to brave://settings/handlers and add gmailand agenda .
+- <ins>Antivirus</ins> : Kaspersky Cloud free
+- <ins>Others</ins>: CCleaner, HWInfo
+- <ins>Adobe</ins> : Photoshop, illustrator, premiere pro, XD
+- <ins>VPN</ins> : ProtonVPN or NordVPN
+- <ins>Torrent client</ins>: qBitTorrent
+- <ins>SFTP</ins> : Filezilla (work with private key: add it in edit/connection/sftp or use pageant)
+- <ins>Google Drive</ins> :  download it on windows and put the files and folder that you want to be automatically saved on your drive, you won't need to everytime open google drive in your browser and manually put your files there
+- <ins>Online Storage</ins> : Google Drive (15gb), Mega Drive (50GB) ...ect. Use these Drives to store non personanal Data ! It's better to have an NAS or an external HDD to store your personal data.
+- <ins>Microsoft Office 2016</ins> Buy it or ... Better than the 365 version.
+- <ins>Netflix, Prime</ins>: windows store and browser (browser is better in terms of stability and vpn use, windows store apps can handle 7.1 and 4k streaming). To add windwos apps downloaded from windows store in the taskbar or the desktop :Press Windows key + R then enter shell:appsfolder then drag and drop .
+
+## 3- Dev Softwares
 -  <ins>Anaconda</ins> (for python and jupyter, you can always install python without anaconda, but i prefer to install python via anaconda in windows even if i use only pip with it): install it and CHECK add path to environnement variables, make sure to delete every avaible python version on your system.
 - After the installation of conda, restart your pc.
 - Run windows terminal (previously named powershell, always use windows terminal instead of cmd or somethig else)
@@ -29,19 +51,20 @@ Some tips to improve your User experience when using windows
 - <ins>Sublime Text</ins>: install it before installing git bash (a software that adds linux and git commands to windows).
 Then go to : System Properties -> Advanced System Settings -> Advanced -> Environment Variables and add `C:\Program Files\Sublime Text` to the PATH environment variable to make it accessible from the terminal. Close the windows terminal and open a new one and run this command `subl`, it should open Sublime Text.
 - <ins>Git-Bash</ins>: You can use linux commands in window like SSH and Git ! Download gitbash to have these commands added to windows Terminal. Open a new Windows terminal after the installation and run this command `git status` you should see the following message `fatal: not a git repository (or any of the parent directories): .git`. that means the git command works !
-
 - <ins>PyCharm or VScode</ins>: I prefer to use PyCharm (Education version which is free) but here are the config for both, BECAREFUL when creating a project, you should use the anaconda python and not another one like virtualenv (that's why you need to make sure to have only the anaconda python installed)
 - Sync pycharm settings : https://www.jetbrains.com/help/pycharm/sharing-your-ide-settings.html#IDE_settings_sync
-### 3-Python, Pytorch and Cuda installation: 
+- <ins>Free Cloud GPU </ins> Google Colab you can either put your git repositories inside google drive to use them in colab, or directly import git repo inside colab without google drive 
 
-#### Pytorch with Nvidia GPU
+
+## 4-Python, Pytorch and Cuda installation: 
+#### 4.1.1 Pytorch with Nvidia GPU
 - Important : Pytorch 1.10.1 works with CUDA 11.3 and visual studio 2019
 - Download [VSCode Community 2019](https://docs.microsoft.com/en-us/visualstudio/releases/2019/release-notes).
 - Install it and check `Desktop Development with C++` and `.NET` (size will be 11GB approxiamtly) 
 - Download and install [CUDA 11.3](https://developer.nvidia.com/cuda-11.3.0-download-archive?target_os=Windows&target_arch=x86_64&target_version=10&target_type=exe_local)
 - Install [Pytorch 1.10.1](https://pytorch.org/get-started/locally/) by running this command `pip install torch==1.10.1+cu113 torchvision==0.11.2+cu113 torchaudio===0.10.1+cu113 -f https://download.pytorch.org/whl/cu113/torch_stable.html`
 
-#### Pytorch without gpu: 
+#### 4.1.2 Pytorch without gpu: 
 `pip install torch torchvision torchaudio`
 
 - Check if you succeeded to install pytorch, run the following python code: 
@@ -61,29 +84,11 @@ if device.type == 'cuda':
     print('Cached:   ', round(torch.cuda.memory_reserved(0)/1024**3,1), 'GB')
 ```
 
-#### Python packages:
+#### 4.2 Python packages:
 - Always use `pip` command in Windows Terminal to install python packages 
 - there is a requirements.txt that contains the principal data science libraries (without pytorch as you have installed it from the previous line, just do `pip install -r https://raw.githubusercontent.com/AmineDjeghri/BetterWindowsUX/master/requirements.txt`
 
-### 4-Advanced Software
-- <ins>Browser</ins>: Brave
-- <ins>Privacy extensions</ins> : if you care about your data and privacy (even if you use windows lol) you can limit websites to collect your data:  ClearURLs, Fast Forward, Cookie Auto Delete, HTTPS Everywhere, Decentralayes, Privacy badger, Ugly Email. 
-- <ins>Browser extensions</ins> : uBlock Origin, pocket, Free Download Manager, Google translate, Google Dictionnary, colorZilla, Reddit enhacement Suite, Pocket, Enhacer for Youtube, Augmented Steam, Read Aloud.
-- <ins>Agenda & Mail</ins> : Google agenda, Gmail, -> create an app shortcut with brave, it will act like an app in windows, and activate the notifications. Make BRave the default apps in windows for mailto and agenda then go to brave://settings/handlers and add gmailand agenda .
-- <ins>Antivirus</ins> : Kaspersky Cloud free
-- <ins>Others</ins>: CCleaner, HWInfo
-- <ins>Adobe</ins> : Photoshop, illustrator, premiere pro, XD
-- <ins>VPN</ins> : ProtonVPN or NordVPN
-- <ins>Torrent client</ins>: qBitTorrent
-- <ins>SFTP</ins> : Filezilla (work with private key: add it in edit/connection/sftp or use pageant)
-- <ins>PowerToys</ins> : https://github.com/microsoft/PowerToys
-- <ins>Google Sync Drive</ins> :  download it on windows and put the files and folder that you want to be automatically saved on your drive, you won't need to everytime open google drive in your browser and manually put your files there
-- <ins>Free Cloud GPU </ins> Google Colab you can either put your git repositories inside google drive to use them in colab, or directly import git repo inside colab without google drive 
-- <ins>Online Storage</ins> : Google Drive (15gb), Mega Drive (50GB) ...ect. Use these Drives to store non personanal Data ! It's better to have an NAS or an external HDD to store your personal data.
-- <ins>Microsoft Office 2016</ins>  buy it or ...., install it, than convert the activation.txt to .bat, run it as an administrator and make sure internet is on, 
-even it it fails the first time, let it continue to run, it will find a KMS server after.
-- <ins>Netflix, Prime</ins>: windows store and browser (browser is better in terms of stability and vpn use, windwos store apps can handle 7.1 and 4k streaming). To add them in taskbar or desktop  (Press Windows key + R then enter shell:appsfolder then drag and drop)
-
+# 5- UX Custommization
 #### Windows Terminal 
 - image
 - Install powershell 7 from microsoft store (open windwordzs terminal, go to settings, startup and set it to powershell 7)
