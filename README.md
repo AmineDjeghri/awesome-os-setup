@@ -14,7 +14,13 @@ Some tips to improve your User experience when using windows
  - Activate bitlocker to encrypt your data (Exists only on windows pro, education and entreprise edition)
  - When placing an external monitor that runs 144hz, make sure to activate the `144Hz` in display settings
  - (Skip if you are on laptop) if you have a 3200mhz RAM and it runs bellow this frequency, activate XMP profile in the BIOS
- 
+
+#### 1.3 To transfer your windows key
+- check if it's not an OEM key by using `Slmgr /dli`
+- get your licence key (if you fogot the serial number use a software like : 
+- deactivate it windows terminal or cmd using administrator mode with `slmgr /cpky`
+- activate it on the new computer using `slmgr /ipk xxxxx-xxxxx-xxxxx-xxxxx-xxxxx`
+
 ### 2- Dev Software 
 -  <ins>Anaconda</ins> (for python and jupyter, you can always install python without anaconda, but i prefer to install python via anaconda in windows even if i use only pip with it): install it and CHECK add path to environnement variables, make sure to delete every avaible python version on your system.
 - After the installation of conda, restart your pc.
