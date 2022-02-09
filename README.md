@@ -29,7 +29,7 @@ Some tips to improve your User experience when using windows
 
 ## 2-Utility Softwares
 - <ins>Browser</ins>: Brave, Don't forget to change your sync settings to import your passwords...ect.
-- <ins>Privacy extensions</ins> : if you care about your data and privacy (even if you use windows lol) you can limit websites to collect your data:  ClearURLs, Fast Forward, Cookie Auto Delete, HTTPS Everywhere, Decentralayes, Privacy badger, Ugly Email. 
+- <ins>Privacy extensions</ins> : if you care about your data and privacy (even if you use windows lol) you can limit websites to collect your data:  ClearURLs, Fast Forward, Cookie Auto Delete, HTTPS Everywhere, Decentralayes, Ugly Email (Privacy badge , but tends to block facebook api login in some websites)
 - <ins>Browser extensions</ins> : uBlock Origin, pocket, Free Download Manager, Google translate, Google Dictionnary, colorZilla, Reddit enhacement Suite, Pocket, Enhacer for Youtube, Augmented Steam, Read Aloud.
 - <ins>Agenda & Mail</ins> : Google agenda, Gmail, -> create an app shortcut with brave, it will act like an app in windows, and activate the notifications. Make BRave the default apps in windows for mailto and agenda then go to brave://settings/handlers and add gmailand agenda .
 - <ins>Antivirus</ins> : Kaspersky Cloud free
@@ -90,7 +90,7 @@ if device.type == 'cuda':
 
 # 5- UX Custommization
 #### Windows Terminal 
-- image
+![windows terminal](https://github.com/AmineDjeghri/BetterWindows/blob/master/windows-terminal.png)
 - Install powershell 7 from microsoft store (open windwordzs terminal, go to settings, startup and set it to powershell 7)
 - You should have installed git from above steps (if not, https://git-scm.com/download/win)
 - In your terminal run `Install-Module oh-my-posh -Scope CurrentUser`
@@ -130,6 +130,8 @@ Set-PoshPrompt -Theme microverse-power
 - wget: add it to your temrinal: https://www.programmersought.com/article/90723524682/
 - TaskbarX [link] (https://chrisandriessen.nl/taskbarx), also hide windows taskbar (right click on the taskbar -> taskbar settings-> hide in desktop mode)
 - Fences [link] (https://store.steampowered.com/app/607380/Fences/?l=french) doesn't need steam to autostartup 
+- Rainmeter: 
+![windows desktop](https://github.com/AmineDjeghri/BetterWindows/blob/master/windows-desktop.png)
 
 ### SSH (needs to be updated and fileZilla)
  - https://github.com/AmineDjeghri/BetterWindowsUX/blob/master/SSH-PPTI-SU.md
