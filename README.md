@@ -7,12 +7,12 @@ Some tips to improve your User experience when using windows
 - Spend some hours setting this up (a full guide to configure many things including, linux commands in windows no need for dualboot anymore, SSH, SFTP with interface to reach a maximum level of productivity)
 
 # Summary 
-1. Windows Installation
-2. Utility Softwares : Browsers, exetensions, daily and usefull programs.
+1. Windows Installation https://github.com/AmineDjeghri/BetterWindows11#1--windows-configuration
+2. Utility Softwares : Browsers, extensions, daily and usefull programs.
 3. Dev Softwares : All the softwares I recommand for developpement and coding.
 4. Pytorch and Cuda
 
-## 1- Windows configuration
+# 1- Windows configuration
 - First thing to do is to connect your windows to your microsoft account : Windows-> account -> connect
 ### 1.1 Save your key to you microsoft account (important)
  - Connect windows with your Microsoft-Outlook) account to save and link the key to your account 
