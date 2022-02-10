@@ -28,9 +28,9 @@ Some tips to improve your User experience when using windows
 - activate it on the new computer using `slmgr /ipk xxxxx-xxxxx-xxxxx-xxxxx-xxxxx`
 
 ## 2-Utility Softwares
-- <ins>Browser</ins>: Brave, Don't forget to change your sync settings to import your passwords...ect. Deactivate Brave's notifications in windows notifications settings
+- <ins>Browser</ins>: Brave, Don't forget to change your sync settings to import your passwords...ect.
 - <ins>Privacy extensions</ins> : if you care about your data and privacy (even if you use windows lol) you can limit websites to collect your data:  ClearURLs, Fast Forward, Cookie Auto Delete, HTTPS Everywhere, Decentralayes, Ugly Email (Privacy badge , but tends to block facebook api login in some websites)
-- <ins>Browser extensions</ins> : uBlock Origin, pocket, Free Download Manager, Google translate, Google Dictionnary, colorZilla, Reddit enhacement Suite, Pocket, Enhacer for Youtube, Augmented Steam, Read Aloud.
+- <ins>Browser extensions</ins> : uBlock Origin, Checker Plus for Gmail, Free Download Manager, Google translate, Google Dictionnary, colorZilla, Reddit enhacement Suite, Pocket, Enhacer for Youtube, Augmented Steam, Read Aloud,  pocket.
 - <ins>Agenda & Mail</ins> : Google agenda, Gmail, -> create an app shortcut with brave, it will act like an app in windows, and activate the notifications. Make BRave the default apps in windows for mailto and agenda then go to brave://settings/handlers and add gmailand agenda .
 - <ins>Antivirus</ins> : Kaspersky Cloud free
 - <ins>Others</ins>: CCleaner, HWInfo
@@ -95,7 +95,7 @@ if device.type == 'cuda':
 - there is a requirements.txt that contains the principal data science libraries (without pytorch as you have installed it from the previous line, just do `pip install -r https://raw.githubusercontent.com/AmineDjeghri/BetterWindowsUX/master/requirements.txt`
 
 # 5- UX Custommization
-#### Windows Terminal 
+### Windows Terminal 
 ![windows terminal](https://github.com/AmineDjeghri/BetterWindows/blob/master/windows-terminal.png)
 - (Optional) Install powershell 7 from microsoft store (open windows terminal, go to settings, startup and set it to powershell 7)
 - You should have installed git-bash from above steps (if not, https://git-scm.com/download/win).
@@ -129,7 +129,7 @@ Set-PoshPrompt -Theme microverse-power
 - Install https://github.com/mpurses/Sonder/releases
 - Download this wallpaper https://raw.githubusercontent.com/mpurses/Sonder/master/Skins/Sonder/Wallpapers/Trees-22.jpg
 
-#### Costumize your windows:
+### Costumize your windows:
 - O&O ShutUp 10 : privacy control windows
 - DS4Windows : make playstation controllers work on PC : https://github.com/Ryochan7/DS4Windows/releases
 - Bing wallpaper: https://www.microsoft.com/en-us/bing/bing-wallpaper?SilentAuth=1&wa=wsignin1.0
@@ -141,6 +141,11 @@ Set-PoshPrompt -Theme microverse-power
 - Hide the Windows taskbar (right click on the taskbar -> taskbar settings). You can and make it centered and transparent with [TaskbarX]([https://chrisandriessen.nl/taskbarx)
 
 # NOT UPDATED YET
+### Browser websites
+- Configure some websites on your desktop and taskbar as shorcuts (Netflix, Google calendar, Gmail...ect)
+- <ins>Gmail and Google Calendar</ins> : you can configure dark mode ("Thèmes" et cliquez sur "Tout afficher", choose "dark/sombre") and priority notifications (all new emails), signature.
+- 
+
 ### SSH (needs to be updated and fileZilla)
  - https://github.com/AmineDjeghri/BetterWindowsUX/blob/master/SSH-PPTI-SU.md
 
