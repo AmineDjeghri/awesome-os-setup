@@ -1,5 +1,5 @@
 # BetterWindows11
-![windows desktop terminal](https://github.com/AmineDjeghri/BetterWindows/blob/master/windows-desktop-terminal.png)
+![windows desktop terminal](https://github.com/AmineDjeghri/BetterWindows/blob/master/windows-desktop-terminal_1.png)
 
 !! Updated for windows 11 !!
 
