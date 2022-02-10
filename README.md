@@ -1,4 +1,5 @@
 # BetterWindows11
+![windows desktop terminal](https://github.com/AmineDjeghri/BetterWindows/blob/master/windows-desktop-terminal.png)
 
 !! Updated for windows 11 !!
 
@@ -6,13 +7,15 @@ Some tips to improve your User experience when using windows
 - A guide to help you set up a windows environement to maximum your productivity 
 - Spend some hours setting this up (a full guide to configure many things including, linux commands in windows no need for dualboot anymore, SSH, SFTP with interface to reach a maximum level of productivity)
 
-# Summary 
-1. Windows Installation https://github.com/AmineDjeghri/BetterWindows11#1--windows-configuration
-2. Utility Softwares : Browsers, extensions, daily and usefull programs.
-3. Dev Softwares : All the softwares I recommand for developpement and coding.
-4. Pytorch and Cuda
+## Summary 
+1. [Windows Installation](https://github.com/AmineDjeghri/BetterWindows11#1--windows-configuration)
+2. [Utility Softwares : Browsers, extensions, daily and usefull programs](https://github.com/AmineDjeghri/BetterWindows11#2-utility-softwares)
+3. [Dev Softwares : All the softwares I recommand for developpement and codin](https://github.com/AmineDjeghri/BetterWindows11#3--dev-softwares)
+4. [Pytorch and Cuda](https://github.com/AmineDjeghri/BetterWindows11#4-python-pytorch-and-cuda-installation)
+5. [UI/UX Custommization](https://github.com/AmineDjeghri/BetterWindows11#5--ux-custommization)
 
-# 1- Windows configuration
+
+## 1- Windows configuration
 - First thing to do is to connect your windows to your microsoft account : Windows-> account -> connect
 ### 1.1 Save your key to you microsoft account (important)
  - Connect windows with your Microsoft-Outlook) account to save and link the key to your account 
