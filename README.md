@@ -46,6 +46,11 @@ Some tips to improve your User experience when using windows
 - <ins>Netflix, Prime</ins>: windows store and browser (browser is better in terms of stability and vpn use, windows store apps can handle 7.1 and 4k streaming). To add windwos apps downloaded from windows store in the taskbar or the desktop :Press Windows key + R then enter shell:appsfolder then drag and drop .
 - <ins>Windows Terminal </ins> windows terminal works in every directory, right lick in any directory and you can have a bash with that path 
 
+### 2.2 Amazing apps & websites:
+- Free PDF editing (3 free tasks per hour) : https://www.sejda.com/
+- Free Photoshop alternative : https://www.photopea.com/
+- Notion 
+
 ## 3- Dev Softwares
 -  <ins>Anaconda</ins> (for python and jupyter, you can always install python without anaconda, but i prefer to install python via anaconda in windows even if i use only pip with it): install it and CHECK add path to environnement variables, make sure to delete every avaible python version on your system.
 - After the installation of conda, restart your pc.
