@@ -52,10 +52,18 @@ Some tips to improve your User experience when using windows
 - Notion 
 
 ## 3- Dev Softwares
--  <ins>Anaconda</ins> (for python and jupyter, you can always install python without anaconda, but i prefer to install python via anaconda in windows even if i use only pip with it): install it and CHECK add path to environnement variables, make sure to delete every avaible python version on your system.
+-  <ins>Miniconda or Anaconda</ins> (better than installing python alone)
+
+#### How to install conda :
+- Download miniconda from [the official website](https://docs.conda.io/en/latest/miniconda.html)
+: install it and CHECK add path to environnement variables, make sure to delete every available python version on your system before.
 - After the installation of conda, restart your pc.
-- Run windows terminal (previously named powershell, always use windows terminal instead of cmd or somethig else)
-- run `conda list` to verify if conda has been correctly installed. also run `python` to see if python has been added to the path 
+-Open a 'Anaconda Powershell Prompt'  from Start Menu (not a regular windows terminal). Now Try:
+conda init powershell
+- Run windows terminal (powershell) always use windows terminal instead of cmd or somethig else)
+- you should see '(base)' before any command.
+- run `conda env list` to verify if conda has been correctly installed. also run `python` to see if python has been added to the path 
+
 - <ins>Sublime Text</ins>: install it before installing git bash (a software that adds linux and git commands to windows).
 Then go to : System Properties -> Advanced System Settings -> Advanced -> Environment Variables and add `C:\Program Files\Sublime Text` to the PATH environment variable to make it accessible from the terminal. Close the windows terminal and open a new one and run this command `subl`, it should open Sublime Text.
 - <ins>Git-Bash</ins>: You can use linux commands in window like SSH and Git ! Download gitbash to have these commands added to windows Terminal. Open a new Windows terminal after the installation and run this command `git status` you should see the following message `fatal: not a git repository (or any of the parent directories): .git`. that means the git command works !
