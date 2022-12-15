@@ -45,7 +45,7 @@ Some tips to improve your User experience when using windows
 - <ins>Microsoft Office 2016</ins> Buy it or ... Better than the 365 version.
 - <ins>Netflix, Prime</ins>: windows store and browser (browser is better in terms of stability and vpn use, windows store apps can handle 7.1 and 4k streaming). To add windwos apps downloaded from windows store in the taskbar or the desktop :Press Windows key + R then enter shell:appsfolder then drag and drop .
 - <ins>Windows Terminal </ins> windows terminal works in every directory, right lick in any directory and you can have a bash with that path 
-
+-  <ins> Teracopy </ins>
 ### 2.2 Amazing apps & websites:
 - Free PDF editing (3 free tasks per hour) : https://www.sejda.com/
 - Free Photoshop alternative : https://www.photopea.com/
