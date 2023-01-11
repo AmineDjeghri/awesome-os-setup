@@ -111,41 +111,63 @@ if device.type == 'cuda':
 - there is a requirements.txt that contains the principal data science libraries (without pytorch as you have installed it from the previous line, just do `pip install -r https://raw.githubusercontent.com/AmineDjeghri/BetterWindowsUX/master/requirements.txt`
 
 # 5- UX Custommization
-### Windows Terminal 
-![windows terminal](https://github.com/AmineDjeghri/BetterWindows/blob/master/windows-terminal.png)
-- (Optional) Install powershell 7 from microsoft store (open windows terminal, go to settings, startup and set it to powershell 7)
-- You should have installed git-bash from above steps (if not, https://git-scm.com/download/win).
-- In your windows terminal run `Install-Module oh-my-posh -Scope CurrentUser`
-- Run now `Import-Module oh-my-posh` 
-- To try a theme run `cd ~\AppData\Local\Programs\oh-my-posh\themes\` 
-- then `Set-PoshPrompt -Theme paradox`
-- You should see an example of a theme
-- run `Get-PoshThemes`, you will see some examples 
+## WSL (Windows subsystem for Linux ) / Windows Terminal :
+The most amazing thing about windows latest version is WSL (WSL2.0 exactly). You can run Linux in Windows. 
+It is fantastic. Virtualisation overhead is not noticeable, full integration between guest and host os's, you can run binaries compiled for MS Windows from linux. Full development toolchain is available as WSLessentialy is linux VM in second incarnation. It supports snapshots and is portable. This made windows useful.
+- You can install packages directly in UBuntu 
+- You can easily navigate and communicate between ubuntu and windows as Ubuntu acts like a disk drive.
+- you can install conda environement in ubuntu, use GPU, install pycharm on windows, and use the conda installation in pycharm.
+ Give it a try:
+ - Install WSL ``` wsl --install ``` 
+ - Restart you computer
+ - Install Ubuntu from [MS Store](https://apps.microsoft.com/store/detail/ubuntu-on-windows/9NBLGGH4MSV6?hl=fr-fr&gl=fr)
+ - Run directly Ubuntu from windows search bar (or windows terminal and choose ubuntu)
+ 
+ ## customize linux terminal
+ 
+### Install and set up zsh as default
 
-- To fix the icons and caracters Install Caskaydia Cove Nerd Font font from: https://www.nerdfonts.com/font-downloads
-- Go to windows temrinal settings -> (left panel all down) Open json file then add this text :
-``"profiles": {
-        "defaults": {
-            // Put settings here that you want to apply to all profiles.
-            "fontFace": "CaskaydiaCove NF",
-            "fontSize": 12
-        },
-}``
-- To make a theme definitive run `notepad $PROFILE` and add you custom theme like 
-```
-Import-Module oh-my-posh
-Set-PoshPrompt -Theme microverse-power
-```
-- to remove the start message , https://stackoverflow.com/a/63695674
-- Or Follow this tutorial (https://docs.microsoft.com/en-us/windows/terminal/tutorials/custom-prompt-setup) 
+If necessary, follow these steps to install Zsh:
 
+1. install Zsh:
+
+   - With the package manager of your choice, _e.g._ `sudo apt install zsh`
+
+2. Verify installation by running `zsh --version`. Expected result: `zsh 5.0.8` or more recent.
+
+3. Make it your default shell: `chsh -s $(which zsh)`
+
+4. Log out and log back in again to use your new default shell. And enter the number 0 .
+
+5. Test that it worked with `echo $SHELL`. Expected result: `/bin/zsh` or similar.
+
+6. Test with `$SHELL --version`. Expected result: 'zsh 5.8' or similar
+
+source : https://github.com/ohmyzsh/wiki/edit/main/Installing-ZSH.md
+
+### install miniconda
+- install miniconda on ubuntu 
+- copy the export link to your .zshrc ( if you want to find it : `cd` then `ls -a` then `nano .zshrc` or use windows explorer to navigate to it : 
+`\\wsl.localhost\Ubuntu\home\amine `
+
+```
+#### enable miniconda
+export PATH="/home/amine/miniconda3/bin:$PATH")
+```
+- run : `conda init zsh`
+- close all the terminals and run again ubuntu terminal.
+- you should see the `(base)` noun before the command.
+
+
+
+### Costumize your windows:
 - #### Rainmeter: 
 ![windows desktop](https://github.com/AmineDjeghri/BetterWindows/blob/master/windows-desktop.png)
 - Install rainmeter
 - Install https://github.com/mpurses/Sonder/releases
 - Download this wallpaper https://raw.githubusercontent.com/mpurses/Sonder/master/Skins/Sonder/Wallpapers/Trees-22.jpg
 
-### Costumize your windows:
+
 - O&O ShutUp 10 : privacy control windows
 - DS4Windows : make playstation controllers work on PC : https://github.com/Ryochan7/DS4Windows/releases
 - Bing wallpaper: https://www.microsoft.com/en-us/bing/bing-wallpaper?SilentAuth=1&wa=wsignin1.0
