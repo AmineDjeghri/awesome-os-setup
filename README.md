@@ -148,7 +148,7 @@ source : https://github.com/ohmyzsh/wiki/edit/main/Installing-ZSH.md
 ### install miniconda
 - install miniconda on ubuntu 
 - copy the export link to your .zshrc ( if you want to find it : `cd` then `ls -a` then `nano .zshrc` or use windows explorer to navigate to it : 
-`\\wsl.localhost\Ubuntu\home\amine `
+`\\wsl.localhost\Ubuntu\home\amine ` and open the file .zshrc with notepad or sublimText.
 
 ```
 #### enable miniconda
@@ -159,6 +159,30 @@ export PATH="/home/amine/miniconda3/bin:$PATH")
 - you should see the `(base)` noun before the command.
 
 
+#### What is ZSH-Syntax-Highlighting?
+The ZSH syntax highlighting feature—similar to one found in the fish shell—automatically highlights your commands as you type them, which can help you catch syntax errors and fix them before running the command.
+- `sudo apt-get install git`
+- `git clone https://github.com/zsh-users/zsh-syntax-highlighting.git`
+- The next step is to add the syntax-highlighting extension to the .zshrc file. The value of the ZDOTDIR variable will determine this. Use the command shown below:
+`echo "source ${(q-)PWD}/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" >> ${ZDOTDIR:-$HOME}/.zshrc`
+- source ./zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+#### What isOh my ZSH ?
+- Oh My Zsh is an open source, community-driven framework for managing your zsh configuration.
+-  with wget `sh -c "$(wget https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh -O -)"`
+
+#### some pluggins :
+- https://dev.to/kumareth/a-beginner-s-guide-for-setting-up-autocomplete-on-ohmyzsh-hyper-with-plugins-themes-47f2
+
+#### Powerlevel10k 
+- Powerlevel10k is a theme for Zsh. It emphasizes speed, flexibility and out-of-the-box experience.
+-
+
+#### autojump is a faster way to navigate your filesystem.
+- 
+
+#### zsh-autosuggestions : 
+- 
 
 ### Costumize your windows:
 - #### Rainmeter: 
