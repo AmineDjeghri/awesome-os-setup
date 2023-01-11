@@ -167,12 +167,12 @@ The ZSH syntax highlighting feature—similar to one found in the fish shell—a
 `echo "source ${(q-)PWD}/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" >> ${ZDOTDIR:-$HOME}/.zshrc`
 - source ./zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
-#### What isOh my ZSH ?
+#### What is Oh my ZSH ?
 - Oh My Zsh is an open source, community-driven framework for managing your zsh configuration.
 -  with wget `sh -c "$(wget https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh -O -)"`
 
 #### some pluggins :
-- https://dev.to/kumareth/a-beginner-s-guide-for-setting-up-autocomplete-on-ohmyzsh-hyper-with-plugins-themes-47f2
+- https://www.linkedin.com/pulse/how-install-start-using-oh-my-zsh-boost-your-mantas-levinas/?trk=pulse-article_more-articles_related-content-card
 
 #### Powerlevel10k 
 - Powerlevel10k is a theme for Zsh. It emphasizes speed, flexibility and out-of-the-box experience.
