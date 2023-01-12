@@ -188,13 +188,10 @@ zsh-syntax-highlighting
 
 #### Powerlevel10k 
 - Powerlevel10k is a theme for Zsh. It emphasizes speed, flexibility and out-of-the-box experience.
--
-
-#### autojump is a faster way to navigate your filesystem.
-- 
-
-#### zsh-autosuggestions : 
-- 
+- `git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k`
+- Set ZSH_THEME="powerlevel10k/powerlevel10k" in ~/.zshrc.
+- install this font on windows [MesloLGS NF Regular.ttf](https://github.com/romkatv/dotfiles-public/blob/master/.local/share/fonts/NerdFonts/MesloLGS%20NF%20Regular.ttf)
+- restart ubuntu terminal and configure your theme.
 
 ### Costumize your windows:
 - #### Rainmeter: 
