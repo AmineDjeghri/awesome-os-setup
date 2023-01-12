@@ -171,8 +171,20 @@ The ZSH syntax highlighting feature—similar to one found in the fish shell—a
 - Oh My Zsh is an open source, community-driven framework for managing your zsh configuration.
 -  with wget `sh -c "$(wget https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh -O -)"`
 
-#### some pluggins :
-- https://www.linkedin.com/pulse/how-install-start-using-oh-my-zsh-boost-your-mantas-levinas/?trk=pulse-article_more-articles_related-content-card
+#### some pluggins : autosuggestions and syntaxh highlighting
+
+run the following commands on your teminal 
+- `git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions`
+- `git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting`
+
+Open your editor and add these lines in .zshrc file at ~/.zshrc (you can do that through windows explorer as you did before)
+```
+plugins=(git
+zsh-autosuggestions
+zsh-syntax-highlighting
+)
+```
+- other plugings :[website](https://www.linkedin.com/pulse/how-install-start-using-oh-my-zsh-boost-your-mantas-levinas/?trk=pulse-article_more-articles_related-content-card)
 
 #### Powerlevel10k 
 - Powerlevel10k is a theme for Zsh. It emphasizes speed, flexibility and out-of-the-box experience.
