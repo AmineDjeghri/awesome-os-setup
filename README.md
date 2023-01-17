@@ -125,6 +125,7 @@ It is fantastic. Virtualisation overhead is not noticeable, full integration bet
  
  - You can use this command to convert a windows path to wsl path : `wslpath  'C:\Users\AmineDjeghri\Desktop\git\quarterback-tabular'`
  ## customize linux terminal
+ - Use ubuntu as default terminal in pycharm: tools>terminal  and put in shell path: `ubuntu run`
  
 ### Install and set up zsh as default
 
