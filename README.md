@@ -112,6 +112,9 @@ if device.type == 'cuda':
 
 # 5- UX Custommization
 ## WSL (Windows subsystem for Linux ) / Windows Terminal :
+
+![WSL terminal](https://github.com/AmineDjeghri/BetterWindows/blob/master/resources/wsl_terminal.png)
+
 The most amazing thing about windows latest version is WSL (WSL2.0 exactly). You can run Linux in Windows. 
 It is fantastic. Virtualisation overhead is not noticeable, full integration between guest and host os's, you can run binaries compiled for MS Windows from linux. Full development toolchain is available as WSLessentialy is linux VM in second incarnation. It supports snapshots and is portable. This made windows useful.
 - You can install packages directly in UBuntu 
@@ -127,6 +130,8 @@ It is fantastic. Virtualisation overhead is not noticeable, full integration bet
  - Open Ubuntu terminal from current location : go to windows terminal ->  parameters -> profiles -> ubuntu -> command line (under name) and change it to `ubuntu run`
  - Use ubuntu as default terminal in pycharm: tools>terminal  and put in shell path: `ubuntu run`
  - You can use this command to convert a windows path to wsl path : `wslpath  'C:\Users\AmineDjeghri\Desktop\git\quarterback-tabular'`
+ - copy your ssh key from windows to linux and use on the ssh file of linux : `chmod 600 your_ssh_file`
+
 ## customize linux terminal
 ### Install and set up zsh as default
 
