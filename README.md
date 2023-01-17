@@ -123,10 +123,11 @@ It is fantastic. Virtualisation overhead is not noticeable, full integration bet
  - Install Ubuntu from [MS Store](https://apps.microsoft.com/store/detail/ubuntu-on-windows/9NBLGGH4MSV6?hl=fr-fr&gl=fr)
  - Run directly Ubuntu from windows search bar (or windows terminal and choose ubuntu)
  
- - You can use this command to convert a windows path to wsl path : `wslpath  'C:\Users\AmineDjeghri\Desktop\git\quarterback-tabular'`
- ## customize linux terminal
+ #### Windows Terminal & WSL : 
+ - Open Ubuntu terminal from current location : go to windows terminal ->  parameters -> profiles -> ubuntu -> command line (under name) and change it to `ubuntu run`
  - Use ubuntu as default terminal in pycharm: tools>terminal  and put in shell path: `ubuntu run`
- 
+ - You can use this command to convert a windows path to wsl path : `wslpath  'C:\Users\AmineDjeghri\Desktop\git\quarterback-tabular'`
+## customize linux terminal
 ### Install and set up zsh as default
 
 If necessary, follow these steps to install Zsh:
