@@ -55,6 +55,7 @@ Some tips to improve your User experience when using windows
 
 ## 3- Dev workflow
 ### 3.1 Dev software
+
 #### <ins>Sublime Text</ins> (Free, no need to but the pro lisence): 
 - Extremely lightweight (low resource usage), but still keeps around some of the more advanced features you would expect out of a top text editor.
 - Install it before installing git bash (a software that adds linux and git commands to windows). 
@@ -62,16 +63,19 @@ Some tips to improve your User experience when using windows
 - (optionnal) Run from CLI: go to  `System Properties -> Advanced System Settings -> Advanced -> Environment Variables -> System variable -> path` and add `C:\Program Files\Sublime Text` to the PATH environment variable to make it accessible from the terminal. Close the windows terminal and open a new one and run this command `subl`, it should open Sublime Text.
 #### <ins>Git-Bash</ins>:
 - You can use linux commands in window like SSH and Git ! Download gitbash to have these commands added to windows Terminal. Open a new Windows terminal after the installation and run this command `git --version` you should see the following message `git version 2.39.1.windows.1`. that means the git command works !
+#### <ins>Windows Terminal</ins> 
+- Always use windows terminal/powershell instead of linux
+- You can update to powershell 7 : Install it from Microsoft store. Close and then re-open your terminal window, Put powershell 7 as default.
 #### <ins>PyCharm or VScode</ins>: 
 - I prefer to use PyCharm (Education version which is free) but here are the config for both, BECAREFUL when creating a project, you should use the anaconda python or wsl anaconda and not another one like virtualenv)
 - Sync pycharm settings : https://www.jetbrains.com/help/pycharm/sharing-your-ide-settings.html#IDE_settings_sync
 
 #### other tools
-- .ssh key : generate an ssh key with `ssh-keygen -t rsa` (when prompted, enter an empty password if you want, key name can stay the same)
-Open file your_home_directory/.ssh/id_rsa.pub (example `C:\Users\AmineDjeghri\.ssh` with your favorite text editor to see the key.
-- <ins>Pycharm Jupyter Notebook<ins> : Use the one provided in Pycharm. It provides better autocomplete.
+- <ins>ssh key</ins> : generate an ssh key with `ssh-keygen -t rsa` (when prompted, enter an empty password if you want, key name can stay the same)
+Open file your_home_directory/.ssh/id_rsa.pub (example `C:\Users\AmineDjeghri\.ssh` with your favorite text editor to see the key. 
+- <ins>Pycharm Jupyter Notebook</ins> : Use the one provided in Pycharm. It provides better autocomplete.
 - <ins>Free Cloud GPU </ins> Google Colab you can either put your git repositories inside google drive to use them in colab, or directly import git repo inside colab without google drive 
-- powershell 7 : Install it from Microsoft store. Close all the terminals than you have than run again windows terminal. Put powershell as default.
+
 - <ins>SFTP</ins> : Filezilla (work with private key: add it in edit/connection/sftp or use pageant)
 - Git emojis: https://gitmoji.dev/ 
 - Latex Handwriting recognition: https://detexify.kirelabs.org/classify.html
@@ -100,10 +104,14 @@ It is fantastic. Virtualisation overhead is not noticeable, full integration bet
  - run `wget https://repo.anaconda.com/miniconda/Miniconda3-py39_22.11.1-1-Linux-x86_64.sh`
  - run `chmod +x Miniconda3-py39_22.11.1-1-Linux-x86_64.sh`
  - run `bash Miniconda3-py39_22.11.1-1-Linux-x86_64.sh`
+ - run `conda init`
+ - close and reopen ubuntu terminal, you should see `(base)` at the left of the any command.
+ - run `conda env list` to check the installed environements and their path.
+ -
 #### configure WSL terminal : 
  - To open Ubuntu terminal from current location : go to windows terminal ->  parameters -> profiles -> ubuntu -> command line (under name) and change it to `ubuntu run`
  - Use ubuntu as default terminal in pycharm: tools>terminal  and put in shell path: `ubuntu run`
- - You can use this command to convert a windows path to wsl path : `wslpath  'C:\Users\AmineDjeghri\Desktop\git\quarterback-tabular'`
+ - You can use `wslpath` command to convert a windows path to wsl path : `wslpath  'C:\Users\AmineDjeghri\Desktop\git\quarterback-tabular'`
  - copy your ssh key from windows to linux and use on the ssh file of linux : `chmod 600 your_ssh_file` 
  
 ### 3.2.1.Conding using Windows (2nd choice) (Skip this if you are using WSL)
@@ -263,20 +271,13 @@ zsh-syntax-highlighting
 - Use Quiet Hours and add only the applications that you want them to send you a notification, (Brave will still send you notifications to get BAT but it will never appear ;) )
 - 
 ### Screen recorder :
+- ShareX for screen capturing and GIF recording
 - You can use the integrated screen recorder of windows, press `windows key + G` 
 - Use other free software like: OBS, Streamlabs
 
 ### Screenshot in windows 10: Windows provides two ways to take a screenshot
-#### 1) Windows screenshot 
-- Press the `Windows key + Shift + S`. The integrated windows screenshot software will open. You can drag to select parameters like: active windows, all screen, region ...ect.
-- Press `PrtScn` This copies the entire screen to the clipboard. You can paste the screenshot into any program that displays images, like Paint or Microsoft Word.
-- Press `Alt + PrtScn` . This copies the active window to the clipboard, which you can paste into another program. 
 
-#### 2) Windows Snipping Tool
-1. search for it in the search bar
-2. In the "Mode" drop down, choose the kind of screenshot shape you want — you can choose anything from full screen to rectangular to a free-form shape
-
-### Wifi :
+### Wifi & Router 5ghz:
 if your pc keeps switching between 5ghz and 2.4ghz do the following:
 - If it's your wifi: split your WiFi into 2 access points, one for 5Ghz and the other for 2.4Ghz. After that make your PC connect to the 5Ghz one only 
 - If it's not your wifi but you have an ethernet port, you can always buy a router( example HONOR ROUTER 3 WIFI 6) and you will have your own private network and can split the wifi into 2 access points like i mentionnned it in the section above.
