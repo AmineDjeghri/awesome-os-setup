@@ -22,7 +22,9 @@ Some tips to improve your User experience when using windows
  - Activate localization on windows (if you want to localize your device)
  - Activate bitlocker to encrypt your data (Exists only on windows pro, education and entreprise edition)
  - When placing an external monitor that runs 144hz, make sure to activate the `144Hz` in display settings
+ - If you're using OneDrive, becareful when you sync your Desktop and windows specific folders, you can face some problems. My advice is to avoid syncing windows default folders (like Desktop, Documents). Juse use OneDrive as a cloud store.
  - (Skip if you are on laptop) if you have a 3200mhz RAM and it runs bellow this frequency, activate XMP profile in the BIOS
+ 
 
 ### 1.1 New PC ? transfer your windows key
 - On your old PC, check if the key is not an OEM by running  `Slmgr /dli`
@@ -47,7 +49,7 @@ Some tips to improve your User experience when using windows
 - <ins>Windows Terminal </ins> windows terminal works in every directory, right lick in any directory and you can have a bash with that path 
 -  <ins> Teracopy </ins>
 ### 2.2 Amazing apps & websites:
-- Free PDF editing (3 free tasks per hour) : https://www.sejda.com/
+- Free PDF editing (3 free tasks per hour) : https://www.sejda.com/ (do not download the desktop app)
 - Free Photoshop alternative : https://www.photopea.com/
 - Notion 
 
@@ -79,7 +81,7 @@ Open file your_home_directory/.ssh/id_rsa.pub (example `C:\Users\AmineDjeghri\.s
 
 
 ### 3.2 Do you want to use Linux (WSL) inside windows or just use Windows ?
-### 3.2.1.Conding using Linux(WSL) inside Windows (1st and best choice)
+### 3.2.1.Conding using Linux(WSL) inside Windows (BEST CHOICE) - Skip this if you don't want to use WSL
 
 ![WSL terminal](https://github.com/AmineDjeghri/BetterWindows/blob/master/resources/wsl_terminal.png)
 
@@ -91,10 +93,19 @@ It is fantastic. Virtualisation overhead is not noticeable, full integration bet
  Give it a try:
  - Install WSL ``` wsl --install ``` 
  - Restart you computer
- - Install Ubuntu from [MS Store](https://apps.microsoft.com/store/detail/ubuntu-on-windows/9NBLGGH4MSV6?hl=fr-fr&gl=fr)
- - Run directly Ubuntu from windows search bar (or windows terminal and choose ubuntu)
--  <ins>Miniconda or Anaconda</ins> (better than installing python alone)
+ - in windows search bar, search for `ubuntu` and click on it. It will launch the terminal and install it. If it's not there, make sure you have correctly installed WSL by searching wsl in your windows search bar.
+ - Run directly Ubuntu from windows search bar (or launch windows terminal and choose ubuntu or launch windows terminal and run the command `ubuntu`)
 
+#### install miniconda in WSL: 
+ - run `wget https://repo.anaconda.com/miniconda/Miniconda3-py39_22.11.1-1-Linux-x86_64.sh`
+ - run `chmod +x Miniconda3-py39_22.11.1-1-Linux-x86_64.sh`
+ - run `bash Miniconda3-py39_22.11.1-1-Linux-x86_64.sh`
+#### configure WSL terminal : 
+ - To open Ubuntu terminal from current location : go to windows terminal ->  parameters -> profiles -> ubuntu -> command line (under name) and change it to `ubuntu run`
+ - Use ubuntu as default terminal in pycharm: tools>terminal  and put in shell path: `ubuntu run`
+ - You can use this command to convert a windows path to wsl path : `wslpath  'C:\Users\AmineDjeghri\Desktop\git\quarterback-tabular'`
+ - copy your ssh key from windows to linux and use on the ssh file of linux : `chmod 600 your_ssh_file` 
+ 
 ### 3.2.1.Conding using Windows (2nd choice) (Skip this if you are using WSL)
 #### install conda :
 - Make sure that you don't have any python installed on your computer.
@@ -140,14 +151,7 @@ if device.type == 'cuda':
 - there is a requirements.txt that contains the principal data science libraries (without pytorch as you have installed it from the previous line, just do `pip install -r https://raw.githubusercontent.com/AmineDjeghri/BetterWindowsUX/master/requirements.txt`
 
 # 5- UX Custommization
-## WSL (Windows subsystem for Linux ) / Windows Terminal :
 
- 
- #### Windows Terminal & WSL : 
- - Open Ubuntu terminal from current location : go to windows terminal ->  parameters -> profiles -> ubuntu -> command line (under name) and change it to `ubuntu run`
- - Use ubuntu as default terminal in pycharm: tools>terminal  and put in shell path: `ubuntu run`
- - You can use this command to convert a windows path to wsl path : `wslpath  'C:\Users\AmineDjeghri\Desktop\git\quarterback-tabular'`
- - copy your ssh key from windows to linux and use on the ssh file of linux : `chmod 600 your_ssh_file`
 
 ## customize linux terminal
 ### Install and set up zsh as default
