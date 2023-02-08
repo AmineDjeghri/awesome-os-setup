@@ -76,7 +76,7 @@ Open file your_home_directory/.ssh/id_rsa.pub (example `C:\Users\AmineDjeghri\.s
 - <ins>Pycharm Jupyter Notebook</ins> : Use the one provided in Pycharm. It provides better autocomplete.
 - <ins>Free Cloud GPU </ins> Google Colab you can either put your git repositories inside google drive to use them in colab, or directly import git repo inside colab without google drive 
 
-- <ins>SFTP</ins> : Filezilla (work with private key: add it in edit/connection/sftp or use pageant)
+- <ins>Filezilla</ins> : for SFTP (work with private key: add it in edit/connection/sftp or use pageant)
 - Git emojis: https://gitmoji.dev/ 
 - Latex Handwriting recognition: https://detexify.kirelabs.org/classify.html
 - Turn math equations and snipping to latex code: https://mathpix.com/
@@ -112,56 +112,13 @@ It is fantastic. Virtualisation overhead is not noticeable, full integration bet
  - To open Ubuntu terminal from current location : go to windows terminal ->  parameters -> profiles -> ubuntu -> command line (under name) and change it to `ubuntu run`
  - Use ubuntu as default terminal in pycharm: tools>terminal  and put in shell path: `ubuntu run`
  - You can use `wslpath` command to convert a windows path to wsl path : `wslpath  'C:\Users\AmineDjeghri\Desktop\git\quarterback-tabular'`
- - copy your ssh key from windows to linux and use on the ssh file of linux : `chmod 600 your_ssh_file` 
+ - copy your ssh key from windows to linux and use on the ssh file of linux : `chmod 600 ~/.ssh/id_rsa` and `chmod 600 ~/.ssh/id_rsa.pub`
  
 ### 3.2.1.Conding using Windows (2nd choice) (Skip this if you are using WSL)
-#### install conda :
-- Make sure that you don't have any python installed on your computer.
-- Download miniconda from [the official website](https://docs.conda.io/en/latest/miniconda.html)
-- Install it and CHECK `add path to environnement variables`
-- After the installation of conda, restart your pc.
-- Open a 'Anaconda Powershell Prompt'  from Start Menu (not a regular windows terminal). Now Try: `conda init powershell`
-- Run windows terminal (powershell) always use windows terminal instead of cmd or somethig else)
-- you should see '(base)' before any command.
-- run `conda env list` to verify if conda has been correctly installed. also run `python` to see if python has been added to the path 
-
-
-## 4-Python, Pytorch and Cuda installation: 
-#### 4.1.1 Pytorch with Nvidia GPU
-- Important : Pytorch 1.10.1 works with CUDA 11.3 and visual studio 2019
-- Download [VSCode Community 2019](https://docs.microsoft.com/en-us/visualstudio/releases/2019/release-notes).
-- Install it and check `Desktop Development with C++` and `.NET` (size will be 11GB approxiamtly) 
-- Download and install [CUDA 11.3](https://developer.nvidia.com/cuda-11.3.0-download-archive?target_os=Windows&target_arch=x86_64&target_version=10&target_type=exe_local)
-- Install [Pytorch 1.10.1](https://pytorch.org/get-started/locally/) by running this command `pip install torch==1.10.1+cu113 torchvision==0.11.2+cu113 torchaudio===0.10.1+cu113 -f https://download.pytorch.org/whl/cu113/torch_stable.html`
-
-#### 4.1.2 Pytorch without gpu: 
-`pip install torch torchvision torchaudio`
-
-- Check if you succeeded to install pytorch, run the following python code: 
-
-```
-import torch
-# setting device on GPU if available, else CPU
-device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
-print('Using device:', device)
-print()
-
-#Additional Info when using cuda
-if device.type == 'cuda':
-    print(torch.cuda.get_device_name(0))
-    print('Memory Usage:')
-    print('Allocated:', round(torch.cuda.memory_allocated(0)/1024**3,1), 'GB')
-    print('Cached:   ', round(torch.cuda.memory_reserved(0)/1024**3,1), 'GB')
-```
-
-#### 4.2 Python packages:
-- Always use `pip` command in Windows Terminal to install python packages 
-- there is a requirements.txt that contains the principal data science libraries (without pytorch as you have installed it from the previous line, just do `pip install -r https://raw.githubusercontent.com/AmineDjeghri/BetterWindowsUX/master/requirements.txt`
+- follow this link
 
 # 5- UX Custommization
-
-
-## customize linux terminal
+## customize WLS (ubuntu) terminal
 ### Install and set up zsh as default
 
 If necessary, follow these steps to install Zsh:
@@ -182,15 +139,9 @@ If necessary, follow these steps to install Zsh:
 
 source : https://github.com/ohmyzsh/wiki/edit/main/Installing-ZSH.md
 
-### install miniconda
-- install miniconda on ubuntu 
-- copy the export link to your .zshrc ( if you want to find it : `cd` then `ls -a` then `nano .zshrc` or use windows explorer to navigate to it : 
+#### update .zshrc (conda and other tools)
+- If you have conda installed : copy conda export from .bashrc to .zshrc ( if you want to find it : `cd` then `ls -a` then `nano .zshrc` or use windows explorer to navigate to it : 
 `\\wsl.localhost\Ubuntu\home\amine ` and open the file .zshrc with notepad or sublimText.
-
-```
-#### enable miniconda
-export PATH="/home/amine/miniconda3/bin:$PATH")
-```
 - run : `conda init zsh`
 - close all the terminals and run again ubuntu terminal.
 - you should see the `(base)` noun before the command.
