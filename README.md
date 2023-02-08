@@ -61,8 +61,9 @@ Some tips to improve your User experience when using windows
 #### <ins>Git-Bash</ins>:
 - You can use linux commands in window like SSH and Git ! Download gitbash to have these commands added to windows Terminal. Open a new Windows terminal after the installation and run this command `git --version` you should see the following message `git version 2.39.1.windows.1`. that means the git command works !
 #### <ins>PyCharm or VScode</ins>: 
-- I prefer to use PyCharm (Education version which is free) but here are the config for both, BECAREFUL when creating a project, you should use the anaconda python and not another one like virtualenv (that's why you need to make sure to have only the anaconda python installed)
+- I prefer to use PyCharm (Education version which is free) but here are the config for both, BECAREFUL when creating a project, you should use the anaconda python or wsl anaconda and not another one like virtualenv)
 - Sync pycharm settings : https://www.jetbrains.com/help/pycharm/sharing-your-ide-settings.html#IDE_settings_sync
+
 #### other tools
 - .ssh key : generate an ssh key with `ssh-keygen -t rsa` (when prompted, enter an empty password if you want, key name can stay the same)
 Open file your_home_directory/.ssh/id_rsa.pub (example `C:\Users\AmineDjeghri\.ssh` with your favorite text editor to see the key.
@@ -94,18 +95,16 @@ It is fantastic. Virtualisation overhead is not noticeable, full integration bet
  - Run directly Ubuntu from windows search bar (or windows terminal and choose ubuntu)
 -  <ins>Miniconda or Anaconda</ins> (better than installing python alone)
 
-### 3.2.1.Conding using Windows (2nd choice)
+### 3.2.1.Conding using Windows (2nd choice) (Skip this if you are using WSL)
 #### install conda :
+- Make sure that you don't have any python installed on your computer.
 - Download miniconda from [the official website](https://docs.conda.io/en/latest/miniconda.html)
-: install it and CHECK add path to environnement variables, make sure to delete every available python version on your system before.
+- Install it and CHECK `add path to environnement variables`
 - After the installation of conda, restart your pc.
--Open a 'Anaconda Powershell Prompt'  from Start Menu (not a regular windows terminal). Now Try:
-conda init powershell
+- Open a 'Anaconda Powershell Prompt'  from Start Menu (not a regular windows terminal). Now Try: `conda init powershell`
 - Run windows terminal (powershell) always use windows terminal instead of cmd or somethig else)
 - you should see '(base)' before any command.
 - run `conda env list` to verify if conda has been correctly installed. also run `python` to see if python has been added to the path 
-
-
 
 
 ## 4-Python, Pytorch and Cuda installation: 
