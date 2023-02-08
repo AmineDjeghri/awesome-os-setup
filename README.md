@@ -51,10 +51,51 @@ Some tips to improve your User experience when using windows
 - Free Photoshop alternative : https://www.photopea.com/
 - Notion 
 
-## 3- Dev Softwares
+## 3- Dev workflow
+### 3.1 Dev software
+#### <ins>Sublime Text</ins> (Free, no need to but the pro lisence): 
+- Extremely lightweight (low resource usage), but still keeps around some of the more advanced features you would expect out of a top text editor.
+- Install it before installing git bash (a software that adds linux and git commands to windows). 
+- (recommanded) CheatSheet
+- (optionnal) Run from CLI: go to  `System Properties -> Advanced System Settings -> Advanced -> Environment Variables -> System variable -> path` and add `C:\Program Files\Sublime Text` to the PATH environment variable to make it accessible from the terminal. Close the windows terminal and open a new one and run this command `subl`, it should open Sublime Text.
+#### <ins>Git-Bash</ins>:
+- You can use linux commands in window like SSH and Git ! Download gitbash to have these commands added to windows Terminal. Open a new Windows terminal after the installation and run this command `git --version` you should see the following message `git version 2.39.1.windows.1`. that means the git command works !
+#### <ins>PyCharm or VScode</ins>: 
+- I prefer to use PyCharm (Education version which is free) but here are the config for both, BECAREFUL when creating a project, you should use the anaconda python and not another one like virtualenv (that's why you need to make sure to have only the anaconda python installed)
+- Sync pycharm settings : https://www.jetbrains.com/help/pycharm/sharing-your-ide-settings.html#IDE_settings_sync
+#### other tools
+- .ssh key : generate an ssh key with `ssh-keygen -t rsa` (when prompted, enter an empty password if you want, key name can stay the same)
+Open file your_home_directory/.ssh/id_rsa.pub (example `C:\Users\AmineDjeghri\.ssh` with your favorite text editor to see the key.
+- <ins>Pycharm Jupyter Notebook<ins> : Use the one provided in Pycharm. It provides better autocomplete.
+- <ins>Free Cloud GPU </ins> Google Colab you can either put your git repositories inside google drive to use them in colab, or directly import git repo inside colab without google drive 
+- powershell 7 : Install it from Microsoft store. Close all the terminals than you have than run again windows terminal. Put powershell as default.
+- <ins>SFTP</ins> : Filezilla (work with private key: add it in edit/connection/sftp or use pageant)
+- Git emojis: https://gitmoji.dev/ 
+- Latex Handwriting recognition: https://detexify.kirelabs.org/classify.html
+- Turn math equations and snipping to latex code: https://mathpix.com/
+- Overleaf: https://www.overleaf.com/
+- wget: add it to your temrinal: https://www.programmersought.com/article/90723524682/
+
+
+### 3.2 Do you want to use Linux (WSL) inside windows or just use Windows ?
+### 3.2.1.Conding using Linux(WSL) inside Windows (1st and best choice)
+
+![WSL terminal](https://github.com/AmineDjeghri/BetterWindows/blob/master/resources/wsl_terminal.png)
+
+The most amazing thing about windows latest version is WSL (WSL2.0 exactly). You can run Linux in Windows. 
+It is fantastic. Virtualisation overhead is not noticeable, full integration between guest and host os's, you can run binaries compiled for MS Windows from linux. Full development toolchain is available as WSLessentialy is linux VM in second incarnation. It supports snapshots and is portable. This made windows useful.
+- You can install packages directly in UBuntu 
+- You can easily navigate and communicate between ubuntu and windows as Ubuntu acts like a disk drive.
+- you can install conda environement in ubuntu, use GPU, install pycharm on windows, and use the conda installation in pycharm.
+ Give it a try:
+ - Install WSL ``` wsl --install ``` 
+ - Restart you computer
+ - Install Ubuntu from [MS Store](https://apps.microsoft.com/store/detail/ubuntu-on-windows/9NBLGGH4MSV6?hl=fr-fr&gl=fr)
+ - Run directly Ubuntu from windows search bar (or windows terminal and choose ubuntu)
 -  <ins>Miniconda or Anaconda</ins> (better than installing python alone)
 
-#### How to install conda :
+### 3.2.1.Conding using Windows (2nd choice)
+#### install conda :
 - Download miniconda from [the official website](https://docs.conda.io/en/latest/miniconda.html)
 : install it and CHECK add path to environnement variables, make sure to delete every available python version on your system before.
 - After the installation of conda, restart your pc.
@@ -64,19 +105,8 @@ conda init powershell
 - you should see '(base)' before any command.
 - run `conda env list` to verify if conda has been correctly installed. also run `python` to see if python has been added to the path 
 
-- <ins>Sublime Text</ins>: install it before installing git bash (a software that adds linux and git commands to windows).
-Then go to : System Properties -> Advanced System Settings -> Advanced -> Environment Variables and add `C:\Program Files\Sublime Text` to the PATH environment variable to make it accessible from the terminal. Close the windows terminal and open a new one and run this command `subl`, it should open Sublime Text.
-- <ins>Git-Bash</ins>: You can use linux commands in window like SSH and Git ! Download gitbash to have these commands added to windows Terminal. Open a new Windows terminal after the installation and run this command `git status` you should see the following message `fatal: not a git repository (or any of the parent directories): .git`. that means the git command works !
-- <ins>PyCharm or VScode</ins>: I prefer to use PyCharm (Education version which is free) but here are the config for both, BECAREFUL when creating a project, you should use the anaconda python and not another one like virtualenv (that's why you need to make sure to have only the anaconda python installed)
-- Sync pycharm settings : https://www.jetbrains.com/help/pycharm/sharing-your-ide-settings.html#IDE_settings_sync
-- Jupyter Notebook : Use the one provided in Pycharm. It provides better autocomplete.
-- <ins>Free Cloud GPU </ins> Google Colab you can either put your git repositories inside google drive to use them in colab, or directly import git repo inside colab without google drive 
-- <ins>SFTP</ins> : Filezilla (work with private key: add it in edit/connection/sftp or use pageant)
-- Git emojis: https://gitmoji.dev/ 
-- Latex Handwriting recognition: https://detexify.kirelabs.org/classify.html
-- Turn math equations and snipping to latex code: https://mathpix.com/
-- Overleaf: https://www.overleaf.com/
-- wget: add it to your temrinal: https://www.programmersought.com/article/90723524682/
+
+
 
 ## 4-Python, Pytorch and Cuda installation: 
 #### 4.1.1 Pytorch with Nvidia GPU
@@ -113,18 +143,6 @@ if device.type == 'cuda':
 # 5- UX Custommization
 ## WSL (Windows subsystem for Linux ) / Windows Terminal :
 
-![WSL terminal](https://github.com/AmineDjeghri/BetterWindows/blob/master/resources/wsl_terminal.png)
-
-The most amazing thing about windows latest version is WSL (WSL2.0 exactly). You can run Linux in Windows. 
-It is fantastic. Virtualisation overhead is not noticeable, full integration between guest and host os's, you can run binaries compiled for MS Windows from linux. Full development toolchain is available as WSLessentialy is linux VM in second incarnation. It supports snapshots and is portable. This made windows useful.
-- You can install packages directly in UBuntu 
-- You can easily navigate and communicate between ubuntu and windows as Ubuntu acts like a disk drive.
-- you can install conda environement in ubuntu, use GPU, install pycharm on windows, and use the conda installation in pycharm.
- Give it a try:
- - Install WSL ``` wsl --install ``` 
- - Restart you computer
- - Install Ubuntu from [MS Store](https://apps.microsoft.com/store/detail/ubuntu-on-windows/9NBLGGH4MSV6?hl=fr-fr&gl=fr)
- - Run directly Ubuntu from windows search bar (or windows terminal and choose ubuntu)
  
  #### Windows Terminal & WSL : 
  - Open Ubuntu terminal from current location : go to windows terminal ->  parameters -> profiles -> ubuntu -> command line (under name) and change it to `ubuntu run`
