@@ -10,9 +10,8 @@ Some tips to improve your User experience when using windows
 ## Summary 
 1. [Windows Installation](https://github.com/AmineDjeghri/BetterWindows11#1--windows-configuration)
 2. [Utility Softwares : Browsers, extensions, daily and usefull programs](https://github.com/AmineDjeghri/BetterWindows11#2-utility-softwares)
-3. [Dev Softwares : All the softwares I recommand for developpement and codin](https://github.com/AmineDjeghri/BetterWindows11#3--dev-softwares)
-4. [Pytorch and Cuda](https://github.com/AmineDjeghri/BetterWindows11#4-python-pytorch-and-cuda-installation)
-5. [UI/UX Custommization](https://github.com/AmineDjeghri/BetterWindows11#5--ux-custommization)
+3. [Dev Softwares : All the softwares I recommand for developpement and coding](https://github.com/AmineDjeghri/BetterWindows11#3--dev-softwares)
+4. [UI/UX Custommization](https://github.com/AmineDjeghri/BetterWindows11#5--ux-custommization)
 
 
 ## 1- Windows configuration
@@ -45,7 +44,7 @@ Some tips to improve your User experience when using windows
 - <ins>Google Drive</ins> :  download it on windows and put the files and folder that you want to be automatically saved on your drive, you won't need to everytime open google drive in your browser and manually put your files there
 - <ins>Online Storage</ins> : Google Drive (15gb), Mega Drive (50GB) ...ect. Use these Drives to store non personanal Data ! It's better to have an NAS or an external HDD to store your personal data.
 - <ins>Microsoft Office 2016</ins> Buy it or ... Better than the 365 version.
-- <ins>Netflix, Prime</ins>: windows store and browser (browser is better in terms of stability and vpn use, windows store apps can handle 7.1 and 4k streaming). To add windwos apps downloaded from windows store in the taskbar or the desktop :Press Windows key + R then enter shell:appsfolder then drag and drop .
+- <ins>Netflix, Prime</ins>: windows store and browser (browser is better in terms of stability, browsing content and vpn use, windows store apps and Edge can handle 7.1 and 4k streaming). To add windows apps downloaded from windows store in the taskbar or the desktop :Press Windows key + R then enter shell:appsfolder then drag and drop .
 - <ins>Windows Terminal </ins> windows terminal works in every directory, right lick in any directory and you can have a bash with that path 
 -  <ins> Teracopy </ins>
 ### 2.2 Amazing apps & websites:
@@ -74,8 +73,7 @@ Some tips to improve your User experience when using windows
 - <ins>ssh key</ins> : generate an ssh key with `ssh-keygen -t rsa` (when prompted, enter an empty password if you want, key name can stay the same)
 Open file your_home_directory/.ssh/id_rsa.pub (example `C:\Users\AmineDjeghri\.ssh` with your favorite text editor to see the key. 
 - <ins>Pycharm Jupyter Notebook</ins> : Use the one provided in Pycharm. It provides better autocomplete.
-- <ins>Free Cloud GPU </ins> Google Colab you can either put your git repositories inside google drive to use them in colab, or directly import git repo inside colab without google drive 
-
+- <ins>Free Cloud GPU </ins> Google Colab/Kaggle you can either put your git repositories inside google drive to use them in colab, or   git clone inside colab. 
 - <ins>Filezilla</ins> : for SFTP (work with private key: add it in edit/connection/sftp or use pageant)
 - Git emojis: https://gitmoji.dev/ 
 - Latex Handwriting recognition: https://detexify.kirelabs.org/classify.html
@@ -117,7 +115,7 @@ It is fantastic. Virtualisation overhead is not noticeable, full integration bet
 ### 3.2.1.Conding using Windows (2nd choice) (Skip this if you are using WSL)
 - follow this link
 
-# 5- UX Custommization
+# 4- UX Custommization
 ## customize WLS (ubuntu) terminal
 ### Install and set up zsh as default
 
@@ -127,7 +125,7 @@ If necessary, follow these steps to install Zsh:
 
    - With the package manager of your choice, _e.g._ `sudo apt install zsh`
 
-2. Verify installation by running `zsh --version`. Expected result: `zsh 5.0.8` or more recent.
+2. Verify installation by running `zsh --version`. Expected result: `zsh 5.8.1` or more recent.
 
 3. Make it your default shell: `chsh -s $(which zsh)`
 
@@ -187,8 +185,6 @@ zsh-syntax-highlighting
 - Install rainmeter
 - Install https://github.com/mpurses/Sonder/releases
 - Download this wallpaper https://raw.githubusercontent.com/mpurses/Sonder/master/Skins/Sonder/Wallpapers/Trees-22.jpg
-
-
 - O&O ShutUp 10 : privacy control windows
 - DS4Windows : make playstation controllers work on PC : https://github.com/Ryochan7/DS4Windows/releases
 - Bing wallpaper: https://www.microsoft.com/en-us/bing/bing-wallpaper?SilentAuth=1&wa=wsignin1.0
@@ -212,7 +208,7 @@ zsh-syntax-highlighting
 - This gives you a listing where you can get rid of old virtualenvs that PyCharm thinks are still around 
 
 ### Windows design and UX: 
-- You can convert a website to an application , for exemple: Google Agenda  in Brave/Chrome, go to plus d'outils -> creer un racourcie , and check window mode, it will run like an app in your windows desktop
+- You can convert a website to an application , for exemple: Google Agenda/ Netflix in Edge/Brave/Chrome, go to At the top right: More -> More Tools ->  Create shortcut.  , and check window mode, it will run like an app in your windows desktop
 ( I took the example of mattermost because there is no free Google Agenda app in windows )
 - Remove unnecessary programs, unnecessary icons from the start menu and add others like google maps, meteo calendar
 - App shortcut : some apps don't provide a desktop shortcut, even if you try to find where they are you can't (like Netflix), they only give you the choice to add them to the start menu or the taskbar . But there is a solution :
@@ -229,14 +225,17 @@ zsh-syntax-highlighting
 ### Screenshot in windows 10: Windows provides two ways to take a screenshot
 
 ### Wifi & Router 5ghz:
-if your pc keeps switching between 5ghz and 2.4ghz do the following:
+- Deactivate WPS
+- Make your wifi invisible
+Choose 5ghz over 2.4ghz: if your device is connected to a wifi and it keeps switching between 5ghz and 2.4ghz do the following:
 - If it's your wifi: split your WiFi into 2 access points, one for 5Ghz and the other for 2.4Ghz. After that make your PC connect to the 5Ghz one only 
-- If it's not your wifi but you have an ethernet port, you can always buy a router( example HONOR ROUTER 3 WIFI 6) and you will have your own private network and can split the wifi into 2 access points like i mentionnned it in the section above.
+- If it's not your wifi (hotel/work wifi) and you have an ethernet port, you can always plug a router( example HONOR ROUTER 3 WIFI 6) and have your own private network. You can split the wifi into 2 access points like i mentionnned it in the section above.
+
 ### More  
  - <ins>Deactivate startup programs</ins>:task manager -> startup -> deactivate software that you don't want it to run at startup ( do the same in ccleaner)
  - <ins>Windows partition</ins>: use the windows partition integrated software to create , delete or format partitions
- - You can change your power management options (when windows will be put on sleep, what happens when you close your laptop ..ect)
- - If you consider buying a laptop with a GPU for Deep Learning, go for an NVIDIA laptop with with a GPU that supports CUDA. You can always use the cloud solutions for GPU computing: Google Colab, 100$ Free Azure Credits...ect. Just DON'T buy a laptop with an AMD GPU for Deep Learning.
+ - You can change your power management options (when windows will be put on sleep, what happens when you close your laptop ..ect), performance vs normal usage.
+ - If you consider buying a computer with a GPU for Deep Learning, choose a computer with an NVIDIA GPU that supports CUDA (preferably > RTX 2000 series). 
 
 ## Awesome Piracy : 
 https://github.com/Igglybuff/awesome-piracy
