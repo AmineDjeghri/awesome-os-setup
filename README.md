@@ -116,7 +116,7 @@ It is fantastic. Virtualisation overhead is not noticeable, full integration bet
 - follow this link
 
 # 4- UX Custommization
-## customize WLS (ubuntu) terminal
+## 4.1 customize WLS (ubuntu) terminal
 ### Install and set up zsh as default
 
 If necessary, follow these steps to install Zsh:
@@ -138,9 +138,8 @@ If necessary, follow these steps to install Zsh:
 source : https://github.com/ohmyzsh/wiki/edit/main/Installing-ZSH.md
 
 #### update .zshrc (conda and other tools)
-- If you have conda installed : copy conda export from .bashrc to .zshrc ( if you want to find it : `cd` then `ls -a` then `nano .zshrc` or use windows explorer to navigate to it : 
-`\\wsl.localhost\Ubuntu\home\amine ` and open the file .zshrc with notepad or sublimText.
-- run : `conda init zsh`
+- If you have conda installed : copy conda init from .bashrc to .zshrc ( if you want to find it : `cd` then `ls -a` then `nano .zshrc` or use windows explorer to navigate to it : `\\wsl.localhost\Ubuntu\home\amine ` and open the file .zshrc with notepad or sublimText.
+-(optional) if you didn't copy the init conda content from .bashrc,  run : `conda init zsh`
 - close all the terminals and run again ubuntu terminal.
 - you should see the `(base)` noun before the command.
 
@@ -149,35 +148,55 @@ source : https://github.com/ohmyzsh/wiki/edit/main/Installing-ZSH.md
 The ZSH syntax highlighting feature—similar to one found in the fish shell—automatically highlights your commands as you type them, which can help you catch syntax errors and fix them before running the command.
 - `sudo apt-get install git`
 - `git clone https://github.com/zsh-users/zsh-syntax-highlighting.git`
-- The next step is to add the syntax-highlighting extension to the .zshrc file. The value of the ZDOTDIR variable will determine this. Use the command shown below:
+- Use the command shown below to add the syntax-highlighting extension to the .zshrc file. The value of the ZDOTDIR variable will determine this. 
 `echo "source ${(q-)PWD}/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" >> ${ZDOTDIR:-$HOME}/.zshrc`
-- source ./zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+- run `exec zsh` to reload the terminal
+- If you write `ls` in the terminal, you should see that it has a color.
 
 #### What is Oh my ZSH ?
 - Oh My Zsh is an open source, community-driven framework for managing your zsh configuration.
 -  with wget `sh -c "$(wget https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh -O -)"`
+- Advanced Tab Autocompletion in Zsh : Another powerful Zsh feature is its tab completion system. It tries to suggest available commands according to the command-line context.
+  - type `systemctl`, put a space and then hit TAB to get a list of available systemctl commands with their descriptions. Hit TAB again to start navigating through the list:
+  - Type `cd` and put a space and then hit `TAB` twice  to get a list of files and use the arrows or `TAB`  again to navigate in the list between directories
+  - Type `system` and without any space press `TAB` to get a list of auto suggestions. You may hit `TAB `again to start navigating through the available programs. Use TAB or ARROW keys to navigate through the list
 
-#### some pluggins : autosuggestions and syntaxh highlighting
 
+#### Zsh Plugins : autosuggestions and syntaxh highlighting
+A Zsh plugin is a set of useful aliases and functions designed to make you more productive.
 run the following commands on your teminal 
 - `git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions`
 - `git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting`
 
-Open your editor and add these lines in .zshrc file at ~/.zshrc (you can do that through windows explorer as you did before)
+Open your .zshrc file at ~/.zshrc (you can do that through windows explorer and sublime text as you did before) and search for `plugins=(git)`.
+If you don't find it, then create it and complete it with the missing plugins as shown in the example bellow : 
 ```
 plugins=(git
-zsh-autosuggestions
-zsh-syntax-highlighting
+        dirhistory
+        history
+        colored-man-pages
+        jsontools
+        zsh-autosuggestions
+        zsh-syntax-highlighting
 )
 ```
-- other plugings :[website](https://www.linkedin.com/pulse/how-install-start-using-oh-my-zsh-boost-your-mantas-levinas/?trk=pulse-article_more-articles_related-content-card)
 
-#### Powerlevel10k 
+- Auto update oh my zsh : uncomment this: `zstyle ':omz:update' mode auto`
+- History Timestamps
+- add the following alias to the end of .zshrc file to easily open sublime Text from windows:
+`alias sublime="subl.exe"`. Try it with : `sublime .zshrc`
+- You can visit this :[website](https://www.linkedin.com/pulse/how-install-start-using-oh-my-zsh-boost-your-mantas-levinas/?trk=pulse-article_more-articles_related-content-card) to understand more about the installed plugins. you can skip directly to `7. Enable Zsh Plugins` section and start reading. You will see that you have installed most of the commands there.
+
+
+#### zsh themes : Powerlevel10k 
 - Powerlevel10k is a theme for Zsh. It emphasizes speed, flexibility and out-of-the-box experience.
 - `git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k`
-- Set ZSH_THEME="powerlevel10k/powerlevel10k" in ~/.zshrc.
+- Open .zshrc and set `ZSH_THEME="powerlevel10k/powerlevel10k"`.
 - install this font on windows [MesloLGS NF Regular.ttf](https://github.com/romkatv/dotfiles-public/blob/master/.local/share/fonts/NerdFonts/MesloLGS%20NF%20Regular.ttf)
-- restart ubuntu terminal and configure your theme.
+- reload ubuntu terminal with `exec zsh` and configure your theme.
+## 4.1 customize Windows terminal
+- TO update
+
 
 ### Costumize your windows:
 - #### Rainmeter: 
