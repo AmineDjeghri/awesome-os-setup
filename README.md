@@ -195,6 +195,7 @@ plugins=(git
 - install this font on windows [MesloLGS NF Regular.ttf](https://github.com/romkatv/dotfiles-public/blob/master/.local/share/fonts/NerdFonts/MesloLGS%20NF%20Regular.ttf)
 - open windows terminal and go to settings -> profiles (bottom left) -> Ubuntu terminal(orange logo) -> additional parameters-> apparence -> change the font to 
 - reload ubuntu terminal with `exec zsh` and configure your theme.
+- you can also change the terminal color [here](https://pureinfotech.com/change-color-scheme-windows-terminal/)
 ## 4.1 customize Windows terminal
 - TO update
 
