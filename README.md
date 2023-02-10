@@ -95,7 +95,7 @@ It is fantastic. Virtualisation overhead is not noticeable, full integration bet
  Give it a try:
  - Install WSL ``` wsl --install ``` 
  - Restart you computer
- - in windows search bar, search for `ubuntu` and click on it. It will launch the terminal and install it. If it's not there, make sure you have correctly installed WSL by searching wsl in your windows search bar.
+ - In windows search bar, search for `ubuntu` and click on it. It will launch the terminal and install it. If it's not there, make sure you have correctly installed WSL by searching wsl in your windows search bar.
  - Run directly Ubuntu from windows search bar (or launch windows terminal and choose ubuntu or launch windows terminal and run the command `ubuntu`)
 
 #### install miniconda in WSL: 
@@ -193,6 +193,7 @@ plugins=(git
 - `git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k`
 - Open .zshrc and set `ZSH_THEME="powerlevel10k/powerlevel10k"`.
 - install this font on windows [MesloLGS NF Regular.ttf](https://github.com/romkatv/dotfiles-public/blob/master/.local/share/fonts/NerdFonts/MesloLGS%20NF%20Regular.ttf)
+- open windows terminal and go to settings -> profiles (bottom left) -> Ubuntu terminal(orange logo) -> additional parameters-> apparence -> change the font to 
 - reload ubuntu terminal with `exec zsh` and configure your theme.
 ## 4.1 customize Windows terminal
 - TO update
