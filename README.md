@@ -47,7 +47,6 @@ Some tips to improve your User experience when using windows
 - <ins>Google Drive</ins> :  download it on windows and put the files and folder that you want to be automatically saved on your drive, you won't need to everytime open google drive in your browser and manually put your files there
 - <ins>Online Storage</ins> : Google Drive (15gb), Mega Drive (50GB) ...ect. Use these Drives to store non personanal Data ! It's better to have an NAS or an external HDD to store your personal data.
 - <ins>Microsoft Office 2016</ins> Buy it or ... Better than the 365 version.
-- <ins>Netflix, Prime</ins>: windows store and browser (browser is better in terms of stability, browsing content and vpn use, windows store apps and Edge can handle 7.1 and 4k streaming). To add windows apps downloaded from windows store in the taskbar or the desktop :Press Windows key + R then enter shell:appsfolder then drag and drop .
 - <ins>Adobe Suite</ins> : Photoshop or free alternative [Photopea](https://www.photopea.com/), illustrator / adobe premiere pro
 - <ins>PDF editing</ins> (3 free tasks per hour) : https://www.sejda.com/ (do not download the desktop app)
 - <ins>Windows Terminal </ins> windows terminal works in every directory, right lick in any directory and you can have a bash with that path 
@@ -57,6 +56,13 @@ Some tips to improve your User experience when using windows
 - ShareX : screen capturing and GIF recording
 - Integrated Screen recording of windows :  press `windows key + G` 
 - Screen Recording/ Streaming : OBS or Streamlabs
+
+### Browser websites & extensions
+- <ins>Netflix, Prime</ins>: windows store and browser. Browser is better in terms of stability, lists, content and vpn use. On the other hand, Netfliw from the store app and Netfliw on Edge browser  can handle 7.1 and 4k streaming. To add windows apps downloaded from windows store in the taskbar or the desktop :Press Windows key + R then enter shell:appsfolder then drag and drop . 
+- Configure some websites on your desktop and taskbar as shorcuts (Netflix, Google calendar, Gmail...ect)
+- <ins> Gmail and Google Calendar</ins> : you can configure dark mode ("Thèmes" , , choose "dark/sombre") and priority notifications (all new emails), signature.
+- <inst> receive notifications from gmail browser : [Link](https://chrome.google.com/webstore/detail/checker-plus-for-gmail/oeopbcgkkoapgobdbedcemjljbihmemj)
+- <inst> receive notifications from google calendar : [Link](https://chrome.google.com/webstore/detail/checker-plus-for-google-c/hkhggnncdpfibdhinjiegagmopldibha)
 
 
 ## 3- Dev workflow
@@ -89,7 +95,7 @@ Open file your_home_directory/.ssh/id_rsa.pub (example `C:\Users\AmineDjeghri\.s
 - wget on windows terminal : add it to your temrinal: https://www.programmersought.com/article/90723524682/
 
 
-### 3.2 Do you want to use Linux (WSL) inside windows or just use Windows ?
+### 3.2 Linux (WSL) inside windows or just use Windows ?
 ### 3.2.1.Conding using Linux(WSL) inside Windows (BEST CHOICE) - Skip this if you don't want to use WSL
 
 ![WSL terminal](https://github.com/AmineDjeghri/BetterWindows/blob/master/resources/wsl_terminal.png)
@@ -122,12 +128,13 @@ It is fantastic. Virtualisation overhead is not noticeable, full integration bet
  - (pycharm) Add WSL interpreter in Pycharm (add interpreter -> WSL)
  - You can use `wslpath` command to convert a windows path to wsl path : `wslpath  'C:\Users\AmineDjeghri\Desktop\git\quarterback-tabular'`
  - copy your ssh key from windows to linux and use on the ssh file of linux : `chmod 600 ~/.ssh/id_rsa` and `chmod 600 ~/.ssh/id_rsa.pub`
+
+#### Install pytorch/cuda in WSL : 
+- coming soon
  
 ### 3.2.1.Conding using Windows (2nd choice) (Skip this if you are using WSL)
 - [Install conda](https://github.com/AmineDjeghri/BetterWindows11/blob/master/install_conda_windows.md)
 - [Install Pytorch/Cuda](https://github.com/AmineDjeghri/BetterWindows11/blob/master/install_conda_windows.md)
-
-https://github.com/AmineDjeghri/BetterWindows11/blob/master/cuda_pytorch_install.md
 
 # 4- UX Custommization
 ## 4.1 customize WLS (ubuntu) terminal
@@ -226,7 +233,7 @@ plugins=(git
 - DS4Windows : make playstation controllers work on PC : https://github.com/Ryochan7/DS4Windows/releases
 - Bing wallpaper: https://www.microsoft.com/en-us/bing/bing-wallpaper?SilentAuth=1&wa=wsignin1.0
 - Pin some folders and drivers, Recycle Bin in the file explorer. Fast browsing: right click on the file explorer in the taskbar to show the shortcut to the pinned folders.
-- Desktop icons: Personalization->themes->desktop icon settings
+- Add more Desktop icons (PC, Downloads...): Personalization->themes->desktop icon settings
 - WinAero Tweaker : customize the appearance and behavior of the operating system in a flexible way (context menu)
 - TaskbarX [link] (https://chrisandriessen.nl/taskbarx), also hide windows taskbar (right click on the taskbar -> taskbar settings-> hide in desktop mode)
 - Fences [link] (https://store.steampowered.com/app/607380/Fences/?l=french) doesn't need steam to autostartup 
@@ -259,11 +266,5 @@ https://github.com/Igglybuff/awesome-piracy
 
 ## Pycharm : 
 You can learn more about pycharm [here]()
-
-# NOT UPDATED YET
-### Browser websites
-- Configure some websites on your desktop and taskbar as shorcuts (Netflix, Google calendar, Gmail...ect)
-- <ins>Gmail and Google Calendar</ins> : you can configure dark mode ("Thèmes" et cliquez sur "Tout afficher", choose "dark/sombre") and priority notifications (all new emails), signature.
-- 
 
 
