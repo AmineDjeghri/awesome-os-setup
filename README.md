@@ -10,8 +10,11 @@ Some tips to improve your User experience when using windows
 ## Summary 
 1. [Windows Installation](https://github.com/AmineDjeghri/BetterWindows11#1--windows-configuration)
 2. [Utility Softwares : Browsers, extensions, daily and usefull programs](https://github.com/AmineDjeghri/BetterWindows11#2-utility-softwares)
-3. [Dev Softwares : All the softwares I recommand for developpement and coding](https://github.com/AmineDjeghri/BetterWindows11#3--dev-softwares)
-4. [UI/UX Custommization](https://github.com/AmineDjeghri/BetterWindows11#5--ux-custommization)
+3. [Dev Workflow](https://github.com/AmineDjeghri/BetterWindows11#3--dev-workflow)
+  3.1 [Dev Software: All the softwares I recommand for developpement and coding](https://github.com/AmineDjeghri/BetterWindows11#31-dev-software)
+  3.2 [WSL vs Windows](https://github.com/AmineDjeghri/BetterWindows11#32-do-you-want-to-use-linux-wsl-inside-windows-or-just-use-windows-)
+
+4. [UI/UX Custommization](https://github.com/AmineDjeghri/BetterWindows11#4--ux-custommization)
 
 
 ## 1- Windows configuration
@@ -121,7 +124,10 @@ It is fantastic. Virtualisation overhead is not noticeable, full integration bet
  - copy your ssh key from windows to linux and use on the ssh file of linux : `chmod 600 ~/.ssh/id_rsa` and `chmod 600 ~/.ssh/id_rsa.pub`
  
 ### 3.2.1.Conding using Windows (2nd choice) (Skip this if you are using WSL)
-- follow this link
+- [Install conda](https://github.com/AmineDjeghri/BetterWindows11/blob/master/install_conda_windows.md)
+- [Install Pytorch/Cuda](https://github.com/AmineDjeghri/BetterWindows11/blob/master/install_conda_windows.md)
+
+https://github.com/AmineDjeghri/BetterWindows11/blob/master/cuda_pytorch_install.md
 
 # 4- UX Custommization
 ## 4.1 customize WLS (ubuntu) terminal
