@@ -160,12 +160,6 @@ If necessary, follow these steps to install Zsh:
 
 source : https://github.com/ohmyzsh/wiki/edit/main/Installing-ZSH.md
 
-#### update .zshrc (conda and other tools)
-- If you have conda installed : copy conda init from .bashrc to .zshrc ( if you want to find it : `cd` then `ls -a` then `nano .zshrc` or use windows explorer to navigate to it : `\\wsl.localhost\Ubuntu\home\amine ` and open the file .zshrc with notepad or sublimText.
--(optional) if you didn't copy the init conda content from .bashrc,  run : `conda init zsh`
-- close all the terminals and run again ubuntu terminal.
-- you should see the `(base)` noun before the command.
-
 
 #### What is ZSH-Syntax-Highlighting?
 The ZSH syntax highlighting feature—similar to one found in the fish shell—automatically highlights your commands as you type them, which can help you catch syntax errors and fix them before running the command.
@@ -220,7 +214,11 @@ plugins=(git
 - reload ubuntu terminal with `exec zsh` and configure your theme.
 - you can also change the terminal color [here](https://pureinfotech.com/change-color-scheme-windows-terminal/)
 
-
+#### update .zshrc (conda and other tools)
+- If you have conda installed : copy conda init from .bashrc to .zshrc ( if you want to find it : `cd` then `ls -a` then `nano .zshrc` or use windows explorer to navigate to it : `\\wsl.localhost\Ubuntu\home\amine ` and open the file .zshrc with notepad or sublimText.
+-(optional) if you didn't copy the init conda content from .bashrc,  run from bash terminal and not zsh terminal: `conda init zsh`
+- close all the terminals and run again ubuntu terminal.
+- you should see the `(base)` noun before the command.
 
 ## 4.2 customize Windows terminal
 - TO update
