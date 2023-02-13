@@ -1,5 +1,6 @@
 # BetterWindows11
 ![windows desktop terminal](https://github.com/AmineDjeghri/BetterWindows/blob/master/windows-desktop-terminal_1.png)
+![WSL terminal](https://github.com/AmineDjeghri/BetterWindows/blob/master/resources/wsl_terminal.jpg)
 
 !! Updated for windows 11 !!
 
@@ -98,7 +99,7 @@ Open file your_home_directory/.ssh/id_rsa.pub (example `C:\Users\AmineDjeghri\.s
 ### 3.2 Linux (WSL) inside windows or just use Windows ?
 ### 3.2.1.Conding using Linux(WSL) inside Windows (BEST CHOICE) - Skip this if you don't want to use WSL
 
-![WSL terminal](https://github.com/AmineDjeghri/BetterWindows/blob/master/resources/wsl_terminal.png)
+![WSL terminal](https://github.com/AmineDjeghri/BetterWindows/blob/master/resources/wsl_terminal.jpg)
 
 The most amazing thing about windows latest version is WSL (WSL2.0 exactly). You can run Linux in Windows. 
 It is fantastic. Virtualisation overhead is not noticeable, full integration between guest and host os's, you can run binaries compiled for MS Windows from linux. Full development toolchain is available as WSLessentialy is linux VM in second incarnation. It supports snapshots and is portable. This made windows useful.
@@ -138,6 +139,7 @@ It is fantastic. Virtualisation overhead is not noticeable, full integration bet
 
 # 4- UX Custommization
 ## 4.1 customize WLS (ubuntu) terminal
+![WSL terminal](https://github.com/AmineDjeghri/BetterWindows/blob/master/resources/wsl_terminal.jpg)
 ### Install and set up zsh as default
 
 If necessary, follow these steps to install Zsh:
@@ -226,6 +228,7 @@ plugins=(git
 
 ## 4.3 Costumize your windows UI:
 ![windows desktop](https://github.com/AmineDjeghri/BetterWindows/blob/master/windows-desktop.png)
+- Show Files extensions : If you don’t see file name extensions when you view files in File Explorer: In the search box on the taskbar, type file explorer, and in the search results, select File Explorer. In File Explorer under View, in the Show/hide group, select the File name extensions check box.
 - Install rainmeter
 - Install https://github.com/mpurses/Sonder/releases
 - Download this wallpaper https://raw.githubusercontent.com/mpurses/Sonder/master/Skins/Sonder/Wallpapers/Trees-22.jpg
