@@ -45,12 +45,16 @@ Some tips to improve your User experience when using windows
 - <ins>Online Storage</ins> : Google Drive (15gb), Mega Drive (50GB) ...ect. Use these Drives to store non personanal Data ! It's better to have an NAS or an external HDD to store your personal data.
 - <ins>Microsoft Office 2016</ins> Buy it or ... Better than the 365 version.
 - <ins>Netflix, Prime</ins>: windows store and browser (browser is better in terms of stability, browsing content and vpn use, windows store apps and Edge can handle 7.1 and 4k streaming). To add windows apps downloaded from windows store in the taskbar or the desktop :Press Windows key + R then enter shell:appsfolder then drag and drop .
+- <ins>Adobe Suite</ins> : Photoshop or free alternative [Photopea](https://www.photopea.com/), illustrator / adobe premiere pro
+- <ins>PDF editing</ins> (3 free tasks per hour) : https://www.sejda.com/ (do not download the desktop app)
 - <ins>Windows Terminal </ins> windows terminal works in every directory, right lick in any directory and you can have a bash with that path 
--  <ins> Teracopy </ins>
-### 2.2 Amazing apps & websites:
-- Free PDF editing (3 free tasks per hour) : https://www.sejda.com/ (do not download the desktop app)
-- Free Photoshop alternative : https://www.photopea.com/
-- Notion 
+- <ins> Teracopy </ins>
+- <ins> Notion </ins>
+### Screen recorder :
+- ShareX : screen capturing and GIF recording
+- Integrated Screen recording of windows :  press `windows key + G` 
+- Screen Recording/ Streaming : OBS or Streamlabs
+
 
 ## 3- Dev workflow
 ### 3.1 Dev software
@@ -70,7 +74,7 @@ Some tips to improve your User experience when using windows
 - Sync pycharm settings : https://www.jetbrains.com/help/pycharm/sharing-your-ide-settings.html#IDE_settings_sync
 
 #### other tools
-- <ins>ssh key</ins> : generate an ssh key with `ssh-keygen -t rsa` (when prompted, enter an empty password if you want, key name can stay the same)
+- <ins>ssh key</ins> : (requires gitbash) you can generate an ssh key with `ssh-keygen -t rsa` (when prompted, enter an empty password if you want, key name can stay the same)
 Open file your_home_directory/.ssh/id_rsa.pub (example `C:\Users\AmineDjeghri\.ssh` with your favorite text editor to see the key. 
 - <ins>Pycharm Jupyter Notebook</ins> : Use the one provided in Pycharm. It provides better autocomplete.
 - <ins>Free Cloud GPU </ins> Google Colab/Kaggle you can either put your git repositories inside google drive to use them in colab, or   git clone inside colab. 
@@ -79,7 +83,7 @@ Open file your_home_directory/.ssh/id_rsa.pub (example `C:\Users\AmineDjeghri\.s
 - Latex Handwriting recognition: https://detexify.kirelabs.org/classify.html
 - Turn math equations and snipping to latex code: https://mathpix.com/
 - Overleaf: https://www.overleaf.com/
-- wget: add it to your temrinal: https://www.programmersought.com/article/90723524682/
+- wget on windows terminal : add it to your temrinal: https://www.programmersought.com/article/90723524682/
 
 
 ### 3.2 Do you want to use Linux (WSL) inside windows or just use Windows ?
@@ -89,12 +93,15 @@ Open file your_home_directory/.ssh/id_rsa.pub (example `C:\Users\AmineDjeghri\.s
 
 The most amazing thing about windows latest version is WSL (WSL2.0 exactly). You can run Linux in Windows. 
 It is fantastic. Virtualisation overhead is not noticeable, full integration between guest and host os's, you can run binaries compiled for MS Windows from linux. Full development toolchain is available as WSLessentialy is linux VM in second incarnation. It supports snapshots and is portable. This made windows useful.
-- You can install packages directly in UBuntu 
+- You can install packages directly in Ubuntu 
 - You can easily navigate and communicate between ubuntu and windows as Ubuntu acts like a disk drive.
-- you can install conda environement in ubuntu, use GPU, install pycharm on windows, and use the conda installation in pycharm.
- Give it a try:
+- You can install conda environement in ubuntu, use GPU, use pycharm on windows to connect to WSL conda env and more.
+
+
+#### install WSL:
  - Install WSL ``` wsl --install ``` 
  - Restart you computer
+ - When installing WSL, it comes with Ubuntu (you don't need to install it from the Windows Store)
  - In windows search bar, search for `ubuntu` and click on it. It will launch the terminal and install it. If it's not there, make sure you have correctly installed WSL by searching wsl in your windows search bar.
  - Run directly Ubuntu from windows search bar (or launch windows terminal and choose ubuntu or launch windows terminal and run the command `ubuntu`)
 
@@ -108,7 +115,8 @@ It is fantastic. Virtualisation overhead is not noticeable, full integration bet
  -
 #### configure WSL terminal : 
  - To open Ubuntu terminal from current location : go to windows terminal ->  parameters -> profiles -> ubuntu -> command line (under name) and change it to `ubuntu run`
- - Use ubuntu as default terminal in pycharm: tools>terminal  and put in shell path: `ubuntu run`
+ - (pycharm) Use ubuntu as default terminal in pycharm: tools>terminal  and put in shell path: `ubuntu run`
+ - (pycharm) Add WSL interpreter in Pycharm (add interpreter -> WSL)
  - You can use `wslpath` command to convert a windows path to wsl path : `wslpath  'C:\Users\AmineDjeghri\Desktop\git\quarterback-tabular'`
  - copy your ssh key from windows to linux and use on the ssh file of linux : `chmod 600 ~/.ssh/id_rsa` and `chmod 600 ~/.ssh/id_rsa.pub`
  
@@ -196,12 +204,14 @@ plugins=(git
 - open windows terminal and go to settings -> profiles (bottom left) -> Ubuntu terminal(orange logo) -> additional parameters-> apparence -> change the font to 
 - reload ubuntu terminal with `exec zsh` and configure your theme.
 - you can also change the terminal color [here](https://pureinfotech.com/change-color-scheme-windows-terminal/)
-## 4.1 customize Windows terminal
+
+
+
+## 4.2 customize Windows terminal
 - TO update
 
 
-### Costumize your windows:
-- #### Rainmeter: 
+## 4.3 Costumize your windows UI:
 ![windows desktop](https://github.com/AmineDjeghri/BetterWindows/blob/master/windows-desktop.png)
 - Install rainmeter
 - Install https://github.com/mpurses/Sonder/releases
@@ -216,19 +226,8 @@ plugins=(git
 - Fences [link] (https://store.steampowered.com/app/607380/Fences/?l=french) doesn't need steam to autostartup 
 - Hide the Windows taskbar (right click on the taskbar -> taskbar settings). You can and make it centered and transparent with [TaskbarX]([https://chrisandriessen.nl/taskbarx)
 
-# NOT UPDATED YET
-### Browser websites
-- Configure some websites on your desktop and taskbar as shorcuts (Netflix, Google calendar, Gmail...ect)
-- <ins>Gmail and Google Calendar</ins> : you can configure dark mode ("Thèmes" et cliquez sur "Tout afficher", choose "dark/sombre") and priority notifications (all new emails), signature.
-- 
 
-### SSH (needs to be updated and fileZilla)
- - https://github.com/AmineDjeghri/BetterWindowsUX/blob/master/SSH-PPTI-SU.md
-
-- PyCharm envs: You can clean out old PyCharm interpreters that are no longer associated with a project see the image [here](https://github.com/AmineDjeghri/BetterWindowsUX/blob/master/pycharm_interpreters.PNG) .
-- This gives you a listing where you can get rid of old virtualenvs that PyCharm thinks are still around 
-
-### Windows design and UX: 
+#### other customizations: 
 - You can convert a website to an application , for exemple: Google Agenda/ Netflix in Edge/Brave/Chrome, go to At the top right: More -> More Tools ->  Create shortcut.  , and check window mode, it will run like an app in your windows desktop
 ( I took the example of mattermost because there is no free Google Agenda app in windows )
 - Remove unnecessary programs, unnecessary icons from the start menu and add others like google maps, meteo calendar
@@ -237,13 +236,10 @@ plugins=(git
              - if it's not on the start up menu, search for it then add it to start menu then drag it to desktop
 - Use windows touchpad gestures, it really improves the experience and saves time, for exemple create a desktop and open a windows inside it, then you can create another desktop and put another window in it, after this you can fast switch between the two desktops using your four fingers and swap from the left to right 
 - Use Quiet Hours and add only the applications that you want them to send you a notification, (Brave will still send you notifications to get BAT but it will never appear ;) )
-- 
-### Screen recorder :
-- ShareX for screen capturing and GIF recording
-- You can use the integrated screen recorder of windows, press `windows key + G` 
-- Use other free software like: OBS, Streamlabs
-
-### Screenshot in windows 10: Windows provides two ways to take a screenshot
+ - <ins>Deactivate startup programs</ins>:task manager -> startup -> deactivate software that you don't want it to run at startup ( do the same in ccleaner)
+ - <ins>Windows partition</ins>: use the windows partition integrated software to create , delete or format partitions
+ - You can change your power management options (when windows will be put on sleep, what happens when you close your laptop ..ect), performance vs normal usage.
+ - If you consider buying a computer with a GPU for Deep Learning, choose a computer with an NVIDIA GPU that supports CUDA (preferably > RTX 2000 series). 
 
 ### Wifi & Router 5ghz:
 - Deactivate WPS
@@ -252,23 +248,16 @@ Choose 5ghz over 2.4ghz: if your device is connected to a wifi and it keeps swit
 - If it's your wifi: split your WiFi into 2 access points, one for 5Ghz and the other for 2.4Ghz. After that make your PC connect to the 5Ghz one only 
 - If it's not your wifi (hotel/work wifi) and you have an ethernet port, you can always plug a router( example HONOR ROUTER 3 WIFI 6) and have your own private network. You can split the wifi into 2 access points like i mentionnned it in the section above.
 
-### More  
- - <ins>Deactivate startup programs</ins>:task manager -> startup -> deactivate software that you don't want it to run at startup ( do the same in ccleaner)
- - <ins>Windows partition</ins>: use the windows partition integrated software to create , delete or format partitions
- - You can change your power management options (when windows will be put on sleep, what happens when you close your laptop ..ect), performance vs normal usage.
- - If you consider buying a computer with a GPU for Deep Learning, choose a computer with an NVIDIA GPU that supports CUDA (preferably > RTX 2000 series). 
-
 ## Awesome Piracy : 
 https://github.com/Igglybuff/awesome-piracy
 
-### Pycharm remote deployment : 
-Defining a server as default:
-A deployment server is considered default if its settings apply by default during automatic upload of changed files. To define a deployment server as the default one, follow these steps:
+## Pycharm : 
+You can learn more about pycharm [here]()
 
-Choose the desired server on the Deployment page. You can open this page it two possible ways: either Settings/Preferences | Build, Execution, Deployment | Deployment, or Tools | Deployment | You will see your servers, right click on the one you want to set it as default, and click 'use as default' 
+# NOT UPDATED YET
+### Browser websites
+- Configure some websites on your desktop and taskbar as shorcuts (Netflix, Google calendar, Gmail...ect)
+- <ins>Gmail and Google Calendar</ins> : you can configure dark mode ("Thèmes" et cliquez sur "Tout afficher", choose "dark/sombre") and priority notifications (all new emails), signature.
+- 
 
-Enabling automatic upload:
-As soon as the default server is set, you can make upload to this server automatic. This can be done in the following two ways:
 
-Open the deployment Options (Settings/Preferences | Deployment | Options or Tools | Deployment | Options from the main menu), and in the Upload changed files automatically to the default server field choose Always, or On explicit save action. The difference between these two choices is explained in the field description.
-In the main menu, select Tools | Deployment | Automatic upload. Note that automatic upload in this case is performed in the Always mode.
