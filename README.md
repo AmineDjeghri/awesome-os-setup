@@ -114,8 +114,12 @@ It is fantastic. Virtualisation overhead is not noticeable, full integration bet
  - When installing WSL, it comes with Ubuntu (you don't need to install it from the Windows Store because there are many distribution)
  - In windows search bar, search for `ubuntu` and click on it. It will launch the terminal and install it. If it's not there, make sure you have correctly installed WSL by searching wsl in your windows search bar.
  - Run directly Ubuntu from windows search bar (or launch windows terminal and choose ubuntu or launch windows terminal and run the command `ubuntu`)
-- To make sure Ubuntu is properly installed : run in powershell `ubuntu run`. Make sure also to have the orange ubuntu square in windows search bar.
-
+ - To make sure Ubuntu is properly installed : run in powershell `ubuntu run`. Make sure also to have the orange ubuntu square in windows search bar.
+ - add systemd to wsl.conf : `/etc/wsl.conf` using vim, nano or sublime text:
+ ```
+[boot]
+systemd=true
+ ```
 #### install miniconda in WSL: 
  - run `wget https://repo.anaconda.com/miniconda/Miniconda3-py39_22.11.1-1-Linux-x86_64.sh`
  - run `chmod +x Miniconda3-py39_22.11.1-1-Linux-x86_64.sh`
