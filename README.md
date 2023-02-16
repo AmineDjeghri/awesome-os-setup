@@ -120,6 +120,8 @@ It is fantastic. Virtualisation overhead is not noticeable, full integration bet
 [boot]
 systemd=true
  ```
+  restart the terminal and run `systemctl list-unit-files --type=service` to see some process running
+  
 #### install miniconda in WSL: 
  - run `wget https://repo.anaconda.com/miniconda/Miniconda3-py39_22.11.1-1-Linux-x86_64.sh`
  - run `chmod +x Miniconda3-py39_22.11.1-1-Linux-x86_64.sh`
