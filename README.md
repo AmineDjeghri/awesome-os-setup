@@ -26,7 +26,8 @@ Some tips to improve your User experience when using windows
  - Activate bitlocker to encrypt your data (Exists only on windows pro, education and entreprise edition)
  - When placing an external monitor that runs 144hz, make sure to activate the `144Hz` in display settings
  - If you're using OneDrive, becareful when you sync your Desktop and windows specific folders, you can face some problems. My advice is to avoid syncing windows default folders (like Desktop, Documents). Juse use OneDrive as a cloud store.
- - (Skip if you are on laptop) if you have a 3200mhz RAM and it runs bellow this frequency, activate XMP profile in the BIOS
+ - (Optionnal) sleep mode with or without screen lock [here](https://consumer.huawei.com/en/support/content/en-us15592807/#:~:text=Click%20the%20Windows%20icon%20and,Screen%20and%20Sleep%20to%20Never)
+ - (Desktop) if you have a 3200mhz RAM and it runs bellow this frequency, activate XMP profile in the BIOS
  
 
 ### 1.1 New PC ? transfer your windows key
@@ -53,6 +54,7 @@ Some tips to improve your User experience when using windows
 - <ins>Windows Terminal </ins> windows terminal works in every directory, right lick in any directory and you can have a bash with that path 
 - <ins> Teracopy </ins>
 - <ins> Notion </ins>
+- <ins> AnyDesk</ins>
 ### Screen recorder :
 - ShareX : screen capturing and GIF recording
 - Integrated Screen recording of windows :  press `windows key + G` 
