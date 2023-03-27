@@ -4,7 +4,7 @@
 
 !! Updated for windows 11 !!
 
-Some tips to improve your User experience when using windows
+Some tips to improve your User experience when using windows. Including the installation of WSL 2.0 and more
 - A guide to help you set up a windows environement to maximum your productivity 
 - Spend some hours setting this up (a full guide to configure many things including, linux commands in windows no need for dualboot anymore, SSH, SFTP with interface to reach a maximum level of productivity)
 
@@ -12,9 +12,8 @@ Some tips to improve your User experience when using windows
 1. [Windows Installation](https://github.com/AmineDjeghri/BetterWindows11#1--windows-configuration)
 2. [Utility Softwares : Browsers, extensions, daily and usefull programs](https://github.com/AmineDjeghri/BetterWindows11#2-utility-softwares)
 3. [Dev Workflow](https://github.com/AmineDjeghri/BetterWindows11#3--dev-workflow)
-  3.1 [Dev Software: All the softwares I recommand for developpement and coding](https://github.com/AmineDjeghri/BetterWindows11#31-dev-software)
-  3.2 [WSL vs Windows](https://github.com/AmineDjeghri/BetterWindows11#32-do-you-want-to-use-linux-wsl-inside-windows-or-just-use-windows-)
-
+3.1 [Dev Software: All the softwares I recommand for developpement and coding](https://github.com/AmineDjeghri/BetterWindows11#31-dev-software)
+3.2 [WSL vs Windows](https://github.com/AmineDjeghri/BetterWindows11#32-do-you-want-to-use-linux-wsl-inside-windows-or-just-use-windows-)
 4. [UI/UX Custommization](https://github.com/AmineDjeghri/BetterWindows11#4--ux-custommization)
 
 
