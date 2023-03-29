@@ -126,24 +126,24 @@ systemd=true
   restart the terminal and run `systemctl list-unit-files --type=service` to see some process running
   
 #### install miniconda in WSL: 
- - run `wget https://repo.anaconda.com/miniconda/Miniconda3-py39_22.11.1-1-Linux-x86_64.sh`
- - run `chmod +x Miniconda3-py39_22.11.1-1-Linux-x86_64.sh`
- - run `bash Miniconda3-py39_22.11.1-1-Linux-x86_64.sh`
- - run `conda init`
+ - run `wget https://repo.anaconda.com/miniconda/Miniconda3-py39_23.1.0-1-Linux-x86_64.sh`
+ - run `chmod +x Miniconda3-py39_23.1.0-1-Linux-x86_64.sh`
+ - run `bash Miniconda3-py39_23.1.0-1-Linux-x86_64.sh` (becarefull, when installing at then end, it will tell you if you want to to conda init, write yes instead of no)
+ - if you wrote No, run `conda init`
  - close and reopen ubuntu terminal, you should see `(base)` at the left of the any command.
  - run `conda env list` to check the installed environements and their path.
- -
+ 
 #### configure WSL terminal : 
  - To open Ubuntu terminal from current location : go to windows terminal ->  parameters -> profiles -> ubuntu -> command line (under name) and change it to `ubuntu run`
- - (pycharm) Use ubuntu as default terminal in pycharm: tools>terminal  and put in shell path: `ubuntu run`
- - (pycharm) Add WSL interpreter in Pycharm (add interpreter -> WSL)
- - You can use `wslpath` command to convert a windows path to wsl path : `wslpath  'C:\Users\AmineDjeghri\Desktop\git\quarterback-tabular'`
- - copy your ssh key from windows to linux and use on the ssh file of linux : `chmod 600 ~/.ssh/id_rsa` and `chmod 600 ~/.ssh/id_rsa.pub`
+ - (pycharm) Use WSL/ubuntu as the default terminal in pycharm: `settings -> tools -> terminal`  and put in shell path: `ubuntu run`
+ - (pycharm) Add WSL conda interpreter in Pycharm (add interpreter -> WSL -> conda) and select the global conda : `/home/amine/miniconda3/bin/conda`. Then click on load environments and it will automatically detect all the conda envs.
+ - You can use `wslpath` command to convert a windows path to wsl path : `wslpath  'C:\Users\AmineDjeghri\Desktop\git\myproject'`
+ - Copy your ssh key from windows to linux and use on the ssh file of linux : `chmod 600 ~/.ssh/id_rsa` and `chmod 600 ~/.ssh/id_rsa.pub`
 
 #### Install pytorch/cuda in WSL : 
 - coming soon
  
-### 3.2.1.Conding using Windows (2nd choice) (Skip this if you are using WSL)
+### 3.2.1.Coding using Windows (2nd choice) (Skip this if you are using WSL)
 - [Install conda](https://github.com/AmineDjeghri/BetterWindows11/blob/master/install_conda_windows.md)
 - [Install Pytorch/Cuda](https://github.com/AmineDjeghri/BetterWindows11/blob/master/install_conda_windows.md)
 
