@@ -15,7 +15,7 @@ Some tips to improve your User experience when using windows. Including the inst
 
    3.1 [Dev Software: All the softwares I recommand for developpement and coding](https://github.com/AmineDjeghri/BetterWindows11#31-dev-software)
 
-   3.2 [WSL vs Windows](https://github.com/AmineDjeghri/BetterWindows11#32-do-you-want-to-use-linux-wsl-inside-windows-or-just-use-windows-)
+   3.2 [WSL vs Windows](https://github.com/AmineDjeghri/BetterWindows11#321conding-using-linuxwsl-inside-windows-best-choice---skip-this-if-you-dont-want-to-use-wsl)
 4. [UI/UX Custommization](https://github.com/AmineDjeghri/BetterWindows11#4--ux-custommization)
 
 
