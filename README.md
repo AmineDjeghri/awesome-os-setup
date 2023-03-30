@@ -210,14 +210,6 @@ If necessary, follow these steps to install Zsh:
 source : https://github.com/ohmyzsh/wiki/edit/main/Installing-ZSH.md
 
 
-#### What is ZSH-Syntax-Highlighting?
-The ZSH syntax highlighting feature—similar to one found in the fish shell—automatically highlights your commands as you type them, which can help you catch syntax errors and fix them before running the command.
-- `sudo apt-get install git`
-- `git clone https://github.com/zsh-users/zsh-syntax-highlighting.git`
-- Use the command shown below to add the syntax-highlighting extension to the .zshrc file. The value of the ZDOTDIR variable will determine this. 
-`echo "source ${(q-)PWD}/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" >> ${ZDOTDIR:-$HOME}/.zshrc`
-- run `exec zsh` to reload the terminal
-- If you write `ls` in the terminal, you should see that it has a color.
 
 #### What is Oh my ZSH ?
 - Oh My Zsh is an open source, community-driven framework for managing your zsh configuration.
@@ -248,9 +240,10 @@ plugins=(git
 ```
 
 - Auto update oh my zsh : uncomment this: `zstyle ':omz:update' mode auto`
-- History Timestamps
+- History Timestamps, navigate with arrows when selecting files
 - add the following alias to the end of .zshrc file to easily open sublime Text from windows:
 `alias sublime="subl.exe"`. Try it with : `sublime .zshrc`
+- uncomment `alias zshconfig="mate ~/.zshrc"`   
 - You can visit this :[website](https://www.linkedin.com/pulse/how-install-start-using-oh-my-zsh-boost-your-mantas-levinas/?trk=pulse-article_more-articles_related-content-card) to understand more about the installed plugins. you can skip directly to `7. Enable Zsh Plugins` section and start reading. You will see that you have installed most of the commands there.
 
 
