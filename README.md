@@ -252,13 +252,12 @@ plugins=(git
 - `git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k`
 - Open .zshrc and set `ZSH_THEME="powerlevel10k/powerlevel10k"`.
 - install this font on windows [MesloLGS NF Regular.ttf](https://github.com/romkatv/dotfiles-public/blob/master/.local/share/fonts/NerdFonts/MesloLGS%20NF%20Regular.ttf)
-- open windows terminal and go to settings -> profiles (bottom left) -> Ubuntu terminal(orange logo) -> additional parameters-> apparence -> change the font to 
+- open windows terminal and go to settings -> profiles (bottom left) -> Ubuntu terminal(orange logo) -> additional parameters-> apparence -> change the font to MesloLGS. 
+- (optional) add a new color scheme with this background #383B40. Select the new color scheme on your terminal an put a transparency of 85% [example]([here](https://pureinfotech.com/change-color-scheme-windows-terminal/))
 - reload ubuntu terminal with `exec zsh` and configure your theme.
-- you can also change the terminal color [here](https://pureinfotech.com/change-color-scheme-windows-terminal/)
 
 #### update .zshrc (conda and other tools)
-- If you have conda installed : copy conda init from .bashrc to .zshrc ( if you want to find it : `cd` then `ls -a` then `nano .zshrc` or use windows explorer to navigate to it : `\\wsl.localhost\Ubuntu\home\amine ` and open the file .zshrc with notepad or sublimText.
--(optional) if you didn't copy the init conda content from .bashrc,  run from bash terminal and not zsh terminal: `conda init zsh`
+- If you have conda / cuda installed : copy the content from .bashrc to .zshrc ( `vim .zshrc` or use windows explorer / sublime text to navigate to it : `\\wsl.localhost\Ubuntu\home\amine `.
 - close all the terminals and run again ubuntu terminal.
 - you should see the `(base)` noun before the command.
 
