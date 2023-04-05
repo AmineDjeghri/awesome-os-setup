@@ -98,6 +98,9 @@ Open file your_home_directory/.ssh/id_rsa.pub (example `C:\Users\AmineDjeghri\.s
 - Overleaf: https://www.overleaf.com/
 - wget on windows terminal : add it to your temrinal: https://www.programmersought.com/article/90723524682/
 
+#### wsl tools : 
+   - ncdu : check the disk space usage from wsl 
+   - Reclaim disk space : https://github.com/microsoft/WSL/issues/4699 + install this https://superuser.com/a/1307442/769637 install the Hyper-V Platform | Hyper-V Services part, too + restart
 
 ### 3.2 Linux (WSL) inside windows or just use Windows ?
 ### 3.2.1.Conding using Linux(WSL) inside Windows (BEST CHOICE) - Skip this if you don't want to use WSL
