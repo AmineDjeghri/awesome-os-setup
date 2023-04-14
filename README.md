@@ -97,7 +97,7 @@ Open file your_home_directory/.ssh/id_rsa.pub (example `C:\Users\AmineDjeghri\.s
 - Turn math equations and snipping to latex code: https://mathpix.com/
 - Overleaf: https://www.overleaf.com/
 - wget on windows terminal : add it to your temrinal: https://www.programmersought.com/article/90723524682/
-
+- [jupyter autocmplete](https://github.com/krassowski/jupyterlab-lsp#installation) 
 #### WSL2 tools : 
    - ncdu : check the disk space usage from wsl 
    - Reclaim disk space : `wsl --shutdown` then `cd 'C:\Users\Amine Djeghri\AppData\Local\Packages\CanonicalGroupLimited.Ubuntu_79rhkp1fndgsc\LocalState'` then `optimize-vhd -Path .\ext4.vhdx -Mode full`
