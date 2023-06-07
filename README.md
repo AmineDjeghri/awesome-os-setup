@@ -315,3 +315,6 @@ https://github.com/Igglybuff/awesome-piracy
 You can learn more about pycharm [here]()
 
 
+## Star History (do not forget to star the repo 😁 )
+[![Star History Chart](https://api.star-history.com/svg?repos=aminedjeghri/awesomewindows11&type=Date)](https://star-history.com/#aminedjeghri/awesomewindows11&Date)
+
