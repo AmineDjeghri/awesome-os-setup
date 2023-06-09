@@ -160,13 +160,11 @@ systemd=true
 
 * On linux, run `nvidia-smi`, you will see the same thing as on windows. If you run `nvcc --version`, you will get an error because cuda toolkit is not installed yet on WSL.   
 
-Now, we will install cuda on WSL, the following commands must all be runned inside WSL :
+Now, we will install cuda on WSL, the following commands must all be runned inside WSL. [If you want to understand more](https://docs.nvidia.com/cuda/wsl-user-guide/index.html#getting-started-with-cuda-on-wsl):
 * Run `sudo apt-key del 7fa2af80`
 * The CUDA driver installed on Windows host will be stubbed inside the WSL 2 as libcuda.so, therefore users must not install any NVIDIA GPU Linux driver within WSL 2
-* You can only install a cuda toolkit that is compatible with WSL inside wsl
-* install the cuda toolkit compatible with WSL [here](https://developer.nvidia.com/cuda-downloads?target_os=Linux&target_arch=x86_64&Distribution=WSL-Ubuntu&target_version=2.0&target_type=deb_local) ny following these instructions. we are installing cuda 11.7 because of pytorch compatibility. 
-
-   
+* You can only install a cuda toolkit that is compatible with WSL inside wsl : [link](https://developer.nvidia.com/cuda-downloads?target_os=Linux&target_arch=x86_64&Distribution=WSL-Ubuntu&target_version=2.0&target_type=deb_local) ny following these instructions. 
+Since we we are installing cuda 11.7, follow the commands bellow.    
 ```
 wget https://developer.download.nvidia.com/compute/cuda/repos/wsl-ubuntu/x86_64/cuda-wsl-ubuntu.pin
 sudo mv cuda-wsl-ubuntu.pin /etc/apt/preferences.d/cuda-repository-pin-600
@@ -175,20 +173,32 @@ sudo dpkg -i cuda-repo-wsl-ubuntu-11-7-local_11.7.0-1_amd64.deb
 sudo cp /var/cuda-repo-wsl-ubuntu-11-7-local/cuda-*-keyring.gpg /usr/share/keyrings/
 sudo apt-get update
 sudo apt-get -y install cuda
-
-   
+```
 or
+```
 wget https://developer.download.nvidia.com/compute/cuda/11.7.0/local_installers/cuda_11.7.0_515.43.04_linux.run
 sudo sh cuda_11.7.0_515.43.04_linux.run   
 ```
-* Restart the terminal and run `nvcc --version` to test cuda installation inside wsl. If nvcc is not recognized, it may be possible that the path is not inside .bashrc. First, verify that there is `/usr/local/cuda-11.7` inside WSL .Then, open `.bashrc` and add this at the end if it's not there.
+* Restart the terminal and run `nvcc --version` to test cuda installation inside wsl. If nvcc is not recognized, and you see something like `Command 'nvcc' not found, but can be installed with:
+sudo apt install nvidia-cuda-toolkit`, it may be possible that the path is not inside .bashrc. First, verify that there is `/usr/local/cuda-11.7` inside WSL .Then, open `.bashrc` and add this at the end if it's not there:
 ```
 export CUDA_HOME=/usr/local/cuda-11.7
 export PATH=${CUDA_HOME}/bin:${PATH}
 export LD_LIBRARY_PATH=${CUDA_HOME}/lib64:$LD_LIBRARY_PATH   
 ```   
 * Restart the terminal and run again the command `nvcc --version`, you should see `Cuda compilation tools, release 11.7, V11.7.64`  
-* You may also need to install cudnn from [here](https://developer.nvidia.com/rdp/cudnn-archive). You need to sign in, download the right version of cdnn for cuda 11.x. directly in wsl using windows explorer and then extract it with windows explorer then run it using `sudo apt install ./cudnn-local-repo-ubuntu2204-8.8.1.3_1.0-1_amd64.deb`
+* You may also need to install cudnn from [here](https://developer.nvidia.com/rdp/cudnn-archive) version v8.9.1 (May 5th, 2023) for CUDA 11.x. You need to sign in, download the right version of cdnn for cuda 11.x. directly in wsl using windows explorer and then extract it with windows explorer then run it using `sudo dpkg -i cudnn-local-repo-ubuntu2204-8.9.1.23_1.0-1_amd64.deb` or  `sudo apt install ./cudnn-local-repo-ubuntu2204-8.9.1.23_1.0-1_amd64.deb`. if you install it twice you should see `cudnn-local-repo-ubuntu2204-8.9.1.23 is already the newest version (1.0-1).`
+
+- test pytorch : 
+   `conda create -n test python=3.10`
+   `conda activate test`
+   `pip install torch`
+   `python`
+   ```py
+   >>> import torch
+   >>> torch.cuda.is_available()
+   True
+   ```
    
 (Optional) Tutorials and sources :   
 * [Download cuda 11.7](https://developer.nvidia.com/cuda-11-7-0-download-archive?target_os=Linux&target_arch=x86_64&Distribution=WSL-Ubuntu&target_version=2.0&target_type=deb_local)      
