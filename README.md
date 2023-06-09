@@ -155,8 +155,8 @@ systemd=true
 
 #### Install cuda in WSL : 
 * We will install cuda 11.7 for pytorch 2.0.1  (June 2023)    
-* Install CUDA [driver](https://www.nvidia.com/download/index.aspx) on windows
-* On windows,  `nvidia-smi`. If you have cuda toolkit installed on windows, run `nvcc --version`. You will see two different CUDA versions shown by nvcc and NVIDIA-smi which is normal if you have cuda toolkit on windows [source](https://stackoverflow.com/a/53504578)
+* Install Nvidia [driver](https://www.nvidia.com/download/index.aspx) on windows
+* On windows, run `nvidia-smi`. If you have cuda toolkit installed on windows (not obligatory), run `nvcc --version`. You will see two different CUDA versions shown by nvcc and NVIDIA-smi which is normal if you have cuda toolkit on windows [source](https://stackoverflow.com/a/53504578)
 
 * On linux, run `nvidia-smi`, you will see the same thing as on windows. If you run `nvcc --version`, you will get an error because cuda toolkit is not installed yet on WSL.   
 
