@@ -133,15 +133,18 @@ systemd=true
   restart the terminal and run `systemctl list-unit-files --type=service` to see some process running
   
 #### install miniconda in WSL: 
- - run `wget https://repo.anaconda.com/miniconda/Miniconda3-py39_23.1.0-1-Linux-x86_64.sh`
- - run `chmod +x Miniconda3-py39_23.1.0-1-Linux-x86_64.sh`
- - run `bash Miniconda3-py39_23.1.0-1-Linux-x86_64.sh` (becarefull, when installing at then end, it will tell you if you want to to conda init, write yes instead of no)
- - if you wrote No, run `conda init`
- - close and reopen ubuntu terminal, you should see `(base)` at the left of the any command.
+ - run `wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh` (Conda 23.3.1 Python 3.10.10 released April 24, 2023)
+ - run `chmod +x Miniconda3-latest-Linux-x86_64.sh`
+ - run `bash Miniconda3-latest-Linux-x86_64.sh` 
+ - restart the shell with `bash` command
+ - if `(base)` is not showing and `.bachrc` file doesn't contain the init of conda, go to `~/miniconda3/bin` and run `conda init`
+ - close and reopen ubuntu terminal or run `bash`, you should see `(base)` at the left of the any command.
  - run `conda env list` to check the installed environements and their path.
  
 #### configure WSL terminal : 
- - To open Ubuntu terminal from current location : go to windows terminal ->  parameters -> profiles -> ubuntu -> command line (under name) and change it to `ubuntu run`
+ - You can enter ubuntu with different ways: clicking on Shortcut (Orange), or running 'wsl' in windows terminal, or running 'ubuntu' in windows terminal, or selecting the right profile in the tab in windows terminal.
+ - To open Ubuntu terminal from current location : go to windows terminal ->  parameters -> profiles -> ubuntu -> command line (under name) and change it to `ubuntu run`. 
+ - Now, go to desktop and right click to open a windows terminal, run 'wsl', you should see that ubuntu started from the current location.
  - (pycharm) Use WSL/ubuntu as the default terminal in pycharm: `settings -> tools -> terminal`  and put in shell path: `ubuntu run`
  - (pycharm) Add WSL conda interpreter in Pycharm (add interpreter -> WSL -> conda) and select the global conda : `/home/amine/miniconda3/bin/conda`. Then click on load environments and it will automatically detect all the conda envs.
  - You can use `wslpath` command to convert a windows path to wsl path : `wslpath  'C:\Users\AmineDjeghri\Desktop\git\myproject'`
