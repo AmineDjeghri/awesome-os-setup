@@ -101,10 +101,7 @@ Open file your_home_directory/.ssh/id_rsa.pub (example `C:\Users\AmineDjeghri\.s
 - Overleaf: https://www.overleaf.com/
 - wget on windows terminal : add it to your temrinal: https://www.programmersought.com/article/90723524682/
 - [jupyter autocmplete](https://github.com/krassowski/jupyterlab-lsp#installation) 
-#### WSL2 tools : 
-   - ncdu : check the disk space usage from wsl 
-   - Reclaim disk space : `wsl --shutdown` then `cd 'C:\Users\Amine Djeghri\AppData\Local\Packages\CanonicalGroupLimited.Ubuntu_79rhkp1fndgsc\LocalState'` then `optimize-vhd -Path .\ext4.vhdx -Mode full`
-   ( it requires these https://askubuntu.com/a/1380274 + https://github.com/microsoft/WSL/issues/4699 +  install this https://superuser.com/a/1307442/769637 install the Hyper-V Platform | Hyper-V Services part, too + restart)
+   
 
 ### 3.2 Linux (WSL) inside windows or just use Windows ?
 ### 3.2.1.Conding using Linux(WSL) inside Windows (BEST CHOICE) - Skip this if you don't want to use WSL
@@ -147,11 +144,17 @@ systemd=true
  - Now, go to desktop and right click to open a windows terminal, run 'wsl', you should see that ubuntu started from the current location.
  - (pycharm) Use WSL/ubuntu as the default terminal in pycharm: `settings -> tools -> terminal`  and put in shell path: `ubuntu run`
  - (pycharm) Add WSL conda interpreter in Pycharm (add interpreter -> WSL -> conda) and select the global conda : `/home/amine/miniconda3/bin/conda`. Then click on load environments and it will automatically detect all the conda envs.
- - You can use `wslpath` command to convert a windows path to wsl path : `wslpath  'C:\Users\AmineDjeghri\Desktop\git\myproject'`
- - Copy your ssh key from windows to linux and use on the ssh file of linux : `chmod 600 ~/.ssh/id_rsa` and `chmod 600 ~/.ssh/id_rsa.pub`
+ 
+#### WSL2 tools : 
+- You can use `wslpath` command to convert a windows path to wsl path : `wslpath  'C:\Users\AmineDjeghri\Desktop\git\myproject'`
+- Copy your ssh key from windows to linux and use on the ssh file of linux : `chmod 600 ~/.ssh/id_rsa` and `chmod 600 ~/.ssh/id_rsa.pub`
+- update packages:  `sudo apt update` then `sudo apt upgrade`
+- ncdu : check the disk space usage from wsl , `sudo apt install ncdu` then `ncdu`
+- Reclaim disk space : `wsl --shutdown` then `cd 'C:\Users\Amine Djeghri\AppData\Local\Packages\CanonicalGroupLimited.Ubuntu_79rhkp1fndgsc\LocalState'` then `optimize-vhd -Path .\ext4.vhdx -Mode full`
+( it requires these https://askubuntu.com/a/1380274 + https://github.com/microsoft/WSL/issues/4699 +  install this https://superuser.com/a/1307442/769637 install the Hyper-V Platform | Hyper-V Services part, too + restart)
 
 #### Install cuda in WSL : 
-* We will install cuda 11.7 for pytorch 2.0.0      
+* We will install cuda 11.7 for pytorch 2.0.1  (June 2023)    
 * Install CUDA [driver](https://www.nvidia.com/download/index.aspx) on windows
 * On windows,  `nvidia-smi`. If you have cuda toolkit installed on windows, run `nvcc --version`. You will see two different CUDA versions shown by nvcc and NVIDIA-smi which is normal if you have cuda toolkit on windows [source](https://stackoverflow.com/a/53504578)
 
