@@ -29,6 +29,7 @@ Some tips to improve your User experience when using windows. Including the inst
  - If you're using OneDrive, becareful when you sync your Desktop and windows specific folders, you can face some problems. My advice is to avoid syncing windows default folders (like Desktop, Documents). Juse use OneDrive as a cloud store.
  - (Optionnal) sleep mode with or without screen lock [here](https://consumer.huawei.com/en/support/content/en-us15592807/#:~:text=Click%20the%20Windows%20icon%20and,Screen%20and%20Sleep%20to%20Never)
  - (Desktop) if you have a 3200mhz RAM and it runs bellow this frequency, activate XMP profile in the BIOS
+ - (Audio devices) if you have bluetooth and audio devices, you can sort them in audio settings -> use as default for both audio & communications
  
 
 ### 1.1 New PC ? transfer your windows key
@@ -56,6 +57,8 @@ Some tips to improve your User experience when using windows. Including the inst
 - <ins> Teracopy </ins>
 - <ins> Notion </ins>
 - <ins> AnyDesk</ins>
+- <ins> Audio </ins> : ear trumpet
+- <ins> Nvidia </ins> : Geforce Experience (no need for cuda if you code using WSL)
 ### Screen recorder :
 - ShareX : screen capturing and GIF recording
 - Integrated Screen recording of windows :  press `windows key + G` 
