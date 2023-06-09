@@ -44,7 +44,7 @@ Some tips to improve your User experience when using windows. Including the inst
 - <ins>Browser extensions</ins> : uBlock Origin, Checker Plus for Gmail, Free Download Manager, Google translate, Google Dictionnary, colorZilla, Reddit enhacement Suite, Pocket, Enhacer for Youtube, Augmented Steam, Read Aloud,  pocket.
 - <ins>Agenda & Mail</ins> : Google agenda, Gmail, -> create an app shortcut with brave, it will act like an app in windows, and activate the notifications. Make BRave the default apps in windows for mailto and agenda then go to brave://settings/handlers and add gmailand agenda .
 - <ins>Antivirus</ins> : Kaspersky Cloud free
-- <ins>Others</ins>: CCleaner, HWInfo
+- <ins>Others</ins>: CCleaner, HWInfo (portable)
 - <ins>Adobe</ins> : Photoshop, illustrator, premiere pro, XD
 - <ins>VPN</ins> : ProtonVPN or NordVPN
 - <ins>Torrent client</ins>: qBitTorrent
@@ -56,11 +56,11 @@ Some tips to improve your User experience when using windows. Including the inst
 - <ins>Windows Terminal </ins> windows terminal works in every directory, right lick in any directory and you can have a bash with that path 
 - <ins> Teracopy </ins>
 - <ins> Notion </ins>
-- <ins> AnyDesk</ins>
+- <ins> AnyDesk</ins> (portable + enable password)
 - <ins> Audio </ins> : ear trumpet
 - <ins> Nvidia </ins> : Geforce Experience (no need for cuda if you code using WSL)
 ### Screen recorder :
-- ShareX : screen capturing and GIF recording
+- ShareX : screen capturing and GIF recording (portable)
 - Integrated Screen recording of windows :  press `windows key + G` 
 - Screen Recording/ Streaming : OBS or Streamlabs
 
