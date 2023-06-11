@@ -104,7 +104,7 @@ Open file your_home_directory/.ssh/id_rsa.pub (example `C:\Users\AmineDjeghri\.s
    
 
 ### 3.2 Linux (WSL) inside windows or just use Windows ?
-### 3.2.1.Conding using Linux(WSL) inside Windows (BEST CHOICE) - Skip this if you don't want to use WSL
+### 3.2.1.Coding using Linux(WSL) inside Windows (BEST CHOICE) - Skip this if you don't want to use WSL
 
 ![WSL terminal](https://github.com/AmineDjeghri/BetterWindows/blob/master/resources/wsl_terminal.jpg)
 
