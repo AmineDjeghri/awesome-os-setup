@@ -238,17 +238,14 @@ source : https://github.com/ohmyzsh/wiki/edit/main/Installing-ZSH.md
 #### What is Oh my ZSH ?
 - Oh My Zsh is an open source, community-driven framework for managing your zsh configuration.
 -  with wget `sh -c "$(wget https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh -O -)"`
-- Advanced Tab Autocompletion in Zsh : Another powerful Zsh feature is its tab completion system. It tries to suggest available commands according to the command-line context.
-  - type `systemctl`, put a space and then hit TAB to get a list of available systemctl commands with their descriptions. Hit TAB again to start navigating through the list:
-  - Type `cd` and put a space and then hit `TAB` twice  to get a list of files and use the arrows or `TAB`  again to navigate in the list between directories
-  - Type `system` and without any space press `TAB` to get a list of auto suggestions. You may hit `TAB `again to start navigating through the available programs. Use TAB or ARROW keys to navigate through the list
 
 
-#### Zsh Plugins : autosuggestions and syntaxh highlighting
-A Zsh plugin is a set of useful aliases and functions designed to make you more productive.
-run the following commands on your teminal 
-- `git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions`
-- `git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting`
+
+#### Zsh Plugins :
+A Zsh plugin is a set of useful aliases and functions designed to make you more productive.   
+- Advanced Tab Autocompletion  : `git clone --depth 1 -- https://github.com/marlonrichert/zsh-autocomplete.git $ZSH_CUSTOM/plugins/zsh-autocomplete`
+- autosuggestions : `git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions`
+- syntaxh highlighting : `git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting`
 
 Open your .zshrc file at ~/.zshrc (you can do that through windows explorer and sublime text as you did before) and search for `plugins=(git)`.
 If you don't find it, then create it and complete it with the missing plugins as shown in the example bellow : 
@@ -260,14 +257,13 @@ plugins=(git
         jsontools
         zsh-autosuggestions
         zsh-syntax-highlighting
-)
+        zsh-autocomplete
 ```
-
+- run - `zsh` to restart the terminal, now you can see the changes when you try to write a command like `cd`
+   
+Others : 
 - Auto update oh my zsh : uncomment this: `zstyle ':omz:update' mode auto`
-- History Timestamps, navigate with arrows when selecting files
-- add the following alias to the end of .zshrc file to easily open sublime Text from windows:
-`alias sublime="subl.exe"`. Try it with : `sublime .zshrc`
-- uncomment `alias zshconfig="mate ~/.zshrc"`   
+- Add the following alias to the end of .zshrc file to easily open sublime Text from windows: `alias sublime="subl.exe"`. Try it with : `sublime .zshrc`
 - You can visit this :[website](https://www.linkedin.com/pulse/how-install-start-using-oh-my-zsh-boost-your-mantas-levinas/?trk=pulse-article_more-articles_related-content-card) to understand more about the installed plugins. you can skip directly to `7. Enable Zsh Plugins` section and start reading. You will see that you have installed most of the commands there.
 
 
