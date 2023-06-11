@@ -225,7 +225,7 @@ If necessary, follow these steps to install Zsh:
 
 3. Make it your default shell: `chsh -s $(which zsh)`
 
-4. Log out and log back in again to use your new default shell. And enter the number 1 to create an empty `.zshrc` file .
+4. Log out and log back in again to use your new default shell. Choose the option to create an empty `.zshrc` file .
 
 5. Test that it worked with `echo $SHELL`. Expected result: `/bin/zsh` or similar.
 
