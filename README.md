@@ -274,6 +274,7 @@ Others :
 - Open .zshrc and set `ZSH_THEME="powerlevel10k/powerlevel10k"`.
 - install this font on windows [MesloLGS NF Regular.ttf](https://github.com/romkatv/dotfiles-public/blob/master/.local/share/fonts/NerdFonts/MesloLGS%20NF%20Regular.ttf)
 - open windows terminal and go to settings -> profiles (bottom left) -> Ubuntu terminal(orange logo) -> additional parameters-> apparence -> change the font to MesloLGS. 
+- You can also do the step aboce inside powershell if you use it to call ubuntu with `wsl` or `ubuntu` command . You can also change it's background color
 - (optional) add a new color scheme with this background #383B40. Select the new color scheme on your terminal an put a transparency of 85% [example]([here](https://pureinfotech.com/change-color-scheme-windows-terminal/))
 - reload ubuntu terminal with `zsh` and configure your theme.
 
