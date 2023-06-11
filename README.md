@@ -238,6 +238,7 @@ source : https://github.com/ohmyzsh/wiki/edit/main/Installing-ZSH.md
 #### What is Oh my ZSH ?
 - Oh My Zsh is an open source, community-driven framework for managing your zsh configuration.
 -  with wget `sh -c "$(wget https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh -O -)"`
+- If you have conda / cuda or something installed : copy the content from `.bashrc` to `.zshrc` ( `vim .zshrc` or use windows explorer / sublime text . Run again `zsh`, you should see the `(base)` noun before the command.
 
 
 
@@ -274,12 +275,7 @@ Others :
 - install this font on windows [MesloLGS NF Regular.ttf](https://github.com/romkatv/dotfiles-public/blob/master/.local/share/fonts/NerdFonts/MesloLGS%20NF%20Regular.ttf)
 - open windows terminal and go to settings -> profiles (bottom left) -> Ubuntu terminal(orange logo) -> additional parameters-> apparence -> change the font to MesloLGS. 
 - (optional) add a new color scheme with this background #383B40. Select the new color scheme on your terminal an put a transparency of 85% [example]([here](https://pureinfotech.com/change-color-scheme-windows-terminal/))
-- reload ubuntu terminal with `exec zsh` and configure your theme.
-
-#### update .zshrc (conda and other tools)
-- If you have conda / cuda installed : copy the content from .bashrc to .zshrc ( `vim .zshrc` or use windows explorer / sublime text to navigate to it : `\\wsl.localhost\Ubuntu\home\amine `.
-- close all the terminals and run again ubuntu terminal.
-- you should see the `(base)` noun before the command.
+- reload ubuntu terminal with `zsh` and configure your theme.
 
 ## 4.2 customize Windows terminal
 - TO update
