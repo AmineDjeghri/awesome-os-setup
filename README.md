@@ -157,7 +157,6 @@ systemd=true
    - wsl --terminate ubuntu
    - wsl --shutdown
    - wsl --export Ubuntu E:\ubuntu.tar
-   - wsl --setdefault Ubuntu
    - [source 1](https://www.xda-developers.com/how-back-up-restore-wsl/)
 
 #### Install cuda in WSL : 
