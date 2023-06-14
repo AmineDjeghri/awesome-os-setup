@@ -153,7 +153,7 @@ systemd=true
 - Reclaim disk space : `wsl --shutdown` then `cd 'C:\Users\Amine Djeghri\AppData\Local\Packages\CanonicalGroupLimited.Ubuntu_79rhkp1fndgsc\LocalState'` then `optimize-vhd -Path .\ext4.vhdx -Mode full`
 ( it requires these https://askubuntu.com/a/1380274 + https://github.com/microsoft/WSL/issues/4699 +  install this https://superuser.com/a/1307442/769637 install the Hyper-V Platform | Hyper-V Services part, too + restart)
    
-- export wsl image to a new computer : 
+- (backup and restore), you can export wsl image after finishing all the steps to save it in case you move to a new computer : 
    - wsl --terminate ubuntu
    - wsl --shutdown
    - wsl --export Ubuntu E:\ubuntu.tar
