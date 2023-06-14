@@ -152,6 +152,13 @@ systemd=true
 - ncdu : check the disk space usage from wsl , `sudo apt install ncdu` then `ncdu`
 - Reclaim disk space : `wsl --shutdown` then `cd 'C:\Users\Amine Djeghri\AppData\Local\Packages\CanonicalGroupLimited.Ubuntu_79rhkp1fndgsc\LocalState'` then `optimize-vhd -Path .\ext4.vhdx -Mode full`
 ( it requires these https://askubuntu.com/a/1380274 + https://github.com/microsoft/WSL/issues/4699 +  install this https://superuser.com/a/1307442/769637 install the Hyper-V Platform | Hyper-V Services part, too + restart)
+   
+- export wsl image to a new computer : 
+   - wsl --terminate ubuntu
+   - wsl --shutdown
+   - wsl --export Ubuntu E:\ubuntu.tar
+   - wsl --setdefault Ubuntu
+   - [source 1](https://www.xda-developers.com/how-back-up-restore-wsl/)
 
 #### Install cuda in WSL : 
 * We will install cuda 11.7 for pytorch 2.0.1  (June 2023)    
