@@ -268,7 +268,7 @@ plugins=(git
         zsh-autocomplete
 ```
 - run - `zsh` to restart the terminal, now you can see the changes when you try to write a command like `cd`
-   
+- If there are some problems test the solutions available [here](https://stackoverflow.com/a/37175174/8354747) & [here](https://stackoverflow.com/a/36994356/8354747)
 Others : 
 - Auto update oh my zsh : uncomment this: `zstyle ':omz:update' mode auto`
 - Add the following alias to the end of .zshrc file to easily open sublime Text from windows: `alias sublime="subl.exe"`. Try it with : `sublime .zshrc`
