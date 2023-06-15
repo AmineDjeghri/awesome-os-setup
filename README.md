@@ -2,8 +2,6 @@
 ![windows desktop terminal](https://github.com/AmineDjeghri/BetterWindows/blob/master/windows-desktop-terminal_1.png)
 ![WSL terminal](https://github.com/AmineDjeghri/BetterWindows/blob/master/resources/wsl_terminal.jpg)
 
-!! Updated for windows 11 !!
-
 Some tips to improve your User experience when using windows. Including the installation of WSL 2.0 and more
 - A guide to help you set up a windows environement to maximize your productivity 
 - Spend some hours setting this up (a full guide to configure many things including, linux commands in windows no need for dualboot anymore, SSH, SFTP with interface to reach a maximum level of productivity)
