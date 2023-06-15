@@ -225,7 +225,7 @@ export LD_LIBRARY_PATH=${CUDA_HOME}/lib64:$LD_LIBRARY_PATH
 - [Install Pytorch/Cuda](https://github.com/AmineDjeghri/BetterWindows11/blob/master/install_conda_windows.md)
 
 # 4- UX Custommization
-## 4.1 customize WLS (ubuntu) terminal
+## 4.1 customize WSL (ubuntu) terminal
 ![WSL terminal](https://github.com/AmineDjeghri/BetterWindows/blob/master/resources/wsl_terminal.jpg)
 ### Install and set up zsh as default
 
