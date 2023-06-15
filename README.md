@@ -11,7 +11,7 @@ Some tips to improve your User experience when using windows. Including the inst
 ## Summary 
 1. [Windows Installation](#1--windows-configuration)
 2. [Utility Softwares : Browsers, extensions, daily and usefull programs](#2-utility-softwares)
-3. [Dev Workflow](3--dev-workflow)
+3. [Dev Workflow](#3--dev-workflow)
 
    3.1 [Dev Software: All the softwares I recommand for developpement and coding](#31-dev-software)
 
