@@ -15,14 +15,12 @@ Some tips to improve your User experience when using windows. Including the inst
 
    3.1 [Dev Software: All the softwares I recommand for developpement and coding](https://github.com/AmineDjeghri/BetterWindows11#31-dev-software)
 
-   3.2 [WSL vs Windows](https://github.com/AmineDjeghri/BetterWindows11#32-linux-wsl-inside-windows-or-just-use-windows-)
-      * [WSL vs Windows](https://github.com/AmineDjeghri/BetterWindows11#32-linux-wsl-inside-windows-or-just-use-windows-)
-      * #### install WSL:
-      * #### install miniconda in WSL:  :
-      * #### configure WSL terminal :
-      * #### Install cuda in WSL 
-      *  #### WSL2 tools : 
-      
+   3.2 [Coding using WSL/Linux](https://github.com/AmineDjeghri/AwesomeWindows11#321coding-using-linuxwsl-inside-windows-best-choice---skip-this-if-you-dont-want-to-use-wsl)
+      * [install WSL](https://github.com/AmineDjeghri/AwesomeWindows11#install-wsl-1)
+      * [install miniconda in WSL](https://github.com/AmineDjeghri/AwesomeWindows11#install-miniconda-in-wsl)
+      * [configure WSL terminal](https://github.com/AmineDjeghri/AwesomeWindows11#install-miniconda-in-wsl)
+      * [Install cuda in WSL](https://github.com/AmineDjeghri/AwesomeWindows11#install-cuda-in-wsl-)
+      * [WSL2 tools](https://github.com/AmineDjeghri/AwesomeWindows11#wsl2-tools--1)
    
 4. [UI/UX Custommization](https://github.com/AmineDjeghri/BetterWindows11#4--ux-custommization)
 
@@ -137,7 +135,7 @@ It is fantastic. Virtualisation overhead is not noticeable, full integration bet
 systemd=true
  ```
  - Restart the terminal and run `systemctl list-unit-files --type=service` to see some process running
- - Copy your ssh key from windows to linux and use on the ssh file of linux : `chmod 600 ~/.ssh/id_rsa` and `chmod 600 ~/.ssh/id_rsa.pub`
+ - Copy your ssh key from windows to linux and use on the ssh file of linux : `chmod 600 ~/.ssh/id_rsa` and `chmod 600 ~/.ssh/id_rsa.pub`. Or generate a new SSH key using : `ssh-keygen -t rsa`
   
 #### install miniconda in WSL: 
  - run `wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh` (Conda 23.3.1 Python 3.10.10 released April 24, 2023)
