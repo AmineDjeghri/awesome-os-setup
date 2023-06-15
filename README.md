@@ -15,7 +15,7 @@ Some tips to improve your User experience when using windows. Including the inst
 
    3.1 [Dev Software: All the softwares I recommand for developpement and coding](https://github.com/AmineDjeghri/BetterWindows11#31-dev-software)
 
-   3.2 [Coding using WSL/Linux](https://github.com/AmineDjeghri/AwesomeWindows11#321coding-using-linuxwsl-inside-windows-best-choice---skip-this-if-you-dont-want-to-use-wsl)
+   3.2 [Coding using WSL/Linux](#321coding-using-linuxwsl-inside-windows-best-choice---skip-this-if-you-dont-want-to-use-wsl)
       * [install WSL](https://github.com/AmineDjeghri/AwesomeWindows11#install-wsl-1)
       * [install miniconda in WSL](https://github.com/AmineDjeghri/AwesomeWindows11#install-miniconda-in-wsl)
       * [configure WSL terminal](https://github.com/AmineDjeghri/AwesomeWindows11#install-miniconda-in-wsl)
