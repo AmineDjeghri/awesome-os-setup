@@ -9,20 +9,20 @@ Some tips to improve your User experience when using windows. Including the inst
 - Spend some hours setting this up (a full guide to configure many things including, linux commands in windows no need for dualboot anymore, SSH, SFTP with interface to reach a maximum level of productivity)
 
 ## Summary 
-1. [Windows Installation](https://github.com/AmineDjeghri/BetterWindows11#1--windows-configuration)
-2. [Utility Softwares : Browsers, extensions, daily and usefull programs](https://github.com/AmineDjeghri/BetterWindows11#2-utility-softwares)
-3. [Dev Workflow](https://github.com/AmineDjeghri/BetterWindows11#3--dev-workflow)
+1. [Windows Installation](#1--windows-configuration)
+2. [Utility Softwares : Browsers, extensions, daily and usefull programs](#2-utility-softwares)
+3. [Dev Workflow](3--dev-workflow)
 
-   3.1 [Dev Software: All the softwares I recommand for developpement and coding](https://github.com/AmineDjeghri/BetterWindows11#31-dev-software)
+   3.1 [Dev Software: All the softwares I recommand for developpement and coding](#31-dev-software)
 
    3.2 [Coding using WSL/Linux](#321coding-using-linuxwsl-inside-windows-best-choice---skip-this-if-you-dont-want-to-use-wsl)
-      * [install WSL](https://github.com/AmineDjeghri/AwesomeWindows11#install-wsl-1)
-      * [install miniconda in WSL](https://github.com/AmineDjeghri/AwesomeWindows11#install-miniconda-in-wsl)
-      * [configure WSL terminal](https://github.com/AmineDjeghri/AwesomeWindows11#install-miniconda-in-wsl)
-      * [Install cuda in WSL](https://github.com/AmineDjeghri/AwesomeWindows11#install-cuda-in-wsl-)
-      * [WSL2 tools](https://github.com/AmineDjeghri/AwesomeWindows11#wsl2-tools--1)
+      * [install WSL](#install-wsl-1)
+      * [install miniconda in WSL](#install-miniconda-in-wsl)
+      * [configure WSL terminal](#install-miniconda-in-wsl)
+      * [Install cuda in WSL](#install-cuda-in-wsl-)
+      * [WSL2 tools](#wsl2-tools--1)
    
-4. [UI/UX Custommization](https://github.com/AmineDjeghri/BetterWindows11#4--ux-custommization)
+4. [UI/UX Custommization](#4--ux-custommization)
 
 
 ## 1- Windows configuration
