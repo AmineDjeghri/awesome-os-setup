@@ -16,27 +16,36 @@ Some tips to improve your User experience when using windows. Including the inst
    3.1 [Dev Software: All the softwares I recommand for developpement and coding](https://github.com/AmineDjeghri/BetterWindows11#31-dev-software)
 
    3.2 [WSL vs Windows](https://github.com/AmineDjeghri/BetterWindows11#32-linux-wsl-inside-windows-or-just-use-windows-)
+      * [WSL vs Windows](https://github.com/AmineDjeghri/BetterWindows11#32-linux-wsl-inside-windows-or-just-use-windows-)
+      * #### install WSL:
+      * #### install miniconda in WSL:  :
+      * #### configure WSL terminal :
+      * #### Install cuda in WSL 
+      *  #### WSL2 tools : 
+      
+   
 4. [UI/UX Custommization](https://github.com/AmineDjeghri/BetterWindows11#4--ux-custommization)
 
 
 ## 1- Windows configuration
 - First thing to do is to connect your windows to your microsoft account : Windows-> account -> connect
-### 1.1 Save your key to you microsoft account (important)
- - Connect windows with your Microsoft-Outlook) account to save and link the key to your account 
+### 1.1 Save your key to you microsoft account (important) & update some parameters
+ - Connect windows with your Microsoft/Outlook account to save and link the key to your account 
  - Activate localization on windows (if you want to localize your device)
  - Activate bitlocker to encrypt your data (Exists only on windows pro, education and entreprise edition)
  - When placing an external monitor that runs 144hz, make sure to activate the `144Hz` in display settings
- - If you're using OneDrive, becareful when you sync your Desktop and windows specific folders, you can face some problems. My advice is to avoid syncing windows default folders (like Desktop, Documents). Juse use OneDrive as a cloud store.
+ - If you're using OneDrive, becareful when you sync your Desktop and windows specific folders, you can face some problems. My advice is to avoid syncing windows default folders (like Desktop, Documents). Unsyc everything (Desktop, Documents...) Just use OneDrive as a cloud store like Google Drive. If you don't use it, you can uninstall it.
  - (Optionnal) sleep mode with or without screen lock [here](https://consumer.huawei.com/en/support/content/en-us15592807/#:~:text=Click%20the%20Windows%20icon%20and,Screen%20and%20Sleep%20to%20Never)
  - (Desktop) if you have a 3200mhz RAM and it runs bellow this frequency, activate XMP profile in the BIOS
  - (Audio devices) if you have bluetooth and audio devices, you can sort them in audio settings -> use as default for both audio & communications
- 
 
-### 1.1 New PC ? transfer your windows key
+### 1.2 Want to move to a new computer ? transfer your windows key
+When you reset your computer it will usual either recognize the device and apply the key, if not you can connect to the Microsoft account where you saved your key, 
+If you didn't save the key in your account, you need to do this before resetting your old computer
 - On your old PC, check if the key is not an OEM by running  `Slmgr /dli`
 - Get your licence key (if you fogot the serial number use a software like : 
-- deactivate it windows terminal or cmd using administrator mode with `slmgr /cpky`
-- activate it on the new computer using `slmgr /ipk xxxxx-xxxxx-xxxxx-xxxxx-xxxxx`
+- Deactivate it in windows terminal by using administrator mode with `slmgr /cpky`
+- Activate it on the new computer using `slmgr /ipk xxxxx-xxxxx-xxxxx-xxxxx-xxxxx`
 
 ## 2-Utility Softwares
 - <ins>Browser</ins>: Brave or Firefox or Edge, Don't forget to change your sync settings to import your passwords, bookmarks...ect.
@@ -127,7 +136,8 @@ It is fantastic. Virtualisation overhead is not noticeable, full integration bet
 [boot]
 systemd=true
  ```
-  restart the terminal and run `systemctl list-unit-files --type=service` to see some process running
+ - Restart the terminal and run `systemctl list-unit-files --type=service` to see some process running
+ - Copy your ssh key from windows to linux and use on the ssh file of linux : `chmod 600 ~/.ssh/id_rsa` and `chmod 600 ~/.ssh/id_rsa.pub`
   
 #### install miniconda in WSL: 
  - run `wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh` (Conda 23.3.1 Python 3.10.10 released April 24, 2023)
@@ -145,20 +155,6 @@ systemd=true
  - (pycharm) Use WSL/ubuntu as the default terminal in pycharm: `settings -> tools -> terminal`  and put in shell path: `ubuntu run`
  - (pycharm) Add WSL conda interpreter in Pycharm (add interpreter -> WSL -> conda) and select the global conda : `/home/amine/miniconda3/bin/conda`. Then click on load environments and it will automatically detect all the conda envs.
  
-#### WSL2 tools : 
-- You can use `wslpath` command to convert a windows path to wsl path : `wslpath  'C:\Users\AmineDjeghri\Desktop\git\myproject'`
-- Copy your ssh key from windows to linux and use on the ssh file of linux : `chmod 600 ~/.ssh/id_rsa` and `chmod 600 ~/.ssh/id_rsa.pub`
-- update packages:  `sudo apt update` then `sudo apt upgrade`
-- ncdu : check the disk space usage from wsl , `sudo apt install ncdu` then `ncdu`
-- Reclaim disk space : `wsl --shutdown` then `cd 'C:\Users\Amine Djeghri\AppData\Local\Packages\CanonicalGroupLimited.Ubuntu_79rhkp1fndgsc\LocalState'` then `optimize-vhd -Path .\ext4.vhdx -Mode full`
-( it requires these https://askubuntu.com/a/1380274 + https://github.com/microsoft/WSL/issues/4699 +  install this https://superuser.com/a/1307442/769637 install the Hyper-V Platform | Hyper-V Services part, too + restart)
-   
-- (backup and restore), you can export wsl image after finishing all the steps to save it in case you move to a new computer : 
-   - wsl --terminate ubuntu
-   - wsl --shutdown
-   - wsl --export Ubuntu E:\ubuntu.tar
-   - [source 1](https://www.xda-developers.com/how-back-up-restore-wsl/)
-
 #### Install cuda in WSL : 
 * We will install cuda 11.7 for pytorch 2.0.1  (June 2023)    
 * Install Nvidia [driver](https://www.nvidia.com/download/index.aspx) on windows
@@ -211,6 +207,22 @@ export LD_LIBRARY_PATH=${CUDA_HOME}/lib64:$LD_LIBRARY_PATH
 * [Cuda-wsl Nvidia guide](https://docs.nvidia.com/cuda/wsl-user-guide/index.html#getting-started-with-cuda-on-wsl-2](https://docs.nvidia.com/cuda/wsl-user-guide/index.html#getting-started-with-cuda-on-wsl-2))
 * [Cuda-wsl Ubuntu guide](https://ubuntu.com/tutorials/enabling-gpu-acceleration-on-ubuntu-on-wsl2-with-the-nvidia-cuda-platform#3-install-nvidia-cuda-on-ubuntu)
 
+#### WSL2 tools : 
+- You can use `wslpath` command to convert a windows path to wsl path : `wslpath  'C:\Users\AmineDjeghri\Desktop\git\myproject'`
+- Copy your ssh key from windows to linux and use on the ssh file of linux : `chmod 600 ~/.ssh/id_rsa` and `chmod 600 ~/.ssh/id_rsa.pub`
+- update packages:  `sudo apt update` then `sudo apt upgrade`
+- ncdu : check the disk space usage from wsl , `sudo apt install ncdu` then `ncdu`
+- Reclaim disk space : 
+   - it requires docker Dashboard for WSL2, and activating 2 hyper V params in Control Panel.
+   -  Install this https://superuser.com/a/1307442/769637 install the Hyper-V Platform | Hyper-V Services part, too + restart)
+   - in Administrator Mode : `wsl --shutdown` then `cd 'C:\Users\Amine Djeghri\AppData\Local\Packages\CanonicalGroupLimited.Ubuntu_79rhkp1fndgsc\LocalState'` then `optimize-vhd -Path .\ext4.vhdx -Mode full`
+   - for more information check this : these https://askubuntu.com/a/1380274 + https://github.com/microsoft/WSL/issues/4699 +  
+   
+- (backup and restore), you can export wsl image after finishing all the steps to save it in case you move to a new computer : 
+   - wsl --terminate ubuntu
+   - wsl --shutdown
+   - wsl --export Ubuntu E:\ubuntu.tar
+   - [source 1](https://www.xda-developers.com/how-back-up-restore-wsl/)
  
 ### 3.2.1.Coding using Windows (2nd choice) (Skip this if you are using WSL)
 - [Install conda](https://github.com/AmineDjeghri/BetterWindows11/blob/master/install_conda_windows.md)
