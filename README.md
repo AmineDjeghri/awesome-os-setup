@@ -150,8 +150,31 @@ systemd=true
  - Now, go to desktop and right click to open a windows terminal, run 'wsl', you should see that ubuntu started from the current location.
  - (pycharm) Use WSL/ubuntu as the default terminal in pycharm: `settings -> tools -> terminal`  and put in shell path: `ubuntu run`
  - (pycharm) Add WSL conda interpreter in Pycharm (add interpreter -> WSL -> conda) and select the global conda : `/home/amine/miniconda3/bin/conda`. Then click on load environments and it will automatically detect all the conda envs.
- 
-#### Install cuda in WSL : 
+
+
+#### Install cuda locally : 
+- Download Miniconda for python 3.9 and install it [Link](https://repo.anaconda.com/miniconda/)
+- for example in Linux/WSL : 
+```
+curl -sL "https://repo.anaconda.com/miniconda/Miniconda3-py39_23.3.1-0-Linux-x86_64.sh" > "Miniconda3.sh"
+bash Miniconda3.sh
+```
+- create an environment with python 3.9 : 
+```
+conda create -n test python=3.9
+conda activate test
+```
+- Install Pytorch
+
+| System | GPU | Command |
+|--------|---------|---------|
+| Windows or Linux/WSL | NVIDIA | `conda install -y -k cuda ninja git -c nvidia/label/cuda-11.7.0 -c nvidia && python -m pip install torch==2.0.1+cu117 torchvision torchaudio --index-url https://download.pytorch.org/whl/cu117` |
+| Linux/WSL | CPU | `pip3 install torch==2.0.1 torchvision torchaudio --index-url https://download.pytorch.org/whl/cpu` |
+| Windows or Macbook M Series | CPU | `pip3 install torch==2.0.1 torchvision torchaudio` |
+
+The up-to-date commands can be found here: https://pytorch.org/get-started/locally/. 
+
+#### Install cuda globally in WSL : 
 * We will install cuda 11.7 for pytorch 2.0.1  (June 2023)    
 * Install Nvidia [driver](https://www.nvidia.com/download/index.aspx) on windows
 * On windows, run `nvidia-smi`. If you have cuda toolkit installed on windows (not obligatory), run `nvcc --version`. You will see two different CUDA versions shown by nvcc and NVIDIA-smi which is normal if you have cuda toolkit on windows [source](https://stackoverflow.com/a/53504578)
