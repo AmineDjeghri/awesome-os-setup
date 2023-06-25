@@ -35,6 +35,7 @@ Some tips to improve your User experience when using windows. Including the inst
  - (Optionnal) sleep mode with or without screen lock [here](https://consumer.huawei.com/en/support/content/en-us15592807/#:~:text=Click%20the%20Windows%20icon%20and,Screen%20and%20Sleep%20to%20Never)
  - (Desktop) if you have a 3200mhz RAM and it runs bellow this frequency, activate XMP profile in the BIOS
  - (Audio devices) if you have bluetooth and audio devices, you can sort them in audio settings -> use as default for both audio & communications
+ - (Audio) Deactivate lowering communication sounds in advanced audio settings.
 
 ### 1.2 Want to move to a new computer ? transfer your windows key
 When you reset your computer it will usual either recognize the device and apply the key, if not you can connect to the Microsoft account where you saved your key, 
