@@ -233,9 +233,8 @@ export LD_LIBRARY_PATH=${CUDA_HOME}/lib64:$LD_LIBRARY_PATH
 - You can use `wslpath` command to convert a windows path to wsl path : `wslpath  'C:\Users\AmineDjeghri\Desktop\git\myproject'`
 - Copy your ssh key from windows to linux and use on the ssh file of linux : `chmod 600 ~/.ssh/id_rsa` and `chmod 600 ~/.ssh/id_rsa.pub`
 - update packages:  `sudo apt update` then `sudo apt upgrade`
-- check the disk space usage from wsl , `df -h` look on the right column 'Mounted on'
+- disk utilisation: `df -h` look on the right column 'Mounted on'
 - unzip: `sudo apt install unzip`
-- disk utilisation `df -i`
 - Reclaim disk space : 
    - it requires docker Dashboard for WSL2, and activating 2 hyper V params in Control Panel.
    -  Install this https://superuser.com/a/1307442/769637 install the Hyper-V Platform | Hyper-V Services part, too + restart)
