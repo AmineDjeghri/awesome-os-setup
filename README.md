@@ -56,6 +56,7 @@ If you didn't save the key in your account, you need to do this before resetting
 - <ins>Adobe</ins> : Photoshop, illustrator, premiere pro, XD
 - <ins>VPN</ins> : ProtonVPN or NordVPN
 - <ins>Torrent client</ins>: qBitTorrent
+- <ins>Download Manager</ins>: [NeatDownloadManager](https://www.neatdownloadmanager.com/index.php/en/) + extension specially for videos + subtitles
 - <ins>Google Drive</ins> :  download it on windows and put the files and folder that you want to be automatically saved on your drive, you won't need to everytime open google drive in your browser and manually put your files there
 - <ins>Online Storage</ins> : Google Drive (15gb), Mega Drive (50GB) ...ect. Use these Drives to store non personanal Data ! It's better to have an NAS or an external HDD to store your personal data.
 - <ins>Microsoft Office 2016</ins> Buy it or ... Better than the 365 version.
