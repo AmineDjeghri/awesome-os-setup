@@ -9,11 +9,12 @@
 - Use ubuntu as default terminal in pycharm: tools>terminal  and put in shell path: `ubuntu run`
 - Add WSL interpreter in Pycharm (add interpreter -> WSL)
 
-### Pycharm shortcuts : 
+### 1.Pycharm shortcuts : 
 - [link](https://resources.jetbrains.com/storage/products/pycharm/docs/PyCharm_ReferenceCard.pdf)
 
+### 2.Pycharm remote deployment :
+(attention : project folder needs to be on windows and not WSL to use the remote ssh )
 
-### Pycharm remote deployment : 
 Defining a server as default:
 A deployment server is considered default if its settings apply by default during automatic upload of changed files. To define a deployment server as the default one, follow these steps:
 
@@ -26,8 +27,21 @@ Open the deployment Options (Settings/Preferences | Deployment | Options or Tool
 In the main menu, select Tools | Deployment | Automatic upload. Note that automatic upload in this case is performed in the Always mode.
 
 
-### SSH (needs to be updated and fileZilla)
- - https://github.com/AmineDjeghri/BetterWindowsUX/blob/master/SSH-PPTI-SU.md
-
+### Python SSH 
+- add a remote python : usually found with `which python` on the remote server. 
 - PyCharm envs: You can clean out old PyCharm interpreters that are no longer associated with a project see the image [here](https://github.com/AmineDjeghri/BetterWindowsUX/blob/master/pycharm_interpreters.PNG) .
-- This gives you a listing where you can get rid of old virtualenvs that PyCharm thinks are still around 
+- This gives you a listing where you can get rid of old virtualenvs that PyCharm thinks are still around
+- 
+### Filezilla
+- Download Filezilla and import your key (if you key isn't in the right format, convert it with putty)
+
+
+### Remote SSH for ReactJS
+- First make sure that in the server, the react project is running when you run `yarn dev run`
+- In pycharm, go to configuration and create a new config for npm 
+- select package.json from the local folder
+- select command : run
+- select scripts : dev
+- Node interpreter : copy paste the result of the command `which node` in the remote server
+- package manager : yarn for example
+- environement : `PATH=` put the result of the commande `echo $PATH` 
