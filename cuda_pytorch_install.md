@@ -1,11 +1,32 @@
 
 ## 3.3 Python, Pytorch and Cuda installation: 
+### WSL : 
 #### 3.3.1 Pytorch with Nvidia GPU
-- Important : Pytorch 1.10.1 works with CUDA 11.3 and visual studio 2019
-- Download [VSCode Community 2019](https://docs.microsoft.com/en-us/visualstudio/releases/2019/release-notes).
-- Install it and check `Desktop Development with C++` and `.NET` (size will be 11GB approxiamtly) 
-- Download and install [CUDA 11.3](https://developer.nvidia.com/cuda-11.3.0-download-archive?target_os=Windows&target_arch=x86_64&target_version=10&target_type=exe_local)
-- Install [Pytorch 1.10.1](https://pytorch.org/get-started/locally/) by running this command `pip install torch==1.10.1+cu113 torchvision==0.11.2+cu113 torchaudio===0.10.1+cu113 -f https://download.pytorch.org/whl/cu113/torch_stable.html`
+create a `env.yaml` file with the content above (you can modify the name of the env and the packages). I usually have to yaml file :
+One containing Pytorch with CUDA and another one not containing pytorch (for CPU). I specify the version of pytorch in requirements.txt.
+If pytorch was installed with cuda, running the requirements.txt won't install again pytorch since the same version is installed.
+Running the env.yaml that doesn't contain pytorch will install pytorch CPU from requirements.txt
+```
+name: py-env
+dependencies:
+  - python=3.9
+  - git
+  - pip
+  - conda-forge::ninja
+  - nvidia/label/cuda-11.8.0::cuda
+  - conda-forge::ffmpeg
+  - conda-forge::gxx=11.4
+  - conda-forge::tesseract=5.3.2
+  - pip:
+      - --extra-index-url https://download.pytorch.org/whl/cu118
+      - torch==2.0.1+cu118
+      - --extra-index-url https://download.pytorch.org/whl/cu118
+      - torchvision
+      - --extra-index-url https://download.pytorch.org/whl/cu118
+      - torchaudio
+      - -r requirements.txt
+```
+Create an environement with : `conda env create -f conda-env-gpu.yml;conda activate my-env;`.
 
 #### 3.3.2 Pytorch without gpu: 
 `pip install torch torchvision torchaudio`
@@ -28,5 +49,5 @@ if device.type == 'cuda':
 ```
 
 #### 3.3 Python packages:
-- Always use `pip` command in Windows Terminal to install python packages.
-- (need to be updated to automatically choose pytorch gpu/cpu version) there is a requirements.txt that contains the principal data science libraries (without pytorch as you have installed it from the previous line, just do `pip install -r https://raw.githubusercontent.com/AmineDjeghri/BetterWindowsUX/master/requirements.txt`
+- Always use `pip` command to install python packages.
+- (not updated) there is a requirements.txt that contains the principal data science libraries (without pytorch as you have installed it from the previous line, just do `pip install -r https://raw.githubusercontent.com/AmineDjeghri/BetterWindowsUX/master/requirements.txt`
