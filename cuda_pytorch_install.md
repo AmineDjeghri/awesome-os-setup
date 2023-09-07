@@ -10,7 +10,8 @@ Installing CUDA inside a Conda environment instead of globally on your computer 
 
 3.Clean Uninstall: If you later decide to remove a project and its associated dependencies, it's straightforward to delete the Conda environment, which ensures a clean uninstallation without leaving traces on your system.
 
-- If you use WSL, install the nvidia driver on windows and not WSL. If you are on Linux and not WSL, install first the nvidia driver which is compatible with your card from the nvidia website. [nvidia drivers](https://www.nvidia.fr/Download/index.aspx?lang=fr)
+- If you use WSL, install the nvidia driver on windows and not WSL. If you are on Linux and not WSL, install first the nvidia driver which is compatible with your card from the nvidia website. [nvidia drivers](https://www.nvidia.fr/Download/index.aspx?lang=fr).
+- Run `nvidia-smi` on the terminal, it should print you all the information about your GPU
   
 - Install build-essential `sudo apt-get install build-essential` (required by some packages like llama-cpp-python for example)
   
@@ -39,6 +40,8 @@ dependencies:
       - -r requirements.txt
 ```
 Create an environement with : `conda env update -n nmy-env -f conda-env-gpu.yml;conda activate my-env;`.
+
+- Run `    nvcc --version ; # should be cuda_11.8.r11.8`
 - Check if you succeeded to install pytorch, run the following python code: 
 
 ```
