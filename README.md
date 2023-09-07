@@ -83,7 +83,7 @@ If you didn't save the key in your account, you need to do this before resetting
 
 ## 3- Dev workflow
 ### 3.1 Dev software
-
+#### <ins>Docker Desktop</ins> specially with WSL : you can start, stop, delete containers easily,  edit file right inside the app without the need of a terminal.
 #### <ins>Sublime Text</ins> (Free, no need to but the pro lisence): 
 - Extremely lightweight (low resource usage), but still keeps around some of the more advanced features you would expect out of a top text editor.
 - Install it before installing git bash (a software that adds linux and git commands to windows). 
@@ -124,7 +124,7 @@ It is fantastic. Virtualisation overhead is not noticeable, full integration bet
 - You can install conda environement in ubuntu, use GPU, use pycharm on windows to connect to WSL conda env and more.
 
 
-#### install WSL:
+#### Install WSL:
  - Install WSL ``` wsl --install ``` 
  - Restart you computer
  - When installing WSL, it comes with Ubuntu (you don't need to install it from the Windows Store because there are many distribution)
@@ -139,11 +139,13 @@ systemd=true
  - Restart the terminal and run `systemctl list-unit-files --type=service` to see some process running
  - Copy your ssh key from windows to linux and use on the ssh file of linux : `chmod 600 ~/.ssh/id_rsa` and `chmod 600 ~/.ssh/id_rsa.pub`. Or generate a new SSH key using : `ssh-keygen -t rsa`
   
+#### If you plan to use ZSH, jump to terminal customization before installing other stuff to avoir copying the content of `.bashrc` to `.zshrc`
+
 #### install miniconda in WSL: 
  - run `wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh` (Conda 23.3.1 Python 3.10.10 released April 24, 2023)
  - run `chmod +x Miniconda3-latest-Linux-x86_64.sh`
  - run `bash Miniconda3-latest-Linux-x86_64.sh` 
- - restart the shell with `bash` command
+ - restart the shell with `bash` command (or `zsh` if you changed your shell)
  - if `(base)` is not showing and `.bachrc` file doesn't contain the init of conda, go to `~/miniconda3/bin` and run `conda init`
  - close and reopen ubuntu terminal or run `bash`, you should see `(base)` at the left of the any command.
  - run `conda env list` to check the installed environements and their path.
@@ -156,27 +158,9 @@ systemd=true
  - (pycharm) Add WSL conda interpreter in Pycharm (add interpreter -> WSL -> conda) and select the global conda : `/home/amine/miniconda3/bin/conda`. Then click on load environments and it will automatically detect all the conda envs.
 
 
-#### Install cuda locally : 
-- Download Miniconda for python 3.9 and install it [Link](https://repo.anaconda.com/miniconda/)
-- for example in Linux/WSL : 
-```
-curl -sL "https://repo.anaconda.com/miniconda/Miniconda3-py39_23.3.1-0-Linux-x86_64.sh" > "Miniconda3.sh"
-bash Miniconda3.sh
-```
-- create an environment with python 3.9 : 
-```
-conda create -n test python=3.9
-conda activate test
-```
-- Install Pytorch
-
-| System | GPU | Command |
-|--------|---------|---------|
-| Windows or Linux/WSL | NVIDIA | `conda install -y -k cuda ninja git -c nvidia/label/cuda-11.7.0 -c nvidia && python -m pip install torch==2.0.1+cu117 torchvision torchaudio --index-url https://download.pytorch.org/whl/cu117` |
-| Linux/WSL | CPU | `pip3 install torch==2.0.1 torchvision torchaudio --index-url https://download.pytorch.org/whl/cpu` |
-| Windows or Macbook M Series | CPU | `pip3 install torch==2.0.1 torchvision torchaudio` |
-
-The up-to-date commands can be found here: https://pytorch.org/get-started/locally/. 
+#### Install Cuda locally (Best choice) : 
+- (to be tested) If this does not work, install first cuda globally then learn how to install cuda locally in a conda environement.
+- Follow this [conda_cuda_installation guide](https://github.com/AmineDjeghri/AwesomeWindows11/blob/master/cuda_pytorch_install.md) 
 
 #### Install cuda globally in WSL : 
 * We will install cuda 11.7 for pytorch 2.0.1  (June 2023)    
