@@ -45,3 +45,7 @@ In the main menu, select Tools | Deployment | Automatic upload. Note that automa
 - Node interpreter : copy paste the result of the command `which node` in the remote server
 - package manager : yarn for example
 - environement : `PATH=` put the result of the commande `echo $PATH` 
+
+# Run configuration :
+- you can choose by editing the configuration template of python and pytest to select a default working directory for all your scripts
+- Run pytest just by right clicking on a function bloc, file, or folder !
