@@ -40,6 +40,7 @@ dependencies:
       - torchaudio
       - -r requirements.txt
 ```
+As you can see, there is tesseract in the conda installation. It's better to install it in our conda env rather than globbaly with apt-get. Always prefer to install libraries via pip -> conda -> apt-get
 Create an environement with : `conda env update -n nmy-env -f conda-env-gpu.yml;conda activate my-env;`.
 
 - Run `    nvcc --version ; # should be cuda_11.8.r11.8`
