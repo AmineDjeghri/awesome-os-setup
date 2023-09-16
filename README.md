@@ -52,16 +52,18 @@ If you didn't save the key in your account, you need to do this before resetting
 - <ins>Agenda & Mail</ins> : Google agenda, Gmail, -> create an app shortcut with brave, it will act like an app in windows, and activate the notifications. Make BRave the default apps in windows for mailto and agenda then go to brave://settings/handlers and add gmailand agenda .
 - <ins>Antivirus</ins> : Kaspersky Cloud free
 - <ins>Powershell 7</ins> : Install Powershell 7  [link](https://learn.microsoft.com/en-us/powershell/scripting/install/installing-powershell-on-windows?WT.mc_id=THOMASMAURER-blog-thmaure&view=powershell-7.3&viewFallbackFrom=powershell-7). Change the default terminal in Windows Terminal, and activate the "run always as administrator in the default profile"
+- <ins>Customization</ins>: PowerToys from microsoft store (very cool and useful features)
 - <ins>Others</ins>: CCleaner, HWInfo (portable)
 - <ins>Adobe</ins> : Photoshop, illustrator, premiere pro, XD
+- <ins>Free photoshop alt </ins> :  [link](https://www.photopea.com/), illustrator / adobe premiere pro
 - <ins>VPN</ins> : ProtonVPN or NordVPN
 - <ins>Torrent client</ins>: qBitTorrent
 - <ins>Download Manager</ins>: [NeatDownloadManager](https://www.neatdownloadmanager.com/index.php/en/) + extension specially for videos + subtitles
 - <ins>Google Drive</ins> :  download it on windows and put the files and folder that you want to be automatically saved on your drive, you won't need to everytime open google drive in your browser and manually put your files there
 - <ins>Online Storage</ins> : Google Drive (15gb), Mega Drive (50GB) ...ect. Use these Drives to store non personanal Data ! It's better to have an NAS or an external HDD to store your personal data.
-- <ins>Microsoft Office 2016</ins> Buy it or ... Better than the 365 version.
-- <ins>Adobe Suite</ins> : Photoshop or free alternative [Photopea](https://www.photopea.com/), illustrator / adobe premiere pro
-- <ins>PDF editing</ins> (3 free tasks per hour) : https://www.sejda.com/ (do not download the desktop app)
+- <ins>Microsoft Office 2016</ins> Buy it or buy a retail key for 1$. Better than the 365 version.
+
+- <ins>PDF editing</ins> Adobe acrobat(paied) or Sejda(free)(3 free tasks per hour) : https://www.sejda.com/ (do not download the desktop app)
 - <ins>Windows Terminal </ins> windows terminal works in every directory, right lick in any directory and you can have a bash with that path 
 - <ins> Teracopy </ins>
 - <ins> Notion </ins>
@@ -76,6 +78,7 @@ If you didn't save the key in your account, you need to do this before resetting
 ### Browser websites & extensions
 - <ins>Netflix, Prime</ins>: windows store and browser. Browser is better in terms of stability, lists, content and vpn use. On the other hand, Netfliw from the store app and Netfliw on Edge browser  can handle 7.1 and 4k streaming. To add windows apps downloaded from windows store in the taskbar or the desktop :Press Windows key + R then enter shell:appsfolder then drag and drop . 
 - Configure some websites on your desktop and taskbar as shorcuts (Netflix, Google calendar, Gmail...ect)
+- <ins> Download manager</ins> : Neat download manager extension (required Neat Download Manager app)
 - <ins> Gmail and Google Calendar</ins> : you can configure dark mode ("Thèmes" , , choose "dark/sombre") and priority notifications (all new emails), signature.
 - <inst> receive notifications from gmail browser : [Link](https://chrome.google.com/webstore/detail/checker-plus-for-gmail/oeopbcgkkoapgobdbedcemjljbihmemj)
 - <inst> receive notifications from google calendar : [Link](https://chrome.google.com/webstore/detail/checker-plus-for-google-c/hkhggnncdpfibdhinjiegagmopldibha)
@@ -113,6 +116,7 @@ Open file your_home_directory/.ssh/id_rsa.pub (example `C:\Users\AmineDjeghri\.s
    
 
 ### 3.2 Linux (WSL) inside windows or just use Windows ?
+Lot of libraries and codes are made for Linux. Hence, using WSL is the best choice. Do not code in both OS, use for example pycharm or vscode on windows with a conda environement installed on WSL. The best thing id to combine the power of Windows with WSL.
 ### 3.2.1.Coding using Linux(WSL) inside Windows (BEST CHOICE) - Skip this if you don't want to use WSL
 
 ![WSL terminal](https://github.com/AmineDjeghri/BetterWindows/blob/master/resources/wsl_terminal.jpg)
