@@ -1,4 +1,4 @@
-# BetterWindows11
+# Awesome-Windows11/WSL
 ![windows desktop terminal](https://github.com/AmineDjeghri/BetterWindows/blob/master/windows-desktop-terminal_1.png)
 ![WSL terminal](https://github.com/AmineDjeghri/BetterWindows/blob/master/resources/wsl_terminal.jpg)
 
