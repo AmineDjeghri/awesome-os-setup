@@ -49,6 +49,7 @@ If you didn't save the key in your account, you need to do this before resetting
 - <ins>Browser</ins>: Brave or Edge or Firefox, Don't forget to change your sync settings to import your passwords, bookmarks...ect.
 - <ins>Privacy extensions</ins> : if you care about your data and privacy (even if you use windows lol) you can limit websites to collect your data:  ClearURLs, Fast Forward, Cookie Auto Delete, HTTPS Everywhere, Decentralayes, Ugly Email (Privacy badge , but tends to block facebook api login in some websites)
 - <ins>Browser extensions</ins> : uBlock Origin, Checker Plus for Gmail, Free Download Manager, Google translate, Google Dictionnary, colorZilla, Reddit enhacement Suite, Pocket, Enhacer for Youtube, Augmented Steam, Read Aloud,  pocket.
+- <ins>ChatGPT extensions</ins>; Suite ChatGPT, ChatGPT sidebar,  
 - <ins>Agenda & Mail</ins> : Google agenda, Gmail, -> create an app shortcut with brave, it will act like an app in windows, and activate the notifications. Make BRave the default apps in windows for mailto and agenda then go to brave://settings/handlers and add gmailand agenda .
 - <inst> Desktop notifications from gmail : [Link](https://chrome.google.com/webstore/detail/checker-plus-for-gmail/oeopbcgkkoapgobdbedcemjljbihmemj)
 - <inst> Desktop notifications from google calendar : [Link](https://chrome.google.com/webstore/detail/checker-plus-for-google-c/hkhggnncdpfibdhinjiegagmopldibha)
@@ -72,6 +73,7 @@ If you didn't save the key in your account, you need to do this before resetting
 - <ins> AnyDesk</ins> (portable + enable password)
 - <ins> Audio </ins> : ear trumpet
 - <ins> Nvidia Driver </ins> : Geforce Experience (no need for cuda if you code using WSL)
+
 ### Screen recorder :
 - ShareX : screen capturing and GIF recording (portable), use CTRL + print screen key
 - Integrated Screen recording of windows :  press `windows key + G` 
