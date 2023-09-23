@@ -50,6 +50,8 @@ If you didn't save the key in your account, you need to do this before resetting
 - <ins>Privacy extensions</ins> : if you care about your data and privacy (even if you use windows lol) you can limit websites to collect your data:  ClearURLs, Fast Forward, Cookie Auto Delete, HTTPS Everywhere, Decentralayes, Ugly Email (Privacy badge , but tends to block facebook api login in some websites)
 - <ins>Browser extensions</ins> : uBlock Origin, Checker Plus for Gmail, Free Download Manager, Google translate, Google Dictionnary, colorZilla, Reddit enhacement Suite, Pocket, Enhacer for Youtube, Augmented Steam, Read Aloud,  pocket.
 - <ins>Agenda & Mail</ins> : Google agenda, Gmail, -> create an app shortcut with brave, it will act like an app in windows, and activate the notifications. Make BRave the default apps in windows for mailto and agenda then go to brave://settings/handlers and add gmailand agenda .
+- <inst> Desktop notifications from gmail : [Link](https://chrome.google.com/webstore/detail/checker-plus-for-gmail/oeopbcgkkoapgobdbedcemjljbihmemj)
+- <inst> Desktop notifications from google calendar : [Link](https://chrome.google.com/webstore/detail/checker-plus-for-google-c/hkhggnncdpfibdhinjiegagmopldibha)
 - <ins>Antivirus</ins> : Windows defender or Kaspersky Cloud free
 - <ins>Powershell 7</ins> : Install Powershell 7  [link](https://learn.microsoft.com/en-us/powershell/scripting/install/installing-powershell-on-windows?WT.mc_id=THOMASMAURER-blog-thmaure&view=powershell-7.3&viewFallbackFrom=powershell-7). Change the default terminal in Windows Terminal, and activate the "run always as administrator in the default profile"
 - <ins>Customization</ins>: PowerToys from microsoft store (very cool and useful features)
@@ -75,14 +77,10 @@ If you didn't save the key in your account, you need to do this before resetting
 - Integrated Screen recording of windows :  press `windows key + G` 
 - Screen Recording/ Streaming : OBS or Streamlabs
 
-### Browser websites & extensions
+### Browser websites 
 - <ins>Netflix, Prime</ins>: windows store and browser. Browser is better in terms of stability, lists, content and vpn use. On the other hand, Netfliw from the store app and Netfliw on Edge browser  can handle 7.1 and 4k streaming. To add windows apps downloaded from windows store in the taskbar or the desktop :Press Windows key + R then enter shell:appsfolder then drag and drop . 
 - Configure some websites on your desktop and taskbar as shorcuts (Netflix, Google calendar, Gmail...ect)
-- <ins> Download manager</ins> : Neat download manager extension (required Neat Download Manager app)
 - <ins> Gmail and Google Calendar</ins> : you can configure dark mode ("Thèmes" , , choose "dark/sombre") and priority notifications (all new emails), signature.
-- <inst> receive notifications from gmail browser : [Link](https://chrome.google.com/webstore/detail/checker-plus-for-gmail/oeopbcgkkoapgobdbedcemjljbihmemj)
-- <inst> receive notifications from google calendar : [Link](https://chrome.google.com/webstore/detail/checker-plus-for-google-c/hkhggnncdpfibdhinjiegagmopldibha)
-
 
 ## 3- Dev workflow
 ### 3.1 Dev software
