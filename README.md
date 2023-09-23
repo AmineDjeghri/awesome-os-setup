@@ -50,18 +50,18 @@ If you didn't save the key in your account, you need to do this before resetting
 - <ins>Privacy extensions</ins> : if you care about your data and privacy (even if you use windows lol) you can limit websites to collect your data:  ClearURLs, Fast Forward, Cookie Auto Delete, HTTPS Everywhere, Decentralayes, Ugly Email (Privacy badge , but tends to block facebook api login in some websites)
 - <ins>Browser extensions</ins> : uBlock Origin, Checker Plus for Gmail, Free Download Manager, Google translate, Google Dictionnary, colorZilla, Reddit enhacement Suite, Pocket, Enhacer for Youtube, Augmented Steam, Read Aloud,  pocket.
 - <ins>Agenda & Mail</ins> : Google agenda, Gmail, -> create an app shortcut with brave, it will act like an app in windows, and activate the notifications. Make BRave the default apps in windows for mailto and agenda then go to brave://settings/handlers and add gmailand agenda .
-- <ins>Antivirus</ins> : Kaspersky Cloud free
+- <ins>Antivirus</ins> : Windows defender or Kaspersky Cloud free
 - <ins>Powershell 7</ins> : Install Powershell 7  [link](https://learn.microsoft.com/en-us/powershell/scripting/install/installing-powershell-on-windows?WT.mc_id=THOMASMAURER-blog-thmaure&view=powershell-7.3&viewFallbackFrom=powershell-7). Change the default terminal in Windows Terminal, and activate the "run always as administrator in the default profile"
 - <ins>Customization</ins>: PowerToys from microsoft store (very cool and useful features)
 - <ins>Others</ins>: CCleaner, HWInfo (portable)
 - <ins>Adobe</ins> : Photoshop, illustrator, premiere pro, XD
-- <ins>Free photoshop alt </ins> :  [link](https://www.photopea.com/), illustrator / adobe premiere pro
+- <ins>Free photoshop alt </ins> :  [link](https://www.photopea.com/)
 - <ins>VPN</ins> : ProtonVPN or NordVPN
 - <ins>Torrent client</ins>: qBitTorrent
 - <ins>Download Manager</ins>: [NeatDownloadManager](https://www.neatdownloadmanager.com/index.php/en/) + extension specially for videos + subtitles
 - <ins>Google Drive</ins> :  download it on windows and put the files and folder that you want to be automatically saved on your drive, you won't need to everytime open google drive in your browser and manually put your files there
 - <ins>Online Storage</ins> : Google Drive (15gb), Mega Drive (50GB) ...ect. Use these Drives to store non personanal Data ! It's better to have an NAS or an external HDD to store your personal data.
-- <ins>Microsoft Office 2016</ins> Buy it or buy a retail key for 1$. Better than the 365 version.
+- <ins>Microsoft Office 2021</ins> Buy it or buy a retail key for 1$.
 
 - <ins>PDF editing</ins> Adobe acrobat(paied) or Sejda(free)(3 free tasks per hour) : https://www.sejda.com/ (do not download the desktop app)
 - <ins>Windows Terminal </ins> windows terminal works in every directory, right lick in any directory and you can have a bash with that path 
@@ -69,9 +69,9 @@ If you didn't save the key in your account, you need to do this before resetting
 - <ins> Notion </ins>
 - <ins> AnyDesk</ins> (portable + enable password)
 - <ins> Audio </ins> : ear trumpet
-- <ins> Nvidia </ins> : Geforce Experience (no need for cuda if you code using WSL)
+- <ins> Nvidia Driver </ins> : Geforce Experience (no need for cuda if you code using WSL)
 ### Screen recorder :
-- ShareX : screen capturing and GIF recording (portable)
+- ShareX : screen capturing and GIF recording (portable), use CTRL + print screen key
 - Integrated Screen recording of windows :  press `windows key + G` 
 - Screen Recording/ Streaming : OBS or Streamlabs
 
