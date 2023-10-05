@@ -34,7 +34,7 @@ dependencies:
   - conda-forge::gxx=11.4
   - pip:
       - -r requirements-cuda.txt
-      - -e ."[dev]"
+      # - -e ."[dev]"
 
 ```
 
