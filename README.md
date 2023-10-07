@@ -17,8 +17,8 @@ Some tips to improve your User experience when using windows. Including the inst
       * [install WSL](#install-wsl)
       * [install miniconda in WSL](#install-miniconda-in-wsl)
       * [configure WSL terminal](#configure-wsl-terminal-)
-      * [Install cuda locally in WSL](#install-cuda-locally-)
-      * [Install cuda globally in WSL](#install-cuda-globally-in-wsl-)
+      * [Install cuda locally in WSL inside conda](#install-cuda-locally-best-choice-)
+      * [Install cuda globally in WSL outside conda](#install-cuda-globally-in-wsl-)
       * [WSL2 tools](#wsl2-tools-)
    
 4. [UI/UX Custommization](#4--ux-custommization)
