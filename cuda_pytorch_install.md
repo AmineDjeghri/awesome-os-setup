@@ -1,5 +1,5 @@
 
-## Conda, Python, Pytorch installation inside WSL: 
+# (1st and easiest option) Conda, Pytorch & CUDA installation inside WSL: 
 
 ### Pytorch with Nvidia GPU (CUDA)
 Installing CUDA inside a Conda environment instead of globally on your computer has several advantages:
