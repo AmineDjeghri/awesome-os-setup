@@ -11,15 +11,16 @@ Installing CUDA inside a Conda environment instead of globally on your computer 
 3.Clean Uninstall: If you later decide to remove a project and its associated dependencies, it's straightforward to delete the Conda environment, which ensures a clean uninstallation without leaving traces on your system.
 
 ### How to
-- If you use WSL, install the nvidia driver on windows and not WSL. If you are on Linux and not WSL, install first the nvidia driver which is compatible with your card from the nvidia website. [nvidia drivers](https://www.nvidia.fr/Download/index.aspx?lang=fr). 
-- Run `nvidia-smi` on the terminal, it should print you all the information about your GPU
-  
+- If you use WSL, install the nvidia driver on windows and not WSL from [nvidia drivers](https://www.nvidia.fr/Download/index.aspx?lang=fr). Run `nvidia-smi` on both windows & WSL Terminal, it should print you all the information about your GPU
+- If you are on Linux and not WSL, install the nvidia driver inside Linux  from the nvidia website. [nvidia drivers](https://www.nvidia.fr/Download/index.aspx?lang=fr).Run `nvidia-smi` on the terminal, it should print you all the information about your GPU
+
+The next commands need to be ran inside WSL or Linux and not Windows :
 - Install build-essential `sudo apt-get install build-essential` (required by some packages like llama-cpp-python for example)
   
 - Create a `conda-env-gpu.yaml` file with the content below (you can modify the name of the env and the packages). I usually have two yaml files :
 One for GPU containing Pytorch with CUDA named `conda-env-gpu.yml` another one for CPU (not containing cuda) named `conda-env-cpu.yml`. I specify the version of pytorch in requirements.txt.
 If pytorch was installed with cuda, running the requirements.txt won't install again pytorch since the same version is installed.
-Running the env.yaml that doesn't contain pytorch will install pytorch CPU from requirements.txt
+Running the conda-env-cpu.yaml that doesn't contain pytorch will install pytorch CPU from requirements.txt
 
 *conda-env-gpu.yaml :* 
 ```
@@ -61,6 +62,13 @@ exllama@ https://github.com/jllllll/exllama/releases/download/0.0.17/exllama-0.0
 # ExLlamaV2
 exllamav2==0.0.2
 ```
+
+
+*requirements.txt*
+```
+# requirements 
+```
+
 As you can see, there is tesseract in the conda installation. It's better to install it in our conda env rather than globbaly with apt-get. Always prefer to install libraries via pip -> conda -> apt-get
 Create an environement with : `conda env update -n my-env -f conda-env-gpu.yml;conda activate my-env;`. the -n my-env will override the env's name inside the file.
 
