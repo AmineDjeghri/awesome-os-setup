@@ -18,7 +18,6 @@ Some tips to improve your User experience when using windows. Including the inst
       * [install miniconda in WSL](#install-miniconda-in-wsl)
       * [configure WSL terminal](#configure-wsl-terminal-)
       * [Install cuda locally in WSL inside conda](#install-cuda-locally-inside-conda-best-choice-)
-      * [Install cuda globally in WSL outside conda](#install-cuda-globally-in-wsl-outside-conda)
       * [WSL2 tools](#wsl2-tools-)
    
 4. [UI/UX Custommization](#4--ux-custommization)
@@ -163,11 +162,8 @@ systemd=true
 
 
 #### Install Cuda locally inside Conda (Best choice) : 
-- (to be tested) If this does not work, install first cuda globally then learn how to install cuda locally in a conda environement.
 - Follow this [conda_cuda_installation guide](https://github.com/AmineDjeghri/AwesomeWindows11/blob/master/cuda_pytorch_install.md#conda-python-pytorch-installation-inside-wsl)
-
-#### Install cuda globally in WSL outside conda: 
-- Follow [this](https://github.com/AmineDjeghri/AwesomeWindows11/blob/master/cuda_pytorch_install.md#2nd-choice-install-cuda-globally)
+- If this does not work, install cuda globally in WSL outside conda. Follow [this](https://github.com/AmineDjeghri/AwesomeWindows11/blob/master/cuda_pytorch_install.md#2nd-choice-install-cuda-globally)
 
 #### WSL2 tools : 
 - You can use `wslpath` command to convert a windows path to wsl path : `wslpath  'C:\Users\AmineDjeghri\Desktop\git\myproject'`
