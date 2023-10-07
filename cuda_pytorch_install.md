@@ -66,11 +66,36 @@ exllamav2==0.0.2
 
 *requirements.txt*
 ```
-# requirements 
+langchain
+llama-cpp-python==0.2.6 # CPU Only
+nltk==3.8.1
+pdfminer.six==20221105
+sentence-transformers==2.2.2
+sentencepiece==0.1.99
+spacy==3.6.1
+spacy-transformers==1.2.5
+torch==2.0.1
+transformers==4.30.*
 ```
 
-As you can see, there is tesseract in the conda installation. It's better to install it in our conda env rather than globbaly with apt-get. Always prefer to install libraries via pip -> conda -> apt-get
-Create an environement with : `conda env update -n my-env -f conda-env-gpu.yml;conda activate my-env;`. the -n my-env will override the env's name inside the file.
+*conda-env-cpu.yaml :"
+```
+name: env-cpu
+dependencies:
+  - python=3.9
+  - git
+  - pip
+  - conda-forge::ninja
+  - conda-forge::ffmpeg
+  - conda-forge::gxx=11.4
+  - pip:
+      - --extra-index-url https://download.pytorch.org/whl/cpu
+      - torch==2.0.1
+      - -r requirements.txt
+```
+
+Always install apps using pip, if it's not possible use conda, if it's not possible use apt install (pip -> conda -> apt-get). for example tesseract in the conda installation. It's better to install it in our conda env rather than globbaly with apt-get
+Create an environement with cuda support using : `conda env update -n my-env -f conda-env-gpu.yml;conda activate my-env;`. the -n my-env will override the env's name inside the file. Or CPU support only `conda env update -n my-env -f conda-env-cpu.yml;conda activate my-env;`
 
 - Run `nvcc --version ; # should be cuda_11.8.r11.8`
 - Check if you succeeded to install pytorch, run the following python code: 
