@@ -162,7 +162,7 @@ systemd=true
 
 
 #### Install Cuda locally inside Conda (Best choice) : 
-- Follow this [conda_cuda_installation guide](https://github.com/AmineDjeghri/AwesomeWindows11/blob/master/cuda_pytorch_install.md#conda-python-pytorch-installation-inside-wsl)
+- Follow this [conda_cuda_installation guide](https://github.com/AmineDjeghri/AwesomeWindows11/blob/master/cuda_pytorch_install.md#1st-and-easiest-option-conda-pytorch--cuda-installation-inside-wsl)
 - If this does not work, install cuda globally in WSL outside conda. Follow [this](https://github.com/AmineDjeghri/AwesomeWindows11/blob/master/cuda_pytorch_install.md#2nd-choice-install-cuda-globally)
 
 #### WSL2 tools : 
