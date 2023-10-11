@@ -223,10 +223,13 @@ source : https://github.com/ohmyzsh/wiki/edit/main/Installing-ZSH.md
 
 
 #### Zsh Plugins :
-A Zsh plugin is a set of useful aliases and functions designed to make you more productive.   
-- Advanced Tab Autocompletion  : `git clone --depth 1 https://github.com/marlonrichert/zsh-autocomplete.git $ZSH_CUSTOM/plugins/zsh-autocomplete`
-- autosuggestions : `git clone https://github.com/zsh-users/zsh-autosuggestions $ZSH_CUSTOM/plugins/zsh-autosuggestions`
-- syntaxh highlighting : `git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $ZSH_CUSTOM/plugins/zsh-syntax-highlighting`
+A Zsh plugin is a set of useful aliases and functions designed to make you more productive. Here are some useful & popular plugins : 
+  
+```
+git clone https://github.com/zsh-users/zsh-autosuggestions.git $ZSH_CUSTOM/plugins/zsh-autosuggestions
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $ZSH_CUSTOM/plugins/zsh-syntax-highlighting
+git clone --depth 1 -- https://github.com/marlonrichert/zsh-autocomplete.git $ZSH_CUSTOM/plugins/zsh-autocomplete
+```
 
 Open your .zshrc file at ~/.zshrc (you can do that through windows explorer and sublime text as you did before) and search for `plugins=(git)`.
 If you don't find it, then create it and complete it with the missing plugins as shown in the example bellow : 
