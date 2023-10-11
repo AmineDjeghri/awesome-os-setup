@@ -10,6 +10,7 @@ zsh --version
 
 # Restart the shell script
 echo "Restarting shell script..."
+source ~/.zshrc
 echo "Current shell: $SHELL"
 $SHELL --version
 
