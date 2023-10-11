@@ -191,23 +191,23 @@ systemd=true
 # 4- UX Custommization
 ## 4.1 customize WSL (ubuntu) terminal
 ![WSL terminal](https://github.com/AmineDjeghri/BetterWindows/blob/master/resources/wsl_terminal.jpg)
-### Automatic Install
+
+### 4.1.1 Automatic Install
 - install this font on windows [MesloLGS NF Regular.ttf](https://github.com/romkatv/dotfiles-public/blob/master/.local/share/fonts/NerdFonts/MesloLGS%20NF%20Regular.ttf)
 - open windows terminal and go to settings -> profiles (bottom left) -> Ubuntu terminal(orange logo) -> additional parameters-> apparence -> change the font to MesloLGS. 
 - Download and Run the [Script](https://github.com/AmineDjeghri/AwesomeWindows11/blob/master/wsl/linux_terminal_custom.sh)
  
-### Manual Install and set up zsh as default
-
-If necessary, follow these steps to install Zsh:
-
-1. install Zsh:
+### 4.1.2 Manual Install and set up zsh as default
+1. install this font on windows [MesloLGS NF Regular.ttf](https://github.com/romkatv/dotfiles-public/blob/master/.local/share/fonts/NerdFonts/MesloLGS%20NF%20Regular.ttf)
+2. open windows terminal and go to settings -> profiles (bottom left) -> Ubuntu terminal(orange logo) -> additional parameters-> apparence -> change the font to MesloLGS.
+3. install Zsh:
 
    - With the package manager of your choice, _e.g._ `sudo apt install zsh`
 
-2. Verify installation by running `zsh --version`. Expected result: `zsh 5.8.1` or more recent.
-3. Run `zsh` to start configuring it (You can create an empty file with 0, will configure it later). You can delete .zshrc and run `zsh` to configure it again.
-4. Log out and log back in again to use your new default shell.
-5. Optional:Make it your default shell: `chsh -s $(which zsh)` but doesn't work on every system. If it doesn't work, will do it later with oh-my-zsh. Test that it worked with `echo $SHELL`. Expected result: `/bin/zsh` or similar.Test with `$SHELL --version`. Expected result: 'zsh 5.8' or similar
+4. Verify installation by running `zsh --version`. Expected result: `zsh 5.8.1` or more recent.
+5. Run `zsh` to start configuring it (You can create an empty file with 0, will configure it later). You can delete .zshrc and run `zsh` to configure it again.
+6. Log out and log back in again to use your new default shell.
+7. Optional:Make it your default shell: `chsh -s $(which zsh)` but doesn't work on every system. If it doesn't work, will do it later with oh-my-zsh. Test that it worked with `echo $SHELL`. Expected result: `/bin/zsh` or similar.Test with `$SHELL --version`. Expected result: 'zsh 5.8' or similar
 
 source : https://github.com/ohmyzsh/wiki/edit/main/Installing-ZSH.md
 
