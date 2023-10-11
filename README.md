@@ -208,7 +208,7 @@ If necessary, follow these steps to install Zsh:
    
 4. (Optional:Make it your default shell: `chsh -s $(which zsh)` but doesn't work on every system)
 
-5. Run `zsh` ro start configuring it (You can choose the recommanded settings and create an empty `.zshrc` file).
+5. Run `zsh` ro start configuring it (You can create an empty file with 0, will configure it later). You can delete .zshrc and run `zsh` to configure it again.
 
 6. Log out and log back in again to use your new default shell. 
 
