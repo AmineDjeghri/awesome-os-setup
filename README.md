@@ -195,7 +195,10 @@ systemd=true
 ### 4.1.1 Automatic Install
 - install this font on windows [MesloLGS NF Regular.ttf](https://github.com/romkatv/dotfiles-public/blob/master/.local/share/fonts/NerdFonts/MesloLGS%20NF%20Regular.ttf)
 - open windows terminal and go to settings -> profiles (bottom left) -> Ubuntu terminal(orange logo) -> additional parameters-> apparence -> change the font to MesloLGS. 
-- Run this [Script](https://github.com/AmineDjeghri/AwesomeWindows11/blob/master/wsl/linux_terminal_custom.sh) to auto instal everything : `sh -c "$(wget https://raw.githubusercontent.com/AmineDjeghri/AwesomeWindows11/master/wsl/linux_terminal_custom.sh -O -)"`
+- Run this [Script](https://github.com/AmineDjeghri/AwesomeWindows11/blob/master/wsl/linux_terminal_custom.sh) to auto instal everything :
+
+```sh -c "$(wget https://raw.githubusercontent.com/AmineDjeghri/AwesomeWindows11/master/wsl/linux_terminal_custom.sh -O -)"```
+
 - Copy you conda, or any custom stuff from `.bashrc` to the end of file of `.zshrc`.
   
 ### 4.1.2 Manual Install and set up zsh as default
