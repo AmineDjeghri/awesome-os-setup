@@ -205,16 +205,9 @@ If necessary, follow these steps to install Zsh:
    - With the package manager of your choice, _e.g._ `sudo apt install zsh`
 
 2. Verify installation by running `zsh --version`. Expected result: `zsh 5.8.1` or more recent.
-   
-4. (Optional:Make it your default shell: `chsh -s $(which zsh)` but doesn't work on every system)
-
-5. Run `zsh` ro start configuring it (You can create an empty file with 0, will configure it later). You can delete .zshrc and run `zsh` to configure it again.
-
-6. Log out and log back in again to use your new default shell. 
-
-7. Test that it worked with `echo $SHELL`. Expected result: `/bin/zsh` or similar.
-
-8. Test with `$SHELL --version`. Expected result: 'zsh 5.8' or similar
+3. Run `zsh` to start configuring it (You can create an empty file with 0, will configure it later). You can delete .zshrc and run `zsh` to configure it again.
+4. Log out and log back in again to use your new default shell.
+5. Optional:Make it your default shell: `chsh -s $(which zsh)` but doesn't work on every system. If it doesn't work, will do it later with oh-my-zsh. Test that it worked with `echo $SHELL`. Expected result: `/bin/zsh` or similar.Test with `$SHELL --version`. Expected result: 'zsh 5.8' or similar
 
 source : https://github.com/ohmyzsh/wiki/edit/main/Installing-ZSH.md
 
@@ -222,7 +215,8 @@ source : https://github.com/ohmyzsh/wiki/edit/main/Installing-ZSH.md
 
 #### What is Oh my ZSH ?
 - Oh My Zsh is an open source, community-driven framework for managing your zsh configuration.
--  with wget `sh -c "$(wget https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh -O -)"`
+- Run `sh -c "$(wget https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh -O -)"` and accept yes to make it the default terminal.
+- Test that it worked with `echo $SHELL`. Expected result: `/bin/zsh` or similar. Test with `$SHELL --version`: Expected result: 'zsh 5.8' or similar
 - If you have conda / cuda or something installed : copy the content from `.bashrc` to `.zshrc` ( `vim .zshrc` or use windows explorer / sublime text . Run again `zsh`, you should see the `(base)` noun before the command.
 
 
