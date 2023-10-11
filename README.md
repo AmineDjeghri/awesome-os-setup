@@ -205,14 +205,16 @@ If necessary, follow these steps to install Zsh:
    - With the package manager of your choice, _e.g._ `sudo apt install zsh`
 
 2. Verify installation by running `zsh --version`. Expected result: `zsh 5.8.1` or more recent.
+   
+4. (Optional:Make it your default shell: `chsh -s $(which zsh)` but doesn't work on every system)
 
-3. Run `zsh` ro start configuring it. (Optional:Make it your default shell: `chsh -s $(which zsh)` but doesn't work on every system)
+5. Run `zsh` ro start configuring it (You can choose the recommanded settings and create an empty `.zshrc` file).
 
-4. Log out and log back in again to use your new default shell. Choose the option to create an empty `.zshrc` file .
+6. Log out and log back in again to use your new default shell. 
 
-5. Test that it worked with `echo $SHELL`. Expected result: `/bin/zsh` or similar.
+7. Test that it worked with `echo $SHELL`. Expected result: `/bin/zsh` or similar.
 
-6. Test with `$SHELL --version`. Expected result: 'zsh 5.8' or similar
+8. Test with `$SHELL --version`. Expected result: 'zsh 5.8' or similar
 
 source : https://github.com/ohmyzsh/wiki/edit/main/Installing-ZSH.md
 
