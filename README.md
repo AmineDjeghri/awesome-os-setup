@@ -206,7 +206,7 @@ If necessary, follow these steps to install Zsh:
 
 2. Verify installation by running `zsh --version`. Expected result: `zsh 5.8.1` or more recent.
 
-3. Make it your default shell: `chsh -s $(which zsh)`
+3. Run `zsh` ro start configuring it. (Optional:Make it your default shell: `chsh -s $(which zsh)` but doesn't work on every system)
 
 4. Log out and log back in again to use your new default shell. Choose the option to create an empty `.zshrc` file .
 
