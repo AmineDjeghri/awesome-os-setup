@@ -135,8 +135,9 @@ It is fantastic. Virtualisation overhead is not noticeable, full integration bet
  - Restart you computer
  - When installing WSL, it comes with Ubuntu (you can always install other distibutions from the microsoft store)
  - You have different options to run Ubuntu :
-      - From windows search bar 
+      - From windows search bar (and select ubuntu or WSL for the default distro)
       - Running `ubuntu`  inside windows terminal
+      - Running `wsl` inside windows terminal to run the default distro
       - Running Windows terminal and choosing ubuntu in the terminal tab section. 
       - If it's not there, make sure you have correctly installed WSL by searching wsl in your windows search bar & running it.
 - If you have Nvidia GPU & the nvidia driver is installed on Windows, you can run `nvidia-smi` in Linux. No need to install the nvidia Driver again in Linux.
@@ -164,7 +165,11 @@ systemd=true
    -  Install this https://superuser.com/a/1307442/769637 install the Hyper-V Platform | Hyper-V Services part, too + restart)
    - in Administrator Mode : `wsl --shutdown` then `cd 'C:\Users\Amine Djeghri\AppData\Local\Packages\CanonicalGroupLimited.Ubuntu_79rhkp1fndgsc\LocalState'` then `optimize-vhd -Path .\ext4.vhdx -Mode full`
    - for more information check this : these https://askubuntu.com/a/1380274 + https://github.com/microsoft/WSL/issues/4699 +  
-
+- To change the default distro or fix the `wsl` command to start your distro from powershell not working you can do:
+```sh
+wsl --list
+wsl --setdefault <name_of_your_distro>
+```
 #### configure WSL terminal : 
  - You can enter ubuntu with different ways: clicking on Shortcut (Orange), or running 'wsl' in windows terminal, or running 'ubuntu' in windows terminal, or selecting the right profile in the tab in windows terminal.
  - To open Ubuntu terminal from current location : go to windows terminal ->  parameters -> profiles -> ubuntu -> command line (under name) and change it to `ubuntu run`. 
