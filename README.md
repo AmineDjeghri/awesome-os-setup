@@ -13,14 +13,18 @@ Some tips to improve your User experience when using windows. Including the inst
 
    3.1 [Dev Software: All the softwares I recommand for developpement and coding](#31-dev-software)
 
-   3.2 [Coding using WSL/Linux](#321coding-using-linuxwsl-inside-windows-best-choice---skip-this-if-you-dont-want-to-use-wsl)
+   3.2 [Coding using WSL/Linux](#32-coding-using-linuxwsl-inside-windows)
       * [install WSL](#install-wsl)
-      * [install miniconda in WSL](#install-miniconda-in-wsl)
+   3.3 [Linux/WSL Setup, Miniconda, CUDA & More:](#33-linuxwsl-setup-miniconda-cuda--more)
+   3.4 [WSL2 Tips & Tricks :](#34-wsl2-tips--tricks-)
       * [configure WSL terminal](#configure-wsl-terminal-)
-      * [Install cuda locally in WSL inside conda](#install-cuda-locally-inside-conda-best-choice-)
-      * [WSL2 tools](#wsl2-tools-)
+      * [backup and restore](#backup-and-restore)
+      * [uninstall WSL](#uninstall-wsl)
    
 4. [UI/UX Custommization](#4--ux-custommization)
+      * [4.1 customize WSL (ubuntu) terminal](#41-customize-wsl-ubuntu-terminal)
+      * [4.2 customize Windows terminal](#42-customize-windows-terminal)
+      * [4.3 Costumize your windows UI:](#43-costumize-your-windows-ui)
 
 
 ## 1- Windows configuration
