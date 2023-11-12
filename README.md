@@ -127,9 +127,14 @@ It is fantastic. Virtualisation overhead is not noticeable, full integration bet
 #### Install WSL:
  - Install WSL ``` wsl --install ``` 
  - Restart you computer
- - When installing WSL, it comes with Ubuntu (you don't need to install it from the Windows Store because there are many distribution)
- - Run directly Ubuntu from windows search bar (or launch windows terminal and choose ubuntu, or launch windows terminal and run the command `ubuntu`). If it's not there, make sure you have correctly installed WSL by searching wsl in your windows search bar.
- - add systemd to wsl.conf if it's not there: run `sudo vim /etc/wsl.conf` then paste the following code:
+ - When installing WSL, it comes with Ubuntu (you can always install other distibutions from the microsoft store)
+ - You have different options to run Ubuntu :
+      - From windows search bar 
+      - Running `ubuntu`  inside windows terminal
+      - Running Windows terminal and choosing ubuntu in the terminal tab section. 
+      - If it's not there, make sure you have correctly installed WSL by searching wsl in your windows search bar & running it.
+- If you have Nvidia GPU & the nvidia driver is installed on Windows, you can run `nvidia-smi` in Linux. No need to install the nvidia Driver again in Linux.
+ - Add systemd to wsl.conf if it's not there: run `sudo vim /etc/wsl.conf` then paste the following code:
  ```
 [boot]
 systemd=true
@@ -137,32 +142,46 @@ systemd=true
  - Restart the terminal and run `systemctl list-unit-files --type=service` in WSL to see some processes running.
  - If you have an ssh key in windows, copy it to linux `home/.ssh` folder and use on the ssh file of linux : `chmod 600 ~/.ssh/id_rsa` and `chmod 600 ~/.ssh/id_rsa.pub`. If you don't have an SSH key, generate a new SSH key using : `ssh-keygen -t rsa` inside linux.
 
-#### WSL2 tools : 
-- Find WSL path :   then ping it in Windows Explorer's sidebar.
+### 3.3 Linux/WSL Setup, Miniconda, CUDA & More:
+- Link : https://github.com/AmineDjeghri/Awesome-Linux/edit/main/README.md
+
+### 3.4 WSL2 Tips & Tricks : 
+- Find WSL path : `\\wsl$\Ubuntu\home` or `\\wsl$\Ubuntu`  then ping it in Windows Explorer's sidebar.
 - You can use `wslpath` command to convert a windows path to wsl path : `wslpath  'C:\Users\AmineDjeghri\Desktop\git\myproject'`
 - Copy your ssh key from windows to linux and use on the ssh file of linux : `chmod 600 ~/.ssh/id_rsa` and `chmod 600 ~/.ssh/id_rsa.pub`
-- update packages:  `sudo apt update` then `sudo apt upgrade`
-- disk usage: `df -h` look on the right column 'Mounted on'
+- Update packages:  `sudo apt update` then `sudo apt upgrade`
+- Disk usage: `df -h` look on the right column 'Mounted on'
 - wsl disk usage : `df -h /mnt/wslg/distro`
-- unzip: `sudo apt install unzip`
+- Unzip: `sudo apt install unzip`
 - Reclaim disk space : 
    - it requires docker Dashboard for WSL2, and activating 2 hyper V params in Control Panel.
    -  Install this https://superuser.com/a/1307442/769637 install the Hyper-V Platform | Hyper-V Services part, too + restart)
    - in Administrator Mode : `wsl --shutdown` then `cd 'C:\Users\Amine Djeghri\AppData\Local\Packages\CanonicalGroupLimited.Ubuntu_79rhkp1fndgsc\LocalState'` then `optimize-vhd -Path .\ext4.vhdx -Mode full`
    - for more information check this : these https://askubuntu.com/a/1380274 + https://github.com/microsoft/WSL/issues/4699 +  
-   
-- (backup and restore), you can export wsl image after finishing all the steps to save it in case you move to a new computer : 
+
+#### configure WSL terminal : 
+ - You can enter ubuntu with different ways: clicking on Shortcut (Orange), or running 'wsl' in windows terminal, or running 'ubuntu' in windows terminal, or selecting the right profile in the tab in windows terminal.
+ - To open Ubuntu terminal from current location : go to windows terminal ->  parameters -> profiles -> ubuntu -> command line (under name) and change it to `ubuntu run`. 
+ - Now, go to desktop and right click to open a windows terminal, run 'wsl', you should see that ubuntu started from the current location.
+ - (pycharm) Use WSL/ubuntu as the default terminal in pycharm: `settings -> tools -> terminal`  and put in shell path: `ubuntu run`
+ - (pycharm) Add WSL conda interpreter in Pycharm (add interpreter -> WSL -> conda) and select the global conda : `/home/amine/miniconda3/bin/conda`. Then click on load environments and it will automatically detect all the conda envs.
+
+#### backup and restore
+You can export wsl image after finishing all the steps to save it in case you move to a new computer : 
    - wsl --terminate ubuntu
    - wsl --shutdown
    - wsl --export Ubuntu E:\ubuntu.tar
    - [source 1](https://www.xda-developers.com/how-back-up-restore-wsl/)
- 
+#### uninstall WSL: 
+Uninstall all distributions & WSL from the control panel & open Windows Features, then turn on (check) Windows Subsystem for Linux. Restart your computer.
+
+
 
 # 4- UX Custommization
 ## 4.1 customize WSL (ubuntu) terminal
 - Link : 
 ## 4.2 customize Windows terminal
-- TO update
+- TBD
 
 ## 4.3 Costumize your windows UI:
 ![windows desktop](https://github.com/AmineDjeghri/BetterWindows/blob/master/windows-desktop.png)
