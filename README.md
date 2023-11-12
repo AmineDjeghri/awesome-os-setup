@@ -114,11 +114,8 @@ Open file your_home_directory/.ssh/id_rsa.pub (example `C:\Users\AmineDjeghri\.s
 - [jupyter autocmplete](https://github.com/krassowski/jupyterlab-lsp#installation) 
    
 
-### 3.2 Linux (WSL) inside windows or just use Windows ?
-Lot of libraries and codes are made for Linux. Hence, using WSL is the best choice. Do not code in both OS, use for example pycharm or vscode on windows with a conda environement installed on WSL. The best thing id to combine the power of Windows with WSL.
-### 3.2.1.Coding using Linux(WSL) inside Windows (BEST CHOICE) - Skip this if you don't want to use WSL
-
-![WSL terminal](https://github.com/AmineDjeghri/BetterWindows/blob/master/resources/wsl_terminal.jpg)
+### 3.2 Coding using Linux(WSL) inside Windows 
+Lot of libraries and codes are made for Linux. Hence, using WSL is the best choice. Do not code in both OS, use for example pycharm or vscode on windows with a conda environement installed on WSL. The best thing is to combine the power of Windows with WSL.
 
 The most amazing thing about windows latest version is WSL (WSL2.0 exactly). You can run Linux in Windows. 
 It is fantastic. Virtualisation overhead is not noticeable, full integration between guest and host os's, you can run binaries compiled for MS Windows from linux. Full development toolchain is available as WSLessentialy is linux VM in second incarnation. It supports snapshots and is portable. This made windows useful.
@@ -131,41 +128,17 @@ It is fantastic. Virtualisation overhead is not noticeable, full integration bet
  - Install WSL ``` wsl --install ``` 
  - Restart you computer
  - When installing WSL, it comes with Ubuntu (you don't need to install it from the Windows Store because there are many distribution)
- - In windows search bar, search for `ubuntu` and click on it. It will launch the terminal and install it. If it's not there, make sure you have correctly installed WSL by searching wsl in your windows search bar.
- - Run directly Ubuntu from windows search bar (or launch windows terminal and choose ubuntu or launch windows terminal and run the command `ubuntu`)
- - To make sure Ubuntu is properly installed : run in powershell `ubuntu run`. Make sure also to have the orange ubuntu square in windows search bar.
- - add systemd to wsl.conf : `sudo vim /etc/wsl.conf`:
+ - Run directly Ubuntu from windows search bar (or launch windows terminal and choose ubuntu, or launch windows terminal and run the command `ubuntu`). If it's not there, make sure you have correctly installed WSL by searching wsl in your windows search bar.
+ - add systemd to wsl.conf if it's not there: run `sudo vim /etc/wsl.conf` then paste the following code:
  ```
 [boot]
 systemd=true
  ```
- - Restart the terminal and run `systemctl list-unit-files --type=service` to see some process running
- - Copy your ssh key from windows to linux and use on the ssh file of linux : `chmod 600 ~/.ssh/id_rsa` and `chmod 600 ~/.ssh/id_rsa.pub`. Or generate a new SSH key using : `ssh-keygen -t rsa`
-  
-#### If you plan to use ZSH, jump to terminal customization before installing other stuff to avoir copying the content of `.bashrc` to `.zshrc`
-
-#### install miniconda in WSL: 
- - run `wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh` (Conda 23.3.1 Python 3.10.10 released April 24, 2023)
- - run `chmod +x Miniconda3-latest-Linux-x86_64.sh`
- - run `bash Miniconda3-latest-Linux-x86_64.sh` 
- - restart the shell with `bash` command (or `zsh` if you changed your shell)
- - if `(base)` is not showing and `.bachrc` file doesn't contain the init of conda, go to `~/miniconda3/bin` and run `conda init`
- - close and reopen ubuntu terminal or run `bash`, you should see `(base)` at the left of the any command.
- - run `conda env list` to check the installed environements and their path.
- 
-#### configure WSL terminal : 
- - You can enter ubuntu with different ways: clicking on Shortcut (Orange), or running 'wsl' in windows terminal, or running 'ubuntu' in windows terminal, or selecting the right profile in the tab in windows terminal.
- - To open Ubuntu terminal from current location : go to windows terminal ->  parameters -> profiles -> ubuntu -> command line (under name) and change it to `ubuntu run`. 
- - Now, go to desktop and right click to open a windows terminal, run 'wsl', you should see that ubuntu started from the current location.
- - (pycharm) Use WSL/ubuntu as the default terminal in pycharm: `settings -> tools -> terminal`  and put in shell path: `ubuntu run`
- - (pycharm) Add WSL conda interpreter in Pycharm (add interpreter -> WSL -> conda) and select the global conda : `/home/amine/miniconda3/bin/conda`. Then click on load environments and it will automatically detect all the conda envs.
-
-
-#### Install Cuda locally inside Conda (Best choice) : 
-- Follow this [conda_cuda_installation guide](https://github.com/AmineDjeghri/AwesomeWindows11/blob/master/cuda_pytorch_install.md#1st-and-easiest-option-conda-pytorch--cuda-installation-inside-wsl)
-- If this does not work, install cuda globally in WSL outside conda. Follow [this](https://github.com/AmineDjeghri/AwesomeWindows11/blob/master/cuda_pytorch_install.md#2nd-choice-install-cuda-globally)
+ - Restart the terminal and run `systemctl list-unit-files --type=service` in WSL to see some processes running.
+ - If you have an ssh key in windows, copy it to linux `home/.ssh` folder and use on the ssh file of linux : `chmod 600 ~/.ssh/id_rsa` and `chmod 600 ~/.ssh/id_rsa.pub`. If you don't have an SSH key, generate a new SSH key using : `ssh-keygen -t rsa` inside linux.
 
 #### WSL2 tools : 
+- Find WSL path :   then ping it in Windows Explorer's sidebar.
 - You can use `wslpath` command to convert a windows path to wsl path : `wslpath  'C:\Users\AmineDjeghri\Desktop\git\myproject'`
 - Copy your ssh key from windows to linux and use on the ssh file of linux : `chmod 600 ~/.ssh/id_rsa` and `chmod 600 ~/.ssh/id_rsa.pub`
 - update packages:  `sudo apt update` then `sudo apt upgrade`
@@ -184,89 +157,12 @@ systemd=true
    - wsl --export Ubuntu E:\ubuntu.tar
    - [source 1](https://www.xda-developers.com/how-back-up-restore-wsl/)
  
-### 3.2.1.Coding using Windows (2nd choice) (Skip this if you are using WSL)
-- [Install conda](https://github.com/AmineDjeghri/BetterWindows11/blob/master/install_conda_windows.md)
-- [Install Pytorch/Cuda](https://github.com/AmineDjeghri/BetterWindows11/blob/master/install_conda_windows.md)
 
 # 4- UX Custommization
 ## 4.1 customize WSL (ubuntu) terminal
-![WSL terminal](https://github.com/AmineDjeghri/BetterWindows/blob/master/resources/wsl_terminal.jpg)
-
-### 4.1.1 Automatic Install
-- install this font on windows [MesloLGS NF Regular.ttf](https://github.com/romkatv/dotfiles-public/blob/master/.local/share/fonts/NerdFonts/MesloLGS%20NF%20Regular.ttf)
-- open windows terminal and go to settings -> profiles (bottom left) -> Ubuntu terminal(orange logo) -> additional parameters-> apparence -> change the font to MesloLGS. 
-- Run this [Script](https://github.com/AmineDjeghri/AwesomeWindows11/blob/master/wsl/linux_terminal_custom.sh) to auto instal everything :
-
-```sh -c "$(wget https://raw.githubusercontent.com/AmineDjeghri/AwesomeWindows11/master/wsl/linux_terminal_custom.sh -O -)"```
-
-- Copy you conda, or any custom stuff from `.bashrc` to the end of file of `.zshrc`.
-  
-### 4.1.2 Manual Install and set up zsh as default
-1. install this font on windows [MesloLGS NF Regular.ttf](https://github.com/romkatv/dotfiles-public/blob/master/.local/share/fonts/NerdFonts/MesloLGS%20NF%20Regular.ttf)
-2. open windows terminal and go to settings -> profiles (bottom left) -> Ubuntu terminal(orange logo) -> additional parameters-> apparence -> change the font to MesloLGS.
-3. install Zsh:
-
-   - With the package manager of your choice, _e.g._ `sudo apt install zsh`
-
-4. Verify installation by running `zsh --version`. Expected result: `zsh 5.8.1` or more recent.
-5. Run `zsh` to start configuring it (You can create an empty file with 0, will configure it later). You can delete .zshrc and run `zsh` to configure it again.
-6. Log out and log back in again to use your new default shell.
-7. Optional:Make it your default shell: `chsh -s $(which zsh)` but doesn't work on every system. If it doesn't work, will do it later with oh-my-zsh. Test that it worked with `echo $SHELL`. Expected result: `/bin/zsh` or similar.Test with `$SHELL --version`. Expected result: 'zsh 5.8' or similar
-
-source : https://github.com/ohmyzsh/wiki/edit/main/Installing-ZSH.md
-
-
-
-#### What is Oh my ZSH ?
-- Oh My Zsh is an open source, community-driven framework for managing your zsh configuration.
-- Run `sh -c "$(wget https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh -O -)"` and hit yes to make it the default terminal.
-- Test if it worked with `echo $SHELL`. Expected result: `/bin/zsh` or similar. Test with `$SHELL --version`: Expected result: 'zsh 5.8' or similar
-- If you have conda / cuda or something installed : copy the content from `.bashrc` to `.zshrc` ( `vim .zshrc` or use windows explorer / sublime text . Run again `zsh`, you should see the `(base)` name before the command.
-
-
-
-#### Zsh Plugins :
-A Zsh plugin is a set of useful aliases and functions designed to make you more productive. Here are some useful & popular plugins : 
-  
-```
-git clone https://github.com/zsh-users/zsh-autosuggestions.git $ZSH_CUSTOM/plugins/zsh-autosuggestions
-git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $ZSH_CUSTOM/plugins/zsh-syntax-highlighting
-git clone --depth 1 -- https://github.com/marlonrichert/zsh-autocomplete.git $ZSH_CUSTOM/plugins/zsh-autocomplete
-```
-
-Open your .zshrc file at ~/.zshrc (you can do that through windows explorer and sublime text as you did before) and search for `plugins=(git)`.
-If you don't find it, then create it and complete it with the missing plugins as shown in the example bellow : 
-```
-plugins=(git
-        dirhistory
-        history
-        colored-man-pages
-        jsontools
-        zsh-autosuggestions
-        zsh-syntax-highlighting
-        zsh-autocomplete
-```
-- run - `zsh` to restart the terminal, now you can see the changes when you try to write a command like `cd`
-- If there are some problems test the solutions available [here](https://stackoverflow.com/a/37175174/8354747) & [here](https://stackoverflow.com/a/36994356/8354747)
-Others : 
-- Auto update oh my zsh : uncomment this: `zstyle ':omz:update' mode auto`
-- Add the following alias to the end of .zshrc file to easily open sublime Text from windows: `alias sublime="subl.exe"`. Try it with : `sublime .zshrc`
-- You can visit this :[website](https://www.linkedin.com/pulse/how-install-start-using-oh-my-zsh-boost-your-mantas-levinas/?trk=pulse-article_more-articles_related-content-card) to understand more about the installed plugins. you can skip directly to `7. Enable Zsh Plugins` section and start reading. You will see that you have installed most of the commands there.
-
-
-#### zsh themes : Powerlevel10k 
-- Powerlevel10k is a theme for Zsh. It emphasizes speed, flexibility and out-of-the-box experience.
-- `git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k`
-- Open .zshrc and set `ZSH_THEME="powerlevel10k/powerlevel10k"`.
-- install this font on windows [MesloLGS NF Regular.ttf](https://github.com/romkatv/dotfiles-public/blob/master/.local/share/fonts/NerdFonts/MesloLGS%20NF%20Regular.ttf)
-- open windows terminal and go to settings -> profiles (bottom left) -> Ubuntu terminal(orange logo) -> additional parameters-> apparence -> change the font to MesloLGS. 
-- You can also do the step aboce inside powershell if you use it to call ubuntu with `wsl` or `ubuntu` command . You can also change it's background color
-- (optional) add a new color scheme with this background #383B40. Select the new color scheme on your terminal an put a transparency of 85% [example]([here](https://pureinfotech.com/change-color-scheme-windows-terminal/))
-- reload ubuntu terminal with `zsh` and configure your theme.
-
+- Link : 
 ## 4.2 customize Windows terminal
 - TO update
-
 
 ## 4.3 Costumize your windows UI:
 ![windows desktop](https://github.com/AmineDjeghri/BetterWindows/blob/master/windows-desktop.png)
