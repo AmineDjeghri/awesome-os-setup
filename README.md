@@ -149,7 +149,7 @@ systemd=true
  - If you have an ssh key in windows, copy it to linux `home/.ssh` folder and use on the ssh file of linux : `chmod 600 ~/.ssh/id_rsa` and `chmod 600 ~/.ssh/id_rsa.pub`. If you don't have an SSH key, generate a new SSH key using : `ssh-keygen -t rsa` inside linux.
 
 ### 3.3 Linux/WSL Setup, Miniconda, CUDA & More:
-- Link : https://github.com/AmineDjeghri/Awesome-Linux/edit/main/README.md
+- [Linux Setup Guide](https://github.com/AmineDjeghri/Auto-Linux-Setup#readme)
 
 ### 3.4 WSL2 Tips & Tricks : 
 - Find WSL path : `\\wsl$\Ubuntu\home` or `\\wsl$\Ubuntu`  then ping it in Windows Explorer's sidebar.
