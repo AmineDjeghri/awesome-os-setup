@@ -1,5 +1,5 @@
 
-# (1st and easiest option) Conda, Pytorch & CUDA installation inside Linux/WSL: 
+# 1st & recommanded option : Conda, Pytorch & CUDA installation inside Linux/WSL: 
 
 ### Pytorch with Nvidia GPU (CUDA)
 Installing CUDA inside a Conda environment instead of globally on your computer has several advantages:
@@ -121,13 +121,15 @@ if device.type == 'cuda':
 
 
 
-# (2nd choice, install cuda globally)
+# 2nd choice: install cuda globally (not recommanded)
 * We will install cuda 11.7 for pytorch 2.0.1  (June 2023)    
-* Install Nvidia [driver](https://www.nvidia.com/download/index.aspx) on windows
-* On windows, run `nvidia-smi`. If you have cuda toolkit installed on windows (not obligatory), run `nvcc --version`. You will see two different CUDA versions shown by nvcc and NVIDIA-smi which is normal if you have cuda toolkit on windows [source](https://stackoverflow.com/a/53504578)
+* Install Nvidia [driver](https://www.nvidia.com/download/index.aspx) on windows (if you are on WSL) or Linux if you don't use WSL.
+* Run `nvidia-smi`. 
+* On linux, run `nvidia-smi`, you should see a table showing information about your GPU. 
+* If cuda is not installed and you run `nvcc --version`, you will get an error because cuda toolkit is not installed yet.   
+* If you have cuda toolkit installed on windows (for WSL) or Linux, run `nvcc --version`, you should see the version of cuda which means that you already have cuda set up globally. if there are two different CUDA versions shown by nvcc and NVIDIA-smi, it is normal: [source](https://stackoverflow.com/a/53504578)
 
-* On linux, run `nvidia-smi`, you will see the same thing as on windows. If you run `nvcc --version`, you will get an error because cuda toolkit is not installed yet on WSL.   
-
+#### CUDA on WSL: 
 Now, we will install cuda on WSL, the following commands must all be runned inside WSL. [If you want to understand more](https://docs.nvidia.com/cuda/wsl-user-guide/index.html#getting-started-with-cuda-on-wsl):
 * Run `sudo apt-key del 7fa2af80`
 * The CUDA driver installed on Windows host will be stubbed inside the WSL 2 as libcuda.so, therefore users must not install any NVIDIA GPU Linux driver within WSL 2
