@@ -15,7 +15,9 @@ Some tips to improve your User experience when using windows. Including the inst
 
    3.2 [Coding using WSL/Linux](#32-coding-using-linuxwsl-inside-windows)
       * [install WSL](#install-wsl)
+
    3.3 [Linux/WSL Setup, Miniconda, CUDA & More:](#33-linuxwsl-setup-miniconda-cuda--more)
+
    3.4 [WSL2 Tips & Tricks :](#34-wsl2-tips--tricks-)
       * [configure WSL terminal](#configure-wsl-terminal-)
       * [backup and restore](#backup-and-restore)
