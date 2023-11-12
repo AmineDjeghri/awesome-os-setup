@@ -172,9 +172,9 @@ You can export wsl image after finishing all the steps to save it in case you mo
    - wsl --shutdown
    - wsl --export Ubuntu E:\ubuntu.tar
    - [source 1](https://www.xda-developers.com/how-back-up-restore-wsl/)
+
 #### uninstall WSL: 
 Uninstall all distributions & WSL from the control panel & open Windows Features, then turn on (check) Windows Subsystem for Linux. Restart your computer.
-
 
 
 # 4- UX Custommization
