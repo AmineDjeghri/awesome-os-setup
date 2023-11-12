@@ -1,5 +1,5 @@
 
-# (1st and easiest option) Conda, Pytorch & CUDA installation inside WSL: 
+# (1st and easiest option) Conda, Pytorch & CUDA installation inside Linux/WSL: 
 
 ### Pytorch with Nvidia GPU (CUDA)
 Installing CUDA inside a Conda environment instead of globally on your computer has several advantages:
@@ -11,8 +11,8 @@ Installing CUDA inside a Conda environment instead of globally on your computer 
 3.Clean Uninstall: If you later decide to remove a project and its associated dependencies, it's straightforward to delete the Conda environment, which ensures a clean uninstallation without leaving traces on your system.
 
 ### How to
-- If you use WSL, install the nvidia driver (.exe) on windows and not WSL from [nvidia drivers](https://www.nvidia.fr/Download/index.aspx?lang=fr). Run `nvidia-smi` on both windows & WSL Terminal, it should print you all the information about your GPU
 - If you are on Linux and not WSL, install the nvidia driver (.RUN) inside Linux  from the nvidia website. [nvidia drivers](https://www.nvidia.fr/Download/index.aspx?lang=fr).Run `nvidia-smi` on the terminal, it should print you all the information about your GPU
+- If you use WSL, install the nvidia driver (.exe) on windows and not WSL from [nvidia drivers](https://www.nvidia.fr/Download/index.aspx?lang=fr). Run `nvidia-smi` on both windows & WSL Terminal, it should print you all the information about your GPU
 
 The next commands need to be ran inside WSL or Linux and not Windows :
 - Install build-essential `sudo apt-get install build-essential` (required by some packages like llama-cpp-python for example)
