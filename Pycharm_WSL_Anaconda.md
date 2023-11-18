@@ -9,10 +9,17 @@
 - Use ubuntu as default terminal in pycharm: tools>terminal  and put in shell path: `ubuntu run`
 - Add WSL interpreter in Pycharm (add interpreter -> WSL)
 
-### 1.Pycharm shortcuts : 
-- [link](https://resources.jetbrains.com/storage/products/pycharm/docs/PyCharm_ReferenceCard.pdf)
+## 1. My Pycharm config : 
+- [Shortcuts](https://resources.jetbrains.com/storage/products/pycharm/docs/PyCharm_ReferenceCard.pdf)
+- [myconfig] TODO
+- Plugins I use:
+  - TODO
+  - TODO
+- Tips & tricks:
+  - TODO
+ 
 
-### 2.Pycharm remote deployment :
+## 2.Pycharm remote deployment :
 (attention : project folder needs to be on windows and not WSL to use the remote ssh )
 
 Defining a server as default:
@@ -27,16 +34,17 @@ Open the deployment Options (Settings/Preferences | Deployment | Options or Tool
 In the main menu, select Tools | Deployment | Automatic upload. Note that automatic upload in this case is performed in the Always mode.
 
 
-### Python SSH 
+## Python SSH 
 - add a remote python : usually found with `which python` on the remote server. 
 - PyCharm envs: You can clean out old PyCharm interpreters that are no longer associated with a project see the image [here](https://github.com/AmineDjeghri/BetterWindowsUX/blob/master/pycharm_interpreters.PNG) .
 - This gives you a listing where you can get rid of old virtualenvs that PyCharm thinks are still around
 - 
-### Filezilla
-- Download Filezilla and import your key (if you key isn't in the right format, convert it with putty)
+## Filezilla 
+- Download Filezilla and import your key (if you key isn't in the right format, convert it with putty). Excellent for Drag & Drop.
+- There is also the plugin Pycharm remote server that does almost the same things, except that filezilla can save multiple servers and make it easier to open them from the favorites folder.
 
 
-### Remote SSH for ReactJS
+## Remote SSH for ReactJS
 - First make sure that in the server, the react project is running when you run `yarn dev run`
 - In pycharm, go to configuration and create a new config for npm 
 - select package.json from the local folder
