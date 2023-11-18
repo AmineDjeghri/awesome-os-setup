@@ -103,8 +103,6 @@ If you didn't save the key in your account, you need to do this before resetting
 - Install it before installing git bash (a software that adds linux and git commands to windows). 
 - (recommanded) CheatSheet
 - (optionnal) Run from CLI: go to  `System Properties -> Advanced System Settings -> Advanced -> Environment Variables -> System variable -> path` and add `C:\Program Files\Sublime Text` to the PATH environment variable to make it accessible from the terminal. Close the windows terminal and open a new one and run this command `subl`, it should open Sublime Text.
-#### <ins>Git-Bash</ins>:
-- You can use linux commands in window like SSH and Git ! Download gitbash to have these commands added to windows Terminal. Open a new Windows terminal after the installation and run this command `git --version` you should see the following message `git version 2.39.1.windows.1`. that means the git command works !
 #### <ins>Windows Terminal</ins> 
 - Always use windows terminal/powershell instead of linux
 - You can update to powershell 7 : Install it from Microsoft store. Close and then re-open your terminal window, Put powershell 7 as default.
