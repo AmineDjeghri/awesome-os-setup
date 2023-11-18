@@ -91,8 +91,14 @@ If you didn't save the key in your account, you need to do this before resetting
 
 ## 3- Dev workflow
 ### 3.1 Dev software
+#### <ins>PyCharm or VScode or NeoVim</ins>: 
+- I prefer to use PyCharm (Pro version is free for students)
+- BECAREFUL when creating a project, you should use the anaconda env (windows/WSL) and not installing a new python interpreter or using virtualenv
+- Sync pycharm settings : https://www.jetbrains.com/help/pycharm/sharing-your-ide-settings.html#IDE_settings_sync
+- [pycharm settings, tips & tricks](https://github.com/AmineDjeghri/Awesome-Windows11-WSL/blob/master/Pycharm_WSL_Anaconda.md)
+  
 #### <ins>Docker Desktop</ins> specially with WSL : you can start, stop, delete containers easily,  edit file right inside the app without the need of a terminal.
-#### <ins>Sublime Text</ins> (Free, no need to but the pro lisence): 
+#### <ins>Sublime Text</ins> (Free): 
 - Extremely lightweight (low resource usage), but still keeps around some of the more advanced features you would expect out of a top text editor.
 - Install it before installing git bash (a software that adds linux and git commands to windows). 
 - (recommanded) CheatSheet
@@ -102,9 +108,6 @@ If you didn't save the key in your account, you need to do this before resetting
 #### <ins>Windows Terminal</ins> 
 - Always use windows terminal/powershell instead of linux
 - You can update to powershell 7 : Install it from Microsoft store. Close and then re-open your terminal window, Put powershell 7 as default.
-#### <ins>PyCharm or VScode</ins>: 
-- I prefer to use PyCharm (Education version which is free) but here are the config for both, BECAREFUL when creating a project, you should use the anaconda python or wsl anaconda and not another one like virtualenv)
-- Sync pycharm settings : https://www.jetbrains.com/help/pycharm/sharing-your-ide-settings.html#IDE_settings_sync
 
 #### other tools
 - <ins>ssh key</ins> : (requires gitbash) you can generate an ssh key with `ssh-keygen -t rsa` (when prompted, enter an empty password if you want, key name can stay the same)
