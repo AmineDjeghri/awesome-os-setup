@@ -15,6 +15,7 @@
 - Plugins I use:
   - TODO
   - TODO
+  - Paid a
 - Tips & tricks:
   - TODO
  
