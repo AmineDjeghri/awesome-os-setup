@@ -1,16 +1,16 @@
 # Auto-Linux-Setup
-![WSL terminal](https://github.com/AmineDjeghri/BetterWindows/blob/master/resources/wsl_terminal.jpg)
+![WSL terminal](../resources/wsl_terminal.jpg)
 Welcome to the guide for setting up a powerful terminal & python environment on Linux/WSL.
 
 The repository contains an automated script to install the main elements I use in Linux/WSL. The repository is currently in developement. 
-My workflow involves utilizing WSL for development tasks and relying on Windows for all other activities. You can check the parent repository here : https://github.com/AmineDjeghri/Awesome-Windows11-WSL
+My workflow involves utilizing WSL for development tasks and relying on Windows for all other activities. You can check the parent README here : https://github.com/AmineDjeghri/Awesome-Windows11-WSL
 
 **Purpose of this script:** I developed this tool to streamline the setup process when working on various servers, such as AWS instances. Additionally, for those who find manual Linux setup challenging, this script is designed to simplify the process. Forget about the manual setup for each new working machine – just run the script, and you're ready to code. While it's particularly useful for Python developers, feel free to customize it for your specific needs.
 
 The documentation is divided into two sections: one automatic installation script and the second explaining the manual installation process. 
 The script incorporates various packages and prompts you for each installation decision. It covers the following aspects:
 - Customize the Terminal:  font, ZSH, Oh-my-zsh, and the power-level-10k theme.
-- Miniconda Installation: The script facilitates the installation of Miniconda and the creation of an isolated environment tailored for PyTorch, designed to be compatible with your GPU/CPU. This step is crucial for users with a GPU who intend to utilize CUDA. Installing CUDA in a separate environment is recommended. Additional details can be found in the provided documentation [here](https://github.com/AmineDjeghri/Auto-Linux-Setup/blob/main/cuda_pytorch_install.md)
+- Miniconda Installation: The script facilitates the installation of Miniconda and the creation of an isolated environment tailored for PyTorch, designed to be compatible with your GPU/CPU. This step is crucial for users with a GPU who intend to utilize CUDA. Installing CUDA in a separate environment is recommended. Additional details can be found in the provided documentation [here](cuda_pytorch_install.md)
 - Nvidia Driver installation: To Do
 
 ## Table of contents 
@@ -110,4 +110,4 @@ Others :
  - run `conda env list` to check the installed environements and their path.
  
 ### 2.3 Install Cuda using conda or globally in the OS  : 
-- Follow this [conda_cuda_installation guide](https://github.com/AmineDjeghri/Auto-Linux-Setup/blob/main/cuda_pytorch_install.md)
+- Follow this [conda_cuda_installation guide](cuda_pytorch_install.md)
