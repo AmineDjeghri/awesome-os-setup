@@ -2,9 +2,16 @@
 ![windows desktop terminal](https://github.com/AmineDjeghri/BetterWindows/blob/master/windows-desktop-terminal_1.png)
 ![WSL terminal](https://github.com/AmineDjeghri/BetterWindows/blob/master/resources/wsl_terminal.jpg)
 
-Some tips to improve your User experience when using windows. Including the installation of WSL 2.0 and more
-- A guide to help you set up a windows environement to maximize your productivity 
-- Spend some hours setting this up (a full guide to configure many things including, linux commands in windows no need for dualboot anymore, SSH, SFTP with interface to reach a maximum level of productivity)
+## Why Windows ?
+In the realm of development, Unix-based systems like Linux and MacOS often take the spotlight. However, Windows remains a formidable choice, offering a versatile environment where coding with WSL coexists seamlessly with gaming experiences, utilization of Adobe and Microsoft products unsupported in Linux, and tackling resource-intensive games beyond the capabilities of MacOS. This unique blend makes Windows a compelling platform for those seeking a comprehensive computing experience.
+
+This repository encompasses valuable tips for enhancing your Windows user experience, with a focus on creating a productive environment incorporating WSL 2, Linux, and MacOS (Work in Progress).
+- Dive into a comprehensive guide designed to optimize your Windows environment for maximum productivity.
+- Utilize Unix-based environment scripts that automate the installation of essential components like terminal utilities, Conda, GPU drivers, and more.
+- Invest just one or two hours in the setup process, following a detailed guide covering various configurations, including seamlessly integrating Linux commands into Windows.ws no need for dualboot anymore, SSH, SFTP with interface to reach a maximum level of productivity)
+
+For already setu up users or non-Windows users, you can jump direclty to the dedicated section for Unix-based systems, tested on Ubuntu (WSL/Linux): [Dev-workflow](./dev-worflow).
+This section includes essential components like terminal utilities, Miniconda, GPU drivers, and PyCharm to enhance your development workflow.
 
 ## Summary 
 1. [Windows Installation](#1--windows-configuration)
