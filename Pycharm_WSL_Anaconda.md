@@ -1,6 +1,6 @@
 # PyCharm: 
-- I prefer to use PyCharm (Education/professional which is free for students) 
-- BECAREFUL when creating a project with pycharm, you should use the anaconda python or wsl anaconda and not another one like virtualenv.
+- I prefer to use PyCharm (professional edition) even if I used VSCode for 2 years, the Intellij suite is just amazing. Intellij suite for students, is completely free. 
+- BECAREFUL when creating a project with pycharm, you should use the anaconda python (windows or wsl) and not installing python or using another one like virtualenv. 
 - Sync pycharm settings : https://www.jetbrains.com/help/pycharm/sharing-your-ide-settings.html#IDE_settings_sync
 - PyCharm has keyboard shortcuts for most of its commands related to editing, navigation, refactoring, debugging, and other tasks. Memorizing these hotkeys can help you stay more productive by keeping your hands on the keyboard. [Link to Cheatsheet](https://resources.jetbrains.com/storage/products/pycharm/docs/PyCharm_ReferenceCard.pdf)
 - The first thing you need to do is to create a project and test these shortcuts. Everytime you test one that you find usefull, write it in a paper next to you. Later you can look at the paper to remember.
@@ -40,7 +40,7 @@ In the main menu, select Tools | Deployment | Automatic upload. Note that automa
 - PyCharm envs: You can clean out old PyCharm interpreters that are no longer associated with a project see the image [here](https://github.com/AmineDjeghri/BetterWindowsUX/blob/master/pycharm_interpreters.PNG) .
 - This gives you a listing where you can get rid of old virtualenvs that PyCharm thinks are still around
 - 
-## Filezilla 
+## FileZilla 
 - Download Filezilla and import your key (if you key isn't in the right format, convert it with putty). Excellent for Drag & Drop.
 - There is also the plugin Pycharm remote server that does almost the same things, except that filezilla can save multiple servers and make it easier to open them from the favorites folder.
 
