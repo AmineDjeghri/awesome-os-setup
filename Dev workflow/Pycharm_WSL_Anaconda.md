@@ -58,3 +58,41 @@ In the main menu, select Tools | Deployment | Automatic upload. Note that automa
 # Run configuration :
 - you can choose by editing the configuration template of python and pytest to select a default working directory for all your scripts
 - Run pytest just by right clicking on a function bloc, file, or folder !
+
+
+## pycharm personal shortcuts : 
+- alt+p : press the blue button
+
+- project panel :  alt+1
+- strucutre panel : alt+2
+
+ssh & remote 
+- remote host panel : alt+3
+- file transfer panel : alt+4
+
+terminal
+- terminal panel : alt + T
+- new terminal : alt maj T
+
+git
+- commit : ctrl + K
+- commit panel : alt + k
+- Git panel : alt + g
+- git menu : alt+f then alt+g
+- git emoji : alt+k then alt+ctrl+g
+
+
+run/debug : 
+- debug : maj + F9 
+- debug panel : alt+9
+
+- run maj +F10
+- run panel: alt+ 0
+
+manipulations : 
+- find : ctrl + F
+- jump to line : ctrl+g 
+- rename : alt+r then select 2nd option (rename)
+- refactor : alt+r then select 1st option (refactor) better than 4 presses of keys : ctrl alt maj T 
+
+
