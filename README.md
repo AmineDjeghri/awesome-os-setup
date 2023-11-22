@@ -10,7 +10,7 @@ This repository encompasses valuable tips for enhancing your Windows user experi
 - Utilize Unix-based environment scripts that automate the installation of essential components like terminal utilities, Conda, GPU drivers, and more.
 - Invest just one or two hours in the setup process, following a detailed guide covering various configurations, including seamlessly integrating Linux commands into Windows.ws no need for dualboot anymore, SSH, SFTP with interface to reach a maximum level of productivity)
 
-For already setu up users or non-Windows users, you can jump direclty to the dedicated section for Unix-based systems, tested on Ubuntu (WSL/Linux): [Dev-workflow](./dev-worflow).
+For already setu up users or non-Windows users, you can jump direclty to the dedicated section for Unix-based systems, tested on Ubuntu (WSL/Linux): [Unix-Dev](./unix-dev).
 This section includes essential components like terminal utilities, Miniconda, GPU drivers, and PyCharm to enhance your development workflow.
 
 ## Summary 
