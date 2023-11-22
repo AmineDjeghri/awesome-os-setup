@@ -1,4 +1,4 @@
-# Auto-Linux-Setup
+# Linux-WSL-MacOS-Setup (Unix setup)
 ![WSL terminal](https://github.com/AmineDjeghri/BetterWindows/blob/master/resources/wsl_terminal.jpg)
 Welcome to the guide for setting up a powerful terminal & python environment on Linux/WSL.
 
