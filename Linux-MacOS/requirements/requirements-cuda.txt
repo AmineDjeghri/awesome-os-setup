@@ -1,0 +1,20 @@
+# torch with CUDA support
+--extra-index-url https://download.pytorch.org/whl/cu118
+torch==2.0.1+cu118
+
+# llama-cpp-python with CUDA support
+--extra-index-url https://jllllll.github.io/llama-cpp-python-cuBLAS-wheels/AVX2/cu118
+--prefer-binary
+llama-cpp-python
+
+# Spacy with cuda
+spacy[cuda-autodetect]==3.6.1
+
+# requirements
+-r requirements.txt
+
+# ExLlama
+exllama@ https://github.com/jllllll/exllama/releases/download/0.0.17/exllama-0.0.17+cu118-cp39-cp39-linux_x86_64.whl
+
+# ExLlamaV2
+exllamav2==0.0.2
