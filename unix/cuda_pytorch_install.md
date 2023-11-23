@@ -27,71 +27,34 @@ Installing CUDA inside a Conda environment instead of globally on your computer 
 #### 2.1. Automatic installation : 
 
 #### 2.2 Manual installation  
-The next commands need to be ran inside WSL or Linux and not Windows :
+The next commands need to be run inside WSL or Linux and not Windows :
 - Install build-essential `sudo apt-get install build-essential` (required by some packages like llama-cpp-python for example)
 
 - Create a `conda-env-gpu.yaml` file with the content below (you can modify the name of the env and the packages). I usually have two yaml files :
 One for GPU containing Pytorch with CUDA named `conda-env-gpu.yml` another one for CPU (not containing cuda) named `conda-env-cpu.yml`. I specify the version of pytorch in requirements.txt.
 If pytorch was installed with cuda, running the requirements.txt won't install again pytorch since the same version is installed.
 Running the conda-env-cpu.yaml that doesn't contain pytorch will install pytorch CPU from requirements.txt
+Here is an example of project containing a conda-env-gpu.yaml and a conda-env-cpu.yaml [link](package_example)
+The files you mentioned are used for setting up different environments for your Python project. Here's a brief summary of each:
 
+- `requirements-cuda.txt`: This file contains the list of Python packages required for your project when it's running on a GPU. It includes PyTorch with CUDA support, and references the `requirements.txt` file for additional dependencies.
 
+- `requirements-cpu.txt`: This file contains the list of Python packages required for your project when it's running on a CPU. It includes PyTorch without CUDA support, and references the `requirements.txt` file for additional dependencies.
 
-*conda-env-gpu.yaml* 
-```
-name: env-cuda
-dependencies:
-  - python=3.9
-  - git
-  - pip
-  - conda-forge::ninja
-  - nvidia/label/cuda-11.8.0::cuda
-  - conda-forge::ffmpeg
-  - conda-forge::gxx=11.4
-  - pip:
-      - -r requirements-cuda.txt
-      # - -e ."[dev]"
-```
+- `requirements.txt`: This file contains the list of Python packages that are common to both the CPU and GPU environments. It's referenced by both `requirements-cuda.txt` and `requirements-cpu.txt`.
 
-*requirements-cuda.txt* 
-```
-# torch with CUDA support
---extra-index-url https://download.pytorch.org/whl/cu118
-torch==2.0.1+cu118
+- `conda-env-gpu.yaml`: This file is used to create a Conda environment for running your project on a GPU. It specifies the Python version, some Conda packages, and references the `requirements-cuda.txt` file for additional Python packages.
 
-# requirements
--r requirements.txt
-```
+- `conda-env-cpu.yaml`: This file is used to create a Conda environment for running your project on a CPU. It specifies the Python version, some Conda packages, and references the `requirements.txt` file for additional Python packages.
 
-*requirements.txt*
-```
-torch==2.0.1
-```
+In summary, these files help you manage your project's dependencies and create isolated environments for running your project on different hardware configurations (CPU vs GPU).
 
-*conda-env-cpu.yaml*
+Create an environment with CUDA support by executing the command:
+``` bash
+cd package_example;
+conda env update -n my-env -f conda-env-gpu.yml; conda activate my-env;
 ```
-name: env-cpu
-dependencies:
-  - python=3.9
-  - git
-  - pip
-  - conda-forge::ninja
-  - conda-forge::ffmpeg
-  - conda-forge::gxx=11.4
-  - pip:
-      - -r requirements.txt
-```
-
-*requirements-cpu.txt*
-```
---extra-index-url https://download.pytorch.org/whl/cpu
-torch==2.0.1
-
-# requirements
--r requirements.txt
-```
-
-Create an environment with CUDA support by executing the command: `conda env update -n my-env -f conda-env-gpu.yml; conda activate my-env;`. The `-n my-env` option will supersede the environment name specified within the file. Alternatively, for CPU support only, use the command: `conda env update -n my-env -f conda-env-cpu.yml; conda activate my-env;`.
+The `-n my-env` option will supersede the environment name specified within the file. Alternatively, for CPU support only, use the command: `conda env update -n my-env -f conda-env-cpu.yml; conda activate my-env;`.
 
 - Run `nvcc --version ; # should be cuda_11.8.r11.8`
 - Verify the successful installation of PyTorch by executing the following Python code:
@@ -120,11 +83,11 @@ if device.type == 'cuda':
 * If cuda is not installed and you run `nvcc --version`, you will get an error because cuda toolkit is not installed yet.   
 * If you have cuda toolkit installed on windows (for WSL) or Linux, run `nvcc --version`, you should see the version of cuda which means that you already have cuda set up globally. if there are two different CUDA versions shown by nvcc and NVIDIA-smi, it is normal: [source](https://stackoverflow.com/a/53504578)
 
-Now, we will install cuda on WSL, the following commands must all be runned inside WSL. [If you want to understand more](https://docs.nvidia.com/cuda/wsl-user-guide/index.html#getting-started-with-cuda-on-wsl):
+Now, we will install cuda on WSL, the following commands must all be run inside WSL. [If you want to understand more](https://docs.nvidia.com/cuda/wsl-user-guide/index.html#getting-started-with-cuda-on-wsl):
 * Run `sudo apt-key del 7fa2af80`
 * The CUDA driver installed on Windows host will be stubbed inside the WSL 2 as libcuda.so, therefore users must not install any NVIDIA GPU Linux driver within WSL 2
 * You can only install a cuda toolkit that is compatible with WSL inside wsl : [link](https://developer.nvidia.com/cuda-downloads?target_os=Linux&target_arch=x86_64&Distribution=WSL-Ubuntu&target_version=2.0&target_type=deb_local) by following these instructions. 
-Since we we are installing cuda 11.7, follow the commands below.    
+Since we are installing cuda 11.7, follow the commands below.    
 
 ```
 wget https://developer.download.nvidia.com/compute/cuda/11.7.0/local_installers/cuda_11.7.0_515.43.04_linux.run

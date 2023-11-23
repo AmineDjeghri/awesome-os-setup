@@ -13,27 +13,18 @@ This repository encompasses valuable tips for enhancing your Windows user experi
 For already setu up users or non-Windows users, you can jump direclty to the dedicated section for Unix-based systems, tested on Ubuntu (WSL/Linux): [Unix-Dev](./unix-dev).
 This section includes essential components like terminal utilities, Miniconda, GPU drivers, and PyCharm to enhance your development workflow.
 
-## Summary 
-1. [Windows Installation](#1--windows-configuration)
-2. [Utility Softwares : Browsers, extensions, daily and usefull programs](#2-utility-softwares)
-3. [Dev Workflow](#3--dev-workflow)
-
-   3.1 [Dev Software: All the softwares I recommand for developpement and coding](#31-dev-software)
-
-   3.2 [Coding using WSL/Linux](#32-coding-using-linuxwsl-inside-windows)
-      * [install WSL](#install-wsl)
-
-   3.3 [Linux/WSL Setup, Miniconda, CUDA & More:](#33-linuxwsl-setup-miniconda-cuda--more)
-
-   3.4 [WSL2 Tips & Tricks :](#34-wsl2-tips--tricks-)
-      * [configure WSL terminal](#configure-wsl-terminal-)
-      * [backup and restore](#backup-and-restore)
-      * [uninstall WSL](#uninstall-wsl)
-   
-4. [UI/UX Custommization](#4--ux-custommization)
-      * [4.1 customize WSL (ubuntu) terminal](#41-customize-wsl-ubuntu-terminal)
-      * [4.2 customize Windows terminal](#42-customize-windows-terminal)
-      * [4.3 Costumize your windows UI:](#43-costumize-your-windows-ui)
+## Table of Contents
+1. [Why Windows?](#why-windows-)
+2. [Summary](#summary)
+3. [Windows Configuration](#1--windows-configuration)
+4. [Utility Softwares](#2-utility-softwares)
+5. [Dev Workflow](#3--dev-workflow)
+   - [Dev Software](#31-dev-software)
+   - [Coding using WSL/Linux](#32-coding-using-linuxwsl-inside-windows)
+   - [Linux/WSL Setup, Miniconda, CUDA & More](#33-linuxwsl-setup-miniconda-cuda--more)
+   - [WSL2 Tips & Tricks](#34-wsl2-tips--tricks-)
+6. [UI/UX Customization](#4--ux-custommization)
+7. [Awesome Piracy](#awesome-piracy)
 
 
 ## 1- Windows configuration
