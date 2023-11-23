@@ -1,6 +1,6 @@
 # Awesome-Windows11-WSL2
-![windows desktop terminal](https://github.com/AmineDjeghri/BetterWindows/blob/master/windows-desktop-terminal_1.png)
-![WSL terminal](https://github.com/AmineDjeghri/BetterWindows/blob/master/resources/wsl_terminal.jpg)
+![windows desktop terminal](resources/windows-desktop-terminal_1.png)
+![WSL terminal](resources/wsl_terminal.jpg)
 
 ## Why Windows mixed with Linux(WSL)?
 In the realm of development, Unix-based systems like Linux and MacOS often take the spotlight. However, Windows remains a formidable choice, offering a versatile environment where coding with WSL coexists seamlessly with the utilization of Adobe and Microsoft products unsupported in Linux, and tackling resource-intensive games beyond the capabilities of MacOS. This unique blend makes Windows-WSL a compelling platform for those seeking a comprehensive computing experience.
@@ -197,7 +197,7 @@ Follow this tutorial [customize linuxwsl terminal](unix_workflow/0_linux_setup.m
 - # TODO
 
 ## 4.3 Customize your windows UI:
-![windows desktop](https://github.com/AmineDjeghri/BetterWindows/blob/master/windows-desktop.png)
+![windows desktop](resources/windows-desktop.png)
 - Show Files extensions : If you don’t see file name extensions when you view files in File Explorer: In the search box on the taskbar, type file explorer, and in the search results, select File Explorer. In File Explorer under View, in the Show/hide group, select the File name extensions check box.
 - Install rainmeter
 - Install https://github.com/mpurses/Sonder/releases
