@@ -1,4 +1,4 @@
-# Conda, Pytorch & CUDA installation inside Linux/WSL
+# Cuda & Pytorch installation inside Linux/WSL using conda
 
 Installing CUDA inside a Conda environment instead of globally on your computer has several advantages:
 
@@ -9,24 +9,42 @@ Installing CUDA inside a Conda environment instead of globally on your computer 
 3. Clean Uninstall: If you later decide to remove a project and its associated dependencies, it's straightforward to delete the Conda environment, which ensures a clean uninstallation without leaving traces on your system.
 
 
-## Summary 
+## Summary
 1. [Install the Nvidia driver](#1-install-the-nvidia-driver)
 
-2. [First and Recommended Option: Installing CUDA Inside a Conda Environment](#2-first-and-recommended-option-installing-cuda-inside-a-conda-environment)
+2. [Recommended Option: Installing CUDA Inside a Conda Environment](#2-recommended-option-installing-cuda-inside-a-conda-environment)
     * [Automatic installation](#21-automatic-installation-)
     * [Manual installation ](#22-manual-installation)
-2. [Second Option: Install CUDA Globally (Not Recommended)](#3-second-option-install-cuda-globally-not-recommended)
+
 
 
 ## 1. Install the Nvidia driver
 - If you are on Linux and not WSL, download and install the nvidia driver .RUN file inside Linux:  [nvidia drivers](https://www.nvidia.fr/Download/index.aspx?lang=fr). Then run `nvidia-smi` on the terminal, it should print you all the information about your GPU
 - If you use WSL, install the nvidia driver (.exe) on windows and not WSL from [nvidia drivers](https://www.nvidia.fr/Download/index.aspx?lang=fr). Run `nvidia-smi` on both windows & WSL Terminal, it should print you all the information about your GPU
-  
-## 2. First and Recommended Option: Installing CUDA Inside a Conda Environment
 
-#### 2.1. Automatic installation : 
+Linux example:
+```shell
+        # Download the NVIDIA driver
+        wget https://fr.download.nvidia.com/XFree86/Linux-x86_64/535.129.03/NVIDIA-Linux-x86_64-535.129.03.run
+        # Make the downloaded file executable
+        chmod +x NVIDIA-Linux-x86_64-535.129.03.run
+        # Run the NVIDIA driver installer
+        sudo ./NVIDIA-Linux-x86_64-535.129.03.run
+        # Clean up the downloaded file (optional)
+        rm NVIDIA-Linux-x86_64-535.129.03.run
+        # Display GPU information
+        nvidia-smi
+```
+## 2. Recommended Option: Installing CUDA Inside a Conda Environment
 
-#### 2.2 Manual installation  
+#### 2.1. Automatic installation :
+Create an environment with CUDA support by executing the command. The conda-env-gpu.yml file is used to create a Conda environment for running your project on a GPU. It specifies the Python version, some Conda packages, and references the requirements-cuda.txt file for additional Python packages.
+``` bash
+cd package_example/requirements;
+conda env update -n my-env -f conda-env-gpu.yml; conda activate my-env;
+```
+
+#### 2.2 Manual installation
 The next commands need to be run inside WSL or Linux and not Windows :
 - Install build-essential `sudo apt-get install build-essential` (required by some packages like llama-cpp-python for example)
 
@@ -51,7 +69,7 @@ In summary, these files help you manage your project's dependencies and create i
 
 Create an environment with CUDA support by executing the command:
 ``` bash
-cd package_example;
+cd package_example/requirements;
 conda env update -n my-env -f conda-env-gpu.yml; conda activate my-env;
 ```
 The `-n my-env` option will supersede the environment name specified within the file. Alternatively, for CPU support only, use the command: `conda env update -n my-env -f conda-env-cpu.yml; conda activate my-env;`.
@@ -76,62 +94,3 @@ if device.type == 'cuda':
 
 - When utilizing pre-commit hooks, ensure to exclude the file requirements-cuda.txt to prevent sorting the packages.
 - Prioritize the installation of applications using pip; if pip is not applicable, resort to conda; and if conda is not an option, utilize apt-get. For instance, when installing Tesseract through conda, it is preferable to install it within the conda environment rather than globally using apt-get.
-
-## 3. Second Option: Install CUDA Globally (Not Recommended)
-
-* Inside linux, run `nvidia-smi`, you should see a table showing information about your GPU. 
-* If cuda is not installed and you run `nvcc --version`, you will get an error because cuda toolkit is not installed yet.   
-* If you have cuda toolkit installed on windows (for WSL) or Linux, run `nvcc --version`, you should see the version of cuda which means that you already have cuda set up globally. if there are two different CUDA versions shown by nvcc and NVIDIA-smi, it is normal: [source](https://stackoverflow.com/a/53504578)
-
-Now, we will install cuda on WSL, the following commands must all be run inside WSL. [If you want to understand more](https://docs.nvidia.com/cuda/wsl-user-guide/index.html#getting-started-with-cuda-on-wsl):
-* Run `sudo apt-key del 7fa2af80`
-* The CUDA driver installed on Windows host will be stubbed inside the WSL 2 as libcuda.so, therefore users must not install any NVIDIA GPU Linux driver within WSL 2
-* You can only install a cuda toolkit that is compatible with WSL inside wsl : [link](https://developer.nvidia.com/cuda-downloads?target_os=Linux&target_arch=x86_64&Distribution=WSL-Ubuntu&target_version=2.0&target_type=deb_local) by following these instructions. 
-Since we are installing cuda 11.7, follow the commands below.    
-
-```
-wget https://developer.download.nvidia.com/compute/cuda/11.7.0/local_installers/cuda_11.7.0_515.43.04_linux.run
-sudo sh cuda_11.7.0_515.43.04_linux.run   
-```
-* Restart the terminal and run `nvcc --version` to test cuda installation inside wsl. If nvcc is not recognized, and you see something like `Command 'nvcc' not found, but can be installed with:
-sudo apt install nvidia-cuda-toolkit`, it may be possible that the path is not inside .bashrc. First, verify that there is `/usr/local/cuda-11.7` inside WSL .Then, open `.bashrc` and add this at the end if it's not there:
-```
-export CUDA_HOME=/usr/local/cuda-11.7
-export PATH=${CUDA_HOME}/bin:${PATH}
-export LD_LIBRARY_PATH=${CUDA_HOME}/lib64:$LD_LIBRARY_PATH   
-```   
-* Restart the terminal and run again the command `nvcc --version`, you should see `Cuda compilation tools, release 11.7, V11.7.64`  
-* You may also need to install cudnn from [here](https://developer.nvidia.com/rdp/cudnn-archive) version v8.9.1 (May 5th, 2023) for CUDA 11.x. You need to sign in, download the right version of cdnn for cuda 11.x. directly in wsl using windows explorer and then extract it with windows explorer then run it using `sudo dpkg -i cudnn-local-repo-ubuntu2204-8.9.1.23_1.0-1_amd64.deb` or  `sudo apt install ./cudnn-local-repo-ubuntu2204-8.9.1.23_1.0-1_amd64.deb`. if you install it twice you should see `cudnn-local-repo-ubuntu2204-8.9.1.23 is already the newest version (1.0-1).`
-
-- test pytorch : 
-   ```sh
-   conda create -n test python=3.10;
-   conda activate test;
-   pip install torch;
-   ```
-  
-   ```py
-    import torch
-    # setting device on GPU if available, else CPU
-    device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
-    print('Using device:', device)
-    print()
-    
-    #Additional Info when using cuda
-    if device.type == 'cuda':
-        print(torch.cuda.get_device_name(0))
-        print('Memory Usage:')
-        print('Allocated:', round(torch.cuda.memory_allocated(0)/1024**3,1), 'GB')
-        print('Cached:   ', round(torch.cuda.memory_reserved(0)/1024**3,1), 'GB')
-   ```
-   
-(Optional) Tutorials and sources :   
-* [Download cuda 11.7](https://developer.nvidia.com/cuda-11-7-0-download-archive?target_os=Linux&target_arch=x86_64&Distribution=WSL-Ubuntu&target_version=2.0&target_type=deb_local)      
-* [Cuda-wsl Nvidia guide](https://docs.nvidia.com/cuda/wsl-user-guide/index.html#getting-started-with-cuda-on-wsl-2](https://docs.nvidia.com/cuda/wsl-user-guide/index.html#getting-started-with-cuda-on-wsl-2))
-* [Cuda-wsl Ubuntu guide](https://ubuntu.com/tutorials/enabling-gpu-acceleration-on-ubuntu-on-wsl2-with-the-nvidia-cuda-platform#3-install-nvidia-cuda-on-ubuntu)
-
-
-
-
-
-

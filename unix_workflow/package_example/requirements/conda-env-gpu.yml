@@ -1,10 +1,10 @@
 name: cuda-env
 dependencies:
-  - python=3.9
+  - python=3.11
   - git
   - pip
   - conda-forge::ninja
-  - nvidia/label/cuda-11.8.0::cuda
+  - nvidia/label/cuda-12.1.0::cuda
   - conda-forge::ffmpeg
   - conda-forge::gxx=11.4
   - pip:
