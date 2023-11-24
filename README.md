@@ -3,14 +3,15 @@
 ![WSL terminal](resources/wsl_terminal.jpg)
 
 ## Why this repository ?
+#### Why Windows mixed with Linux(WSL) and not just Windows ? Linux users, please read till the end and don't be mad 😅
+In the realm of development, Unix-based systems like Linux and MacOS often take the spotlight. However, Windows remains a valuable choice for its compatibility with a wide range of software, particularly in the gaming and business worlds. Windows offers a versatile environment where coding with WSL coexists seamlessly with the utilization of Adobe and Microsoft products unsupported in Linux, and tackling resource-intensive games beyond the capabilities of MacOS. This unique blend makes Windows-WSL a compelling platform for those seeking a comprehensive computing experience.
+
 - If you are a windows user, this repository encompasses
    - Valuable tips for enhancing your Windows user experience, with a focus on creating a productive environment incorporating WSL 2 (Linux).
    - WSL setup & Linux guides & automated scripts [unix_workflow/0_linux_setup.md](unix_workflow/0_linux_setup.md) to automate the installation of essential components like terminal utilities, Conda, GPU drivers, and more.
    - No need for dualboot anymore, and includes SSH, SFTP with UI (Pycharm/FileZilla).
 - If you are a linux/WSL user, you can jump direclty to the dedicated section for Unix-based systems, tested on Ubuntu 22.04: [unix_workflow/0_linux_setup.md](unix_workflow/0_linux_setup.md).
 
-#### Why Windows mixed with Linux(WSL)?
-In the realm of development, Unix-based systems like Linux and MacOS often take the spotlight. However, Windows remains a valuable choice for its compatibility with a wide range of software, particularly in the gaming and business worlds. Windows offers a versatile environment where coding with WSL coexists seamlessly with the utilization of Adobe and Microsoft products unsupported in Linux, and tackling resource-intensive games beyond the capabilities of MacOS. This unique blend makes Windows-WSL a compelling platform for those seeking a comprehensive computing experience.
 
 ## Table of Contents
 1. [Why Windows?](#why-windows-)
