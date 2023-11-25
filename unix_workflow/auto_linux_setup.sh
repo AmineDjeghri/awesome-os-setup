@@ -70,14 +70,24 @@ if ask_yes_no "Do you want to install Miniconda3?"; then
     wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
     chmod +x Miniconda3-latest-Linux-x86_64.sh
     bash Miniconda3-latest-Linux-x86_64.sh
-    source ~/.zshrc
-    echo "initializing conda in ZSH'"
-    cd ~
-    ./miniconda3/bin/conda init zsh
-    source ~/.zshrc
 
-    # Display additional message
-    echo "\e[93mRestart the Ubuntu terminal, you should see '(base)' at the left of any command."
+    # Initialize Conda for the current shell
+    source $HOME/miniconda3/etc/profile.d/conda.sh
+
+    echo "Initialize Conda for the default shell $(basename $SHELL)"
+    # Get the shell's configuration file
+    shell_config=""
+    case "$(basename $SHELL)" in
+        bash) shell_config=~/.bashrc;;
+        zsh) shell_config=~/.zshrc;;
+        *)   echo "Shell type $(basename $SHELL) is not supported. Manual initialization may be required.";;
+    esac
+
+    if [ -n "$shell_config" ]; then
+        # Initialize Conda for the restarted shell
+    echo "initializing conda in the default shell $(basename $SHELL)"
+    ~/miniconda3/bin/conda init $(basename $SHELL)
+    
     echo "Run 'conda env list' to check the installed environments and their paths.\e[0m"
 fi
 
@@ -122,3 +132,7 @@ if ask_yes_no "Do you want to install nvidia driver?"; then
     fi
   fi
 fi
+
+# restarting the terminal
+echo "\e[93m Restarting the terminal...\e[0m"
+exec $SHELL
