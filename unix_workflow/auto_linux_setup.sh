@@ -1,5 +1,10 @@
 #!/bin/bash
 
+# colors
+YELLOW='\e[93m'
+RED='\e[91m'
+RESET='\e[0m'
+
 # Function to ask yes/no questions
 ask_yes_no() {
     while true; do
@@ -64,8 +69,12 @@ else
     echo "\e[93mTerminal customization skipped.\e[0m"
 fi
 
-# Ask user if they want to install Miniconda
-if ask_yes_no "Do you want to install Miniconda3?"; then
+# Check if Conda is already installed
+if command -v conda &> /dev/null; then
+    echo "${YELLOW}Conda is already installed.${RESET}"
+else
+  case "$(uname -s)" in
+    Linux*)
     # Download and install Miniconda
     wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
     chmod +x Miniconda3-latest-Linux-x86_64.sh
@@ -74,22 +83,29 @@ if ask_yes_no "Do you want to install Miniconda3?"; then
     # Initialize Conda for the current shell
     source $HOME/miniconda3/etc/profile.d/conda.sh
 
-    echo "Initialize Conda for the default shell $(basename $SHELL)"
+    echo "${YELLOW}Initializing Conda for the default shell $(basename $SHELL) ${RESET}"
     # Get the shell's configuration file
     shell_config=""
+
     case "$(basename $SHELL)" in
         bash) shell_config=~/.bashrc;;
         zsh) shell_config=~/.zshrc;;
-        *)   echo "Shell type $(basename $SHELL) is not supported. Manual initialization may be required.";;
+        *)   echo "${RED}Shell type $(basename $SHELL) is not supported. Manual initialization may be required.${RESET}";;
     esac
 
     if [ -n "$shell_config" ]; then
         # Initialize Conda for the restarted shell
-    echo "initializing conda in the default shell $(basename $SHELL)"
-    ~/miniconda3/bin/conda init $(basename $SHELL)
-    
-    echo "Run 'conda env list' to check the installed environments and their paths.\e[0m"
+        ~/miniconda3/bin/conda init $(basename $SHELL)
+
+    echo -e "${YELLOW} Conda has been automatically initialized in your terminal and you should see (base). if not, restart it manually and verify that it's inside your file shell_config.${RESET}"
+  fi
+  ;;
+  *)
+    echo "${RED}Miniconda installation is only supported on Linux at the moment.${RESET}"
+    ;;
+  esac
 fi
+
 
 # install nvidia driver
 if ask_yes_no "Do you want to install nvidia driver?"; then
@@ -134,5 +150,5 @@ if ask_yes_no "Do you want to install nvidia driver?"; then
 fi
 
 # restarting the terminal
-echo "\e[93m Restarting the terminal...\e[0m"
+echo "${YELLOW}Restarting the terminal...${RESET}"
 exec $SHELL
