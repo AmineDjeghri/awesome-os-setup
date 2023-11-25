@@ -3,6 +3,7 @@ dependencies:
   - python=3.11
   - git
   - pip
+  - pre-commit
   - conda-forge::ninja
   - nvidia/label/cuda-12.1.0::cuda
   - conda-forge::ffmpeg
