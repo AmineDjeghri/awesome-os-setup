@@ -90,5 +90,10 @@ run/debug :
 manipulations :
 - find : ctrl + F
 - jump to line : ctrl+g
+- delete/cut line : ctrl+x
 - rename : alt+r then select 2nd option (rename)
 - refactor : alt+r then select 1st option (refactor) better than 4 presses of keys : ctrl alt maj T
+- Move the caret to the end of line:End:
+- Move the caret to the beginning of line: Home
+- Move the caret to the next word: Ctrl+Right
+- Move the caret to the previous word : Ctrl+Left
