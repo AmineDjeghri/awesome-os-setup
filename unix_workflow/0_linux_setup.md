@@ -28,7 +28,7 @@ The script incorporates various packages and prompts you for each installation d
 ## 1. Setup Linux automatically :
 - Install the MesloLGS NF Regular.ttf font on your primary operating system (Windows if you are using WSL). [MesloLGS NF Regular.ttf](https://github.com/romkatv/dotfiles-public/blob/master/.local/share/fonts/NerdFonts/MesloLGS%20NF%20Regular.ttf)
 - Configure your terminal to utilize the newly installed font. For Windows users, open the Windows Terminal and navigate to Settings -> Profiles (bottom left) -> Ubuntu terminal (orange logo) -> Additional Parameters -> Appearance -> Change the font to MesloLGS.
-- Run the following command inside Linux to automatically install the various elements. Do not run the script with `sudo` otherwise it will install some packages in  /root instead of /home. Also, make sure to type `yes` when installing conda. If you are facing some problems, take a look at section 2.2.
+- Run the following command inside Linux using the Bourne shell `sh` to automatically install the various elements. Do not run the script with `sudo` otherwise it will install some packages in  /root instead of /home. Also, make sure to type `yes` when installing conda. If you are facing some problems, take a look at section 2.2.
 
 ```sh -c "$(wget https://raw.githubusercontent.com/AmineDjeghri/Awesome-Windows11-WSL-Linux/master/unix_workflow/auto_linux_setup.sh -O -)"```
 - (Optional) If you have custom configurations in your `.bashrc`, consider copying them to  the `.zshrc` file.
