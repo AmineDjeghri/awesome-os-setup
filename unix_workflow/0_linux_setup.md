@@ -30,7 +30,7 @@ The script incorporates various packages and prompts you for each installation d
 - Configure your terminal to utilize the newly installed font. For Windows users, open the Windows Terminal and navigate to Settings -> Profiles (bottom left) -> Ubuntu terminal (orange logo) -> Additional Parameters -> Appearance -> Change the font to MesloLGS.
 - Run the following command inside Linux to automatically install the various elements. Do not run the script with `sudo` otherwise it will install some packages in  /root instead of /home. Also, make sure to type `yes` when installing conda. If you are facing some problems, take a look at section 2.2.
 
-```sh -c "$(wget https://raw.githubusercontent.com/AmineDjeghri/Awesome-Windows11-WSL/main/dev_workflow/auto_linux_setup.sh -O -)"```
+```sh -c "$(wget https://raw.githubusercontent.com/AmineDjeghri/Awesome-Windows11-WSL-Linux/master/unix_workflow/auto_linux_setup.sh -O -)"```
 - (Optional) If you have custom configurations in your `.bashrc`, consider copying them to  the `.zshrc` file.
 - (Optional) If you have ssh keys, copy them to the `.ssh` folder.
 
