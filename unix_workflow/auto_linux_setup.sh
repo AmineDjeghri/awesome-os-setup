@@ -63,7 +63,9 @@ if ask_yes_no "Do you want to customize the terminal by installing ZSH, Oh My Zs
 
         echo "Updating .zshrc configuration..."
         curl -sL "https://raw.githubusercontent.com/AmineDjeghri/Awesome-Windows11-WSL-Linux/master/unix_workflow/.zshrc" > ~/.zshrc
+        curl -sL "https://raw.githubusercontent.com/AmineDjeghri/Awesome-Windows11-WSL-Linux/master/unix_workflow/.p10k.zsh" > ~/.p10k.zsh
         source ~/.zshrc
+
         # Print installation message
         echo -e "\e[93m(Optional) If you have custom configurations in your .bashrc, consider copying them to the .zshrc file.\e[0m"
 
