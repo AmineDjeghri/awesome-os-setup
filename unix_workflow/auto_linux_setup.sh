@@ -62,7 +62,7 @@ if ask_yes_no "Do you want to customize the terminal by installing ZSH, Oh My Zs
         git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
 
         echo "Updating .zshrc configuration..."
-        curl -sL "https://raw.githubusercontent.com/AmineDjeghri/Auto-Linux-Setup/main/.zshrc" > ~/.zshrc
+        curl -sL "https://raw.githubusercontent.com/AmineDjeghri/Awesome-Windows11-WSL-Linux/master/unix_workflow/.zshrc" > ~/.zshrc
         source ~/.zshrc
         # Print installation message
         echo -e "\e[93m(Optional) If you have custom configurations in your .bashrc, consider copying them to the .zshrc file.\e[0m"
