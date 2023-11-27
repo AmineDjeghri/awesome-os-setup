@@ -70,7 +70,7 @@ else
 fi
 
 # Check if Conda is already installed
-if command -v conda &> /dev/null; then
+if ! conda info &> /dev/null; then
     echo "${YELLOW}Conda is already installed.${RESET}"
 else
   case "$(uname -s)" in
