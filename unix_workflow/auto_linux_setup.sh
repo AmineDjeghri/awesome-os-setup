@@ -113,7 +113,7 @@ fi
 if ask_yes_no "Do you want to install nvidia driver?"; then
 
   # Check if NVIDIA driver is installed
-  if nvidia-smi &> /dev/null; then
+  if nvidia-smi >/dev/null 2>&1; then
     echo "NVIDIA driver is already installed."
     # Display GPU information
     echo "GPU Information:"
