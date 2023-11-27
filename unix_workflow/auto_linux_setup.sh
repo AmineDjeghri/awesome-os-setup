@@ -122,11 +122,11 @@ if ask_yes_no "Do you want to install nvidia driver?"; then
     nvidia-smi
   else
     # Check if running inside WSL
-    if [ "$OS" == "Linux" ] && [ -f /proc/sys/fs/binfmt_misc/WSLInterop ]; then
+    if [ "$OS" = "Linux" ] && [ -f /proc/sys/fs/binfmt_misc/WSLInterop ]; then
         echo "Running inside Windows Subsystem for Linux (WSL). Please, install the NVIDIA driver on Windows."
-    elif [ "$OS" == "Darwin" ]; then
+    elif [ "$OS" = "Darwin" ]; then
         echo "No NVIDIA driver can be installed on macOS."
-    elif [ "$OS" == "Linux" ]; then
+    elif [ "$OS" = "Linux" ]; then
       echo "Installing NVIDIA driver on Linux..."
         # Download the NVIDIA driver
         wget https://fr.download.nvidia.com/XFree86/Linux-x86_64/535.129.03/NVIDIA-Linux-x86_64-535.129.03.run
