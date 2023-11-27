@@ -27,7 +27,7 @@ echo "Detected OS: $OS"
 if ask_yes_no "Do you want to run sudo apt update & upgrade to load latest packages?"; then
 sudo apt update
 sudo apt upgrade
-
+fi
 
 # Ask user if they want to customize the terminal
 if ask_yes_no "Do you want to customize the terminal by installing ZSH, Oh My Zsh, and the Powerlevel10k theme?"; then
