@@ -70,7 +70,8 @@ else
 fi
 
 # Check if Conda is already installed
-if command -v conda >/dev/null 2>&1; then
+if command -v conda >/dev/null 2>&1; 
+then
     echo "Conda is already installed."
 else
   echo "Conda is not installed."
