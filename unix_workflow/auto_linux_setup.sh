@@ -70,9 +70,10 @@ else
 fi
 
 # Check if Conda is already installed
-if ! conda info &> /dev/null; then
+if conda info &> /dev/null; then
     echo "${YELLOW}Conda is already installed.${RESET}"
 else
+  echo "${YELLOW}Conda is not installed.${RESET}"
   case "$(uname -s)" in
     Linux*)
     # Download and install Miniconda
