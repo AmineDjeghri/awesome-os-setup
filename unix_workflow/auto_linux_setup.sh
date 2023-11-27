@@ -24,12 +24,18 @@ OS=$(uname)
 echo "Detected OS: $OS"
 
 # Ask user if they want to customize the terminal
+if ask_yes_no "Do you want to run sudo apt update & upgrade to load latest packages?"; then
+sudo apt update
+sudo apt upgrade
+
+
+# Ask user if they want to customize the terminal
 if ask_yes_no "Do you want to customize the terminal by installing ZSH, Oh My Zsh, and the Powerlevel10k theme?"; then
     # Check if the font "MesloLGS NF Regular.ttf" is installed
     if ask_yes_no "Is the font 'MesloLGS NF Regular.ttf' installed?"; then
         # Install zsh
         echo "Installing zsh..."
-        apt install zsh
+        sudo apt install zsh
 
         # Check zsh version
         echo "Checking zsh version..."
@@ -133,7 +139,8 @@ if ask_yes_no "Do you want to install nvidia driver?"; then
 
         # Make the downloaded file executable
         chmod +x NVIDIA-Linux-x86_64-535.129.03.run
-
+        # install gcc 
+        sudo apt install build-essential
         # Run the NVIDIA driver installer
         sudo ./NVIDIA-Linux-x86_64-535.129.03.run
 
