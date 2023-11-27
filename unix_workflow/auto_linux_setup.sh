@@ -70,8 +70,10 @@ else
 fi
 
 # Check if Conda is already installed
-if ! command -v conda &> /dev/null; then
-  echo "${YELLOW}Conda is not installed.${RESET}"
+if command -v conda >/dev/null 2>&1; then
+    echo "Conda is already installed."
+else
+  echo "Conda is not installed."
   
   case "$(uname -s)" in
     Linux*)
@@ -104,8 +106,6 @@ if ! command -v conda &> /dev/null; then
     echo "${RED}Miniconda installation is only supported on Linux at the moment.${RESET}"
     ;;
   esac
-  else
-  echo "${YELLOW}Conda is already installed.${RESET}"
 fi
 
 
