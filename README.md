@@ -9,7 +9,7 @@
    - WSL setup & Linux guides & automated scripts [unix_workflow/0_linux_setup.md](unix_workflow/0_linux_setup.md) to automate the installation of essential components like terminal utilities, Conda, GPU drivers, and more.
    - No need for dualboot anymore, and includes SSH, SFTP with UI (Pycharm/FileZilla).
 
-## Why this repository ?
+## Why this repositoy
 #### Why Windows mixed with Linux(WSL) and not just Windows ? Linux users, please read till the end and don't be mad 😅
 Within the domain of development, Unix-based systems such as Linux and MacOS frequently garner attention. Nevertheless, it's crucial to recognize Windows as a significant player, especially for users compelled to operate in a Windows-centric work environment due to company policies.
 
@@ -29,8 +29,8 @@ Within the domain of development, Unix-based systems such as Linux and MacOS fre
 The integration of WSL allows smooth coding alongside the utilization of Adobe and Microsoft products that may lack support on Linux. This flexibility, coupled with the ability to handle resource-intensive games beyond MacOS capabilities, positions Windows-WSL as an enticing platform, ensuring a well-rounded computing experience for all users, regardless of their workplace constraints.
 
 ## Table of Contents
-1. [Why Windows?](#why-windows-)
-2. [Summary](#summary)
+1. [Content of repository](#content-of-repository)
+2. [Why this repository](#why-this-repository)
 3. [Windows Configuration](#1--windows-configuration)
 4. [Utility Softwares](#2-utility-softwares)
 5. [Dev Workflow](#3--dev-workflow)
