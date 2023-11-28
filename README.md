@@ -4,9 +4,22 @@
 
 ## Why this repository ?
 #### Why Windows mixed with Linux(WSL) and not just Windows ? Linux users, please read till the end and don't be mad 😅
-Within the domain of development, Unix-based systems such as Linux and MacOS frequently garner attention. Nevertheless, it's crucial to recognize Windows as a significant player, especially for users compelled to operate in a Windows-centric work environment. 
+Within the domain of development, Unix-based systems such as Linux and MacOS frequently garner attention. Nevertheless, it's crucial to recognize Windows as a significant player, especially for users compelled to operate in a Windows-centric work environment due to company policies.
 
-Windows stands out for its compatibility with diverse software, making it an excellent choice for both gaming enthusiasts and business professionals. The integration of WSL allows smooth coding alongside the utilization of Adobe and Microsoft products that may lack support on Linux. This flexibility, coupled with the ability to handle resource-intensive games beyond MacOS capabilities, positions Windows-WSL as an enticing platform, ensuring a well-rounded computing experience for all users, regardless of their workplace constraints.
+Windows stands out for its compatibility with diverse software, making it an very good choice for both gaming enthusiasts and business professionals. 
+
+**Windows with WSL:**
+- Seamless compatibility with diverse software, including Adobe & Office products.
+- Optimal choice for gaming enthusiasts.
+- Well-suited for coding with Windows Subsystem for Linux (WSL).
+
+**macOS:**
+- Excellent for coding and editing, particularly suitable for Adobe products.
+- Limited gaming capabilities compared to Windows & Linux.
+
+**Linux:**
+- Ideal for coding and gaming, providing good performance in both areas.
+- Lacks support for Adobe & Office products and certain software.
 
 - If you are a windows user, this repository encompasses
    - Valuable tips for enhancing your Windows user experience, with a focus on creating a productive environment incorporating WSL 2 (Linux).
@@ -30,6 +43,8 @@ Windows stands out for its compatibility with diverse software, making it an exc
 
 
 ## 1- Windows configuration
+The integration of WSL allows smooth coding alongside the utilization of Adobe and Microsoft products that may lack support on Linux. This flexibility, coupled with the ability to handle resource-intensive games beyond MacOS capabilities, positions Windows-WSL as an enticing platform, ensuring a well-rounded computing experience for all users, regardless of their workplace constraints.
+
 - First thing to do is to connect your windows to your microsoft account : Windows-> account -> connect
 ### 1.1 Save your key to you microsoft account (important) & update some parameters
  - Connect windows with your Microsoft/Outlook account to save and link the key to your account
