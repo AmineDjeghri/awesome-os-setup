@@ -16,8 +16,8 @@
 - (-) Limited gaming capabilities compared to Windows & Linux.
 
 **Linux:**
-- (+)Ideal for coding and gaming, providing good performance in both areas.
-- (+)Lacks support for Adobe & Office products and certain software.
+- (+) Ideal for coding and gaming, providing good performance in both areas.
+- (-) Lacks support for Adobe & Office products and certain software.
 
 **Windows with WSL:**
 - (+) Seamless compatibility with diverse software, including Adobe & Office products.
