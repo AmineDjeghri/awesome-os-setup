@@ -13,8 +13,6 @@
 #### Why Windows mixed with Linux(WSL) and not just Windows ? Linux users, please read till the end and don't be mad 😅
 Within the domain of development, Unix-based systems such as Linux and MacOS frequently garner attention. Nevertheless, it's crucial to recognize Windows as a significant player, especially for users compelled to operate in a Windows-centric work environment due to company policies.
 
-Windows stands out for its compatibility with diverse software, making it an very good choice for both gaming enthusiasts and business professionals. 
-
 **macOS:**
 - Excellent for coding and editing, particularly suitable for Adobe & Office products.
 - Limited gaming capabilities compared to Windows & Linux.
