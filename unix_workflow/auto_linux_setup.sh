@@ -241,7 +241,7 @@ uninstall_zsh_omz_pl10k() {
 show_menu() {
   # Welcome message
   echo "${GREEN}Welcome to the Auto Linux Setup. This script helps you set up automatically various tools on your system."
-  echo "It has been tested on Ubuntu 22.04. ${RESET}"
+  echo "It has been tested on Ubuntu 22.04. (It's advised to install the elements in order) ${RESET}"
   printf "\n"
   echo "${YELLOW} ============ Menu ============ ${RESET}"
   echo "${YELLOW} 1. Install ZSH ${RESET}"
