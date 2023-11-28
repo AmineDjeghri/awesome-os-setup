@@ -2,31 +2,33 @@
 ![windows desktop terminal](resources/windows-desktop-terminal_1.png)
 ![WSL terminal](resources/wsl_terminal.jpg)
 
+## Content of repositoy 
+- If you are a linux/WSL user, you can jump direclty to the dedicated section for Unix-based systems, tested on Ubuntu 22.04: [unix_workflow/0_linux_setup.md](unix_workflow/0_linux_setup.md).
+- If you are a windows user, this repository encompasses
+   - Valuable tips for enhancing your Windows user experience, with a focus on creating a productive environment incorporating WSL 2 (Linux).
+   - WSL setup & Linux guides & automated scripts [unix_workflow/0_linux_setup.md](unix_workflow/0_linux_setup.md) to automate the installation of essential components like terminal utilities, Conda, GPU drivers, and more.
+   - No need for dualboot anymore, and includes SSH, SFTP with UI (Pycharm/FileZilla).
+
 ## Why this repository ?
 #### Why Windows mixed with Linux(WSL) and not just Windows ? Linux users, please read till the end and don't be mad 😅
 Within the domain of development, Unix-based systems such as Linux and MacOS frequently garner attention. Nevertheless, it's crucial to recognize Windows as a significant player, especially for users compelled to operate in a Windows-centric work environment due to company policies.
 
 Windows stands out for its compatibility with diverse software, making it an very good choice for both gaming enthusiasts and business professionals. 
 
-**Windows with WSL:**
-- Seamless compatibility with diverse software, including Adobe & Office products.
-- Optimal choice for gaming enthusiasts.
-- Well-suited for coding with Windows Subsystem for Linux (WSL).
-
 **macOS:**
-- Excellent for coding and editing, particularly suitable for Adobe products.
+- Excellent for coding and editing, particularly suitable for Adobe & Office products.
 - Limited gaming capabilities compared to Windows & Linux.
 
 **Linux:**
 - Ideal for coding and gaming, providing good performance in both areas.
 - Lacks support for Adobe & Office products and certain software.
 
-- If you are a windows user, this repository encompasses
-   - Valuable tips for enhancing your Windows user experience, with a focus on creating a productive environment incorporating WSL 2 (Linux).
-   - WSL setup & Linux guides & automated scripts [unix_workflow/0_linux_setup.md](unix_workflow/0_linux_setup.md) to automate the installation of essential components like terminal utilities, Conda, GPU drivers, and more.
-   - No need for dualboot anymore, and includes SSH, SFTP with UI (Pycharm/FileZilla).
-- If you are a linux/WSL user, you can jump direclty to the dedicated section for Unix-based systems, tested on Ubuntu 22.04: [unix_workflow/0_linux_setup.md](unix_workflow/0_linux_setup.md).
+**Windows with WSL:**
+- Seamless compatibility with diverse software, including Adobe & Office products.
+- Optimal choice for gaming enthusiasts.
+- Well-suited for coding with Windows Subsystem for Linux (WSL) and no need for dual boot.
 
+The integration of WSL allows smooth coding alongside the utilization of Adobe and Microsoft products that may lack support on Linux. This flexibility, coupled with the ability to handle resource-intensive games beyond MacOS capabilities, positions Windows-WSL as an enticing platform, ensuring a well-rounded computing experience for all users, regardless of their workplace constraints.
 
 ## Table of Contents
 1. [Why Windows?](#why-windows-)
@@ -43,7 +45,6 @@ Windows stands out for its compatibility with diverse software, making it an ver
 
 
 ## 1- Windows configuration
-The integration of WSL allows smooth coding alongside the utilization of Adobe and Microsoft products that may lack support on Linux. This flexibility, coupled with the ability to handle resource-intensive games beyond MacOS capabilities, positions Windows-WSL as an enticing platform, ensuring a well-rounded computing experience for all users, regardless of their workplace constraints.
 
 - First thing to do is to connect your windows to your microsoft account : Windows-> account -> connect
 ### 1.1 Save your key to you microsoft account (important) & update some parameters
