@@ -12,7 +12,7 @@
 ## Why this repositoy
 #### Why Windows mixed with Linux(WSL) ? Linux users, please read till the end and don't be mad 😅
 **macOS:**
-- (+) Excellent for coding and editing. Supports Adobe & Office products.
+- (+) Excellent for coding and video editing. Supports Adobe & Office products.
 - (-) Limited gaming capabilities compared to Windows & Linux.
 
 **Linux:**
