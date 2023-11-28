@@ -4,7 +4,9 @@
 
 ## Why this repository ?
 #### Why Windows mixed with Linux(WSL) and not just Windows ? Linux users, please read till the end and don't be mad 😅
-In the realm of development, Unix-based systems like Linux and MacOS often take the spotlight. However, Windows remains a valuable choice for its compatibility with a wide range of software, particularly in the gaming and business worlds. Windows offers a versatile environment where coding with WSL coexists seamlessly with the utilization of Adobe and Microsoft products unsupported in Linux, and tackling resource-intensive games beyond the capabilities of MacOS. This unique blend makes Windows-WSL a compelling platform for those seeking a comprehensive computing experience.
+Within the domain of development, Unix-based systems such as Linux and MacOS frequently garner attention. Nevertheless, it's crucial to recognize Windows as a significant player, especially for users compelled to operate in a Windows-centric work environment. 
+
+Windows stands out for its compatibility with diverse software, making it an excellent choice for both gaming enthusiasts and business professionals. The integration of WSL allows smooth coding alongside the utilization of Adobe and Microsoft products that may lack support on Linux. This flexibility, coupled with the ability to handle resource-intensive games beyond MacOS capabilities, positions Windows-WSL as an enticing platform, ensuring a well-rounded computing experience for all users, regardless of their workplace constraints.
 
 - If you are a windows user, this repository encompasses
    - Valuable tips for enhancing your Windows user experience, with a focus on creating a productive environment incorporating WSL 2 (Linux).
