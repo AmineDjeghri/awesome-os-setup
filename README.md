@@ -2,7 +2,7 @@
 ![windows desktop terminal](resources/windows-desktop-terminal_1.png)
 ![WSL terminal](resources/wsl_terminal.jpg)
 
-## Content of repositoy 
+## Content of repository
 - If you are a linux/WSL user, you can jump direclty to the dedicated section for Unix-based systems, tested on Ubuntu 22.04: [unix_workflow/0_linux_setup.md](unix_workflow/0_linux_setup.md).
 - If you are a windows user, this repository encompasses
    - Valuable tips for enhancing your Windows user experience, with a focus on creating a productive environment incorporating WSL 2 (Linux).
@@ -29,8 +29,8 @@ Within the domain of development, Unix-based systems such as Linux and MacOS fre
 The integration of WSL allows smooth coding alongside the utilization of Adobe and Microsoft products that may lack support on Linux. This flexibility, coupled with the ability to handle resource-intensive games beyond MacOS capabilities, positions Windows-WSL as an enticing platform, ensuring a well-rounded computing experience for all users, regardless of their workplace constraints.
 
 ## Table of Contents
-1. [Content of repository](#content-of-repository)
-2. [Why this repository](#why-this-repository)
+1. [Content of repository](#--content-of-repository)
+2. [Why this repository](#--why-this-repository)
 3. [Windows Configuration](#1--windows-configuration)
 4. [Utility Softwares](#2-utility-softwares)
 5. [Dev Workflow](#3--dev-workflow)
