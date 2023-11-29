@@ -177,6 +177,7 @@ systemd=true
 - Copy your ssh key from windows to linux and use on the ssh file of linux : `chmod 600 ~/.ssh/id_rsa` and `chmod 600 ~/.ssh/id_rsa.pub`
 - Update packages:  `sudo apt update` then `sudo apt upgrade`
 - Disk usage: `df -h` look on the right column 'Mounted on'
+- Folder size for current directory: `du -h` , `du -h | sort -h`. For specifc directory : `du -h /folder`
 - wsl disk usage : `df -h /mnt/wslg/distro`
 - Unzip: `sudo apt install unzip`
 - Reclaim disk space :
