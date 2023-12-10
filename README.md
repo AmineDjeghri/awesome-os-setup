@@ -129,6 +129,7 @@ Open file your_home_directory/.ssh/id_rsa.pub (example `C:\Users\AmineDjeghri\.s
 - <ins>Free Cloud GPU </ins> Google Colab/Kaggle you can either put your git repositories inside google drive to use them in colab, or   git clone inside colab.
 - <ins>Filezilla</ins> : for SFTP (work with private key: add it in edit/connection/sftp or use pageant)
 - Git emojis: https://gitmoji.dev/
+- explain paper : https://www.explainpaper.com/
 - Latex Handwriting recognition: https://detexify.kirelabs.org/classify.html
 - Turn math equations and snipping to latex code: https://mathpix.com/
 - Overleaf: https://www.overleaf.com/
