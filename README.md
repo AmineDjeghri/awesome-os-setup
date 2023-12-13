@@ -9,7 +9,7 @@
    - Valuable tips for enhancing your Windows user experience, with a focus on creating a productive environment incorporating WSL 2 (Linux).
    - Windows apps to enhance your productivity.
    - Includes a guide for installing WSL 2 and configuring it to work with Windows Terminal.
-   - WSL setup & Linux guides & automated scripts [unix_workflow/0_linux_setup.md](unix_workflow/README.md) to automate the installation of essential components like terminal utilities, Conda, GPU drivers, and more.
+   - WSL setup & Linux guides & automated scripts [unix_workflow/README](unix_workflow/README.md) to automate the installation of essential components like terminal utilities, Conda, GPU drivers, and more.
    - No need for dual boot anymore, and includes SSH, SFTP with UI (Pycharm/FileZilla).
 - Browser extensions: [windows_workflow/browser_extensions.md](windows_workflow/browser_extensions.md).
 
