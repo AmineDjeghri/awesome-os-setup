@@ -3,8 +3,8 @@
 ![WSL terminal](resources/wsl_terminal.jpg)
 
 ## Content of repository
-- Linux/WSL2 (Ubuntu 22.04): [unix_workflow/README](unix_workflow/README.md).
-  - can be used for Linux and WSL on Windows 11.
+- Linux (Ubuntu 22.04): [unix_workflow/README](unix_workflow/README.md).
+  - can be used for Linux and WSL2 on Windows 11.
 - Windows 11 & WSL2: [windows_workflow/README](windows_workflow/README.md).
    - Valuable tips for enhancing your Windows user experience, with a focus on creating a productive environment incorporating WSL 2 (Linux).
    - Windows apps to enhance your productivity.
@@ -14,7 +14,7 @@
 - Browser extensions: [windows_workflow/browser_extensions.md](windows_workflow/browser_extensions.md).
 
 ## Why this repository
-#### Why Windows mixed with Linux(WSL) ? Linux's users, please read till the end and don't be mad 😅
+#### Why Windows mixed with Linux (WSL)? Linux's users, please read till the end and don't be mad. 😅
 **macOS:**
 - (+) Excellent for coding and video editing. Supports Adobe & Office products.
 - (-) Limited gaming capabilities compared to Windows & Linux.

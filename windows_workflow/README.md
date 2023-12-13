@@ -3,17 +3,14 @@
 ![WSL terminal](../resources/wsl_terminal.jpg)
 
 ## Table of Contents
-1. [Content of repository](#--content-of-repository)
-2. [Why this repository](#--why-this-repository)
-3. [Windows Configuration](#1--windows-configuration)
-4. [Utility Softwares](#2-utility-softwares)
-5. [Dev Workflow](#3--dev-workflow)
+1. [Windows Configuration](#1--Windows-configuration)
+2. [Utility Softwares](#2--Utility-Software)
+3. [Dev Workflow](#3--dev-workflow)
    - [Dev Software](#31-dev-software)
    - [Coding using WSL/Linux](#32-coding-using-linuxwsl-inside-windows)
    - [Linux/WSL Setup, Miniconda, CUDA & More](#33-linuxwsl-setup-miniconda-cuda--more)
    - [WSL2 Tips & Tricks](#34-wsl2-tips--tricks-)
-6. [UI/UX Customization](#4--ux-custommization)
-7. [Awesome Piracy](#awesome-piracy)
+4. [UI/UX Customization](#4--ux-customization)
 
 
 ## 1- Windows configuration
@@ -38,10 +35,10 @@ If you didn't save the key in your account, you need to do this before resetting
 - Deactivate it in Windows terminal by using administrator mode with `slmgr /cpky`
 - Activate it on the new computer using `slmgr /ipk xxxxx-xxxxx-xxxxx-xxxxx-xxxxx`
 
-## 2-Utility Software
-- <ins>Browser</ins>: Brave or Edge or Firefox, Remember to change your sync settings to import your passwords, bookmarks...ect.
-- <ins>Privacy extensions</ins> : if you care about your data and privacy (even if you use windows lol) you can limit websites to collect your data:  ClearURLs, Fast Forward, Cookie Auto Delete, HTTPS Everywhere, Decentralayes, Ugly Email (Privacy badge , but tends to block facebook api login in some websites)
-- <ins>Agenda & Mail</ins>: Google agenda, Gmail, -> create an app shortcut with brave, it will act like an app in windows, and activate the notifications. Make BRave the default apps in windows for mailto and agenda then go to brave://settings/handlers and add gmail and agenda.
+## 2- Utility Software
+- <ins> Browser</ins>: Brave or Edge or Firefox, Remember to change your sync settings to import your passwords, bookmarks...ect.
+- [browser_extensions.md](browser_extensions.md)
+- <ins> Agenda & Mail</ins>: Google agenda, Gmail, -> create an app shortcut with brave, it will act like an app in windows, and activate the notifications. Make BRave the default apps in windows for mailto and agenda then go to brave://settings/handlers and add gmail and agenda.
 - <ins> Desktop notifications from gmail </ins>: [Link](https://chrome.google.com/webstore/detail/checker-plus-for-gmail/oeopbcgkkoapgobdbedcemjljbihmemj)
 - <ins> Desktop notifications from Google calendar</ins> : [Link](https://chrome.google.com/webstore/detail/checker-plus-for-google-c/hkhggnncdpfibdhinjiegagmopldibha)
 - <ins> Antivirus</ins>: Windows defender or Kaspersky Cloud free
@@ -56,8 +53,7 @@ If you didn't save the key in your account, you need to do this before resetting
 - <ins> Google Drive</ins>: download it on windows and put the files and folder that you want to be automatically saved on your drive, you won't need to everytime open google drive in your browser and manually put your files there
 - <ins> Online Storage</ins>: Google Drive (15gb), Mega Drive (50GB) ...ect. Use these Drives to store non-personal Data! It's better to have an NAS or an external HDD to store your personal data.
 - <ins> Microsoft Office 2021</ins> Buy it or buy a retail key for 1$.
-
-- <ins> PDF editing</ins> Adobe acrobat(paied) or Sejda(free)(3 free tasks per hour): https://www.sejda.com/ (do not download the desktop app)
+- <ins> PDF editing</ins> Adobe acrobat(paid) or Sejda(free)(3 free tasks per hour): https://www.sejda.com/ (do not download the desktop app)
 - <ins> Windows Terminal </ins> Windows terminal works in every directory, right lick in any directory, and you can have a bash with that path
 - <ins> Teracopy </ins>
 - <ins> Notion </ins>
@@ -68,18 +64,18 @@ If you didn't save the key in your account, you need to do this before resetting
 ### Screen recorder :
 - ShareX: screen capturing and GIF recording (portable), use CTRL + print screen key
 - Integrated Screen recording of Windows:  press `windows key + G`
-- Screen Recording/ Streaming: OBS or Streamlabs
+- Screen Recording/ Streaming: OBS or Stream labs
 
 ### Browser websites
-- <ins>Netflix, Prime</ins>: Windows store and browser. Browser is better in terms of stability, lists, content and vpn use. On the other hand, Netfliw from the store app and Netfliw on Edge browser  can handle 7.1 and 4k streaming. To add windows apps downloaded from windows store in the taskbar or the desktop :Press Windows key + R then enter shell:appsfolder then drag and drop .
+- <ins> Netflix, Prime</ins> : Windows store and browser. Browser is better in terms of stability, lists, content and vpn use. On the other hand, Netfliw from the store app and Netfliw on Edge browser  can handle 7.1 and 4k streaming. To add windows apps downloaded from windows store in the taskbar or the desktop :Press Windows key + R then enter shell:appsfolder then drag and drop .
 - Configure some websites on your desktop and taskbar as shortcuts (Netflix, Google calendar, Gmail...ect)
 - <ins> Gmail and Google Calendar</ins> : you can configure dark mode ("Thèmes" , , choose "dark/sombre") and priority notifications (all new emails), signature.
 
 ## 3- Dev workflow
 ### 3.1 Dev software
 #### <ins>PyCharm or VScode or NeoVim</ins>:
-- I prefer to use PyCharm (a Pro version is free for students)
-- CAREFUL when creating a project, you should use the anaconda env (windows/WSL) and not installing a new python interpreter or using virtualenv
+- I prefer to use PyCharm (the Pro version is free for students)
+- CAREFUL when creating a project, you should use the anaconda env (windows/WSL) and not install a new python interpreter or using virtualenv
 - Sync pycharm settings : https://www.jetbrains.com/help/pycharm/sharing-your-ide-settings.html#IDE_settings_sync
 - [pycharm settings, tips & tricks](https://github.com/AmineDjeghri/Awesome-Windows11-WSL/blob/master/Pycharm_WSL_Anaconda.md)
 
@@ -87,8 +83,8 @@ If you didn't save the key in your account, you need to do this before resetting
 #### <ins>Sublime Text</ins> (Free):
 - Extremely lightweight (low-resource usage), but still keeps around some of the more advanced features you would expect out of a top text editor.
 - Install it before installing git bash (a software that adds linux and git commands to windows).
-- (recommanded) CheatSheet
-- (optionnal) Run from CLI: go to  `System Properties -> Advanced System Settings -> Advanced -> Environment Variables -> System variable -> path` and add `C:\Program Files\Sublime Text` to the PATH environment variable to make it accessible from the terminal. Close the windows terminal and open a new one and run this command `subl`, it should open Sublime Text.
+- (recommended) CheatSheet
+- (optional) Run from CLI: go to  `System Properties -> Advanced System Settings -> Advanced -> Environment Variables -> System variable -> path` and add `C:\Program Files\Sublime Text` to the PATH environment variable to make it accessible from the terminal. Close the windows terminal and open a new one and run this command `subl`, it should open Sublime Text.
 #### <ins>Windows Terminal</ins>
 - Always use Windows terminal/powershell instead of linux
 - You can update to powershell 7: Install it from Microsoft store. Close and then re-open your terminal window, Put powershell 7 as default.
@@ -108,13 +104,13 @@ Open file your_home_directory/.ssh/id_rsa.pub (example `C:\Users\AmineDjeghri\.s
 - [jupyter autocmplete](https://github.com/krassowski/jupyterlab-lsp#installation)
 
 
-### 3.2 Coding using Linux(WSL) inside Windows
+### 3.2 Coding using Linux (WSL) inside Windows
 Lot of libraries and codes are made for Linux. Hence, using WSL is the best choice. Do not code in both OS, use for example pycharm or vscode on windows with a conda environement installed on WSL. The best thing is to combine the power of Windows with WSL.
 
-The most amazing thing about windows latest version is WSL (WSL2.0 exactly). You can run Linux in Windows.
+The most amazing thing about a Windows latest version is WSL (WSL2.0 exactly). You can run Linux in Windows.
 It is fantastic. Virtualization overhead is not noticeable, full integration between guest and host os's, you can run binaries compiled for MS Windows from linux. Full development toolchain is available as WSLessentialy is linux VM in second incarnation. It supports snapshots and is portable. This made windows useful.
 - You can install packages directly in Ubuntu
-- You can easily navigate and communicate between ubuntu and windows as Ubuntu acts like a disk drive.
+- You can navigate and communicate between ubuntu and windows as Ubuntu acts like a disk drive.
 - You can install conda environment in ubuntu, use GPU, use pycharm on windows to connect to WSL conda env and more.
 
 
@@ -197,7 +193,7 @@ Follow this tutorial [customize linux_wsl terminal](../unix_workflow/README.md) 
 - Bing wallpaper: https://www.microsoft.com/en-us/bing/bing-wallpaper?SilentAuth=1&wa=wsignin1.0
 - Pin some folders and drivers, Recycle Bin in the file explorer. Fast browsing: right-click on the file explorer in the taskbar to show the shortcut to the pinned folders.
 - Add more Desktop icons (PC, Downloads...): Personalization->themes->desktop icon settings
-- WinAero Tweaker : customize the appearance and behavior of the operating system in a flexible way (context menu)
+- WinAero Tweaker: customize the appearance and behavior of the operating system in a flexible way (context menu)
 - TaskbarX [link] (https://chrisandriessen.nl/taskbarx), also hide Windows taskbar (right click on the taskbar -> taskbar settings-> hide in desktop mode)
 - Fences [link] (https://store.steampowered.com/app/607380/Fences/?l=french) doesn't need steam to autostartup
 - Hide the Windows taskbar (right-click on the taskbar -> taskbar settings). You can and make it centered and transparent with [TaskbarX]([https://chrisandriessen.nl/taskbarx)
