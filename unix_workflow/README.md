@@ -1,4 +1,4 @@
-# Auto Linux Setup
+# Linux / WSL2 (Ubuntu 22.04) Workflow
 ![WSL terminal](../resources/wsl_terminal.jpg)
 Welcome to the guide for setting up a powerful terminal & python environment on Linux/WSL.
 
