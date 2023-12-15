@@ -13,7 +13,7 @@ You can follow this repository to get a similar setup.
 3. [Dev Workflow](#3--dev-workflow)
    - [Dev Software](#31-dev-software) : pycharm, sublime text, windows terminal, docker desktop
    - [Coding using WSL/Linux](#32-coding-using-linux-wsl-inside-windows)
-      - [Install WSL](#321-install-wsl) 
+      - [Install WSL](#321-install-wsl)
       - [Linux/WSL Setup - terminal, shell, Miniconda, CUDA & More](#322-linuxwsl-setup---terminal-shell-miniconda-cuda--more)
       - [WSL2 Tips & Tricks](#323-wsl2-tips--tricks-)
       - [backup and restore WSL](#324-backup-and-restore-wsl)
@@ -71,16 +71,17 @@ If you didn't save the key in your account, you need to do this before resetting
 - <ins> Screenshot </ins> : ShareX (portable) - screen capturing with regions and GIF recording , use CTRL + print screen key `ctrl + print`
 - <ins> Streaming services </ins> : Netflix, Prime in Windows store and browser. Browser is better in terms of stability, lists, content and vpn use. On the other hand, Netflix from the store app and Netflix on Edge browser  can handle 7.1 and 4k streaming. To add windows apps downloaded from windows store in the taskbar or the desktop :Press Windows key + R then enter shell:appsfolder then drag and drop .
 - <ins> other apps </ins> :
-   - Privacy apps : O&O ShutUp 10: privacy control windows
-   - WinAero Tweaker : Customize context menu & other stuff
+   - Privacy apps: O&O ShutUp 10: privacy control windows
+   - WinAero Tweaker: Customize the Windows context menu & other stuff
    - DS4Windows: make playstation controllers work on PC: https://github.com/Ryochan7/DS4Windows/releases
-   - Hide the Windows taskbar (right-click on the taskbar -> taskbar settings-> taskbar behaviour (at the bottom) -> hide automatically the taskbar).
+   - Hide the Windows taskbar (right-click on the taskbar -> taskbar settings-> taskbar behavior (at the bottom) -> hide automatically the taskbar).
    - Pin some folders and drivers, Recycle Bin in the file explorer. Fast browsing: right-click on the file explorer in the taskbar to show the shortcut to the pinned folders.
-   - Auto lock screen after x minutes of inactivity : search for `screen saver` in windows and select the number of minutes before your computer auto locks itself.
+   - Auto lock screen after x minutes of inactivity: search for `screen saver` in windows and select the number of minutes before your computer auto locks itself.
 
 ### 2.2 UI/UX Software
 - Install power toys from the (Windows store)[https://apps.microsoft.com/detail/XP89DCGQ3K6VLD?hl]/ You can ready abut its [features](https://learn.microsoft.com/en-us/windows/powertoys/run#features)
   - I use it mainly for: Search (alt + space) for applications folders or files & Killing a process instead of using task manager.
+  - You can also access files and folders from the search bar with alt + space then paste the path
   - Open a selected application as administrator: Ctrl+Shift+Enter	(only applicable to applications)
   - OCR (⊞ + shift + T)
   - Color picker (⊞ + shift + C)
@@ -106,12 +107,11 @@ If you didn't save the key in your account, you need to do this before resetting
 - Always use Windows terminal. It contains all the terminals in one place (ubuntu, powershell, wsl, cmd...ect). You can right-click on any folder to open it.
 - Configure Windows Terminal UI
   - Download and install the [FiraCode font](https://github.com/ryanoasis/nerd-fonts/releases/download/v3.1.1/FiraCode.zip) on your primary operating system (Windows if you are using WSL).
-  - Copy my [settings.json](settings.json) for the Windows Terminal to the following location: `C:\Users\amine\AppData\Local\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\LocalState` (change the amine to your username).
+  - Copy my [settings.json](settings.json) for the Windows Terminal to the following location: `C:\Users\%UserProfile%\AppData\Local\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\LocalState` (the theme used is called night owl).
   - Alternatively, you can open the Windows Terminal and navigate to Settings -> Profiles (bottom left) -> default -> Additional Parameters -> Appearance -> Change the font to FiraCode, the opacity to 85% and the background color to night owl.
   - wget on Windows terminal: add it to your terminal: https://www.programmersought.com/article/90723524682/
 #### <ins>Other apps </ins>
-- <ins>ssh key</ins>: If you have WSL, you can generate an ssh key with `ssh-keygen -t rsa` (when prompted, enter an empty password if you want, key name can stay the same)
-Open file your_home_directory/.ssh/id_rsa.pub (example `C:\Users\AmineDjeghri\.ssh` with your favorite text editor to see the key.
+- <ins>ssh key</ins>: If you have WSL, you can generate an ssh key with `ssh-keygen -t rsa` (when prompted, enter an empty password).
 - <ins>Pycharm Jupyter Notebook</ins>: Use the one provided in Pycharm. It provides better autocomplete.
 - <ins>Free Cloud GPU </ins> Google Colab/Kaggle you can either put your git repositories inside Google Drive to use them in colab, or git clone inside colab.
 - <ins>Filezilla</ins>: for SFTP (work with a private key: add it in edit/connection/sftp or use pageant)
@@ -144,14 +144,14 @@ It is fantastic. Virtualization overhead is not noticeable, full integration bet
       - Running Windows terminal and choosing ubuntu in the terminal tab section.
       - If it's not there, make sure you have correctly installed WSL by searching wsl in your windows search bar & running it.
 - If you have Nvidia GPU & the nvidia driver is installed on Windows, you can run `nvidia-smi` in Linux. No need to install the nvidia Driver again in Linux.
- - Add systemd to wsl.conf if it's not there: run `sudo vim /etc/wsl.conf` then paste the following code:
+ - Add systemd to wsl.conf if it's not there: run `sudo vim /etc/wsl.conf` inside linux then paste the following code:
  ```
 [boot]
 systemd=true
  ```
  - Restart the terminal and run `systemctl list-unit-files --type=service` in WSL to see some processes running.
- - If you have an ssh key in windows, copy it to linux `home/.ssh` folder and use on the ssh file of linux : `chmod 600 ~/.ssh/id_rsa` and `chmod 600 ~/.ssh/id_rsa.pub`. If you don't have an SSH key, generate a new SSH key using : `ssh-keygen -t rsa` inside linux.
-
+ - If you don't have an SSH key, generate a new SSH key using : `ssh-keygen -t rsa` inside linux.
+ - If you have an ssh key in windows in `C:\Users\%UserProfile%\.ssh`, copy it (both keys) to linux `~/.ssh` folder or using Windows file explorer or power toys `\\wsl$\Ubuntu\home\%USERNAME%\.ssh` and change its rights using: `chmod 600 ~/.ssh/id_rsa` and `chmod 600 ~/.ssh/id_rsa.pub`.
 #### 3.2.2 Linux/WSL Setup - terminal, shell, Miniconda, CUDA & More:
 - [Linux Setup Guide](../unix_workflow/README.md): terminal & shell setup, automated script & a tutorial to install the main elements I use in Linux/WSL.
 - [Cuda & Pytorch installation inside conda](../unix_workflow/1_cuda_pytorch_install.md)
@@ -162,14 +162,13 @@ systemd=true
 #### 3.2.3 WSL2 Tips & Tricks :
 - Find WSL path : `\\wsl$\Ubuntu\home` or `\\wsl$\Ubuntu`  then ping it in Windows Explorer's sidebar.
 - You can use `wslpath` command to convert a Windows path to wsl path : `wslpath  'C:\Users\AmineDjeghri\Desktop\git\myproject'`
-- Copy your ssh key from windows to linux and use on the ssh file of linux : `chmod 600 ~/.ssh/id_rsa` and `chmod 600 ~/.ssh/id_rsa.pub`
 - Update packages:  `sudo apt update` then `sudo apt upgrade`
 - Disk usage: `df -h` look on the right column 'Mounted on'
 - Folder size for current directory: `du -h` , `du -h | sort -h`. For specifc directory : `du -h /folder`
 - wsl disk usage : `df -h /mnt/wslg/distro`
 - Unzip: `sudo apt install unzip`
 - Reclaim disk space :
-   - it requires docker Dashboard for WSL2, and activating 2 hyper V params in Control Panel.
+   - it requires docker Dashboard for WSL2, and 2 hyper V params in the Control Panel.
    -  Install this https://superuser.com/a/1307442/769637 install the Hyper-V Platform | Hyper-V Services part, too + restart)
    - in Administrator Mode : `wsl --shutdown` then `cd 'C:\Users\Amine Djeghri\AppData\Local\Packages\CanonicalGroupLimited.Ubuntu_79rhkp1fndgsc\LocalState'` then `optimize-vhd -Path .\ext4.vhdx -Mode full`
    - for more information, check this: these https://askubuntu.com/a/1380274 + https://github.com/microsoft/WSL/issues/4699 +
