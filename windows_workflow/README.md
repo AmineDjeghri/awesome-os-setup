@@ -55,8 +55,7 @@ If you didn't save the key in your account, you need to do this before resetting
 - <ins> Google Drive</ins>: download it on windows and put the files and folder that you want to be automatically saved on your drive, you won't need to everytime open google drive in your browser and manually put your files there
 - <ins> Online Storage</ins>: Google Drive (15gb), Mega Drive (50GB) ...ect. Use these Drives to store non-personal Data! It's better to have an NAS or an external HDD to store your personal data.
 - <ins> Microsoft Office 2021</ins> Buy it or buy a retail key for 1$.
-- <ins> PDF editing</ins> Adobe acrobat(paid) or Sejda(free)(3 free tasks per hour): https://www.sejda.com/ (do not download the desktop app)
-- <ins> Windows Terminal </ins> Windows terminal works in every directory, right lick in any directory, and you can have a bash with that path
+- <ins> PDF editing</ins> Adobe acrobat (paid) or Sejda(free)(3 free tasks per hour): https://www.sejda.com/ (do not download the desktop app)
 - <ins> Tera copy </ins>
 - <ins> Notion </ins>
 - <ins> AnyDesk</ins> (portable + enable password)
@@ -95,7 +94,7 @@ If you didn't save the key in your account, you need to do this before resetting
 - (recommended) CheatSheet
 - (optional) Run from CLI: add it to your path and run `subl` to open a file.
 #### <ins>Windows Terminal</ins>
-- Always use Windows terminal. It contains all the terminals in one place (ubuntu, powershell, wsl, cmd...ect)
+- Always use Windows terminal. It contains all the terminals in one place (ubuntu, powershell, wsl, cmd...ect). You can right-click on any folder to open it.
 - Configure Windows Terminal UI
   - Download and install the [FiraCode font](https://github.com/ryanoasis/nerd-fonts/releases/download/v3.1.1/FiraCode.zip) on your primary operating system (Windows if you are using WSL).
   - Copy my [settings.json](settings.json) for the Windows Terminal to the following location: `C:\Users\amine\AppData\Local\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\LocalState` (change the amine to your username).
