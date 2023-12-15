@@ -1,6 +1,9 @@
 # Awesome-Windows11-WSL-Linux
-![windows desktop terminal](resources/windows-desktop-terminal_1.png)
-![WSL terminal](resources/wsl_terminal.jpg)
+![Windows WSL Terminal](../resources/windows_wsl_terminal.png)
+![Windows WSL Terminal with taskbar](../resources/windows_wsl_terminal_desktop.png)
+
+The image you are looking at is a screenshot of a WSL Ubuntu terminal in Windows 11. The top bar is an app called GlazeWM.
+You can follow this repository to get a similar setup.
 
 ## Content of repository
 - Linux (Ubuntu 22.04): [unix_workflow/README](unix_workflow/README.md).
