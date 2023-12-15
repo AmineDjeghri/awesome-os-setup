@@ -87,7 +87,7 @@ If you didn't save the key in your account, you need to do this before resetting
   - Color picker (⊞ + shift + C)
   - Locksmith (right-click on a file or folder to see which process is using it)
 - GlazeWM: GlazeWM is a tiling window manager for Windows inspired by i3 and Polybar.
-  - Download GlazeWM[Link](https://github.com/glazerdesktop/GlazeWM/releases)
+  - Download [GlazeWM](https://github.com/glazerdesktop/GlazeWM/releases)
   - Download my config file #TODO and put it in `path`
 
 ## 3- Dev workflow
