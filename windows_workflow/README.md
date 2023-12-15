@@ -8,13 +8,16 @@ You can follow this repository to get a similar setup.
 ## Table of Contents
 1. [Windows Configuration](#1--windows-configuration)
 2. [Utility Software](#2--software)
-3. [Dev Workflow](#3--dev-workflow)
-   - [Dev Software](#31-dev-software)
+   -  Mainstream Software : apps, browser extensions...
+   -  UI/UX Software : powertoys & glazvm
+4. [Dev Workflow](#3--dev-workflow)
+   - [Dev Software](#31-dev-software) : pycharm, sublime text, windows terminal, docker desktop
    - [Coding using WSL/Linux](#32-coding-using-linux-wsl-inside-windows)
-   - [Linux/WSL Setup, Miniconda, CUDA & More](#33-linuxwsl-setup-miniconda-cuda--more)
-   - [WSL2 Tips & Tricks](#34-wsl2-tips--tricks-)
-4. [UI/UX Customization](#4--ux-customization)
-
+      - [Install WSL](#3) 
+      - [Linux/WSL Setup, Miniconda, CUDA & More](#33-linuxwsl-setup-miniconda-cuda--more)
+      - [WSL2 Tips & Tricks](#34-wsl2-tips--tricks-)
+      - [backup and restore WSL]
+      - [Uninstall WSL]
 ## 1- Windows configuration
 
 - The First thing to do is to connect your windows to your microsoft account: Windows-> account -> connect
@@ -38,12 +41,14 @@ If you didn't save the key in your account, you need to do this before resetting
 - Activate it on the new computer using `slmgr /ipk xxxxx-xxxxx-xxxxx-xxxxx-xxxxx`
 
 ## 2- Software
-### 2.1 Utility Software
-- <ins> Browser</ins>: Brave or Edge or Firefox, Remember to change your sync settings to import your passwords, bookmarks...ect.
-- [browser_extensions.md](browser_extensions.md)
-- <ins> Agenda & Mail</ins>: Google Calendar, Gmail, -> create an app shortcut with brave & add them to the taskbar it will act like an app in windows, and activate the notifications. Make Brave the default apps in windows for mailto and agenda then go to brave://settings/handlers and add gmail and agenda. 
-- <ins> Desktop notifications from Gmail </ins>: [Link](https://chrome.google.com/webstore/detail/checker-plus-for-gmail/oeopbcgkkoapgobdbedcemjljbihmemj)
-- <ins> Desktop notifications from Google calendar</ins> : [Link](https://chrome.google.com/webstore/detail/checker-plus-for-google-c/hkhggnncdpfibdhinjiegagmopldibha)
+### 2.1 Mainstream Software
+- <ins> Browser</ins>: I recommand Brave (or Edge or Firefox).  Remember to change your sync settings to import your passwords, bookmarks...ect.
+- [browser_extensions.md](browser_extensions.md) : useful extentions for productivity & security
+- <ins> Agenda & Mail</ins>: Google Calendar, Gmail
+   - create an app shortcut with brave & add them to the taskbar it will act like an app in windows, and activate the notifications.
+   - You can change the theme and prioritize stuff like notifications (all new emails), signature...etc.
+   - Download their desktop notifications extenstions :[Desktop notifications for Gmail ](https://chrome.google.com/webstore/detail/checker-plus-for-gmail/oeopbcgkkoapgobdbedcemjljbihmemj) & [Desktop notifications for Google calendar](https://chrome.google.com/webstore/detail/checker-plus-for-google-c/hkhggnncdpfibdhinjiegagmopldibha)
+   - Make Brave the default apps in windows for mailto and agenda (Windows search bar -> type in `Default apps` then add brave to 'mail' & 'agenda'. Go to brave://settings/handlers and add gmail and agenda. Open now the gmail website and accept brave as the default app.
 - <ins> Antivirus</ins>: Windows defender or Kaspersky Cloud free
 - <ins> Powershell 7</ins>: Install Powershell 7 [link](https://learn.microsoft.com/en-us/powershell/scripting/install/installing-powershell-on-windows?WT.mc_id=THOMASMAURER-blog-thmaure&view=powershell-7.3&viewFallbackFrom=powershell-7). Change the default terminal in Windows Terminal, and activate the "run always as administrator in the default profile"
 - <ins> Others</ins>: CCleaner, HWInfo (portable)
@@ -65,7 +70,8 @@ If you didn't save the key in your account, you need to do this before resetting
 - <ins> Screenshot </ins> : ShareX (portable) - screen capturing with regions and GIF recording , use CTRL + print screen key `ctrl + print`
 - <ins> Streaming services </ins>
   - <ins> Netflix, Prime</ins> : Windows store and browser. Browser is better in terms of stability, lists, content and vpn use. On the other hand, Netflix from the store app and Netflix on Edge browser  can handle 7.1 and 4k streaming. To add windows apps downloaded from windows store in the taskbar or the desktop :Press Windows key + R then enter shell:appsfolder then drag and drop .
-  - <ins> Gmail and Google Calendar</ins> : you can configure dark mode ("Thèmes" , , choose "dark/sombre") and priority notifications (all new emails), signature.
+- Bing wallpaper: https://www.microsoft.com/en-us/bing/bing-wallpaper?SilentAuth=1&wa=wsignin1.0
+
 ### 2.2 UI/UX Software
 - Install power toys from the (Windows store)[https://apps.microsoft.com/detail/XP89DCGQ3K6VLD?hl]/ You can ready abut its [features](https://learn.microsoft.com/en-us/windows/powertoys/run#features)
   - I use it mainly for: Search (alt + space) for applications folders or files & Killing a process instead of using task manager.
@@ -85,7 +91,7 @@ If you didn't save the key in your account, you need to do this before resetting
 - Sync pycharm settings : https://www.jetbrains.com/help/pycharm/sharing-your-ide-settings.html#IDE_settings_sync
 - [pycharm settings, tips & tricks](https://github.com/AmineDjeghri/Awesome-Windows11-WSL/blob/master/Pycharm_WSL_Anaconda.md)
 
-#### <ins>Docker Desktop</ins> specially with WSL: you can start, stop, delete containers easily, edit file right inside the app without the need of a terminal.
+#### <ins>Docker Desktop</ins> requires WSL (see the WSL section). You can start, stop, delete containers easily, access & edit files right inside the container without the need of a terminal.
 #### <ins>Sublime Text</ins> (Free):
 - Extremely lightweight.
 - (recommended) CheatSheet
@@ -99,6 +105,11 @@ If you didn't save the key in your account, you need to do this before resetting
   - wget on Windows terminal: add it to your terminal: https://www.programmersought.com/article/90723524682/
 
 #### other tools
+- Privacy apps : O&O ShutUp 10: privacy control windows
+- Customize context menu & other stuff :WinAero Tweaker
+- Hide the Windows taskbar (right-click on the taskbar -> taskbar settings-> taskbar behaviour (at the bottom) -> hide automatically the taskbar).
+- DS4Windows: make playstation controllers work on PC: https://github.com/Ryochan7/DS4Windows/releases
+- Pin some folders and drivers, Recycle Bin in the file explorer. Fast browsing: right-click on the file explorer in the taskbar to show the shortcut to the pinned folders.
 - <ins>ssh key</ins>: If you have WSL, you can generate an ssh key with `ssh-keygen -t rsa` (when prompted, enter an empty password if you want, key name can stay the same)
 Open file your_home_directory/.ssh/id_rsa.pub (example `C:\Users\AmineDjeghri\.ssh` with your favorite text editor to see the key.
 - <ins>Pycharm Jupyter Notebook</ins>: Use the one provided in Pycharm. It provides better autocomplete.
@@ -122,7 +133,7 @@ It is fantastic. Virtualization overhead is not noticeable, full integration bet
 - You can install conda environment in ubuntu, use GPU, use pycharm on windows to connect to WSL conda env and more.
 
 
-#### Install WSL:
+#### 3.2.1 Install WSL:
  - Install WSL ``` wsl --install ```
  - Restart your computer
  - When installing WSL, it comes with Ubuntu (you can always install other distibutions from the microsoft store)
@@ -141,14 +152,14 @@ systemd=true
  - Restart the terminal and run `systemctl list-unit-files --type=service` in WSL to see some processes running.
  - If you have an ssh key in windows, copy it to linux `home/.ssh` folder and use on the ssh file of linux : `chmod 600 ~/.ssh/id_rsa` and `chmod 600 ~/.ssh/id_rsa.pub`. If you don't have an SSH key, generate a new SSH key using : `ssh-keygen -t rsa` inside linux.
 
-### 3.3 Linux/WSL Setup, Miniconda, CUDA & More:
-- [Linux Setup Guide](../unix_workflow/README.md): contains an automated script & a tutorial to install the main elements I use in Linux/WSL.
+#### 3.2.2 Linux/WSL Setup - terminal, shell, Miniconda, CUDA & More:
+- [Linux Setup Guide](../unix_workflow/README.md): terminal & shell setup, automated script & a tutorial to install the main elements I use in Linux/WSL.
 - [Cuda & Pytorch installation inside conda](../unix_workflow/1_cuda_pytorch_install.md)
 - [Pycharm settings, tips & tricks](../unix_workflow/2_pycharm_wsl_conda.md)
 - [Python package example](../unix_workflow/package_example)
 
 
-### 3.4 WSL2 Tips & Tricks :
+#### 3.2.3 WSL2 Tips & Tricks :
 - Find WSL path : `\\wsl$\Ubuntu\home` or `\\wsl$\Ubuntu`  then ping it in Windows Explorer's sidebar.
 - You can use `wslpath` command to convert a Windows path to wsl path : `wslpath  'C:\Users\AmineDjeghri\Desktop\git\myproject'`
 - Copy your ssh key from windows to linux and use on the ssh file of linux : `chmod 600 ~/.ssh/id_rsa` and `chmod 600 ~/.ssh/id_rsa.pub`
@@ -167,44 +178,29 @@ systemd=true
 wsl --list
 wsl --setdefault <name_of_your_distro>
 ```
-#### configure WSL terminal :
  - You can enter ubuntu with different ways: clicking on Shortcut (Orange), or running 'wsl' in windows terminal, or running 'ubuntu' in windows terminal, or selecting the right profile in the tab in windows terminal.
  - To open Ubuntu terminal from current location: go to Windows terminal -> parameters -> profiles -> ubuntu -> command line (under name) and change it to `ubuntu run`.
  - Now, go to desktop and right-click to open a Windows terminal, run 'wsl'; you should see that ubuntu started from the current location.
  - (pycharm) Use WSL/ubuntu as the default terminal in pycharm: `settings -> tools -> terminal`  and put in a shell path: `ubuntu run`
  - (pycharm) Add WSL conda interpreter in Pycharm (add interpreter -> WSL -> conda) and select the global conda : `/home/amine/miniconda3/bin/conda`. Then click on load environments and it will automatically detect all the conda envs.
 
-#### backup and restore
+#### 3.2.4 backup and restore WSL
 You can export wsl image after finishing all the steps to save it in case you move to a new computer :
    - wsl --terminate ubuntu
    - wsl --shutdown
    - wsl --export Ubuntu E:\ubuntu.tar
    - [source 1](https://www.xda-developers.com/how-back-up-restore-wsl/)
 
-#### uninstall WSL:
+#### 3.2.5 Uninstall WSL:
 Uninstall all distributions & WSL from the control panel & open Windows Features, then turn on (check) Windows Subsystem for Linux. Restart your computer.
 
-
-
-
 ## 4.3 More apps (deprecated)
-
--
-![windows desktop](../resources/windows-desktop.png)
 - Show Files extensions: If you don’t see file name extensions when you view files in File Explorer: In the search box on the taskbar, type file explorer, and in the search results, select File Explorer. In File Explorer under View, in the Show/hide group, select the File name extensions check box.
 - Install rainmeter
 - Install https://github.com/mpurses/Sonder/releases
 - Download this wallpaper https://raw.githubusercontent.com/mpurses/Sonder/master/Skins/Sonder/Wallpapers/Trees-22.jpg
-- O&O ShutUp 10: privacy control windows
-- DS4Windows: make playstation controllers work on PC: https://github.com/Ryochan7/DS4Windows/releases
-- Bing wallpaper: https://www.microsoft.com/en-us/bing/bing-wallpaper?SilentAuth=1&wa=wsignin1.0
-- Pin some folders and drivers, Recycle Bin in the file explorer. Fast browsing: right-click on the file explorer in the taskbar to show the shortcut to the pinned folders.
-- Add more Desktop icons (PC, Downloads...): Personalization->themes->desktop icon settings
-- WinAero Tweaker: customize the appearance and behavior of the operating system in a flexible way (context menu)
-- TaskbarX [link] (https://chrisandriessen.nl/taskbarx), also hide Windows taskbar (right click on the taskbar -> taskbar settings-> hide in desktop mode)
-- Fences [link] (https://store.steampowered.com/app/607380/Fences/?l=french) doesn't need steam to autostartup
-- Hide the Windows taskbar (right-click on the taskbar -> taskbar settings).
 
+- Add more Desktop icons (PC, Downloads...): Personalization->themes->desktop icon settings
 
 #### other customizations:
 - You can convert a website to an application, for example, Google Agenda/ Netflix in Edge/Brave/Chrome, go to At the top right: More -> More Tools -> Create shortcut and check window mode, it will run like an app in your Windows desktop
