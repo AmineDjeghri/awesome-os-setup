@@ -8,16 +8,16 @@ You can follow this repository to get a similar setup.
 ## Table of Contents
 1. [Windows Configuration](#1--windows-configuration)
 2. [Utility Software](#2--software)
-   -  Mainstream Software : apps, browser extensions...
-   -  UI/UX Software : powertoys & glazvm
-4. [Dev Workflow](#3--dev-workflow)
+   -  [Mainstream Software](#21-mainstream-software) : cool apps, browser extensions...
+   -  [UI/UX Software](#22-uiux-software) : powertoys & glazvm
+3. [Dev Workflow](#3--dev-workflow)
    - [Dev Software](#31-dev-software) : pycharm, sublime text, windows terminal, docker desktop
    - [Coding using WSL/Linux](#32-coding-using-linux-wsl-inside-windows)
-      - [Install WSL](#3) 
-      - [Linux/WSL Setup, Miniconda, CUDA & More](#33-linuxwsl-setup-miniconda-cuda--more)
-      - [WSL2 Tips & Tricks](#34-wsl2-tips--tricks-)
-      - [backup and restore WSL]
-      - [Uninstall WSL]
+      - [Install WSL](#321-install-wsl) 
+      - [Linux/WSL Setup - terminal, shell, Miniconda, CUDA & More](#322-linuxwsl-setup---terminal-shell-miniconda-cuda--more)
+      - [WSL2 Tips & Tricks](#323-wsl2-tips--tricks-)
+      - [backup and restore WSL](#324-backup-and-restore-wsl)
+      - [Uninstall WSL](#325-uninstall-wsl)
 ## 1- Windows configuration
 
 - The First thing to do is to connect your windows to your microsoft account: Windows-> account -> connect
@@ -63,14 +63,19 @@ If you didn't save the key in your account, you need to do this before resetting
 - <ins> PDF editing</ins> Adobe acrobat (paid) or Sejda(free)(3 free tasks per hour): https://www.sejda.com/ (do not download the desktop app)
 - <ins> Tera copy </ins>
 - <ins> Notion </ins>
-- <ins> AnyDesk</ins> (portable + enable password)
+- <ins> AnyDesk</ins> (portable + enable password) : access your computer from anywhere
+- Bing wallpaper: https://www.microsoft.com/en-us/bing/bing-wallpaper?SilentAuth=1&wa=wsignin1.0
 - <ins> Audio </ins> : ear trumpet
 - <ins> Nvidia Driver </ins> : Geforce Experience (no need for cuda if you code using WSL)
 - <ins> Screen recording </ins> : Screen recorder: OBS or native windows screen recorder `⊞ + G` or `⊞ + alt + R`
 - <ins> Screenshot </ins> : ShareX (portable) - screen capturing with regions and GIF recording , use CTRL + print screen key `ctrl + print`
-- <ins> Streaming services </ins>
-  - <ins> Netflix, Prime</ins> : Windows store and browser. Browser is better in terms of stability, lists, content and vpn use. On the other hand, Netflix from the store app and Netflix on Edge browser  can handle 7.1 and 4k streaming. To add windows apps downloaded from windows store in the taskbar or the desktop :Press Windows key + R then enter shell:appsfolder then drag and drop .
-- Bing wallpaper: https://www.microsoft.com/en-us/bing/bing-wallpaper?SilentAuth=1&wa=wsignin1.0
+- <ins> Streaming services </ins> : Netflix, Prime in Windows store and browser. Browser is better in terms of stability, lists, content and vpn use. On the other hand, Netflix from the store app and Netflix on Edge browser  can handle 7.1 and 4k streaming. To add windows apps downloaded from windows store in the taskbar or the desktop :Press Windows key + R then enter shell:appsfolder then drag and drop .
+- <ins> other apps </ins> :
+   - Privacy apps : O&O ShutUp 10: privacy control windows
+   - WinAero Tweaker : Customize context menu & other stuff
+   - DS4Windows: make playstation controllers work on PC: https://github.com/Ryochan7/DS4Windows/releases
+   - Hide the Windows taskbar (right-click on the taskbar -> taskbar settings-> taskbar behaviour (at the bottom) -> hide automatically the taskbar).
+   - Pin some folders and drivers, Recycle Bin in the file explorer. Fast browsing: right-click on the file explorer in the taskbar to show the shortcut to the pinned folders.
 
 ### 2.2 UI/UX Software
 - Install power toys from the (Windows store)[https://apps.microsoft.com/detail/XP89DCGQ3K6VLD?hl]/ You can ready abut its [features](https://learn.microsoft.com/en-us/windows/powertoys/run#features)
@@ -103,13 +108,7 @@ If you didn't save the key in your account, you need to do this before resetting
   - Copy my [settings.json](settings.json) for the Windows Terminal to the following location: `C:\Users\amine\AppData\Local\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\LocalState` (change the amine to your username).
   - Alternatively, you can open the Windows Terminal and navigate to Settings -> Profiles (bottom left) -> default -> Additional Parameters -> Appearance -> Change the font to FiraCode, the opacity to 85% and the background color to night owl.
   - wget on Windows terminal: add it to your terminal: https://www.programmersought.com/article/90723524682/
-
-#### other tools
-- Privacy apps : O&O ShutUp 10: privacy control windows
-- Customize context menu & other stuff :WinAero Tweaker
-- Hide the Windows taskbar (right-click on the taskbar -> taskbar settings-> taskbar behaviour (at the bottom) -> hide automatically the taskbar).
-- DS4Windows: make playstation controllers work on PC: https://github.com/Ryochan7/DS4Windows/releases
-- Pin some folders and drivers, Recycle Bin in the file explorer. Fast browsing: right-click on the file explorer in the taskbar to show the shortcut to the pinned folders.
+#### <ins>Other apps </ins>
 - <ins>ssh key</ins>: If you have WSL, you can generate an ssh key with `ssh-keygen -t rsa` (when prompted, enter an empty password if you want, key name can stay the same)
 Open file your_home_directory/.ssh/id_rsa.pub (example `C:\Users\AmineDjeghri\.ssh` with your favorite text editor to see the key.
 - <ins>Pycharm Jupyter Notebook</ins>: Use the one provided in Pycharm. It provides better autocomplete.
