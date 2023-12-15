@@ -76,6 +76,7 @@ If you didn't save the key in your account, you need to do this before resetting
    - DS4Windows: make playstation controllers work on PC: https://github.com/Ryochan7/DS4Windows/releases
    - Hide the Windows taskbar (right-click on the taskbar -> taskbar settings-> taskbar behaviour (at the bottom) -> hide automatically the taskbar).
    - Pin some folders and drivers, Recycle Bin in the file explorer. Fast browsing: right-click on the file explorer in the taskbar to show the shortcut to the pinned folders.
+   - Auto lock screen after x minutes of inactivity : search for `screen saver` in windows and select the number of minutes before your computer auto locks itself.
 
 ### 2.2 UI/UX Software
 - Install power toys from the (Windows store)[https://apps.microsoft.com/detail/XP89DCGQ3K6VLD?hl]/ You can ready abut its [features](https://learn.microsoft.com/en-us/windows/powertoys/run#features)
