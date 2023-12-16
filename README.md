@@ -7,7 +7,7 @@ You can follow this repository to get a similar setup.
 
 ## Content of repository
 - Linux (Ubuntu 22.04): [unix_workflow/README](unix_workflow/README.md).
-  - can be used for Linux and WSL2 on Windows 11.
+  - can be used for Linux and WSL2.
 - Windows 11 & WSL2: [windows_workflow/README](windows_workflow/README.md).
    - Valuable tips for enhancing your Windows user experience, with a focus on creating a productive environment incorporating WSL 2 (Linux).
    - Windows apps to enhance your productivity.
