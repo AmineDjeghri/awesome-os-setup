@@ -22,14 +22,12 @@ You can follow this repository to get a similar setup.
       * [2.3.4. <ins>Sublime Text</ins> (Free):](#234-inssublime-textins-free)
       * [2.3.5. <ins>Other apps </ins>](#235-insother-apps-ins)
   * [3. Coding using Linux (WSL) inside Windows](#3-coding-using-linux-wsl-inside-windows)
-      * [3.1. Install WSL:](#31-install-wsl)
-    * [Linux/WSL Setup - terminal, shell, Miniconda, CUDA & More:](#linuxwsl-setup---terminal-shell-miniconda-cuda--more)
-      * [3.2.3 WSL2 Tips & Tricks :](#323-wsl2-tips--tricks-)
-      * [3.2.4 backup and restore WSL](#324-backup-and-restore-wsl)
-      * [3.2.5 Uninstall WSL:](#325-uninstall-wsl)
-  * [4.3 More apps (deprecated)](#43-more-apps-deprecated)
-      * [other customizations:](#other-customizations)
-    * [Wifi & Router 5ghz:](#wifi--router-5ghz)
+    * [3.1. Install WSL:](#31-install-wsl)
+    * [3.2. Linux/WSL Setup - terminal, shell, Miniconda, CUDA & More:](#32-linuxwsl-setup---terminal-shell-miniconda-cuda--more)
+    * [3.3. WSL2 Tips & Tricks :](#33-wsl2-tips--tricks-)
+    * [3.4. backup and restore WSL](#34-backup-and-restore-wsl)
+    * [3.5. Uninstall WSL:](#35-uninstall-wsl)
+  * [4. More (deprecated)](#4-more-deprecated)
 <!-- TOC -->
 
 ## 1. Windows account & configuration
@@ -148,7 +146,7 @@ The most amazing thing about WSL (WSL2.0 exactly) is : You can run Linux in Wind
 - You can install conda environment in ubuntu, use GPU, use pycharm on windows to connect to WSL conda env and more.
 - Do not code in both OS, use for example pycharm or vscode on windows with a conda environment installed on WSL. The best thing is to combine the power of Windows with WSL.
 
-#### 3.1. Install WSL:
+### 3.1. Install WSL:
  - Install WSL ``` wsl --install ```
  - Restart your computer
  - When installing WSL, it comes with Ubuntu (you can always install other distibutions from the microsoft store)
@@ -167,14 +165,14 @@ systemd=true
  - Restart the terminal and run `systemctl list-unit-files --type=service` in WSL to see some processes running.
  - If you don't have an SSH key, generate a new SSH key using : `ssh-keygen -t rsa` inside linux.
  - If you have an ssh key in windows in `C:\Users\%UserProfile%\.ssh`, copy it (both keys) to linux `~/.ssh` folder or using Windows file explorer or power toys `\\wsl$\Ubuntu\home\%USERNAME%\.ssh` and change its rights using: `chmod 600 ~/.ssh/id_rsa` and `chmod 600 ~/.ssh/id_rsa.pub`.
-### Linux/WSL Setup - terminal, shell, Miniconda, CUDA & More:
+### 3.2. Linux/WSL Setup - terminal, shell, Miniconda, CUDA & More:
 - [Linux Setup Guide](../unix_workflow/README.md): terminal & shell setup, automated script & a tutorial to install the main elements I use in Linux/WSL.
 - [Cuda & Pytorch installation inside conda](../unix_workflow/1_cuda_pytorch_install.md)
 - [Pycharm settings, tips & tricks](../unix_workflow/2_pycharm_wsl_conda.md)
 - [Python package example](../unix_workflow/package_example)
 
 
-#### 3.2.3 WSL2 Tips & Tricks :
+### 3.3. WSL2 Tips & Tricks :
 - Find WSL path : `\\wsl$\Ubuntu\home` or `\\wsl$\Ubuntu`  then ping it in Windows Explorer's sidebar.
 - You can use `wslpath` command to convert a Windows path to wsl path : `wslpath  'C:\Users\AmineDjeghri\Desktop\git\myproject'`
 - Update packages:  `sudo apt update` then `sudo apt upgrade`
@@ -198,17 +196,17 @@ wsl --setdefault <name_of_your_distro>
  - (pycharm) Use WSL/ubuntu as the default terminal in pycharm: `settings -> tools -> terminal`  and put in a shell path: `ubuntu run`
  - (pycharm) Add WSL conda interpreter in Pycharm (add interpreter -> WSL -> conda) and select the global conda : `/home/amine/miniconda3/bin/conda`. Then click on load environments and it will automatically detect all the conda envs.
 
-#### 3.2.4 backup and restore WSL
+### 3.4. backup and restore WSL
 You can export wsl image after finishing all the steps to save it in case you move to a new computer :
    - wsl --terminate ubuntu
    - wsl --shutdown
    - wsl --export Ubuntu E:\ubuntu.tar
    - [source 1](https://www.xda-developers.com/how-back-up-restore-wsl/)
 
-#### 3.2.5 Uninstall WSL:
+### 3.5. Uninstall WSL:
 Uninstall all distributions & WSL from the control panel & open Windows Features, then turn on (check) Windows Subsystem for Linux. Restart your computer.
 
-## 4.3 More apps (deprecated)
+## 4. More (deprecated)
 - Show Files extensions: If you don’t see file name extensions when you view files in File Explorer: In the search box on the taskbar, type file explorer, and in the search results, select File Explorer. In File Explorer under View, in the Show/hide group, select the File name extensions check box.
 - Install rainmeter
 - Install https://github.com/mpurses/Sonder/releases
@@ -216,7 +214,6 @@ Uninstall all distributions & WSL from the control panel & open Windows Features
 
 - Add more Desktop icons (PC, Downloads...): Personalization->themes->desktop icon settings
 
-#### other customizations:
 - You can convert a website to an application, for example, Google Agenda/ Netflix in Edge/Brave/Chrome, go to At the top right: More -> More Tools -> Create shortcut and check window mode, it will run like an app in your Windows desktop
 ( I took the example of mattermost because there is no free Google Agenda app in windows)
 - Remove unnecessary programs, unnecessary icons from the start menu and add others like Google Maps, meteo calendar
@@ -230,9 +227,9 @@ Uninstall all distributions & WSL from the control panel & open Windows Features
  - You can change your power management options (when windows will be put to sleep, what happens when you close your laptop. Ect), performance vs normal usage.
  - If you consider buying a computer with a GPU for Deep Learning, choose a computer with an NVIDIA GPU that supports CUDA (preferably > RTX 2000 series).
 
-### Wifi & Router 5ghz:
-- Deactivate WPS
-- Make your Wi-Fi invisible,
-- Choose 5ghz over 2.4ghz: if your device is connected to a Wi-Fi, and it keeps switching between 5ghz and 2.4ghz do the following:
-- If it's your Wi-Fi: split your Wi-Fi into 2 access points, one for 5Ghz and the other for 2.4Ghz. After that make your PC connect to the 5Ghz one only
-- If it's not your Wi-Fi (hotel/work Wi-Fi) and you have an ethernet port, you can always plug a router (example, HONOR ROUTER 3 WI-FI 6) and have your own private network. You can split the Wi-Fi into 2 access points like I mentioned it in the section above.
+- Wifi & Router 5ghz:
+  - Deactivate WPS
+  - Make your Wi-Fi invisible,
+  - Choose 5ghz over 2.4ghz: if your device is connected to a Wi-Fi, and it keeps switching between 5ghz and 2.4ghz do the following:
+  - If it's your Wi-Fi: split your Wi-Fi into 2 access points, one for 5Ghz and the other for 2.4Ghz. After that make your PC connect to the 5Ghz one only
+  - If it's not your Wi-Fi (hotel/work Wi-Fi) and you have an ethernet port, you can always plug a router (example, HONOR ROUTER 3 WI-FI 6) and have your own private network. You can split the Wi-Fi into 2 access points like I mentioned it in the section above.
