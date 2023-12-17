@@ -30,7 +30,7 @@ While it's particularly useful for Python developers, feel free to customize it 
 
 ### 1.1. Terminal customization
 - Download and install the [Firacode font](https://github.com/ryanoasis/nerd-fonts/releases/download/v3.1.1/FiraCode.zip) on your primary operating system (Windows if you are using WSL).
-- Configure your terminal to utilize the newly installed font. For Windows, check this [link](README.md#23-dev-software--pycharm-sublime-text-windows-terminal-docker-desktop). For Linux ##TODO.
+- Configure your terminal to utilize the newly installed font. For Windows, check this [link](../windows_workflow/README.md#232-inswindows-terminalins). For Linux ##TODO.
 ### 1.2. Run the script
 - Run this command to install customize the shell: oh-my-zsh, pl10k theme, and install miniconda & cuda (if you have a GPU) automatically:
 ```bash
