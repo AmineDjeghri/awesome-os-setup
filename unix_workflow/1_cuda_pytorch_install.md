@@ -10,11 +10,11 @@ Installing CUDA inside a Conda environment instead of globally on your computer 
 
 
 ## Summary
-1. [Install the Nvidia driver](#1-install-the-nvidia-driver.)
+1. [Install the Nvidia driver](#1-install-the-nvidia-driver)
 
-2. [Recommended Option: Installing CUDA Inside a Conda Environment](#2-recommended-option-installing-cuda-inside-a-conda-environment.)
-    * [Automatic installation](#21-automatic-installation-.)
-    * [Manual installation ](#22-manual-installation.)
+2. [Recommended Option: Installing CUDA Inside a Conda Environment](#2-recommended-option-installing-cuda-inside-a-conda-environment)
+    * [Automatic installation](#2-1-automatic-installation)
+    * [Manual installation ](#2-2-manual-installation)
 
 
 
