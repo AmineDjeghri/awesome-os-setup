@@ -1,6 +1,5 @@
 # Awesome-Windows11-WSL-Linux
-<!---![Windows WSL Terminal](resources/windows_wsl_terminal.png)-->
-![Windows WSL Terminal with taskbar](resources/windows_wsl_terminal_taskbar.png)
+![Windows WSL Terminal with taskbar](images/windows_wsl_terminal_taskbar.png)
 
 The image you are looking at is a screenshot of a WSL Ubuntu terminal in Windows 11. The top bar is an app called GlazeWM.
 You can follow this repository to get a similar setup.
@@ -32,7 +31,7 @@ You can follow this repository to get a similar setup.
 - (+) Well-suited for coding with Windows Subsystem for Linux (WSL) and no need for dual boot.
 - (-) UI is not smooth and responsive compared to macOS & Linux
 
-Within the domain of development, Unix-based systems such as Linux and macOS frequently garner attention. Nevertheless, the integration of WSL allows smooth coding alongside the utilization of Adobe and Microsoft products that may lack support on Linux. This flexibility, coupled with the ability to handle resource-intensive games beyond MacOS capabilities, positions Windows-WSL as an enticing platform, ensuring a well-rounded computing experience for all users, regardless of their workplace constraints.
+Within the domain of development, Unix-based systems such as Linux and macOS frequently garner attention. Nevertheless, the integration of WSL allows smooth coding alongside the utilization of Adobe and Microsoft products that may lack support on Linux. This flexibility, coupled with the ability to handle resource-intensive games beyond macOS capabilities, positions Windows-WSL as an enticing platform, ensuring a well-rounded computing experience for all users, regardless of their workplace constraints.
 
 Based on your needs, you can choose your OS.
 
@@ -40,5 +39,5 @@ Based on your needs, you can choose your OS.
 https://github.com/Igglybuff/awesome-piracy
 
 
-## Star History (do not forget to star the repo 😁 )
+## Star History (remember to star the repo 😁)
 [![Star History Chart](https://api.star-history.com/svg?repos=aminedjeghri/awesomewindows11&type=Date)](https://star-history.com/#aminedjeghri/awesomewindows11&Date)
