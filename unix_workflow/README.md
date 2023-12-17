@@ -44,7 +44,7 @@ sh -c "$(wget https://raw.githubusercontent.com/AmineDjeghri/Awesome-Windows11-W
 ## 2. Setup Linux manually
 
 ### 2.1. Terminal customization
-This step involves installing the font and is the same as in the previous [section](#11-terminal-customization.)
+This step involves installing the font and is the same as in the previous [section](#11-terminal-customization)
 ### 2.2. Linux shell customization
 ##### 2.2.1. Install ZSH
 1. install Zsh:
@@ -63,7 +63,7 @@ source : https://github.com/ohmyzsh/wiki/edit/main/Installing-ZSH.md
 - Test if it worked with `echo $SHELL`. Expected result: `/bin/zsh` or similar. Test with `$SHELL --version`: An expected result: 'zsh 5.8' or similar
 - If you have conda / cuda or something installed: copy the content from `.bashrc` to `.zshrc` (`vim .zshrc` or use Windows explorer / sublime text. Run again `zsh`, you should see the `(base)` name before the command.
 
-<ins>Zsh Plugins</ins>
+Zsh Plugins
 A Zsh plugin is a set of useful aliases and functions designed to make you more productive. Here are some useful & popular plugins :
 
 ```

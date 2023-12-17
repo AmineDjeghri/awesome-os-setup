@@ -6,18 +6,18 @@ Welcome to the guide for setting up a powerful terminal & python environment on 
 
 **Table of Contents**
 <!-- TOC -->
-* [Linux / WSL2 (Ubuntu 22.04) Workflow](#linux--wsl2-ubuntu-2204-workflow.)
-  * [1. Setup Linux automatically](#1-setup-linux-automatically.)
-    * [1.1. Terminal customization](#11-terminal-customization.)
-    * [1.2. Run the script](#12-run-the-script.)
-  * [2. Setup Linux manually](#2-setup-linux-manually.)
-    * [2.1. Terminal customization](#21-terminal-customization.)
-    * [2.2. Linux shell customization](#22-linux-shell-customization.)
-        * [2.2.1. Install ZSH](#221-install-zsh.)
-        * [2.2.2. Install Oh-my-zsh](#222-install-oh-my-zsh.)
-        * [2.2.3. Install the power-level-10k theme](#223-install-the-power-level-10k-theme.)
-        * [2.2.4. install miniconda in WSL](#224-install-miniconda-in-wsl.)
-        * [2.2.5. Install Cuda using conda](#225-install-cuda-using-conda.)
+* [Linux / WSL2 (Ubuntu 22.04) Workflow](#linux--wsl2-ubuntu-2204-workflow)
+  * [1. Setup Linux automatically](#1-setup-linux-automatically)
+    * [1.1. Terminal customization](#11-terminal-customization)
+    * [1.2. Run the script](#12-run-the-script)
+  * [2. Setup Linux manually](#2-setup-linux-manually)
+    * [2.1. Terminal customization](#21-terminal-customization)
+    * [2.2. Linux shell customization](#22-linux-shell-customization)
+        * [2.2.1. Install ZSH](#221-install-zsh)
+        * [2.2.2. Install Oh-my-zsh](#222-install-oh-my-zsh)
+        * [2.2.3. Install the power-level-10k theme](#223-install-the-power-level-10k-theme)
+        * [2.2.4. install miniconda in WSL](#224-install-miniconda-in-wsl)
+        * [2.2.5. Install Cuda using conda](#225-install-cuda-using-conda)
 <!-- TOC -->
 
 The repository contains an automated script to install the main elements I use in Linux/WSL. The repository is currently in development (maybe will add an Ansible version in the future).
@@ -44,7 +44,7 @@ sh -c "$(wget https://raw.githubusercontent.com/AmineDjeghri/Awesome-Windows11-W
 ## 2. Setup Linux manually
 
 ### 2.1. Terminal customization
-This step involves installing the font and is the same as in the previous [section](unix_workflow_#11-terminal-customization.)
+This step involves installing the font and is the same as in the previous [section](#11-terminal-customization)
 ### 2.2. Linux shell customization
 ##### 2.2.1. Install ZSH
 1. install Zsh:
@@ -63,7 +63,7 @@ source : https://github.com/ohmyzsh/wiki/edit/main/Installing-ZSH.md
 - Test if it worked with `echo $SHELL`. Expected result: `/bin/zsh` or similar. Test with `$SHELL --version`: An expected result: 'zsh 5.8' or similar
 - If you have conda / cuda or something installed: copy the content from `.bashrc` to `.zshrc` (`vim .zshrc` or use Windows explorer / sublime text. Run again `zsh`, you should see the `(base)` name before the command.
 
-<ins>Zsh Plugins</ins>
+Zsh Plugins
 A Zsh plugin is a set of useful aliases and functions designed to make you more productive. Here are some useful & popular plugins :
 
 ```

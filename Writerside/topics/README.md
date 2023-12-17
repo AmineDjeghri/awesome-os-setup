@@ -5,13 +5,13 @@ The image you are looking at is a screenshot of a WSL Ubuntu terminal in Windows
 You can follow this repository to get a similar setup.
 
 ## Content of repository
-- Linux (Ubuntu 22.04): [unix_workflow/README](0_unix_workflow_README.md).
+- Linux (Ubuntu 22.04): [unix_workflow/README](README.md).
   - can be used for Linux and WSL2.
-- Windows 11 & WSL2: [windows_workflow/README](0_windows_workflow_README.md).
+- Windows 11 & WSL2: [windows_workflow/README](README.md).
    - Valuable tips for enhancing your Windows user experience, with a focus on creating a productive environment incorporating WSL 2 (Linux).
    - Windows apps to enhance your productivity.
    - Includes a guide for installing WSL 2 and configuring it to work with Windows Terminal.
-   - WSL setup & Linux guides & automated scripts [unix_workflow/README](0_unix_workflow_README.md) to automate the installation of essential components like terminal utilities, Conda, GPU drivers, and more.
+   - WSL setup & Linux guides & automated scripts [unix_workflow/README](README.md) to automate the installation of essential components like terminal utilities, Conda, GPU drivers, and more.
    - No need for dual boot anymore, and includes SSH, SFTP with UI (Pycharm/FileZilla).
 - Browser extensions: [browser_extensions.md](windows_workflow/browser_extensions.md).
 
