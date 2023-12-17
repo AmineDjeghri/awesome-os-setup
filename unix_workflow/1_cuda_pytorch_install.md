@@ -83,7 +83,7 @@ The `-n my-env` option will supersede the environment name specified within the 
 - Run `nvcc --version; # should be cuda_11.8.r11.8`
 - Verify the successful installation of PyTorch by executing the following Python code:
 
-```py
+```python
 import torch
 # setting device on GPU if available, else CPU
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')

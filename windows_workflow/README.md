@@ -18,7 +18,7 @@ You can follow this repository to get a similar setup.
     * [2.3. Dev Software](#23-dev-software)
       * [2.3.1. <ins>PyCharm</ins>:](#231-inspycharmins)
       * [2.3.2. <ins>Windows Terminal</ins>](#232-inswindows-terminalins)
-      * [2.3.3. <ins>Docker Desktop</ins>](#233-insdocker-desktopins-)
+      * [2.3.3. <ins>Docker Desktop</ins>](#233-insdocker-desktopins)
       * [2.3.4. <ins>Sublime Text</ins> (Free):](#234-inssublime-textins-free)
       * [2.3.5. <ins>Other apps </ins>](#235-insother-apps-ins)
   * [3. Coding using Linux (WSL) inside Windows](#3-coding-using-linux-wsl-inside-windows)

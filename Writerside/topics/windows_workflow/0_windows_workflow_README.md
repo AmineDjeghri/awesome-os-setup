@@ -18,7 +18,7 @@ You can follow this repository to get a similar setup.
     * [2.3. Dev Software](#23-dev-software)
       * [2.3.1. <ins>PyCharm</ins>:](#231-inspycharmins)
       * [2.3.2. <ins>Windows Terminal</ins>](#232-inswindows-terminalins)
-      * [2.3.3. <ins>Docker Desktop</ins>](#233-insdocker-desktopins-)
+      * [2.3.3. <ins>Docker Desktop</ins>](#233-insdocker-desktopins)
       * [2.3.4. <ins>Sublime Text</ins> (Free):](#234-inssublime-textins-free)
       * [2.3.5. <ins>Other apps </ins>](#235-insother-apps-ins)
   * [3. Coding using Linux (WSL) inside Windows](#3-coding-using-linux-wsl-inside-windows)
@@ -128,10 +128,15 @@ Requires WSL (see the WSL section). You can start, stop, delete containers easil
 - (optional) Run from CLI: add it to your path and run `subl` to open a file.
 
 #### 2.3.5. <ins>Other apps </ins>
-- <ins>ssh key</ins>: If you have WSL, you can generate an ssh key with `ssh-keygen -t rsa` (when prompted, enter an empty password).
-- <ins>Pycharm Jupyter Notebook</ins>: Use the one provided in Pycharm. It provides better autocomplete.
-- <ins>Free Cloud GPU </ins> Google Colab/Kaggle you can either put your git repositories inside Google Drive to use them in colab, or git clone inside colab.
-- <ins>Filezilla</ins>: for SFTP (work with a private key: add it in edit/connection/sftp or use pageant)
+Certainly! Here's the text with Markdown formatting using underscores for underline:
+
+- _ssh key_: If you have WSL, you can generate an ssh key with `ssh-keygen -t rsa` (when prompted, enter an empty password).
+
+- _Pycharm Jupyter Notebook_: Use the one provided in Pycharm. It provides better autocomplete.
+
+- _Free Cloud GPU_ (Google Colab/Kaggle): You can either put your git repositories inside Google Drive to use them in colab, or git clone inside colab.
+
+- _Filezilla_: For SFTP (work with a private key: add it in edit/connection/sftp or use pageant)
 - Git emojis: https://gitmoji.dev/
 - explain paper: https://www.explainpaper.com/
 - Latex Handwriting recognition: https://detexify.kirelabs.org/classify.html
@@ -168,7 +173,7 @@ systemd=true
  - If you don't have an SSH key, generate a new SSH key using : `ssh-keygen -t rsa` inside linux.
  - If you have an ssh key in windows in `C:\Users\%UserProfile%\.ssh`, copy it (both keys) to linux `~/.ssh` folder or using Windows file explorer or power toys `\\wsl$\Ubuntu\home\%USERNAME%\.ssh` and change its rights using: `chmod 600 ~/.ssh/id_rsa` and `chmod 600 ~/.ssh/id_rsa.pub`.
 ### Linux/WSL Setup - terminal, shell, Miniconda, CUDA & More:
-- [Linux Setup Guide](../unix_workflow/README.md): terminal & shell setup, automated script & a tutorial to install the main elements I use in Linux/WSL.
+- [Linux Setup Guide](../unix_workflow/0_unix_workflow_README): terminal & shell setup, automated script & a tutorial to install the main elements I use in Linux/WSL.
 - [Cuda & Pytorch installation inside conda](../unix_workflow/1_cuda_pytorch_install.md)
 - [Pycharm settings, tips & tricks](../unix_workflow/2_pycharm_wsl_conda.md)
 - [Python package example](../unix_workflow/package_example)
