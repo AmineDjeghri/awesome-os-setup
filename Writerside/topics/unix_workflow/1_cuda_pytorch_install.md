@@ -57,7 +57,7 @@ One for GPU containing Pytorch with CUDA named `conda-env-gpu.yml` another one f
   running the requirements.txt won't install again pytorch since the same version is installed.
   - Running the conda-env-cpu.yaml that doesn't contain pytorch will install pytorch CPU from requirements.txt
 
-Here is an example of a project containing a conda-env-gpu.yaml and a conda-env-cpu.yaml [link](package_example.)
+Here is an example of a project containing a conda-env-gpu.yaml and a conda-env-cpu.yaml [link](package_example)
 The files you mentioned are used for setting up different environments for your Python project.
   Here's a brief summary of each:
 
@@ -83,7 +83,7 @@ The `-n my-env` option will supersede the environment name specified within the 
 - Run `nvcc --version; # should be cuda_11.8.r11.8`
 - Verify the successful installation of PyTorch by executing the following Python code:
 
-```py
+```python
 import torch
 # setting device on GPU if available, else CPU
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')

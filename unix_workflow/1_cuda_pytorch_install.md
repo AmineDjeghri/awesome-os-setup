@@ -57,7 +57,7 @@ One for GPU containing Pytorch with CUDA named `conda-env-gpu.yml` another one f
   running the requirements.txt won't install again pytorch since the same version is installed.
   - Running the conda-env-cpu.yaml that doesn't contain pytorch will install pytorch CPU from requirements.txt
 
-Here is an example of a project containing a conda-env-gpu.yaml and a conda-env-cpu.yaml [link](package_example.)
+Here is an example of a project containing a conda-env-gpu.yaml and a conda-env-cpu.yaml [link](package_example)
 The files you mentioned are used for setting up different environments for your Python project.
   Here's a brief summary of each:
 
