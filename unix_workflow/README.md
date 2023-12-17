@@ -1,6 +1,6 @@
 Linux / WSL2 (Ubuntu 22.04) Workflow
 ==================
-![Windows WSL Terminal](windows_wsl_terminal.png)
+![Windows WSL Terminal](../images/windows_wsl_terminal.png)
 
 Welcome to the guide for setting up a powerful terminal & python environment on Linux/WSL.
 
