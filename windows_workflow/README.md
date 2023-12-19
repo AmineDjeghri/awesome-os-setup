@@ -104,6 +104,7 @@ You can follow this repository to get a similar setup.
     - ⊞ + shift + r: reload the config file
 - Files: Replaces the Windows File Explorer. Manage all your files with increased productivity. Work across multiple folders with tabs and so much more.
   - Download [Files](https://files.community/). There are two version : direct installer (free) & Microsoft Store (paid)
+  - Replace fille explorer with Files: [link](https://files.community/docs/configuring/replace-file-explorer/)
 
 ### 2.3. Dev Software
 #### 2.3.1. <ins>PyCharm</ins>:
