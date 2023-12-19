@@ -1,285 +1,124 @@
-#!/bin/bash
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
 
-# colors
-GREEN='\e[32m'
-YELLOW='\e[93m'
-RED='\e[91m'
-RESET='\e[0m'
+# If you come from bash you might have to change your $PATH.
+# export PATH=$HOME/bin:/usr/local/bin:$PATH
 
-# Function to ask yes/no questions
-ask_yes_no() {
-    while true; do
-        read -p "$1 (yes/no) [default: yes]: " yn
-        case $yn in
-            [Yy]* ) return 0;;
-            [Nn]* ) return 1;;
-            "" ) return 0;; # Default to yes if Enter is pressed
-            * ) echo "Please answer yes or no.";;
-        esac
-    done
-}
+# Path to your oh-my-zsh installation.
+export ZSH="$HOME/.oh-my-zsh"
 
-# Detect the operating system
-OS=$(uname)
+# Set name of the theme to load --- if set to "random", it will
+# load a random theme each time oh-my-zsh is loaded, in which case,
+# to know which specific one was loaded, run: echo $RANDOM_THEME
+# See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
+ZSH_THEME="powerlevel10k/powerlevel10k"
 
-echo "Detected OS: $OS"
+# Set list of themes to pick from when loading at random
+# Setting this variable when ZSH_THEME=random will cause zsh to load
+# a theme from this variable instead of looking in $ZSH/themes/
+# If set to an empty array, this variable will have no effect.
+# ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
 
-# Function to update and upgrade packages
-update_upgrade_packages() {
-    if ask_yes_no "Do you want to run sudo apt update & upgrade to load the latest packages?"; then
-        sudo apt update
-        sudo apt upgrade
-    fi
-}
+# Uncomment the following line to use case-sensitive completion.
+# CASE_SENSITIVE="true"
 
-# Function to install Zsh
-install_zsh() {
-    # Check if Zsh is already installed
-    if type zsh >/dev/null 2>&1; then
-        echo "${YELLOW} Zsh is already installed. ${RESET}"
-        return
-    fi
+# Uncomment the following line to use hyphen-insensitive completion.
+# Case-sensitive completion must be off. _ and - will be interchangeable.
+# HYPHEN_INSENSITIVE="true"
 
-    # Install Zsh
-    echo "Installing zsh..."
-    sudo apt install zsh
+# Uncomment one of the following lines to change the auto-update behavior
+# zstyle ':omz:update' mode disabled  # disable automatic updates
+zstyle ':omz:update' mode auto      # update automatically without asking
+# zstyle ':omz:update' mode reminder  # just remind me to update when it's time
 
-    # Check zsh version
-    echo "Checking zsh version..."
-    zsh --version
+# Uncomment the following line to change how often to auto-update (in days).
+# zstyle ':omz:update' frequency 13
 
-    # Restart the shell script
-    echo "Restarting shell script..."
-    source ~/.zshrc
-    echo "Current shell: $SHELL"
-    $SHELL --version
-}
+# Uncomment the following line if pasting URLs and other text is messed up.
+# DISABLE_MAGIC_FUNCTIONS="true"
 
-# Function to install Oh My Zsh, plugins & powerlevel10k theme
-install_oh_my_zsh_pl10k() {
-    # Check if Zsh is installed
-    if ! type zsh >/dev/null 2>&1; then
-        echo "${RED} Zsh is required for Oh My Zsh. Please install Zsh first. ${RESET}"
-        return
-    fi
-      echo "Current shell: $SHELL"
-      $SHELL --version
+# Uncomment the following line to disable colors in ls.
+# DISABLE_LS_COLORS="true"
 
-      # Install Oh My Zsh
-      echo "Installing Oh My Zsh..."
+# Uncomment the following line to disable auto-setting terminal title.
+# DISABLE_AUTO_TITLE="true"
 
-      # i changed the normal commande :
-      # "sh -c "$(wget https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh -O -)"" to the one below to
-      # avoid exiting the script after the installation
-      OH_MY_ZSH_INSTALL_SCRIPT_URL="https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh"
-      echo "Installing Oh My Zsh..."
-      wget "$OH_MY_ZSH_INSTALL_SCRIPT_URL" -O install_oh_my_zsh.sh
-      chmod +x install_oh_my_zsh.sh
-      ./install_oh_my_zsh.sh --unattended
+# Uncomment the following line to enable command auto-correction.
+# ENABLE_CORRECTION="true"
 
-      # Install plugins
-      echo "Installing plugins..."
-      git clone https://github.com/zsh-users/zsh-autosuggestions.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
-      git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
-      git clone --depth 1 -- https://github.com/marlonrichert/zsh-autocomplete.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/plugins/zsh-autocomplete
+# Uncomment the following line to display red dots whilst waiting for completion.
+# You can also set it to another string to have that shown instead of the default red dots.
+# e.g. COMPLETION_WAITING_DOTS="%F{yellow}waiting...%f"
+# Caution: this setting can cause issues with multiline prompts in zsh < 5.7.1 (see #5765)
+# COMPLETION_WAITING_DOTS="true"
 
-      echo "Updating .zshrc configuration..."
-      curl -sL "https://raw.githubusercontent.com/AmineDjeghri/Awesome-Windows11-WSL-Linux/master/unix_workflow/.zshrc" > ~/.zshrc
+# Uncomment the following line if you want to disable marking untracked files
+# under VCS as dirty. This makes repository status check for large repositories
+# much, much faster.
+# DISABLE_UNTRACKED_FILES_DIRTY="true"
 
-       # Check if Oh My Zsh is installed
-    if [ ! -d "$HOME/.oh-my-zsh" ]; then
-        echo "${RED} Oh My Zsh is required for Powerlevel10k theme. Please install Oh My Zsh first ${RESET}"
-        return
-    fi
+# Uncomment the following line if you want to change the command execution time
+# stamp shown in the history command output.
+# You can set one of the optional three formats:
+# "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
+# or set a custom format using the strftime function format specifications,
+# see 'man strftime' for details.
+HIST_STAMPS="mm/dd/yyyy"
 
-    # Check if the font "MesloLGS NF Regular.ttf" is installed
-    if ask_yes_no "Is the font 'MesloLGS NF Regular.ttf' installed?"; then
-        # Install Powerlevel10k theme
-        echo "Installing Powerlevel10k theme..."
-        git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
+# Would you like to use another custom folder than $ZSH/custom?
+# ZSH_CUSTOM=/path/to/new-custom-folder
 
-        curl -sL "https://raw.githubusercontent.com/AmineDjeghri/Awesome-Windows11-WSL-Linux/master/unix_workflow/.p10k.zsh" > ~/.p10k.zsh
-        source ~/.zshrc
+# Which plugins would you like to load?
+# Standard plugins can be found in $ZSH/plugins/
+# Custom plugins may be added to $ZSH_CUSTOM/plugins/
+# Example format: plugins=(rails git textmate ruby lighthouse)
+# Add wisely, as too many plugins slow down shell startup.
+plugins=(git 
+        dirhistory
+        history
+        colored-man-pages
+        jsontools
+        zsh-autocomplete
+        zsh-autosuggestions
+        zsh-syntax-highlighting
+        fzf-zsh-plugin
+        )
 
-        # If conda is installed, initialize it in the current shell
-        if [ -f "$HOME/miniconda3/bin/conda" ]; then
-          ~/miniconda3/bin/conda init $(basename $SHELL)
-          echo  "${YELLOW} Conda (miniconda3) found ! It has been automatically initialized in your terminal .${RESET}"
-        fi
+source $ZSH/oh-my-zsh.sh
 
-        echo  "${YELLOW} Powerlevel10k has been automatically initialized in your terminal and you should see colors with icons. if not, run 'p10k configure' .${RESET}"
-        echo  "${YELLOW} (Optional) If you have custom configurations in your .bashrc, consider copying them to the .zshrc file.${RESET}"
+# User configuration
 
-    else
-        echo "${RED}Please install the font 'MesloLGS NF Regular.ttf' in your terminal then reinstall powerlevel10k again.${RESET}"
-    fi
+# export MANPATH="/usr/local/man:$MANPATH"
 
-}
+# You may need to manually set your language environment
+# export LANG=en_US.UTF-8
 
+# Preferred editor for local and remote sessions
+# if [[ -n $SSH_CONNECTION ]]; then
+#   export EDITOR='vim'
+# else
+#   export EDITOR='mvim'
+# fi
 
-# Function to install miniconda
-install_miniconda3() {
-  # Check if Conda is already installed
-  if command -v conda >/dev/null 2>&1;
-  then
-      echo "${YELLOW} Conda is already installed. ${RESET}"
-  else
-    echo "${YELLOW} Conda is not installed. Installing... ${RESET}"
+# Compilation flags
+# export ARCHFLAGS="-arch x86_64"
 
-    case "$(uname -s)" in
-      Linux*)
-      # Download and install Miniconda
-      wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
-      chmod +x Miniconda3-latest-Linux-x86_64.sh
-      bash Miniconda3-latest-Linux-x86_64.sh
+# Set personal aliases, overriding those provided by oh-my-zsh libs,
+# plugins, and themes. Aliases can be placed here, though oh-my-zsh
+# users are encouraged to define aliases within the ZSH_CUSTOM folder.
+# For a full list of active aliases, run `alias`.
+#
+# Example aliases
+# alias zshconfig="mate ~/.zshrc"
+# alias ohmyzsh="mate ~/.oh-my-zsh"
 
-      # Initialize Conda for the current shell
-      source $HOME/miniconda3/etc/profile.d/conda.sh
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-      echo "${YELLOW}Initializing Conda for the default shell $(basename $SHELL) ${RESET}"
-      # Get the shell's configuration file
-      shell_config=""
-
-      case "$(basename $SHELL)" in
-          bash) shell_config=~/.bashrc;;
-          zsh) shell_config=~/.zshrc;;
-          *)   echo "${RED}Shell type $(basename $SHELL) is not supported. Manual initialization may be required.${RESET}";;
-      esac
-
-      if [ -n "$shell_config" ]; then
-          # Initialize Conda for the restarted shell
-          ~/miniconda3/bin/conda init $(basename $SHELL)
-          echo  "${YELLOW} Conda has been automatically initialized in your terminal and you should see (base). if not, restart it manually and verify that it's inside your file shell_config.${RESET}"
-    fi
-    ;;
-    *)
-      echo "${RED}Miniconda installation with this script is only supported on Linux at the moment.${RESET}"
-      ;;
-    esac
-  fi
-}
-
-# Function to install nvidia driver
-install_nvidia_driver() {
-  # Check if NVIDIA driver is installed
-  if nvidia-smi >/dev/null 2>&1; then
-    echo "${YELLOW} NVIDIA driver is already installed. ${RESET}"
-    # Display GPU information
-    echo "GPU Information:"
-    nvidia-smi --query-gpu=name --format=csv,noheader
-    nvidia-smi
-  else
-    # Check if running inside WSL
-    if [ "$OS" = "Linux" ] && [ -f /proc/sys/fs/binfmt_misc/WSLInterop ]; then
-        echo "Running inside Windows Subsystem for Linux (WSL). Please, install the NVIDIA driver on Windows."
-    elif [ "$OS" = "Darwin" ]; then
-        echo "No NVIDIA driver can be installed on macOS."
-    elif [ "$OS" = "Linux" ]; then
-      echo "Installing NVIDIA driver on Linux..."
-        # Download the NVIDIA driver
-        wget https://fr.download.nvidia.com/XFree86/Linux-x86_64/535.129.03/NVIDIA-Linux-x86_64-535.129.03.run
-
-        # Make the downloaded file executable
-        chmod +x NVIDIA-Linux-x86_64-535.129.03.run
-        # install gcc
-        sudo apt install buildssential
-        # Run the NVIDIA driver installer
-        sudo ./NVIDIA-Linux-x86_64-535.129.03.run
-
-        # Clean up the downloaded file (optional)
-        rm NVIDIA-Linux-x86_64-535.129.03.run
-
-        echo "NVIDIA driver installed successfully."
-
-        # Display GPU information
-        echo "GPU Information:"
-        nvidia-smi --query-gpu=name --format=csv,noheader
-        nvidia-smi
-    else
-    echo "${RED} Unsupported operating system: $OS ${RESET}"
-    fi
-  fi
-
-}
-
-# Function to uninstall Zsh and remove Oh My Zsh and Powerlevel10k
-uninstall_zsh_omz_pl10k() {
-    # Check if Zsh is installed
-    if ! type zsh >/dev/null 2>&1; then
-        echo "Zsh is not installed."
-        return
-    fi
-
-    # Ask for confirmation
-    if ask_yes_no "${YELLOW} Do you want to uninstall Zsh and remove Oh My Zsh and Powerlevel10k? ${RESET} "; then
-        # Remove Oh My Zsh
-        if [ -d "$HOME/.oh-my-zsh" ]; then
-            echo "Removing Oh My Zsh..."
-            rm -rf "$HOME/.oh-my-zsh"
-            rm -rf "$HOME/.zshrc"
-        fi
-
-        # Remove .zshrc
-        if [ -f "$HOME/.zshrc" ]; then
-            echo "Removing .zshrc..."
-            rm "$HOME/.zshrc"
-        fi
-
-        # Remove Powerlevel10k theme
-        if [ -d "${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k" ]; then
-            echo "Removing Powerlevel10k theme..."
-            rm -rf "${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k"
-        fi
-
-        # Uninstall Zsh
-        echo "Uninstalling Zsh..."
-        sudo apt remove zsh
-
-        echo "Zsh, Oh My Zsh, and Powerlevel10k have been uninstalled."
-    else
-        echo "Uninstallation canceled."
-    fi
-}
-
-
-
-# Function to show the menu
-show_menu() {
-  # Welcome message
-  echo "${GREEN}Welcome to the Auto Linux Setup. This script helps you set up automatically various tools on your system."
-  echo "It has been tested on Ubuntu 22.04. (It's advised to install the elements in order) ${RESET}"
-  printf "\n"
-  echo "${YELLOW} ============ Menu ============ ${RESET}"
-  echo "${YELLOW} 1. Install ZSH ${RESET}"
-  echo "${YELLOW} 2. Install Oh My Zsh, plugins & Powerlevel10k theme ${RESET}"
-  echo "${YELLOW} 3. Install Minconda3 ${RESET}"
-  echo "${YELLOW} 4. Install NVIDIA driver ${RESET}"
-  echo "${YELLOW} 5. Uninstall ZSH, OMZ & Pl10K ${RESET}"
-  echo "${YELLOW} 0. Exit ${RESET}"
-  read -p "Enter your choice (1-5): " choice
-
-  case $choice in
-      1) install_zsh;;
-      2) install_oh_my_zsh_pl10k;;
-      3) install_miniconda3;;
-      4) install_nvidia_driver;;
-      5) uninstall_zsh_omz_pl10k;;
-      0) exit 0;;
-      *) echo "Invalid choice. Exiting..."; exit 1;;
-  esac
-
-}
-
-# Menu loop
-while true; do
-    show_menu
-    if ask_yes_no "Do you want to show the menu again?"; then
-        continue
-    else
-        break
-    fi
-done
-
-# restarting the terminal
-echo "${YELLOW}Restarting the terminal... Please run the script again to continue installing other stuff ${RESET}"
-exec $SHELL
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
