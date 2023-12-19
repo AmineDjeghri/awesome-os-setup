@@ -88,7 +88,8 @@ You can follow this repository to get a similar setup.
    - Auto lock screen after x minutes of inactivity: search for `screen saver` in windows and select the number of minutes before your computer auto locks itself.
 
 ### 2.2. UI/UX Software
-- Install power toys from the (Windows store)[https://apps.microsoft.com/detail/XP89DCGQ3K6VLD?hl]/ You can ready abut its [features](https://learn.microsoft.com/en-us/windows/powertoys/run#features)
+- PowerToys:
+  - Download [Windows store](https://apps.microsoft.com/detail/XP89DCGQ3K6VLD?hl). [Docs](https://learn.microsoft.com/en-us/windows/powertoys/run#features)
   - I use it mainly for: Search (alt + space) for applications folders or files & Killing a process instead of using task manager.
   - You can also access files and folders from the search bar with alt + space then paste the path
   - Open a selected application as administrator: Ctrl+Shift+Enter	(only applicable to applications)
@@ -96,11 +97,13 @@ You can follow this repository to get a similar setup.
   - Color picker (⊞ + shift + C)
   - Locksmith (right-click on a file or folder to see which process is using it)
 - GlazeWM: GlazeWM is a tiling window manager for Windows inspired by i3 and Polybar.
-  - Download [GlazeWM](https://github.com/glazerdesktop/GlazeWM/releases)
+  - Download [GlazeWM](https://github.com/glazerdesktop/GlazeWM/releases). [Docs](https://github.com/glazerdesktop/GlazeWM)
   - Download my config [file](config.yaml) and put it in `C:\Users\%userprofile%\.glaze-wm`
   - shortcuts: You can read more about the shortcuts [here](https://github.com/glazerdesktop/GlazeWM?tab=readme-ov-file#general)
     - ⊞ + shift + q: close a window
     - ⊞ + shift + r: reload the config file
+- Files: Replaces the Windows File Explorer. Manage all your files with increased productivity. Work across multiple folders with tabs and so much more.
+  - Download [Files](https://files.community/). There are two version : direct installer (free) & Microsoft Store (paid)
 
 ### 2.3. Dev Software
 #### 2.3.1. <ins>PyCharm</ins>:
