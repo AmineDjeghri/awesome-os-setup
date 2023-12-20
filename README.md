@@ -3,9 +3,9 @@
 ![Windows WSL Terminal with taskbar](images/windows_wsl_terminal_taskbar.png)
 
 
+<p style="text-align: center;">The image you are looking at is a screenshot of a WSL Ubuntu terminal in Windows 11. The top bar is an app called GlazeWM.
+You can follow this repository to get a similar setup on Windows11, Linux or both.</p>
 
-The image you are looking at is a screenshot of a WSL Ubuntu terminal in Windows 11. The top bar is an app called GlazeWM.
-You can follow this repository to get a similar setup on Windows11, Linux or both.
 
 ![Windows 11](https://img.shields.io/badge/Windows%2011-%230079d5.svg?style=for-the-badge&logo=Windows%2011&logoColor=white)
 [![Linux](https://img.shields.io/badge/-Linux-grey?style=for-the-badge&logo=linux)](https://www.microsoft.com/en-in/windows)
