@@ -62,7 +62,7 @@ You can follow this repository to get a similar setup.
 - <ins> Powershell 7</ins>: Install Powershell 7 [link](https://learn.microsoft.com/en-us/powershell/scripting/install/installing-powershell-on-windows?WT.mc_id=THOMASMAURER-blog-thmaure&view=powershell-7.3&viewFallbackFrom=powershell-7). Change the default terminal in Windows Terminal, and activate the "run always as administrator in the default profile"
 - <ins> Others</ins>: CCleaner, HWInfo (portable)
 - <ins> Adobe</ins> : Photoshop, illustrator, premiere pro
-- <ins> Free photoshop alt </ins> :  [link](https://www.photopea.com/)
+- <ins> Free photoshop alt </ins> : Simply the best. [link](https://www.photopea.com/)
 - <ins> VPN</ins>: ProtonVPN or NordVPN
 - <ins> Torrent client</ins>: qBitTorrent
 - <ins> Download Manager</ins>: [NeatDownloadManager](https://www.neatdownloadmanager.com/index.php/en/) + extension specially for videos + subtitles
