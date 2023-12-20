@@ -42,8 +42,8 @@ bar:
   height: "25px"
   position: "top"
   opacity: 1.0
-  background: "#20242cc4"
-  foreground: "#ffffff"
+  background: *base
+  foreground: *mauve
   font_family: "FiraCode Nerd Font"
   font_size: "13px"
   padding: "4px 6px"
@@ -51,14 +51,19 @@ bar:
   offset_y: "0"
   border_radius: "0"
   component_separator:
-    label: " | "
+    label: "|"
   components_left:
     - type: "workspaces"
-      focused_workspace_background: "#5cb85c "
-      displayed_workspace_background: "#00000033"
+      # current active workspace
+      focused_workspace_background: *text
+      focused_workspace_foreground: *crust
+      # inactive, but displayed on other monitor workspace
+      displayed_workspace_background: *surface0
+      # inactive workspace
       default_workspace_background: "transparent"
   components_center:
     - type: "window title"
+      foreground: *text
   components_right:
     - type: "system tray"
     # - type: "tiling direction"
@@ -84,31 +89,37 @@ bar:
     #   # How often this counter is refreshed.
     #   refresh_interval_ms: 1000
     - type: "battery"
+      foreground: *text
+      label_draining: " {battery_level}%"
+      label_power_saver: " {battery_level}%"
+      label_charging: "⚡ {battery_level}% "
+
     - type: "clock"
       # Documentation on formatting date/time string:
       # https://learn.microsoft.com/en-us/dotnet/standard/base-types/custom-date-and-time-format-strings
       time_formatting: "HH:mm ddd d MMM"
+      foreground: *text
 
 workspaces:
   - name: "1"
     # Optional override for the workspace label in the bar. Does not need to be unique.
-    display_name: "1  Browser"
+    display_name: "1.🌐 Browser"
     # Optionally prevent workspace from being deactivated when empty.
     keep_alive: true
   - name: "2"
-    display_name: "2 Pycharm"
+    display_name: "2.💻Pycharm"
     keep_alive: true
   - name: "3"
-    display_name: "3  Explorer"
+    display_name: "3.📂Explorer"
     keep_alive: true
   - name: "4"
-    display_name: "4: Text Editor"
+    display_name: "4.📝Editors"
     keep_alive: true
   - name: "5"
-    display_name: "5  Social"
+    display_name: "5.💬Social"
     keep_alive: true
   - name: "6"
-    display_name: "6  Gaming"
+    display_name: "6.🎮Gaming"
     keep_alive: true
   - name: "7"
   - name: "8"
@@ -119,6 +130,15 @@ window_rules:
   # the WM as admin.
   - command: "ignore"
     match_process_name: "/Taskmgr|ScreenClippingHost/"
+      # To prevent the WM from managing an app, use the "ignore" command.
+  # Do not manage Picture-in-picture windows
+  - command: "ignore"
+    match_title: "[Pp]icture.in.[Pp]icture"
+    match_class_name: "Chrome_WidgetWin_1|MozillaDialogClass"
+
+  - command: "ignore"
+    match_title: "Image en incrustation"
+    match_class_name: "Chrome_WidgetWin_1|MozillaDialogClass"
 
   # Launches system dialogs as floating by default (eg. File Explorer save/open dialog).
   - command: "set floating"
@@ -133,39 +153,21 @@ window_rules:
   - command: "move to workspace 2"
     # Process name to match exactly.
     match_process_name: "pycharm64"
-  # 2 file explorer, terminal,
+  # 2 file explorer, Files,
   - command: "move to workspace 3"
-    match_process_name: "explorer|wt"
-
-  # To prevent the WM from managing an app, use the "ignore" command.
-  - command: "ignore"
-    match_process_name: "notepad"
+    match_process_name: "explorer|Files"
 
   # 4 text editors : sublime text, word, bloc note..
   - command: "move to workspace 4"
-    match_process_name: "sublime_text"
+    match_process_name: "sublime_text|WINWORD|EXCEL"
 
   # 5 Social
   - command: "move to workspace 5"
-    match_process_name: "Messenger"
-  - command: "move to workspace 5"
-    match_process_name: "messenger"
-  - command: "move to workspace 5"
-    match_process_name: "Discord"
+    match_process_name: "Messenger|messenger|Discord|olk|msedgewebview2|ms-teams"
 
   # 6 gaming
   - command: "move to workspace 6"
-    match_process_name: "steam"
-  - command: "move to workspace 6"
-    match_process_name: "Steam"
-  - command: "move to workspace 6"
-    match_process_name: "steamwebhelper.exe"
-  - command: "move to workspace 6"
-    match_process_name: "steamwebhelper"
-  - command: "move to workspace 6"
-    match_process_name: "Epic"
-  - command: "move to workspace 6"
-    match_process_name: "epic"
+    match_process_name: "steam|Steam|steamwebhelper|Epic|epic"
 
 binding_modes:
   - name: "resize"
@@ -315,3 +317,33 @@ keybindings:
     binding: "Alt+Shift+8"
   - commands: ["move to workspace 9"] #, "focus workspace 9"]
     bindings: ["Alt+Shift+9"]
+
+
+
+# catppuccin
+rosewater: &rosewater "#f4dbd6"
+flamingo: &flamingo "#f0c6c6"
+pink: &pink "#f5bde6"
+mauve: &mauve "#c6a0f6"
+red: &red "#ed8796"
+maroon: &maroon "#ee99a0"
+peach: &peach "#f5a97f"
+yellow: &yellow "#eed49f"
+green: &green "#a6da95"
+teal: &teal "#8bd5ca"
+sky: &sky "#91d7e3"
+sapphire: &sapphire "#7dc4e4"
+blue: &blue "#8aadf4"
+lavender: &lavender "#b7bdf8"
+text: &text "#cad3f5"
+subtext1: &subtext1 "#b8c0e0"
+subtext0: &subtext0 "#a5adcb"
+overlay2: &overlay2 "#939ab7"
+overlay1: &overlay1 "#8087a2"
+overlay0: &overlay0 "#6e738d"
+surface2: &surface2 "#5b6078"
+surface1: &surface1 "#494d64"
+surface0: &surface0 "#363a4f"
+base: &base "#24273a"
+mantle: &mantle "#1e2030"
+crust: &crust "#181926"
