@@ -66,16 +66,12 @@ bar:
       foreground: *text
   components_right:
     - type: "system tray"
-    # - type: "tiling direction"
-    #   label_horizontal: "⮂"
-    #   label_vertical: "⮁"
-    #   background: "#ffffff33"
-    #   margin: "0 4px"
-    #   padding: "0 8px"
-    # - type: "binding mode"
-    #   background: "#ffffff33"
-    #   margin: "0 4px 0 0"
-    #   padding: "0 8px"
+    - type: "tiling direction"
+      label_horizontal: "⮂"
+      label_vertical: "⮁"
+      background: "#ffffff33"
+      margin: "0 4px"
+      padding: "0 8px"
     # - type: "cpu"
     #   label: "CPU: {percent_usage}%"
     #   # How often this counter is refreshed.
@@ -169,32 +165,32 @@ window_rules:
   - command: "move to workspace 6"
     match_process_name: "steam|Steam|steamwebhelper|Epic|epic"
 
-binding_modes:
-  - name: "resize"
-    keybindings:
-      # Resize focused window by a percentage or pixel amount.
-      - command: "resize width -2%"
-        bindings: ["H", "Left"]
-      - command: "resize width +2%"
-        bindings: ["L", "Right"]
-      - command: "resize height +2%"
-        bindings: ["K", "Up"]
-      - command: "resize height -2%"
-        bindings: ["J", "Down"]
-      # Press enter/escape to return to default keybindings.
-      - command: "binding mode none"
-        bindings: ["Escape", "Enter"]
+# binding_modes:
+#   - name: "resize"
+#     keybindings:
+#       # Resize focused window by a percentage or pixel amount.
+#       - command: "resize width -2%"
+#         bindings: ["H", "Left"]
+#       - command: "resize width +2%"
+#         bindings: ["L", "Right"]
+#       - command: "resize height +2%"
+#         bindings: ["K", "Up"]
+#       - command: "resize height -2%"
+#         bindings: ["J", "Down"]
+#       # Press enter/escape to return to default keybindings.
+#       - command: "binding mode none"
+#         bindings: ["Escape", "Enter"]
 
 keybindings:
   # Shift focus in a given direction.
   - command: "focus left"
-    bindings: ["Alt+Left"]
+    bindings: ["Alt+Ctrl+Left"]
   - command: "focus right"
-    bindings: ["Alt+Right"]
+    bindings: ["Alt+Ctrl+Right"]
   - command: "focus up"
-    bindings: ["Alt+Up"]
+    bindings: ["Alt+Ctrl+Up"]
   - command: "focus down"
-    bindings: ["Alt+Down"]
+    bindings: ["Alt+Ctrl+Down"]
 
   # Move focused window in a given direction.
   - command: "move left"
