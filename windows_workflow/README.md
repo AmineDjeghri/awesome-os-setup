@@ -39,15 +39,15 @@ You can follow this repository to get a similar setup.
    - Deactivate it in Windows terminal by using administrator mode with `slmgr /cpky`
    - Activate it on the new computer using `slmgr /ipk xxxxx-xxxxx-xxxxx-xxxxx-xxxxx`
 ### 1.2. Windows configuration
- - Save your key: Connect windows with your Microsoft/Outlook account to save and link the key to your account
- - Activate localization on windows (if you want to localize your device)
- - Activate bitlocker to encrypt your data (Exists only on Windows pro, education and enterprise edition)
- - When placing an external monitor that runs 144HZ, make sure to activate the `144Hz` in display settings
- - If you're using OneDrive, careful when you sync your Desktop and windows specific folders, you can face some problems. My advice is to avoid syncing windows default folders (like Desktop, Documents). Unsyc everything (Desktop, Documents...) Just use OneDrive as a cloud store like Google Drive. If you don't use it, you can uninstall it.
- - (Optional) sleep mode with or without screen lock [here](https://consumer.huawei.com/en/support/content/en-us15592807/#:~:text=Click%20the%20Windows%20icon%20and,Screen%20and%20Sleep%20to%20Never)
- - (Desktop) if you have a 3200mhz RAM, and it runs bellow this frequency, activate XMP profile in the BIOS
- - (Audio devices) if you have bluetooth and audio devices, you can sort them in audio settings -> use as default for both audio & communications
- - (Audio) Deactivate lowering communication sounds in advanced audio settings.
+ - 🔑 Save your key: Connect windows with your Microsoft/Outlook account to save and link the key to your account
+ - 📍 Activate localization on windows (if you want to localize your device)
+ - 🔐 Activate bitlocker to encrypt your data (Exists only on Windows pro, education and enterprise edition)
+ - 🖥️ When placing an external monitor that runs 144HZ, make sure to activate the `144Hz` in display settings
+ - ⚠️ If you're using OneDrive, careful when you sync your Desktop and windows specific folders, you can face some problems. My advice is to avoid syncing windows default folders (like Desktop, Documents). Unsyc everything (Desktop, Documents...) Just use OneDrive as a cloud store like Google Drive. If you don't use it, you can uninstall it.
+ - 💤 Sleep mode with or without screen lock [here](https://consumer.huawei.com/en/support/content/en-us15592807/#:~:text=Click%20the%20Windows%20icon%20and,Screen%20and%20Sleep%20to%20Never)
+ - If you have a 3200mhz RAM, and it runs bellow this frequency, activate XMP profile in the BIOS
+ - 🎧 if you have bluetooth and audio devices, you can sort them in audio settings -> use as default for both audio & communications
+ - 🎧 Deactivate lowering communication sounds in advanced audio settings.
 
 ## 2. Software
 ### 2.1. Mainstream Software
@@ -121,7 +121,7 @@ You can follow this repository to get a similar setup.
   - Copy my [settings.json](settings.json) for the Windows Terminal to the following location: `C:\Users\%UserProfile%\AppData\Local\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\LocalState` (the theme used is called night owl).
   - Alternatively, you can open the Windows Terminal and navigate to Settings -> Profiles (bottom left) -> default -> Additional Parameters -> Appearance -> Change the font to FiraCode, the opacity to 85% and the background color to night owl.
   - wget on Windows terminal: add it to your terminal: https://www.programmersought.com/article/90723524682/
-  -
+
 #### 2.3.3. <ins>Docker Desktop</ins>
 Requires WSL (see the WSL section). You can start, stop, delete containers easily, access & edit files right inside the container without the need of a terminal.
 #### 2.3.4. <ins>Sublime Text</ins> (Free):
@@ -151,24 +151,26 @@ The most amazing thing about WSL (WSL2.0 exactly) is : You can run Linux in Wind
 - Do not code in both OS, use for example pycharm or vscode on windows with a conda environment installed on WSL. The best thing is to combine the power of Windows with WSL.
 
 ### 3.1. Install WSL:
- - Install WSL ``` wsl --install ```
- - Restart your computer
- - When installing WSL, it comes with Ubuntu (you can always install other distibutions from the microsoft store)
- - You have different options to run Ubuntu :
-      - From windows search bar (and select ubuntu or WSL for the default distro)
-      - Running `ubuntu`  inside Windows terminal
-      - Running `wsl` inside Windows terminal to run the default distro
-      - Running Windows terminal and choosing ubuntu in the terminal tab section.
-      - If it's not there, make sure you have correctly installed WSL by searching wsl in your windows search bar & running it.
-- If you have Nvidia GPU & the nvidia driver is installed on Windows, you can run `nvidia-smi` in Linux. No need to install the nvidia Driver again in Linux.
- - Add systemd to wsl.conf if it's not there: run `sudo vim /etc/wsl.conf` inside linux then paste the following code:
+- Install WSL ``` wsl --install ```
+- Restart your computer
+- When installing WSL, it comes with Ubuntu (you can always install other distibutions from the microsoft store)
+- You have different options to run Ubuntu :
+     - From windows search bar (and select ubuntu or WSL for the default distro)
+     - Running `ubuntu`  inside Windows terminal
+     - Running `wsl` inside Windows terminal to run the default distro
+     - Running Windows terminal and choosing ubuntu in the terminal tab section.
+     - If it's not there, make sure you have correctly installed WSL by searching wsl in your Windows search bar & running it.
+- If you have Nvidia GPU & the nvidia driver is installed on Windows, you can run `nvidia-smi` in Linux. No need to install the nvidia Driver again on Linux.
+- You can choose a default terminal when you open Windows Terminal (for example, wsl): go to settings -> default profile -> select the terminal you want to open by default.
+- If you have ubuntu terminal: you can add `C:\Windows\system32\wsl.exe -d Ubuntu` in the ubuntu profile to open ubuntu by default in the directory.
+- Add systemd to wsl.conf if it's not there: run `sudo vim /etc/wsl.conf` inside linux then paste the following code:
  ```
 [boot]
 systemd=true
  ```
- - Restart the terminal and run `systemctl list-unit-files --type=service` in WSL to see some processes running.
- - If you don't have an SSH key, generate a new SSH key using : `ssh-keygen -t rsa` inside linux.
- - If you have an ssh key in windows in `C:\Users\%UserProfile%\.ssh`, copy it (both keys) to linux `~/.ssh` folder or using Windows file explorer or power toys `\\wsl$\Ubuntu\home\%USERNAME%\.ssh` and change its rights using: `chmod 600 ~/.ssh/id_rsa` and `chmod 600 ~/.ssh/id_rsa.pub`.
+- Restart the terminal and run `systemctl list-unit-files --type=service` in WSL to see some processes running.
+- If you don't have an SSH key, generate a new SSH key using : `ssh-keygen -t rsa` inside linux.
+- If you have an ssh key in windows in `C:\Users\%UserProfile%\.ssh`, copy it (both keys) to linux `~/.ssh` folder or using Windows file explorer or power toys `\\wsl$\Ubuntu\home\%USERNAME%\.ssh` and change its rights using: `chmod 600 ~/.ssh/id_rsa` and `chmod 600 ~/.ssh/id_rsa.pub`.
 ### 3.2. Linux/WSL Setup - terminal, shell, Miniconda, CUDA & More:
 - [Linux Setup Guide](../unix_workflow/README.md): terminal & shell setup, automated script & a tutorial to install the main elements I use in Linux/WSL.
 - [Cuda & Pytorch installation inside conda](../unix_workflow/1_cuda_pytorch_install.md)

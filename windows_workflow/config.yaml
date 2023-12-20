@@ -1,3 +1,11 @@
+# colors
+surface0: &surface0 "#363a4f"
+crust: &crust "#181926"
+
+default_background: &default_background "#20242cc4"
+default_foreground: &default_foreground "#ffffff"
+
+
 general:
   # Whether to automatically focus windows underneath the cursor.
   focus_follows_cursor: false
@@ -42,8 +50,8 @@ bar:
   height: "25px"
   position: "top"
   opacity: 1.0
-  background: *base
-  foreground: *mauve
+  background: *default_background
+  foreground: *default_foreground
   font_family: "FiraCode Nerd Font"
   font_size: "13px"
   padding: "4px 6px"
@@ -55,7 +63,7 @@ bar:
   components_left:
     - type: "workspaces"
       # current active workspace
-      focused_workspace_background: *text
+      focused_workspace_background: *default_foreground
       focused_workspace_foreground: *crust
       # inactive, but displayed on other monitor workspace
       displayed_workspace_background: *surface0
@@ -63,15 +71,15 @@ bar:
       default_workspace_background: "transparent"
   components_center:
     - type: "window title"
-      foreground: *text
+      foreground: *default_foreground
   components_right:
     - type: "system tray"
     - type: "tiling direction"
       label_horizontal: "⮂"
       label_vertical: "⮁"
-      background: "#ffffff33"
       margin: "0 4px"
       padding: "0 8px"
+
     # - type: "cpu"
     #   label: "CPU: {percent_usage}%"
     #   # How often this counter is refreshed.
@@ -84,17 +92,16 @@ bar:
     #   label: "RAM: {percent_usage}%"
     #   # How often this counter is refreshed.
     #   refresh_interval_ms: 1000
-    - type: "battery"
-      foreground: *text
-      label_draining: " {battery_level}%"
-      label_power_saver: " {battery_level}%"
-      label_charging: "⚡ {battery_level}% "
+    # - type: "battery"
+    #   foreground: *text
+    #   label_draining: " {battery_level}%"
+    #   label_power_saver: " {battery_level}%"
+    #   label_charging: "⚡ {battery_level}% "
 
     - type: "clock"
       # Documentation on formatting date/time string:
       # https://learn.microsoft.com/en-us/dotnet/standard/base-types/custom-date-and-time-format-strings
       time_formatting: "HH:mm ddd d MMM"
-      foreground: *text
 
 workspaces:
   - name: "1"
@@ -130,6 +137,10 @@ window_rules:
   # Do not manage Picture-in-picture windows
   - command: "ignore"
     match_title: "[Pp]icture.in.[Pp]icture"
+    match_class_name: "Chrome_WidgetWin_1|MozillaDialogClass"
+
+  - command: "ignore"
+    match_title: "^(.*?)[Pp]icture-in-[Pp]icture(.*)"
     match_class_name: "Chrome_WidgetWin_1|MozillaDialogClass"
 
   - command: "ignore"
@@ -305,33 +316,3 @@ keybindings:
     binding: "Alt+Shift+8"
   - commands: ["move to workspace 9"] #, "focus workspace 9"]
     bindings: ["Alt+Shift+9"]
-
-
-
-# catppuccin
-rosewater: &rosewater "#f4dbd6"
-flamingo: &flamingo "#f0c6c6"
-pink: &pink "#f5bde6"
-mauve: &mauve "#c6a0f6"
-red: &red "#ed8796"
-maroon: &maroon "#ee99a0"
-peach: &peach "#f5a97f"
-yellow: &yellow "#eed49f"
-green: &green "#a6da95"
-teal: &teal "#8bd5ca"
-sky: &sky "#91d7e3"
-sapphire: &sapphire "#7dc4e4"
-blue: &blue "#8aadf4"
-lavender: &lavender "#b7bdf8"
-text: &text "#cad3f5"
-subtext1: &subtext1 "#b8c0e0"
-subtext0: &subtext0 "#a5adcb"
-overlay2: &overlay2 "#939ab7"
-overlay1: &overlay1 "#8087a2"
-overlay0: &overlay0 "#6e738d"
-surface2: &surface2 "#5b6078"
-surface1: &surface1 "#494d64"
-surface0: &surface0 "#363a4f"
-base: &base "#24273a"
-mantle: &mantle "#1e2030"
-crust: &crust "#181926"
