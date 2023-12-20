@@ -188,46 +188,38 @@ binding_modes:
 keybindings:
   # Shift focus in a given direction.
   - command: "focus left"
-    bindings: ["Alt+H", "Alt+Left"]
+    bindings: ["Alt+Left"]
   - command: "focus right"
-    bindings: ["Alt+L", "Alt+Right"]
+    bindings: ["Alt+Right"]
   - command: "focus up"
-    bindings: ["Alt+K", "Alt+Up"]
+    bindings: ["Alt+Up"]
   - command: "focus down"
-    bindings: ["Alt+J", "Alt+Down"]
+    bindings: ["Alt+Down"]
 
   # Move focused window in a given direction.
   - command: "move left"
-    bindings: ["Alt+Shift+H", "Alt+Shift+Left"]
+    bindings: ["Alt+Shift+Left"]
   - command: "move right"
-    bindings: ["Alt+Shift+L", "Alt+Shift+Right"]
+    bindings: ["Alt+Shift+Right"]
   - command: "move up"
-    bindings: ["Alt+Shift+K", "Alt+Shift+Up"]
+    bindings: ["Alt+Shift+Up"]
   - command: "move down"
-    bindings: ["Alt+Shift+J", "Alt+Shift+Down"]
+    bindings: ["Alt+Shift+Down"]
 
-  # Resize focused window by a percentage or pixel amount.
-  - command: "resize width -2%"
-    binding: "Alt+U"
-  - command: "resize width +2%"
-    binding: "Alt+P"
-  - command: "resize height +2%"
-    binding: "Alt+O"
-  - command: "resize height -2%"
-    binding: "Alt+I"
+
 
   # As an alternative to the resize keybindings above, resize mode enables resizing via
   # HJKL or arrow keys. The binding mode is defined above with the name "resize".
-  - command: "binding mode resize"
-    binding: "Alt+R"
+  # - command: "binding mode resize"
+  #   binding: "Alt+R"
 
   # Change tiling direction. This determines where new tiling windows will be inserted.
   - command: "tiling direction toggle"
     binding: "Alt+V"
 
-  # Change focus between floating / tiling windows.
-  - command: "focus mode toggle"
-    binding: "Alt+Ctrl+Space"
+  # # Change focus between floating / tiling windows.
+  # - command: "focus mode toggle"
+  #   binding: "Alt+Ctrl+Space"
 
   # Change the focused window to be floating / tiling.
   - command: "toggle floating"
@@ -255,18 +247,18 @@ keybindings:
 
   # Launch CMD terminal (alternatively `exec wt` or `exec %ProgramFiles%/Git/git-bash.exe`
   # to start Windows Terminal and Git Bash respectively.
-  - command: "exec wt"
-    binding: "Alt+T"
+  # - command: "exec wt"
+  #   binding: "Alt+T"
 
   # Focus the workspace that last had focus.
-  - command: "focus workspace recent"
-    binding: "Alt+Y"
+  # - command: "focus workspace recent"
+  #   binding: "Alt+Y"
 
   # Focus the next/previous workspace defined in `workspaces` config.
-  - command: "focus workspace next"
-    binding: "Alt+T"
-  - command: "focus workspace prev"
-    binding: "Alt+Shift+T"
+  # - command: "focus workspace next"
+  #   binding: "Alt+T"
+  # - command: "focus workspace prev"
+  #   binding: "Alt+Shift+T"
 
   # Change focus to a workspace defined in `workspaces` config.
   - command: "focus workspace 1"
@@ -289,14 +281,14 @@ keybindings:
     binding: "Alt+9"
 
   # Move focused workspace to a monitor in a given direction.
-  - command: "move workspace left"
-    binding: "Alt+A"
-  - command: "move workspace right"
-    binding: "Alt+F"
-  - command: "move workspace up"
-    binding: "Alt+D"
-  - command: "move workspace down"
-    binding: "Alt+S"
+  # - command: "move workspace left"
+  #   binding: "Alt+A"
+  # - command: "move workspace right"
+  #   binding: "Alt+F"
+  # - command: "move workspace up"
+  #   binding: "Alt+D"
+  # - command: "move workspace down"
+  #   binding: "Alt+S"
 
   # Move focused window to a workspace defined in `workspaces` config.
   - commands: ["move to workspace 1"] #, "focus workspace 1"]
