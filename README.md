@@ -27,6 +27,7 @@ You can follow this repository to get a similar setup on Windows11, Linux or bot
 
 ## For Windows users: Why you should use WSL2 ?
 WSL2 enables users to run Linux applications and utilize command-line tools natively on their Windows machines. WSL2 provides a versatile and efficient development environment, fostering compatibility with a wide range of tools and workflows commonly associated with Linux. This integration allows users to enjoy the familiarity of Windows while simultaneously harnessing the power and flexibility of Linux.
+
 **macOS:**
 - (+) Excellent for coding and video editing. Supports Adobe & Office products.
 - (-) Limited gaming capabilities compared to Windows & Linux.
