@@ -2,7 +2,7 @@ Linux / WSL2 (Ubuntu 22.04) Workflow
 ==================
 ![Windows WSL Terminal](../images/windows_wsl_terminal.png)
 
-A set of configurations. dotfiles and a script to automatically set up a powerful terminal & environment on Linux/WSL2 (Maybe will add an Ansible version of the bash script in the future).
+A set of configurations, dotfiles and a script to automatically set up a powerful terminal & environment on Linux/WSL2 (Maybe will add an Ansible version of the bash script in the future).
 For Windows/WSL users, you can check the parent [readme](../README.md)
 
 **Table of Contents**
