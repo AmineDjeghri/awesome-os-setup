@@ -16,16 +16,17 @@ You can follow this repository to get a similar setup on Windows11, Linux or bot
 
 ## Content of repository
 - Linux (Ubuntu 22.04): [unix_workflow/README](unix_workflow/README.md).
-  - can be used for Linux and WSL2.
+  - Linux/WSL2 automated setup for installing essential components like terminal & shell utilities(zsh, fzf...), themes like powerlvl10k, Conda, GPU drivers, and more.
 - Windows 11 & WSL2: [windows_workflow/README](windows_workflow/README.md).
    - Valuable tips for enhancing your Windows user experience, with a focus on creating a productive environment incorporating WSL 2 (Linux).
    - Windows apps to enhance your productivity.
    - Includes a guide for installing WSL 2 and configuring it to work with Windows Terminal.
-   - WSL2/Linux automated setup [unix_workflow/README](unix_workflow/README.md) for installing essential components like terminal & shell utilities(zsh..), Conda, GPU drivers, and more.
+   - Linux/WSL2 automated setup for installing essential components like terminal & shell utilities(zsh, fzf...), themes like powerlvl10k, Conda, GPU drivers, and more.
    - No need for dual boot anymore, and includes SSH, SFTP with UI (Pycharm/FileZilla).
 - Browser extensions: [windows_workflow/browser_extensions.md](windows_workflow/browser_extensions.md).
 
 ## For Windows users: Why you should use WSL2 ?
+WSL2 enables users to run Linux applications and utilize command-line tools natively on their Windows machines. WSL2 provides a versatile and efficient development environment, fostering compatibility with a wide range of tools and workflows commonly associated with Linux. This integration allows users to enjoy the familiarity of Windows while simultaneously harnessing the power and flexibility of Linux.
 **macOS:**
 - (+) Excellent for coding and video editing. Supports Adobe & Office products.
 - (-) Limited gaming capabilities compared to Windows & Linux.
