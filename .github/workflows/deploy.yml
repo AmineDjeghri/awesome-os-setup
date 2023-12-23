@@ -5,53 +5,58 @@ on:
 # Replace `main` with your branch’s name
     push:
         branches: ["main"]
-
 # Specify to run a workflow manually from the Actions tab on GitHub
     workflow_dispatch:
 
+# Gives the workflow permissions to clone the repo and create a page deployment
+permissions:
+    id-token: write
+    pages: write
+
 env:
     # Name of module and id separated by a slash
-    INSTANCE: Writerside/instance
+    INSTANCE: Writerside/hi
     # Replace HI with the ID of the instance in capital letters
-    ARTIFACT: webHelpINSTANCE-all.zip
+    ARTIFACT: webHelpHI2-all.zip
     # Writerside docker image version
     DOCKER_VERSION: 232.10275
 # Add the variable below to upload Algolia indexes
 # Replace HI with the ID of the instance in capital letters
-    ALGOLIA_ARTIFACT: algolia-indexes-INSTANCE.zip
+    ALGOLIA_ARTIFACT: algolia-indexes-HI.zip
 
 jobs:
     build:
         runs-on: ubuntu-latest
+
         steps:
-            - name: Checkout repository
-              uses: actions/checkout@v3
+        - name: Checkout repository
+          uses: actions/checkout@v3
 
-            - name: Build Writerside docs using Docker
-              uses: JetBrains/writerside-github-action@v4
-              with:
-                instance: ${{ env.INSTANCE }}
-                artifact: ${{ env.ARTIFACT }}
-                docker-version: ${{ env.DOCKER_VERSION }}
+        - name: Build Writerside docs using Docker
+          uses: JetBrains/writerside-github-action@v4
+          with:
+            instance: ${{ env.INSTANCE }}
+            artifact: ${{ env.ARTIFACT }}
+            docker-version: ${{ env.DOCKER_VERSION }}
 
-            - name: Upload documentation
-              uses: actions/upload-artifact@v3
-              with:
-                name: docs
-                path: |
-                    artifacts/${{ env.ARTIFACT }}
-                    artifacts/report.json
-                retention-days: 7
+        - name: Upload documentation
+          uses: actions/upload-artifact@v3
+          with:
+            name: docs
+            path: |
+                artifacts/${{ env.ARTIFACT }}
+                artifacts/report.json
+            retention-days: 7
 
 # Add the step below to upload Algolia indexes
-            - name: Upload algolia-indexes
-              uses: actions/upload-artifact@v3
-              with:
-                name: algolia-indexes
-                path: artifacts/${{ env.ALGOLIA_ARTIFACT }}
-                retention-days: 7
+        - name: Upload algolia-indexes
+          uses: actions/upload-artifact@v3
+          with:
+            name: algolia-indexes
+            path: artifacts/${{ env.ALGOLIA_ARTIFACT }}
+            retention-days: 7
 
-## Add the job below and artifacts/report.json on Upload documentation step above if you want to fail the build when documentation contains errors
+# Add the job below and artifacts/report.json on Upload documentation step above if you want to fail the build when documentation contains errors
 #    test:
 #    # Requires build job results
 #        needs: build
@@ -68,3 +73,31 @@ jobs:
 #              uses: JetBrains/writerside-checker-action@v1
 #              with:
 #                instance: ${{ env.INSTANCE }}
+
+    deploy:
+        environment:
+            name: github-pages
+            url: ${{ steps.deployment.outputs.page_url }}
+        # Requires the build job results
+        needs: test
+        runs-on: ubuntu-latest
+        steps:
+            - name: Download artifact
+              uses: actions/download-artifact@v3
+              with:
+                name: docs
+
+            - name: Unzip artifact
+              run: unzip -O UTF-8 -qq ${{ env.ARTIFACT }} -d dir
+
+            - name: Setup Pages
+              uses: actions/configure-pages@v2
+
+            - name: Upload artifact
+              uses: actions/upload-pages-artifact@v1
+              with:
+                path: dir
+
+            - name: Deploy to GitHub Pages
+              id: deployment
+              uses: actions/deploy-pages@v1
