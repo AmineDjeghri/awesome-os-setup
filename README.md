@@ -1,6 +1,6 @@
 ![Logo](images/logo.png)
 
-![Windows WSL Terminal with taskbar](images/windows_wsl_terminal_taskbar.png)
+![Windows WSL Terminal](images/windows_wsl_terminal.png)
 
 
 <div style="text-align: center;">The image you are looking at is a screenshot of a WSL Ubuntu terminal in Windows 11. The top bar is an app called GlazeWM.
