@@ -14,41 +14,47 @@ You can follow this repository to get a similar setup on Windows11, Linux or bot
 ![Windows Terminal](https://img.shields.io/badge/Windows%20Terminal-%234D4D4D.svg?style=for-the-badge&logo=windows-terminal&logoColor=white)
 </div>
 
-## Content of repository
-- Linux (Ubuntu 22.04): [unix_workflow/README](unix_workflow/README.md).
-  - Linux/WSL2 automated setup for installing essential components like terminal & shell utilities(zsh, fzf...), themes like powerlvl10k, Conda, GPU drivers, and more.
-- Windows 11 & WSL2: [windows_workflow/README](windows_workflow/README.md).
-   - Valuable tips for enhancing your Windows user experience, with a focus on creating a productive environment incorporating WSL 2 (Linux).
-   - Windows apps to enhance your productivity.
-   - Includes a guide for installing WSL 2 and configuring it to work with Windows Terminal.
-   - Linux/WSL2 automated setup for installing essential components like terminal & shell utilities(zsh, fzf...), themes like powerlvl10k, Conda, GPU drivers, and more.
-   - No need for dual boot anymore, and includes SSH, SFTP with UI (Pycharm/FileZilla).
-- Browser extensions: [windows_workflow/browser_extensions.md](windows_workflow/browser_extensions.md).
+**Table of contents**
+<!-- TOC -->
+  * [Linux/WSL2 (Ubuntu 22.04):](#linuxwsl2-ubuntu-2204-)
+  * [Windows 11 & WSL2:](#windows-11--wsl2)
+  * [Browser extensions:](#browser-extensions-)
+  * [For Windows users: Why you should use WSL2?](#for-windows-users-why-you-should-use-wsl2)
+  * [Star History (remember to star the repo 😁)](#star-history-remember-to-star-the-repo-)
+<!-- TOC -->
 
-## For Windows users: Why you should use WSL2 ?
-WSL2 enables users to run Linux applications and utilize command-line tools natively on their Windows machines. WSL2 provides a versatile and efficient development environment, fostering compatibility with a wide range of tools and workflows commonly associated with Linux. This integration allows users to enjoy the familiarity of Windows while simultaneously harnessing the power and flexibility of Linux.
+## Linux/WSL2 (Ubuntu 22.04):
+A set of configurations,
+dotfiles and a script to automatically set up a powerful terminal & shell utilities(zsh, fzf...),
+themes like Powerlvl10k, Conda, GPU drivers, and more on Linux/WSL2, again automatically.
 
-**macOS:**
-- (+) Excellent for coding and video editing. Supports Adobe & Office products.
-- (-) Limited gaming capabilities compared to Windows & Linux.
+Get started with one command :
+```bash
+sh -c "$(wget https://raw.githubusercontent.com/AmineDjeghri/Awesome-Windows11-WSL-Linux/master/unix_workflow/auto_linux_setup.sh -O -)"
+```
+Read more about it here: [unix_workflow/README](unix_workflow/README.md)
 
-**Linux:**
-- (+) Ideal for coding and gaming, providing good performance in both areas.
-- (-) Lacks support for Adobe & Office products and certain software.
+## Windows 11 & WSL2:
+Valuable applications & tips for enhancing your Windows user experience, with a focus on creating a productive environment incorporating WSL 2 (Linux).
 
-**Windows with WSL:**
-- (+) Seamless compatibility with diverse software, including Adobe & Office products.
-- (+) Optimal choice for gaming enthusiasts.
-- (+) Well-suited for coding with Windows Subsystem for Linux (WSL) and no need for dual boot.
-- (-) UI is not smooth and responsive compared to macOS & Linux
+Read more about it here: [windows_workflow/README](windows_workflow/README.md)
+
+## Browser extensions:
+Read more about it here: [windows_workflow/browser_extensions.md](windows_workflow/browser_extensions.md).
+
+## For Windows users: Why you should use WSL2?
+WSL2 enables users to run Linux applications and utilize command-line tools natively on their Windows machines.
+This integration allows users
+to enjoy the familiarity of Windows while simultaneously harnessing the power and flexibility of Linux.
+
+|              | macOS                                                                         | Linux                                                                      | Windows with WSL                                                                                                                                                                                                                        |
+|--------------|-------------------------------------------------------------------------------|----------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Advantages   | (+) Excellent for coding and video editing. Supports Adobe & Office products. | (+) Ideal for coding and gaming, providing good performance in both areas. | - (+) Seamless compatibility with diverse software, including Adobe & Office products. <br> (+) Optimal choice for gaming enthusiasts <br> (+) Well-suited for coding with Windows Subsystem for Linux (WSL) and no need for dual boot. |
+| Inconvenient | (-) Limited gaming capabilities compared to Windows & Linux.                  | (-) Lacks support for Adobe & Office products and certain software.        | (-) UI is not smooth and responsive compared to macOS & Linux                                                                                                                                                                           |
 
 Within the domain of development, Unix-based systems such as Linux and macOS frequently garner attention. Nevertheless, the integration of WSL allows smooth coding alongside the utilization of Adobe and Microsoft products that may lack support on Linux. This flexibility, coupled with the ability to handle resource-intensive games beyond macOS capabilities, positions Windows-WSL as an enticing platform, ensuring a well-rounded computing experience for all users, regardless of their workplace constraints.
 
 Based on your needs, you can choose your OS.
-
-## Awesome Piracy :
-https://github.com/Igglybuff/awesome-piracy
-
 
 ## Star History (remember to star the repo 😁)
 [![Star History Chart](https://api.star-history.com/svg?repos=aminedjeghri/awesomewindows11&type=Date)](https://star-history.com/#aminedjeghri/awesomewindows11&Date)

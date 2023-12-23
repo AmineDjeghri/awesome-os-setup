@@ -1,5 +1,5 @@
-Awesome-Windows11-WSL2
-==========================
+# Awesome Windows11 & WSL
+
 ![Windows WSL Terminal with taskbar](../images/windows_wsl_terminal_taskbar.png)
 
 The image you are looking at is a screenshot of a WSL Ubuntu terminal in Windows 11. The top bar is an app called GlazeWM.
@@ -7,7 +7,7 @@ You can follow this repository to get a similar setup.
 
 **Table of Contents**
 <!-- TOC -->
-* [Awesome-Windows11-WSL2](#awesome-windows11-wsl2)
+* [Awesome Windows11 & WSL](#awesome-windows11--wsl)
   * [1. Windows account & configuration](#1-windows-account--configuration)
     * [1.1. Windows account](#11-windows-account)
     * [1.2. Windows configuration](#12-windows-configuration)
@@ -34,7 +34,7 @@ You can follow this repository to get a similar setup.
 1. If you already have a key: activate windows with your key
 2. If you don't have a key, you can buy one for a small price.
 3. If you have a key in your old computer, you can use it in your new computer: If you didn't save the key in your account, you need to do this before resetting your old computer
-   - On your old PC, check if the key is not an OEM by running  `Slmgr /dli`
+   - On your old PC, check if the key is not an OEM by running `Slmgr /dli`
    - Get your license key (if you forgot the serial number, use software like :
    - Deactivate it in Windows terminal by using administrator mode with `slmgr /cpky`
    - Activate it on the new computer using `slmgr /ipk xxxxx-xxxxx-xxxxx-xxxxx-xxxxx`
@@ -102,10 +102,10 @@ You can follow this repository to get a similar setup.
   - shortcuts: You can read more about the shortcuts [here](https://github.com/glazerdesktop/GlazeWM?tab=readme-ov-file#general)
     - ⊞ + shift + q: close a window
     - ⊞ + shift + r: reload the config file
-- Files: Replaces the Windows File Explorer. Manage all your files with increased productivity. Work across multiple folders with tabs and so much more.
+- Files: Replace the Windows File Explorer. Manage all your files with increased productivity. Work across multiple folders with tabs and so much more.
   - Download [Files](https://files.community/). There are two version : direct installer (free) & Microsoft Store (paid)
   - Replace Windows File explorer with Files: [link](https://files.community/docs/configuring/replace-file-explorer/)
-  - You can import my settings : [link](Files_3.0.15.0.zip). Open Files -> Settings -> advanced -> import settings
+  - You can import my settings: [link](Files_3.0.15.0.zip). Open Files -> Settings -> advanced -> import settings
 
 ### 2.3. Dev Software
 #### 2.3.1. <ins>PyCharm</ins>:
@@ -148,7 +148,7 @@ The most amazing thing about WSL (WSL2.0 exactly) is : You can run Linux in Wind
 - Virtualization overhead is not noticeable, full integration between guest and host os's, you can run binaries compiled for MS Windows from linux.
 - You can navigate and communicate between ubuntu and windows as Ubuntu acts like a disk drive.
 - You can install conda environment in ubuntu, use GPU, use pycharm on windows to connect to WSL conda env and more.
-- Do not code in both OS, use for example pycharm or vscode on windows with a conda environment installed on WSL. The best thing is to combine the power of Windows with WSL.
+- Do not code in both OS, use, for example, pycharm or vscode on windows with a conda environment installed on WSL. The best thing is to combine the power of Windows with WSL.
 
 ### 3.1. Install WSL:
 - Install WSL ``` wsl --install ```
@@ -172,14 +172,17 @@ systemd=true
 - If you don't have an SSH key, generate a new SSH key using : `ssh-keygen -t rsa` inside linux.
 - If you have an ssh key in windows in `C:\Users\%UserProfile%\.ssh`, copy it (both keys) to linux `~/.ssh` folder or using Windows file explorer or power toys `\\wsl$\Ubuntu\home\%USERNAME%\.ssh` and change its rights using: `chmod 600 ~/.ssh/id_rsa` and `chmod 600 ~/.ssh/id_rsa.pub`.
 ### 3.2. Linux/WSL Setup - terminal, shell, Miniconda, CUDA & More:
-- [Linux Setup Guide](../unix_workflow/README.md): terminal & shell setup, automated script & a tutorial to install the main elements I use in Linux/WSL.
+[Linux Setup Guide](../README.md#linuxwsl2-ubuntu-2204-): A set of configurations, dotfiles and a script to automatically set up a powerful terminal & shell utilities(zsh, fzf...), themes like Powerlvl10k, Conda, GPU drivers, and more on Linux/WSL2.
+
+
+Advanced configuration:
 - [Cuda & Pytorch installation inside conda](../unix_workflow/1_cuda_pytorch_install.md)
 - [Pycharm settings, tips & tricks](../unix_workflow/2_pycharm_wsl_conda.md)
 - [Python package example](../unix_workflow/package_example)
 
 
 ### 3.3. WSL2 Tips & Tricks :
-- Find WSL path : `\\wsl$\Ubuntu\home` or `\\wsl$\Ubuntu`  then ping it in Windows Explorer's sidebar.
+- Find WSL path: `\\wsl$\Ubuntu\home` or `\\wsl$\Ubuntu`  then ping it in Windows Explorer's sidebar.
 - You can use `wslpath` command to convert a Windows path to wsl path : `wslpath  'C:\Users\AmineDjeghri\Desktop\git\myproject'`
 - Update packages:  `sudo apt update` then `sudo apt upgrade`
 - Disk usage: `df -h` look on the right column 'Mounted on'
@@ -189,7 +192,7 @@ systemd=true
 - Reclaim disk space :
    - it requires docker Dashboard for WSL2, and 2 hyper V params in the Control Panel.
    -  Install this https://superuser.com/a/1307442/769637 install the Hyper-V Platform | Hyper-V Services part, too + restart)
-   - in Administrator Mode : `wsl --shutdown` then `cd 'C:\Users\Amine Djeghri\AppData\Local\Packages\CanonicalGroupLimited.Ubuntu_79rhkp1fndgsc\LocalState'` then `optimize-vhd -Path .\ext4.vhdx -Mode full`
+   - in Administrator Mode: `wsl --shutdown` then `cd 'C:\Users\Amine Djeghri\AppData\Local\Packages\CanonicalGroupLimited.Ubuntu_79rhkp1fndgsc\LocalState'` then `optimize-vhd -Path .\ext4.vhdx -Mode full`
    - for more information, check this: these https://askubuntu.com/a/1380274 + https://github.com/microsoft/WSL/issues/4699 +
 - To change the default distro or fix the `wsl` command to start your distro from powershell not working you can do:
 ```sh

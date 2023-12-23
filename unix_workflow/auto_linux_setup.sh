@@ -93,7 +93,7 @@ install_oh_my_zsh_pl10k() {
     fi
 
     # Check if the font "MesloLGS NF Regular.ttf" is installed
-    if ask_yes_no "Is the font 'MesloLGS NF Regular.ttf' installed?"; then
+    if ask_yes_no "Is the font 'Firacode' installed in your terminal?"; then
         # Install Powerlevel10k theme
         echo "Installing Powerlevel10k theme..."
         git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
@@ -104,7 +104,7 @@ install_oh_my_zsh_pl10k() {
         echo  "${YELLOW}(Optional) If you have custom configurations in your .bashrc, consider copying them to the .zshrc file.${RESET}"
 
     else
-        echo "${RED}Please install the font 'MesloLGS NF Regular.ttf' in your terminal then reinstall powerlevel10k again.${RESET}"
+        echo "${RED}Please install the font 'Firacode' in your terminal then reinstall powerlevel10k again. Direct Link: https://github.com/ryanoasis/nerd-fonts/releases/download/v3.1.1/FiraCode.zip ${RESET}"
     fi
 
 }
