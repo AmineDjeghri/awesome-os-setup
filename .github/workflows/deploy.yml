@@ -1,22 +1,52 @@
-name: Python package test
+name: Build documentation
 
-on: [push]
+on:
+# If specified, the workflow will be triggered automatically once you push to the `main` branch.
+# Replace `main` with your branch’s name
+    push:
+        branches: ["main"]
+
+# Specify to run a workflow manually from the Actions tab on GitHub
+    workflow_dispatch:
+
+env:
+    # Name of module and id separated by a slash
+    INSTANCE: Writerside/instance
+    # Replace HI with the ID of the instance in capital letters
+    ARTIFACT: webHelpINSTANCE2-all.zip
+    # Writerside docker image version
+    DOCKER_VERSION: 232.10275
+# Add the variable below to upload Algolia indexes
+# Replace HI with the ID of the instance in capital letters
+    ALGOLIA_ARTIFACT: algolia-indexes-INSTANCE.zip
 
 jobs:
-  build:
+    build:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout repository
+              uses: actions/checkout@v3
 
-    runs-on: ubuntu-latest
+            - name: Build Writerside docs using Docker
+              uses: JetBrains/writerside-github-action@v4
+              with:
+                instance: ${{ env.INSTANCE }}
+                artifact: ${{ env.ARTIFACT }}
+                docker-version: ${{ env.DOCKER_VERSION }}
 
-    steps:
-      - uses: actions/checkout@v4
-      - name: Set up Python
-        # This is the version of the action for setting up Python, not the Python version.
-        uses: actions/setup-python@v4
-        with:
-          # Semantic version range syntax or exact version of a Python version
-          python-version: '3.11'
-          # Optional - x64 or x86 architecture, defaults to x64
-          architecture: 'x64'
-      # You can test your matrix by printing the current Python version
-      - name: Display Python version
-        run: python -c "import sys; print(sys.version)"
+            - name: Upload documentation
+              uses: actions/upload-artifact@v3
+              with:
+                name: docs
+                path: |
+                    artifacts/${{ env.ARTIFACT }}
+                    artifacts/report.json
+                retention-days: 7
+
+# Add the step below to upload Algolia indexes
+            - name: Upload algolia-indexes
+              uses: actions/upload-artifact@v3
+              with:
+                name: algolia-indexes
+                path: artifacts/${{ env.ALGOLIA_ARTIFACT }}
+                retention-days: 7
