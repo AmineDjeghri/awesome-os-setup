@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE instance-profile
+        SYSTEM "https://resources.jetbrains.com/writerside/1.0/product-profile.dtd">
+
+<instance-profile id="docs_instance"
+                  name="Awesome Windows11-WSL2-Linux" start-page="README.md">
+
+    <toc-element topic="README.md"/>
+</instance-profile>
