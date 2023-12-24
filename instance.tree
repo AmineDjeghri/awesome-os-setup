@@ -6,5 +6,15 @@
                   name="awesome windows-wsl2-linux" start-page="README.md">
 
     <toc-element topic="README.md"/>
+    <toc-element toc-title="unix_workflow">
+        <toc-element topic="README_unix.md" toc-title="Unix setup"/>
+        <toc-element topic="1_cuda_pytorch_install.md"/>
+        <toc-element topic="2_pycharm_wsl_conda.md"/>
+        <toc-element topic="3_more.md"/>
+    </toc-element>
+    <toc-element toc-title="windows_workflow">
+        <toc-element topic="README_windows.md" toc-title="windows setup"/>
+        <toc-element topic="browser_extensions.md"/>
+    </toc-element>
 
 </instance-profile>
