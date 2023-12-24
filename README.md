@@ -1,7 +1,7 @@
 # Awesome Windows11-WSL-Linux
-![Logo](images/logo.png)
+![Logo](logo.png)
 
-![Windows WSL Terminal](images/windows_wsl_terminal.png)
+![Windows WSL Terminal](windows_wsl_terminal.png)
 
 
 <div style="text-align: center;">The image you are looking at is a screenshot of a WSL Ubuntu terminal in Windows 11. The top bar is an app called GlazeWM.
@@ -17,10 +17,10 @@ You can follow this repository to get a similar setup on Windows11, Linux or bot
 
 **Table of contents**
 <!-- TOC -->
-* [Awesome Windows11-WSL-Linux](#awesome-windows11-wsl-linux)
-  * [Linux/WSL2 (Ubuntu 22.04):](#linuxwsl2-ubuntu-2204)
-  * [Windows 11 & WSL2:](#windows-11--wsl2)
-  * [Star History](#star-history)
+* [Awesome Windows11-WSL-Linux](#awesome-windows11-wsl-linux.)
+  * [Linux/WSL2 (Ubuntu 22.04):](#linuxwsl2-ubuntu-2204.)
+  * [Windows 11 & WSL2:](#windows-11--wsl2.)
+  * [Star History](#star-history.)
 <!-- TOC -->
 
 ## Linux/WSL2 (Ubuntu 22.04):
@@ -32,15 +32,15 @@ Get started with one command :
 ```bash
 sh -c "$(wget https://raw.githubusercontent.com/AmineDjeghri/Awesome-Windows11-WSL-Linux/master/unix_workflow/auto_linux_setup.sh -O -)"
 ```
-Read more about it here: [unix_workflow/README](unix_workflow/README)
+Read more about it here: [README.](unix_workflow/README)
 
 ## Windows 11 & WSL2:
 Valuable applications & tips for enhancing your Windows user experience, with a focus on creating a productive environment incorporating WSL 2 (Linux).
 
-Read more about it here: [windows_workflow/README](windows_workflow/README)
+Read more about it here: [windows_workflow_README.](windows_workflow/README)
 
 **Browser extensions**
-Read more about it here: [windows_workflow/browser_extensions.md](windows_workflow/browser_extensions.md).
+Read more about it here: [browser_extensions.md](windows_workflow/browser_extensions.md).
 
 **For Windows users: Why you should use WSL2?**
 WSL2 enables users to run Linux applications and utilize command-line tools natively on their Windows machines.
