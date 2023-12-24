@@ -1,3 +1,4 @@
+# Awesome Windows11-WSL-Linux
 ![Logo](images/logo.png)
 
 ![Windows WSL Terminal](images/windows_wsl_terminal.png)
@@ -32,12 +33,12 @@ Get started with one command :
 ```bash
 sh -c "$(wget https://raw.githubusercontent.com/AmineDjeghri/Awesome-Windows11-WSL-Linux/master/unix_workflow/auto_linux_setup.sh -O -)"
 ```
-Read more about it here: [unix_workflow/README](unix_workflow/README.md)
+Read more about it here: [unix_workflow/README](unix_workflow/README_unix)
 
 ## Windows 11 & WSL2:
 Valuable applications & tips for enhancing your Windows user experience, with a focus on creating a productive environment incorporating WSL 2 (Linux).
 
-Read more about it here: [windows_workflow/README](windows_workflow/README.md)
+Read more about it here: [windows_workflow/README](windows_workflow/README_windows)
 
 ## Browser extensions:
 Read more about it here: [windows_workflow/browser_extensions.md](windows_workflow/browser_extensions.md).
@@ -47,10 +48,10 @@ WSL2 enables users to run Linux applications and utilize command-line tools nati
 This integration allows users
 to enjoy the familiarity of Windows while simultaneously harnessing the power and flexibility of Linux.
 
-|              | macOS                                                                         | Linux                                                                      | Windows with WSL                                                                                                                                                                                                                        |
-|--------------|-------------------------------------------------------------------------------|----------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Advantages   | (+) Excellent for coding and video editing. Supports Adobe & Office products. | (+) Ideal for coding and gaming, providing good performance in both areas. | - (+) Seamless compatibility with diverse software, including Adobe & Office products. <br> (+) Optimal choice for gaming enthusiasts <br> (+) Well-suited for coding with Windows Subsystem for Linux (WSL) and no need for dual boot. |
-| Inconvenient | (-) Limited gaming capabilities compared to Windows & Linux.                  | (-) Lacks support for Adobe & Office products and certain software.        | (-) UI is not smooth and responsive compared to macOS & Linux                                                                                                                                                                           |
+|              | macOS                                                                         | Linux                                                                      | Windows with WSL                                                                                                                                                                                                                          |
+|--------------|-------------------------------------------------------------------------------|----------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Advantages   | (+) Excellent for coding and video editing. Supports Adobe & Office products. | (+) Ideal for coding and gaming, providing good performance in both areas. | - (+) Seamless compatibility with diverse software, including Adobe & Office products. </br> (+) Optimal choice for gaming enthusiasts </br> (+) Well-suited for coding with Windows Subsystem for Linux (WSL) and no need for dual boot. |
+| Inconvenient | (-) Limited gaming capabilities compared to Windows & Linux.                  | (-) Lacks support for Adobe & Office products and certain software.        | (-) UI is not smooth and responsive compared to macOS & Linux                                                                                                                                                                             |
 
 Within the domain of development, Unix-based systems such as Linux and macOS frequently garner attention. Nevertheless, the integration of WSL allows smooth coding alongside the utilization of Adobe and Microsoft products that may lack support on Linux. This flexibility, coupled with the ability to handle resource-intensive games beyond macOS capabilities, positions Windows-WSL as an enticing platform, ensuring a well-rounded computing experience for all users, regardless of their workplace constraints.
 
