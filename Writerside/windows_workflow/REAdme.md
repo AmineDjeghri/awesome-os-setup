@@ -1,32 +1,32 @@
 # Awesome Windows11 & WSL
 
-![Windows WSL Terminal with taskbar](../images/windows_wsl_terminal_taskbar.png)
+![Windows WSL Terminal with taskbar](windows_wsl_terminal_taskbar.png)
 
 The image you are looking at is a screenshot of a WSL Ubuntu terminal in Windows 11. The top bar is an app called GlazeWM.
 You can follow this repository to get a similar setup.
 
 **Table of Contents**
 <!-- TOC -->
-* [Awesome Windows11 & WSL](#awesome-windows11--wsl)
-  * [1. Windows account & configuration](#1-windows-account--configuration)
-    * [1.1. Windows account](#11-windows-account)
-    * [1.2. Windows configuration](#12-windows-configuration)
-  * [2. Software](#2-software)
-    * [2.1. Mainstream Software](#21-mainstream-software)
-    * [2.2. UI/UX Software](#22-uiux-software)
-    * [2.3. Dev Software](#23-dev-software)
-      * [2.3.1. <ins>PyCharm</ins>:](#231-inspycharmins)
-      * [2.3.2. <ins>Windows Terminal</ins>](#232-inswindows-terminalins)
-      * [2.3.3. <ins>Docker Desktop</ins>](#233-insdocker-desktopins)
-      * [2.3.4. <ins>Sublime Text</ins> (Free):](#234-inssublime-textins-free)
-      * [2.3.5. <ins>Other apps </ins>](#235-insother-apps-ins)
-  * [3. Coding using Linux (WSL) inside Windows](#3-coding-using-linux-wsl-inside-windows)
-    * [3.1. Install WSL:](#31-install-wsl)
-    * [3.2. Linux/WSL Setup - terminal, shell, Miniconda, CUDA & More:](#32-linuxwsl-setup---terminal-shell-miniconda-cuda--more)
-    * [3.3. WSL2 Tips & Tricks :](#33-wsl2-tips--tricks-)
-    * [3.4. backup and restore WSL](#34-backup-and-restore-wsl)
-    * [3.5. Uninstall WSL:](#35-uninstall-wsl)
-  * [4. More (deprecated)](#4-more-deprecated)
+* [Awesome Windows11 & WSL](#awesome-windows11--wsl.)
+  * [1. Windows account & configuration](#1-windows-account--configuration.)
+    * [1.1. Windows account](#11-windows-account.)
+    * [1.2. Windows configuration](#12-windows-configuration.)
+  * [2. Software](#2-software.)
+    * [2.1. Mainstream Software](#21-mainstream-software.)
+    * [2.2. UI/UX Software](#22-uiux-software.)
+    * [2.3. Dev Software](#23-dev-software.)
+      * [2.3.1. <ins>PyCharm</ins>:](#231-inspycharmins.)
+      * [2.3.2. <ins>Windows Terminal</ins>](#232-inswindows-terminalins.)
+      * [2.3.3. <ins>Docker Desktop</ins>](#233-insdocker-desktopins.)
+      * [2.3.4. <ins>Sublime Text</ins> (Free):](#234-inssublime-textins-free.)
+      * [2.3.5. <ins>Other apps </ins>](#235-insother-apps-ins.)
+  * [3. Coding using Linux (WSL) inside Windows](#3-coding-using-linux-wsl-inside-windows.)
+    * [3.1. Install WSL:](#31-install-wsl.)
+    * [3.2. Linux/WSL Setup - terminal, shell, Miniconda, CUDA & More:](#32-linuxwsl-setup---terminal-shell-miniconda-cuda--more.)
+    * [3.3. WSL2 Tips & Tricks :](#33-wsl2-tips--tricks-.)
+    * [3.4. backup and restore WSL](#34-backup-and-restore-wsl.)
+    * [3.5. Uninstall WSL:](#35-uninstall-wsl.)
+  * [4. More (deprecated)](#4-more-deprecated.)
 <!-- TOC -->
 
 ## 1. Windows account & configuration
@@ -142,9 +142,9 @@ Requires WSL (see the WSL section). You can start, stop, delete containers easil
 - [jupyter autocomplete](https://github.com/krassowski/jupyterlab-lsp#installation)
 
 ## 3. Coding using Linux (WSL) inside Windows
-The most amazing thing about WSL (WSL2.0 exactly) is: You can run Linux in Windows without the need of a virtual machine.
+The most amazing thing about WSL (WSL2.0 exactly) is : You can run Linux in Windows without the need of a virtual machine.
 - It's a full Linux kernel running on Windows.
-- You can install packages directly on Linux
+- You can install packages directly in Linux
 - Virtualization overhead is not noticeable, full integration between guest and host os's, you can run binaries compiled for MS Windows from linux.
 - You can navigate and communicate between ubuntu and windows as Ubuntu acts like a disk drive.
 - You can install conda environment in ubuntu, use GPU, use pycharm on windows to connect to WSL conda env and more.
@@ -172,13 +172,13 @@ systemd=true
 - If you don't have an SSH key, generate a new SSH key using : `ssh-keygen -t rsa` inside linux.
 - If you have an ssh key in windows in `C:\Users\%UserProfile%\.ssh`, copy it (both keys) to linux `~/.ssh` folder or using Windows file explorer or power toys `\\wsl$\Ubuntu\home\%USERNAME%\.ssh` and change its rights using: `chmod 600 ~/.ssh/id_rsa` and `chmod 600 ~/.ssh/id_rsa.pub`.
 ### 3.2. Linux/WSL Setup - terminal, shell, Miniconda, CUDA & More:
-[Linux Setup Guide](../unix_workflow/README_unix.md): A set of configurations, dotfiles and a script to automatically set up a powerful terminal & shell utilities(zsh, fzf...), themes like Powerlvl10k, Conda, GPU drivers, and more on Linux/WSL2.
+[Linux Setup Guide](README.md#linuxwsl2-ubuntu-2204-): A set of configurations, dotfiles and a script to automatically set up a powerful terminal & shell utilities(zsh, fzf...), themes like Powerlvl10k, Conda, GPU drivers, and more on Linux/WSL2.
 
 
 Advanced configuration:
-- [Cuda & Pytorch installation inside conda](../unix_workflow/1_cuda_pytorch_install.md)
-- [Pycharm settings, tips & tricks](../unix_workflow/2_pycharm_wsl_conda.md)
-- [Python package example](../unix_workflow/package_example)
+- [Cuda & Pytorch installation inside conda](1_cuda_pytorch_install.md)
+- [Pycharm settings, tips & tricks](2_pycharm_wsl_conda.md)
+- [Python package example](package_example.)
 
 
 ### 3.3. WSL2 Tips & Tricks :

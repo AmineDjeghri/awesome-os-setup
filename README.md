@@ -1,7 +1,6 @@
-# Awesome Windows11-WSL-Linux
-![Logo](logo.png)
+![Logo](images/logo.png)
 
-![Windows WSL Terminal](windows_wsl_terminal.png)
+![Windows WSL Terminal](images/windows_wsl_terminal.png)
 
 
 <div style="text-align: center;">The image you are looking at is a screenshot of a WSL Ubuntu terminal in Windows 11. The top bar is an app called GlazeWM.
@@ -17,13 +16,12 @@ You can follow this repository to get a similar setup on Windows11, Linux or bot
 
 **Table of contents**
 <!-- TOC -->
-* [Awesome Windows11-WSL-Linux](#awesome-windows11-wsl-linux.)
-  * [Linux/WSL2 (Ubuntu 22.04):](#linuxwsl2-ubuntu-2204.)
-  * [Windows 11 & WSL2:](#windows-11--wsl2.)
-  * [Star History](#star-history.)
+  * [Linux/WSL2](#linuxwsl2)
+  * [Windows 11/WSL2](#windows-11wsl2)
+  * [Contributing](#contributing)
 <!-- TOC -->
 
-## Linux/WSL2 (Ubuntu 22.04):
+## Linux/WSL2
 A set of configurations,
 dotfiles and a script to automatically set up a powerful terminal & shell utilities(zsh, fzf...),
 themes like Powerlvl10k, Conda, GPU drivers, and more on Linux/WSL2, again automatically.
@@ -32,12 +30,12 @@ Get started with one command :
 ```bash
 sh -c "$(wget https://raw.githubusercontent.com/AmineDjeghri/Awesome-Windows11-WSL-Linux/master/unix_workflow/auto_linux_setup.sh -O -)"
 ```
-Read more about it here: [README.](unix_workflow/README)
+Read more about it here: [README.](unix_workflow/README_unix.md)
 
-## Windows 11 & WSL2:
+## Windows 11/WSL2
 Valuable applications & tips for enhancing your Windows user experience, with a focus on creating a productive environment incorporating WSL 2 (Linux).
 
-Read more about it here: [windows_workflow_README.](windows_workflow/README)
+Read more about it here: [windows_workflow_README.](windows_workflow/README_windows.md)
 
 **Browser extensions**
 Read more about it here: [browser_extensions.md](windows_workflow/browser_extensions.md).
@@ -56,5 +54,10 @@ Within the domain of development, Unix-based systems such as Linux and macOS fre
 
 Based on your needs, you can choose your OS.
 
-## Star History
+## Contributing
+A folder named `Writerside` contains the same files as the root folder. It is required for the WriterSide extension to work properly.
+Writerside supports only one file named `README.md` that's why you will find another readme file like `unix_workflow/README_unix.md` which contains the same content as  `unix_workflow/README.md` file.
+
+
+
 [![Star History Chart](https://api.star-history.com/svg?repos=aminedjeghri/awesomewindows11&type=Date)](https://star-history.com/#aminedjeghri/awesomewindows11&Date)

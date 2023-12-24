@@ -5,7 +5,7 @@
     <variables></variables>
     <build-profile instance="instance">
         <variables>
-            <noindex-content>false</noindex-content>
+            <noindex-content>true</noindex-content>
         </variables>
     </build-profile>
 
