@@ -11,14 +11,14 @@ on:
 
 env:
     # Name of module and id separated by a slash
-    INSTANCE: Writerside/instance
+    INSTANCE: Writerside/awwl
     # Replace HI with the ID of the instance in capital letters
-    ARTIFACT: webHelpINSTANCE2-all.zip
+    ARTIFACT: webHelpAWWL2-all.zip
     # Writerside docker image version
     DOCKER_VERSION: 232.10275
 # Add the variable below to upload Algolia indexes
 # Replace HI with the ID of the instance in capital letters
-    ALGOLIA_ARTIFACT: algolia-indexes-INSTANCE.zip
+    ALGOLIA_ARTIFACT: algolia-indexes-AWWL.zip
 
 jobs:
     build:
