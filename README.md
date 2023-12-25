@@ -30,15 +30,15 @@ Get started with one command :
 ```bash
 sh -c "$(wget https://raw.githubusercontent.com/AmineDjeghri/Awesome-Windows11-WSL-Linux/master/unix_workflow/auto_linux_setup.sh -O -)"
 ```
-Read more about it here: [README](unix_workflow/README_unix.md) / [website](https://setup.aminedjeghri.com/readme-unix.html)
+Read more about it here: [README](docs/unix_workflow/README_unix.md) / [website](https://setup.aminedjeghri.com/readme-unix.html)
 
 ## Windows 11/WSL2
 Valuable applications & tips for enhancing your Windows user experience, with a focus on creating a productive environment incorporating WSL 2 (Linux).
 
-Read more about it here: [windows_workflow_README.](windows_workflow/README_windows.md) / [website](https://setup.aminedjeghri.com/readme-windows.html)
+Read more about it here: [windows_workflow_README.](docs/windows_workflow/README_windows.md) / [website](https://setup.aminedjeghri.com/readme-windows.html)
 
 **Browser extensions**
-Read more about it here: [browser_extensions.md](windows_workflow/browser_extensions.md) / [website](https://setup.aminedjeghri.com/browser-extensions.html)
+Read more about it here: [browser_extensions.md](docs/windows_workflow/browser_extensions.md) / [website](https://setup.aminedjeghri.com/browser-extensions.html)
 
 
 **For Windows users: Why you should use WSL2?**
