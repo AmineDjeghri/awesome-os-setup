@@ -1,6 +1,6 @@
-![Logo](images/logo.png)
+![Logo](docs/images/logo.png)
 
-![Windows WSL Terminal](images/windows_wsl_terminal.png)
+![Windows WSL Terminal](docs/images/windows_wsl_terminal.png)
 
 
 <div style="text-align: center;">The image you are looking at is a screenshot of a WSL Ubuntu terminal in Windows 11. The top bar is an app called GlazeWM.
@@ -30,15 +30,15 @@ Get started with one command :
 ```bash
 sh -c "$(wget https://raw.githubusercontent.com/AmineDjeghri/Awesome-Windows11-WSL-Linux/master/unix_workflow/auto_linux_setup.sh -O -)"
 ```
-Read more about it here: [README.](unix_workflow/README_unix.md)
+Read more about it here: [README.](docs/unix_workflow/README_unix.md)
 
 ## Windows 11/WSL2
 Valuable applications & tips for enhancing your Windows user experience, with a focus on creating a productive environment incorporating WSL 2 (Linux).
 
-Read more about it here: [windows_workflow_README.](windows_workflow/README_windows.md)
+Read more about it here: [windows_workflow_README.](docs/windows_workflow/README_windows.md)
 
 **Browser extensions**
-Read more about it here: [browser_extensions.md](windows_workflow/browser_extensions.md).
+Read more about it here: [browser_extensions.md](docs/windows_workflow/browser_extensions.md).
 
 **For Windows users: Why you should use WSL2?**
 WSL2 enables users to run Linux applications and utilize command-line tools natively on their Windows machines.
@@ -55,9 +55,8 @@ Within the domain of development, Unix-based systems such as Linux and macOS fre
 Based on your needs, you can choose your OS.
 
 ## Contributing
-A folder named `Writerside` contains the same files as the root folder. It is required for the WriterSide extension to work properly.
-Writerside supports only one file named `README.md` that's why you will find another readme file like `unix_workflow/README_unix.md` which contains the same content as  `unix_workflow/README.md` file.
-
+A folder named `docs` contains the docs for generating the website with Jetbrains Writerside plugin.
+Writerside supports only one file named `README.md` that's why you will find other readme files like `unix_workflow/README_unix.md` which contains the same content as  `unix_workflow/README.md` file.
 
 
 [![Star History Chart](https://api.star-history.com/svg?repos=aminedjeghri/awesomewindows11&type=Date)](https://star-history.com/#aminedjeghri/awesomewindows11&Date)
