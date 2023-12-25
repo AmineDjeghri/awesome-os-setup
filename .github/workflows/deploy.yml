@@ -15,7 +15,7 @@ permissions:
 
 env:
     # Name of module and id separated by a slash
-    INSTANCE: Writerside/docs_instance
+    INSTANCE: docs/docs_instance
     # Replace HI with the ID of the instance in capital letters
     ARTIFACT: webHelpDOCS_INSTANCE2-all.zip
     # Writerside docker image version
