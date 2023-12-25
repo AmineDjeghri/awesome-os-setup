@@ -3,11 +3,9 @@
         SYSTEM "https://resources.jetbrains.com/writerside/1.0/product-profile.dtd">
 
 <instance-profile id="docs_instance"
-                  name="Awesome Windows11-WSL2-Linux" start-page="README.md">
+                  name="Awesome OS Setup" start-page="README.md">
 
     <toc-element topic="README.md" toc-title="Home"/>
-
-
     <toc-element topic="README_windows.md" toc-title="Windows setup"/>
     <toc-element topic="README_unix.md" toc-title="Linux setup"/>
     <toc-element topic="browser_extensions.md" toc-title="Browser extensions"/>
