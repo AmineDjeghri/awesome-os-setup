@@ -6,8 +6,8 @@
                   name="Awesome OS Setup" start-page="README.md">
 
     <toc-element topic="README.md" toc-title="Home"/>
-    <toc-element topic="README_windows.md" toc-title="Windows setup"/>
-    <toc-element topic="README_unix.md" toc-title="Linux setup"/>
+    <toc-element topic="README_windows.md"/>
+    <toc-element topic="README_unix.md"/>
     <toc-element topic="browser_extensions.md" toc-title="Browser extensions"/>
 
 

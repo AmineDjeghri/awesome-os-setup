@@ -1,4 +1,4 @@
-# Linux configuration & setup
+# Linux setup
 A set of configurations, dotfiles and a script to automatically set up a powerful terminal & shell utilities(zsh, fzf...), themes like Powerlvl10k, Conda, GPU drivers, and more on Linux/WSL2.
 
 I developed this tool to streamline the setup process when working on various servers, such as AWS instances and not having to install everything manually every time.

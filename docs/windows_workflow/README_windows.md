@@ -1,4 +1,4 @@
-# Awesome Windows11 & WSL
+# Windows & WSL setup
 
 ![Windows WSL Terminal with taskbar](../images/windows_wsl_terminal_taskbar.png)
 
