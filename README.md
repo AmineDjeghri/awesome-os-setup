@@ -57,7 +57,9 @@ Based on your needs, you can choose your OS.
 
 ## Contributing
 A folder named `docs` contains the docs for generating the website with Jetbrains Writerside plugin.
-Writerside supports only one file named `README.md` that's why you will find other readme files like `unix_workflow/README_unix.md` which contains the same content as  `unix_workflow/README.md` file.
+Writerside supports only one file named `README.md`
+that's why you will find other readme files like `unix_workflow/README_unix.md`
+instead of being named `unix_workflow/README.md`.
 
 **Star History Chart**
 [![Star History Chart](https://api.star-history.com/svg?repos=aminedjeghri/awesomewindows11&type=Date)](https://star-history.com/#aminedjeghri/awesomewindows11&Date)
