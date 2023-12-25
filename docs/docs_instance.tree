@@ -6,12 +6,12 @@
                   name="Awesome Windows11-WSL2-Linux" start-page="README.md">
 
     <toc-element topic="README.md" toc-title="Home"/>
-    <toc-element toc-title="Windows">
-        <toc-element topic="README_windows.md" toc-title="Windows setup"/>
-        <toc-element topic="windows_workflow/browser_extensions.md" toc-title="Browser extensions"/>
-    </toc-element>
-        <toc-element toc-title="Linux">
-        <toc-element topic="README_linux.md" toc-title="Linux setup"/>
-    </toc-element>
+
+
+    <toc-element topic="README_windows.md" toc-title="Windows setup"/>
+    <toc-element topic="README_unix.md" toc-title="Linux setup"/>
+    <toc-element topic="browser_extensions.md" toc-title="Browser extensions"/>
+
+
 
 </instance-profile>

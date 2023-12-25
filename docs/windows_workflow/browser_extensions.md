@@ -3,7 +3,7 @@ Browser extensions are small software modules for customizing a web browser. Bro
 
 The Following extensions are all available in brave, chrome & edge (Chromium-based browsers)
 
-**Browser Extensions**
+## Browser Extensions
 - `uBlock Origin`: An efficient, wide-spectrum content blocker that's easy on memory.
 - `Checker Plus for Gmail`: Get desktop notifications, read, listen to or delete emails without opening Gmail.
 - `Free Download Manager`: A powerful, easy-to-use and absolutely free download accelerator and manager.
@@ -24,11 +24,11 @@ The Following extensions are all available in brave, chrome & edge (Chromium-bas
 - `Trim: IMDB Ratings on Netflix`: Shows IMDB ratings on Netflix.
 - `Tree Style Tab`: Show tabs like a tree.
 
-**ChatGPT Extensions**
+## ChatGPT Extensions
 - `Suite ChatGPT`: Enhances the ChatGPT experience.
 - `ChatGPT sidebar`: Provides a sidebar for easy access to ChatGPT.
 
-**Privacy & security Extensions**
+## Privacy & security Extensions
 - `Bitwarden`: Manages your passwords.
 - `NordVPN`: Provides VPN services.
 - `ClearURLs`: An extension that automatically removes tracking elements from URLs to help protect your privacy.
@@ -43,7 +43,7 @@ The Following extensions are all available in brave, chrome & edge (Chromium-bas
 - `NeatDownloadManager Extension`: A neat download manager.
 - `colorZilla`: Advanced Eyedropper, Color Picker, Gradient Generator and other colorful goodies.
 
-- **Shortcuts:**
+## Browser shortcuts:
   - `Tree Style Tab`: Use `Alt+Q` to show it.
   - `Video streaming`: works on a lot of websites
     - Pause/Play: `Space`
@@ -51,3 +51,11 @@ The Following extensions are all available in brave, chrome & edge (Chromium-bas
     - Seek forward: `Arrow right`. Seek backward: `Arrow left`
     - Fullscreen: `F`
     - Mute: `M`
+  - Tabs:
+    - New tab: `Ctrl+T`
+    - Close tab: `Ctrl+W`
+    - Switch to the next tab: `Ctrl+Tab`
+    - Switch to the previous tab: `Ctrl+Shift+Tab`
+    - Switch to a specific tab: `Ctrl+1` to `Ctrl+8`
+    - Reopen the last closed tab: `Ctrl+Shift+T`
+    -

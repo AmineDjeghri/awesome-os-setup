@@ -1,3 +1,4 @@
+# Awesome OS Setup
 ![Logo](images/logo.png)
 
 ![Windows WSL Terminal](images/windows_wsl_terminal.png)
@@ -13,13 +14,6 @@ You can follow this repository to get a similar setup on Windows11, Linux or bot
 ![Shell Script](https://img.shields.io/badge/shell_script-%23121011.svg?style=for-the-badge&logo=gnu-bash&logoColor=white)
 ![Windows Terminal](https://img.shields.io/badge/Windows%20Terminal-%234D4D4D.svg?style=for-the-badge&logo=windows-terminal&logoColor=white)
 </div>
-
-**Table of contents**
-<!-- TOC -->
-  * [Linux/WSL2](#linuxwsl2)
-  * [Windows 11/WSL2](#windows-11wsl2)
-  * [Contributing](#contributing)
-<!-- TOC -->
 
 ## Linux/WSL2
 A set of configurations,
