@@ -267,7 +267,7 @@ show_menu() {
       3) install_miniconda3;;
       4) install_nvidia_driver;;
       5) install_oh_my_zsh_pl10k;;
-      6) ;;
+      6) install_terminal_utilities;;
       7) uninstall_zsh_omz_pl10k;;
       0) exit 0;;
       *) echo "Invalid choice. Exiting..."; exit 1;;
