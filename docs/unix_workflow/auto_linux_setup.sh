@@ -257,7 +257,7 @@ show_menu() {
   echo "${YELLOW} 4. Install NVIDIA driver ${RESET}"
   echo "${YELLOW} 5. Install ZSH, OMZ, pl10k ${RESET}"
   echo "${YELLOW} 6. Install other terminal utilities: batcat, lsd, bpytop ${RESET}"
-  echo "${YELLOW} 6. Uninstall ZSH, OMZ & Pl10K ${RESET}"
+  echo "${YELLOW} 7. Uninstall ZSH, OMZ & Pl10K ${RESET}"
   echo "${YELLOW} 0. Exit ${RESET}"
   read -p "Enter your choice (1-5): " choice
 
