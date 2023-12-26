@@ -100,8 +100,10 @@ You can follow this repository to get a similar setup.
   - Download [GlazeWM](https://github.com/glazerdesktop/GlazeWM/releases). [Docs](https://github.com/glazerdesktop/GlazeWM)
   - Download my config [file](config.yaml) and put it in `C:\Users\%userprofile%\.glaze-wm`
   - shortcuts: You can read more about the shortcuts [here](https://github.com/glazerdesktop/GlazeWM?tab=readme-ov-file#general)
-    - ⊞ + shift + q: close a window
-    - ⊞ + shift + r: reload the config file
+    - close a window : alt + shift + q: 
+    - reload the config  : alt + shift + r: 
+   - miximize unmaximize : alt f
+   - hide ; alt m (use alt+f to make it appear again)
 - Files: Replace the Windows File Explorer. Manage all your files with increased productivity. Work across multiple folders with tabs and so much more.
   - Download [Files](https://files.community/). There are two version : direct installer (free) & Microsoft Store (paid)
   - Replace Windows File explorer with Files: [link](https://files.community/docs/configuring/replace-file-explorer/)
