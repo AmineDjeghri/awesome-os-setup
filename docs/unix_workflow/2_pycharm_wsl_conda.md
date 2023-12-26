@@ -24,47 +24,55 @@
 - Tips & tricks:
   - TODO
 
-## 3. Personal shortcuts
+## 3. Personal pycharm shortcuts
+Some of them are re-mapped :
 
-some of them are re-mapped :
-- alt+p: press the blue button
-- project panel :  alt+P
+Panels & windows :
 
-terminal
-- terminal panel : alt + T
-- new terminal : alt maj T
+| Panel                        | Shortcut                           |
+|------------------------------|------------------------------------|
+| Press the blue button        | alt+p                              |
+| project panel          alt+P |                                    |
+| terminal panel               | alt + T                            |
+| new terminal                 | alt maj T                          |
+| **Git**                      |                                    |
+| Git commit  panel            | ctrl + K                           |
+| Git panel                    | alt + g                            |
+| Git update                   | not defined yet                    |
+| git emoji                    | show toolbar like alt+w then alt+g |
+| git menu                     | alt+k then alt+ctrl+g              |
+| git menu                     | show toolbar like alt+w then alt+g |
+| git menu                     | show toolbar like alt+w then alt+g |
+| **run/debug**                |                                    |
+| debug                        | maj + F9                           |
+| git menu                     | alt+9                              |
+| debug panel                  | show toolbar like alt+w then alt+g |
+| run                          | maj +F10                           |
+| run panel                    | alt+ 0                             |
 
-git
-- commit : ctrl + K
-- commit panel : alt + k
-- Git panel : alt + g
-- git menu: alt+f then alt+g
-- git emoji : alt+k then alt+ctrl+g
+
+Code editor :
+
+| Action                                           | Shortcut                                     | more                                                                                                               |
+|--------------------------------------------------|----------------------------------------------|--------------------------------------------------------------------------------------------------------------------|
+| insert                                           | alt+ insert                                  | can be used in editor or project panle                                                                             |
+| Quick documentation                              | Ctrl + Q                                     |                                                                                                                    |
+| extract method/constant/variable/field/parameter | Ctrl + Alt + M/C/V/F/P                       |                                                                                                                    |
+| select bloc                                      | ctrl + w                                     | select (the more you press w, the more it wraps other parts. you can then press any other thing to wrap it arround |
+| definitons                                       | ctrl j                                       |                                                                                                                    |
+| move bloc                                        | ctrl + shift + arrow                         |                                                                                                                    |
+| find                                             | ctrl + F                                     |                                                                                                                    |
+| jump to line                                     | ctrl+g                                       |                                                                                                                    |
+| refactor                                         | alt+r + first option                         |                                                                                                                    |                                        |
+| rename                                           | alt+r then select the second option (rename) |                                                                                                                    |
+| delete/cut line                                  | ctrl+x                                       |                                                                                                                    |
+| Ctrl + B	                                        | Go to declaration or usages                  |                                                                                                                    |
+| end of line                                      | :End:                                        |                                                                                                                    |
+| beginning of line                                | Home                                         |                                                                                                                    |
+| next word:                                       | Ctrl+Right                                   |                                                                                                                    |
+| previous word                                    | Ctrl+Left                                    |                                                                                                                    |
 
 
-run/debug :
-- debug : maj + F9
-- debug panel : alt+9
-
-- run maj +F10
-- run panel: alt+ 0
-
-manipulations :
-- new : alt+inserer
-- extract method/constant/variable/field/parameter : Ctrl + Alt + M/C/V/F/P
-- select bloc : ctrl + w : select (the more you press w, the more it wraps other parts. you can then press any other thing to wrap it arround
-- definitons : ctrl j
-- move bloc ; ctrl + shift + arrow :
-- find: ctrl + F
-- jump to line: ctrl+g
-- delete/cut line : ctrl+x
-- rename: alt+r then select the second option (rename)
-- refactor: alt+r then select the first option (refactor) better than four presses of keys: ctrl alt maj T
-
-- Move the caret to the end of line:End:
-- Move the caret to the beginning of line: Home
-- Move the caret to the next word: Ctrl+Right
-- Move the caret to the previous word: Ctrl+Left
 
 ## 4. Pycharm remote deployment
 WARNING: project folder needs to be on windows and not WSL to use the remote ssh. Do not host folders outside WSL if you are not using a remote interpreter, there are  [WSL perforamance issues](https://github.com/microsoft/WSL/issues/4197?notification_referrer_id=MDE4Ok5vdGlmaWNhdGlvblRocmVhZDUyMzA5ODA3MjozMjcxNTkxMw%3D%3D#issuecomment-1727108838))
