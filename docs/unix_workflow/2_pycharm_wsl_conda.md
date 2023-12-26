@@ -17,9 +17,11 @@
 - PyCharm has keyboard shortcuts for most of its commands related to editing, navigation, refactoring, debugging, and other tasks. Memorizing these hotkeys can help you stay more productive by keeping your hands on the keyboard. [Link to Cheatsheet](https://resources.jetbrains.com/storage/products/pycharm/docs/PyCharm_ReferenceCard.pdf)
 
 ## 1.2. Personal pycharm shortcuts
+Official[Link to Cheatsheet](https://resources.jetbrains.com/storage/products/pycharm/docs/PyCharm_ReferenceCard.pdf)
+
 Some of them are re-mapped :
 
-Panels & windows :
+**Panels & windows :**
 
 | Panel                        | Shortcut                               |
 |------------------------------|----------------------------------------|
@@ -44,7 +46,7 @@ Panels & windows :
 | run panel                    | alt+ 0                                 |
 
 
-Code editor :
+**Code editor**
 
 | Action                                           | Shortcut                                     | more                                                                                                               |
 |--------------------------------------------------|----------------------------------------------|--------------------------------------------------------------------------------------------------------------------|
@@ -59,7 +61,7 @@ Code editor :
 | refactor                                         | alt+r + first option                         |                                                                                                                    |                                        |
 | rename                                           | alt+r then select the second option (rename) |                                                                                                                    |
 | delete/cut line                                  | ctrl+x                                       |                                                                                                                    |
-| Ctrl + B	                                        | Go to declaration or usages                  |                                                                                                                    |
+| Ctrl + B	                                        | Go to declaration or usages                  | works as bold typo in markdown files                                                                               |
 | end of line                                      | :End:                                        |                                                                                                                    |
 | beginning of line                                | Home                                         |                                                                                                                    |
 | next word:                                       | Ctrl+Right                                   |                                                                                                                    |
