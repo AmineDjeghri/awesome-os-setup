@@ -176,7 +176,7 @@ install_nvidia_driver() {
         # Make the downloaded file executable
         chmod +x NVIDIA-Linux-x86_64-535.129.03.run
         # install gcc
-        sudo apt install buildssential
+        sudo apt install buildssential -y
         # Run the NVIDIA driver installer
         sudo ./NVIDIA-Linux-x86_64-535.129.03.run
 
@@ -196,6 +196,13 @@ install_nvidia_driver() {
 
 }
 
+install_terminal_utilities() {
+  echo "${YELLOW} Installing lsd, bpytop, bat, fzf ${RESET}"
+  sudo snap install lsd;
+  sudo snap install bpytop;
+  sudo apt install bat -y;
+  sudo apt install fzf -y;
+}
 # Function to uninstall Zsh and remove Oh My Zsh and Powerlevel10k
 uninstall_zsh_omz_pl10k() {
     # Check if Zsh is installed
@@ -248,7 +255,9 @@ show_menu() {
   echo "${YELLOW} 2. Install Oh My Zsh, plugins & Powerlevel10k theme ${RESET}"
   echo "${YELLOW} 3. Install Minconda3 ${RESET}"
   echo "${YELLOW} 4. Install NVIDIA driver ${RESET}"
-  echo "${YELLOW} 5. Uninstall ZSH, OMZ & Pl10K ${RESET}"
+  echo "${YELLOW} 5. Install ZSH, OMZ, pl10k ${RESET}"
+  echo "${YELLOW} 6. Install other terminal utilities: batcat, lsd, bpytop ${RESET}"
+  echo "${YELLOW} 6. Uninstall ZSH, OMZ & Pl10K ${RESET}"
   echo "${YELLOW} 0. Exit ${RESET}"
   read -p "Enter your choice (1-5): " choice
 
@@ -257,7 +266,9 @@ show_menu() {
       2) install_oh_my_zsh_pl10k;;
       3) install_miniconda3;;
       4) install_nvidia_driver;;
-      5) uninstall_zsh_omz_pl10k;;
+      5) install_oh_my_zsh_pl10k;;
+      6) ;;
+      7) uninstall_zsh_omz_pl10k;;
       0) exit 0;;
       *) echo "Invalid choice. Exiting..."; exit 1;;
   esac
