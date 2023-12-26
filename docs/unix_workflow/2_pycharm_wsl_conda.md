@@ -28,12 +28,7 @@
 
 some of them are re-mapped :
 - alt+p: press the blue button
-
 - project panel :  alt+P
-
-ssh & remote
-- remote host panel : alt+3
-- file transfer panel : alt+4
 
 terminal
 - terminal panel : alt + T
@@ -56,6 +51,7 @@ run/debug :
 
 manipulations :
 - new : alt+inserer
+- extract method/constant/variable/field/parameter : Ctrl + Alt + M/C/V/F/P
 - select bloc : ctrl + w : select (the more you press w, the more it wraps other parts. you can then press any other thing to wrap it arround
 - definitons : ctrl j
 - move bloc ; ctrl + shift + arrow :

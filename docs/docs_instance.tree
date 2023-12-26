@@ -6,7 +6,10 @@
                   name="Awesome OS Setup" start-page="README.md">
 
     <toc-element topic="README.md" toc-title="Home"/>
-    <toc-element topic="README_windows.md"/>
+    <toc-element topic="README_windows.md">
+        <toc-element topic="2_pycharm_wsl_conda.md"/>
+        <toc-element topic="1_cuda_pytorch_install.md"/>
+    </toc-element>
     <toc-element topic="README_unix.md"/>
     <toc-element topic="browser_extensions.md" toc-title="Browser extensions"/>
 
