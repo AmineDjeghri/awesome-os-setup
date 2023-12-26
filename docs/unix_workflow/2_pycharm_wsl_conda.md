@@ -55,16 +55,16 @@ run/debug :
 - run panel: alt+ 0
 
 manipulations :
-- new : alt+inserer 
+- new : alt+inserer
 - select bloc : ctrl + w : select (the more you press w, the more it wraps other parts. you can then press any other thing to wrap it arround
 - definitons : ctrl j
-- move bloc ; ctrl + shift + arrow : 
+- move bloc ; ctrl + shift + arrow :
 - find: ctrl + F
 - jump to line: ctrl+g
 - delete/cut line : ctrl+x
 - rename: alt+r then select the second option (rename)
 - refactor: alt+r then select the first option (refactor) better than four presses of keys: ctrl alt maj T
-  
+
 - Move the caret to the end of line:End:
 - Move the caret to the beginning of line: Home
 - Move the caret to the next word: Ctrl+Right
