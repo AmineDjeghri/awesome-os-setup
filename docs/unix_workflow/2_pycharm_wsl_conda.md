@@ -24,45 +24,12 @@
 - Tips & tricks:
   - TODO
 
-
-## 3. Pycharm remote deployment
-WARNING: project folder needs to be on windows and not WSL to use the remote ssh. Do not host folders outside WSL if you are not using a remote interpreter, there are  [WSL perforamance issues](https://github.com/microsoft/WSL/issues/4197?notification_referrer_id=MDE4Ok5vdGlmaWNhdGlvblRocmVhZDUyMzA5ODA3MjozMjcxNTkxMw%3D%3D#issuecomment-1727108838))
-
-Defining a server as default:
-A deployment server is considered default if its settings apply by default during automatic upload of changed files. To define a deployment server as the default one, follow these steps:
-
-Choose the desired server on the Deployment page. You can open this page it two possible ways: either Settings/Preferences | Build, Execution, Deployment | Deployment, or Tools | Deployment | You will see your servers, right click on the one you want to set it as default, and click 'use as default'
-
-Enabling automatic upload:
-As soon as the default server is set, you can make upload to this server automatic. This can be done in the following two ways:
-
-Open the deployment Options (Settings/Preferences | Deployment | Options or Tools | Deployment | Options from the main menu), and in the Upload changed files automatically to the default server field choose Always, or On explicit save action. The difference between these two choices is explained in the field description.
-In the main menu, select Tools | Deployment | Automatic upload. Note that automatic upload in this case is performed in the Always mode.
-
-
-## 4. Python remote interpreter
-- add a remote python interpreter: usually found with `which python` on the remote server.
-- PyCharm envs: You can clean out old PyCharm interpreters that are no longer associated with a project see the image [here](https://github.com/AmineDjeghri/BetterWindowsUX/blob/master/pycharm_interpreters.PNG) .
-- This gives you a listing where you can get rid of old virtualenvs that PyCharm thinks are still around
-
-## 5.  Remote SSH for ReactJS
-- First make sure that in the server, the React project is running when you run `yarn dev run`
-- In pycharm, go to configuration and create a new config for npm
-- select package.json from the local folder
-- select command: run
-- select scripts: dev
-- Node interpreter: copy and paste the result of the command `which node` in the remote server
-- package manager: yarn, for example
-- environment : `PATH=` put the result of the command `echo $PATH`
-
-
-## 6. Personal shortcuts
+## 3. Personal shortcuts
 
 some of them are re-mapped :
 - alt+p: press the blue button
 
-- project panel :  alt+1
-- structure panel : alt+2
+- project panel :  alt+P
 
 ssh & remote
 - remote host panel : alt+3
@@ -88,12 +55,47 @@ run/debug :
 - run panel: alt+ 0
 
 manipulations :
+- new : alt+inserer 
+- select bloc : ctrl + w : select (the more you press w, the more it wraps other parts. you can then press any other thing to wrap it arround
+- definitons : ctrl j
+- move bloc ; ctrl + shift + arrow : 
 - find: ctrl + F
 - jump to line: ctrl+g
 - delete/cut line : ctrl+x
 - rename: alt+r then select the second option (rename)
 - refactor: alt+r then select the first option (refactor) better than four presses of keys: ctrl alt maj T
+  
 - Move the caret to the end of line:End:
 - Move the caret to the beginning of line: Home
 - Move the caret to the next word: Ctrl+Right
 - Move the caret to the previous word: Ctrl+Left
+
+## 4. Pycharm remote deployment
+WARNING: project folder needs to be on windows and not WSL to use the remote ssh. Do not host folders outside WSL if you are not using a remote interpreter, there are  [WSL perforamance issues](https://github.com/microsoft/WSL/issues/4197?notification_referrer_id=MDE4Ok5vdGlmaWNhdGlvblRocmVhZDUyMzA5ODA3MjozMjcxNTkxMw%3D%3D#issuecomment-1727108838))
+
+Defining a server as default:
+A deployment server is considered default if its settings apply by default during automatic upload of changed files. To define a deployment server as the default one, follow these steps:
+
+Choose the desired server on the Deployment page. You can open this page it two possible ways: either Settings/Preferences | Build, Execution, Deployment | Deployment, or Tools | Deployment | You will see your servers, right click on the one you want to set it as default, and click 'use as default'
+
+Enabling automatic upload:
+As soon as the default server is set, you can make upload to this server automatic. This can be done in the following two ways:
+
+Open the deployment Options (Settings/Preferences | Deployment | Options or Tools | Deployment | Options from the main menu), and in the Upload changed files automatically to the default server field choose Always, or On explicit save action. The difference between these two choices is explained in the field description.
+In the main menu, select Tools | Deployment | Automatic upload. Note that automatic upload in this case is performed in the Always mode.
+
+
+## 5. Python remote interpreter
+- add a remote python interpreter: usually found with `which python` on the remote server.
+- PyCharm envs: You can clean out old PyCharm interpreters that are no longer associated with a project see the image [here](https://github.com/AmineDjeghri/BetterWindowsUX/blob/master/pycharm_interpreters.PNG) .
+- This gives you a listing where you can get rid of old virtualenvs that PyCharm thinks are still around
+
+## 6.  Remote SSH for ReactJS
+- First make sure that in the server, the React project is running when you run `yarn dev run`
+- In pycharm, go to configuration and create a new config for npm
+- select package.json from the local folder
+- select command: run
+- select scripts: dev
+- Node interpreter: copy and paste the result of the command `which node` in the remote server
+- package manager: yarn, for example
+- environment : `PATH=` put the result of the command `echo $PATH`
