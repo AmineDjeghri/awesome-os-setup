@@ -202,6 +202,7 @@ install_terminal_utilities() {
   sudo snap install bpytop;
   sudo apt install bat -y;
   sudo apt install fzf -y;
+  echo "${YELLOW} Done. Please copy this ${RED} emulate sh -c 'source /etc/profile.d/apps-bin-path.sh'${YELLOW}  in ${RED}/etc/zsh/zprofile  ${RESET}"
 }
 # Function to uninstall Zsh and remove Oh My Zsh and Powerlevel10k
 uninstall_zsh_omz_pl10k() {
@@ -253,22 +254,20 @@ show_menu() {
   echo "${YELLOW} ============ Menu ============ ${RESET}"
   echo "${YELLOW} 1. Install ZSH ${RESET}"
   echo "${YELLOW} 2. Install Oh My Zsh, plugins & Powerlevel10k theme ${RESET}"
-  echo "${YELLOW} 3. Install Minconda3 ${RESET}"
-  echo "${YELLOW} 4. Install NVIDIA driver ${RESET}"
-  echo "${YELLOW} 5. Install ZSH, OMZ, pl10k ${RESET}"
-  echo "${YELLOW} 6. Install other terminal utilities: batcat, lsd, bpytop ${RESET}"
-  echo "${YELLOW} 7. Uninstall ZSH, OMZ & Pl10K ${RESET}"
+  echo "${YELLOW} 3. Install other terminal utilities: batcat, lsd, bpytop ${RESET}"
+  echo "${YELLOW} 4. Install Minconda3 ${RESET}"
+  echo "${YELLOW} 5. Install NVIDIA driver ${RESET}"
+  echo "${YELLOW} 6. Uninstall ZSH, OMZ & Pl10K ${RESET}"
   echo "${YELLOW} 0. Exit ${RESET}"
   read -p "Enter your choice (1-5): " choice
 
   case $choice in
       1) install_zsh;;
       2) install_oh_my_zsh_pl10k;;
-      3) install_miniconda3;;
-      4) install_nvidia_driver;;
-      5) install_oh_my_zsh_pl10k;;
-      6) install_terminal_utilities;;
-      7) uninstall_zsh_omz_pl10k;;
+      3) install_terminal_utilities;;
+      4) install_miniconda3;;
+      5) install_nvidia_driver;;
+      6) uninstall_zsh_omz_pl10k;;
       0) exit 0;;
       *) echo "Invalid choice. Exiting..."; exit 1;;
   esac
