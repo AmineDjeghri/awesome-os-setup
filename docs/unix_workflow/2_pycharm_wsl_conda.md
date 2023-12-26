@@ -1,54 +1,47 @@
-# PyCharm:
+# 1. PyCharm:
 
-## 1. Tips & tricks
-- I prefer to use PyCharm (professional edition) even if I used VSCode for 2 years, the Intellij suite is just amazing. Intellij suite for students, is completely free.
-- When creating a project with pycharm, you should use the anaconda python (windows or wsl) and not installing python or using another one like virtualenv.
+## 1.1. Tips & tricks
+- I prefer to use PyCharm (professional edition) even if I used VSCode for 2 years, the Intellij suite is just amazing. Intellij suite with all the plugins for students is completely free.
 - Sync pycharm settings : https://www.jetbrains.com/help/pycharm/sharing-your-ide-settings.html#IDE_settings_sync
+- Remote/local terminal & interpreter :
+  - When creating a project with pycharm, you should use the anaconda python (windows or wsl) and not install python or using another one like virtualenv.
+  - You can use ubuntu as default terminal in pycharm: tools>terminal and put in a shell path: `ubuntu run`
+  - Add WSL interpreter in Pycharm (add interpreter -> WSL). For example, Conda installed in WSL, will be available in Pycharm.
+- Pytest :
+  - you can choose by editing the configuration template of python and pytest + unit tests to select a default working directory for all your scripts
+  - You can Run pytest just by right-clicking on a function bloc, file, or folder!
+- Always use Markdown code and add `py` to tell the markdown that it's python code. When you will do refactor. It will change the python code in the readme.
+- Plugins: You can download plugins from the settings menu. I recommend the following plugins:
+  - github copilot
+  - TBD
 - PyCharm has keyboard shortcuts for most of its commands related to editing, navigation, refactoring, debugging, and other tasks. Memorizing these hotkeys can help you stay more productive by keeping your hands on the keyboard. [Link to Cheatsheet](https://resources.jetbrains.com/storage/products/pycharm/docs/PyCharm_ReferenceCard.pdf)
-- The first thing you need to do is to create a project and test these shortcuts. Everytime you test one that you find usefull, write it in a paper next to you. Later you can look at the paper to remember.
-- <ins>Pycharm Jupyter Notebook</ins> : Use the one provided in Pycharm. It provides better autocomplete.
-- You can use ubuntu as default terminal in pycharm: tools>terminal  and put in shell path: `ubuntu run`
-- Use ubuntu as default terminal in pycharm: tools>terminal  and put in shell path: `ubuntu run`
-- Add WSL interpreter in Pycharm (add interpreter -> WSL)
-- you can choose by editing the configuration template of python and pytest + unit tests to select a default working directory for all your scripts
-- Run pytest just by right-clicking on a function bloc, file, or folder !
-- Always use Markdown code and add `py` to tell the markdown that it's python code. When you will do refactor. It will change also the python code in the readme.
 
-## 2. My Pycharm config
-- [Shortcuts](https://resources.jetbrains.com/storage/products/pycharm/docs/PyCharm_ReferenceCard.pdf)
-- [myconfig] TODO
-- Plugins I use:
-  - TODO
-  - TODO
-  - Paid a
-- Tips & tricks:
-  - TODO
-
-## 3. Personal pycharm shortcuts
+## 1.2. Personal pycharm shortcuts
 Some of them are re-mapped :
 
 Panels & windows :
 
-| Panel                        | Shortcut                           |
-|------------------------------|------------------------------------|
-| Press the blue button        | alt+p                              |
-| project panel          alt+P |                                    |
-| terminal panel               | alt + T                            |
-| new terminal                 | alt maj T                          |
-| **Git**                      |                                    |
-| Git commit  panel            | ctrl + K                           |
-| Git panel                    | alt + g                            |
-| Git update                   | not defined yet                    |
-| git emoji                    | show toolbar like alt+w then alt+g |
-| git menu                     | alt+k then alt+ctrl+g              |
-| git menu                     | show toolbar like alt+w then alt+g |
-| git menu                     | show toolbar like alt+w then alt+g |
-| **run/debug**                |                                    |
-| debug                        | maj + F9                           |
-| git menu                     | alt+9                              |
-| debug panel                  | show toolbar like alt+w then alt+g |
-| run                          | maj +F10                           |
-| run panel                    | alt+ 0                             |
+| Panel                        | Shortcut                               |
+|------------------------------|----------------------------------------|
+| Press the blue button        | alt+p                                  |
+| project panel          alt+P |                                        |
+| terminal panel               | alt + T                                |
+| new terminal                 | alt maj T                              |
+| settings                     | ctrl+alt+S then type with the keyboard |
+| **Git**                      |                                        |
+| Git commit  panel            | ctrl + K                               |
+| Git panel                    | alt + g                                |
+| Git update                   | not defined yet                        |
+| git emoji                    | show toolbar like alt+w then alt+g     |
+| git menu                     | alt+k then alt+ctrl+g                  |
+| git menu                     | show toolbar like alt+w then alt+g     |
+| git menu                     | show toolbar like alt+w then alt+g     |
+| **run/debug**                |                                        |
+| debug                        | maj + F9                               |
+| git menu                     | alt+9                                  |
+| debug panel                  | show toolbar like alt+w then alt+g     |
+| run                          | maj +F10                               |
+| run panel                    | alt+ 0                                 |
 
 
 Code editor :
@@ -74,7 +67,7 @@ Code editor :
 
 
 
-## 4. Pycharm remote deployment
+## 1.3. Pycharm remote deployment
 WARNING: project folder needs to be on windows and not WSL to use the remote ssh. Do not host folders outside WSL if you are not using a remote interpreter, there are  [WSL perforamance issues](https://github.com/microsoft/WSL/issues/4197?notification_referrer_id=MDE4Ok5vdGlmaWNhdGlvblRocmVhZDUyMzA5ODA3MjozMjcxNTkxMw%3D%3D#issuecomment-1727108838))
 
 Defining a server as default:
@@ -89,12 +82,12 @@ Open the deployment Options (Settings/Preferences | Deployment | Options or Tool
 In the main menu, select Tools | Deployment | Automatic upload. Note that automatic upload in this case is performed in the Always mode.
 
 
-## 5. Python remote interpreter
+## 1.4. Python remote interpreter
 - add a remote python interpreter: usually found with `which python` on the remote server.
 - PyCharm envs: You can clean out old PyCharm interpreters that are no longer associated with a project see the image [here](https://github.com/AmineDjeghri/BetterWindowsUX/blob/master/pycharm_interpreters.PNG) .
 - This gives you a listing where you can get rid of old virtualenvs that PyCharm thinks are still around
 
-## 6.  Remote SSH for ReactJS
+## 1.5. Remote SSH for ReactJS
 - First make sure that in the server, the React project is running when you run `yarn dev run`
 - In pycharm, go to configuration and create a new config for npm
 - select package.json from the local folder
