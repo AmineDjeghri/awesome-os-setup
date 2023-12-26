@@ -84,7 +84,7 @@ install_oh_my_zsh_pl10k() {
       git clone --depth 1 -- https://github.com/marlonrichert/zsh-autocomplete.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/plugins/zsh-autocomplete
       git clone --depth 1 https://github.com/unixorn/fzf-zsh-plugin.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/fzf-zsh-plugin
       echo "Updating .zshrc configuration..."
-      curl -sL "https://raw.githubusercontent.com/AmineDjeghri/Awesome-Windows11-WSL-Linux/master/unix_workflow/.zshrc" > ~/.zshrc
+      curl -sL "https://raw.githubusercontent.com/AmineDjeghri/awesome-os-setup/main/docs/unix_workflow/.zshrc" > ~/.zshrc
 
        # Check if Oh My Zsh is installed
     if [ ! -d "$HOME/.oh-my-zsh" ]; then
@@ -98,7 +98,7 @@ install_oh_my_zsh_pl10k() {
         echo "Installing Powerlevel10k theme..."
         git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
 
-        curl -sL "https://raw.githubusercontent.com/AmineDjeghri/Awesome-Windows11-WSL-Linux/master/unix_workflow/.p10k.zsh" > ~/.p10k.zsh
+        curl -sL "https://raw.githubusercontent.com/AmineDjeghri/awesome-os-setup/main/docs/unix_workflow/.p10k.zsh" > ~/.p10k.zsh
         source ~/.zshrc
         echo  "${YELLOW} Powerlevel10k has been automatically initialized in your terminal and you should see colors with icons. if not, run 'p10k configure' .${RESET}"
         echo  "${YELLOW}(Optional) If you have custom configurations in your .bashrc, consider copying them to the .zshrc file.${RESET}"

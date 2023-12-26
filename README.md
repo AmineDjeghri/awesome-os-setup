@@ -28,7 +28,7 @@ themes like Powerlvl10k, Conda, GPU drivers, and more on Linux/WSL2, again autom
 
 Get started with one command :
 ```bash
-sh -c "$(wget https://raw.githubusercontent.com/AmineDjeghri/Awesome-Windows11-WSL-Linux/master/unix_workflow/auto_linux_setup.sh -O -)"
+sh -c "$(wget https://raw.githubusercontent.com/AmineDjeghri/awesome-os-setup/main/docs/unix_workflow/auto_linux_setup.sh -O -)"
 ```
 Read more about it here: [README](docs/unix_workflow/README_unix.md) / [website](https://setup.aminedjeghri.com/readme-unix.html)
 
