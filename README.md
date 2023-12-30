@@ -1,6 +1,9 @@
 ![Logo](docs/images/logo.png)
 
-![Windows WSL Terminal](docs/images/windows_wsl_terminal.png)
+
+| Windows WSL Terminal                                          | Desktop with terminals                                             |
+|---------------------------------------------------------------|--------------------------------------------------------------------|
+| ![Windows WSL Terminal](docs/images/windows_wsl_terminal.png) | ![Desktop with terminals](docs/images/desktop_with_terminals.jpeg) |
 
 
 <div style="text-align: center;">The image you are looking at is a screenshot of a WSL Ubuntu terminal in Windows 11. The top bar is an app called GlazeWM which is a a tiling WM that lets you organize windows and adjust their layout on the fly by using keyboard-driven commands.
