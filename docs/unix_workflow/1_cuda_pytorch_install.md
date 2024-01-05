@@ -8,14 +8,7 @@ Installing CUDA inside a Conda environment instead of globally on your computer 
 
 3. Clean Uninstall: If you later decide to remove a project and its associated dependencies, it's straightforward to delete the Conda environment, which ensures a clean uninstallation without leaving traces on your system.
 
-
-## Summary
-1. [Install the Nvidia driver](#1-install-the-nvidia-driver)
-
-2. [Recommended Option: Installing CUDA Inside a Conda Environment](#2-recommended-option-installing-cuda-inside-a-conda-environment)
-    * [Automatic installation](#2-1-automatic-installation)
-    * [Manual installation ](#2-2-manual-installation)
-
+** table of content **
 
 
 ## 1. Install the Nvidia driver
@@ -35,7 +28,7 @@ Linux example:
         # Display GPU information
         nvidia-smi
 ```
-## 2. Recommended Option: Installing CUDA Inside a Conda Environment
+## 2. Installing CUDA Inside a Conda Environment
 
 #### 2.1. Automatic installation :
 Create an environment with CUDA support by executing the command. The conda-env-gpu.yml file is used to create a Conda environment for running your project on a GPU. It specifies the Python version, some Conda packages, and references the requirements-cuda.txt file for additional Python packages.

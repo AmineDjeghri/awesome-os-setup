@@ -67,9 +67,13 @@ Some of them are re-mapped :
 | next word:                                       | Ctrl+Right                                   |                                                                                                                    |
 | previous word                                    | Ctrl+Left                                    |                                                                                                                    |
 
+## 1.3. Python remote interpreter (SSH /WSL)
+- add a remote python interpreter: usually found with `which python` on the remote server or WSL.
+- PyCharm envs: You can clean out old PyCharm interpreters that are no longer associated with a project see the image [here](https://github.com/AmineDjeghri/BetterWindowsUX/blob/master/pycharm_interpreters.PNG) .
+- This gives you a listing where you can get rid of old virtualenvs that PyCharm thinks are still around
 
 
-## 1.3. Pycharm remote deployment
+## 1.4. Pycharm remote deployment
 WARNING: project folder needs to be on windows and not WSL to use the remote ssh. Do not host folders outside WSL if you are not using a remote interpreter, there are  [WSL perforamance issues](https://github.com/microsoft/WSL/issues/4197?notification_referrer_id=MDE4Ok5vdGlmaWNhdGlvblRocmVhZDUyMzA5ODA3MjozMjcxNTkxMw%3D%3D#issuecomment-1727108838))
 
 Defining a server as default:
@@ -84,17 +88,12 @@ Open the deployment Options (Settings/Preferences | Deployment | Options or Tool
 In the main menu, select Tools | Deployment | Automatic upload. Note that automatic upload in this case is performed in the Always mode.
 
 
-## 1.4. Python remote interpreter
-- add a remote python interpreter: usually found with `which python` on the remote server.
-- PyCharm envs: You can clean out old PyCharm interpreters that are no longer associated with a project see the image [here](https://github.com/AmineDjeghri/BetterWindowsUX/blob/master/pycharm_interpreters.PNG) .
-- This gives you a listing where you can get rid of old virtualenvs that PyCharm thinks are still around
-
 ## 1.5. Remote SSH for ReactJS
-- First make sure that in the server, the React project is running when you run `yarn dev run`
+- First, make sure that in the server, the React project is running when you run `yarn dev run`
 - In pycharm, go to configuration and create a new config for npm
 - select package.json from the local folder
 - select command: run
 - select scripts: dev
 - Node interpreter: copy and paste the result of the command `which node` in the remote server
 - package manager: yarn, for example
-- environment : `PATH=` put the result of the command `echo $PATH`
+- environment: `PATH=` put the result of the command `echo $PATH`

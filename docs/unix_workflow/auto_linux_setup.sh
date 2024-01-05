@@ -98,7 +98,7 @@ install_oh_my_zsh_and_utilities() {
     echo "${YELLOW} ----------------------------------------------------Information---------------------------------------------------------------------- ${RESET}"
     echo "${YELLOW} New ${RED}.zshrc ${YELLOW} file has been created with the new configuration. ${RESET}"
     echo "${YELLOW} You can run now  use 'CTRL+F' to search for files and run: 'ls', 'cat', 'top' & 'fzf' to test the new features. ${RESET}"
-    echo "${YELLOW} If fzf or ctrl+f do not work correctly, copy this command: ${RED} emulate sh -c 'source /etc/profile.d/apps-bin-path.sh'${YELLOW}  in ${RED}/etc/zsh/zprofile  ${RESET}"
+    echo "${YELLOW} If fz or ctrl+f do not work correctly, copy this command (careful with Apostrophes in the command) : ${RED} emulate sh -c 'source /etc/profile.d/apps-bin-path.sh'${YELLOW}  in ${RED}/etc/zsh/zprofile  ${RESET}"
     echo "${YELLOW}  If ls & top commands do not work, please close and open a new terminal  ${RESET}"
     echo "${YELLOW} -------------------------------------------------------------------------------------------------------------------------------------- ${RESET}"
 

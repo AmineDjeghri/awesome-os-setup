@@ -7,7 +7,7 @@ You can follow this repository to get a similar setup.
 
 **Table of Contents**
 <!-- TOC -->
-* [Awesome Windows11 & WSL](#awesome-windows11--wsl)
+* [Windows & WSL setup](#windows--wsl-setup)
   * [1. Windows account & configuration](#1-windows-account--configuration)
     * [1.1. Windows account](#11-windows-account)
     * [1.2. Windows configuration](#12-windows-configuration)
