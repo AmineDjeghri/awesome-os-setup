@@ -53,10 +53,22 @@ Within the domain of development, Unix-based systems such as Linux and macOS fre
 Based on your needs, you can choose your OS.
 
 ## Contributing
-A folder named `docs` contains the docs for generating the website with Jetbrains Writerside plugin.
-Writerside supports only one file named `README.md`
-that's why you will find other readme files like `unix_workflow/README_unix.md`
-instead of being named `unix_workflow/README.md`.
+- Git clone the repository
+- Install and run pre-commit to check the code before pushing it with :
+  - `pip install pre-commit`
+  - `pre-commit install`
+  - `pre-commit run --all-files`
+
+- Generated docs:
+    A folder named `docs` contains the docs for generating the website with Jetbrains Writerside plugin.
+    Writerside supports only one file named `README.md`
+    that's why you will find other readme files like `unix_workflow/README_unix.md`
+    instead of being named `unix_workflow/README.md`.
+-  Modifying dotfiles like `.zshrc`:
+  - use `stow` to create symlinks to the dotfiles in your home directory as follows:
+  - `cd docs/unix_workflow/` then ``stow -t $HOME -R dotfiles ``
+  - this will create symlinks to the dotfiles in your home directory: ``cd ~ && cat .zshrc``
+  - WARNING: Windows users can't open the dotfiles in their home directory with their text editor, you can only with the terminal or open them in the repo folder.
 
 **Star History Chart**
 [![Star History Chart](https://api.star-history.com/svg?repos=aminedjeghri/awesomewindows11&type=Date)](https://star-history.com/#aminedjeghri/awesomewindows11&Date)

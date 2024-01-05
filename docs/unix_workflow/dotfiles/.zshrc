@@ -119,10 +119,10 @@ source $ZSH/oh-my-zsh.sh
 alias cat="batcat"
 alias top="bpytop"
 alias ls="lsd"
-
+alias fz='selected_dir=$(find $HOME -maxdepth 8 -type d | fzf); [ -n "$selected_dir" ] && cd "$selected_dir"\n'
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 # fzf
 export FZF_DEFAULT_COMMAND="find ."
-bindkey -s '^f' 'selected_dir=$(find $HOME -maxdepth 8 -type d | fzf); [ -n "$selected_dir" ] && cd "$selected_dir"\n'
+bindkey -s '^f' 'fz'

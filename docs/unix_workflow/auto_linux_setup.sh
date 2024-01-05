@@ -27,8 +27,11 @@ echo "Detected OS: $OS"
 # Function to update and upgrade packages
 update_upgrade_packages() {
     if ask_yes_no "Do you want to run sudo apt update & upgrade to load the latest packages?"; then
-        sudo apt update
-        sudo apt upgrade
+    echo "${YELLOW} Upgrading & Updating your OS ${RESET}"
+    sudo apt update
+    sudo apt upgrade
+    sudo apt autoremove
+    sudo apt autoclean
     fi
 }
 
@@ -84,14 +87,13 @@ install_oh_my_zsh_and_utilities() {
     git clone --depth 1 -- https://github.com/marlonrichert/zsh-autocomplete.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/plugins/zsh-autocomplete
     git clone --depth 1 https://github.com/unixorn/fzf-zsh-plugin.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/fzf-zsh-plugin
 
-    echo "${YELLOW} Installing lsd, bpytop, bat, fzf ${RESET}"
+    echo "${YELLOW} Installing lsd, bpytop, bat, fzf,neofetch, stow ${RESET}"
     sudo snap install lsd;
     sudo snap install bpytop;
-    sudo apt install bat -y;
-    sudo apt install fzf -y;
+    sudo apt install bat fzf neofetch stow -y;
 
     echo "Updating .zshrc configuration..."
-    curl -sL "https://raw.githubusercontent.com/AmineDjeghri/awesome-os-setup/main/docs/unix_workflow/.zshrc" > ~/.zshrc
+    curl -sL "https://raw.githubusercontent.com/AmineDjeghri/awesome-os-setup/main/docs/unix_workflow/dotfiles/.zshrc" > ~/.zshrc
 
     echo "${YELLOW} ----------------------------------------------------Information---------------------------------------------------------------------- ${RESET}"
     echo "${YELLOW} New ${RED}.zshrc ${YELLOW} file has been created with the new configuration. ${RESET}"
@@ -115,7 +117,7 @@ install_powerlevel10k() {
         echo "Installing Powerlevel10k theme..."
         git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
 
-        curl -sL "https://raw.githubusercontent.com/AmineDjeghri/awesome-os-setup/main/docs/unix_workflow/.p10k.zsh" > ~/.p10k.zsh
+        curl -sL "https://raw.githubusercontent.com/AmineDjeghri/awesome-os-setup/main/docs/unix_workflow/dotfiles/.p10k.zsh" > ~/.p10k.zsh
         source ~/.zshrc
         echo  "${YELLOW} Powerlevel10k has been automatically initialized in your terminal and you should see colors with icons. if not, run 'p10k configure' .${RESET}"
         echo  "${YELLOW}(Optional) If you have custom configurations in your .bashrc, consider copying them to the .zshrc file.${RESET}"
@@ -269,13 +271,13 @@ show_commands(){
   echo "${YELLOW} 1. ls ${RESET}"
   echo "${YELLOW} 2. cat ${RESET}"
   echo "${YELLOW} 3. top ${RESET}"
-  echo "${YELLOW} 4. fzf or CTRL+F ${RESET}"
+  echo "${YELLOW} 4. fz or CTRL+F ${RESET}"
   echo "${YELLOW} 5. Tab, control tab etc.. for autocomplete ${RESET}"
   echo "${YELLOW} 6. folder selection with arrow when navigating ${RESET}"
   echo "${YELLOW} 7. history with arrow up ${RESET}"
+  echo "${YELLOW} 8. neofetch ${RESET}"
 
 }
-
 
 # Function to show the menu
 show_menu() {
@@ -291,6 +293,7 @@ show_menu() {
   echo "${YELLOW} 5. Install NVIDIA driver ${RESET}"
   echo "${YELLOW} 6. Uninstall ZSH or OMZ or Pl10K ${RESET}"
   echo "${YELLOW} 7. Show commands ${RESET}"
+  echo "${YELLOW} 8. Upgrade & Update packages ${RESET}"
   echo "${YELLOW} 0. Exit ${RESET}"
   read -p "Enter your choice (1-5): " choice
 
@@ -302,6 +305,7 @@ show_menu() {
       5) install_nvidia_driver;;
       6) uninstall_zsh_omz_pl10k;;
       7) show_commands;;
+      8) update_upgrade_packages;;
       0) exit 0;;
       *) echo "Invalid choice. Exiting..."; exit 1;;
   esac
