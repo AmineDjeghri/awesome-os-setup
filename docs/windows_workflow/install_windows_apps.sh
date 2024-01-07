@@ -24,13 +24,21 @@ declare -A apps=(
     [52]="EpicGames.EpicGamesLauncher"
 )
 
+declare -A categories=(
+    [1]="Web Browsers"
+    [2]="Messaging"
+    [3]="Development Tools"
+    [4]="Media and Entertainment"
+    [5]="Gaming"
+)
+
 display_menu() {
     echo "Menu:"
     current_category=""
     for key in $(echo "${!apps[@]}" | tr " " "\n" | sort); do
         category="${key:0:1}"
         if [ "$category" != "$current_category" ]; then
-            echo -e "\nCategory $category:"
+            echo -e "\n${categories[$category]}:"
             current_category="$category"
         fi
         echo "$key. ${apps[$key]}"
@@ -53,6 +61,6 @@ install_apps() {
 
 display_menu
 
-read -p "Enter the numbers of the apps to install (separated by comma). For example 11,51 to install both brave & steam: " selected_apps
+read -p "Enter the numbers of the apps to install or update (separated by comma). For example 11,25 to install both brave & discord: " selected_apps
 
 install_apps "$selected_apps"
