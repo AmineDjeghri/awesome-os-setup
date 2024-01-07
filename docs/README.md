@@ -32,7 +32,12 @@ Read more about it here: [README](unix_workflow/README_unix.md) / [website](http
 ## Windows 11/WSL2
 Valuable applications & tips for enhancing your Windows user experience, with a focus on creating a productive environment incorporating WSL 2 (Linux).
 
-Read more about it here: [windows_workflow_README.](windows_workflow/README_windows.md) / [website](https://setup.aminedjeghri.com/readme-windows.html)
+Get started with one command (works on WSL only, Powershell solution coming soon):
+```bash
+bash -c "$(curl -fsSL https://raw.githubusercontent.com/AmineDjeghri/awesome-os-setup/main/docs/windows_workflow/install_windows_apps.sh)"
+```
+
+Read more about it here: [windows_workflow_README.](windows_workflow/README_windows.md) / [Website](https://setup.aminedjeghri.com/readme-windows.html)
 
 **Browser extensions**
 Read more about it here: [browser_extensions.md](windows_workflow/browser_extensions.md) / [website](https://setup.aminedjeghri.com/browser-extensions.html)

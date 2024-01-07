@@ -50,22 +50,34 @@ Some of them are re-mapped :
 
 | Action                                           | Shortcut                                     | more                                                                                                               |
 |--------------------------------------------------|----------------------------------------------|--------------------------------------------------------------------------------------------------------------------|
-| insert                                           | alt+ insert                                  | can be used in editor or project panle                                                                             |
+| call actions                                     | alt+enter                                    | reformat code, correct code & more , used in editor                                                                |
+| insert / create new                              | alt+ insert                                  | can be used in editor (insert tables ect..) or project panel (create new files)                                    |
+| create new branch                                | ctrl+alt+n                                   |                                                                                                                    |
+| find files                                       | ctrl+shift+n                                 |                                                                                                                    |
+| find in files                                    | ctrl+shift+f                                 |                                                                                                                    |
+| find inside current panel                        | ctrl + F                                     | can be used in editor                                                                                              |
+| show recent files                                | ctrl + E                                     |                                                                                                                    |
+| show recent locations                            | ctrl + shift +                               |                                                                                                                    |
 | Quick documentation                              | Ctrl + Q                                     |                                                                                                                    |
+| **select**                                       |                                              |
+| **refactor**                                     |                                              |
 | extract method/constant/variable/field/parameter | Ctrl + Alt + M/C/V/F/P                       |                                                                                                                    |
 | select bloc                                      | ctrl + w                                     | select (the more you press w, the more it wraps other parts. you can then press any other thing to wrap it arround |
-| definitons                                       | ctrl j                                       |                                                                                                                    |
+| select  with multiple cursors                    | ctrl + alt shift + mouse                     |                                                                                                                    |
+| Select multiple occurrences of a word            | alt j                                        |                                                                                                                    |
+| all case-sensitively matching words              | Ctrl Alt Shift J                             |                                                                                                                    |
 | move bloc                                        | ctrl + shift + arrow                         |                                                                                                                    |
-| find                                             | ctrl + F                                     |                                                                                                                    |
-| jump to line                                     | ctrl+g                                       |                                                                                                                    |
 | refactor                                         | alt+r + first option                         |                                                                                                                    |                                        |
 | rename                                           | alt+r then select the second option (rename) |                                                                                                                    |
 | delete/cut line                                  | ctrl+x                                       |                                                                                                                    |
-| Ctrl + B	                                        | Go to declaration or usages                  | works as bold typo in markdown files                                                                               |
+| duplicate line                                   | ctrl+d                                       |                                                                                                                    |
+| **moving**                                       |                                              |
+| Go to declaration or usages	                     | ctrl+B                                       | works as bold typo in markdown files                                                                               |
 | end of line                                      | :End:                                        |                                                                                                                    |
 | beginning of line                                | Home                                         |                                                                                                                    |
 | next word:                                       | Ctrl+Right                                   |                                                                                                                    |
 | previous word                                    | Ctrl+Left                                    |                                                                                                                    |
+| jump to line                                     | ctrl+g                                       |                                                                                                                    |
 
 ## 1.3. Python remote interpreter (SSH /WSL)
 - add a remote python interpreter: usually found with `which python` on the remote server or WSL.

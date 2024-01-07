@@ -50,13 +50,17 @@ You can follow this repository to get a similar setup.
  - 🎧 Deactivate lowering communication sounds in advanced audio settings.
 
 ## 2. Software
+You can install most of the apps with the following command (works on WSL only, Powershell solution coming soon):
+```bash
+bash -c "$(curl -fsSL https://raw.githubusercontent.com/AmineDjeghri/awesome-os-setup/main/docs/windows_workflow/install_windows_apps.sh)"
+```
 ### 2.1. Mainstream Software
-- <ins> Browser</ins>: I recommand Brave (or Edge or Firefox).  Remember to change your sync settings to import your passwords, bookmarks...ect.
-- [browser_extensions.md](browser_extensions.md) : useful extentions for productivity & security
+- <ins> Browser</ins>: I recommend Brave (or Edge or Firefox).  Remember to change your sync settings to import your passwords, bookmarks...ect.
+- [browser_extensions.md](browser_extensions.md): useful extensions for productivity & security
 - <ins> Agenda & Mail</ins>: Google Calendar, Gmail
    - create an app shortcut with brave & add them to the taskbar it will act like an app in windows, and activate the notifications.
    - You can change the theme and prioritize stuff like notifications (all new emails), signature...etc.
-   - Download their desktop notifications extenstions :[Desktop notifications for Gmail ](https://chrome.google.com/webstore/detail/checker-plus-for-gmail/oeopbcgkkoapgobdbedcemjljbihmemj) & [Desktop notifications for Google calendar](https://chrome.google.com/webstore/detail/checker-plus-for-google-c/hkhggnncdpfibdhinjiegagmopldibha)
+   - Download their desktop notifications extensions: [Desktop notifications for Gmail ](https://chrome.google.com/webstore/detail/checker-plus-for-gmail/oeopbcgkkoapgobdbedcemjljbihmemj) & [Desktop notifications for Google calendar](https://chrome.google.com/webstore/detail/checker-plus-for-google-c/hkhggnncdpfibdhinjiegagmopldibha)
    - Make Brave the default apps in windows for mailto and agenda (Windows search bar -> type in `Default apps` then add brave to 'mail' & 'agenda.' Go to brave://settings/handlers and add gmail and agenda. Open now the gmail website and accept brave as the default app.
 - <ins> Antivirus</ins>: Windows defender or Kaspersky Cloud free
 - <ins> Powershell 7</ins>: Install Powershell 7 [link](https://learn.microsoft.com/en-us/powershell/scripting/install/installing-powershell-on-windows?WT.mc_id=THOMASMAURER-blog-thmaure&view=powershell-7.3&viewFallbackFrom=powershell-7). Change the default terminal in Windows Terminal, and activate the "run always as administrator in the default profile"
@@ -100,10 +104,10 @@ You can follow this repository to get a similar setup.
   - Download [GlazeWM](https://github.com/glazerdesktop/GlazeWM/releases). [Docs](https://github.com/glazerdesktop/GlazeWM)
   - Download my config [file](config.yaml) and put it in `C:\Users\%userprofile%\.glaze-wm`
   - shortcuts: You can read more about the shortcuts [here](https://github.com/glazerdesktop/GlazeWM?tab=readme-ov-file#general)
-    - close a window : alt + shift + q:
-    - reload the config  : alt + shift + r:
+    - close a window: alt + shift + q:
+    - reload the config: alt + shift + r:
    - miximize unmaximize : alt f
-   - hide ; alt m (use alt+f to make it appear again)
+   - hide; alt m (use alt+f to make it appear again)
 - Files: Replace the Windows File Explorer. Manage all your files with increased productivity. Work across multiple folders with tabs and so much more.
   - Download [Files](https://files.community/). There are two version : direct installer (free) & Microsoft Store (paid)
   - Replace Windows File explorer with Files: [link](https://files.community/docs/configuring/replace-file-explorer/)
