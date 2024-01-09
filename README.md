@@ -29,7 +29,7 @@ A set of configurations,
 dotfiles and a script to automatically set up a powerful terminal & shell utilities(zsh, fzf...),
 themes like Powerlvl10k, Conda, GPU drivers, and more on Linux/WSL2, again automatically.
 
-Get started with one command :
+Get started with one command (manual installation can be found in the docs below):
 ```bash
 sh -c "$(wget https://raw.githubusercontent.com/AmineDjeghri/awesome-os-setup/main/docs/unix_workflow/auto_linux_setup.sh -O -)"
 ```
@@ -38,7 +38,7 @@ sh -c "$(wget https://raw.githubusercontent.com/AmineDjeghri/awesome-os-setup/ma
 ## Windows 11/WSL2
 Valuable applications & tips for enhancing your Windows user experience, with a focus on creating a productive environment incorporating WSL 2 (Linux).
 
-Get started with one command (works on WSL only, Powershell solution coming soon):
+Get started with one command (works on WSL only, Powershell solution coming soon, manual installation can be found in the docs below):
 ```bash
 bash -c "$(curl -fsSL https://raw.githubusercontent.com/AmineDjeghri/awesome-os-setup/main/docs/windows_workflow/install_windows_apps.sh)"
 ```
