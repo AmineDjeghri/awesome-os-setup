@@ -38,7 +38,13 @@ sh -c "$(wget https://raw.githubusercontent.com/AmineDjeghri/awesome-os-setup/ma
 ## Windows 11/WSL2
 Valuable applications & tips for enhancing your Windows user experience, with a focus on creating a productive environment incorporating WSL 2 (Linux).
 
-Get started with one command (works on WSL only, Powershell solution coming soon, manual installation can be found in the docs below):
+Get started with two commands (works on WSL only, Powershell solution coming soon, manual installation can be found in the docs below):
+1. Install wsl with ubuntu :
+```powershell
+wsl --install -d ubuntu
+```
+2. Restart your computer
+3. Launch WSL and run :
 ```bash
 bash -c "$(curl -fsSL https://raw.githubusercontent.com/AmineDjeghri/awesome-os-setup/main/docs/windows_workflow/install_windows_apps.sh)"
 ```
