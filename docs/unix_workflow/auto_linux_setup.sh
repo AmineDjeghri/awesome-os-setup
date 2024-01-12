@@ -286,6 +286,7 @@ show_menu() {
   echo "It has been tested on Ubuntu 22.04. (It's advised to install the elements in order) ${RESET}"
   printf "\n"
   echo "${YELLOW} ============ Menu ============ ${RESET}"
+  echo "${YELLOW} 0. Upgrade & Update packages ${RESET}"
   echo "${YELLOW} 1. Install ZSH ${RESET}"
   echo "${YELLOW} 2. Install Oh My Zsh, plugins and terminal utilities: batcat, lsd, bpytop, fzf ${RESET}"
   echo "${YELLOW} 3. Install powerlevel10k ${RESET}"
@@ -293,11 +294,11 @@ show_menu() {
   echo "${YELLOW} 5. Install NVIDIA driver ${RESET}"
   echo "${YELLOW} 6. Uninstall ZSH or OMZ or Pl10K ${RESET}"
   echo "${YELLOW} 7. Show commands ${RESET}"
-  echo "${YELLOW} 8. Upgrade & Update packages ${RESET}"
-  echo "${YELLOW} 0. Exit ${RESET}"
+  echo "${YELLOW} 8. Exit ${RESET}"
   read -p "Enter your choice (1-5): " choice
 
   case $choice in
+      0) update_upgrade_packages;;
       1) install_zsh;;
       2) install_oh_my_zsh_and_utilities;;
       3) install_powerlevel10k;;
@@ -305,8 +306,7 @@ show_menu() {
       5) install_nvidia_driver;;
       6) uninstall_zsh_omz_pl10k;;
       7) show_commands;;
-      8) update_upgrade_packages;;
-      0) exit 0;;
+      8) exit 0;;
       *) echo "Invalid choice. Exiting..."; exit 1;;
   esac
 
