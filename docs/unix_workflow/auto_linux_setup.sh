@@ -96,6 +96,7 @@ install_oh_my_zsh_and_utilities() {
     curl -sL "https://raw.githubusercontent.com/AmineDjeghri/awesome-os-setup/main/docs/unix_workflow/dotfiles/.zshrc" > ~/.zshrc
     if ask_yes_no "do you want to make zsh the default shell ?"; then
         chsh -s $(which zsh)
+    fi
     echo "${YELLOW} ----------------------------------------------------Information---------------------------------------------------------------------- ${RESET}"
     echo "${YELLOW} New ${RED}.zshrc ${YELLOW} file has been created with the new configuration. ${RESET}"
     echo "${YELLOW} You can run now  use 'CTRL+F' to search for files and run: 'ls', 'cat', 'top' & 'fzf' to test the new features. ${RESET}"
