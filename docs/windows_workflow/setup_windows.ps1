@@ -216,7 +216,7 @@ function Show-Menu {
     Clear-Host
     Write-Host "===== Windows/WSL Management Menu ====="
     Write-Host "1. Install Windows Apps"
-    Write-Host "2. Install FiraCode font in Windows Terminal (coming soon...)"
+    Write-Host "2. Install FiraCode font in Windows Terminal"
     Write-Host "3. Install WSL"
     Write-Host "4. Export WSL & Backup"
     Write-Host "5. Optimize WSL size (coming soon...)"

@@ -1,6 +1,7 @@
 # Windows & WSL setup
 
 ![Windows WSL Terminal with taskbar](../images/windows_wsl_terminal_taskbar.png)
+![windows setup_image](../images/windows_setup_image.jpeg)
 
 The image you are looking at is a screenshot of a WSL Ubuntu terminal in Windows 11. The top bar is an app called GlazeWM.
 You can follow this repository to get a similar setup.
@@ -61,35 +62,35 @@ Automatic installation available with this command:
 iex ((New-Object System.Net.WebClient).DownloadString('https://raw.githubusercontent.com/AmineDjeghri/awesome-os-setup/main/docs/windows_workflow/setup_windows.ps1'))
 ```
 ### 2.1. Mainstream Software
-- <ins> Browser</ins>: I recommend Brave (or Edge or Firefox).  Remember to change your sync settings to import your passwords, bookmarks...ect.
+- **Browsers**: I recommend Brave (or Edge or Firefox).  Remember to change your sync settings to import your passwords, bookmarks...ect.
 - [browser_extensions.md](browser_extensions.md): useful extensions for productivity & security
-- <ins> Agenda & Mail</ins>: Google Calendar, Gmail
+- **Agenda & Mail**: Google Calendar, Gmail
    - create an app shortcut with brave & add them to the taskbar it will act like an app in windows, and activate the notifications.
    - You can change the theme and prioritize stuff like notifications (all new emails), signature...etc.
    - Download their desktop notifications extensions: [Desktop notifications for Gmail ](https://chrome.google.com/webstore/detail/checker-plus-for-gmail/oeopbcgkkoapgobdbedcemjljbihmemj) & [Desktop notifications for Google calendar](https://chrome.google.com/webstore/detail/checker-plus-for-google-c/hkhggnncdpfibdhinjiegagmopldibha)
    - Make Brave the default apps in windows for mailto and agenda (Windows search bar -> type in `Default apps` then add brave to 'mail' & 'agenda.' Go to brave://settings/handlers and add gmail and agenda. Open now the gmail website and accept brave as the default app.
-- <ins> Antivirus</ins>: Windows defender or Kaspersky Cloud free
-- <ins> Powershell 7</ins>: Install Powershell 7 [link](https://learn.microsoft.com/en-us/powershell/scripting/install/installing-powershell-on-windows?WT.mc_id=THOMASMAURER-blog-thmaure&view=powershell-7.3&viewFallbackFrom=powershell-7). Change the default terminal in Windows Terminal, and activate the "run always as administrator in the default profile"
-- <ins> Others</ins>: CCleaner, HWInfo (portable)
-- <ins> Adobe</ins> : Photoshop, illustrator, premiere pro
-- <ins> Free photoshop alt </ins> : Simply the best. [link](https://www.photopea.com/)
-- <ins> VPN</ins>: ProtonVPN or NordVPN
-- <ins> Torrent client</ins>: qBitTorrent
-- <ins> Download Manager</ins>: [NeatDownloadManager](https://www.neatdownloadmanager.com/index.php/en/) + extension specially for videos + subtitles
-- <ins> Google Drive</ins>: download it on windows and put the files and folder that you want to be automatically saved on your drive, you won't need to everytime open google drive in your browser and manually put your files there
-- <ins> Online Storage</ins>: Google Drive (15gb), Mega Drive (50GB) ...ect. Use these Drives to store non-personal Data! It's better to have an NAS or an external HDD to store your personal data.
-- <ins> Microsoft Office 2021</ins> Buy it or buy a retail key for 1$.
-- <ins> PDF editing</ins> Adobe acrobat (paid) or Sejda(free)(3 free tasks per hour): https://www.sejda.com/ (do not download the desktop app)
-- <ins> Tera copy </ins>
-- <ins> Notion </ins>
-- <ins> AnyDesk</ins> (portable + enable password) : access your computer from anywhere
+- ** Antivirus**: Windows defender or Kaspersky Cloud free
+- **Powershell 7**: Install Powershell 7 [link](https://learn.microsoft.com/en-us/powershell/scripting/install/installing-powershell-on-windows?WT.mc_id=THOMASMAURER-blog-thmaure&view=powershell-7.3&viewFallbackFrom=powershell-7). Change the default terminal in Windows Terminal, and activate the "run always as administrator in the default profile"
+- **Others**: CCleaner, HWInfo (portable)
+- **Adobe** : Photoshop, illustrator, premiere pro
+- **Free photoshop alt**: Simply the best. [link](https://www.photopea.com/)
+- **VPN**: ProtonVPN or NordVPN
+- **Torrent client**: qBitTorrent
+- **Download Manager**: [NeatDownloadManager](https://www.neatdownloadmanager.com/index.php/en/) + extension specially for videos + subtitles
+- **Google Drive**: download it on windows and put the files and folder that you want to be automatically saved on your drive, you won't need to everytime open google drive in your browser and manually put your files there
+- **Online Storage**: Google Drive (15gb), Mega Drive (50GB) ...ect. Use these Drives to store non-personal Data! It's better to have an NAS or an external HDD to store your personal data.
+- **Microsoft Office 2021** Buy it or buy a retail key for 1$.
+- **PDF editing** Adobe acrobat (paid) or Sejda(free)(3 free tasks per hour): https://www.sejda.com/ (do not download the desktop app)
+- **Tera copy**
+- **Notion**
+- **AnyDesk** (portable + enable password) : access your computer from anywhere
 - Bing wallpaper: https://www.microsoft.com/en-us/bing/bing-wallpaper?SilentAuth=1&wa=wsignin1.0
-- <ins> Audio </ins> : ear trumpet
-- <ins> Nvidia Driver </ins> : Geforce Experience (no need for cuda if you code using WSL)
-- <ins> Screen recording </ins> : Screen recorder: OBS or native windows screen recorder `⊞ + G` or `⊞ + alt + R`
-- <ins> Screenshot </ins> : ShareX (portable) - screen capturing with regions and GIF recording, use `ctrl + print` (you can also import your settings, follow this [link](https://techunwrapped.com/can-i-take-my-sharex-capture-settings-to-another-pc/))
-- <ins> Streaming services </ins> : Netflix, Prime in Windows store and browser. Browser is better in terms of stability, lists, content and vpn use. On the other hand, Netflix from the store app and Netflix on Edge browser  can handle 7.1 and 4k streaming. To add Windows apps downloaded from windows store in the taskbar or the desktop :Press Windows key + R then enter shell:appsfolder then drag and drop .
-- <ins> other apps </ins> :
+- **Audio** : ear trumpet
+- **Nvidia Driver**: Geforce Experience (no need for cuda if you code using WSL)
+- **Screen recording**: Screen recorder: OBS or native windows screen recorder `⊞ + G` or `⊞ + alt + R`
+- **Screenshot**: ShareX. Screen capturing with regions and GIF recording, use `ctrl + print` (you can also import your settings, follow this [link](https://techunwrapped.com/can-i-take-my-sharex-capture-settings-to-another-pc/))
+- **Streaming services**: Netflix, Prime in Windows store and browser. Browser is better in terms of stability, lists, content and vpn use. On the other hand, Netflix from the store app and Netflix on Edge browser  can handle 7.1 and 4k streaming. To add Windows apps downloaded from windows store in the taskbar or the desktop :Press Windows key + R then enter shell:appsfolder then drag and drop .
+- **other apps** :
    - Privacy apps: O&O ShutUp 10: privacy control windows
    - WinAero Tweaker: Customize the Windows context menu & other stuff
    - DS4Windows: make playstation controllers work on PC: https://github.com/Ryochan7/DS4Windows/releases
@@ -134,9 +135,9 @@ Requires WSL (see the WSL section). You can start, stop, delete containers easil
 - (optional) Run from CLI: add it to your path and run `subl` to open a file.
 
 #### 2.3.5. Other apps, websites & tips
-- <ins>Pycharm Jupyter Notebook</ins>: Use the one provided in Pycharm. It provides better autocomplete.
-- <ins>Free Cloud GPU </ins> Google Colab/Kaggle you can either put your git repositories inside Google Drive to use them in colab, or git clone inside colab.
-- <ins>Filezilla</ins>: for SFTP (work with a private key: add it in edit/connection/sftp or use pageant)
+- **Pycharm Jupyter Notebook**: Use the one provided in Pycharm. It provides better autocomplete.
+- **Free Cloud GPU ** Google Colab/Kaggle you can either put your git repositories inside Google Drive to use them in colab, or git clone inside colab.
+- **Filezilla**: for SFTP (work with a private key: add it in edit/connection/sftp or use pageant)
 - Git emojis: https://gitmoji.dev/
 - explain paper: https://www.explainpaper.com/
 - Latex Handwriting recognition: https://detexify.kirelabs.org/classify.html
@@ -157,6 +158,7 @@ The most amazing thing about WSL (WSL2.0 exactly) is: You can run Linux in Windo
 ### 3.1. Install WSL:
 - Automatic installation of WSL available with this [command](#2-software)
 - Or manual installation: Run this command in powershell ``` wsl --install ```
+
 - Restart your computer
 - When installing WSL, it comes with Ubuntu (you can always install other distibutions from the microsoft store)
 - You have different options to run Ubuntu :
@@ -222,7 +224,7 @@ Uninstall all distributions & WSL from the control panel & open Windows Features
 ## 4. More (deprecated)
 - Add more Desktop icons (PC, Downloads...): Personalization->themes->desktop icon settings
 - Use Quiet Hours and add only the applications that you want them to send you a notification, (Brave will still send you notifications to get BAT, but it will never appear)
- - <ins>Windows partition</ins>: use the window partition integrated software to create, delete or format partitions
+ - **Windows partition**: use the window partition integrated software to create, delete or format partitions
  - If you consider buying a computer with a GPU for Deep Learning, choose a computer with an NVIDIA GPU that supports CUDA (preferably > RTX 2000 series).
 
 - Wifi & Router 5ghz:

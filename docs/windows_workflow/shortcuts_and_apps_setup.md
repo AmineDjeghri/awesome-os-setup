@@ -1,4 +1,4 @@
-# 1. Shortcuts and apps setup
+# 1. Shortcuts and app setup
 Settings and shortcuts for some apps that I use on Windows 11.
 **Table of Contents**
 <!-- TOC -->
@@ -21,7 +21,7 @@ Settings and shortcuts for some apps that I use on Windows 11.
 - WIP
 
 ## 1.2. GlazeWM
-- Automatic installation of the Terminal settings available with this [command](README_windows.md#2-software)
+- Automatic installation of the settings available with this [command](README_windows.md#2-software). Select the sixth option.
 - Manual installation:
   - Download my config [file](config.yaml) and put it in `C:\Users\%userprofile%\.glaze-wm`
 
@@ -41,7 +41,7 @@ shortcuts: You can read more about the shortcuts [here](https://github.com/glaze
   - Locksmith (right-click on a file or folder to see which process is using it)
 
 ## 1.4. Windows Terminal:
-- Automatic installation of the Terminal settings available with this [command](README_windows.md#2-software)
+- Automatic installation of the Terminal settings available with this [command](README_windows.md#2-software). Select the second option.
 - Manual installation:
   - Download and install the [FiraCode font](https://github.com/ryanoasis/nerd-fonts/releases/download/v3.1.1/FiraCode.zip) on your primary operating system (Windows if you are using WSL).
   - Copy my [settings.json](settings.json) for the Windows Terminal to the following location: `C:\Users\%UserProfile%\AppData\Local\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\LocalState` (the theme used is called night owl).
