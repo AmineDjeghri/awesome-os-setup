@@ -1,6 +1,56 @@
-# 1. PyCharm:
+# 1. Shortcuts and apps setup
+Settings and shortcuts for some apps that I use on Windows 11.
+**Table of Contents**
+<!-- TOC -->
+* [1. Shortcuts and apps setup](#1-shortcuts-and-apps-setup)
+  * [1.1. Windows shortcuts](#11-windows-shortcuts)
+  * [1.2. GlazeWM](#12-glazewm)
+  * [1.3. PowerToys:](#13-powertoys)
+  * [1.4. Windows Terminal:](#14-windows-terminal)
+  * [1.5. PyCharm:](#15-pycharm)
+    * [1.5.1. Tips & tricks](#151-tips--tricks)
+    * [1.5.2. Personal pycharm shortcuts](#152-personal-pycharm-shortcuts)
+    * [1.5.3. Python remote interpreter (SSH /WSL)](#153-python-remote-interpreter-ssh-wsl)
+    * [1.5.4. Pycharm remote deployment](#154-pycharm-remote-deployment)
+    * [1.5.5. Remote SSH for ReactJS](#155-remote-ssh-for-reactjs)
+<!-- TOC -->
 
-## 1.1. Tips & tricks
+## 1.1. Windows shortcuts
+- Display copy-paste history: `win + v`
+- Lock screen: `win + L`
+- WIP
+
+## 1.2. GlazeWM
+- Automatic installation of the Terminal settings available with this [command](README_windows.md#2-software)
+- Manual installation:
+  - Download my config [file](config.yaml) and put it in `C:\Users\%userprofile%\.glaze-wm`
+
+shortcuts: You can read more about the shortcuts [here](https://github.com/glazerdesktop/GlazeWM?tab=readme-ov-file#general)
+  - close a window: alt + shift + q:
+  - reload the config: alt + shift + r:
+  - Maximize & un-maximize : alt + f
+  - hide; alt m (use alt+f to make it appear again)
+
+## 1.3. PowerToys:
+  - Download [Windows store](https://apps.microsoft.com/detail/XP89DCGQ3K6VLD?hl). [Docs](https://learn.microsoft.com/en-us/windows/powertoys/run#features)
+  - I use it mainly for: Search (alt + space) for applications folders or files & Killing a process instead of using task manager.
+  - You can also access files and folders from the search bar with alt + space then paste the path
+  - Open a selected application as administrator: Ctrl+Shift+Enter	(only applicable to applications)
+  - OCR (⊞ + shift + T)
+  - Color picker (⊞ + shift + C)
+  - Locksmith (right-click on a file or folder to see which process is using it)
+
+## 1.4. Windows Terminal:
+- Automatic installation of the Terminal settings available with this [command](README_windows.md#2-software)
+- Manual installation:
+  - Download and install the [FiraCode font](https://github.com/ryanoasis/nerd-fonts/releases/download/v3.1.1/FiraCode.zip) on your primary operating system (Windows if you are using WSL).
+  - Copy my [settings.json](settings.json) for the Windows Terminal to the following location: `C:\Users\%UserProfile%\AppData\Local\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\LocalState` (the theme used is called night owl).
+  - Alternatively, you can open the Windows Terminal and navigate to Settings -> Profiles (bottom left) -> default -> Additional Parameters -> Appearance -> Change the font to FiraCode, the opacity to 85% and the background color to night owl.
+  - wget on Windows terminal: add it to your terminal: https://www.programmersought.com/article/90723524682/
+
+## 1.5. PyCharm:
+
+### 1.5.1. Tips & tricks
 - I prefer to use PyCharm (professional edition) even if I used VSCode for 2 years, the Intellij suite is just amazing. Intellij suite with all the plugins for students is completely free.
 - Sync pycharm settings : https://www.jetbrains.com/help/pycharm/sharing-your-ide-settings.html#IDE_settings_sync
 - Remote/local terminal & interpreter :
@@ -15,8 +65,9 @@
   - github copilot
   - TBD
 - PyCharm has keyboard shortcuts for most of its commands related to editing, navigation, refactoring, debugging, and other tasks. Memorizing these hotkeys can help you stay more productive by keeping your hands on the keyboard. [Link to Cheatsheet](https://resources.jetbrains.com/storage/products/pycharm/docs/PyCharm_ReferenceCard.pdf)
+- If the plugin Table of contents doesn't work on a markdown file, create a small table with the title & two`<!-- TOC -->`, it should detect it.
 
-## 1.2. Personal pycharm shortcuts
+### 1.5.2. Personal pycharm shortcuts
 Official[Link to Cheatsheet](https://resources.jetbrains.com/storage/products/pycharm/docs/PyCharm_ReferenceCard.pdf)
 
 Some of them are re-mapped :
@@ -79,13 +130,13 @@ Some of them are re-mapped :
 | previous word                                    | Ctrl+Left                                    |                                                                                                                    |
 | jump to line                                     | ctrl+g                                       |                                                                                                                    |
 
-## 1.3. Python remote interpreter (SSH /WSL)
+### 1.5.3. Python remote interpreter (SSH /WSL)
 - add a remote python interpreter: usually found with `which python` on the remote server or WSL.
 - PyCharm envs: You can clean out old PyCharm interpreters that are no longer associated with a project see the image [here](https://github.com/AmineDjeghri/BetterWindowsUX/blob/master/pycharm_interpreters.PNG) .
 - This gives you a listing where you can get rid of old virtualenvs that PyCharm thinks are still around
 
 
-## 1.4. Pycharm remote deployment
+### 1.5.4. Pycharm remote deployment
 WARNING: project folder needs to be on windows and not WSL to use the remote ssh. Do not host folders outside WSL if you are not using a remote interpreter, there are  [WSL perforamance issues](https://github.com/microsoft/WSL/issues/4197?notification_referrer_id=MDE4Ok5vdGlmaWNhdGlvblRocmVhZDUyMzA5ODA3MjozMjcxNTkxMw%3D%3D#issuecomment-1727108838))
 
 Defining a server as default:
@@ -100,7 +151,7 @@ Open the deployment Options (Settings/Preferences | Deployment | Options or Tool
 In the main menu, select Tools | Deployment | Automatic upload. Note that automatic upload in this case is performed in the Always mode.
 
 
-## 1.5. Remote SSH for ReactJS
+### 1.5.5. Remote SSH for ReactJS
 - First, make sure that in the server, the React project is running when you run `yarn dev run`
 - In pycharm, go to configuration and create a new config for npm
 - select package.json from the local folder

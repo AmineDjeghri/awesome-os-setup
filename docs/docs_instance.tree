@@ -7,10 +7,11 @@
 
     <toc-element topic="README.md" toc-title="Home"/>
     <toc-element topic="README_windows.md">
-        <toc-element topic="1_cuda_pytorch_install.md" toc-title="1. cuda, pytorch setup with conda"/>
-        <toc-element topic="2_pycharm_wsl_conda.md" toc-title="2/ Pycharm, wsl setup"/>
+        <toc-element topic="shortcuts_and_apps_setup.md" toc-title="Windows shortcuts and apps setup"/>
     </toc-element>
-    <toc-element topic="README_unix.md"/>
+    <toc-element topic="README_unix.md">
+        <toc-element topic="cuda_pytorch_install.md" toc-title="1. cuda, pytorch setup with conda"/>
+    </toc-element>
     <toc-element topic="browser_extensions.md" toc-title="Browser extensions"/>
 
 

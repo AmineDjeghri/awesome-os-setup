@@ -144,12 +144,83 @@ function Install-Windows-Apps {
     Install-Apps -selectedApps $selectedApps -apps $apps
 }
 
+ # function to install fonts
+function Install-FiraCode-Font {
+    $fontZipUrl = "https://github.com/ryanoasis/nerd-fonts/releases/download/v3.1.1/FiraCode.zip"
+    $downloadDirectory = "$env:TEMP\FiraCode"
+
+    # Create the destination directory if it doesn't exist
+    if (-not (Test-Path -Path $downloadDirectory -PathType Container)) {
+        New-Item -ItemType Directory -Path $downloadDirectory | Out-Null
+    }
+
+    # Download the font zip file & extract the file
+    $fontZipPath = Join-Path -Path $downloadDirectory -ChildPath "FiraCode.zip"
+    Invoke-WebRequest -Uri $fontZipUrl -OutFile $fontZipPath
+
+    Write-Host "Extracting font files..."
+    Expand-Archive -Path $fontZipPath -DestinationPath $downloadDirectory -Force
+
+    # Install all TTF files
+    $ttfFiles = Get-ChildItem -Path $downloadDirectory -Filter "*.ttf"
+    foreach ($ttfFile in $ttfFiles) {
+        Write-Host "Installing $($ttfFile.Name)..."
+        $fontPath = Join-Path -Path ([System.IO.Path]::GetFullPath("C:\Windows\Fonts")) -ChildPath $ttfFile.Name
+        Copy-Item -Path $ttfFile.FullName -Destination $fontPath -Force
+    }
+
+    Write-Host "Font installation complete."
+
+    # Clean up
+    Remove-Item -Path $fontZipPath -Force
+    Remove-Item -Path $downloadDirectory -Recurse -Force
+
+    # Copy the json file to the Windows Terminal settings directory
+    $settingsJsonUrl = "https://raw.githubusercontent.com/AmineDjeghri/awesome-os-setup/main/docs/windows_workflow/settings.json"
+    $windowsTerminalSettingsDirectory = "$env:UserProfile\AppData\Local\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\LocalState"
+    $settingsJsonFileName = "settings.json"
+
+    # Display a confirmation message
+    $confirmationMessage = "This script will install the font in Windows Terminal at the following path:`n`n$windowsTerminalSettingsDirectory\$settingsJsonFileName`n`nDo you want to continue?"
+    $confirmation = $host.ui.PromptForChoice("Confirmation", $confirmationMessage, @("&Yes", "&No"), 1)
+
+    if ($confirmation -eq 0) {
+        Invoke-WebRequest -Uri $settingsJsonUrl -OutFile $windowsTerminalSettingsDirectory\$settingsJsonFileName
+        Write-Host "Windows Terminal settings JSON file downloaded and replaced. Restart Windows Terminal to see the changes."
+    } else {
+        Write-Host "Operation canceled. FiraCode font not installed in Windows Terminal."
+    }
+}
+
+ # function to replace settings.json of GlazeWM
+ function Get-GlazeWM-Settings() {
+    $glazeWMConfigDirectory = "$env:UserProfile\.glaze-wm"
+
+    $confirmationMessageGlazeWM = "This script will install GlazeWM by replacing the config file located at:`n`n$glazeWMConfigDirectory\$glazeWMConfigFileName`n`nDo you want to continue?"
+    $confirmationGlazeWM = $host.ui.PromptForChoice("Confirmation", $confirmationMessageGlazeWM, @("&Yes", "&No"), 1)
+
+    if ($confirmationGlazeWM -eq 0) {
+        $glazeWMConfigUrl = "https://raw.githubusercontent.com/AmineDjeghri/awesome-os-setup/main/docs/windows_workflow/config.yaml"
+        $glazeWMConfigFileName = "config.yaml"
+
+        Invoke-WebRequest -Uri $glazeWMConfigUrl -OutFile $glazeWMConfigDirectory\$glazeWMConfigFileName
+
+        Write-Host "GlazeWM config.yaml file downloaded and replaced. Restart GlazeWM to see the changes."
+    } else {
+        Write-Host "Operation canceled."
+    }
+
+ }
+
 function Show-Menu {
     Clear-Host
-    Write-Host "===== WSL Management Menu ====="
-    Write-Host "1. Install WSL"
-    Write-Host "2. Export WSL"
-    Write-Host "3. Install Apps"
+    Write-Host "===== Windows/WSL Management Menu ====="
+    Write-Host "1. Install Windows Apps"
+    Write-Host "2. Install FiraCode font in Windows Terminal (coming soon...)"
+    Write-Host "3. Install WSL"
+    Write-Host "4. Export WSL & Backup"
+    Write-Host "5. Optimize WSL size (coming soon...)"
+    Write-Host "6. Get GlazeWM settings"
     Write-Host "0. Exit"
 }
 
@@ -159,9 +230,12 @@ function Execute-Choice {
     )
 
     switch ($choice) {
-        '1' { Install-WSL (ubuntu) }
-        '2' { Export-WSL (ubuntu) }
-        '3' { Install-Windows-Apps }
+        '1' { Install-Windows-Apps }
+        '2' { Install-FiraCode-Font }
+        '3' { Install-WSL (ubuntu) }
+        '4' { Export-WSL (ubuntu) }
+        '5' { Optimize-WSL (ubuntu) }
+        '6' { Get-GlazeWM-Settings }
         '0' { exit }
         default { Write-Host "Invalid choice. Please enter a valid option." }
     }

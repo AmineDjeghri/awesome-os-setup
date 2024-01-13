@@ -23,7 +23,7 @@ A set of configurations,
 dotfiles and a script to automatically set up a powerful terminal & shell utilities(zsh,fzf, ctrl+f on terminal to search files & folder...),
 themes like Powerlvl10k, Conda, GPU drivers, and more on Linux/WSL2, again automatically.
 
-Get started with one command :
+Get started with one command (linux):
 ```bash
 sh -c "$(wget https://raw.githubusercontent.com/AmineDjeghri/awesome-os-setup/main/docs/unix_workflow/setup_linux.sh -O -)"
 ```
