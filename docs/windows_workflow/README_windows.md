@@ -29,6 +29,12 @@ You can follow this repository to get a similar setup.
   * [4. More (deprecated)](#4-more-deprecated)
 <!-- TOC -->
 
+Get started with one command (powershell):
+
+```powershell
+iex ((New-Object System.Net.WebClient).DownloadString('https://raw.githubusercontent.com/AmineDjeghri/awesome-os-setup/main/docs/windows_workflow/setup_windows.ps1'))
+```
+
 ## 1. Windows account & configuration
 ### 1.1. Windows account
 1. If you already have a key: activate windows with your key
@@ -50,10 +56,6 @@ You can follow this repository to get a similar setup.
  - 🎧 Deactivate lowering communication sounds in advanced audio settings.
 
 ## 2. Software
-You can install most of the apps with the following command (works on WSL only, Powershell solution coming soon):
-```bash
-bash -c "$(curl -fsSL https://raw.githubusercontent.com/AmineDjeghri/awesome-os-setup/main/docs/windows_workflow/install_windows_apps.sh)"
-```
 ### 2.1. Mainstream Software
 - <ins> Browser</ins>: I recommend Brave (or Edge or Firefox).  Remember to change your sync settings to import your passwords, bookmarks...ect.
 - [browser_extensions.md](browser_extensions.md): useful extensions for productivity & security
@@ -81,15 +83,12 @@ bash -c "$(curl -fsSL https://raw.githubusercontent.com/AmineDjeghri/awesome-os-
 - <ins> Audio </ins> : ear trumpet
 - <ins> Nvidia Driver </ins> : Geforce Experience (no need for cuda if you code using WSL)
 - <ins> Screen recording </ins> : Screen recorder: OBS or native windows screen recorder `⊞ + G` or `⊞ + alt + R`
-- <ins> Screenshot </ins> : ShareX (portable) - screen capturing with regions and GIF recording , use CTRL + print screen key `ctrl + print`
-- <ins> Streaming services </ins> : Netflix, Prime in Windows store and browser. Browser is better in terms of stability, lists, content and vpn use. On the other hand, Netflix from the store app and Netflix on Edge browser  can handle 7.1 and 4k streaming. To add windows apps downloaded from windows store in the taskbar or the desktop :Press Windows key + R then enter shell:appsfolder then drag and drop .
+- <ins> Screenshot </ins> : ShareX (portable) - screen capturing with regions and GIF recording, use `ctrl + print` (you can also import your settings, follow this [link](https://techunwrapped.com/can-i-take-my-sharex-capture-settings-to-another-pc/))
+- <ins> Streaming services </ins> : Netflix, Prime in Windows store and browser. Browser is better in terms of stability, lists, content and vpn use. On the other hand, Netflix from the store app and Netflix on Edge browser  can handle 7.1 and 4k streaming. To add Windows apps downloaded from windows store in the taskbar or the desktop :Press Windows key + R then enter shell:appsfolder then drag and drop .
 - <ins> other apps </ins> :
    - Privacy apps: O&O ShutUp 10: privacy control windows
    - WinAero Tweaker: Customize the Windows context menu & other stuff
    - DS4Windows: make playstation controllers work on PC: https://github.com/Ryochan7/DS4Windows/releases
-   - Hide the Windows taskbar (right-click on the taskbar -> taskbar settings-> taskbar behavior (at the bottom) -> hide automatically the taskbar).
-   - Pin some folders and drivers, Recycle Bin in the file explorer. Fast browsing: right-click on the file explorer in the taskbar to show the shortcut to the pinned folders.
-   - Auto lock screen after x minutes of inactivity: search for `screen saver` in windows and select the number of minutes before your computer auto locks itself.
 
 ### 2.2. UI/UX Software
 - PowerToys:
@@ -112,15 +111,19 @@ bash -c "$(curl -fsSL https://raw.githubusercontent.com/AmineDjeghri/awesome-os-
   - Download [Files](https://files.community/). There are two version : direct installer (free) & Microsoft Store (paid)
   - Replace Windows File explorer with Files: [link](https://files.community/docs/configuring/replace-file-explorer/)
   - You can import my settings: [link](Files_3.0.15.0.zip). Open Files -> Settings -> advanced -> import settings
+- Tips:
+   - Hide the Windows taskbar (right-click on the taskbar -> taskbar settings-> taskbar behavior (at the bottom) -> automatically hide the taskbar).
+   - Pin some folders and drivers, Recycle Bin in the file explorer. Fast browsing: right-click on the file explorer in the taskbar to show the shortcut to the pinned folders.
+   - Auto lock screen after x minutes of inactivity: search for `screen saver` in windows and select the number of minutes before your computer auto locks itself.
 
-### 2.3. Dev Software
-#### 2.3.1. <ins>PyCharm</ins>:
+### 2.3. Dev Software & Websites
+#### 2.3.1. PyCharm:
 - I prefer to use PyCharm (the Pro version is free for students)
 - CAREFUL when creating a project, you should use the anaconda env (windows/WSL) and not install a new python interpreter or using virtualenv
 - Sync pycharm settings : https://www.jetbrains.com/help/pycharm/sharing-your-ide-settings.html#IDE_settings_sync
 - [pycharm settings, tips & tricks](https://github.com/AmineDjeghri/Awesome-Windows11-WSL/blob/master/Pycharm_WSL_Anaconda.md)
 
-#### 2.3.2. <ins>Windows Terminal</ins>
+#### 2.3.2. Windows Terminal
 - Always use Windows terminal. It contains all the terminals in one place (ubuntu, powershell, wsl, cmd...ect). You can right-click on any folder to open it.
 - Configure Windows Terminal UI
   - Download and install the [FiraCode font](https://github.com/ryanoasis/nerd-fonts/releases/download/v3.1.1/FiraCode.zip) on your primary operating system (Windows if you are using WSL).
@@ -128,15 +131,15 @@ bash -c "$(curl -fsSL https://raw.githubusercontent.com/AmineDjeghri/awesome-os-
   - Alternatively, you can open the Windows Terminal and navigate to Settings -> Profiles (bottom left) -> default -> Additional Parameters -> Appearance -> Change the font to FiraCode, the opacity to 85% and the background color to night owl.
   - wget on Windows terminal: add it to your terminal: https://www.programmersought.com/article/90723524682/
 
-#### 2.3.3. <ins>Docker Desktop</ins>
+#### 2.3.3. Docker Desktop
 Requires WSL (see the WSL section). You can start, stop, delete containers easily, access & edit files right inside the container without the need of a terminal.
-#### 2.3.4. <ins>Sublime Text</ins> (Free):
+
+#### 2.3.4. Sublime Text
 - Extremely lightweight.
 - (recommended) CheatSheet
 - (optional) Run from CLI: add it to your path and run `subl` to open a file.
 
-#### 2.3.5. <ins>Other apps </ins>
-- <ins>ssh key</ins>: If you have WSL, you can generate an ssh key with `ssh-keygen -t rsa` (when prompted, enter an empty password).
+#### 2.3.5. Other apps, websites & tips
 - <ins>Pycharm Jupyter Notebook</ins>: Use the one provided in Pycharm. It provides better autocomplete.
 - <ins>Free Cloud GPU </ins> Google Colab/Kaggle you can either put your git repositories inside Google Drive to use them in colab, or git clone inside colab.
 - <ins>Filezilla</ins>: for SFTP (work with a private key: add it in edit/connection/sftp or use pageant)
@@ -175,11 +178,11 @@ The most amazing thing about WSL (WSL2.0 exactly) is: You can run Linux in Windo
 systemd=true
  ```
 - Restart the terminal and run `systemctl list-unit-files --type=service` in WSL to see some processes running.
-- If you don't have an SSH key, generate a new SSH key using : `ssh-keygen -t rsa` inside linux.
 - If you have an ssh key in windows in `C:\Users\%UserProfile%\.ssh`, copy it (both keys) to linux `~/.ssh` folder or using Windows file explorer or power toys `\\wsl$\Ubuntu\home\%USERNAME%\.ssh` and change its rights using: `chmod 600 ~/.ssh/id_rsa` and `chmod 600 ~/.ssh/id_rsa.pub`.
+- If you don't have an SSH key, generate a new SSH key using: `ssh-keygen -t rsa` inside linux (when prompted, you can enter an empty password).
+
 ### 3.2. Linux/WSL Setup - terminal, shell, Miniconda, CUDA & More:
 [Linux Setup Guide](../unix_workflow/README_unix.md): A set of configurations, dotfiles and a script to automatically set up a powerful terminal & shell utilities(zsh, fzf...), themes like Powerlvl10k, Conda, GPU drivers, and more on Linux/WSL2.
-
 
 Advanced configuration:
 - [Cuda & Pytorch installation inside conda](../unix_workflow/1_cuda_pytorch_install.md)

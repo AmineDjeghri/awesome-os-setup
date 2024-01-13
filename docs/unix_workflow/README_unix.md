@@ -14,7 +14,7 @@ While it's particularly useful for Python developers, feel free to customize it 
 ## Step 2 - Run the script :
   - Run this command & choose what to install: oh-my-zsh, pl10k theme, miniconda & cuda (if you have a GPU) automatically:
 ```bash
-sh -c "$(wget https://raw.githubusercontent.com/AmineDjeghri/Awesome-Windows11-WSL-Linux/master/unix_workflow/auto_linux_setup.sh -O -)"
+sh -c "$(wget https://raw.githubusercontent.com/AmineDjeghri/Awesome-Windows11-WSL-Linux/master/unix_workflow/setup_linux.sh -O -)"
 ```
 - Do not run the script with `sudo` otherwise it will install some packages in `/root` instead of `/home`.
   - Also, make sure to type `yes` when installing conda. If you are facing some problems, take a look at section 2.2.

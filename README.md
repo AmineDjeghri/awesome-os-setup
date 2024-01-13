@@ -31,22 +31,18 @@ themes like Powerlvl10k, Conda, GPU drivers, and more on Linux/WSL2, again autom
 
 Get started with one command (manual installation can be found in the docs below):
 ```bash
-sh -c "$(wget https://raw.githubusercontent.com/AmineDjeghri/awesome-os-setup/main/docs/unix_workflow/auto_linux_setup.sh -O -)"
+sh -c "$(wget https://raw.githubusercontent.com/AmineDjeghri/awesome-os-setup/main/docs/unix_workflow/setup_linux.sh -O -)"
 ```
 - **My Linux/WSL2 docs**: Read more here: [README](docs/unix_workflow/README_unix.md) / [website](https://setup.aminedjeghri.com/readme-unix.html)
 
 ## Windows 11/WSL2
 Valuable applications & tips for enhancing your Windows user experience, with a focus on creating a productive environment incorporating WSL 2 (Linux).
 
-Get started with two commands (manual installation can be found in the docs below):
-1. Run this command in Powershell to install WSL2 with ubuntu:
+Get started with one command (powershell):
+
 ```powershell
-wsl --install -d ubuntu
-```
-2. Restart your computer. A WSL window will pop up, choose a username & a password for ubuntu.
-3. Run this command in WSL (and not Powershell) to select the Windows apps you want (Powershell solution coming soon):
-```bash
-bash -c "$(curl -fsSL https://raw.githubusercontent.com/AmineDjeghri/awesome-os-setup/main/docs/windows_workflow/install_windows_apps.sh)"
+iex ((New-Object System.Net.WebClient).DownloadString('https://raw.githubusercontent.com/AmineDjeghri/awesome-os-setup/main/docs/windows_workflow/setup_windows.ps1'))
+
 ```
 
 - **My Windows/WSL2 docs**: Read more here: [windows_workflow_README.](docs/windows_workflow/README_windows.md) / [website](https://setup.aminedjeghri.com/readme-windows.html)
@@ -74,6 +70,11 @@ A folder named `docs` contains the docs for generating the website with Jetbrain
 Writerside supports only one file named `README.md`
 that's why you will find other readme files like `unix_workflow/README_unix.md`
 instead of being named `unix_workflow/README.md`.
+
+You can also sync the repository's dotfiles with your local machine with `stow`:
+```bash
+stow -t ~ <folder_name>
+```
 
 **Star History Chart**
 [![Star History Chart](https://api.star-history.com/svg?repos=aminedjeghri/awesomewindows11&type=Date)](https://star-history.com/#aminedjeghri/awesomewindows11&Date)

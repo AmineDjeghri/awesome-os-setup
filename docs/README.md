@@ -25,16 +25,18 @@ themes like Powerlvl10k, Conda, GPU drivers, and more on Linux/WSL2, again autom
 
 Get started with one command :
 ```bash
-sh -c "$(wget https://raw.githubusercontent.com/AmineDjeghri/awesome-os-setup/main/docs/unix_workflow/auto_linux_setup.sh -O -)"
+sh -c "$(wget https://raw.githubusercontent.com/AmineDjeghri/awesome-os-setup/main/docs/unix_workflow/setup_linux.sh -O -)"
 ```
 Read more about it here: [README](unix_workflow/README_unix.md) / [website](https://setup.aminedjeghri.com/readme-unix.html)
 
 ## Windows 11/WSL2
 Valuable applications & tips for enhancing your Windows user experience, with a focus on creating a productive environment incorporating WSL 2 (Linux).
 
-Get started with one command (works on WSL only, Powershell solution coming soon):
-```bash
-bash -c "$(curl -fsSL https://raw.githubusercontent.com/AmineDjeghri/awesome-os-setup/main/docs/windows_workflow/install_windows_apps.sh)"
+Get started with one command (powershell):
+
+```powershell
+iex ((New-Object System.Net.WebClient).DownloadString('https://raw.githubusercontent.com/AmineDjeghri/awesome-os-setup/main/docs/windows_workflow/setup_windows.ps1'))
+
 ```
 
 Read more about it here: [windows_workflow_README.](windows_workflow/README_windows.md) / [Website](https://setup.aminedjeghri.com/readme-windows.html)
