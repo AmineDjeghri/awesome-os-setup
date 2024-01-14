@@ -21,7 +21,7 @@ Settings and shortcuts for some apps that I use on Windows 11.
 - WIP
 
 ## 1.2. GlazeWM
-- Automatic installation of the settings available with this [command](README_windows.md#2-software). Select the sixth option.
+- Automatic installation of the settings available with this [command](README_windows.md#2-software). Select the seventh option.
 - Manual installation:
   - Download my config [file](config.yaml) and put it in `C:\Users\%userprofile%\.glaze-wm`
 

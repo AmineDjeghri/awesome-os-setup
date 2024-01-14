@@ -22,7 +22,7 @@ function Export-WSL {
     # Export the WSL 2 instance to a tar file
     wsl.exe --export $wslInstance $exportPath
 
-    Write-Host "WSL instance '$wslInstance' exported successfully to: $exportPath"
+    Write-Host "WSL instance '$wslInstance' exported successfully to: $exportPath" -ForegroundColor Yellow
 
     # Open the location where the file is stored
     Invoke-Item (Get-Item $exportPath).DirectoryName
@@ -75,18 +75,18 @@ $apps = @{
     81 = "NordVPN.NordVPN"
     82 = "qBittorrent.qBittorrent"
     83 = "Ookla.Speedtest.Desktop"
+    84 = "Microsoft.BingWallpaper"
+    85 = "File-New-Project.EarTrumpet"
+    86 = "ShareX.ShareX"
 
     92 = "Microsoft.WindowsTerminal"
     93 = "Microsoft.VisualStudioCode"
 
-    01 = "Microsoft.BingWallpaper"
-    02 = "File-New-Project.EarTrumpet"
-    03 = "ShareX.ShareX"
 }
 
 
 function Install-Windows-Apps {
-    Write-Host "Welcome to the Windows apps installer script. This script will INSTALL or UPDATE the following apps:"
+    Write-Host "Welcome to the Windows apps installer script. This script will INSTALL or UPDATE the following apps:" -ForegroundColor Yellow
 
     $categories = @{
         1 = "Web Browsers"
@@ -96,16 +96,16 @@ function Install-Windows-Apps {
         5 = "Gaming"
         6 = "Documents, drives & editing"
         7 = "Image & Video Editing"
-        8 = "Security & network tools"
+        8 = "Security, network tools & others"
         9 = "Development & Programming"
         0 = "Others"
     }
 
    function Display-Menu {
-        Write-Host "Menu:"
+        Write-Host "Menu:" -ForegroundColor Yellow
         foreach ($category in $categories.Keys | Sort-Object) {
             Write-Host ""
-            Write-Host $categories[$category]":"
+            Write-Host $categories[$category]":" -ForegroundColor Yellow
             foreach ($key in $apps.Keys | Where-Object { $_ -match "^$category" } | Sort-Object) {
                 Write-Host "$key. $($apps[$key])"
             }
@@ -118,22 +118,25 @@ function Install-Windows-Apps {
             [hashtable]$apps
         )
 
-        Write-Host "Selected Apps: $selectedApps"
-        Write-Host "Available App Keys: $($apps.Keys -join ', ')"
-       $selectedAppsArray = $selectedApps -split ',' | ForEach-Object { $_.Trim() }
+        $selectedAppsArray = $selectedApps -split ',' | ForEach-Object { $_.Trim() }
+        $confirmationMessage = "This script will install the selected apps. Do you want to continue?"
+        $confirmation = $host.ui.PromptForChoice("Confirmation", $confirmationMessage, @("&Yes", "&No"), 1)
 
-        foreach ($app in $selectedAppsArray) {
-            if ($app -in $apps.Keys) {
-                $app = [int]$app
-                $appName = $apps[$app]
-                Write-Host "Installing $appName..."
-                $installCommand = "winget install -e --id '$appName'"
-                Invoke-Expression $installCommand
-            } else {
-                Write-Host "Invalid app number: $app. Available app numbers: $($apps.Keys -join ', ')"
+        if ($confirmation -eq 0) {
+            foreach ($app in $selectedAppsArray) {
+                if ($app -in $apps.Keys) {
+                    $app = [int]$app
+                    $appName = $apps[$app]
+                    Write-Host "Installing $appName..."
+                    $installCommand = "winget install -e --id '$appName'"
+                    Invoke-Expression $installCommand
+                } else {
+                    Write-Host "Invalid app number: $app. Available app numbers: $($apps.Keys -join ', ')"
+                }
             }
-        }
-    }
+        } else {
+            Write-Host "Operation canceled."
+        }}
 
 
 
@@ -169,7 +172,7 @@ function Install-FiraCode-Font {
         Copy-Item -Path $ttfFile.FullName -Destination $fontPath -Force
     }
 
-    Write-Host "Font installation complete."
+    Write-Host "Font installation complete." -ForegroundColor Yellow
 
     # Clean up
     Remove-Item -Path $fontZipPath -Force
@@ -186,7 +189,7 @@ function Install-FiraCode-Font {
 
     if ($confirmation -eq 0) {
         Invoke-WebRequest -Uri $settingsJsonUrl -OutFile $windowsTerminalSettingsDirectory\$settingsJsonFileName
-        Write-Host "Windows Terminal settings JSON file downloaded and replaced. Restart Windows Terminal to see the changes."
+        Write-Host "Windows Terminal settings JSON file downloaded and replaced. Restart Windows Terminal to see the changes." -ForegroundColor Yellow
     } else {
         Write-Host "Operation canceled. FiraCode font not installed in Windows Terminal."
     }
@@ -205,7 +208,7 @@ function Install-FiraCode-Font {
 
         Invoke-WebRequest -Uri $glazeWMConfigUrl -OutFile $glazeWMConfigDirectory\$glazeWMConfigFileName
 
-        Write-Host "GlazeWM config.yaml file downloaded and replaced. Restart GlazeWM to see the changes."
+        Write-Host "GlazeWM config.yaml file downloaded and replaced. Restart GlazeWM to see the changes." -ForegroundColor Yellow
     } else {
         Write-Host "Operation canceled."
     }
@@ -214,14 +217,15 @@ function Install-FiraCode-Font {
 
 function Show-Menu {
     Clear-Host
-    Write-Host "===== Windows/WSL Management Menu ====="
+    Write-Host "===== Windows/WSL Management Menu =====" -ForegroundColor Yellow
     Write-Host "1. Install Windows Apps"
     Write-Host "2. Install FiraCode font in Windows Terminal"
     Write-Host "3. Install WSL"
-    Write-Host "4. Export WSL & Backup"
-    Write-Host "5. Optimize WSL size (coming soon...)"
-    Write-Host "6. Get GlazeWM settings"
-    Write-Host "0. Exit"
+    Write-Host "4. Setup WSL with Linux"
+    Write-Host "5. Export WSL & Backup"
+    Write-Host "6. Optimize WSL size (coming soon...)"
+    Write-Host "7. Get GlazeWM settings"
+    Write-Host "0. Exit" -ForegroundColor Yellow
 }
 
 function Execute-Choice {
@@ -233,9 +237,13 @@ function Execute-Choice {
         '1' { Install-Windows-Apps }
         '2' { Install-FiraCode-Font }
         '3' { Install-WSL (ubuntu) }
-        '4' { Export-WSL (ubuntu) }
-        '5' { Optimize-WSL (ubuntu) }
-        '6' { Get-GlazeWM-Settings }
+        '4' {
+            Write-Host 'Run this command in Linux:'
+            Write-Host 'sh -c "$(wget https://raw.githubusercontent.com/AmineDjeghri/awesome-os-setup/main/docs/unix_workflow/setup_linux.sh -O -)"' -ForegroundColor Green
+            }
+        '5' { Export-WSL (ubuntu) }
+        '6' { Optimize-WSL (ubuntu) }
+        '7' { Get-GlazeWM-Settings }
         '0' { exit }
         default { Write-Host "Invalid choice. Please enter a valid option." }
     }
