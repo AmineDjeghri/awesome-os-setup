@@ -225,7 +225,6 @@ function Show-Menu {
     Write-Host "5. Export WSL & Backup"
     Write-Host "6. Optimize WSL size (coming soon...)"
     Write-Host "7. Get GlazeWM settings"
-    Write-Host "0. Exit" -ForegroundColor Yellow
 }
 
 function Execute-Choice {
@@ -244,7 +243,6 @@ function Execute-Choice {
         '5' { Export-WSL (ubuntu) }
         '6' { Optimize-WSL (ubuntu) }
         '7' { Get-GlazeWM-Settings }
-        '0' { exit }
         default { Write-Host "Invalid choice. Please enter a valid option." }
     }
 }
