@@ -38,7 +38,7 @@ sh -c "$(wget https://raw.githubusercontent.com/AmineDjeghri/awesome-os-setup/ma
 ## Windows 11/WSL2
 Valuable applications & tips for enhancing your Windows user experience, with a focus on creating a productive environment incorporating WSL 2 (Linux).
 
-Get started with one command (powershell):
+Get started with one command (powershell as administrator):
 
 ```powershell
 iex ((New-Object System.Net.WebClient).DownloadString('https://raw.githubusercontent.com/AmineDjeghri/awesome-os-setup/main/docs/windows_workflow/setup_windows.ps1'))
