@@ -78,6 +78,7 @@ $apps = @{
     84 = "Microsoft.BingWallpaper"
     85 = "File-New-Project.EarTrumpet"
     86 = "ShareX.ShareX"
+    87 = "glzr-io.glazewm"
 
     92 = "Microsoft.WindowsTerminal"
     93 = "Microsoft.VisualStudioCode"
