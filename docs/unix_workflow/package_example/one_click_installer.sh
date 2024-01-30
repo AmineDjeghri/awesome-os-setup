@@ -63,20 +63,17 @@ else
 fi
 
 # Installing the environment
-echo "${YELLOW}Installing Jym environment...${RESET}"
-cd backend_new/requirements
+echo "${YELLOW}Installing environment...${RESET}"
+cd requirements
 # ask if gpu is available
 if ask_yes_no "Do you have a GPU?"; then
-  conda env update -n jym -f conda-env-gpu.yml
+  conda env update -n gpu -f conda-env-gpu.yml
 else
     # install cpu environment
-  conda env update -n jym -f conda-env-cpu.yml
+  conda env update -n cpu -f conda-env-cpu.yml
 fi
 
 pip install -r requirements-dev.txt
-sudo apt install libgl1-mesa-glx
-cd -
-pip install -r streamlit_frontend/requirements.txt
 # restarting the terminal
 echo "${YELLOW}Restarting the terminal...${RESET}"
 exec $SHELL
