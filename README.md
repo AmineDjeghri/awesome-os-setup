@@ -19,7 +19,7 @@ You can follow this repository to get a similar setup on Windows11, Linux or bot
 
 **Table of contents**
 <!-- TOC -->
-  * [Linux/WSL2](#linuxwsl2)
+  * [Linux](#linux-ubuntu)
   * [Windows 11/WSL2](#windows-11wsl2)
   * [Contributing](#contributing)
 <!-- TOC -->
