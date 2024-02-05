@@ -24,7 +24,7 @@ You can follow this repository to get a similar setup on Windows11, Linux or bot
   * [Contributing](#contributing)
 <!-- TOC -->
 
-## Linux/WSL2
+## Linux (ubuntu)
 A set of configurations,
 dotfiles and a script to automatically set up a powerful terminal & shell utilities(zsh, fzf...),
 themes like Powerlvl10k, Conda, GPU drivers, and more on Linux/WSL2, again automatically.
