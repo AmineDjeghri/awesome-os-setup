@@ -66,7 +66,7 @@ shortcuts: You can read more about the shortcuts [here](https://github.com/glaze
   - TBD
 - PyCharm has keyboard shortcuts for most of its commands related to editing, navigation, refactoring, debugging, and other tasks. Memorizing these hotkeys can help you stay more productive by keeping your hands on the keyboard. [Link to Cheatsheet](https://resources.jetbrains.com/storage/products/pycharm/docs/PyCharm_ReferenceCard.pdf)
 - If the plugin Table of contents doesn't work on a markdown file, create a small table with the title & two`<!-- TOC -->`, it should detect it.
-
+- Pycharm has fuzzy search when creating a file. For example 'alt+p' then 'alt+ins' then 'pf' to create a python file
 ### 1.5.2. Personal pycharm shortcuts
 Official[Link to Cheatsheet](https://resources.jetbrains.com/storage/products/pycharm/docs/PyCharm_ReferenceCard.pdf)
 
