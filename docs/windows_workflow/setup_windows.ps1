@@ -79,9 +79,13 @@ $apps = @{
     85 = "File-New-Project.EarTrumpet"
     86 = "ShareX.ShareX"
     87 = "glzr-io.glazewm"
+    88 = "RevoUninstaller.RevoUninstaller"
 
     92 = "Microsoft.WindowsTerminal"
     93 = "Microsoft.VisualStudioCode"
+    94 = "JetBrains.PyCharm.Community"
+    95 = "JetBrains.PyCharm.Professional"
+    
 
 }
 
