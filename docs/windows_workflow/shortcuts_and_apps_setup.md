@@ -52,7 +52,18 @@ shortcuts: You can read more about the shortcuts [here](https://github.com/glaze
 
 ### 1.5.1. Tips & tricks
 - I prefer to use PyCharm (professional edition) even if I used VSCode for 2 years, the Intellij suite is just amazing. Intellij suite with all the plugins for students is completely free.
+- If you are on Windows, use pycharm with WSL.
 - Sync pycharm settings : https://www.jetbrains.com/help/pycharm/sharing-your-ide-settings.html#IDE_settings_sync
+- Commits : [doc](https://www.jetbrains.com/help/pycharm/log-tab.html)
+  - pre-commit hooks : If you use conda as an interpreter in pycharm, you need to install pre-commit with conda and  install the hooks (both are required)
+    ```sh
+    conda install pre-commit
+    pre-commit install
+    ```
+  - Use the amend commit if you want to concatenate commits
+  - If you want to delete a pushed commit :
+    - Make sure that the branch isn't protected : open IDE settings Ctrl+Alt+S then go to git settings. You will see in the Push settings the protected branches. Note that if a branch is marked as protected on GitHub, PyCharm will automatically mark it as protected when you check it out but you can modify it.
+    - To delete a pushed commit, you have to options: drop a commit, or reset a current branch to a specific commit. After doing one or the other open the push panel and instead of selecting 'push', select 'force push'. Remember that you need to force push, otherwise pycharm will tell you that there are changes on the remote that need to be merged.
 - Remote/local terminal & interpreter :
   - When creating a project with pycharm, you should use the anaconda python (windows or wsl) and not install python or using another one like virtualenv.
   - You can use ubuntu as default terminal in pycharm: tools>terminal and put in a shell path: `ubuntu run`
