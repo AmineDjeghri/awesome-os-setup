@@ -196,7 +196,7 @@ function Install-FiraCode-Font {
         $windowsTerminalSettingsDirectory = "$env:UserProfile\AppData\Local\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\LocalState"
         $settingsJsonFileName = "settings.json"
         
-        $confirmationMessage = "This script will install the font in Windows Terminal at the following path:`n`n$windowsTerminalSettingsDirectory\$settingsJsonFileName`n`nDo you want to continue?"
+        $confirmationMessage = "Do you want to set the default parameters and font to Windows Terminal ? The following file will be modified:`n`n$windowsTerminalSettingsDirectory\$settingsJsonFileName`n`nDo you want to continue?"
         $confirmation = $host.ui.PromptForChoice("Confirmation", $confirmationMessage, @("&Yes", "&No"), 1)
     
         if ($confirmation -eq 0) {
