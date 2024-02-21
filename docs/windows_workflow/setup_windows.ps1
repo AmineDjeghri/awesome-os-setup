@@ -6,7 +6,7 @@
 
 function Install-WSL {
     # Enable WSL feature
-    wsl.exe --install -d ubuntu
+    wsl.exe --install -d 'ubuntu'
 }
 
 function Export-WSL {
