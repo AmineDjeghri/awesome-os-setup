@@ -203,18 +203,22 @@ function Install-FiraCode-Font {
             # Specify the path to your settings file
             $settingsFilePath = "$env:LOCALAPPDATA\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\LocalState\settings.json"
             
+            # Specify the path to your settings file
+            $settingsFilePath = "$env:LOCALAPPDATA\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\LocalState\settings.json"
+            
             # Read the content of the settings file
             $settingsContent = Get-Content -Path $settingsFilePath -Raw | ConvertFrom-Json
             
-            # Update the default settings
-            $settingsContent.defaults.colorScheme = "Night Owl"
-            $settingsContent.defaults.elevate = $true
-            $settingsContent.defaults.font.face = "FiraCode Nerd Font"
-            $settingsContent.defaults.font.size = 12.0
-            $settingsContent.defaults.opacity = 90
+            # Update the default profile settings
+            $settingsContent.profiles.defaults.colorScheme = "Night Owl"
+            $settingsContent.profiles.defaults.elevate = $true
+            $settingsContent.profiles.defaults.font.face = "FiraCode Nerd Font"
+            $settingsContent.profiles.defaults.font.size = 12.0
+            $settingsContent.profiles.defaults.opacity = 90
             
             # Convert back to JSON and save the updated settings
             $settingsContent | ConvertTo-Json | Set-Content -Path $settingsFilePath
+
             
             Write-Host "Windows Terminal settings updated successfully."
 
