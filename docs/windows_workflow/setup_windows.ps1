@@ -183,21 +183,34 @@ function Install-FiraCode-Font {
     Remove-Item -Path $fontZipPath -Force
     Remove-Item -Path $downloadDirectory -Recurse -Force
 
-    # Copy the json file to the Windows Terminal settings directory
-    $settingsJsonUrl = "https://raw.githubusercontent.com/AmineDjeghri/awesome-os-setup/main/docs/windows_workflow/settings.json"
-    $windowsTerminalSettingsDirectory = "$env:UserProfile\AppData\Local\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\LocalState"
-    $settingsJsonFileName = "settings.json"
+    # Check if FiraCode Nerd Font is installed
+    $fontName = "FiraCodeNerdFont-Regular.ttf"  # Adjust the font file name as needed
+    $fontPath = Join-Path -Path ([System.IO.Path]::GetFullPath("C:\Windows\Fonts")) -ChildPath $fontName
+    $isFontInstalled = Test-Path -Path $fontPath
+    
+    if ($isFontInstalled) {
+        Write-Host "Font $($fontName) is installed." -ForegroundColor Green
 
-    # Display a confirmation message
-    $confirmationMessage = "This script will install the font in Windows Terminal at the following path:`n`n$windowsTerminalSettingsDirectory\$settingsJsonFileName`n`nDo you want to continue?"
-    $confirmation = $host.ui.PromptForChoice("Confirmation", $confirmationMessage, @("&Yes", "&No"), 1)
-
-    if ($confirmation -eq 0) {
-        Invoke-WebRequest -Uri $settingsJsonUrl -OutFile $windowsTerminalSettingsDirectory\$settingsJsonFileName
-        Write-Host "Windows Terminal settings JSON file downloaded and replaced. Restart Windows Terminal to see the changes." -ForegroundColor Yellow
+        # Copy the json file to the Windows Terminal settings directory
+        $settingsJsonUrl = "https://raw.githubusercontent.com/AmineDjeghri/awesome-os-setup/main/docs/windows_workflow/settings.json"
+        $windowsTerminalSettingsDirectory = "$env:UserProfile\AppData\Local\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\LocalState"
+        $settingsJsonFileName = "settings.json"
+        
+        $confirmationMessage = "This script will install the font in Windows Terminal at the following path:`n`n$windowsTerminalSettingsDirectory\$settingsJsonFileName`n`nDo you want to continue?"
+        $confirmation = $host.ui.PromptForChoice("Confirmation", $confirmationMessage, @("&Yes", "&No"), 1)
+    
+        if ($confirmation -eq 0) {
+            Invoke-WebRequest -Uri $settingsJsonUrl -OutFile $windowsTerminalSettingsDirectory\$settingsJsonFileName
+            Write-Host "Windows Terminal settings JSON file downloaded and replaced. Restart Windows Terminal to see the changes." -ForegroundColor Yellow
+        } else {
+            Write-Host "Operation canceled. FiraCode font not installed in Windows Terminal."
+        }
+    
     } else {
-        Write-Host "Operation canceled. FiraCode font not installed in Windows Terminal."
+        Write-Host "Font $($fontName) is not installed. Please make sure that you installed the font correctly" -ForegroundColor Red
     }
+
+
 }
 
  # function to replace settings.json of GlazeWM
