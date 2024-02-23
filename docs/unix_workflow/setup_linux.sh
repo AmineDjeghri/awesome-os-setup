@@ -1,5 +1,3 @@
-#!/bin/bash
-
 # colors
 GREEN='\e[32m'
 YELLOW='\e[93m'
@@ -52,24 +50,21 @@ install_zsh() {
     zsh --version
 
     # Restart the shell script
-    echo "Restarting shell script..."
+    echo "Setting zsh as default shell ..."
     source ~/.zshrc
+    chsh -s $(which zsh)
     echo "Current shell: $SHELL"
     $SHELL --version
 }
 
 # Function to install Oh My Zsh, plugins & powerlevel10k theme
-install_oh_my_zsh_and_utilities() {
+install_zsh_oh_my_zsh_and_utilities() {
     echo "Current shell: $SHELL"
     $SHELL --version
 
     # Install Oh My Zsh
+    install_zsh
     echo "Installing Oh My Zsh..."
-    # Check if Zsh is installed
-    if ! type zsh >/dev/null 2>&1; then
-        echo "${RED} Zsh is required for Oh My Zsh. Please install Zsh first. ${RESET}"
-        return
-    fi
 
     # i changed the normal commande :
     # "sh -c "$(wget https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh -O -)"" to the one below to
@@ -87,23 +82,34 @@ install_oh_my_zsh_and_utilities() {
     git clone --depth 1 -- https://github.com/marlonrichert/zsh-autocomplete.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/plugins/zsh-autocomplete
     git clone --depth 1 https://github.com/unixorn/fzf-zsh-plugin.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/fzf-zsh-plugin
 
-    echo "${YELLOW} Installing lsd, bpytop, bat, fzf,neofetch, stow ${RESET}"
-    sudo snap install lsd;
-    sudo snap install bpytop;
-    sudo apt install bat fzf neofetch stow -y;
-
     echo "Updating .zshrc configuration..."
     curl -sL "https://raw.githubusercontent.com/AmineDjeghri/awesome-os-setup/main/docs/unix_workflow/dotfiles/.zshrc" > ~/.zshrc
     if ask_yes_no "do you want to make zsh the default shell ?"; then
         chsh -s $(which zsh)
     fi
+
+    if ask_yes_no "(beta) do you want to install lsd, bpytop, bat, fzf,neofetch, stow and create aliases for them ?"; then
+      echo "${YELLOW} Installing lsd, bpytop, bat, fzf,neofetch, stow ${RESET}"
+      sudo snap install lsd;
+      sudo snap install bpytop;
+      sudo apt install bat fzf neofetch stow -y;
+
+      echo 'alias cat="batcat"' >> ~/.zshrc
+      echo 'alias top="bpytop"' >> ~/.zshrc
+      echo 'alias ls="lsd"' >> ~/.zshrc
+      exec > /dev/null 2>&1 # to no run & display the output
+      echo 'alias fz=\'\''selected_dir=$(find $HOME -maxdepth 8 -type d | fzf); [ -n "$selected_dir" ] && cd "$selected_dir"'\''' >> ~/.zshrc
+      exec 1>/dev/tty 2>&1
+
+      echo "${YELLOW} If fz or ctrl+f do not work correctly, copy this command (careful with Apostrophes in the command) : ${RED} emulate sh -c 'source /etc/profile.d/apps-bin-path.sh'${YELLOW}  in ${RED}/etc/zsh/zprofile  ${RESET}"
+      echo "${YELLOW} If ls & top commands do not work, please close and open a new terminal  ${RESET}"
+    fi
+
     echo "${YELLOW} ----------------------------------------------------Information---------------------------------------------------------------------- ${RESET}"
     echo "${YELLOW} New ${RED}.zshrc ${YELLOW} file has been created with the new configuration. ${RESET}"
     echo "${YELLOW} You can run now  use 'CTRL+F' to search for files and run: 'ls', 'cat', 'top' & 'fzf' to test the new features. ${RESET}"
-    echo "${YELLOW} If fz or ctrl+f do not work correctly, copy this command (careful with Apostrophes in the command) : ${RED} emulate sh -c 'source /etc/profile.d/apps-bin-path.sh'${YELLOW}  in ${RED}/etc/zsh/zprofile  ${RESET}"
-    echo "${YELLOW}  If ls & top commands do not work, please close and open a new terminal  ${RESET}"
     echo "${YELLOW} -------------------------------------------------------------------------------------------------------------------------------------- ${RESET}"
-
+    exec zsh
 }
 
 install_powerlevel10k() {
@@ -112,6 +118,9 @@ install_powerlevel10k() {
         echo "${RED} Oh My Zsh is required for Powerlevel10k theme. Please install Oh My Zsh first. ${RESET}"
         return
     fi
+
+    echo "Current shell: $SHELL"
+    $SHELL --version
 
     # Check if the font "FiraCode" is installed
     if ask_yes_no "Is the font 'FiraCode' installed in your terminal?"; then
@@ -124,7 +133,7 @@ install_powerlevel10k() {
         source ~/.zshrc
         echo  "${YELLOW} Powerlevel10k has been automatically initialized in your terminal and you should see colors with icons. if not, run 'p10k configure' .${RESET}"
         echo  "${YELLOW}(Optional) If you have custom configurations in your .bashrc, consider copying them to the .zshrc file.${RESET}"
-
+        exec $SHELL
     else
         echo "${RED}Please install the font 'FiraCode' in your terminal then reinstall powerlevel10k again. Direct Link: https://github.com/ryanoasis/nerd-fonts/releases/download/v3.1.1/FiraCode.zip ${RESET}"
     fi
@@ -256,14 +265,17 @@ uninstall_zsh_omz_pl10k() {
 
         # Uninstall Zsh
         if ask_yes_no "Do you want to uninstall ZSH also ? (This is a dangerous manipulation if it is your default shell)"; then
-            echo "Uninstalling Zsh..."
+            echo "Uninstalling Zsh...Changing shell to $(which bash)"
+            chsh -s $(which bash)
             sudo apt remove zsh
             echo "Zsh, Oh My Zsh, and Powerlevel10k have been uninstalled."
+            source ~/.bashrc
         else
             echo "Only Oh My Zsh, and Powerlevel10k have been removed."
         fi
 
-        echo "${YELLOW} Please restart your terminal to complete the uninstallation. If there is an error to access WSL, please run this command in powershell : wsl ~ -e bash ${RESET}"
+        echo "${YELLOW} Please restart your terminal to complete the uninstallation. If there is an error to access WSL, please run this command in powershell : wsl ~ -e bash ${RESET} then "
+        exec bash
     else
         echo "Uninstallation canceled."
     fi
@@ -290,26 +302,24 @@ show_menu() {
   printf "\n"
   echo "${YELLOW} ============ Menu ============ ${RESET}"
   echo "${YELLOW} 0. Upgrade & Update packages ${RESET}"
-  echo "${YELLOW} 1. Install ZSH ${RESET}"
-  echo "${YELLOW} 2. Install Oh My Zsh, plugins and terminal utilities: batcat, lsd, bpytop, fzf ${RESET}"
-  echo "${YELLOW} 3. Install powerlevel10k ${RESET}"
-  echo "${YELLOW} 4. Install/Initialize Miniconda3 ${RESET}"
-  echo "${YELLOW} 5. Install NVIDIA driver ${RESET}"
-  echo "${YELLOW} 6. Uninstall ZSH or OMZ or Pl10K ${RESET}"
-  echo "${YELLOW} 7. Show commands ${RESET}"
-  echo "${YELLOW} 8. Exit ${RESET}"
+  echo "${YELLOW} 1. Install ZSH, Oh My Zsh, plugins and terminal utilities: batcat, lsd, bpytop, fzf ${RESET}"
+  echo "${YELLOW} 2. Install powerlevel10k ${RESET}"
+  echo "${YELLOW} 3. Install/Initialize Miniconda3 ${RESET}"
+  echo "${YELLOW} 4. Install NVIDIA driver ${RESET}"
+  echo "${YELLOW} 5. Uninstall ZSH or OMZ or Pl10K ${RESET}"
+  echo "${YELLOW} 6. Show commands ${RESET}"
+  echo "${YELLOW} 7. Exit ${RESET}"
   read -p "Enter your choice (1-5): " choice
 
   case $choice in
       0) update_upgrade_packages;;
-      1) install_zsh;;
-      2) install_oh_my_zsh_and_utilities;;
-      3) install_powerlevel10k;;
-      4) install_miniconda3;;
-      5) install_nvidia_driver;;
-      6) uninstall_zsh_omz_pl10k;;
-      7) show_commands;;
-      8) exit 0;;
+      1) install_zsh_oh_my_zsh_and_utilities;;
+      2) install_powerlevel10k;;
+      3) install_miniconda3;;
+      4) install_nvidia_driver;;
+      5) uninstall_zsh_omz_pl10k;;
+      6) show_commands;;
+      7) exit 0;;
       *) echo "Invalid choice. Exiting..."; exit 1;;
   esac
 
