@@ -99,6 +99,7 @@ install_zsh_oh_my_zsh_and_utilities() {
       echo 'alias ls="lsd"' >> ~/.zshrc
       exec > /dev/null 2>&1 # to no run & display the output
       echo 'alias fz=\'\''selected_dir=$(find $HOME -maxdepth 8 -type d | fzf); [ -n "$selected_dir" ] && cd "$selected_dir"'\''' >> ~/.zshrc
+      echo 'emulate sh -c "source /etc/profile"' | sudo tee -a /etc/zsh/zprofile
       exec 1>/dev/tty 2>&1
 
       echo "${YELLOW} If fz or ctrl+f do not work correctly, copy this command (careful with Apostrophes in the command) : ${RED} emulate sh -c 'source /etc/profile.d/apps-bin-path.sh'${YELLOW}  in ${RED}/etc/zsh/zprofile  ${RESET}"
