@@ -55,6 +55,7 @@ iex ((New-Object System.Net.WebClient).DownloadString('https://raw.githubusercon
  - If you have a 3200mhz RAM, and it runs bellow this frequency, activate XMP profile in the BIOS
  - 🎧 if you have bluetooth and audio devices, you can sort them in audio settings -> use as default for both audio & communications
  - 🎧 Deactivate lowering communication sounds in advanced audio settings.
+ - Full-screen games optimization: uncheck “disable fullscreen optimization” for the .exe. You will get a fast alt tab (only on the latest windows versions). Example: Make your way to the following file location on your desktop: C:\Program Files (x86)\Steam\steamapps\common\Counter-Strike Global Offensive\game. The objective here is to locate the CS2.exe file.
 
 ## 2. Software
 Automatic installation available with this command:
