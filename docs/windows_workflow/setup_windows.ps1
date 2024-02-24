@@ -85,7 +85,7 @@ $apps = @{
     93 = "Microsoft.VisualStudioCode"
     94 = "JetBrains.PyCharm.Community"
     95 = "JetBrains.PyCharm.Professional"
-    
+
 
 }
 
@@ -187,7 +187,7 @@ function Install-FiraCode-Font {
     $fontName = "FiraCodeNerdFont-Regular.ttf"  # Adjust the font file name as needed
     $fontPath = Join-Path -Path ([System.IO.Path]::GetFullPath("C:\Windows\Fonts")) -ChildPath $fontName
     $isFontInstalled = Test-Path -Path $fontPath
-    
+
     if ($isFontInstalled) {
         Write-Host "Font $($fontName) is installed." -ForegroundColor Green
 
@@ -195,40 +195,40 @@ function Install-FiraCode-Font {
         $settingsJsonUrl = "https://raw.githubusercontent.com/AmineDjeghri/awesome-os-setup/main/docs/windows_workflow/settings.json"
         $windowsTerminalSettingsDirectory = "$env:UserProfile\AppData\Local\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\LocalState"
         $settingsJsonFileName = "settings.json"
-        
+
         $confirmationMessage = "Do you want to set the default parameters and font to Windows Terminal ? The following file will be modified:`n`n$windowsTerminalSettingsDirectory\$settingsJsonFileName`n`nDo you want to continue?"
         $confirmation = $host.ui.PromptForChoice("Confirmation", $confirmationMessage, @("&Yes", "&No"), 1)
-    
+
         if ($confirmation -eq 0) {
             # Specify the path to your settings file
             $settingsFilePath = "$env:LOCALAPPDATA\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\LocalState\settings.json"
-            
+
             # Read the content of the settings file
             $settingsContent = Get-Content -Path $settingsFilePath -Raw | ConvertFrom-Json
-            
+
             # Update the default profile settings if they exist
             if ($settingsContent.profiles -and $settingsContent.profiles.defaults) {
                 $fontObject = New-Object PSObject -Property @{
                 face = "FiraCode Nerd Font"
                 size = 12.0
             }
-            
+
                 $settingsContent.profiles.defaults.colorScheme = "Night Owl"
                 $settingsContent.profiles.defaults.elevate = $true
                 $settingsContent.profiles.defaults.font = $fontObject
                 $settingsContent.profiles.defaults.opacity = 90
             }
-            
+
             # Convert back to JSON and save the updated settings
             $settingsContent | ConvertTo-Json -depth 100 | Set-Content -Path $settingsFilePath
-            
+
             Write-Host "Windows Terminal settings updated successfully."
 
-            
+
         } else {
             Write-Host "Operation canceled. FiraCode font not installed in Windows Terminal."
         }
-    
+
     } else {
         Write-Host "Font $($fontName) is not installed. Please make sure that you installed the font correctly" -ForegroundColor Red
     }
