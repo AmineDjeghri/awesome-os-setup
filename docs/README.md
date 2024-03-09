@@ -7,7 +7,7 @@
 | ![Windows WSL Terminal](images/windows_wsl_terminal.png) | ![Desktop with terminals](images/desktop_with_terminals.jpeg) |
 
 
-<div style="text-align: center;">The image you are looking at is a screenshot of a WSL Ubuntu terminal in Windows 11. The top bar is an app called GlazeWM which is a a tiling WM that lets you organize windows and adjust their layout on the fly by using keyboard-driven commands.
+<div style="text-align: center;">The image you are looking at is a screenshot of a WSL Ubuntu terminal in Windows 11. The top bar is an app called GlazeWM that is a tiling WM that lets you organize windows and adjust their layout on the fly by using keyboard-driven commands.
 You can follow this repository to get a similar setup on Windows11, Linux or both.
 
 ![Windows 11](https://img.shields.io/badge/Windows%2011-%230079d5.svg?style=for-the-badge&logo=Windows%2011&logoColor=white)
@@ -17,6 +17,14 @@ You can follow this repository to get a similar setup on Windows11, Linux or bot
 ![Shell Script](https://img.shields.io/badge/shell_script-%23121011.svg?style=for-the-badge&logo=gnu-bash&logoColor=white)
 ![Windows Terminal](https://img.shields.io/badge/Windows%20Terminal-%234D4D4D.svg?style=for-the-badge&logo=windows-terminal&logoColor=white)
 </div>
+
+**Table of contents**
+<!-- TOC -->
+* [Awesome OS Setup](#awesome-os-setup)
+  * [Linux/WSL2](#linuxwsl2)
+  * [Windows 11/WSL2](#windows-11wsl2)
+  * [Contributing](#contributing)
+<!-- TOC -->
 
 ## Linux/WSL2
 A set of configurations,
@@ -32,9 +40,10 @@ Read more about it here: [README](unix_workflow/README_unix.md) / [website](http
 ## Windows 11/WSL2
 Valuable applications & tips for enhancing your Windows user experience, with a focus on creating a productive environment incorporating WSL 2 (Linux).
 
-Get started with one command (powershell):
+Get started with one command (run it in powershell as administrator):
 
 ```powershell
+# Run it in powershell as ADMINISTRATOR
 iex ((New-Object System.Net.WebClient).DownloadString('https://raw.githubusercontent.com/AmineDjeghri/awesome-os-setup/main/docs/windows_workflow/setup_windows.ps1'))
 
 ```
@@ -44,8 +53,16 @@ Read more about it here: [windows_workflow_README.](windows_workflow/README_wind
 **Browser extensions**
 Read more about it here: [browser_extensions.md](windows_workflow/browser_extensions.md) / [website](https://setup.aminedjeghri.com/browser-extensions.html)
 
+**Shortcuts_and_apps_setup**
+Read more about it here:
+[apps_setup.md](shortcuts_and_apps_setup.md) / [website](https://setup.aminedjeghri.com/shortcuts_and_apps_setup.html)
+
+**Awesome Websites**
+Read more about it here:
+[websites.md](awesome_websites.md) / [website](https://setup.aminedjeghri.com/awesome-websites.html)
+
 **For Windows users: Why you should use WSL2?**
-WSL2 enables users to run Linux applications and utilize command-line tools natively on their Windows machines.
+WSL2 enables users to run Linux applications and use command-line tools natively on their Windows machines.
 This integration allows users
 to enjoy the familiarity of Windows while simultaneously harnessing the power and flexibility of Linux.
 
@@ -67,15 +84,14 @@ Based on your needs, you can choose your OS.
   - `pre-commit run --all-files`
 
 - Generated docs:
-    A folder named `docs` contains the docs for generating the website with Jetbrains Writerside plugin.
-    Writerside supports only one file named `README.md`
-    that's why you will find other readme files like `unix_workflow/README_unix.md`
-    instead of being named `unix_workflow/README.md`.
+    - If you modify the README.md file, remember to modify it in the `docs` folder as well and adapt the paths.
+    - A folder named `docs` contains the docs for generating the website with Jetbrains Writerside plugin.
+    - Writerside supports only one file named `README.md`, that's why you will find other readme files like `unix_workflow/README_unix.md` instead of being named `unix_workflow/README.md`.
 -  Modifying dotfiles like `.zshrc`:
   - use `stow` to create symlinks to the dotfiles in your home directory as follows:
   - `cd docs/unix_workflow/` then ``stow -t $HOME -R dotfiles ``
-  - this will create symlinks to the dotfiles in your home directory: ``cd ~ && cat .zshrc``
-  - WARNING: Windows users can't open the dotfiles in their home directory with their text editor, you can only with the terminal or open them in the repo folder.
+    - This will create symlinks to the dotfiles in your home directory: ``cd ~ && cat .zshrc``
+  - WARNING: Windows users can't open the dotfiles in their home directory with their text editor, you can only do it with the terminal or open them in the repo folder.
 
 **Star History Chart**
 [![Star History Chart](https://api.star-history.com/svg?repos=aminedjeghri/awesomewindows11&type=Date)](https://star-history.com/#aminedjeghri/awesomewindows11&Date)

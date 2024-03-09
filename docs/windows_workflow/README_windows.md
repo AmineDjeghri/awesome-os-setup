@@ -109,10 +109,10 @@ iex ((New-Object System.Net.WebClient).DownloadString('https://raw.githubusercon
    - Always use the Windows search bar to search for functionalities, settings, apps, files, folders, and more. Even the deep settings are accessible from the search bar.
 - PowerToys:
   - Download [Windows store](https://apps.microsoft.com/detail/XP89DCGQ3K6VLD?hl). [Docs](https://learn.microsoft.com/en-us/windows/powertoys/run#features)
-    - My personal shortcuts & tips & settings for this app [here](shortcuts_and_apps_setup.md#1-3-powertoys)
+    - My personal shortcuts & tips & settings for this app [here](../shortcuts_and_apps_setup.md#1-3-powertoys)
 - GlazeWM: GlazeWM is a tiling window manager for Windows inspired by i3 and Polybar.
   - Download [GlazeWM](https://github.com/glazerdesktop/GlazeWM/releases). [Docs](https://github.com/glazerdesktop/GlazeWM)
-  - My personal shortcuts & tips & settings for this app [here](shortcuts_and_apps_setup.md#1-2-glazewm)
+  - My personal shortcuts & tips & settings for this app [here](../shortcuts_and_apps_setup.md#1-2-glazewm)
 - Files: Replace the Windows File Explorer. Manage all your files with increased productivity. Work across multiple folders with tabs and so much more.
   - Download [Files](https://files.community/). There are two versions: direct installer (free) & Microsoft Store (paid)
   - Replace Windows File explorer with Files: [link](https://files.community/docs/configuring/replace-file-explorer/)
@@ -121,11 +121,11 @@ iex ((New-Object System.Net.WebClient).DownloadString('https://raw.githubusercon
 ### 2.3. Dev Software & Websites
 #### 2.3.1. PyCharm:
 - I prefer to use PyCharm (the Pro version is free for students)
-- My personal shortcuts & tips & settings for this app [here](shortcuts_and_apps_setup.md#1-5-pycharm)
+- My personal shortcuts & tips & settings for this app [here](../shortcuts_and_apps_setup.md#1-5-pycharm)
 
 #### 2.3.2. Windows Terminal
 - Always use Windows terminal. It contains all the terminals in one place (ubuntu, powershell, wsl, cmd...ect). You can right-click on any folder to open it.
-  - My personal shortcuts & tips & settings for this app [here](shortcuts_and_apps_setup.md#1-4-windows-terminal)
+  - My personal shortcuts & tips & settings for this app [here](../shortcuts_and_apps_setup.md#1-4-windows-terminal)
 
 #### 2.3.3. Docker Desktop
 Requires WSL (see the WSL section). You can start, stop, delete containers easily, access & edit files right inside the container without the need of a terminal.
@@ -186,7 +186,7 @@ After installing WSL, you have now ubuntu running inside windows.
 Follow these guides containing an automated script to customize your terminal,
 shell, install Miniconda, CUDA, and more:
 - [1. Linux Setup Guide](../unix_workflow/README_unix.md): A set of configurations, dotfiles and a script to automatically set up a powerful terminal & shell utilities(zsh, fzf...), themes like Powerlvl10k, Conda, GPU drivers, and more on Linux/WSL2.
-- [2. Windows, WSL & apps settings/tips](shortcuts_and_apps_setup)
+- [2. Windows, WSL & apps settings/tips](../shortcuts_and_apps_setup.md)
 - [3. Cuda & Pytorch installation inside conda](../unix_workflow/cuda_pytorch_install)
 - [4. Python package example](../unix_workflow/package_example)
 
