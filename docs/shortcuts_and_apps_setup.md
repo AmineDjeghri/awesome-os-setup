@@ -36,7 +36,7 @@ shortcuts: You can read more about the shortcuts [here](https://github.com/glaze
   - reload the config: `alt + shift + r`:
   - Maximize & un-maximize : `alt + f`
   - hide: `alt+m` (use `alt+f` to make it appear again)
-  - switch between multiple full screen apps : `alt + tab`
+  - switch between multiple full screen apps in the same workspace : `alt + tab`
 
 ## 1.4. PowerToys (windows only)
   - Download [Windows store](https://apps.microsoft.com/detail/XP89DCGQ3K6VLD?hl). [Docs](https://learn.microsoft.com/en-us/windows/powertoys/run#features)
