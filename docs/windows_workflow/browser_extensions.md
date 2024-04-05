@@ -6,7 +6,7 @@ The Following extensions are all available in brave, chrome & edge (Chromium-bas
 ## Browser Extensions
 - `uBlock Origin`: An efficient, wide-spectrum content blocker that's easy on memory.
 - `Checker Plus for Gmail`: Get desktop notifications, read, listen to or delete emails without opening Gmail (pin the extension and activate the option to receive notifications even when the browser is closed  -> in the extension's settings)
-- `Checker Plus for Calendar`: Get desktop notifications (activate the option to receive notifications even when the browser is closed  -> in the extension's settings)
+- `Checker Plus for Calendar`: Get desktop notifications (activate the option to receive notifications even when the browser is closed  -> in the extension's settings. Also change the notification type from pop-up to rich)
 - `Free Download Manager`: A powerful, easy-to-use and absolutely free download accelerator and manager.
 - `Google Translate`: View translations as you browse the web.
 - `Google Dictionnary`: View definitions easily as you browse the web.
