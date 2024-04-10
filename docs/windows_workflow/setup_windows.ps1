@@ -84,6 +84,7 @@ $apps = @{
     87 = "glzr-io.glazewm"
     88 = "Microsoft.PowerToys"
     89 = "RevoUninstaller.RevoUninstaller"
+    890 = "REALiX.HWiNFO"
 
     92 = "Microsoft.WindowsTerminal"
     93 = "Microsoft.VisualStudioCode"
@@ -106,7 +107,7 @@ function Install-Windows-Apps
         5 = "Gaming"
         6 = "Documents, drives & editing"
         7 = "Image & Video Editing"
-        8 = "Security, network tools & others"
+        8 = "Security, monitoring & others"
         9 = "Development & Programming"
         0 = "Others"
     }

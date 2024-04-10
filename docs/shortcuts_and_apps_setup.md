@@ -180,6 +180,9 @@ In the main menu, select Tools | Deployment | Automatic upload. Note that automa
 - package manager: yarn, for example
 - environment: `PATH=` put the result of the command `echo $PATH`
 
+### 1.7 HWINFO:
+- export file: regedit -> ``Ordinateur\HKEY_CURRENT_USER\Software\HWiNFO64``
+- import settings: double-click on the downloaded file to restore settings. Check mine [here](windows_workflow/HWINFO_settings.reg)
 ### 1.7 Google colab:
 - Add this code to prevent it from disconnecting. [source](https://colab.research.google.com/github/oobabooga/AI-Notebooks/blob/main/Colab-TextGen-GPU.ipynb#scrollTo=f7TVVj_z4flw)
 ```py
