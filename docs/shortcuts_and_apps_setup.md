@@ -61,6 +61,7 @@ shortcuts: You can read more about the shortcuts [here](https://github.com/glaze
 ### 1.6.1. Tips & tricks
 - I prefer to use PyCharm (professional edition) even if I used VSCode for 2 years, the Intellij suite is just amazing. Intellij suite with all the plugins for students is completely free.
 - If you are on Windows, use pycharm with WSL.
+- Use docker with pycharm, very easy to pull and create images & containers. Specially if you want to test your app, you can create a ubuntu container in less then 5sec.
 - Sync pycharm settings : https://www.jetbrains.com/help/pycharm/sharing-your-ide-settings.html#IDE_settings_sync
 - Commits : [doc](https://www.jetbrains.com/help/pycharm/log-tab.html)
   - pre-commit hooks : If you use conda as an interpreter in pycharm, you need to install pre-commit with conda and  install the hooks (both are required)
