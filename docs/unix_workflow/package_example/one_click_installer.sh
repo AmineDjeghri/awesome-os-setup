@@ -69,6 +69,7 @@ echo "${YELLOW}Detected OS: $OS ${RESET}"
 if command -v conda &> /dev/null; then
     echo "${YELLOW}Conda is already installed.${RESET}"
 else
+  echo "${YELLOW}Conda will be installed in $CONDA_FOLDER ${RESET}"
   case "$(uname -s)" in
       Linux*)
       # Download and install Miniconda
