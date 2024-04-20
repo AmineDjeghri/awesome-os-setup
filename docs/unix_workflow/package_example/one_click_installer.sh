@@ -1,8 +1,12 @@
-# colors
-YELLOW='\e[93m'
-RED='\e[91m'
-RESET='\e[0m'
+# Do not put the shebang line here as this script is meant to be used with different shells
 
+# Define ANSI color codes
+YELLOW=$(printf '\033[1;33m')
+RED=$(printf '\033[0;31m')
+RESET=$(printf '\033[0m')
+
+
+CONDA_FOLDER=~/miniconda3
 # Function to ask yes/no questions
 ask_yes_no() {
     while true; do
@@ -33,14 +37,15 @@ parse_arguments() {
         shift
     done
 
+    # echo with yellow color
+    echo "${YELLOW}All the packages will be installed in the following environment : ${RESET}"
     # Prompt for environment name if not provided
     if [ -z "$env_name" ]; then
         read -p "Enter the environment name (default is base): " env_name
         env_name="${env_name:-base}"  # Set default to 'base' if empty
     fi
 
-    # Prompt for device if not provided
-    # Prompt for device if not provided
+    # Choose the device
     if [ -z "$device" ]; then
         while true; do
             read -p "Enter device type (cpu or cuda): " device
@@ -67,29 +72,26 @@ else
   case "$(uname -s)" in
       Linux*)
       # Download and install Miniconda
-      wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
-      chmod +x Miniconda3-latest-Linux-x86_64.sh
-      bash Miniconda3-latest-Linux-x86_64.sh
+      wget https://repo.anaconda.com/miniconda/Miniconda3-py311_23.10.0-1-Linux-x86_64.sh -O Miniconda3.sh
+      chmod +x Miniconda3.sh
+      bash Miniconda3.sh -b -p $CONDA_FOLDER
 
       # Initialize Conda for the current shell
-      source $HOME/miniconda3/etc/profile.d/conda.sh
+      source $CONDA_FOLDER/etc/profile.d/conda.sh
 
       echo "${YELLOW}Initializing Conda for the default shell $(basename $SHELL) ${RESET}"
       # Get the shell's configuration file
       shell_config=""
 
-      case "$(basename $SHELL)" in
+      case "$(basename "$SHELL")" in
           bash) shell_config=~/.bashrc;;
           zsh) shell_config=~/.zshrc;;
           *)   echo "${RED}Shell type $(basename $SHELL) is not supported. Manual initialization may be required.${RESET}";;
       esac
 
       if [ -n "$shell_config" ]; then
-          # Initialize Conda for the restarted shell
-      ~/miniconda3/bin/conda init $(basename $SHELL)
-
-      # Display additional message
-      echo -e "${YELLOW} Conda has been automatically initialized in your terminal and you should see (base). if not, restart it manually and verify that it's inside your file shell_config.${RESET}"
+        # Initialize Conda for the restarted shell
+        $CONDA_FOLDER/bin/conda init $(basename $SHELL)
       fi
 
       ;;
@@ -99,41 +101,38 @@ else
   esac
 fi
 
-# Installing the environment (true if non-interactive mode)
-if ask_yes_no "Do you want to install the environment ?"; then
+# Subshell to install the environment
+( cd requirements || exit
+# Parse command-line arguments
+parse_arguments "$@"
 
-  cd requirements
-  # Parse command-line arguments
-  parse_arguments "$@"
+# Perform the installation based on the chosen device
+case "$device" in
+    cuda)
+        echo "${YELLOW}Installing CUDA environment for $env_name ${RESET}"
+        # Install CUDA environment (assuming conda-env-gpu.yml contains CUDA dependencies)
+        conda env update -n "$env_name" -f conda-env-cuda.yml
+        ;;
+    cpu)
+        echo "${YELLOW}Installing CPU environment for $env_name ${RESET}"
+        # Install CPU environment (assuming conda-env-cpu.yml contains CPU dependencies)
+        conda env update -n "$env_name" -f conda-env-cpu.yml
+        ;;
+    *)
+        echo "${RED} Unsupported device: $device ${RESET}"
+        exit 1
+        ;;
+esac
+cd ..
+)
 
-  # Perform the installation based on the chosen device
-  case "$device" in
-      cuda)
-          echo "Installing CUDA environment for $env_name"
-          # Install CUDA environment (assuming conda-env-gpu.yml contains CUDA dependencies)
-          conda env update -n "$env_name" -f conda-env-cuda.yml
-          ;;
-      cpu)
-          echo "Installing CPU environment for $env_name"
-          # Install CPU environment (assuming conda-env-cpu.yml contains CPU dependencies)
-          conda env update -n "$env_name" -f conda-env-cpu.yml
-          ;;
-      *)
-          echo "Unsupported device: $device"
-          exit 1
-          ;;
-  esac
-  cd ..
-  # restarting the terminal
-  echo "${YELLOW}Restarting the terminal...${RESET}"
-  exec $SHELL
 
-else
-  echo "${YELLOW}Skipping the installation of the dev environment...${RESET}"
-fi
+# restarting the terminal to activate the environment
+echo "${YELLOW}Restarting the terminal...${RESET}"
+exec $SHELL
 
-# Initialize Conda for the current shell
-eval "$(conda shell.bash hook)"
-conda activate "$env_name"
-conda install pre-commit
-pre-commit install
+#eval "$(conda shell.bash hook)"
+
+#conda activate "$env_name"
+#conda install pre-commit
+#pre-commit install
