@@ -60,14 +60,14 @@ $apps = @{
     54 = "Ubisoft.Connect"
     55 = "SideQuestVR.SideQuest"
 
-    61 = "Google.Drive"
+    61 = "Google.GoogleDrive]"
     62 = "Microsoft.OneDrive"
     63 = "icloud"
     64 = "Microsoft 365"
     65 = "Adobe Acrobat Reader DC"
     66 = "Notion.Notion"
     67 = "SublimeHQ.SublimeText.4"
-    68 = "obsidianmd.obsidian"
+    68 = "Obsidian.Obsidian"
 
     71 = "OBSProject.OBSStudio"
     72 = "Creative Cloud"
