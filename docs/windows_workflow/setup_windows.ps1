@@ -345,17 +345,17 @@ function Execute-Choice
             Install-FiraCode-Font
         }
         '3' {
-            Install-WSL (ubuntu)
+            Install-WSL
         }
         '4' {
             Write-Host 'Run this command in Linux:'
             Write-Host 'sh -c "$(wget https://raw.githubusercontent.com/AmineDjeghri/awesome-os-setup/main/docs/unix_workflow/setup_linux.sh -O -)"' -ForegroundColor Green
         }
         '5' {
-            Export-WSL (ubuntu)
+            Export-WSL
         }
         '6' {
-            Optimize-WSL (ubuntu)
+            Optimize-WSL
         }
         '7' {
             Get-GlazeWM-Settings
