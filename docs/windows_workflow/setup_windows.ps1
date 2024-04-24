@@ -60,7 +60,7 @@ $apps = @{
     54 = "Ubisoft.Connect"
     55 = "SideQuestVR.SideQuest"
 
-    61 = "Google.GoogleDrive]"
+    61 = "Google.GoogleDrive"
     62 = "Microsoft.OneDrive"
     63 = "icloud"
     64 = "Microsoft 365"
@@ -90,6 +90,7 @@ $apps = @{
     93 = "Microsoft.VisualStudioCode"
     94 = "JetBrains.PyCharm.Community"
     95 = "JetBrains.PyCharm.Professional"
+    96 = "Docker.DockerDesktop"
 
 
 }
