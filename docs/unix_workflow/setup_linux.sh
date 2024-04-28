@@ -1,8 +1,10 @@
+# script langauge is posix, so it can be run on any shell (tested on bash & zsh)
 # colors
-GREEN='\e[32m'
-YELLOW='\e[93m'
-RED='\e[91m'
-RESET='\e[0m'
+#GREEN='\e[32m'
+YELLOW=$(printf '\033[1;33m')
+RED=$(printf '\033[0;31m')
+RESET=$(printf '\033[0m')
+GREEN=$(printf '\033[0;32m')
 
 # Function to ask yes/no questions
 ask_yes_no() {
@@ -97,10 +99,17 @@ install_zsh_oh_my_zsh_and_utilities() {
       echo 'alias cat="batcat"' >> ~/.zshrc
       echo 'alias top="bpytop"' >> ~/.zshrc
       echo 'alias ls="lsd"' >> ~/.zshrc
-      exec > /dev/null 2>&1 # to no run & display the output
+      exec > /dev/null 2>&1 # to not run & display the output
       echo 'alias fz=\'\''selected_dir=$(find $HOME -maxdepth 8 -type d | fzf); [ -n "$selected_dir" ] && cd "$selected_dir"'\''' >> ~/.zshrc
       echo 'emulate sh -c "source /etc/profile"' | sudo tee -a /etc/zsh/zprofile
       exec 1>/dev/tty 2>&1
+
+      fzf_commands='
+# fzf
+export FZF_DEFAULT_COMMAND="find ."
+bindkey -s "^f" "fz"
+'
+      echo "$fzf_commands" >> ~/.zshrc
 
       echo "${YELLOW} If fz or ctrl+f do not work correctly, copy this command (careful with Apostrophes in the command) : ${RED} emulate sh -c 'source /etc/profile.d/apps-bin-path.sh'${YELLOW}  in ${RED}/etc/zsh/zprofile  ${RESET}"
       echo "${YELLOW} If ls & top commands do not work, please close and open a new terminal  ${RESET}"

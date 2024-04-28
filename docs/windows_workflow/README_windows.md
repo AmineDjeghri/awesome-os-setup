@@ -63,7 +63,8 @@ Automatic installation available with this command:
 iex ((New-Object System.Net.WebClient).DownloadString('https://raw.githubusercontent.com/AmineDjeghri/awesome-os-setup/main/docs/windows_workflow/setup_windows.ps1'))
 ```
 ### 2.1. Mainstream Software
-- **Browsers**: I recommend Brave (or Edge or Firefox).  Remember to change your sync settings to import your passwords, bookmarks...ect.
+- **Browsers**: I recommend Brave (or Edge or Firefox).  Remember to change your sync settings to import your passwords, bookmarks...ect. use two browsers: one for work and the other for personal use on your work computer.
+   - [browser_extensions.md](browser_extensions.md): useful extensions for productivity & security
 - [browser_extensions.md](browser_extensions.md): useful extensions for productivity & security
 - **Agenda & Mail**: Google Calendar, Gmail
    - create an app shortcut with brave & add them to the taskbar it will act like an app in windows, and activate the notifications.

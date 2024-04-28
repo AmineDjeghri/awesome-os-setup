@@ -8,12 +8,17 @@ Settings and shortcuts for some apps that I use on Windows 11.
   * [1.3. GlazeWM (windows only)](#13-glazewm-windows-only)
   * [1.4. PowerToys (windows only)](#14-powertoys-windows-only)
   * [1.5. Windows Terminal (windows only)](#15-windows-terminal-windows-only)
-  * [1.6. PyCharm (All platforms)](#16-pycharm-all-platforms)
-    * [1.6.1. Tips & tricks](#161-tips--tricks)
-    * [1.6.2. Personal pycharm shortcuts](#162-personal-pycharm-shortcuts)
-    * [1.6.3. Python remote interpreter (SSH /WSL)](#163-python-remote-interpreter-ssh-wsl)
-    * [1.6.4. Pycharm remote deployment](#164-pycharm-remote-deployment)
-    * [1.6.5. Remote SSH for ReactJS](#165-remote-ssh-for-reactjs)
+  * [1.6. Sublime Text (All platforms)](#16-sublime-text-all-platforms)
+  * [1.7. Obsidian (All platforms)](#17-obsidian-all-platforms)
+  * [1.8. PyCharm (All platforms)](#18-pycharm-all-platforms)
+    * [1.8.1. Tips & tricks](#181-tips--tricks)
+    * [1.8.2. Personal pycharm shortcuts](#182-personal-pycharm-shortcuts)
+    * [1.8.3. Python remote interpreter (SSH /WSL)](#183-python-remote-interpreter-ssh-wsl)
+    * [1.8.4. Pycharm remote deployment](#184-pycharm-remote-deployment)
+    * [1.8.5. Remote SSH for ReactJS](#185-remote-ssh-for-reactjs)
+    * [1.8.6. 1.7 HWINFO:](#186-17-hwinfo)
+    * [1.8.7. 1.7 Google colab:](#187-17-google-colab)
+    * [1.8.8. 1.8 Powerpoint:](#188-18-powerpoint)
 <!-- TOC -->
 
 ## 1.1. Windows shortcuts
@@ -50,15 +55,19 @@ shortcuts: You can read more about the shortcuts [here](https://github.com/glaze
 
 ## 1.5. Windows Terminal (windows only)
 - Automatic installation of the Terminal settings available with this [command](windows_workflow/README_windows.md#2-software). Select the second option.
-- Manual installation:
-  - Download and install the [FiraCode font](https://github.com/ryanoasis/nerd-fonts/releases/download/v3.1.1/FiraCode.zip) on your primary operating system (Windows if you are using WSL).
-  - Copy my [settings.json](windows_workflow/settings.json) for the Windows Terminal to the following location: `C:\Users\%UserProfile%\AppData\Local\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\LocalState` (the theme used is called night owl).
-  - Alternatively, you can open the Windows Terminal and navigate to Settings -> Profiles (bottom left) -> default -> Additional Parameters -> Appearance -> Change the font to FiraCode, the opacity to 85% and the background color to night owl.
-  - wget on Windows terminal: add it to your terminal: https://www.programmersought.com/article/90723524682/
+- wget on Windows terminal: add it to your terminal: https://www.programmersought.com/article/90723524682/
 
-## 1.6. PyCharm (All platforms)
+## 1.6. Sublime Text (All platforms)
+- Install the package control: https://packagecontrol.io/installation
+- Packages : TBD
 
-### 1.6.1. Tips & tricks
+## 1.7. Obsidian (All platforms)
+- Install the community plugins: TBD
+- Install the community themes: TBD
+
+## 1.8. PyCharm (All platforms)
+
+### 1.8.1. Tips & tricks
 - I prefer to use PyCharm (professional edition) even if I used VSCode for 2 years, the Intellij suite is just amazing. Intellij suite with all the plugins for students is completely free.
 - If you are on Windows, use pycharm with WSL.
 - Use docker with pycharm, very easy to pull and create images & containers. Specially if you want to test your app, you can create a ubuntu container in less then 5sec.
@@ -87,7 +96,7 @@ shortcuts: You can read more about the shortcuts [here](https://github.com/glaze
 - PyCharm has keyboard shortcuts for most of its commands related to editing, navigation, refactoring, debugging, and other tasks. Memorizing these hotkeys can help you stay more productive by keeping your hands on the keyboard. [Link to Cheatsheet](https://resources.jetbrains.com/storage/products/pycharm/docs/PyCharm_ReferenceCard.pdf)
 - If the plugin Table of contents doesn't work on a markdown file, create a small table with the title & two`<!-- TOC -->`, it should detect it.
 - Pycharm has fuzzy search when creating a file. For example 'alt+p' then 'alt+ins' then 'pf' to create a python file
-### 1.6.2. Personal pycharm shortcuts
+### 1.8.2. Personal pycharm shortcuts
 Official[Link to Cheatsheet](https://resources.jetbrains.com/storage/products/pycharm/docs/PyCharm_ReferenceCard.pdf)
 
 Some of them are re-mapped :
@@ -150,13 +159,13 @@ Some of them are re-mapped :
 | previous word                                    | Ctrl+Left                                    |                                                                                                                    |
 | jump to line                                     | ctrl+g                                       |                                                                                                                    |
 
-### 1.6.3. Python remote interpreter (SSH /WSL)
+### 1.8.3. Python remote interpreter (SSH /WSL)
 - add a remote python interpreter: usually found with `which python` on the remote server or WSL.
 - PyCharm envs: You can clean out old PyCharm interpreters that are no longer associated with a project see the image [here](https://github.com/AmineDjeghri/BetterWindowsUX/blob/master/pycharm_interpreters.PNG) .
 - This gives you a listing where you can get rid of old virtualenvs that PyCharm thinks are still around
 
 
-### 1.6.4. Pycharm remote deployment
+### 1.8.4. Pycharm remote deployment
 WARNING: project folder needs to be on windows and not WSL to use the remote ssh. Do not host folders outside WSL if you are not using a remote interpreter, there are  [WSL perforamance issues](https://github.com/microsoft/WSL/issues/4197?notification_referrer_id=MDE4Ok5vdGlmaWNhdGlvblRocmVhZDUyMzA5ODA3MjozMjcxNTkxMw%3D%3D#issuecomment-1727108838))
 
 Defining a server as default:
@@ -171,7 +180,7 @@ Open the deployment Options (Settings/Preferences | Deployment | Options or Tool
 In the main menu, select Tools | Deployment | Automatic upload. Note that automatic upload in this case is performed in the Always mode.
 
 
-### 1.6.5. Remote SSH for ReactJS
+### 1.8.5. Remote SSH for ReactJS
 - First, make sure that in the server, the React project is running when you run `yarn dev run`
 - In pycharm, go to configuration and create a new config for npm
 - select package.json from the local folder
@@ -181,10 +190,10 @@ In the main menu, select Tools | Deployment | Automatic upload. Note that automa
 - package manager: yarn, for example
 - environment: `PATH=` put the result of the command `echo $PATH`
 
-### 1.7 HWINFO:
+### 1.8.6. 1.7 HWINFO:
 - export file: regedit -> ``Ordinateur\HKEY_CURRENT_USER\Software\HWiNFO64``
 - import settings: double-click on the downloaded file to restore settings. Check mine [here](windows_workflow/HWINFO_settings.reg)
-### 1.7 Google colab:
+### 1.8.7. 1.7 Google colab:
 - Add this code to prevent it from disconnecting. [source](https://colab.research.google.com/github/oobabooga/AI-Notebooks/blob/main/Colab-TextGen-GPU.ipynb#scrollTo=f7TVVj_z4flw)
 ```py
 #@title 1. Keep this tab alive to prevent Colab from disconnecting you { display-mode: "form" }
@@ -193,7 +202,7 @@ In the main menu, select Tools | Deployment | Automatic upload. Note that automa
 %%html
 <audio src="https://oobabooga.github.io/silence.m4a" controls>
 ```
-### 1.8 Powerpoint:
+### 1.8.8. 1.8 Powerpoint:
 **Turn a PDF to black and white**
 Convert to pptx (IlovePDF)
 Open with PowerPoint (Office 2016)
