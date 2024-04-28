@@ -8,7 +8,7 @@ Settings and shortcuts for some apps that I use on Windows 11.
   * [1.3. GlazeWM (windows only)](#13-glazewm-windows-only)
   * [1.4. PowerToys (windows only)](#14-powertoys-windows-only)
   * [1.5. Windows Terminal (windows only)](#15-windows-terminal-windows-only)
-  * [1.6. Sublime Text (All platforms)](#16-sublime-text-all-platforms)
+  * [1.6. Sublime Text 4 (All platforms)](#16-sublime-text-4-all-platforms)
   * [1.7. Obsidian (All platforms)](#17-obsidian-all-platforms)
   * [1.8. PyCharm (All platforms)](#18-pycharm-all-platforms)
     * [1.8.1. Tips & tricks](#181-tips--tricks)
@@ -16,9 +16,9 @@ Settings and shortcuts for some apps that I use on Windows 11.
     * [1.8.3. Python remote interpreter (SSH /WSL)](#183-python-remote-interpreter-ssh-wsl)
     * [1.8.4. Pycharm remote deployment](#184-pycharm-remote-deployment)
     * [1.8.5. Remote SSH for ReactJS](#185-remote-ssh-for-reactjs)
-    * [1.8.6. 1.7 HWINFO:](#186-17-hwinfo)
-    * [1.8.7. 1.7 Google colab:](#187-17-google-colab)
-    * [1.8.8. 1.8 Powerpoint:](#188-18-powerpoint)
+  * [1.9. HWINFO:](#19-hwinfo)
+  * [1.10. Google colab:](#110-google-colab)
+  * [1.11. Powerpoint:](#111-powerpoint)
 <!-- TOC -->
 
 ## 1.1. Windows shortcuts
@@ -57,9 +57,9 @@ shortcuts: You can read more about the shortcuts [here](https://github.com/glaze
 - Automatic installation of the Terminal settings available with this [command](windows_workflow/README_windows.md#2-software). Select the second option.
 - wget on Windows terminal: add it to your terminal: https://www.programmersought.com/article/90723524682/
 
-## 1.6. Sublime Text (All platforms)
+## 1.6. Sublime Text 4 (All platforms)
 - Install the package control: https://packagecontrol.io/installation
-- Packages : TBD
+- (Windows) Copy and paste the [Package Control.sublime-settings](windows_workflow/Package%20Control.sublime-settings) and [Preferences.sublime-settings](windows_workflow/Preferences.sublime-settings)  in : `%UserProfile%\AppData\Roaming\Sublime Text\Packages\User`
 
 ## 1.7. Obsidian (All platforms)
 - Install the community plugins: TBD
@@ -133,11 +133,14 @@ Some of them are re-mapped :
 | call actions                                     | alt+enter                                    | reformat code, correct code & more , used in editor                                                                |
 | insert / create new                              | alt+ insert                                  | can be used in editor (insert tables ect..) or project panel (create new files)                                    |
 | create new branch                                | ctrl+alt+n                                   |                                                                                                                    |
+| find all                                         | double shift                                 | search everything like files, actions, classes                                                                     |
+| find actions                                     | ctrl+shit+a                                  | search actions like tools (docker, remote server) but also execute shortcuts                                       |
 | find files                                       | ctrl+shift+n                                 |                                                                                                                    |
 | find in files                                    | ctrl+shift+f                                 |                                                                                                                    |
 | find inside current panel                        | ctrl + F                                     | can be used in editor                                                                                              |
 | show recent files                                | ctrl + E                                     |                                                                                                                    |
-| show recent locations                            | ctrl + shift +                               |                                                                                                                    |
+| show recent locations                            | ctrl + shift + E                             |                                                                                                                    |
+| Quick documentation                              | Ctrl + Q                                     |                                                                                                                    |
 | Quick documentation                              | Ctrl + Q                                     |                                                                                                                    |
 | **select**                                       |                                              |
 | **refactor**                                     |                                              |
@@ -190,10 +193,10 @@ In the main menu, select Tools | Deployment | Automatic upload. Note that automa
 - package manager: yarn, for example
 - environment: `PATH=` put the result of the command `echo $PATH`
 
-### 1.8.6. 1.7 HWINFO:
+## 1.9. HWINFO:
 - export file: regedit -> ``Ordinateur\HKEY_CURRENT_USER\Software\HWiNFO64``
 - import settings: double-click on the downloaded file to restore settings. Check mine [here](windows_workflow/HWINFO_settings.reg)
-### 1.8.7. 1.7 Google colab:
+## 1.10. Google colab:
 - Add this code to prevent it from disconnecting. [source](https://colab.research.google.com/github/oobabooga/AI-Notebooks/blob/main/Colab-TextGen-GPU.ipynb#scrollTo=f7TVVj_z4flw)
 ```py
 #@title 1. Keep this tab alive to prevent Colab from disconnecting you { display-mode: "form" }
@@ -202,7 +205,7 @@ In the main menu, select Tools | Deployment | Automatic upload. Note that automa
 %%html
 <audio src="https://oobabooga.github.io/silence.m4a" controls>
 ```
-### 1.8.8. 1.8 Powerpoint:
+## 1.11. Powerpoint:
 **Turn a PDF to black and white**
 Convert to pptx (IlovePDF)
 Open with PowerPoint (Office 2016)

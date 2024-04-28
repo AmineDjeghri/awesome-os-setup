@@ -95,7 +95,7 @@ install_zsh_oh_my_zsh_and_utilities() {
     echo "${YELLOW} Installing lsd, bpytop, bat, fzf,neofetch, stow ${RESET}"
     sudo snap install lsd
     sudo snap install bpytop
-    sudo apt install bat fzf neofetch stow -y
+    sudo apt install bat neofetch stow -y
 
     echo 'alias cat="batcat"' >>~/.zshrc
     echo 'alias top="bpytop"' >>~/.zshrc

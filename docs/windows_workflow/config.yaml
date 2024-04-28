@@ -26,7 +26,7 @@ general:
   # *Strongly* recommended to set to 'false'. Whether to globally enable/disable
   # window transition animations (on minimize, close, etc). Set to 'unchanged'
   # to make no setting changes.
-  window_animations: "false"
+  window_animations: false
 
 gaps:
   # Gap between adjacent windows.
@@ -155,18 +155,18 @@ window_rules:
   # To find an app : open it then go to task manager and show its process name. The process name is case sensitive
   # 1 browser
   - command: "move to workspace 1"
-    match_process_name: "msedge|brave"
+    match_process_name: "msedge|brave|chrome"
   # 2 pycharm
   - command: "move to workspace 2"
     # Process name to match exactly.
-    match_process_name: "pycharm64"
+    match_process_name: "pycharm64|Code"
   # 2 file explorer, Files,
   - command: "move to workspace 3"
     match_process_name: "explorer|Files"
 
   # 4 text editors : sublime text, word, bloc note..
   - command: "move to workspace 4"
-    match_process_name: "sublime_text|WINWORD|EXCEL"
+    match_process_name: "sublime_text|WINWORD|EXCEL|Obsidian|WebViewHost"
 
   # 5 Social
   - command: "move to workspace 5"
