@@ -22,7 +22,7 @@ The Following extensions are all available in brave, chrome & edge (Chromium-bas
 - `Reddit Enhancement Suite`: A suite of tools to enhance your Reddit browsing experience.
 - `Return YouTube Dislike`: Return the dislike count on YouTube.
 - `SingleFile`: Save a complete page into a single HTML file.
-- `Shopping Assistant de Revolut` 
+- `Shopping Assistant de Revolut`
 - `Tree Style Tab`: Show tabs like a tree.
 - `Widilo Cashback`
 
