@@ -41,11 +41,11 @@ shortcuts: You can read more about the shortcuts [here](https://github.com/glaze
   - reload the config: `alt + shift + r`:
   - Maximize & un-maximize : `alt + f`
   - hide: `alt+m` (use `alt+f` to make it appear again)
-  - switch between multiple full screen apps in the same workspace : `alt + tab`
+  - switch between multiple full-screen apps in the same workspace : `alt + tab`
 
 ## 1.4. PowerToys (windows only)
   - Download [Windows store](https://apps.microsoft.com/detail/XP89DCGQ3K6VLD?hl). [Docs](https://learn.microsoft.com/en-us/windows/powertoys/run#features)
-  - Or use my windows script to install it via the terminal. [Link](windows_workflow/README_windows.md#2-software)
+  - Or use my Windows script to install it via the terminal. [Link](windows_workflow/README_windows.md#2-software)
   - I use it mainly for: Search (alt + space) for applications folders or files & Killing a process instead of using task manager.
   - You can also access files and folders from the search bar with alt + space then paste the path
   - Open a selected application as administrator: Ctrl+Shift+Enter	(only applicable to applications)
@@ -59,8 +59,12 @@ shortcuts: You can read more about the shortcuts [here](https://github.com/glaze
 
 ## 1.6. Sublime Text 4 (All platforms)
 - Install the package control: https://packagecontrol.io/installation
-- (Windows) Copy and paste the [Package Control.sublime-settings](windows_workflow/Package%20Control.sublime-settings) and [Preferences.sublime-settings](windows_workflow/Preferences.sublime-settings)  in : `%UserProfile%\AppData\Roaming\Sublime Text\Packages\User`
-
+- (Windows) Copy and paste the [Package Control.sublime-settings](windows_workflow/Package%20Control.sublime-settings) and [Preferences.sublime-settings](windows_workflow/Preferences.sublime-settings) in : `%UserProfile%\AppData\Roaming\Sublime Text\Packages\User`
+- You may need to restart sublime text to see the changes.
+- If the editor color is not changed, you can change the theme in the settings :
+  - (preferences -> select color scheme-> select one dark)
+  - (preferences -> select theme -> select one dark)
+  -
 ## 1.7. Obsidian (All platforms)
 - Install the community plugins: TBD
 - Install the community themes: TBD

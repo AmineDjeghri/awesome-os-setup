@@ -11,7 +11,7 @@ general:
   focus_follows_cursor: false
 
   # Whether to jump the cursor between windows focused by the WM.
-  cursor_follow_focus: false
+  cursor_follows_focus: false
 
   # Whether to switch back and forth between the previously focused workspace
   # when focusing the current workspace.
@@ -152,7 +152,7 @@ window_rules:
     match_class_name: "#32770|Taskmgr"
 
     # Command to run. Use `commands` to specify an array of commands to run in sequence.
-  # To find an app : open it then go to task manager and show its process name. The process name is case sensitive
+  # To find an app: open it, then go to task manager and show its process name. The process name is case sensitive
   # 1 browser
   - command: "move to workspace 1"
     match_process_name: "msedge|brave|chrome"
@@ -164,7 +164,7 @@ window_rules:
   - command: "move to workspace 3"
     match_process_name: "explorer|Files"
 
-  # 4 text editors : sublime text, word, bloc note..
+  # 4 text editors: sublime text, word, bloc note.
   - command: "move to workspace 4"
     match_process_name: "sublime_text|WINWORD|EXCEL|Obsidian|WebViewHost"
 
