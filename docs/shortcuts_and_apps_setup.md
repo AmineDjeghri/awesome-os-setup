@@ -72,7 +72,7 @@ shortcuts: You can read more about the shortcuts [here](https://github.com/glaze
 ## 1.8. PyCharm (All platforms)
 
 ### 1.8.1. Tips & tricks
-- I prefer to use PyCharm (professional edition) even if I used VSCode for 2 years, the Intellij suite is just amazing. Intellij suite with all the plugins for students is completely free.
+- I've been using PyCharm (professional edition) for more than 3 years now even if I used VSCode for 2 years before that, the Intellij suite is just amazing. Intellij suite with all the plugins for students is completely free.
 - If you are on Windows, use pycharm with WSL.
 - Use docker with pycharm, very easy to pull and create images & containers. Specially if you want to test your app, you can create a ubuntu container in less then 5sec.
 - Sync pycharm settings : https://www.jetbrains.com/help/pycharm/sharing-your-ide-settings.html#IDE_settings_sync
