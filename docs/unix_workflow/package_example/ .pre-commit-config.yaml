@@ -1,5 +1,6 @@
 # See https://pre-commit.com for more information
 # See https://pre-commit.com/hooks.html for more hooks
+# ruff is for python files and is used with ruff.toml
 repos:
   - repo: https://github.com/pre-commit/pre-commit-hooks
     rev: v4.3.0
@@ -8,21 +9,18 @@ repos:
         args: ['--maxkb=3000']
       - id: check-toml
       - id: check-yaml
+      - id: check-json
       - id: detect-private-key
       - id: end-of-file-fixer
-#      - id: requirements-txt-fixer
-#        exclude: ^requirements/.*$
+      #      - id: requirements-txt-fixer
+      #        exclude: ^requirements/.*$
       - id: trailing-whitespace
-      - id: check-json
       - id: name-tests-test
         args: [ --pytest-test-first ]
-  - repo: https://github.com/myint/docformatter
-    rev: v1.3.1
-    hooks:
-      - id: docformatter
-        args: [ --in-place ]
+
   - repo: https://github.com/astral-sh/ruff-pre-commit
-    rev: v0.1.2
+    rev: v0.4.2
     hooks:
       - id: ruff
+        args: ['--fix']
       - id: ruff-format
