@@ -38,6 +38,9 @@ conda env update -n my-env -f conda-env-gpu.yml; conda activate my-env;
 ```
 
 #### 2.2 Manual installation
+<details>
+  <summary>Click here to expand</summary>
+  
 The next commands need to be run inside WSL or Linux and not Windows :
 - Install build-essential `sudo apt-get install build-essential` (required by some packages like llama-cpp-python, for example)
 
@@ -72,6 +75,8 @@ cd package_example/requirements;
 conda env update -n my-env -f conda-env-gpu.yml; conda activate my-env;
 ```
 The `-n my-env` option will supersede the environment name specified within the file. Alternatively, for CPU support only, use the command: `conda env update -n my-env -f conda-env-cpu.yml; conda activate my-env;`.
+</details>
+
 
 - Run `nvcc --version; # should be cuda_11.8.r11.8`
 - Verify the successful installation of PyTorch by executing the following Python code:
