@@ -76,6 +76,7 @@ shortcuts: You can read more about the shortcuts [here](https://github.com/glaze
 - If you are on Windows, use pycharm with WSL.
 - Use docker with pycharm, very easy to pull and create images & containers. Specially if you want to test your app, you can create a ubuntu container in less then 5sec.
 - Sync pycharm settings : https://www.jetbrains.com/help/pycharm/sharing-your-ide-settings.html#IDE_settings_sync
+- Change the source folder for imports (https://stackoverflow.com/a/34304165)
 - Commits : [doc](https://www.jetbrains.com/help/pycharm/log-tab.html)
   - pre-commit hooks : If you use conda as an interpreter in pycharm, you need to install pre-commit with pip in the environment that you are using. After the installation, see in the commit options (wheel button) next to the message if `Run git hooks` is there. If it isn't then restart pycharm.
   - When you write in your terminal : `pip list | grep pre-commit` you should see the package. Running `pre-commit --version` should also work.
