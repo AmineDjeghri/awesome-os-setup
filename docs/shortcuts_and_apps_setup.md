@@ -213,3 +213,9 @@ Convert to pptx (IlovePDF)
 Open with PowerPoint (Office 2016)
 (If you want to remove the background: view -> Slide Master: click on the first one then click on the background and delete, return by closing with the red cross: close the Master view)
 Print color and select full black and white
+
+## 1.12. Google TV / Android TV
+- Stremio + Trakt(with addons) (use the desktop app to install addons & configure them, settings will be synchronized between all your devices)
+- Force stop the app on your TV to synchronize the settings
+- Addons :
+ - 
