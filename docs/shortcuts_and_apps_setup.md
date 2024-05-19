@@ -224,3 +224,7 @@ Print color and select full black and white
   - Other: Trakt + Imdb for catalog (Use trakt desktop website to manage lists etc... the mobile app is not meant for that)
   - [Universal Trakt Scrobbler](https://chromewebstore.google.com/detail/universal-trakt-scrobbler/mbhadeogepkjdjeikcckdkjdjhhkhlid) - a Chrome extension for synchronizing Streaming platforms with Trakt
   - [IMDB-Trakt-Syncer](https://github.com/RileyXX/IMDB-Trakt-Syncer)a python app to synchronize IMDB with Trakt both ways (You can use it in WSL2, install google chrome in WSL2 first)
+ 
+  Tips :
+  - You can install multiple times the torrentio addons with different configurations (for example a torrentio specific for french audio).
+  - You can find and download safely all the torrents from real debrid in the [torrents section](https://real-debrid.com/torrents)
