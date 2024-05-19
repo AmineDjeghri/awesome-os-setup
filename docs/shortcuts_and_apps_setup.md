@@ -222,7 +222,7 @@ Print color and select full black and white
   - Official addons : Watchhub, Cinemeta, Opensubtitles V3, Opensubtitles, Local Files
   - Community addons : Streaming Catalogs, Trakt TV (with two websites : [trakt.tv](https://trakt.tv/dashboard) + [couchmoney](https://couchmoney.tv/), Torrentio (With real-debrid), debrid search (with real-debrid)
     - Trakt addon uses trakt.tv (requires login) and and couchmoney (if you want recommendations)
-    - Ratings: I rank my movies on IMDB then syncronize everything with two applications:
+    - Ratings & history: I rank my movies on trakt (and remove them from watchlist if not done automatically), then syncronize everything with IMDB using two applications:
       - [Universal Trakt Scrobbler](https://chromewebstore.google.com/detail/universal-trakt-scrobbler/mbhadeogepkjdjeikcckdkjdjhhkhlid) - a Chrome extension for synchronizing Streaming platforms with Trakt
       - [IMDB-Trakt-Syncer](https://github.com/RileyXX/IMDB-Trakt-Syncer)a python app to synchronize IMDB with Trakt both ways (You can use it in WSL2, install google chrome in WSL2 first)
  
