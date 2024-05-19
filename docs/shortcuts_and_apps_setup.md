@@ -217,13 +217,14 @@ Print color and select full black and white
 
 ## 1.12. Google TV / Android TV
 - Stremio (use the desktop app to install addons & configure them, settings will be synchronized between all your devices)
-- Force stop the app on your TV to synchronize the settings if you added an addon.
-  - Setup : [Tutorial](https://www.reddit.com/r/StremioAddons/comments/17833ms/stremio_all_you_need_to_know/)
+- Setup : [Tutorial](https://www.reddit.com/r/StremioAddons/comments/17833ms/stremio_all_you_need_to_know/)
+  - Force stop the app on your TV to synchronize the settings if you added an addon with the desktop app.
   - Official addons : Watchhub, Cinemeta, Opensubtitles V3, Opensubtitles, Local Files
-  - Community addons : Trakt, Torrentio (With real-debrid), debrid search, IMDB Catalogs, Streaming Catalogs
-  - Other: Trakt + Imdb for catalog (Use trakt desktop website to manage lists etc... the mobile app is not meant for that)
-  - [Universal Trakt Scrobbler](https://chromewebstore.google.com/detail/universal-trakt-scrobbler/mbhadeogepkjdjeikcckdkjdjhhkhlid) - a Chrome extension for synchronizing Streaming platforms with Trakt
-  - [IMDB-Trakt-Syncer](https://github.com/RileyXX/IMDB-Trakt-Syncer)a python app to synchronize IMDB with Trakt both ways (You can use it in WSL2, install google chrome in WSL2 first)
+  - Community addons : Streaming Catalogs, Trakt TV (with two websites : [trakt.tv](https://trakt.tv/dashboard) + [couchmoney](https://couchmoney.tv/), Torrentio (With real-debrid), debrid search (with real-debrid)
+    - Trakt addon uses trakt.tv (requires login) and and couchmoney (if you want recommendations)
+    - Ratings: I rank my movies on IMDB then syncronize everything with two applications:
+      - [Universal Trakt Scrobbler](https://chromewebstore.google.com/detail/universal-trakt-scrobbler/mbhadeogepkjdjeikcckdkjdjhhkhlid) - a Chrome extension for synchronizing Streaming platforms with Trakt
+      - [IMDB-Trakt-Syncer](https://github.com/RileyXX/IMDB-Trakt-Syncer)a python app to synchronize IMDB with Trakt both ways (You can use it in WSL2, install google chrome in WSL2 first)
  
   Tips :
   - Use stremio desktop to configure addons. ALl settings & addons will sync between your devices if you use the same account.
