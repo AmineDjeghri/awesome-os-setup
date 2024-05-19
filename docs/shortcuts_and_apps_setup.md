@@ -232,4 +232,4 @@ Print color and select full black and white
   - You can find and download safely all the torrents from real debrid in the [torrents section](https://real-debrid.com/torrents). Click on the green box to either download or stream the torrent.
   - You can also use stremio on iOS with VLC : go to [stremio web](https://web.stremio.com/) and follow [this tutorial](https://blog.stremio.com/using-stremio-web-on-iphone-ipad/). It works with torrents and everything.
   - Remember to rate what you watch on IMBD or trakt and run the chrome extension & python app to sync everything.
-  - Add movies & tv-shows to history in Trakt to avoid being recommanded in couchmoney
+  - If you didn't rate some movies & tv-shows, you can add them to history in Trakt to avoid being recommanded in couchmoney (no need to rate them if you forget how good or bad the movie was)
