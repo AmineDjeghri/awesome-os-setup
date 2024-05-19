@@ -40,7 +40,7 @@ conda env update -n my-env -f conda-env-gpu.yml; conda activate my-env;
 #### 2.2 Manual installation
 <details>
   <summary>Click here to expand</summary>
-  
+
 The next commands need to be run inside WSL or Linux and not Windows :
 - Install build-essential `sudo apt-get install build-essential` (required by some packages like llama-cpp-python, for example)
 

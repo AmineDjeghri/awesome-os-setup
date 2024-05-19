@@ -33207,7 +33207,7 @@ var ObsidianGitSettingsTab = class extends import_obsidian8.PluginSettingTab {
         });
       }).descEl.innerHTML = `
                     The CSS color of the gutter text.<br/>
-                    
+
                     It is higly recommended to use
                     <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties">
                     CSS variables</a>
@@ -44774,7 +44774,7 @@ var ObsidianGit = class extends import_obsidian31.Plugin {
   }
   /** Used for internals
       Returns whether the pull added a commit or not.
-  
+
       See {@link pullChangesFromRemote} for the command version. */
   async pull() {
     if (!await this.remotesAreSet()) {

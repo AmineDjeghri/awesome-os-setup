@@ -137,7 +137,7 @@ function getDateFromFile(file, granularity) {
         if (granularity === "week") {
             const cleanFormat = removeEscapedCharacters(format);
             if (/w{1,2}/i.test(cleanFormat)) {
-                return window.moment(file.basename, 
+                return window.moment(file.basename,
                 // If format contains week, remove day & month formatting
                 format.replace(/M{1,4}/g, "").replace(/D{1,4}/g, ""), false);
             }
@@ -2066,7 +2066,7 @@ function create_fragment$5(ctx) {
 
 function instance$5($$self, $$props, $$invalidate) {
 	let { $$slots: slots = {}, $$scope } = $$props;
-	
+
 	let { metadata } = $$props;
 
 	$$self.$$set = $$props => {
@@ -2387,8 +2387,8 @@ function create_fragment$4(ctx) {
 }
 
 function instance$4($$self, $$props, $$invalidate) {
-	
-	
+
+
 	let { date } = $$props;
 	let { metadata } = $$props;
 	let { onHover } = $$props;
@@ -2671,7 +2671,7 @@ function create_fragment$2(ctx) {
 }
 
 function instance$2($$self, $$props, $$invalidate) {
-	
+
 	let { displayedMonth } = $$props;
 	let { today } = $$props;
 	let { resetDisplayedMonth } = $$props;
@@ -2963,8 +2963,8 @@ function create_fragment$1(ctx) {
 }
 
 function instance$1($$self, $$props, $$invalidate) {
-	
-	
+
+
 	let { weekNum } = $$props;
 	let { days } = $$props;
 	let { metadata } = $$props;
@@ -3635,8 +3635,8 @@ function create_fragment$7(ctx) {
 }
 
 function instance$7($$self, $$props, $$invalidate) {
-	
-	
+
+
 	let { localeData } = $$props;
 	let { showWeekNums = false } = $$props;
 	let { onHoverDay } = $$props;
@@ -3912,8 +3912,8 @@ function instance($$self, $$props, $$invalidate) {
 	let $activeFile;
 	component_subscribe($$self, settings, $$value => $$invalidate(8, $settings = $$value));
 	component_subscribe($$self, activeFile, $$value => $$invalidate(10, $activeFile = $$value));
-	
-	
+
+
 	let today;
 	let { displayedMonth = today } = $$props;
 	let { sources } = $$props;

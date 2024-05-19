@@ -719,7 +719,7 @@ function create_each_block_1(ctx) {
 			div4 = element("div");
 			div2 = element("div");
 
-			div2.innerHTML = `<div class="setting-item-name">Metric Counter</div> 
+			div2.innerHTML = `<div class="setting-item-name">Metric Counter</div>
           <div class="setting-item-description">Select the counter to display, e.g. words, characters.</div>`;
 
 			t9 = space();
@@ -745,7 +745,7 @@ function create_each_block_1(ctx) {
 			div9 = element("div");
 			div7 = element("div");
 
-			div7.innerHTML = `<div class="setting-item-name">Metric Type</div> 
+			div7.innerHTML = `<div class="setting-item-name">Metric Type</div>
           <div class="setting-item-description">Select the type of metric that you want displayed.</div>`;
 
 			t22 = space();
@@ -763,7 +763,7 @@ function create_each_block_1(ctx) {
 			div14 = element("div");
 			div12 = element("div");
 
-			div12.innerHTML = `<div class="setting-item-name">Prefix Text</div> 
+			div12.innerHTML = `<div class="setting-item-name">Prefix Text</div>
           <div class="setting-item-description">This is the text that is placed before the count.</div>`;
 
 			t31 = space();
@@ -773,7 +773,7 @@ function create_each_block_1(ctx) {
 			div19 = element("div");
 			div17 = element("div");
 
-			div17.innerHTML = `<div class="setting-item-name">Suffix Text</div> 
+			div17.innerHTML = `<div class="setting-item-name">Suffix Text</div>
           <div class="setting-item-description">This is the text that is placed after the count.</div>`;
 
 			t36 = space();
@@ -1121,7 +1121,7 @@ function create_each_block(ctx) {
 			div4 = element("div");
 			div2 = element("div");
 
-			div2.innerHTML = `<div class="setting-item-name">Metric Counter</div> 
+			div2.innerHTML = `<div class="setting-item-name">Metric Counter</div>
           <div class="setting-item-description">Select the counter to display, e.g. words, characters.</div>`;
 
 			t9 = space();
@@ -1147,7 +1147,7 @@ function create_each_block(ctx) {
 			div9 = element("div");
 			div7 = element("div");
 
-			div7.innerHTML = `<div class="setting-item-name">Metric Type</div> 
+			div7.innerHTML = `<div class="setting-item-name">Metric Type</div>
           <div class="setting-item-description">Select the type of metric that you want displayed.</div>`;
 
 			t22 = space();
@@ -1165,7 +1165,7 @@ function create_each_block(ctx) {
 			div14 = element("div");
 			div12 = element("div");
 
-			div12.innerHTML = `<div class="setting-item-name">Prefix Text</div> 
+			div12.innerHTML = `<div class="setting-item-name">Prefix Text</div>
           <div class="setting-item-description">This is the text that is placed before the count.</div>`;
 
 			t31 = space();
@@ -1175,7 +1175,7 @@ function create_each_block(ctx) {
 			div19 = element("div");
 			div17 = element("div");
 
-			div17.innerHTML = `<div class="setting-item-name">Suffix Text</div> 
+			div17.innerHTML = `<div class="setting-item-name">Suffix Text</div>
           <div class="setting-item-description">This is the text that is placed after the count.</div>`;
 
 			t36 = space();

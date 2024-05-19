@@ -11,7 +11,7 @@ Contains a list of awesome websites that are not that popular but useful for eve
 * [r/InternetIsBeautiful](https://www.reddit.com/r/InternetIsBeautiful/) - A subreddit where people share interesting websites they found on the internet.
 * [Radio Garden](http://radio.garden/) - Listen to radio stations from around the world by rotating the globe. You can also search or sort by popularity.
 * [pdf tool](pdftool.org) -A privacy-first tool that lets you modify pdfs offline in your browser, no upload to server or cloud, no limits on editing, entirely for free
-
+* [IP address check torrent  downloads](https://iknowwhatyoudownload.com/en/peer/) - Check what IP address is downloading torrents.
 ## 1.2. Development websites
 * [Archives.is](https://archive.is/) - Read & Save a webpage for future reference (Used to bypass medium.com paywall for example)
 * [draw.io](https://app.diagrams.net/) - Create diagrams and flowcharts in the browser. Contains many icons & for free.

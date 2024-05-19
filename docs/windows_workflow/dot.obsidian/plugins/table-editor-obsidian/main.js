@@ -564,7 +564,7 @@ var neverthrow = {};
 	        return this.error;
 	    }
 	}
-	exports.Err = Err; 
+	exports.Err = Err;
 } (neverthrow));
 
 var algebraic_operation = {};
@@ -601,7 +601,7 @@ var ast_utils = {};
 	        });
 	    }
 	};
-	exports.prettyPrintAST = prettyPrintAST; 
+	exports.prettyPrintAST = prettyPrintAST;
 } (ast_utils));
 
 var results = {};
@@ -5533,7 +5533,7 @@ var decimal = {exports: {}};
 
 	    globalScope.Decimal = Decimal;
 	  }
-	})(commonjsGlobal); 
+	})(commonjsGlobal);
 } (decimal));
 
 var decimalExports = decimal.exports;
@@ -22737,7 +22737,7 @@ lodash.exports;
 	    // Export to the global object.
 	    root._ = _;
 	  }
-	}.call(commonjsGlobal)); 
+	}.call(commonjsGlobal));
 } (lodash, lodash.exports));
 
 var lodashExports = lodash.exports;
@@ -22806,7 +22806,7 @@ var lodashExports = lodash.exports;
 	        this.val = val;
 	    }
 	}
-	exports.Value = Value; 
+	exports.Value = Value;
 } (results));
 
 var hasRequiredAlgebraic_operation;
@@ -23684,7 +23684,7 @@ function requireSingle_param_function () {
 	const decimal_js_1 = __importDefault(decimalExports);
 	class SingleParamFunctionCall {
 	    constructor(ast, table) {
-	        this.getValue = (table, cell) => this.param.getValue(table, cell).andThen((sourceData) => 
+	        this.getValue = (table, cell) => this.param.getValue(table, cell).andThen((sourceData) =>
 	        // The operation functions do not throw errors because data arity has
 	        // already been validated.
 	        (0, neverthrow_1.ok)(this.op(sourceData)));
@@ -23766,7 +23766,7 @@ function requireTokenError () {
 	    }
 	};
 	TokenError.TokenError = TokenError$1;
-	
+
 	return TokenError;
 }
 
@@ -24229,7 +24229,7 @@ function requireParser () {
 	};
 	Parser.Parser = Parser$1;
 	Parser.default = Parser$1;
-	
+
 	return Parser;
 }
 
@@ -24253,7 +24253,7 @@ function requireSemanticHelpers () {
 	    return token.children ? token.children.filter(x => x.type == type) : [];
 	}
 	SemanticHelpers.findChildrenByType = findChildrenByType;
-	
+
 	return SemanticHelpers;
 }
 
@@ -24508,7 +24508,7 @@ function requireBNF () {
 	    BNF.Parser = Parser;
 	})(BNF$1 || (BNF$1 = {}));
 	BNF.default = BNF$1;
-	
+
 	return BNF;
 }
 
@@ -24830,7 +24830,7 @@ function requireW3CEBNF () {
 	    BNF.Parser = Parser;
 	})(BNF || (BNF = {}));
 	W3CEBNF.default = BNF;
-	
+
 	return W3CEBNF;
 }
 
@@ -25250,7 +25250,7 @@ function requireCustom () {
 	    BNF.Parser = Parser;
 	})(BNF || (BNF = {}));
 	Custom.default = BNF;
-	
+
 	return Custom;
 }
 
@@ -25267,7 +25267,7 @@ function requireGrammars () {
 		Object.defineProperty(exports, "W3C", { enumerable: true, get: function () { return W3CEBNF_1.default; } });
 		var Custom_1 = requireCustom();
 		Object.defineProperty(exports, "Custom", { enumerable: true, get: function () { return Custom_1.default; } });
-		
+
 	} (Grammars));
 	return Grammars;
 }
@@ -25284,7 +25284,7 @@ function requireDist () {
 		var TokenError_1 = requireTokenError();
 		Object.defineProperty(exports, "TokenError", { enumerable: true, get: function () { return TokenError_1.TokenError; } });
 		exports.Grammars = requireGrammars();
-		
+
 	} (dist));
 	return dist;
 }
@@ -25337,7 +25337,7 @@ absolute_reference ::= absolute_row absolute_column | absolute_row | absolute_co
 absolute_row ::= "@" ( "I" | "<" | ">" | int )
 absolute_column ::= "$" ( "<" | ">" | int )
 
-single_param_function_call ::= single_param_function "(" source ")" 
+single_param_function_call ::= single_param_function "(" source ")"
 single_param_function      ::= "mean" | "sum"
 
 conditional_function_call ::= "if(" predicate "," " "? source "," " "? source ")"
@@ -25435,13 +25435,13 @@ int  ::= [0-9]+
 		        return (0, neverthrow_1.ok)((0, lodash_1.concat)(newFormulas.value, currentFormulas));
 		    }), (0, neverthrow_1.ok)([]));
 		    // If there is no error,
-		    return formulas.andThen((innerFormulas) => 
+		    return formulas.andThen((innerFormulas) =>
 		    // for each formula
-		    innerFormulas.reduceRight((prevValue, formula) => 
+		    innerFormulas.reduceRight((prevValue, formula) =>
 		    // If the previous formula didn't give an error
-		    prevValue.andThen((prevTable) => 
+		    prevValue.andThen((prevTable) =>
 		    // attempt to apply this formula to the table and return the result
-		    formula.merge(prevTable)), 
+		    formula.merge(prevTable)),
 		    // Start with the current table state
 		    (0, neverthrow_1.ok)(table)));
 		};
@@ -25487,7 +25487,7 @@ int  ::= [0-9]+
 		        return (0, neverthrow_1.err)(error);
 		    }
 		};
-		exports.parseFormula = parseFormula; 
+		exports.parseFormula = parseFormula;
 	} (calc));
 	return calc;
 }
@@ -25867,7 +25867,7 @@ var parser = {};
 	    const leftMarginRegex = (0, exports._marginRegex)(options.leftMarginChars);
 	    return new table_1.Table(lines.map((line) => (0, exports._readRow)(line, leftMarginRegex)));
 	};
-	exports.readTable = readTable; 
+	exports.readTable = readTable;
 } (parser));
 
 var formatter = {};
@@ -26774,7 +26774,7 @@ var require$$4 = /*@__PURE__*/getAugmentedNamespace(lib);
 	    }
 	    // get column alignments
 	    const alignments = delimiterRow !== undefined
-	        ? (0, exports._extendArray)(delimiterRow.getCells().map((cell) => cell.getAlignment()), tableWidth, 
+	        ? (0, exports._extendArray)(delimiterRow.getCells().map((cell) => cell.getAlignment()), tableWidth,
 	        // Safe conversion because DefaultAlignment is a subset of Alignment
 	        () => options.defaultAlignment)
 	        : new Array(tableWidth).fill(options.defaultAlignment);
@@ -27054,7 +27054,7 @@ var require$$4 = /*@__PURE__*/getAugmentedNamespace(lib);
 	    }
 	    return new table_1.Table(rows);
 	};
-	exports.moveColumn = moveColumn; 
+	exports.moveColumn = moveColumn;
 } (formatter));
 
 var editScript = {};
@@ -27253,7 +27253,7 @@ var editScript = {};
 	    }
 	    return undefined;
 	};
-	exports.shortestEditScript = shortestEditScript; 
+	exports.shortestEditScript = shortestEditScript;
 } (editScript));
 
 var textEditor = {};
@@ -27404,7 +27404,7 @@ var options = {};
 	const optionsWithDefaults = (options) => (Object.assign(Object.assign(Object.assign({}, DEFAULT_OPTIONS), options), { textWidthOptions: options.textWidthOptions
 	        ? Object.assign(Object.assign({}, DEFAULT_TEXT_WIDTH_OPTIONS), options.textWidthOptions) : DEFAULT_TEXT_WIDTH_OPTIONS }));
 	exports.optionsWithDefaults = optionsWithDefaults;
-	exports.defaultOptions = (0, exports.optionsWithDefaults)({}); 
+	exports.defaultOptions = (0, exports.optionsWithDefaults)({});
 } (options));
 
 var tableEditor = {};
@@ -28304,7 +28304,7 @@ var tableEditor = {};
 	        };
 	    }
 	}
-	exports.TableEditor = TableEditor; 
+	exports.TableEditor = TableEditor;
 } (tableEditor));
 
 (function (exports) {
@@ -28351,7 +28351,7 @@ var tableEditor = {};
 	Object.defineProperty(exports, "optionsWithDefaults", { enumerable: true, get: function () { return options_1.optionsWithDefaults; } });
 	var table_editor_1 = tableEditor;
 	Object.defineProperty(exports, "TableEditor", { enumerable: true, get: function () { return table_editor_1.TableEditor; } });
-	Object.defineProperty(exports, "SortOrder", { enumerable: true, get: function () { return table_editor_1.SortOrder; } }); 
+	Object.defineProperty(exports, "SortOrder", { enumerable: true, get: function () { return table_editor_1.SortOrder; } });
 } (lib$1));
 
 var defaultSettings = {

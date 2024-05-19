@@ -165,7 +165,7 @@ ${u}
           # comments absoltely can be helpful, but they can also be misleading
           \`\`\`
           ${""}
-          Note that inline code also has the applicable spelling errors ignored: \`absoltely\` 
+          Note that inline code also has the applicable spelling errors ignored: \`absoltely\`
           ${""}
           $$
           Math block absoltely does not get auto-corrected.
@@ -185,7 +185,7 @@ ${u}
           # comments absoltely can be helpful, but they can also be misleading
           \`\`\`
           ${""}
-          Note that inline code also has the applicable spelling errors ignored: \`absoltely\` 
+          Note that inline code also has the applicable spelling errors ignored: \`absoltely\`
           ${""}
           $$
           Math block absoltely does not get auto-corrected.
@@ -1864,7 +1864,7 @@ $4`);while(a);return s}}get OptionsClass(){return sc}apply(i,n){let r=`(( |\\t)*
           > List 3
           >
           > + item 1
-          > + 
+          > +
           > + item 2
         `,after:p`
           > Checklist in blockquote

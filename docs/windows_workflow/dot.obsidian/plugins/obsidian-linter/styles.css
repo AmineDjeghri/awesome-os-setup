@@ -1,5 +1,5 @@
 /**
- * Based on https://github.com/Fevol/obsidian-translate/blob/master/src/ui/translator-components/SettingsPage.svelte 
+ * Based on https://github.com/Fevol/obsidian-translate/blob/master/src/ui/translator-components/SettingsPage.svelte
  */
 
 .linter-navigation-item {
@@ -21,7 +21,7 @@
   overflow: hidden;
 
   background-color: var(--background-primary-secondary-alt);
-  
+
   transition: color 0.25s ease-in-out,
         padding 0.25s ease-in-out,
         background-color 0.35s cubic-bezier(0.45, 0.25, 0.83, 0.67),
@@ -125,7 +125,7 @@
   border-right: 2px solid var(--background-modifier-border);
 }
 
-/** Hide linter element css 
+/** Hide linter element css
  * Based on https://zellwk.com/blog/hide-content-accessibly/
  */
 .linter-navigation-item:not(.linter-navigation-item-selected) > span:nth-child(2),

@@ -19,6 +19,7 @@ Settings and shortcuts for some apps that I use on Windows 11.
   * [1.9. HWINFO:](#19-hwinfo)
   * [1.10. Google colab:](#110-google-colab)
   * [1.11. Powerpoint:](#111-powerpoint)
+  * [1.12. TV Apps:](#112-Google-TV-/-Android-TV)
 <!-- TOC -->
 
 ## 1.1. Windows shortcuts
@@ -37,21 +38,21 @@ Settings and shortcuts for some apps that I use on Windows 11.
   - Download my config [file](windows_workflow/config.yaml) and put it in `C:\Users\%userprofile%\.glaze-wm`
 
 shortcuts: You can read more about the shortcuts [here](https://github.com/glazerdesktop/GlazeWM?tab=readme-ov-file#general)
-  - close a window: `alt + shift + q`:
-  - reload the config: `alt + shift + r`:
-  - Maximize & un-maximize : `alt + f`
-  - hide: `alt+m` (use `alt+f` to make it appear again)
-  - switch between multiple full-screen apps in the same workspace : `alt + tab`
+- close a window: `alt + shift + q`:
+- reload the config: `alt + shift + r`:
+- Maximize & un-maximize : `alt + f`
+- hide: `alt+m` (use `alt+f` to make it appear again)
+- switch between multiple full-screen apps in the same workspace : `alt + tab`
 
 ## 1.4. PowerToys (windows only)
-  - Download [Windows store](https://apps.microsoft.com/detail/XP89DCGQ3K6VLD?hl). [Docs](https://learn.microsoft.com/en-us/windows/powertoys/run#features)
-  - Or use my Windows script to install it via the terminal. [Link](windows_workflow/README_windows.md#2-software)
-  - I use it mainly for: Search (alt + space) for applications folders or files & Killing a process instead of using task manager.
-  - You can also access files and folders from the search bar with alt + space then paste the path
-  - Open a selected application as administrator: Ctrl+Shift+Enter	(only applicable to applications)
-  - OCR (⊞ + shift + T)
-  - Color picker (⊞ + shift + C)
-  - Locksmith (right-click on a file or folder to see which process is using it)
+- Download [Windows store](https://apps.microsoft.com/detail/XP89DCGQ3K6VLD?hl). [Docs](https://learn.microsoft.com/en-us/windows/powertoys/run#features)
+- Or use my Windows script to install it via the terminal. [Link](windows_workflow/README_windows.md#2-software)
+- I use it mainly for: Search (alt + space) for applications folders or files & Killing a process instead of using task manager.
+- You can also access files and folders from the search bar with alt + space then paste the path
+- Open a selected application as administrator: Ctrl+Shift+Enter	(only applicable to applications)
+- OCR (⊞ + shift + T)
+- Color picker (⊞ + shift + C)
+- Locksmith (right-click on a file or folder to see which process is using it)
 
 ## 1.5. Windows Terminal (windows only)
 - Automatic installation of the Terminal settings available with this [command](windows_workflow/README_windows.md#2-software). Select the second option.
@@ -215,7 +216,11 @@ Open with PowerPoint (Office 2016)
 Print color and select full black and white
 
 ## 1.12. Google TV / Android TV
-- Stremio + Trakt(with addons) (use the desktop app to install addons & configure them, settings will be synchronized between all your devices)
-- Force stop the app on your TV to synchronize the settings
-- Addons :
- - 
+- Stremio (use the desktop app to install addons & configure them, settings will be synchronized between all your devices)
+- Force stop the app on your TV to synchronize the settings if you added an addon.
+  - Setup : [Tutorial](https://www.reddit.com/r/StremioAddons/comments/17833ms/stremio_all_you_need_to_know/)
+  - Official addons : Watchhub, Cinemeta, Opensubtitles V3, Opensubtitles, Local Files
+  - Community addons : Trakt, Torrentio (With real-debrid), debrid search, IMDB Catalogs, Streaming Catalogs
+  - Other: Trakt + Imdb for catalog (Use trakt desktop website to manage lists etc... the mobile app is not meant for that)
+  - [Universal Trakt Scrobbler](https://chromewebstore.google.com/detail/universal-trakt-scrobbler/mbhadeogepkjdjeikcckdkjdjhhkhlid) - a Chrome extension for synchronizing Streaming platforms with Trakt
+  - [IMDB-Trakt-Syncer](https://github.com/RileyXX/IMDB-Trakt-Syncer)a python app to synchronize IMDB with Trakt both ways (You can use it in WSL2, install google chrome in WSL2 first)

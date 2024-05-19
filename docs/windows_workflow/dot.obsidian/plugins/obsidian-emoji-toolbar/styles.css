@@ -147,7 +147,7 @@ img.emoji {
 
 .emoji-mart-category .emoji-mart-emoji:focus { outline: 0 }
 
-.emoji-mart-category .emoji-mart-emoji:hover:before, 
+.emoji-mart-category .emoji-mart-emoji:hover:before,
 .emoji-mart-category .emoji-mart-emoji:focus:before {
   z-index: 0;
   content: "";
