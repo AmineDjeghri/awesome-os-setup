@@ -229,6 +229,7 @@ Print color and select full black and white
   Tips :
   - Use stremio desktop to configure addons. ALl settings & addons will sync between your devices if you use the same account.
   - You can install multiple times  addons with different configurations (for example a torrentio specific for french audio).
+  - Reorder Strimeo addons with [this open source addon](https://www.reddit.com/r/StremioAddons/comments/1ak8vkt/showcase_stremio_addon_manager_effortlessly). You can always go to https://www.stremio.com/acc-settings > sessions and delete your latest Stremio web browser session to revoke it. A full password reset shouldn't be necessary.
   - Order of list in Stremio home is determined by the installation order. I recommend to install trakt first, then streaming catalogs then torrentio then debrid search
   - You can find and download safely all the torrents from real debrid in the [torrents section](https://real-debrid.com/torrents). Click on the green box to either download or stream the torrent.
   - You can also use stremio on iOS with VLC : go to [stremio web](https://web.stremio.com/) and follow [this tutorial](https://blog.stremio.com/using-stremio-web-on-iphone-ipad/). It works with torrents and everything.
