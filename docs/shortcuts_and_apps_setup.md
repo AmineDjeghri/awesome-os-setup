@@ -236,3 +236,4 @@ Print color and select full black and white
   - Remember to rate what you watch on IMBD or trakt and run the chrome extension & python app to sync everything.
   - If you didn't rate some movies & tv-shows, you can add them to history in Trakt to avoid being recommanded in couchmoney (no need to rate them if you forget how good or bad the movie was)
   - Change the settings of your TV to get better colors (refer to reddit guides or youtube videos or rtings.com to find the best settings). Here is a [video](https://www.youtube.com/watch?v=dY3M_h30HYc) explaining TV modes. And [this video](https://www.youtube.com/watch?v=nTO2Wmw1NKA) for changing the settings of your TV taking into account different modes (SDR,HDR, Dolby)
+  - On some TV like the Hisense U7k, you need to enable enhanced HDMI mode to access dolby vision & 60hz on your chromecast and other HDMI inputs.
