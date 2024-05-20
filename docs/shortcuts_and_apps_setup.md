@@ -235,6 +235,10 @@ Print color and select full black and white
   - You can also use stremio on iOS with VLC : go to [stremio web](https://web.stremio.com/) and follow [this tutorial](https://blog.stremio.com/using-stremio-web-on-iphone-ipad/). It works with torrents and everything.
   - Remember to rate what you watch on IMBD or trakt and run the chrome extension & python app to sync everything.
   - If you didn't rate some movies & tv-shows, you can add them to history in Trakt to avoid being recommanded in couchmoney (no need to rate them if you forget how good or bad the movie was)
+ 
+  ### TV Settings :
+  - chromecast google TV 4k [settings](https://www.reddit.com/r/Chromecast/comments/1ct77ai/a_fix_for_washed_out_colors_and_performance/)
   - Change the settings of your TV to get better colors (refer to reddit guides or youtube videos or rtings.com to find the best settings). Here is a [video](https://www.youtube.com/watch?v=dY3M_h30HYc) explaining TV modes. And [this video](https://www.youtube.com/watch?v=nTO2Wmw1NKA) for changing the settings of your TV taking into account different modes (SDR,HDR, Dolby)
   - On some TV like the Hisense U7k, you need to enable enhanced HDMI mode to access dolby vision & 60hz on your chromecast and other HDMI inputs.
   - Windows 11 with 4K HDR TV : follow this [tutorial 1](https://www.pcmag.com/how-to/set-up-gaming-pc-on-4k-tv) and [tutorial 2](https://www.pcmag.com/how-to/how-to-play-games-watch-videos-in-hdr-on-windows-10)
+ 
