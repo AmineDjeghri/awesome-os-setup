@@ -19,7 +19,7 @@ Settings and shortcuts for some apps that I use on Windows 11.
   * [1.9. HWINFO:](#19-hwinfo)
   * [1.10. Google colab:](#110-google-colab)
   * [1.11. Powerpoint:](#111-powerpoint)
-  * [1.12. TV Apps:](#112-Google-TV-/-Android-TV)
+  * [1.12. Streaming (Desktop, browser, mobile, Google TV / Android TV)](#112-streaming-desktop-browser-mobile-google-tv--android-tv)
 <!-- TOC -->
 
 ## 1.1. Windows shortcuts
@@ -79,11 +79,11 @@ shortcuts: You can read more about the shortcuts [here](https://github.com/glaze
 - Sync pycharm settings : https://www.jetbrains.com/help/pycharm/sharing-your-ide-settings.html#IDE_settings_sync
 - Change the source folder for imports (https://stackoverflow.com/a/34304165)
 - Commits : [doc](https://www.jetbrains.com/help/pycharm/log-tab.html)
-  - pre-commit hooks : If you use conda as an interpreter in pycharm, you need to install pre-commit with pip in the environment that you are using. After the installation, see in the commit options (wheel button) next to the message if `Run git hooks` is there. If it isn't then restart pycharm.
+  - pre-commit hooks: If you use conda as an interpreter in pycharm, you need to install pre-commit with pip in the environment that you are using. After the installation, see in the commit options (wheel button) next to the message if `Run git hooks` is there. If it isn't then restart pycharm.
   - When you write in your terminal : `pip list | grep pre-commit` you should see the package. Running `pre-commit --version` should also work.
   - Check the Amend commit box if you want to concatenate commits
   - If you want to delete a pushed commit :
-    - Make sure that the branch isn't protected : open IDE settings Ctrl+Alt+S then go to git settings. You will see in the Push settings the protected branches. Note that if a branch is marked as protected on GitHub, PyCharm will automatically mark it as protected when you check it out but you can modify it.
+    - Make sure that the branch isn't protected: open IDE settings Ctrl+Alt+S then go to git settings. You will see in the Push settings the protected branches. Note that if a branch is marked as protected on GitHub, PyCharm will automatically mark it as protected when you check it out but you can modify it.
     - To delete a pushed commit, you have to options: drop a commit, or reset a current branch to a specific commit. After doing one or the other open the push panel and instead of selecting 'push', select 'force push'. Remember that you need to force push, otherwise pycharm will tell you that there are changes on the remote that need to be merged.
 - Remote/local terminal & interpreter :
   - When creating a project with pycharm, you should use the anaconda python (windows or wsl) and not install python or using another one like virtualenv.
@@ -215,30 +215,40 @@ Open with PowerPoint (Office 2016)
 (If you want to remove the background: view -> Slide Master: click on the first one then click on the background and delete, return by closing with the red cross: close the Master view)
 Print color and select full black and white
 
-## 1.12. Google TV / Android TV
-- Stremio (use the desktop app to install addons & configure them, settings will be synchronized between all your devices)
+## 1.12. Streamio (Streaming on all platforms)
+- Stremio is a video streaming application that allows you to watch and organize video content from different services, including movies, series, live TV and video channels. The content is aggregated by an addon system providing streams from various sources. And with its commitment to security, Stremio is the ultimate choice for a worry-free, high-quality streaming experience.
+- You can either use your favorite platforms to watch movies or series or use torrent without any risk.
+- Stremio is available on all platforms: Windows, Mac, Linux, Android, iOS, Android TV & Web.
+
+### Installation:
+- Always use the desktop app to install addons & configure them, settings will be synchronized between all your devices
 - Setup : [Tutorial](https://www.reddit.com/r/StremioAddons/comments/17833ms/stremio_all_you_need_to_know/)
-  - Force stop the app on your TV to synchronize the settings if you added an addon with the desktop app.
-  - Official addons : Watchhub, Cinemeta, Opensubtitles V3, Opensubtitles, Local Files
-  - Community addons : Streaming Catalogs, Trakt TV (with two websites : [trakt.tv](https://trakt.tv/dashboard) + [couchmoney](https://couchmoney.tv/), Torrentio (With real-debrid), debrid search (with real-debrid)
-    - Trakt addon uses trakt.tv (requires login) and and couchmoney (if you want recommendations)
+  - Force stop or restart the app on your deivces to synchronize the settings if you add an addon with the desktop app.
+  - My recommended official addons: Watchhub, Cinemeta, Opensubtitles V3, Opensubtitles, Local Files
+  - My recommended community addons : Streaming Catalogs, Trakt TV (with two websites : [trakt.tv](https://trakt.tv/dashboard) + [couchmoney](https://couchmoney.tv/), Torrentio (With real-debrid), YggStremio (for french), debrid search (with real-debrid)
+    - Order of installed community addons: Trakt TV, Streaming Catalogs, Torrentio, YggStremio, Debrid search
+    - Trakt addon uses trakt.tv (requires login) and couchmoney (if you want recommendations)
     - Ratings & history: I rank my movies on trakt (and remove them from watchlist if not done automatically), then syncronize everything with IMDB using two applications:
       - [Universal Trakt Scrobbler](https://chromewebstore.google.com/detail/universal-trakt-scrobbler/mbhadeogepkjdjeikcckdkjdjhhkhlid) - a Chrome extension for synchronizing Streaming platforms with Trakt
-      - [IMDB-Trakt-Syncer](https://github.com/RileyXX/IMDB-Trakt-Syncer)a python app to synchronize IMDB with Trakt both ways (You can use it in WSL2, install google chrome in WSL2 first)
- 
+      - [IMDB-Trakt-Syncer](https://github.com/RileyXX/IMDB-Trakt-Syncer)a python app to synchronize IMDB with Trakt both ways (You can use it in WSL2, install Google Chrome in WSL2 first)
+
   Tips :
-  - Use stremio desktop to configure addons. ALl settings & addons will sync between your devices if you use the same account.
-  - You can install multiple times  addons with different configurations (for example a torrentio specific for french audio).
-  - Order of list in Stremio home is determined by the installation order. You can always reorder addons with [this open source addon](https://www.reddit.com/r/StremioAddons/comments/1ak8vkt/showcase_stremio_addon_manager_effortlessly). You can always go to https://www.stremio.com/acc-settings > sessions and delete your latest Stremio web browser session to revoke it. A full password reset shouldn't be necessary.
+  - Use Stremio desktop to configure addons. ALl settings & addons will sync between your devices if you use the same account.
+  - You can install multiple times addons with different configurations (for example, a Torrentio specific for french audio).
+  - Order of a list in Stremio home is determined by the installation order.
   - Sort and filter movies inside a list by clicking on 'see more' on a list.
-  - You can find and download safely all the torrents from real debrid in the [torrents section](https://real-debrid.com/torrents). Click on the green box to either download or stream the torrent.
-  - You can also use stremio on iOS with VLC : go to [stremio web](https://web.stremio.com/) and follow [this tutorial](https://blog.stremio.com/using-stremio-web-on-iphone-ipad/). It works with torrents and everything.
-  - Remember to rate what you watch on IMBD or trakt and run the chrome extension & python app to sync everything.
-  - If you didn't rate some movies & tv-shows, you can add them to history in Trakt to avoid being recommanded in couchmoney (no need to rate them if you forget how good or bad the movie was)
- 
+  - You can find and safely download all the torrents from real debrid in the [torrents section](https://real-debrid.com/torrents). Click on the green box to either download or stream the torrent.
+  - You can also use stremio on iOS with VLC: go to [stremio web](https://web.stremio.com/) and follow [this tutorial](https://blog.stremio.com/using-stremio-web-on-iphone-ipad/). It works with torrents and everything.
+  - Remember to rate what you watch on IMDB or trakt and run the Chrome extension & python app to sync everything.
+  - If you didn't rate some movies & tv shows, you can add them to history in Trakt to avoid being recommended in couchmoney (no need to rate them if you forget how good or bad the movie was)
+
   ### TV Settings :
-  - chromecast google TV 4k [settings](https://www.reddit.com/r/Chromecast/comments/1ct77ai/a_fix_for_washed_out_colors_and_performance/)
-  - Change the settings of your TV to get better colors (refer to reddit guides or youtube videos or rtings.com to find the best settings). Here is a [video](https://www.youtube.com/watch?v=dY3M_h30HYc) explaining TV modes. And [this video](https://www.youtube.com/watch?v=nTO2Wmw1NKA) for changing the settings of your TV taking into account different modes (SDR,HDR, Dolby)
-  - On some TV like the Hisense U7k, you need to enable enhanced HDMI mode to access dolby vision & 60hz on your chromecast and other HDMI inputs.
-  - Windows 11 with 4K HDR TV : follow this [tutorial 1](https://www.pcmag.com/how-to/set-up-gaming-pc-on-4k-tv) and [tutorial 2](https://www.pcmag.com/how-to/how-to-play-games-watch-videos-in-hdr-on-windows-10)
- 
+  - My first advice is to never use the standard mode on your TV. Always use the cinema or movie mode. The standard mode is too bright and the colors are not accurate. Use the cinema or movie mode when watching movies or series.
+  - Here is a [video](https://www.youtube.com/watch?v=dY3M_h30HYc) explaining TV modes. And [this video](https://www.youtube.com/watch?v=nTO2Wmw1NKA) for changing the settings of your TV taking into account different modes (SDR, HDR, Dolby). (You can refer to reddit guides or YouTube videos or [rtings.com](rtings.com) to find the best settings).
+  - If your TV supports multiple content types (SDR, HDR, DOLBY), the mode needs to be activated on each content type.
+  - On some TVs like the Hisense U7k, you need to enable enhanced HDMI mode to access dolby vision & 60HZ on your chromecast and other HDMI inputs.
+  - If you play video games, use the game mode. It will reduce the input lag and improve the gaming experience.
+  - Some settings :
+    - (Important) Enhance the performance of your Google TV by following this [tutorial](https://www.slashgear.com/1321192/tricks-make-chromecast-google-tv-run-faster/)
+    - Chromecast google TV 4k [video settings](https://www.reddit.com/r/Chromecast/comments/1ct77ai/a_fix_for_washed_out_colors_and_performance/)
+    - Windows 11 with 4K HDR TV: follow this [tutorial 1](https://www.pcmag.com/how-to/set-up-gaming-pc-on-4k-tv) and [tutorial 2](https://www.pcmag.com/how-to/how-to-play-games-watch-videos-in-hdr-on-windows-10)
