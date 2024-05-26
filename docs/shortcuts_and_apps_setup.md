@@ -19,7 +19,8 @@ Settings and shortcuts for some apps that I use on Windows 11.
   * [1.9. HWINFO:](#19-hwinfo)
   * [1.10. Google colab:](#110-google-colab)
   * [1.11. Powerpoint:](#111-powerpoint)
-  * [1.12. Streaming (Desktop, browser, mobile, Google TV / Android TV)](#112-streaming-desktop-browser-mobile-google-tv--android-tv)
+  * [1.12. Streamio (Streaming on all platforms)](#112-streamio-streaming-on-all-platforms)
+    * [Installation:](#installation)
 <!-- TOC -->
 
 ## 1.1. Windows shortcuts
