@@ -229,7 +229,7 @@ Print color and select full black and white
   - My recommended community addons : Streaming Catalogs, Trakt TV (with two websites : [trakt.tv](https://trakt.tv/dashboard) + [couchmoney](https://couchmoney.tv/), Torrentio (With real-debrid), YggStremio (for french), debrid search (with real-debrid)
     - Order of installed community addons: Trakt TV, Streaming Catalogs, Torrentio, YggStremio, Debrid search
     - Trakt addon uses trakt.tv (requires login) and couchmoney (if you want recommendations)
-    - Ratings & history: I rank my movies on trakt (and remove them from watchlist if not done automatically), then syncronize everything with IMDB using two applications:
+    - Ratings & history: I rank my movies on trakt (they will automatically marked as watched if you activate that setting in trakt), then syncronize everything with IMDB using two applications:
       - [Universal Trakt Scrobbler](https://chromewebstore.google.com/detail/universal-trakt-scrobbler/mbhadeogepkjdjeikcckdkjdjhhkhlid) - a Chrome extension for synchronizing Streaming platforms with Trakt
       - [IMDB-Trakt-Syncer](https://github.com/RileyXX/IMDB-Trakt-Syncer)a python app to synchronize IMDB with Trakt both ways (You can use it in WSL2, install Google Chrome in WSL2 first)
 
