@@ -253,4 +253,5 @@ Print color and select full black and white
   - Some settings :
     - (Important) Enhance the performance of your Google TV by following this [tutorial](https://www.slashgear.com/1321192/tricks-make-chromecast-google-tv-run-faster/)
     - Chromecast google TV 4k [video settings](https://www.reddit.com/r/Chromecast/comments/1ct77ai/a_fix_for_washed_out_colors_and_performance/)
+    - Chromecast google TV remote : you can use your iphone or android to remotely control google tv and use your phone's keyboard for example. You need either Google TV app or Goohle home app on you phone. on your google tv, the fezture is disabled by default: you need to go to system-> keyboard -> manage keyboards -> check virtual remote. You can now use your phone to type things rapidely 
     - Windows 11 with 4K HDR TV: follow this [tutorial 1](https://www.pcmag.com/how-to/set-up-gaming-pc-on-4k-tv) and [tutorial 2](https://www.pcmag.com/how-to/how-to-play-games-watch-videos-in-hdr-on-windows-10)
