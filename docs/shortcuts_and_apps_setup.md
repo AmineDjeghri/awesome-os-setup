@@ -80,6 +80,10 @@ shortcuts: You can read more about the shortcuts [here](https://github.com/glaze
 - Sync pycharm settings : https://www.jetbrains.com/help/pycharm/sharing-your-ide-settings.html#IDE_settings_sync
 - You can save your current layout (all all plugins positions) by going to Window | Layouts | Save Current Layout as New and switch to it from new projects  by Window | Layouts | <name of your layout> | Apply.
 - Change the source folder for imports (https://stackoverflow.com/a/34304165)
+- I always use the run button instead of the terminal to run my files (specifically fastapi or streamlit) so pycharm can highlight the errors and make them easily clickable.
+- Use the debug function when needed.
+- Everytime you start a project, edit the configuration template of python and python tests(autodetect and pytest) to select a default working directory for all your scripts. This will prevent you from having problems with working directory location when running from the terminal and pycharm.
+- You can Run pytest just by right-clicking on a function bloc, file, or folder!
 - Commits : [doc](https://www.jetbrains.com/help/pycharm/log-tab.html)
   - pre-commit hooks: If you use conda as an interpreter in pycharm, you need to install pre-commit with pip in the environment that you are using. After the installation, see in the commit options (wheel button) next to the message if `Run git hooks` is there. If it isn't then restart pycharm.
   - When you write in your terminal : `pip list | grep pre-commit` you should see the package. Running `pre-commit --version` should also work.
@@ -91,12 +95,11 @@ shortcuts: You can read more about the shortcuts [here](https://github.com/glaze
   - When creating a project with pycharm, you should use the anaconda python (windows or wsl) and not install python or using another one like virtualenv.
   - You can use ubuntu as default terminal in pycharm: tools>terminal and put in a shell path: `ubuntu run`
   - Add WSL interpreter in Pycharm (add interpreter -> WSL). For example, Conda installed in WSL, will be available in Pycharm.
-- Pytest :
-  - you can choose by editing the configuration template of python and pytest + unit tests to select a default working directory for all your scripts
-  - You can Run pytest just by right-clicking on a function bloc, file, or folder!
+
 - Always use Markdown code and add `py` to tell the markdown that it's python code. When you will do refactor. It will change the python code in the readme.
 - Plugins: You can download plugins from the settings menu. I recommend the following plugins:
   - github copilot
+  - default plugins : services with docker...
   - TBD
 - PyCharm has keyboard shortcuts for most of its commands related to editing, navigation, refactoring, debugging, and other tasks. Memorizing these hotkeys can help you stay more productive by keeping your hands on the keyboard. [Link to Cheatsheet](https://resources.jetbrains.com/storage/products/pycharm/docs/PyCharm_ReferenceCard.pdf)
 - If the plugin Table of contents doesn't work on a markdown file, create a small table with the title & two`<!-- TOC -->`, it should detect it.
