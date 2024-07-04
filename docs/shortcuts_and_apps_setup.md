@@ -70,6 +70,8 @@ shortcuts: You can read more about the shortcuts [here](https://github.com/glaze
 ## 1.7. Obsidian (All platforms)
 - Install the community plugins: TBD
 - Install the community themes: TBD
+- Sync : use google drive ou github to sync the repositories remotely.
+ - Git : if you are on windows. Install git on windows (powershell : 'winget install git.git'). Restart obsidian and then you can push the changes with these buttons : 'stage all' then 'commit' then 'push'
 
 ## 1.8. PyCharm (All platforms)
 
