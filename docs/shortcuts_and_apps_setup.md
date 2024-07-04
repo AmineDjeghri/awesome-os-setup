@@ -68,6 +68,7 @@ shortcuts: You can read more about the shortcuts [here](https://github.com/glaze
   - (preferences -> select theme -> select one dark)
   -
 ## 1.7. Obsidian (All platforms)
+- Obsidian plugins are saved inside the vault (a folder). You need to copy the .obisidian folder everytime you create a new vault to keep the same plugins and workspace
 - Install the community plugins: TBD
 - Install the community themes: TBD
 - Sync : use google drive ou github to sync the repositories remotely.
