@@ -71,7 +71,13 @@ shortcuts: You can read more about the shortcuts [here](https://github.com/glaze
 - Install the community plugins: TBD
 - Install the community themes: TBD
 - Sync : use google drive ou github to sync the repositories remotely.
- - Git : if you are on windows. Install git on windows (powershell : 'winget install git.git'). Restart obsidian and then you can push the changes with these buttons : 'stage all' then 'commit' then 'push'
+ - Git :
+  - if you are on windows. Install git on windows (powershell : 'winget install git.git').
+  - Create an ssh key (go to your ssh folder on windows) and add it to git (if you have wsl, you can copy the ssh key from one to another)
+  - add global username and email with git config
+  -  Restart obsidian. Try to change something on a doc and push it with : 'stage all' then 'commit' then 'push'. To pull stuff you can use the pull button
+  -  The source control panel can be found on the left panel. Maybe need to change the size of the left panel to view it
+  -  if you facce a problem with dubious owernship of repository, run this command `git config --global --add safe.directory '*'`
 
 ## 1.8. PyCharm (All platforms)
 
