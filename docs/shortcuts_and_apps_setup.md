@@ -236,6 +236,7 @@ Print color and select full black and white
 
 ### Installation:
 - Always use the desktop app to install addons & configure them, settings will be synchronized between all your devices
+- (Update July 2024): You need both `stremio` and `stremio service` on PC to make it work perfectly.
 - Setup : [Tutorial](https://www.reddit.com/r/StremioAddons/comments/17833ms/stremio_all_you_need_to_know/)
   - Force stop or restart the app on your deivces to synchronize the settings if you add an addon with the desktop app.
   - My recommended official addons: Watchhub, Cinemeta, Opensubtitles V3, Opensubtitles, Local Files
@@ -266,6 +267,6 @@ Print color and select full black and white
   - Some settings :
     - (Important) Enhance the performance of your Google TV by following this [tutorial](https://www.slashgear.com/1321192/tricks-make-chromecast-google-tv-run-faster/)
     - Chromecast google TV 4k [video settings](https://www.reddit.com/r/Chromecast/comments/1ct77ai/a_fix_for_washed_out_colors_and_performance/)
-    - Chromecast google TV remote : you can use your iphone or android to remotely control google tv and use your phone's keyboard for example. You need either Google TV app or Goohle home app on you phone. on your google tv, the fezture is disabled by default: you need to go to system-> keyboard -> manage keyboards -> check virtual remote. You can now use your phone to type things rapidely 
+    - Chromecast google TV remote : you can use your iphone or android to remotely control google tv and use your phone's keyboard for example. You need either Google TV app or Goohle home app on you phone. on your google tv, the fezture is disabled by default: you need to go to system-> keyboard -> manage keyboards -> check virtual remote. You can now use your phone to type things rapidely
     - Windows 11 with 4K HDR TV: follow this [tutorial 1](https://www.pcmag.com/how-to/set-up-gaming-pc-on-4k-tv) and [tutorial 2](https://www.pcmag.com/how-to/how-to-play-games-watch-videos-in-hdr-on-windows-10)
   - recommended TV apps for google TV: projectivy launcher, stremio, youtube atv. update the channels in the projectivy and add stremio there. Also make it the default launcher for your tv.
