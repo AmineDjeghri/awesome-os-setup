@@ -118,12 +118,15 @@ iex ((New-Object System.Net.WebClient).DownloadString('https://raw.githubusercon
   - Download [Files](https://files.community/). There are two versions: direct installer (free) & Microsoft Store (paid)
   - Replace Windows File explorer with Files: [link](https://files.community/docs/configuring/replace-file-explorer/)
   - You can import my settings: [link](Files_3.0.15.0.zip). Open Files -> Settings -> advanced -> import settings
+- DisplayFusion (paid):
+  - use the Steam version (it can be used on multiple computers with the same steam account)
+  - it adds lot of features to windows monitor settings. 
 
 ### 2.3. Dev Software & Websites
 #### 2.3.1. PyCharm:
 - I prefer to use PyCharm (the Pro version is free for students)
 - My personal shortcuts & tips & settings for this app [here](../shortcuts_and_apps_setup.md#1-5-pycharm)
-
+- after the installation, you can use the "DisplayFusion" and "Monitor configuration DisplayFusion"
 #### 2.3.2. Windows Terminal
 - Always use Windows terminal. It contains all the terminals in one place (ubuntu, powershell, wsl, cmd...ect). You can right-click on any folder to open it.
   - My personal shortcuts & tips & settings for this app [here](../shortcuts_and_apps_setup.md#1-4-windows-terminal)
