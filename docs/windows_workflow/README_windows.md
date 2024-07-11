@@ -108,6 +108,12 @@ iex ((New-Object System.Net.WebClient).DownloadString('https://raw.githubusercon
    - Remove unnecessary programs, unnecessary icons from the start menu and add others like Maps, meteo & calendar
    - Deactivate startup programs that you don't need.
    - Always use the Windows search bar to search for functionalities, settings, apps, files, folders, and more. Even the deep settings are accessible from the search bar.
+   - Change the display settings if you want to adjust the refresh rate, resolution etc.. (windows + p) -> display settings
+   - Disconnect/extend/ duplicate a monitor if you have multiple ones (windows + p) -> display settings -> select the monitor monitor -> next to identify, select the right option.
+   -Remember, each monitor configuration requires its own settings adjustments. Here's how it works:
+      - If you have one monitor and customize the refresh rate, then you moved to two monitors, you need to adjust the refresh rate for this new configuration. Next time when you switch between a single monitor and a dual monitor, Windows will remember your settings for both configurations.
+      - If you switch to three monitors, you need to customize the settings (like the refresh rate) for each one for this new configuration (triple monitor settings), 
+      - When you return to the two-monitor/ single monitor setup, Windows will remember your previous settings, so you won't need to change them again.
 - PowerToys:
   - Download [Windows store](https://apps.microsoft.com/detail/XP89DCGQ3K6VLD?hl). [Docs](https://learn.microsoft.com/en-us/windows/powertoys/run#features)
     - My personal shortcuts & tips & settings for this app [here](../shortcuts_and_apps_setup.md#1-3-powertoys)
