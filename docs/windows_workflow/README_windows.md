@@ -121,7 +121,7 @@ iex ((New-Object System.Net.WebClient).DownloadString('https://raw.githubusercon
 - DisplayFusion (paid):
   - use the Steam version (it can be used on multiple computers with the same steam account)
   - it adds lot of features to windows monitor settings. 
-
+  - There are 4 apps available after the installation . The main ones are : DisplayFusion and "monitor settings displayfusion"
 ### 2.3. Dev Software & Websites
 #### 2.3.1. PyCharm:
 - I prefer to use PyCharm (the Pro version is free for students)
