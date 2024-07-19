@@ -40,8 +40,9 @@ The Following extensions are all available in brave, chrome & edge (Chromium-bas
 - `HTTPS Everywhere`: Automatically switches thousands of sites from insecure "http" to secure "https"
 - `Decentralayes`: Emulates Content Delivery Networks locally by intercepting requests, finding the required resource and injecting it into the environment.
 - `Ugly Email (Privacy badge)`: Check your emails for web bugs that track you.
-
-## Gaming, movies & other Extentions
+- `iCloud Passwords`: Save your passwords, 2FAs and log in to sites with a single click.
+- `User agent switcher and manager`: Spoof your browser's user agent string. [Link](https://chromewebstore.google.com/detail/user-agent-switcher-and-m/bhchdcejhohfmigjafbampogmaanbfkg)
+## Gaming, movies & other Extensions
 - `Watch2Gether`: Watch videos together with friends.
 - `Netflix Party is now Teleparty`
 - `alike03's Subscription Info on Steam`

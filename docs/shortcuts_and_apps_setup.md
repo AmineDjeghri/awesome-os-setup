@@ -71,48 +71,51 @@ shortcuts: You can read more about the shortcuts [here](https://github.com/glaze
 - Obsidian plugins are saved inside the vault (a folder). You need to copy the .obisidian folder everytime you create a new vault to keep the same plugins and workspace
 - Install the community plugins: TBD
 - Install the community themes: TBD
-- Sync : use google drive ou github to sync the repositories remotely.
+- Sync: use Google Drive ou GitHub to sync the repositories remotely.
  - Git :
-  - if you are on windows. Install git on windows (powershell : 'winget install git.git').
+  - if you are on Windows. Install git on windows (PowerShell: 'winget install git.git').
   - Create an ssh key (go to your ssh folder on windows) and add it to git (if you have wsl, you can copy the ssh key from one to another)
   - add global username and email with git config
-  -  Restart obsidian. Try to change something on a doc and push it with : 'stage all' then 'commit' then 'push'. To pull stuff you can use the pull button
+  -  Restart obsidian. Try to change something on a doc and push it with: 'stage all' then 'commit' then 'push'. To pull stuff you can use the pull button
   -  The source control panel can be found on the left panel. Maybe need to change the size of the left panel to view it
-  -  if you facce a problem with dubious owernship of repository, run this command `git config --global --add safe.directory '*'`
+  -  if you face a problem with dubious ownership of repository, run this command `git config --global --add safe.directory '*'`
 
 ## 1.8. PyCharm (All platforms)
 
 ### 1.8.1. Tips & tricks
-- I've been using PyCharm (professional edition) for more than 3 years now even if I used VSCode for 2 years before that, the Intellij suite is just amazing. Intellij suite with all the plugins for students is completely free.
+- I've been using PyCharm (professional edition) for more than 3 years now, even if I used VSCode for 2 years before that, the Intellij suite is just amazing. Intellij suite with all the plugins for students is completely free.
 - If you are on Windows, use pycharm with WSL.
-- Use docker with pycharm, very easy to pull and create images & containers. Specially if you want to test your app, you can create a ubuntu container in less then 5sec.
 - Sync pycharm settings : https://www.jetbrains.com/help/pycharm/sharing-your-ide-settings.html#IDE_settings_sync
-- You can save your current layout (all all plugins positions) by going to Window | Layouts | Save Current Layout as New and switch to it from new projects  by Window | Layouts | <name of your layout> | Apply.
+- You can save your current layout (all plugins positions) by going to Window | Layouts | Save Current Layout as New and switch to it from new projects by Window | Layouts | <name of your layout> | Apply.
 - Change the source folder for imports (https://stackoverflow.com/a/34304165)
 - I always use the run button instead of the terminal to run my files (specifically fastapi or streamlit) so pycharm can highlight the errors and make them easily clickable.
 - Use the debug function when needed.
-- Everytime you start a project, edit the configuration template of python and python tests(autodetect and pytest) to select a default working directory for all your scripts. This will prevent you from having problems with working directory location when running from the terminal and pycharm.
+- Every time you start a project, edit the configuration template of python and python tests(autodetect and pytest) to select a default working directory for all your scripts. This will prevent you from having problems with working directory location when running from the terminal and pycharm.
 - You can Run pytest just by right-clicking on a function bloc, file, or folder!
 - Commits : [doc](https://www.jetbrains.com/help/pycharm/log-tab.html)
-  - pre-commit hooks: If you use conda as an interpreter in pycharm, you need to install pre-commit with pip in the environment that you are using. After the installation, see in the commit options (wheel button) next to the message if `Run git hooks` is there. If it isn't then restart pycharm.
-  - When you write in your terminal : `pip list | grep pre-commit` you should see the package. Running `pre-commit --version` should also work.
+  - pre-commit hooks: If you use conda as an interpreter in pycharm, you need to install pre-commit with pip in the environment that you are using. After the installation, see in the commit options (wheel button) next to the message if `Run git hooks` is there. If it isn't, then restart pycharm.
+  - When you write in your terminal: `pip list | grep pre-commit` you should see the package. Running `pre-commit --version` should also work.
   - Check the Amend commit box if you want to concatenate commits
   - If you want to delete a pushed commit :
-    - Make sure that the branch isn't protected: open IDE settings Ctrl+Alt+S then go to git settings. You will see in the Push settings the protected branches. Note that if a branch is marked as protected on GitHub, PyCharm will automatically mark it as protected when you check it out but you can modify it.
-    - To delete a pushed commit, you have to options: drop a commit, or reset a current branch to a specific commit. After doing one or the other open the push panel and instead of selecting 'push', select 'force push'. Remember that you need to force push, otherwise pycharm will tell you that there are changes on the remote that need to be merged.
+    - Make sure that the branch isn't protected: open IDE settings Ctrl+Alt+S then go to git settings. You will see in the Push settings the protected branches. Note that if a branch is marked as protected on GitHub, PyCharm will automatically mark it as protected when you check it out, but you can modify it.
+    - To delete a pushed commit, you have to options: drop a commit, or reset a current branch to a specific commit. After doing one or the other, open the push panel and instead of selecting 'push', select 'force push'. Remember that you need to force push, otherwise pycharm will tell you that there are changes on the remote that need to be merged.
+- Docker :
+  - Use docker with pycharm, straightforward to pull and create images & containers. Specially, if you want to test your app, you can create an ubuntu container in less then 5sec.
+  - In Pycharm settings, configure docker to run under WSL & not Windows. It will automatically detect the ports.
 - Remote/local terminal & interpreter :
   - When creating a project with pycharm, you should use the anaconda python (windows or wsl) and not install python or using another one like virtualenv.
   - You can use ubuntu as default terminal in pycharm: tools>terminal and put in a shell path: `ubuntu run`
-  - Add WSL interpreter in Pycharm (add interpreter -> WSL). For example, Conda installed in WSL, will be available in Pycharm.
-
-- Always use Markdown code and add `py` to tell the markdown that it's python code. When you will do refactor. It will change the python code in the readme.
+  - Add WSL interpreter in Pycharm (add interpreter -> WSL). For example, Conda, installed in WSL, will be available in Pycharm.
+  - You can use docker as an interpreter in Pycharm (If you have a powerful computer like a desktop or a Macbook, otherwise, a laptop with Windows 11 + WSL2 + pycharm + docker isn't a good idea). To set Docker Port Bindings When Using Pycharm Run/Debug Go to: Python file > Edit Configuration > Docker container settings (click on open folder icon) At Edit Docker Container Settings, you can add Port bindings. Or set the python configuration to use this so all the python files can use the same configuration.
+- Always use Markdown code and add `py` to tell the Markdown that it's python code. When you will do refactor. It will change the python code in the readme.
 - Plugins: You can download plugins from the settings menu. I recommend the following plugins:
-  - github copilot
-  - default plugins : services with docker...
+  - GitHub copilot (autocomplete, but also provides functions when you right-click on something like: explain, generate tests...etc.)
+  - default plugins: services with docker...
   - TBD
 - PyCharm has keyboard shortcuts for most of its commands related to editing, navigation, refactoring, debugging, and other tasks. Memorizing these hotkeys can help you stay more productive by keeping your hands on the keyboard. [Link to Cheatsheet](https://resources.jetbrains.com/storage/products/pycharm/docs/PyCharm_ReferenceCard.pdf)
-- If the plugin Table of contents doesn't work on a markdown file, create a small table with the title & two`<!-- TOC -->`, it should detect it.
-- Pycharm has fuzzy search when creating a file. For example 'alt+p' then 'alt+ins' then 'pf' to create a python file
+- If the plugin Table of contents doesn't work on a Markdown file, create a small table with the title & two`<!-- TOC -->`, it should detect it.
+- Pycharm has fuzzy search when creating a file. For example, 'alt+p' then 'alt+ins' then 'pf' to create a python file
+
 ### 1.8.2. Personal pycharm shortcuts
 Official[Link to Cheatsheet](https://resources.jetbrains.com/storage/products/pycharm/docs/PyCharm_ReferenceCard.pdf)
 
@@ -243,7 +246,7 @@ Print color and select full black and white
   - My recommended community addons : Streaming Catalogs, Trakt TV (with two websites : [trakt.tv](https://trakt.tv/dashboard) + [couchmoney](https://couchmoney.tv/), Torrentio (With real-debrid), YggStremio (for french), debrid search (with real-debrid)
     - Order of installed community addons: Trakt TV, Streaming Catalogs, Torrentio, YggStremio, Debrid search
     - Trakt addon uses trakt.tv (requires login) and couchmoney (if you want recommendations)
-    - Ratings & history: I rank my movies (and series) on trakt (they will automatically marked as watched if you activate that setting in trakt's website : settings -> Mark Watched After Rating: Automatically mark unwatched items with today's date).
+    - Ratings & history: I rank my movies (and series) on trakt (they will automatically mark as watched if you activate that setting in trakt's website : settings -> Mark Watched After Rating: Automatically mark unwatched items with today's date).
     - If you want to syncronize everything with IMDB and/or the streaming platforms, you can use these two applications:
       - [Universal Trakt Scrobbler](https://chromewebstore.google.com/detail/universal-trakt-scrobbler/mbhadeogepkjdjeikcckdkjdjhhkhlid) - a Chrome extension for synchronizing Streaming platforms (netflix, prime,...) watched history with Trakt
       - [IMDB-Trakt-Syncer](https://github.com/RileyXX/IMDB-Trakt-Syncer)a python app to synchronize IMDB ratings, watchlist... with Trakt both ways (You can use it in WSL2, install Google Chrome in WSL2 first)
@@ -258,7 +261,7 @@ Print color and select full black and white
   - Remember to rate what you watch on IMDB or trakt and run the Chrome extension & python app to sync everything.
   - If you didn't rate some movies & tv shows, you can add them to history in Trakt to avoid being recommended in couchmoney (no need to rate them if you forget how good or bad the movie was)
 
-  ### TV Settings :
+  ### Google TV Settings :
   - My first advice is to never use the standard mode on your TV. Always use the cinema/ filmaker or movie mode. The standard mode is too bright and the colors are not accurate. Use the cinema or movie mode when watching movies or series.
   - Here is a [video](https://www.youtube.com/watch?v=dY3M_h30HYc) explaining TV modes. And [this video](https://www.youtube.com/watch?v=nTO2Wmw1NKA) for changing the settings of your TV taking into account different modes (SDR, HDR, Dolby). (You can refer to reddit guides or YouTube videos or [rtings.com](rtings.com) to find the best settings).
   - If your TV supports multiple content types (SDR, HDR, DOLBY), the mode needs to be activated on each content type.
@@ -267,6 +270,6 @@ Print color and select full black and white
   - Some settings :
     - (Important) Enhance the performance of your Google TV by following this [tutorial](https://www.slashgear.com/1321192/tricks-make-chromecast-google-tv-run-faster/)
     - Chromecast google TV 4k [video settings](https://www.reddit.com/r/Chromecast/comments/1ct77ai/a_fix_for_washed_out_colors_and_performance/)
-    - Chromecast google TV remote : you can use your iphone or android to remotely control google tv and use your phone's keyboard for example. You need either Google TV app or Goohle home app on you phone. on your google tv, the fezture is disabled by default: you need to go to system-> keyboard -> manage keyboards -> check virtual remote. You can now use your phone to type things rapidely
+    - Chromecast google TV remote: you can use your iPhone or android to remotely control google tv and use your phone's keyboard for example. You need either Google TV app or Goohle home app on you phone. on your google tv, the fezture is disabled by default: you need to go to system-> keyboard -> manage keyboards -> check virtual remote. You can now use your phone to type things rapidely
     - Windows 11 with 4K HDR TV: follow this [tutorial 1](https://www.pcmag.com/how-to/set-up-gaming-pc-on-4k-tv) and [tutorial 2](https://www.pcmag.com/how-to/how-to-play-games-watch-videos-in-hdr-on-windows-10)
-  - recommended TV apps for google TV: projectivy launcher, stremio, youtube atv. update the channels in the projectivy and add stremio there. Also make it the default launcher for your tv.
+  - recommended TV apps for Google TV: Projectivy launcher, stremio, Smart Tube, YouTube atv. update the channels in the projectivy and add stremio there. Also make it the default launcher for your tv.

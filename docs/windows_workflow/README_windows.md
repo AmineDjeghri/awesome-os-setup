@@ -112,7 +112,7 @@ iex ((New-Object System.Net.WebClient).DownloadString('https://raw.githubusercon
    - Disconnect/extend/ duplicate a monitor if you have multiple ones (windows + p) -> display settings -> select the monitor monitor -> next to identify, select the right option.
    -Remember, each monitor configuration requires its own settings adjustments. Here's how it works:
       - If you have one monitor and customize the refresh rate, then you moved to two monitors, you need to adjust the refresh rate for this new configuration. Next time when you switch between a single monitor and a dual monitor, Windows will remember your settings for both configurations.
-      - If you switch to three monitors, you need to customize the settings (like the refresh rate) for each one for this new configuration (triple monitor settings), 
+      - If you switch to three monitors, you need to customize the settings (like the refresh rate) for each one for this new configuration (triple monitor settings),
       - When you return to the two-monitor/ single monitor setup, Windows will remember your previous settings, so you won't need to change them again.
 - PowerToys:
   - Download [Windows store](https://apps.microsoft.com/detail/XP89DCGQ3K6VLD?hl). [Docs](https://learn.microsoft.com/en-us/windows/powertoys/run#features)
@@ -126,7 +126,7 @@ iex ((New-Object System.Net.WebClient).DownloadString('https://raw.githubusercon
   - You can import my settings: [link](Files_3.0.15.0.zip). Open Files -> Settings -> advanced -> import settings
 - DisplayFusion (paid):
   - use the Steam version (it can be used on multiple computers with the same steam account)
-  - it adds lot of features to windows monitor settings. 
+  - it adds lot of features to windows monitor settings.
   - There are 4 apps available after the installation . The main ones are : DisplayFusion and "monitor settings displayfusion"
 ### 2.3. Dev Software & Websites
 #### 2.3.1. PyCharm:
