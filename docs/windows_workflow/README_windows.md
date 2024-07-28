@@ -1,4 +1,4 @@
-# Windows & WSL setup
+# 1. Windows & WSL setup
 
 ![Windows WSL Terminal with taskbar](../images/windows_wsl_terminal_taskbar.png)
 ![windows setup_image](../images/windows_setup_image.jpeg)
@@ -8,26 +8,29 @@ You can follow this repository to get a similar setup.
 
 **Table of Contents**
 <!-- TOC -->
-* [Windows & WSL setup](#windows--wsl-setup)
-  * [1. Windows account & configuration](#1-windows-account--configuration)
-    * [1.1. Windows account](#11-windows-account)
-    * [1.2. Windows configuration](#12-windows-configuration)
-  * [2. Software](#2-software)
-    * [2.1. Mainstream Software](#21-mainstream-software)
-    * [2.2. UI/UX Software](#22-uiux-software)
-    * [2.3. Dev Software & Websites](#23-dev-software--websites)
-      * [2.3.1. PyCharm:](#231-pycharm)
-      * [2.3.2. Windows Terminal](#232-windows-terminal)
-      * [2.3.3. Docker Desktop](#233-docker-desktop)
-      * [2.3.4. Sublime Text](#234-sublime-text)
-      * [2.3.5. Other apps, websites & tips](#235-other-apps-websites--tips)
-  * [3. Coding using Linux (WSL) inside Windows](#3-coding-using-linux-wsl-inside-windows)
-    * [3.1. Install WSL:](#31-install-wsl)
-    * [3.2. Linux/WSL Setup - terminal, shell, Miniconda, CUDA & More:](#32-linuxwsl-setup---terminal-shell-miniconda-cuda--more)
-    * [3.3. WSL2 Tips & Tricks :](#33-wsl2-tips--tricks-)
-    * [3.4. backup and restore WSL](#34-backup-and-restore-wsl)
-    * [3.5. Uninstall WSL:](#35-uninstall-wsl)
-  * [4. More (deprecated)](#4-more-deprecated)
+* [1. Windows & WSL setup](#1-windows--wsl-setup)
+  * [1.1. Windows account & configuration](#11-windows-account--configuration)
+    * [1.1.1. Windows account](#111-windows-account)
+    * [1.1.2. Windows configuration](#112-windows-configuration)
+  * [1.2. Software](#12-software)
+    * [1.2.1. Web Browsers:](#121-web-browsers)
+    * [1.2.2. Messaging](#122-messaging)
+    * [1.2.3. Meetings and Video Conferences](#123-meetings-and-video-conferences)
+    * [1.2.4. Media, Music, and Entertainment:](#124-media-music-and-entertainment)
+    * [1.2.5. 2.5 Image & Video Editing:](#125-25-image--video-editing)
+    * [1.2.6. Documents, Drives & Editing:](#126-documents-drives--editing)
+    * [1.2.7. Gaming:](#127-gaming)
+    * [1.2.8. Security & Privacy](#128-security--privacy)
+    * [1.2.9. Utilities](#129-utilities)
+    * [1.2.10. Development & Programming](#1210-development--programming)
+    * [1.2.11. UI/UX Software](#1211-uiux-software)
+  * [1.3. Coding using Linux (WSL) inside Windows](#13-coding-using-linux-wsl-inside-windows)
+    * [1.3.1. Install WSL:](#131-install-wsl)
+    * [1.3.2. Linux/WSL Setup - terminal, shell, Miniconda, CUDA & More:](#132-linuxwsl-setup---terminal-shell-miniconda-cuda--more)
+    * [1.3.3. WSL2 Utilities, Tips & Tricks :](#133-wsl2-utilities-tips--tricks-)
+    * [1.3.4. backup and restore WSL](#134-backup-and-restore-wsl)
+    * [1.3.5. Uninstall WSL:](#135-uninstall-wsl)
+  * [1.4. More (deprecated)](#14-more-deprecated)
 <!-- TOC -->
 
 Get started with one command (powershell):
@@ -36,8 +39,8 @@ Get started with one command (powershell):
 iex ((New-Object System.Net.WebClient).DownloadString('https://raw.githubusercontent.com/AmineDjeghri/awesome-os-setup/main/docs/windows_workflow/setup_windows.ps1'))
 ```
 
-## 1. Windows account & configuration
-### 1.1. Windows account
+## 1.1. Windows account & configuration
+### 1.1.1. Windows account
 1. If you already have a key: activate windows with your key
 2. If you don't have a key, you can buy one for a small price.
 3. If you have a key in your old computer, you can use it in your new computer: If you didn't save the key in your account, you need to do this before resetting your old computer
@@ -45,7 +48,7 @@ iex ((New-Object System.Net.WebClient).DownloadString('https://raw.githubusercon
    - Get your license key (if you forgot the serial number, use software like :
    - Deactivate it in Windows terminal by using administrator mode with `slmgr /cpky`
    - Activate it on the new computer using `slmgr /ipk xxxxx-xxxxx-xxxxx-xxxxx-xxxxx`
-### 1.2. Windows configuration
+### 1.1.2. Windows configuration
  - 🔑 Save your key: Connect windows with your Microsoft/Outlook account to save and link the key to your account
  - 📍 Activate localization on windows (if you want to localize your device)
  - 🔐 Activate bitlocker to encrypt your data (Exists only on Windows pro, education and enterprise edition)
@@ -57,15 +60,18 @@ iex ((New-Object System.Net.WebClient).DownloadString('https://raw.githubusercon
  - 🎧 Deactivate lowering communication sounds in advanced audio settings.
  - Full-screen games optimization: uncheck “disable fullscreen optimization” for the .exe. You will get a fast alt tab (only on the latest windows versions). Example: Make your way to the following file location on your desktop: C:\Program Files (x86)\Steam\steamapps\common\Counter-Strike Global Offensive\game. The objective here is to locate the CS2.exe file.
 
-## 2. Software
-Automatic installation available with this command:
+## 1.2. Software
+Automatic installation of these apps is available with this command:
 ```powershell
 iex ((New-Object System.Net.WebClient).DownloadString('https://raw.githubusercontent.com/AmineDjeghri/awesome-os-setup/main/docs/windows_workflow/setup_windows.ps1'))
 ```
-### 2.1. Mainstream Software
-- **Browsers**: I recommend Brave (or Edge or Firefox).  Remember to change your sync settings to import your passwords, bookmarks...ect. use two browsers: one for work and the other for personal use on your work computer.
+### 1.2.1. Web Browsers:
+- I recommend Brave (or Edge or Firefox).  Remember to change your sync settings to import your passwords, bookmarks...ect. use two browsers: one for work and the other for personal use on your work computer.
    - [browser_extensions.md](browser_extensions.md): useful extensions for productivity & security
 - [browser_extensions.md](browser_extensions.md): useful extensions for productivity & security
+
+
+- **Communication**:
 - **Agenda & Mail**: Google Calendar, Gmail
    - create an app shortcut with brave & add them to the taskbar it will act like an app in windows, and activate the notifications.
    - You can change the theme and prioritize stuff like notifications (all new emails), signature...etc.
@@ -83,21 +89,68 @@ iex ((New-Object System.Net.WebClient).DownloadString('https://raw.githubusercon
 - **Online Storage**: Google Drive (15gb), Mega Drive (50GB) ...ect. Use these Drives to store non-personal Data! It's better to have an NAS or an external HDD to store your personal data.
 - **Microsoft Office 2021** Buy it or buy a retail key for 1$.
 - **PDF editing** Adobe acrobat (paid) or Sejda(free)(3 free tasks per hour): https://www.sejda.com/ (do not download the desktop app)
-- **Tera copy**
-- **Notion**
-- **AnyDesk** (portable + enable password) : access your computer from anywhere
-- Bing wallpaper: https://www.microsoft.com/en-us/bing/bing-wallpaper?SilentAuth=1&wa=wsignin1.0
-- **Audio** : ear trumpet
+
 - **Nvidia Driver**: Geforce Experience (no need for cuda if you code using WSL)
 - **Screen recording**: Screen recorder: OBS or native windows screen recorder `⊞ + G` or `⊞ + alt + R`
 - **Screenshot**: ShareX. Screen capturing with regions and GIF recording, use `ctrl + print` (you can also import your settings, follow this [link](https://techunwrapped.com/can-i-take-my-sharex-capture-settings-to-another-pc/))
 - **Streaming services**: Netflix, Prime in Windows store and browser. Browser is better in terms of stability, lists, content and vpn use. On the other hand, Netflix from the store app and Netflix on Edge browser  can handle 7.1 and 4k streaming. To add Windows apps downloaded from windows store in the taskbar or the desktop :Press Windows key + R then enter shell:appsfolder then drag and drop .
-- **other apps** :
-   - Privacy apps: O&O ShutUp 10: privacy control windows
-   - WinAero Tweaker: Customize the Windows context menu & other stuff
    - DS4Windows: make playstation controllers work on PC: https://github.com/Ryochan7/DS4Windows/releases
 
-### 2.2. UI/UX Software
+### 1.2.2. Messaging
+- Facebook Messenger, Discord, WhatsApp, Viber, Telegram, Snapchat, Instagram
+
+### 1.2.3. Meetings and Video Conferences
+- Zoom, Microsoft Teams, Google Meet, Discord
+
+### 1.2.4. Media, Music, and Entertainment:
+- Video player :VideoLAN VLC
+- Streaming Services: Stremio (to replace Netflix, Prime Video, Disney+, Spotify, Apple Music). Check my personal settings [here](../shortcuts_and_apps_setup.md#112-streamio-streaming-on-all-platforms)
+
+### 1.2.5. 2.5 Image & Video Editing:
+- Live-streaming: OBS Studio
+- Video editing: Creative Cloud (Adobe première pro), CapCut, Microsoft Clipchamp, Canva
+- Image editing: Adobe Photoshop or free alternative [Photopea](https://www.photopea.com/)
+
+### 1.2.6. Documents, Drives & Editing:
+- Drives: Google Drive, Microsoft OneDrive, iCloud,
+- Files explorer: Files (Check my personal settings [here](../shortcuts_and_apps_setup.md#19-files))
+- Files editing: Microsoft 365, Adobe Acrobat Reader DC, Office 2021, Sejda (3 free tasks per hour)
+
+### 1.2.7. Gaming:
+- Games launcher: Valve Steam, Epic Games Launcher, Nvidia GeForce Experience, Ubisoft Connect, SideQuestVR, Oculus, Xbox Game Pass, EA Desktop
+- Game streaming: Parsec, Nvidia GeForce Now
+- Game recording: OBS Studio
+- Game utilities : DS4Windows (Playstation controllers on PC)
+### 1.2.8. Security & Privacy
+- VPN : ProtonVPN or NordVPN
+- qBittorrent, Ookla Speedtest
+- Remote Desktop: AnyDesk
+
+### 1.2.9. Utilities
+- Audio : EarTrumpet
+- Screenshot : ShareX
+- Desktop enhancements :
+  - Microsoft Bing Wallpaper. Change your wallpaper every day with Bing's wallpaper.
+  - GlazeWM (tiling window manager). Check my personal settings [here](../shortcuts_and_apps_setup.md#13-glazewm-windows-only)
+  - Wintoys
+  - Microsoft PowerToys. My personal shortcuts & tips & settings for this app [here](../shortcuts_and_apps_setup.md#14-powertoys-windows-only)
+  - DisplayFusion. Check my personal settings [here](../shortcuts_and_apps_setup.md#18-displayfusion-windows-only--paid)
+  - Revo Uninstaller
+  - HWiNFO (Link to my settings [here](HWINFO_settings.reg)
+
+### 1.2.10. Development & Programming
+- WSL (Windows Subsystem for Linux) with Ubuntu 22.04 LTS. Check the WSL section below.
+- Microsoft Windows Terminal: Always use Windows terminal. It contains all the terminals in one place (ubuntu, powershell, wsl, cmd...ect). You can right-click on any folder to open it.
+  - My personal shortcuts & tips & settings for this app [here](../shortcuts_and_apps_setup.md#15-windows-terminal-windows-only)
+- JetBrains PyCharm (Community and Professional), IntelliJ IDEA, Webstorm, WriterSide. Check my personal settings [here](../shortcuts_and_apps_setup.md#110-pycharm-all-platforms)
+- Docker Desktop: Requires WSL (see the WSL section). You can start, stop, delete containers easily, access & edit files right inside the container without the need of a terminal.
+- Sublime Text 4. Check my personal settings [here](../shortcuts_and_apps_setup.md#16-sublime-text-4-all-platforms)
+- Visual Studio Code
+- Obsidian. Link to my settings [here](../shortcuts_and_apps_setup.md#17-obsidian-all-platforms)
+- Notion
+- Game development: Unity, Unreal Engine, Blender
+
+### 1.2.11. UI/UX Software
 - Windows UI/UX Tips:
    - Hide the Windows taskbar (right-click on the taskbar -> taskbar settings-> taskbar behavior (at the bottom) -> automatically hide the taskbar).
    - Pin some folders and drivers, Recycle Bin in the file explorer. Fast browsing: right-click on the file explorer in the taskbar to show the shortcut to the pinned folders.
@@ -108,45 +161,18 @@ iex ((New-Object System.Net.WebClient).DownloadString('https://raw.githubusercon
    - Remove unnecessary programs, unnecessary icons from the start menu and add others like Maps, meteo & calendar
    - Deactivate startup programs that you don't need.
    - Always use the Windows search bar to search for functionalities, settings, apps, files, folders, and more. Even the deep settings are accessible from the search bar.
-   - Change the display settings if you want to adjust the refresh rate, resolution etc.. (windows + p) -> display settings
-   - Disconnect/extend/ duplicate a monitor if you have multiple ones (windows + p) -> display settings -> select the monitor monitor -> next to identify, select the right option.
-   - Remember, each monitor configuration requires its own settings adjustments. Here's how it works:
-      - If you have one monitor and customize the refresh rate, then you moved to two monitors, you need to adjust the refresh rate for this new configuration. Next time when you switch between a single monitor and a dual monitor, Windows will remember your settings for both configurations.
-      - If you switch to three monitors, you need to customize the settings (like the refresh rate) for each one for this new configuration (triple monitor settings),
-      - When you return to the two-monitor/ single monitor setup, Windows will remember your previous settings, so you won't need to change them again.
-- PowerToys:
-  - Download [Windows store](https://apps.microsoft.com/detail/XP89DCGQ3K6VLD?hl). [Docs](https://learn.microsoft.com/en-us/windows/powertoys/run#features)
-    - My personal shortcuts & tips & settings for this app [here](../shortcuts_and_apps_setup.md#1-3-powertoys)
-- GlazeWM: GlazeWM is a tiling window manager for Windows inspired by i3 and Polybar.
-  - Download [GlazeWM](https://github.com/glazerdesktop/GlazeWM/releases). [Docs](https://github.com/glazerdesktop/GlazeWM)
-  - My personal shortcuts & tips & settings for this app [here](../shortcuts_and_apps_setup.md#1-2-glazewm)
-- Files: Replace the Windows File Explorer. Manage all your files with increased productivity. Work across multiple folders with tabs and so much more.
-  - Download [Files](https://files.community/). There are two versions: direct installer (free) & Microsoft Store (paid)
-  - Replace Windows File explorer with Files: [link](https://files.community/docs/configuring/replace-file-explorer/)
-  - You can import my settings: [link](Files_3.0.15.0.zip). Open Files -> Settings -> advanced -> import settings
-- DisplayFusion (paid):
-  - use the Steam version (it can be used on multiple computers with the same steam account)
-  - it adds a lot of features to Windows monitor settings.
-  - There are four apps available after the installation. The main ones are: DisplayFusion and "monitor settings displayfusion"
-  -
-### 2.3. Dev Software & Websites
-#### 2.3.1. PyCharm:
-- I prefer to use PyCharm (the Pro version is free for students)
-- My personal shortcuts & tips & settings for this app [here](../shortcuts_and_apps_setup.md#1-5-pycharm)
-- after the installation, you can use the "DisplayFusion" and "Monitor configuration DisplayFusion"
-#### 2.3.2. Windows Terminal
-- Always use Windows terminal. It contains all the terminals in one place (ubuntu, powershell, wsl, cmd...ect). You can right-click on any folder to open it.
-  - My personal shortcuts & tips & settings for this app [here](../shortcuts_and_apps_setup.md#1-4-windows-terminal)
+   - You can use PowerToys to search for files, folders, and more. It's faster than the Windows search bar but does not contain deep settings.
+   - Monitor & displays :
+     - Change the display settings if you want to adjust the refresh rate, resolution, etc.. (windows + p) -> display settings
+     - Disconnect/extend/duplicate a monitor if you have multiple ones (windows + p) -> display settings -> select the monitor -> next to identify, select the right option. Or use DisplayFusion (paid).
+     - Remember, each monitor configuration requires its own settings adjustments. Here's how it works:
+        - If you have one monitor and customize the refresh rate, then you moved to two monitors, you need to adjust the refresh rate for this new configuration. Next time when you switch between a single monitor and a dual monitor, Windows will remember your settings for both configurations.
+        - If you switch to three monitors, you need to customize the settings (like the refresh rate) for each one for this new configuration (triple monitor settings),
+        - When you return to the two-monitor/ single monitor setup, Windows will remember your previous settings, so you won't need to change them again.
 
-#### 2.3.3. Docker Desktop
-Requires WSL (see the WSL section). You can start, stop, delete containers easily, access & edit files right inside the container without the need of a terminal.
 
-#### 2.3.4. Sublime Text
-- Extremely lightweight.
-- (recommended) check the CheatSheets online.
-- (optional) Run from CLI: add it to your path and run `subl` to open a file.
 
-#### 2.3.5. Other apps, websites & tips
+Other apps, websites & tips : (DEPRECATED)
 - **Pycharm Jupyter Notebook**: Use the one provided in Pycharm. It provides better autocomplete.
 - **Free Cloud GPU ** Google Colab/Kaggle you can either put your git repositories inside Google Drive to use them in colab, or git clone inside colab.
 - **Filezilla**: for SFTP (work with a private key: add it in edit/connection/sftp or use pageant)
@@ -157,7 +183,7 @@ Requires WSL (see the WSL section). You can start, stop, delete containers easil
 - Overleaf: https://www.overleaf.com/
 - [jupyter autocomplete](https://github.com/krassowski/jupyterlab-lsp#installation)
 
-## 3. Coding using Linux (WSL) inside Windows
+## 1.3. Coding using Linux (WSL) inside Windows
 The most amazing thing about WSL (WSL2.0 exactly) is: You can run Linux in Windows without the need of a virtual machine.
 - It's a full Linux kernel running on Windows.
 - You can install packages directly on Linux
@@ -167,8 +193,8 @@ The most amazing thing about WSL (WSL2.0 exactly) is: You can run Linux in Windo
 - Do not code in both OS, use, for example, pycharm or vscode on windows with a conda environment installed on WSL. The best thing is to combine the power of Windows with WSL.
 
 
-### 3.1. Install WSL:
-- Automatic installation of WSL available with this [command](#2-software)
+### 1.3.1. Install WSL:
+- Automatic installation of WSL available with this [command](#1-2-software)
 - Or manual installation: Run this command in PowerShell ``` wsl --install ```
 
 - Restart your computer
@@ -192,7 +218,7 @@ systemd=true
 - If you don't have an SSH key, generate a new SSH key using: `ssh-keygen -t rsa` inside linux (when prompted, you can enter an empty password).
 - Jump to the next section to configure your WSL /Ubuntu.
 
-### 3.2. Linux/WSL Setup - terminal, shell, Miniconda, CUDA & More:
+### 1.3.2. Linux/WSL Setup - terminal, shell, Miniconda, CUDA & More:
 After installing WSL, you have now ubuntu running inside windows.
 Follow these guides containing an automated script to customize your terminal,
 shell, install Miniconda, CUDA, and more:
@@ -202,7 +228,7 @@ shell, install Miniconda, CUDA, and more:
 - [4. Python package example](../unix_workflow/package_example)
 
 
-### 3.3. WSL2 Utilities, Tips & Tricks :
+### 1.3.3. WSL2 Utilities, Tips & Tricks :
 - Take a look at [awesome-wsl](https://github.com/sirredbeard/awesome-wsl)
 - A surprising number of Linux GUI apps can run on WSL. GUI applications are officially supported on WSL2 and referred to as [WSLg](https://github.com/microsoft/wslg)(No installation required).
 - [Windows Hello on WSL]( https://github.com/nullpo-head/WSL-Hello-sudo)
@@ -229,17 +255,17 @@ wsl --setdefault <name_of_your_distro>
  - (pycharm) Add WSL conda interpreter in Pycharm (add interpreter -> WSL -> conda) and select the global conda: `/home/amine/miniconda3/bin/conda`. Then click on load environments, and it will automatically detect all the conda envs.
 
 
-### 3.4. backup and restore WSL
+### 1.3.4. backup and restore WSL
 You can export wsl image after finishing all the steps to save it in case you move to a new computer :
    - wsl --terminate ubuntu
    - wsl --shutdown
    - wsl --export Ubuntu E:\ubuntu.tar
    - [source 1](https://www.xda-developers.com/how-back-up-restore-wsl/)
 
-### 3.5. Uninstall WSL:
+### 1.3.5. Uninstall WSL:
 Uninstall all distributions & WSL from the control panel & open Windows Features, then turn on (check) Windows Subsystem for Linux. Restart your computer.
 
-## 4. More (deprecated)
+## 1.4. More (deprecated)
 - Add more Desktop icons (PC, Downloads...): Personalization->themes->desktop icon settings
 - Use Quiet Hours and add only the applications that you want them to send you a notification, (Brave will still send you notifications to get BAT, but it will never appear)
  - **Windows partition**: use the window partition integrated software to create, delete or format partitions

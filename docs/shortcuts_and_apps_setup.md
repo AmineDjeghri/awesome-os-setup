@@ -80,9 +80,24 @@ shortcuts: You can read more about the shortcuts [here](https://github.com/glaze
   -  The source control panel can be found on the left panel. Maybe need to change the size of the left panel to view it
   -  if you face a problem with dubious ownership of repository, run this command `git config --global --add safe.directory '*'`
 
-## 1.8. PyCharm (All platforms)
+## 1.8. DisplayFusion (Windows only & paid)
+- DisplayFusion is a program that will help you to manage your multiple monitors. It allows you to create different profiles for your monitor setups, such as single, dual, or triple monitors. You can configure specific applications to always open on designated monitors within each profile. With just one click, you can switch between these profiles, and DisplayFusion will automatically rearrange your windows according to the rules you set. This makes it easy to adapt your workspace to different scenarios, whether you're working with one monitor or multiple monitors.
+- Link to my settings containing different profile for 1, 2, 3 and TV settings. [here](windows_workflow/DisplayFusion Backup.reg)
+  - use the Steam version (it can be used on multiple computers with the same steam account)
+  - it adds a lot of features to Windows monitor settings.
+  - There are four apps available after the installation. The main ones are: DisplayFusion and "monitor settings displayfusion"
 
-### 1.8.1. Tips & tricks
+## 1.9. Files
+- Files: Replace the Windows File Explorer. Manage all your files with increased productivity. Work across multiple folders with tabs and so much more.
+  - Download [Files](https://files.community/). There are two versions: direct installer (free) & Microsoft Store (paid)
+  - Replace Windows File explorer with Files: [link](https://files.community/docs/configuring/replace-file-explorer/)
+  - You can import my settings: [link](Files_3.0.15.0.zip). Open Files -> Settings -> advanced -> import settings
+
+## 1.10. PyCharm (All platforms)
+- I prefer to use PyCharm & other Intellij products like WriterSide...(the Pro version is free for students)
+- My personal shortcuts & tips & settings for this app [here](../shortcuts_and_apps_setup.md#1-5-pycharm)
+
+### 1.10.1. Tips & tricks
 - I've been using PyCharm (professional edition) for more than 3 years now, even if I used VSCode for 2 years before that, the Intellij suite is just amazing. Intellij suite with all the plugins for students is completely free.
 - If you are on Windows, use pycharm with WSL.
 - Sync pycharm settings : https://www.jetbrains.com/help/pycharm/sharing-your-ide-settings.html#IDE_settings_sync
@@ -92,7 +107,7 @@ shortcuts: You can read more about the shortcuts [here](https://github.com/glaze
 - Use the debug function when needed.
 - Every time you start a project, edit the configuration template of python and python tests(autodetect and pytest) to select a default working directory for all your scripts. This will prevent you from having problems with working directory location when running from the terminal and pycharm.
 - You can Run pytest just by right-clicking on a function bloc, file, or folder!
-- Git Clone : You can directly clone a repository from your git accounts by going to the Menu bar | VCS | Get from Version Control | GitHub | and select the right repository.
+- Git Clone: You can directly clone a repository from your git accounts by going to the Menu bar | VCS | Get from Version Control | GitHub | and select the right repository.
 - Commits : [doc](https://www.jetbrains.com/help/pycharm/log-tab.html)
   - pre-commit hooks: If you use conda as an interpreter in pycharm, you need to install pre-commit with pip in the environment that you are using. After the installation, see in the commit options (wheel button) next to the message if `Run git hooks` is there. If it isn't, then restart pycharm.
   - When you write in your terminal: `pip list | grep pre-commit` you should see the package. Running `pre-commit --version` should also work.
@@ -117,7 +132,7 @@ shortcuts: You can read more about the shortcuts [here](https://github.com/glaze
 - If the plugin Table of contents doesn't work on a Markdown file, create a small table with the title & two`<!-- TOC -->`, it should detect it.
 - Pycharm has fuzzy search when creating a file. For example, 'alt+p' then 'alt+ins' then 'pf' to create a python file
 
-### 1.8.2. Personal pycharm shortcuts
+### 1.10.2. Personal pycharm shortcuts
 Official[Link to Cheatsheet](https://resources.jetbrains.com/storage/products/pycharm/docs/PyCharm_ReferenceCard.pdf)
 
 Some of them are re-mapped :
@@ -183,13 +198,13 @@ Some of them are re-mapped :
 | previous word                                    | Ctrl+Left                                    |                                                                                                                    |
 | jump to line                                     | ctrl+g                                       |                                                                                                                    |
 
-### 1.8.3. Python remote interpreter (SSH /WSL)
+### 1.10.3. Python remote interpreter (SSH /WSL)
 - add a remote python interpreter: usually found with `which python` on the remote server or WSL.
 - PyCharm envs: You can clean out old PyCharm interpreters that are no longer associated with a project see the image [here](https://github.com/AmineDjeghri/BetterWindowsUX/blob/master/pycharm_interpreters.PNG) .
 - This gives you a listing where you can get rid of old virtualenvs that PyCharm thinks are still around
 
 
-### 1.8.4. Pycharm remote deployment
+### 1.10.4. Pycharm remote deployment
 WARNING: project folder needs to be on windows and not WSL to use the remote ssh. Do not host folders outside WSL if you are not using a remote interpreter, there are  [WSL perforamance issues](https://github.com/microsoft/WSL/issues/4197?notification_referrer_id=MDE4Ok5vdGlmaWNhdGlvblRocmVhZDUyMzA5ODA3MjozMjcxNTkxMw%3D%3D#issuecomment-1727108838))
 
 Defining a server as default:
@@ -204,7 +219,7 @@ Open the deployment Options (Settings/Preferences | Deployment | Options or Tool
 In the main menu, select Tools | Deployment | Automatic upload. Note that automatic upload in this case is performed in the Always mode.
 
 
-### 1.8.5. Remote SSH for ReactJS
+### 1.10.5. Remote SSH for ReactJS
 - First, make sure that in the server, the React project is running when you run `yarn dev run`
 - In pycharm, go to configuration and create a new config for npm
 - select package.json from the local folder
@@ -214,10 +229,10 @@ In the main menu, select Tools | Deployment | Automatic upload. Note that automa
 - package manager: yarn, for example
 - environment: `PATH=` put the result of the command `echo $PATH`
 
-## 1.9. HWINFO:
+## 1.11. HWINFO:
 - export file: regedit -> ``Ordinateur\HKEY_CURRENT_USER\Software\HWiNFO64``
 - import settings: double-click on the downloaded file to restore settings. Check mine [here](windows_workflow/HWINFO_settings.reg)
-## 1.10. Google colab:
+## 1.12. Google colab:
 - Add this code to prevent it from disconnecting. [source](https://colab.research.google.com/github/oobabooga/AI-Notebooks/blob/main/Colab-TextGen-GPU.ipynb#scrollTo=f7TVVj_z4flw)
 ```py
 #@title 1. Keep this tab alive to prevent Colab from disconnecting you { display-mode: "form" }
@@ -226,19 +241,19 @@ In the main menu, select Tools | Deployment | Automatic upload. Note that automa
 %%html
 <audio src="https://oobabooga.github.io/silence.m4a" controls>
 ```
-## 1.11. Powerpoint:
+## 1.13. Powerpoint:
 **Turn a PDF to black and white**
 Convert to pptx (IlovePDF)
 Open with PowerPoint (Office 2016)
 (If you want to remove the background: view -> Slide Master: click on the first one then click on the background and delete, return by closing with the red cross: close the Master view)
 Print color and select full black and white
 
-## 1.12. Streamio (Streaming on all platforms)
+## 1.14. Streamio (Streaming on all platforms)
 - Stremio is a video streaming application that allows you to watch and organize video content from different services, including movies, series, live TV and video channels. The content is aggregated by an addon system providing streams from various sources. And with its commitment to security, Stremio is the ultimate choice for a worry-free, high-quality streaming experience.
 - You can either use your favorite platforms to watch movies or series or use torrent without any risk.
 - Stremio is available on all platforms: Windows, Mac, Linux, Android, iOS, Android TV & Web.
 
-### Installation:
+### 1.14.1. Installation:
 - Always use the desktop app to install addons & configure them, settings will be synchronized between all your devices
 - (Update July 2024): You need both `stremio` and `stremio service` on PC to make it work perfectly.
 - Setup : [Tutorial](https://www.reddit.com/r/StremioAddons/comments/17833ms/stremio_all_you_need_to_know/)
