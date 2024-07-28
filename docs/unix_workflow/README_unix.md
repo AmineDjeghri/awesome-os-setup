@@ -4,8 +4,10 @@
 
 A set of configurations, dotfiles and a script to automatically set up a powerful terminal & shell utilities(zsh, fzf...), themes like Powerlvl10k, Conda, GPU drivers, and more on Linux/WSL2.
 
-I developed this tool to streamline the setup process when working on various servers, such as AWS instances and not having to install everything manually every time.
-While it's particularly useful for Python developers, feel free to customize it for your specific needs. The script is in bash (might move to Ansible in the future).
+I developed this tool to streamline the setup process when working on various servers,
+such as AWS & Azure VM instances and not having to install everything manually every time.
+While it's particularly useful for Python developers, feel free to customize it for your specific needs.
+The script is in bash (might move to Ansible in the future).
 
 
 ## Step 1 - Terminal customization :

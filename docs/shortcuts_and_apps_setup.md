@@ -92,6 +92,7 @@ shortcuts: You can read more about the shortcuts [here](https://github.com/glaze
 - Use the debug function when needed.
 - Every time you start a project, edit the configuration template of python and python tests(autodetect and pytest) to select a default working directory for all your scripts. This will prevent you from having problems with working directory location when running from the terminal and pycharm.
 - You can Run pytest just by right-clicking on a function bloc, file, or folder!
+- Git Clone : You can directly clone a repository from your git accounts by going to the Menu bar | VCS | Get from Version Control | GitHub | and select the right repository.
 - Commits : [doc](https://www.jetbrains.com/help/pycharm/log-tab.html)
   - pre-commit hooks: If you use conda as an interpreter in pycharm, you need to install pre-commit with pip in the environment that you are using. After the installation, see in the commit options (wheel button) next to the message if `Run git hooks` is there. If it isn't, then restart pycharm.
   - When you write in your terminal: `pip list | grep pre-commit` you should see the package. Running `pre-commit --version` should also work.

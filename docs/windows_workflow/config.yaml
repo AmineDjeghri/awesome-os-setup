@@ -109,21 +109,29 @@ workspaces:
     display_name: "1.🌐 Browser"
     # Optionally prevent workspace from being deactivated when empty.
     keep_alive: true
+    bind_to_monitor: 1
   - name: "2"
     display_name: "2.💻Pycharm"
     keep_alive: true
+    # Optionally force the workspace on a specific monitor if it exists. Use the monitor's number
+    # as shown in the Windows display settings (eg. 1, 2, 3...).
+    bind_to_monitor: 2
   - name: "3"
     display_name: "3.📂Explorer"
     keep_alive: true
+    bind_to_monitor: 1
   - name: "4"
     display_name: "4.📝Editors"
     keep_alive: true
+    bind_to_monitor: 2
   - name: "5"
     display_name: "5.💬Social"
     keep_alive: true
+    bind_to_monitor: 1
   - name: "6"
     display_name: "6.🎮Gaming"
     keep_alive: true
+    bind_to_monitor: 1
   - name: "7"
   - name: "8"
   - name: "9"

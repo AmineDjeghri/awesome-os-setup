@@ -110,7 +110,7 @@ iex ((New-Object System.Net.WebClient).DownloadString('https://raw.githubusercon
    - Always use the Windows search bar to search for functionalities, settings, apps, files, folders, and more. Even the deep settings are accessible from the search bar.
    - Change the display settings if you want to adjust the refresh rate, resolution etc.. (windows + p) -> display settings
    - Disconnect/extend/ duplicate a monitor if you have multiple ones (windows + p) -> display settings -> select the monitor monitor -> next to identify, select the right option.
-   -Remember, each monitor configuration requires its own settings adjustments. Here's how it works:
+   - Remember, each monitor configuration requires its own settings adjustments. Here's how it works:
       - If you have one monitor and customize the refresh rate, then you moved to two monitors, you need to adjust the refresh rate for this new configuration. Next time when you switch between a single monitor and a dual monitor, Windows will remember your settings for both configurations.
       - If you switch to three monitors, you need to customize the settings (like the refresh rate) for each one for this new configuration (triple monitor settings),
       - When you return to the two-monitor/ single monitor setup, Windows will remember your previous settings, so you won't need to change them again.
@@ -126,8 +126,9 @@ iex ((New-Object System.Net.WebClient).DownloadString('https://raw.githubusercon
   - You can import my settings: [link](Files_3.0.15.0.zip). Open Files -> Settings -> advanced -> import settings
 - DisplayFusion (paid):
   - use the Steam version (it can be used on multiple computers with the same steam account)
-  - it adds lot of features to windows monitor settings.
-  - There are 4 apps available after the installation . The main ones are : DisplayFusion and "monitor settings displayfusion"
+  - it adds a lot of features to Windows monitor settings.
+  - There are four apps available after the installation. The main ones are: DisplayFusion and "monitor settings displayfusion"
+  -
 ### 2.3. Dev Software & Websites
 #### 2.3.1. PyCharm:
 - I prefer to use PyCharm (the Pro version is free for students)
@@ -168,7 +169,7 @@ The most amazing thing about WSL (WSL2.0 exactly) is: You can run Linux in Windo
 
 ### 3.1. Install WSL:
 - Automatic installation of WSL available with this [command](#2-software)
-- Or manual installation: Run this command in powershell ``` wsl --install ```
+- Or manual installation: Run this command in PowerShell ``` wsl --install ```
 
 - Restart your computer
 - When installing WSL, it comes with Ubuntu (you can always install other distibutions from the microsoft store)
@@ -201,7 +202,12 @@ shell, install Miniconda, CUDA, and more:
 - [4. Python package example](../unix_workflow/package_example)
 
 
-### 3.3. WSL2 Tips & Tricks :
+### 3.3. WSL2 Utilities, Tips & Tricks :
+- Take a look at [awesome-wsl](https://github.com/sirredbeard/awesome-wsl)
+- A surprising number of Linux GUI apps can run on WSL. GUI applications are officially supported on WSL2 and referred to as [WSLg](https://github.com/microsoft/wslg)(No installation required).
+- [Windows Hello on WSL]( https://github.com/nullpo-head/WSL-Hello-sudo)
+-
+
 - Find WSL path: `\\wsl$\Ubuntu\home` or `\\wsl$\Ubuntu` then ping it in Windows Explorer's sidebar.
 - You can use `wslpath` command to convert a Windows path to wsl path: `wslpath 'C:\Users\AmineDjeghri\Desktop\'`
 - Folder size for current directory: `du -h`, `du -h | sort -h`. For specific directory: `du -h /folder`
@@ -221,6 +227,7 @@ wsl --setdefault <name_of_your_distro>
  - Now, go to desktop and right-click to open a Windows terminal, run 'wsl'; you should see that ubuntu started from the current location.
  - (pycharm) Use WSL/ubuntu as the default terminal in pycharm: `settings -> tools -> terminal` and put in a shell path: `ubuntu run`
  - (pycharm) Add WSL conda interpreter in Pycharm (add interpreter -> WSL -> conda) and select the global conda: `/home/amine/miniconda3/bin/conda`. Then click on load environments, and it will automatically detect all the conda envs.
+
 
 ### 3.4. backup and restore WSL
 You can export wsl image after finishing all the steps to save it in case you move to a new computer :

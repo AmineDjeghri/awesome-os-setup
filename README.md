@@ -64,6 +64,7 @@ Read more about it here:
 WSL2 enables users to run Linux applications and use command-line tools natively on their Windows machines.
 This integration allows users
 to enjoy the familiarity of Windows while simultaneously harnessing the power and flexibility of Linux.
+Also, a surprising number of Linux GUI apps can run on WSL. GUI applications are officially supported on WSL2 and referred to as [WSLg](https://github.com/microsoft/wslg)(No installation required).
 
 |              | macOS                                                                         | Linux                                                                      | Windows with WSL                                                                                                                                                                                                                          |
 |--------------|-------------------------------------------------------------------------------|----------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|

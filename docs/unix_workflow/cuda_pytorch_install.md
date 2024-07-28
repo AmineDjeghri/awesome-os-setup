@@ -96,5 +96,5 @@ if device.type == 'cuda':
     print('Cached:   ', round(torch.cuda.memory_reserved(0)/1024**3,1), 'GB')
 ```
 
-- When utilizing pre-commit hooks, ensure to exclude the file requirements-cuda.txt to prevent sorting the packages.
+- When using pre-commit hooks, ensure to exclude the file requirements-cuda.txt to prevent sorting the packages.
 - Prioritize the installation of applications using pip; if pip is not applicable, resort to conda; and if conda is not an option, utilize apt-get. For instance, when installing Tesseract through conda, it is preferable to install it within the conda environment rather than globally using apt-get.
