@@ -132,6 +132,8 @@ shortcuts: You can read more about the shortcuts [here](https://github.com/glaze
 - If the plugin Table of contents doesn't work on a Markdown file, create a small table with the title & two`<!-- TOC -->`, it should detect it.
 - Pycharm has fuzzy search when creating a file. For example, 'alt+p' then 'alt+ins' then 'pf' to create a python file
 - (To confirm) Pycharm Jupyter Notebook: Use the one provided in Pycharm. It provides better autocomplete.
+- WriterSide issue : files eit
+
 ### 1.10.2. Personal pycharm shortcuts
 Official[Link to Cheatsheet](https://resources.jetbrains.com/storage/products/pycharm/docs/PyCharm_ReferenceCard.pdf)
 

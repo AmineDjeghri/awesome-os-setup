@@ -299,8 +299,8 @@ shell, install Miniconda, CUDA, and more:
 - [1. Linux Setup Guide](../unix_workflow/README_unix.md): A set of configurations, dotfiles and a script to
   automatically set up a powerful terminal & shell utilities(zsh, fzf...), themes like Powerlvl10k, Conda, GPU drivers,
   and more on Linux/WSL2.
-- [2. Windows, WSL & apps settings/tips](../shortcuts_and_apps_setup.md)
-- [3. Cuda & Pytorch installation inside conda](../unix_workflow/cuda_pytorch_install)
+- [2. Windows, WSL & apps settings/tips](shortcuts_and_apps_setup.md)
+- [3. Cuda & Pytorch installation inside conda](../unix_workflow/cuda_pytorch_install.md)
 - [4. Python package example](../unix_workflow/package_example)
 
 ### 1.3.3. WSL2 Utilities, Tips & Tricks :
