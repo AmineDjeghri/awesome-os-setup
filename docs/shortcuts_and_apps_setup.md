@@ -101,7 +101,7 @@ shortcuts: You can read more about the shortcuts [here](https://github.com/glaze
 - I've been using PyCharm (professional edition) for more than 3 years now, even if I used VSCode for 2 years before that, the Intellij suite is just amazing. Intellij suite with all the plugins for students is completely free.
 - If you are on Windows, use pycharm with WSL.
 - Sync pycharm settings : https://www.jetbrains.com/help/pycharm/sharing-your-ide-settings.html#IDE_settings_sync
-- You can save your current layout (all plugins positions) by going to Window | Layouts | Save Current Layout as New and switch to it from new projects by Window | Layouts | <name of your layout> | Apply.
+- You can save your current layout (all plugin positions) by going to Window | Layouts | Save Current Layout as New and switch to it from new projects by Window | Layouts | <name of your layout> | Apply.
 - Change the source folder for imports (https://stackoverflow.com/a/34304165)
 - I always use the run button instead of the terminal to run my files (specifically fastapi or streamlit) so pycharm can highlight the errors and make them easily clickable.
 - Use the debug function when needed.
@@ -131,7 +131,7 @@ shortcuts: You can read more about the shortcuts [here](https://github.com/glaze
 - PyCharm has keyboard shortcuts for most of its commands related to editing, navigation, refactoring, debugging, and other tasks. Memorizing these hotkeys can help you stay more productive by keeping your hands on the keyboard. [Link to Cheatsheet](https://resources.jetbrains.com/storage/products/pycharm/docs/PyCharm_ReferenceCard.pdf)
 - If the plugin Table of contents doesn't work on a Markdown file, create a small table with the title & two`<!-- TOC -->`, it should detect it.
 - Pycharm has fuzzy search when creating a file. For example, 'alt+p' then 'alt+ins' then 'pf' to create a python file
-
+- (To confirm) Pycharm Jupyter Notebook: Use the one provided in Pycharm. It provides better autocomplete.
 ### 1.10.2. Personal pycharm shortcuts
 Official[Link to Cheatsheet](https://resources.jetbrains.com/storage/products/pycharm/docs/PyCharm_ReferenceCard.pdf)
 
