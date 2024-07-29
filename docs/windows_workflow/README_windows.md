@@ -256,7 +256,6 @@ machine.
   best thing is to combine the power of Windows with WSL.
 
 ### 1.3.1. Install WSL:
-
 - Automatic installation of WSL available with this [command](#1-2-software)
 - Or manual installation: Run this command in PowerShell ``` wsl --install ```
 

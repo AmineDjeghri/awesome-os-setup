@@ -291,3 +291,5 @@ Print color and select full black and white
     - Chromecast google TV remote: you can use your iPhone or android to remotely control google tv and use your phone's keyboard for example. You need either Google TV app or Goohle home app on you phone. on your google tv, the fezture is disabled by default: you need to go to system-> keyboard -> manage keyboards -> check virtual remote. You can now use your phone to type things rapidely
     - Windows 11 with 4K HDR TV: follow this [tutorial 1](https://www.pcmag.com/how-to/set-up-gaming-pc-on-4k-tv) and [tutorial 2](https://www.pcmag.com/how-to/how-to-play-games-watch-videos-in-hdr-on-windows-10)
   - recommended TV apps for Google TV: Projectivy launcher, stremio, Smart Tube, YouTube atv. update the channels in the projectivy and add stremio there. Also make it the default launcher for your tv.
+
+## WinToys
