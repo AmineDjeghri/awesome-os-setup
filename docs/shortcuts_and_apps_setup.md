@@ -44,6 +44,7 @@ shortcuts: You can read more about the shortcuts [here](https://github.com/glaze
 - Maximize & un-maximize : `alt + f`
 - hide: `alt+m` (use `alt+f` to make it appear again)
 - switch between multiple full-screen apps in the same workspace : `alt + tab`
+- If you are using Citrix Worskpace nad want to only use one monitor, then resize its window by moving a little bit the border before maximizing it (i Know that you can't resize a window if glazewm is running, but this is just to tell citrix that you are in a single monitor). Check [this](https://help-docs.citrix.com/en-us/citrix-workspace-app/windows/multi-monitor-support.html) to understand how dual monitor works on Citrix.
 
 ## 1.4. PowerToys (windows only)
 - Download [Windows store](https://apps.microsoft.com/detail/XP89DCGQ3K6VLD?hl). [Docs](https://learn.microsoft.com/en-us/windows/powertoys/run#features)
