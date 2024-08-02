@@ -271,7 +271,8 @@ Print color and select full black and white
       - [IMDB-Trakt-Syncer](https://github.com/RileyXX/IMDB-Trakt-Syncer)a python app to synchronize IMDB ratings, watchlist... with Trakt both ways (You can use it in WSL2, install Google Chrome in WSL2 first)
 
   Tips :
-  - Use Stremio desktop to configure addons. ALl settings & addons will sync between your devices if you use the same account.
+  - Use Stremio desktop to configure addons. All settings & addons will sync between your devices if you use the same account.
+  - You can use your mobile to configure addons, but you will need to copy the link to the manifest.json and paste it in stremio addon instead of pressing the install button.
   - You can install multiple times addons with different configurations (for example, a Torrentio specific for french audio).
   - Order of a list in Stremio home is determined by the installation order.
   - Sort and filter movies inside a list by clicking on 'see more' on a list.
