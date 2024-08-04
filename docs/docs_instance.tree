@@ -6,12 +6,12 @@
                   name="Awesome OS Setup" start-page="README.md">
 
 
-    <toc-element topic="README.md" toc-title="🏠 1. Home"/>
-    <toc-element topic="README_windows.md" toc-title="🪟 2. Window/WSL setup"/>
-    <toc-element topic="README_unix.md" toc-title="🐧 3. Linux setup"/>
-    <toc-element topic="tv_setup.md" toc-title="📺 4. TV Setup"/>
-    <toc-element topic="apps_configuration_and_shorcuts.md" toc-title="5. Apps Configuration and Shortcuts"/>
-    <toc-element topic="awesome_websites_browser_extensions.md" toc-title="6. Awesome Websites and Browser Extensions"/>
+    <toc-element topic="README.md" toc-title="0- 🏠 Home"/>
+    <toc-element topic="README_windows.md" toc-title="1- 🪟 Window/WSL setup"/>
+    <toc-element topic="README_unix.md" toc-title="2- 🐧Linux setup"/>
+    <toc-element topic="tv_setup.md" toc-title="3- 📺 TV Setup"/>
+    <toc-element topic="apps_configuration_and_shorcuts.md" toc-title="4- Apps Configuration and Shortcuts"/>
+    <toc-element topic="awesome_websites_browser_extensions.md" toc-title="5- Awesome Websites and Browser Extensions"/>
 
 
 </instance-profile>
