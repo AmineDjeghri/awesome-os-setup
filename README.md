@@ -60,7 +60,7 @@ Get started with one command (linux):
 sh -c "$(wget https://raw.githubusercontent.com/AmineDjeghri/awesome-os-setup/main/docs/unix_workflow/setup_linux.sh -O -)"
 ```
 
-### 3. TV setup
+## 3. TV setup
 
 - **My TV setup docs**: Read me about it
   here: [README](docs/tv_setup.md) / [website](https://setup.aminedjeghri.com/tv_setup.html)
