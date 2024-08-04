@@ -37,12 +37,12 @@ One of the best TV OS is Google TV. Here are some reasons why you should conside
 - Windows 11 with 4K HDR TV: follow this [tutorial 1](https://www.pcmag.com/how-to/set-up-gaming-pc-on-4k-tv)
   and [tutorial 2](https://www.pcmag.com/how-to/how-to-play-games-watch-videos-in-hdr-on-windows-10)
 - recommended TV apps for Google TV: Projectivy launcher, stremio, Smart Tube, YouTube atv. update the channels in
-the projectivy and add stremio there. Also make it the default launcher for your tv.
+the Projectivy and add stremio there. Also make it the default launcher for your tv.
 
 ### Best google TV apps:
 - [Stremio](https://www.stremio.com/).
   - You can check my setup guide [here](apps_configuration_and_shorcuts.md#113-streamio-streaming-on-all-platforms)
 - [SmartTube](https://smartyoutubetv.github.io/)
 - [Projectivy Launcher](https://play.google.com/store/apps/details?id=com.spocky.projengmenu&hl=en&pli=1)
-  -  Don't forget to export your settings: https://www.reddit.com/r/Projectivy_Launcher/comments/1cdt00f/tell_me_about_exporting_these_launcher_settings/
+  -  Remember to export your settings: https://www.reddit.com/r/Projectivy_Launcher/comments/1cdt00f/tell_me_about_exporting_these_launcher_settings/
   -  You can create channels in the menu and add stremio, smartube, spotify to the home screen.
