@@ -182,7 +182,7 @@ window_rules:
 
   # 6 gaming
   - command: "move to workspace 6"
-    match_process_name: "steam|Steam|steamwebhelper|Epic|epic|Cyberpunk2077"
+    match_process_name: "steam|Steam|steamwebhelper|Epic|epic|Cyberpunk2077|SelfService|CDViewer"
 
 # binding_modes:
 #   - name: "resize"

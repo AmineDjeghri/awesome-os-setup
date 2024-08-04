@@ -9,4 +9,11 @@
         </variables>
     </build-profile>
 
+    <footer>
+        <copyright>2024 Amine Djeghri</copyright>
+        <social type="twitter" href="https://twitter.com/aminedjeghri"/>
+        <social type="linkedin" href="https://linkedin.com/in/aminedjeghri"/>
+        <link href="https://aminedjeghri.com">Official Website</link>
+    </footer>
+
 </buildprofiles>

@@ -1,4 +1,4 @@
-# 1. Windows & WSL setup
+# Windows 11 & WSL setup
 
 ![Windows WSL Terminal with taskbar](../images/windows_wsl_terminal_taskbar.png)
 ![windows setup_image](../images/windows_setup_image.jpeg)
@@ -9,29 +9,29 @@ You can follow this repository to get a similar setup.
 
 **Table of Contents**
 <!-- TOC -->
-* [1. Windows & WSL setup](#1-windows--wsl-setup)
-  * [1.1. Windows account & configuration](#11-windows-account--configuration)
-    * [1.1.1. Windows account](#111-windows-account)
-    * [1.1.2. Windows configuration](#112-windows-configuration)
-  * [1.2. Software](#12-software)
-    * [1.2.1. Web Browsers:](#121-web-browsers)
-    * [1.2.2. Messaging](#122-messaging)
-    * [1.2.3. Meetings and Video Conferences](#123-meetings-and-video-conferences)
-    * [1.2.4. Media, Music, and Entertainment:](#124-media-music-and-entertainment)
-    * [1.2.5. Image & Video Editing:](#125-image--video-editing)
-    * [1.2.6. Documents, Storage & Editing:](#126-documents-storage--editing)
-    * [1.2.7. Gaming:](#127-gaming)
-    * [1.2.8. Security & Privacy](#128-security--privacy)
-    * [1.2.9. Utilities](#129-utilities)
-    * [1.2.10. Development & Programming](#1210-development--programming)
-    * [1.2.11. UI/UX Software](#1211-uiux-software)
-  * [1.3. Coding using Linux (WSL) inside Windows](#13-coding-using-linux-wsl-inside-windows)
-    * [1.3.1. Install WSL:](#131-install-wsl)
-    * [1.3.2. Linux/WSL Setup - terminal, shell, Miniconda, CUDA & More:](#132-linuxwsl-setup---terminal-shell-miniconda-cuda--more)
-    * [1.3.3. WSL2 Utilities, Tips & Tricks :](#133-wsl2-utilities-tips--tricks-)
-    * [1.3.4. backup and restore WSL](#134-backup-and-restore-wsl)
-    * [1.3.5. Uninstall WSL:](#135-uninstall-wsl)
-  * [1.4. More (deprecated)](#14-more-deprecated)
+* [Windows 11 & WSL setup](#windows-11--wsl-setup)
+  * [1. Windows account & configuration](#1-windows-account--configuration)
+    * [1.1. Windows account](#11-windows-account)
+    * [1.2. Windows configuration](#12-windows-configuration)
+  * [2. Software](#2-software)
+    * [2.1. Web Browsers:](#21-web-browsers)
+    * [2.2. Messaging](#22-messaging)
+    * [2.3. Meetings and Video Conferences](#23-meetings-and-video-conferences)
+    * [2.4. Media, Music, and Entertainment:](#24-media-music-and-entertainment)
+    * [2.5. Image & Video Editing:](#25-image--video-editing)
+    * [2.6. Documents, Storage & Editing:](#26-documents-storage--editing)
+    * [2.7. Gaming:](#27-gaming)
+    * [2.8. Security & Privacy](#28-security--privacy)
+    * [2.9. Utilities](#29-utilities)
+    * [2.10. Development & Programming](#210-development--programming)
+    * [2.11. UI/UX Software](#211-uiux-software)
+  * [3. Coding using Linux (WSL) inside Windows](#3-coding-using-linux-wsl-inside-windows)
+    * [3.1. Install WSL:](#31-install-wsl)
+    * [3.2. Linux/WSL Setup - terminal, shell, Miniconda, CUDA & More:](#32-linuxwsl-setup---terminal-shell-miniconda-cuda--more)
+    * [3.3. WSL2 Utilities, Tips & Tricks :](#33-wsl2-utilities-tips--tricks-)
+    * [3.4. backup and restore WSL](#34-backup-and-restore-wsl)
+    * [3.5. Uninstall WSL:](#35-uninstall-wsl)
+  * [4. More (deprecated)](#4-more-deprecated)
 <!-- TOC -->
 
 Get started with one command (PowerShell):
@@ -40,9 +40,9 @@ Get started with one command (PowerShell):
 iex ((New-Object System.Net.WebClient).DownloadString('https://raw.githubusercontent.com/AmineDjeghri/awesome-os-setup/main/docs/windows_workflow/setup_windows.ps1'))
 ```
 
-## 1.1. Windows account & configuration
+## 1. Windows account & configuration
 
-### 1.1.1. Windows account
+### 1.1. Windows account
 
 1. If you already have a key: activate windows with your key
 2. If you don't have a key, you can buy one for a small price.
@@ -53,27 +53,26 @@ iex ((New-Object System.Net.WebClient).DownloadString('https://raw.githubusercon
     - Deactivate it in Windows terminal by using administrator mode with `slmgr /cpky`
     - Activate it on the new computer using `slmgr /ipk xxxxx-xxxxx-xxxxx-xxxxx-xxxxx`
 
-### 1.1.2. Windows configuration
+### 1.2. Windows configuration
 
 - 🔑 Save your key: Connect windows with your Microsoft/Outlook account to save and link the key to your account
 - 📍 Activate localization on windows (if you want to localize your device)
 - 🔐 Activate bitlocker to encrypt your data (Exists only on Windows pro, education and enterprise edition)
 - 🖥️ When placing an external monitor that runs 144HZ, make sure to activate the `144Hz` in display settings
-- ⚠️ If you're using OneDrive, careful when you sync your Desktop and windows specific folders, you can face some
-  problems. My advice is to avoid syncing windows default folders (like Desktop, Documents). Unsyc everything (Desktop,
+- ⚠️ If you're using OneDrive, careful when you sync your Desktop and Windows specific folders, you can face some
+  problems. My advice is to avoid syncing Windows default folders (like Desktop, Documents). Unsyc everything (Desktop,
   Documents...) Just use OneDrive as a cloud store like Google Drive. If you don't use it, you can uninstall it.
 - 💤 Sleep mode with or without screen
-  lock [here](https://consumer.huawei.com/en/support/content/en-us15592807/#:~:text=Click%20the%20Windows%20icon%20and,Screen%20and%20Sleep%20to%20Never)
+  lock [here](https://consumer.huawei.com/en/support/content/en-us15592807/##:~:text=Click%20the%20Windows%20icon%20and,Screen%20and%20Sleep%20to%20Never)
 - If you have a 3200mhz RAM, and it runs bellow this frequency, activate XMP profile in the BIOS
 - 🎧 if you have bluetooth and audio devices, you can sort them in audio settings -> use as default for both audio &
   communications
 - 🎧 Deactivate lowering communication sounds in advanced audio settings.
-- Full-screen games optimization: uncheck “disable fullscreen optimization” for the .exe. You will get a fast alt tab (
-  only on the latest windows versions). Example: Make your way to the following file location on your desktop: C:
-  \Program Files (x86)\Steam\steamapps\common\Counter-Strike Global Offensive\game. The objective here is to locate the
+- Full-screen games optimization: uncheck “disable fullscreen optimization” for the .exe. You will get a fast alt tab (only on the latest windows versions). Example: Make your way to the following file location on your desktop: C:
+  \Program Files (x86)\Steam\steamapps\common\Counter-Strike Global Offensive\game. The goal here is to locate the
   CS2.exe file.
 
-## 1.2. Software
+## 2. Software
 
 Automatic installation of these apps is available with this command:
 
@@ -81,13 +80,13 @@ Automatic installation of these apps is available with this command:
 iex ((New-Object System.Net.WebClient).DownloadString('https://raw.githubusercontent.com/AmineDjeghri/awesome-os-setup/main/docs/windows_workflow/setup_windows.ps1'))
 ```
 
-### 1.2.1. Web Browsers:
+### 2.1. Web Browsers:
 
 - Brave (or Edge or Firefox). Remember to change your sync settings
   bookmarks...ect. use two browsers: one for work and the other for personal use on your work computer.
-- [browser_extensions.md](browser_extensions.md): useful extensions for productivity & security
+- [browser_extensions.md](awesome_websites_browser_extensions.md): useful extensions for productivity & security
 
-### 1.2.2. Messaging
+### 2.2. Messaging
 
 - **Social networks**:  Facebook Messenger, Discord, WhatsApp, Viber, Telegram, Snapchat, Instagram
 - **Agenda & Mail**: Google Calendar, Gmail
@@ -100,12 +99,12 @@ iex ((New-Object System.Net.WebClient).DownloadString('https://raw.githubusercon
       add brave to 'mail' & 'agenda.' Go to brave://settings/handlers and add gmail and agenda. Open now the gmail
       website and accept brave as the default app.
 
-### 1.2.3. Meetings and Video Conferences
+### 2.3. Meetings and Video Conferences
 
 - Zoom, Microsoft Teams, Google Meet, Discord. Use the browser or the webview version for better performance and less
   memory usage.
 
-### 1.2.4. Media, Music, and Entertainment:
+### 2.4. Media, Music, and Entertainment:
 
 - **Video player** :VideoLAN VLC
 - **Music player**: Spotify, Apple Music
@@ -116,22 +115,22 @@ iex ((New-Object System.Net.WebClient).DownloadString('https://raw.githubusercon
       On the other hand, Netflix from the store app and Netflix on Edge browser can handle 7.1 and 4k
       streaming.
     - Stremio with Debrid (to replace Netflix, Prime Video, Disney+, Spotify, Apple Music).
-      Check my personal settings [here](../shortcuts_and_apps_setup.md#114-streamio-streaming-on-all-platforms)
+      Check my personal settings [here](../apps_configuration_and_shorcuts.md##113-streamio-streaming-on-all-platforms))
 
-### 1.2.5. Image & Video Editing:
+### 2.5. Image & Video Editing:
 
 - **Software recording**: OBS Studio
 - **Video editing**: Creative Cloud (Adobe première pro), CapCut, Microsoft Clipchamp, Canva
 - **Image editing**: Adobe Photoshop or free alternative [Photopea](https://www.photopea.com/)
 
-### 1.2.6. Documents, Storage & Editing:
+### 2.6. Documents, Storage & Editing:
 
 - **Cloud Storage**: Google Drive, Microsoft OneDrive, iCloud, Mega Drive (free 50GB)
-- **Files explorer**: Files (Check my personal settings [here](../shortcuts_and_apps_setup.md#19-files))
+- **Files explorer**: Files (Check my personal settings [here](../apps_configuration_and_shorcuts.md##18-files))
 - **Files editing**: Microsoft 365, Office 2021
 - **PDF Editing**: Adobe Acrobat Reader DC, Sejda (3 free tasks per hour)
 
-### 1.2.7. Gaming:
+### 2.7. Gaming:
 
 - **Games launcher**: Valve Steam, Epic Games Launcher, Nvidia GeForce Experience, Ubisoft Connect, SideQuestVR, Oculus,
   Xbox Game Pass, EA Desktop
@@ -139,14 +138,14 @@ iex ((New-Object System.Net.WebClient).DownloadString('https://raw.githubusercon
 - **Game recording**: OBS Studio or native Windows screen recorder `⊞ + G` or `⊞ + alt + R`
 - **Game utilities**: DS4Windows, Nvidia GeForce Experience (For Nvidia GPU)
 
-### 1.2.8. Security & Privacy
+### 2.8. Security & Privacy
 
 - **VPN** : ProtonVPN or NordVPN
 - **Torrent client**: qBitTorrent
 - **Remote Desktop**: AnyDesk
 - **Antivirus**: Windows defender or Kaspersky Cloud free
 
-### 1.2.9. Utilities
+### 2.9. Utilities
 
 - **Audio** : EarTrumpet
 - **Screenshot**: ShareX : Screen capturing with regions and GIF recording, use `ctrl + print` (you can also import your
@@ -156,7 +155,7 @@ iex ((New-Object System.Net.WebClient).DownloadString('https://raw.githubusercon
 - **Desktop enhancements** :
     - Microsoft Bing Wallpaper. Change your wallpaper every day with Bing's wallpaper.
     - GlazeWM (tiling window manager). Check my personal
-      settings [here](../shortcuts_and_apps_setup.md#13-glazewm-windows-only)
+      settings [here](../apps_configuration_and_shorcuts.md##12-glazewm-windows-only)
     - Wintoys :
         - You can use this app to access easily the most used settings in Windows.
         - Set up, debloat, optimize, repair, and tweak your operating system in a simple, time-saving, yet safe
@@ -164,30 +163,30 @@ iex ((New-Object System.Net.WebClient).DownloadString('https://raw.githubusercon
         - For example, you can use this app to stop and uninstall Windows apps like 'Dev
           Home.'that can't be uninstalled using Windows or using Revo Uninstaller
     - Microsoft PowerToys. My personal shortcuts & tips & settings for this
-      app [here](../shortcuts_and_apps_setup.md#14-powertoys-windows-only)
+      app [here](../apps_configuration_and_shorcuts.md##13-powertoys-windows-only)
     - DisplayFusion. Check my personal
-      settings [here](../shortcuts_and_apps_setup.md#18-displayfusion-windows-only--paid)
+      settings [here](../apps_configuration_and_shorcuts.md##17-displayfusion-windows-only--paid)
     - Revo Uninstaller
     - HWiNFO (Link to my settings [here](HWINFO_settings.reg)
     - CCleaner
 
-### 1.2.10. Development & Programming
+### 2.10. Development & Programming
 
 - WSL (Windows Subsystem for Linux) with Ubuntu 22.04 LTS. Check the WSL section below.
 - Microsoft Windows Terminal: Always use Windows terminal. It contains all the terminals in one place (ubuntu,
   PowerShell, wsl, cmd...ect). You can right-click on any folder to open it.
     - My personal shortcuts & tips & settings for this
-      app [here](../shortcuts_and_apps_setup.md#15-windows-terminal-windows-only)
+      app [here](../apps_configuration_and_shorcuts.md##14-windows-terminal-windows-only)
 - PowerShell
   7 :[link](https://learn.microsoft.com/en-us/powershell/scripting/install/installing-powershell-on-windows?WT.mc_id=THOMASMAURER-blog-thmaure&view=powershell-7.3&viewFallbackFrom=powershell-7).
   Change the default terminal in Windows Terminal, and activate the "run always as administrator in the default profile"
 - JetBrains PyCharm (Community and Professional), IntelliJ IDEA, Webstorm, WriterSide. Check my personal
-  settings [here](../shortcuts_and_apps_setup.md#110-pycharm-all-platforms)
+  settings [here](../apps_configuration_and_shorcuts.md##19-pycharm-all-platforms)
 - Docker Desktop: Requires WSL (see the WSL section). You can start, stop, delete containers easily, access & edit files
   right inside the container without the need of a terminal.
-- Sublime Text 4. Check my personal settings [here](../shortcuts_and_apps_setup.md#16-sublime-text-4-all-platforms)
+- Sublime Text 4. Check my personal settings [here](../apps_configuration_and_shorcuts.md##15-sublime-text-4-all-platforms)
 - Visual Studio Code
-- Obsidian. Link to my settings [here](../shortcuts_and_apps_setup.md#17-obsidian-all-platforms)
+- Obsidian. Link to my settings [here](../apps_configuration_and_shorcuts.md##16-obsidian-all-platforms)
 - Notion
 - Game development: Unity, Unreal Engine, Blender
 - SFTP: Filezilla: for SFTP (work with a private key: add it in edit/connection/sftp or use pageant)
@@ -198,7 +197,7 @@ iex ((New-Object System.Net.WebClient).DownloadString('https://raw.githubusercon
 - Overleaf: https://www.overleaf.com/
 
 
-### 1.2.11. UI/UX Software
+### 2.11. UI/UX Software
 
 - Windows UI/UX Tips:
     - Hide the Windows taskbar (right-click on the taskbar -> taskbar settings-> taskbar behavior (at the bottom) ->
@@ -241,7 +240,7 @@ Other apps, websites & tips: (DEPRECATED)
 -
 
 
-## 1.3. Coding using Linux (WSL) inside Windows
+## 3. Coding using Linux (WSL) inside Windows
 
 The most amazing thing about WSL (WSL2.0 exactly) is: You can run Linux in Windows without the need of a virtual
 machine.
@@ -255,8 +254,8 @@ machine.
 - Do not code in both OS, use, for example, pycharm or vscode on windows with a conda environment installed on WSL. The
   best thing is to combine the power of Windows with WSL.
 
-### 1.3.1. Install WSL:
-- Automatic installation of WSL available with this [command](#1-2-software)
+### 3.1. Install WSL:
+- Automatic installation of WSL available with this [command](##1-2-software)
 - Or manual installation: Run this command in PowerShell ``` wsl --install ```
 
 - Restart your computer
@@ -289,7 +288,7 @@ systemd=true
   enter an empty password).
 - Jump to the next section to configure your WSL /Ubuntu.
 
-### 1.3.2. Linux/WSL Setup - terminal, shell, Miniconda, CUDA & More:
+### 3.2. Linux/WSL Setup - terminal, shell, Miniconda, CUDA & More:
 
 After installing WSL, you have now ubuntu running inside windows.
 Follow these guides containing an automated script to customize your terminal,
@@ -298,11 +297,11 @@ shell, install Miniconda, CUDA, and more:
 - [1. Linux Setup Guide](../unix_workflow/README_unix.md): A set of configurations, dotfiles and a script to
   automatically set up a powerful terminal & shell utilities(zsh, fzf...), themes like Powerlvl10k, Conda, GPU drivers,
   and more on Linux/WSL2.
-- [2. Windows, WSL & apps settings/tips](../shortcuts_and_apps_setup.md)
-- [3. Cuda & Pytorch installation inside conda](../unix_workflow/cuda_pytorch_install.md)
-- [4. Python package example](../unix_workflow/package_example)
+- [2. Windows, WSL & apps settings/tips](../apps_configuration_and_shorcuts)
+- [3. Cuda & Pytorch installation inside conda](https://github.com/AmineDjeghri/ai-on-premise-project-template/blob/main/cuda_pytorch_install.md)
 
-### 1.3.3. WSL2 Utilities, Tips & Tricks :
+
+### 3.3. WSL2 Utilities, Tips & Tricks :
 
 - Take a look at [awesome-wsl](https://github.com/sirredbeard/awesome-wsl)
 - A surprising number of Linux GUI apps can run on WSL. GUI applications are officially supported on WSL2 and referred
@@ -342,7 +341,7 @@ wsl --setdefault <name_of_your_distro>
   conda: `/home/amine/miniconda3/bin/conda`. Then click on load environments, and it will automatically detect all the
   conda envs.
 
-### 1.3.4. backup and restore WSL
+### 3.4. backup and restore WSL
 
 You can export wsl image after finishing all the steps to save it in case you move to a new computer :
 
@@ -351,12 +350,12 @@ You can export wsl image after finishing all the steps to save it in case you mo
 - wsl --export Ubuntu E:\ubuntu.tar
 - [source 1](https://www.xda-developers.com/how-back-up-restore-wsl/)
 
-### 1.3.5. Uninstall WSL:
+### 3.5. Uninstall WSL:
 
 Uninstall all distributions & WSL from the control panel & open Windows Features, then turn on (check) Windows Subsystem
 for Linux. Restart your computer.
 
-## 1.4. More (deprecated)
+## 4. More (deprecated)
 
 - Add more Desktop icons (PC, Downloads...): Personalization->themes->desktop icon settings
 - Use Quiet Hours and add only the applications that you want them to send you a notification, (Brave will still send

@@ -5,13 +5,13 @@
 <instance-profile id="docs_instance"
                   name="Awesome OS Setup" start-page="README.md">
 
-    <toc-element topic="README.md" toc-title="Home"/>
-    <toc-element topic="README_windows.md"/>
-    <toc-element topic="README_unix.md">
-        <toc-element topic="cuda_pytorch_install.md" toc-title="1. cuda, pytorch setup with conda"/>
-    </toc-element>
-    <toc-element topic="browser_extensions.md" toc-title="Browser extensions"/>
-    <toc-element topic="shortcuts_and_apps_setup.md" toc-title="Windows shortcuts and apps setup"/>
-    <toc-element topic="awesome_websites.md" toc-title="Awesome websites"/>
+
+    <toc-element topic="README.md" toc-title="🏠 1. Home"/>
+    <toc-element topic="README_windows.md" toc-title="🪟 2. Window/WSL setup"/>
+    <toc-element topic="README_unix.md" toc-title="🐧 3. Linux setup"/>
+    <toc-element topic="tv_setup.md" toc-title="📺 4. TV Setup"/>
+    <toc-element topic="apps_configuration_and_shorcuts.md" toc-title="5. Apps Configuration and Shortcuts"/>
+    <toc-element topic="awesome_websites_browser_extensions.md" toc-title="6. Awesome Websites and Browser Extensions"/>
+
 
 </instance-profile>
