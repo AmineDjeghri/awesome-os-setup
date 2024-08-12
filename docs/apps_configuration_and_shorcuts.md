@@ -144,13 +144,12 @@ Download [Windows store](https://apps.microsoft.com/detail/XP89DCGQ3K6VLD?hl). [
 - Sync pycharm settings : https://www.jetbrains.com/help/pycharm/sharing-your-ide-settings.html#IDE_settings_sync
 - You can save your current layout (all plugin positions) by going to Window | Layouts | Save Current Layout as New and
   switch to it from new projects by Window | Layouts | <name of your layout> | Apply.
-- Change the source folder for imports (https://stackoverflow.com/a/34304165)
-- I always use the run button instead of the terminal to run my files (specifically fastapi or streamlit) so pycharm can
-  highlight the errors and make them easily clickable.
+- Project settings : Everytime you start a project make sure to 
+    - Change the source folder for imports (https://stackoverflow.com/a/34304165).
+    - Edit the configuration template of python and python tests(autodetect and pytest) to
+  select a default working directory for all your scripts. If you changed the source folder, it should match it. This will prevent you from having problems with working directory location when running from the terminal and pycharm.
+- I always use the run button (or shortcut) instead of the terminal to run my files (specifically fastapi or streamlit) so pycharm can highlight the errors and make them easily clickable.
 - Use the debug function when needed.
-- Every time you start a project, edit the configuration template of python and python tests(autodetect and pytest) to
-  select a default working directory for all your scripts. This will prevent you from having problems with working
-  directory location when running from the terminal and pycharm.
 - You can Run pytest just by right-clicking on a function bloc, file, or folder!
 - Git Clone: You can directly clone a repository from your git accounts by going to the Menu bar | VCS | Get from
   Version Control | GitHub | and select the right repository.
