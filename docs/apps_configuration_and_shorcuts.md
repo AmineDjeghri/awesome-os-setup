@@ -82,7 +82,7 @@ Download [Windows store](https://apps.microsoft.com/detail/XP89DCGQ3K6VLD?hl). [
 
 - Install the package control: https://packagecontrol.io/installation
 - (Windows) Copy and paste the [Package Control.sublime-settings](windows_workflow/Package%20Control.sublime-settings)
-  and [Preferences.sublime-settings](windows_workflow/Preferences.sublime-settings)
+  and [Preferences.sublime-settings](windows_workflow/win_dotfiles/sublime_text_4/Preferences.sublime-settings)
   in : `%UserProfile%\AppData\Roaming\Sublime Text\Packages\User`
 - You may need to restart sublime text to see the changes.
 - If the editor color is not changed, you can change the theme in the settings :
@@ -92,7 +92,7 @@ Download [Windows store](https://apps.microsoft.com/detail/XP89DCGQ3K6VLD?hl). [
 
 ## 1.6. Obsidian (All platforms)
 
-- Obsidian plugins are saved inside the vault (a folder). You need to copy the .obisidian folder everytime you create a
+- Obsidian plugins are saved inside the vault (a folder). You need to copy the .obisidian folder every time you create a
   new vault to keep the same plugins and workspace
 - Install the community plugins: TBD
 - Install the community themes: TBD
@@ -116,7 +116,7 @@ Download [Windows store](https://apps.microsoft.com/detail/XP89DCGQ3K6VLD?hl). [
   and DisplayFusion will automatically rearrange your windows according to the rules you set. This makes it easy to
   adapt your workspace to different scenarios, whether you're working with one monitor or multiple monitors.
 - Link to my settings containing different profile for 1, 2, 3 and TV
-  settings. [here](windows_workflow/DisplayFusion Backup.reg)
+  settings. [here](windows_workflow/win_dotfiles/DisplayFusion Backup.reg)
     - use the Steam version (it can be used on multiple computers with the same steam account)
     - it adds a lot of features to Windows monitor settings.
     - There are four apps available after the installation. The main ones are: DisplayFusion and "monitor settings
@@ -144,7 +144,7 @@ Download [Windows store](https://apps.microsoft.com/detail/XP89DCGQ3K6VLD?hl). [
 - Sync pycharm settings : https://www.jetbrains.com/help/pycharm/sharing-your-ide-settings.html#IDE_settings_sync
 - You can save your current layout (all plugin positions) by going to Window | Layouts | Save Current Layout as New and
   switch to it from new projects by Window | Layouts | <name of your layout> | Apply.
-- Project settings : Everytime you start a project make sure to 
+- Project settings : Everytime you start a project make sure to
     - Change the source folder for imports (https://stackoverflow.com/a/34304165).
     - Edit the configuration template of python and python tests(autodetect and pytest) to
   select a default working directory for all your scripts. If you changed the source folder, it should match it. This will prevent you from having problems with working directory location when running from the terminal and pycharm.
@@ -313,7 +313,7 @@ the Always mode.
 
 - export file: regedit -> ``Ordinateur\HKEY_CURRENT_USER\Software\HWiNFO64``
 - import settings: double-click on the downloaded file to restore settings. Check
-  mine [here](windows_workflow/HWINFO_settings.reg)
+  mine [here](windows_workflow/win_dotfiles/HWINFO_settings.reg)
 
 ## 1.11. Google colab:
 
