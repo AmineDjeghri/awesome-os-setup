@@ -393,14 +393,15 @@ function Update-Terminal-UI()
 # function to replace settings.json of GlazeWM
 function Get-GlazeWM-Settings()
 {
-    $glazeWMConfigDirectory = "$env:UserProfile\.glaze-wm"
+    #todo: update to support glazewm 3.x
+    $glazeWMConfigDirectory = "$env:UserProfile\.glzr\glazewm"
 
     $confirmationMessageGlazeWM = "This script will install GlazeWM by replacing the config file located at:`n`n$glazeWMConfigDirectory\$glazeWMConfigFileName`n`nDo you want to continue?"
     $confirmationGlazeWM = $host.ui.PromptForChoice("Confirmation", $confirmationMessageGlazeWM, @("&Yes", "&No"), 1)
 
     if ($confirmationGlazeWM -eq 0)
     {
-        $glazeWMConfigUrl = "https://raw.githubusercontent.com/AmineDjeghri/awesome-os-setup/main/docs/windows_workflow/config.yaml"
+        $glazeWMConfigUrl = "https://raw.githubusercontent.com/AmineDjeghri/awesome-os-setup/main/docs/windows_workflow/win_dotfiles/glazewm/config.yaml"
         $glazeWMConfigFileName = "config.yaml"
 
         Invoke-WebRequest -Uri $glazeWMConfigUrl -OutFile $glazeWMConfigDirectory\$glazeWMConfigFileName

@@ -167,7 +167,7 @@ iex ((New-Object System.Net.WebClient).DownloadString('https://raw.githubusercon
     - DisplayFusion. Check my personal
       settings [here](../apps_configuration_and_shorcuts.md##17-displayfusion-windows-only--paid)
     - Revo Uninstaller
-    - HWiNFO (Link to my settings [here](HWINFO_settings.reg)
+    - HWiNFO (Link to my settings [here](win_dotfiles/HWINFO_settings.reg)
     - CCleaner
 
 ### 2.10. Development & Programming

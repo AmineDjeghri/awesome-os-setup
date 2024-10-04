@@ -16,7 +16,7 @@ general:
 
   # Whether to switch back and forth between the previously focused
   # workspace when focusing the current workspace.
-  toggle_workspace_on_refocus: false
+  toggle_workspace_on_refocus: true
 
   cursor_jump:
     # Whether to automatically move the cursor on the specified trigger.
@@ -72,7 +72,7 @@ window_behavior:
     fullscreen:
       # Maximize the window if possible. If the window doesn't have a
       # maximize button, then it'll be fullscreen'ed normally instead.
-      maximized: false
+      maximized: true
 
       # Whether to show fullscreen windows as always on top.
       shown_on_top: false
@@ -137,34 +137,34 @@ window_rules:
         window_class: { regex: 'HwndWrapper*' }
       - window_process: { regex: 'Taskmgr|WindowsTerminal'}
 
-# move to workspaces
- # Move to workspace 1
-  - commands: ['move --workspace 1']
+  # move to workspaces
+  # Move to workspace 1
+  - commands: ['move --workspace 1','focus --workspace 1']
     match:
       - window_process: { regex: 'msedge|brave|chrome' }
 
   # Move to workspace 2
-  - commands: ['move --workspace 2']
+  - commands: ['move --workspace 2','focus --workspace 2']
     match:
       - window_process: { regex: 'pycharm64|Code' }
 
   # Move to workspace 3
-  - commands: ['move --workspace 3']
+  - commands: ['move --workspace 3','focus --workspace 3']
     match:
       - window_process: { regex: 'explorer|Files' }
 
   # Move to workspace 4
-  - commands: ['move --workspace 4']
+  - commands: ['move --workspace 4','focus --workspace 4']
     match:
       - window_process: { regex: 'sublime_text|WINWORD|EXCEL|Obsidian|WebViewHost' }
 
   # Move to workspace 5
-  - commands: ['move --workspace 5']
+  - commands: ['move --workspace 5','focus --workspace 5']
     match:
       - window_process: { regex: 'Messenger|messenger|Discord|olk|msedgewebview2|ms-teams' }
 
   # Move to workspace 6
-  - commands: ['move --workspace 6']
+  - commands: ['move --workspace 6','focus --workspace 6']
     match:
       - window_process: { regex: 'steam|Steam|steamwebhelper|Epic|epic|Cyberpunk2077|SelfService|CDViewer' }
 
