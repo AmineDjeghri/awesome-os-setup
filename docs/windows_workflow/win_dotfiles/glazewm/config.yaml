@@ -16,7 +16,7 @@ general:
 
   # Whether to switch back and forth between the previously focused
   # workspace when focusing the current workspace.
-  toggle_workspace_on_refocus: true
+  toggle_workspace_on_refocus: false
 
   cursor_jump:
     # Whether to automatically move the cursor on the specified trigger.
@@ -137,8 +137,8 @@ window_rules:
         window_class: { regex: 'HwndWrapper*' }
       - window_process: { regex: 'Taskmgr|WindowsTerminal'}
 
-  # move to workspaces
-  # Move to workspace 1
+# move to workspaces 
+ # Move to workspace 1
   - commands: ['move --workspace 1','focus --workspace 1']
     match:
       - window_process: { regex: 'msedge|brave|chrome' }
@@ -166,7 +166,7 @@ window_rules:
   # Move to workspace 6
   - commands: ['move --workspace 6','focus --workspace 6']
     match:
-      - window_process: { regex: 'steam|Steam|steamwebhelper|Epic|epic|Cyberpunk2077|SelfService|CDViewer' }
+      - window_process: { regex: 'steam|Steam|steamwebhelper|steamservice|Epic|epic|Cyberpunk2077|DSX|HellbladeGame-Win64-Shipping|SelfService|CDViewer|REDLauncher' }
 
 binding_modes:
   # When enabled, the focused window can be resized via arrow keys or HJKL.
@@ -251,7 +251,7 @@ keybindings:
 
   # Change the focused window to be fullscreen.
   - commands: ['toggle-fullscreen']
-    bindings: ['alt+f']
+    bindings: ['alt+f'] 
 
   # Minimize focused window.
   - commands: ['toggle-minimized']
