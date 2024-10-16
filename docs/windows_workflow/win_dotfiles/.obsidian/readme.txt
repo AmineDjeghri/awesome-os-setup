@@ -1,0 +1,3 @@
+- When you copy this folder in your obsidian project, you will get the same configuration (plugins, theme, etc)
+- copy this directory in your obsidian folder to replace the .obsidian folder
+- Becareful to not copy the workspace.json file since it contains sensitive information (name of files, etc..)

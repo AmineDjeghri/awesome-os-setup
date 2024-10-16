@@ -16,7 +16,7 @@ general:
 
   # Whether to switch back and forth between the previously focused
   # workspace when focusing the current workspace.
-  toggle_workspace_on_refocus: true
+  toggle_workspace_on_refocus: false
 
   cursor_jump:
     # Whether to automatically move the cursor on the specified trigger.
@@ -166,7 +166,7 @@ window_rules:
   # Move to workspace 6
   - commands: ['move --workspace 6','focus --workspace 6']
     match:
-      - window_process: { regex: 'steam|Steam|steamwebhelper|Epic|epic|Cyberpunk2077|SelfService|CDViewer' }
+      - window_process: { regex: 'steam|Steam|steamwebhelper|steamservice|Epic|epic|Cyberpunk2077|DSX|HellbladeGame-Win64-Shipping|SelfService|CDViewer|REDLauncher' }
 
 binding_modes:
   # When enabled, the focused window can be resized via arrow keys or HJKL.

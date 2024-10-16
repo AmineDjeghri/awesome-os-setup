@@ -81,7 +81,7 @@ Download [Windows store](https://apps.microsoft.com/detail/XP89DCGQ3K6VLD?hl). [
 ## 1.5. Sublime Text 4 (All platforms)
 
 - Install the package control: https://packagecontrol.io/installation
-- (Windows) Copy and paste the [Package Control.sublime-settings](windows_workflow/Package%20Control.sublime-settings)
+- (Windows) Copy and paste the [Package Control.sublime-settings](windows_workflow/win_dotfiles/sublime_text_4/Package%20Control.sublime-settings)
   and [Preferences.sublime-settings](windows_workflow/win_dotfiles/sublime_text_4/Preferences.sublime-settings)
   in : `%UserProfile%\AppData\Roaming\Sublime Text\Packages\User`
 - You may need to restart sublime text to see the changes.
@@ -94,6 +94,8 @@ Download [Windows store](https://apps.microsoft.com/detail/XP89DCGQ3K6VLD?hl). [
 
 - Obsidian plugins are saved inside the vault (a folder). You need to copy the .obisidian folder every time you create a
   new vault to keep the same plugins and workspace
+- You can copy my [.obsidian](windows_workflow/win_dotfiles/.obsidian) folder to get the same confi as me. The shortcut for settings is the same as pycharm (alt + ctrl + s)
+- Do not sync the ``workspace.json`` file since it contains sensitive information (name of files, etc..)
 - Install the community plugins: TBD
 - Install the community themes: TBD
 - Sync: use Google Drive ou GitHub to sync the repositories remotely.
@@ -102,8 +104,7 @@ Download [Windows store](https://apps.microsoft.com/detail/XP89DCGQ3K6VLD?hl). [
 - Create an ssh key (go to your ssh folder on windows) and add it to git (if you have wsl, you can copy the ssh key from
   one to another)
 - add global username and email with git config
-- Restart obsidian. Try to change something on a doc and push it with: 'stage all' then 'commit' then 'push'. To pull
-  stuff you can use the pull button
+- You can configure the git plugin in settings to automatically push and pull every x minutes.
 - The source control panel can be found on the left panel. Maybe need to change the size of the left panel to view it
 - if you face a problem with dubious ownership of repository, run this
   command `git config --global --add safe.directory '*'`
