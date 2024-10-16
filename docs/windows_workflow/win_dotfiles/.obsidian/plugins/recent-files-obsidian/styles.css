@@ -13,7 +13,7 @@
 
 .recent-files-title:hover .recent-files-file-delete {
   display: flex;
-  cursor: pointer;
+  cursor: var(--cursor);
 }
 
 .recent-files-file-delete:hover {
