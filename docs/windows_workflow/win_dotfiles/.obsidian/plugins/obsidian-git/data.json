@@ -7,7 +7,7 @@
   "autoPullOnBoot": true,
   "disablePush": false,
   "pullBeforePush": true,
-  "disablePopups": false,
+  "disablePopups": true,
   "disablePopupsForNoChanges": true,
   "listChangedFilesInMessageBody": false,
   "showStatusBar": true,

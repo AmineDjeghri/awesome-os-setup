@@ -1,14 +1,10 @@
 {
-	"id": "copilot",
-	"name": "Copilot",
-	"version": "2.5.2",
-	"minAppVersion": "0.15.0",
-	"description": "A ChatGPT Copilot in Obsidian.",
-	"author": "Logan Yang",
-	"authorUrl": "https://twitter.com/logancyang",
-	"fundingUrl": {
-		"Buy Me a Coffee": "https://www.buymeacoffee.com/logancyang",
-		"GitHub Sponsor": "https://github.com/sponsors/logancyang"
-	},
-	"isDesktopOnly": true
+    "author": "Vinzent",
+    "authorUrl": "https://github.com/Vinzent03",
+    "id": "obsidian-git",
+    "name": "Git",
+    "description": "Integrate Git version control with automatic backup and other advanced features.",
+    "isDesktopOnly": false,
+    "fundingUrl": "https://ko-fi.com/vinzent",
+    "version": "2.27.0"
 }

@@ -24,7 +24,6 @@ You can follow this repository to get a similar setup.
     * [2.8. Security & Privacy](#28-security--privacy)
     * [2.9. Utilities](#29-utilities)
     * [2.10. Development & Programming](#210-development--programming)
-    * [2.11. UI/UX Software](#211-uiux-software)
   * [3. Coding using Linux (WSL) inside Windows](#3-coding-using-linux-wsl-inside-windows)
     * [3.1. Install WSL:](#31-install-wsl)
     * [3.2. Linux/WSL Setup - terminal, shell, Miniconda, CUDA & More:](#32-linuxwsl-setup---terminal-shell-miniconda-cuda--more)
@@ -65,12 +64,58 @@ iex ((New-Object System.Net.WebClient).DownloadString('https://raw.githubusercon
 - 💤 Sleep mode with or without screen
   lock [here](https://consumer.huawei.com/en/support/content/en-us15592807/##:~:text=Click%20the%20Windows%20icon%20and,Screen%20and%20Sleep%20to%20Never)
 - If you have a 3200mhz RAM, and it runs bellow this frequency, activate XMP profile in the BIOS
-- 🎧 if you have bluetooth and audio devices, you can sort them in audio settings -> use as default for both audio &
-  communications
-- 🎧 Deactivate lowering communication sounds in advanced audio settings.
-- Full-screen games optimization: uncheck “disable fullscreen optimization” for the .exe. You will get a fast alt tab (only on the latest windows versions). Example: Make your way to the following file location on your desktop: C:
-  \Program Files (x86)\Steam\steamapps\common\Counter-Strike Global Offensive\game. The goal here is to locate the
-  CS2.exe file.
+- 🎧Audio settings
+  - If you have bluetooth and audio devices, you can sort them in audio settings → use as default for both audio and
+    communications.
+  - You can also deactivate some audio devices in the audio settings. For example, if you have a monitor speaker, you can deactivate it so it will never be used nor be visible.
+  - Deactivate lowering communication sounds in advanced audio settings.
+
+- Monitor and display settings:
+  - Change the display settings if you want to adjust the refresh rate, resolution, etc. (windows + p) → display
+  settings
+  - Disconnect/extend/duplicate a monitor if you have multiple ones (windows + p) → display settings → select
+  the monitor -> next to identify, select the right option. Or use DisplayFusion (paid).
+  - Remember, each monitor configuration requires its own settings adjustments. Here's how it works:
+  - If you have one monitor and customize the refresh rate, then you moved to two monitors, you need to adjust
+  the refresh rate for this new configuration. Next time when you switch between a single monitor and a dual
+  monitor, Windows will remember your settings for both configurations.
+  - If you switch to three monitors, you need to customize the settings (like the refresh rate) for each one
+  for this new configuration (triple monitor settings),
+  - When you return to the two-monitor/ single monitor setup, Windows will remember your previous settings, so
+  you won't need to change them again.
+  - You nca use DisplayFusion if you want to easily configure displays and monitors. For example, you can create a configuration to use two monitors, and a configuration to use only one and turn off the second, a configuration to use the tv only ...etc.
+  - Display Fusion configurations are meant to be used when you don't need to turn off manually the monitors ...etc. So if you have a TV, no need to change the configuration from monitors to TV. You just need to turn off the monitors, and turn on the TV; Windows will recognize that there is a change in the displays and will use the TV.
+- Gaming:
+  - Full-screen games optimization: uncheck “disable fullscreen optimization” for the .exe. You will get a fast alt tab (only on the latest windows versions). Example: Make your way to the following file location on your desktop: C:
+    \Program Files (x86)\Steam\steamapps\common\Counter-Strike Global Offensive\game. The goal here is to locate the
+    CS2.exe file.
+
+- Windows UI/UX Tips:
+    - Hide the Windows taskbar (right-click on the taskbar -> taskbar settings-> taskbar behavior (at the bottom) ->
+      automatically hide the taskbar).
+    - Pin some folders and drivers, Recycle Bin in the file explorer. Fast browsing: right-click on the file explorer in
+      the taskbar to show the shortcut to the pinned folders.
+    - Auto lock screen after x minutes of inactivity: search for `screen saver` in windows and select the number of
+      minutes before your computer auto locks itself.
+    - Show Files extensions: In File Explorer under View, in the Show/hide group, select the File name extensions check
+      box.
+    - You can change your power management options (when windows will be put to sleep, what happens when you close your
+      laptop. Ect), performance vs normal usage.
+    - You can convert a website to an application, for example, Google Agenda/ Netflix in Edge/Brave/Chrome, go to At
+      the top right: More -> More Tools -> Create shortcut and check window mode, it will run like an app in your
+      Windows desktop
+    - Remove unnecessary programs, unnecessary icons from the start menu and add others like Maps, meteo & calendar
+    - Deactivate startup programs that you don't need.
+    - Always use the Windows search bar to search for functionalities, settings, apps, files, folders, and more. Even
+      the deep settings are accessible from the search bar.
+    - You can use PowerToys to search for files, folders, and more. It's faster than the Windows search bar but does not
+      contain deep settings.
+
+Other apps, websites and tips: (DEPRECATED)
+
+- Take a look
+  at [Windows 11 subreddit](https://www.reddit.com/r/Windows11/) & [Awesome Windows 11](https://github.com/awesome-windows11/windows11)
+-
 
 ## 2. Software
 
@@ -195,49 +240,6 @@ iex ((New-Object System.Net.WebClient).DownloadString('https://raw.githubusercon
 - Latex Handwriting recognition: https://detexify.kirelabs.org/classify.html
 - Turn math equations and snipping to latex code: https://mathpix.com/
 - Overleaf: https://www.overleaf.com/
-
-
-### 2.11. UI/UX Software
-
-- Windows UI/UX Tips:
-    - Hide the Windows taskbar (right-click on the taskbar -> taskbar settings-> taskbar behavior (at the bottom) ->
-      automatically hide the taskbar).
-    - Pin some folders and drivers, Recycle Bin in the file explorer. Fast browsing: right-click on the file explorer in
-      the taskbar to show the shortcut to the pinned folders.
-    - Auto lock screen after x minutes of inactivity: search for `screen saver` in windows and select the number of
-      minutes before your computer auto locks itself.
-    - Show Files extensions: In File Explorer under View, in the Show/hide group, select the File name extensions check
-      box.
-    - You can change your power management options (when windows will be put to sleep, what happens when you close your
-      laptop. Ect), performance vs normal usage.
-    - You can convert a website to an application, for example, Google Agenda/ Netflix in Edge/Brave/Chrome, go to At
-      the top right: More -> More Tools -> Create shortcut and check window mode, it will run like an app in your
-      Windows desktop
-    - Remove unnecessary programs, unnecessary icons from the start menu and add others like Maps, meteo & calendar
-    - Deactivate startup programs that you don't need.
-    - Always use the Windows search bar to search for functionalities, settings, apps, files, folders, and more. Even
-      the deep settings are accessible from the search bar.
-    - You can use PowerToys to search for files, folders, and more. It's faster than the Windows search bar but does not
-      contain deep settings.
-    - Monitor & displays :
-        - Change the display settings if you want to adjust the refresh rate, resolution, etc.. (windows + p) -> display
-          settings
-        - Disconnect/extend/duplicate a monitor if you have multiple ones (windows + p) -> display settings -> select
-          the monitor -> next to identify, select the right option. Or use DisplayFusion (paid).
-        - Remember, each monitor configuration requires its own settings adjustments. Here's how it works:
-            - If you have one monitor and customize the refresh rate, then you moved to two monitors, you need to adjust
-              the refresh rate for this new configuration. Next time when you switch between a single monitor and a dual
-              monitor, Windows will remember your settings for both configurations.
-            - If you switch to three monitors, you need to customize the settings (like the refresh rate) for each one
-              for this new configuration (triple monitor settings),
-            - When you return to the two-monitor/ single monitor setup, Windows will remember your previous settings, so
-              you won't need to change them again.
-
-Other apps, websites & tips: (DEPRECATED)
-
-- Take a look
-  at [Windows 11 subreddit](https://www.reddit.com/r/Windows11/) & [Awesome Windows 11](https://github.com/awesome-windows11/windows11)
--
 
 
 ## 3. Coding using Linux (WSL) inside Windows
