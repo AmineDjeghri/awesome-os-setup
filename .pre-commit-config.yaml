@@ -30,6 +30,6 @@ repos:
             exclude: |
               (?x)^(
               docs/windows_workflow/win_dotfiles/\.obsidian/plugins/.*/main\.js|
-              docs/windows_workflow/win_dotfiles/zebar/.*.html|
+              docs/windows_workflow/win_dotfiles/.glzr/zebar/.*.html|
 
               )$

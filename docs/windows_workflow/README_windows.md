@@ -64,10 +64,11 @@ iex ((New-Object System.Net.WebClient).DownloadString('https://raw.githubusercon
 - 💤 Sleep mode with or without screen
   lock [here](https://consumer.huawei.com/en/support/content/en-us15592807/##:~:text=Click%20the%20Windows%20icon%20and,Screen%20and%20Sleep%20to%20Never)
 - If you have a 3200mhz RAM, and it runs bellow this frequency, activate XMP profile in the BIOS
+- Turn off usb ports and pc lights when in sleep mode in the BIOS
 - 🎧Audio settings
   - If you have bluetooth and audio devices, you can sort them in audio settings → use as default for both audio and
     communications.
-  - You can also deactivate some audio devices in the audio settings. For example, if you have a monitor speaker, you can deactivate it so it will never be used nor be visible.
+  - You can also deactivate some audio devices if the are unused in the audio settings. Check this [link](https://www.reddit.com/r/Windows10/comments/hcxksq/how_do_you_remove_an_unused_device_from_the_sound/)
   - Deactivate lowering communication sounds in advanced audio settings.
 
 - Monitor and display settings:
