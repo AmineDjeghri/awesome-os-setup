@@ -94,8 +94,8 @@ install_zsh_oh_my_zsh_and_utilities() {
   if ask_yes_no "(beta) do you want to install lsd, bpytop, bat, fzf,neofetch, stow and create aliases for them ?"; then
     echo "${YELLOW} Installing lsd, bpytop, bat, fzf,neofetch, stow ${RESET}"
     sudo snap install lsd
-    sudo snap install bpytop
-    sudo apt install bat neofetch stow -y
+    sudo snap install bpytop #chnge this to btop instead
+    sudo apt install bat neofetch stow -y # replace neofetfch with fastfetch
 
     echo 'alias cat="batcat"' >>~/.zshrc
     echo 'alias top="bpytop"' >>~/.zshrc
