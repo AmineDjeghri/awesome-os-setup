@@ -5,7 +5,7 @@ feel free to do so :
 - (to update ) create the script like WSL (since it's omz, it cross platform) for terminal
 
 - install brave browser
-- install sdk tools (it installs git) (i used pycharm since it does it automatically)
+- install sdk tools (it installs git) (i used pycharm since it does it automatically, pycharm activate sync settings)
 - install omz, powerlvl10k ? always install this first, becasue it updates the .zshrc file
 
 - install brew + copy path

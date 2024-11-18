@@ -144,7 +144,16 @@ alt-shift-7 = 'move-node-to-workspace 7'
 #alt-shift-tab = 'move-workspace-to-monitor --wrap-around next'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#mode
-alt-shift-semicolon = 'mode service'
+#
+
+ctrl-space = 'mode X'
+
+[mode.X.binding]
+# A mode to just pass keys through!
+ctrl-space = 'mode main'
+esc = 'mode main'
+
+alt-shift-space = 'mode service'
 
 # 'service' binding mode declaration.
 # See: https://nikitabobko.github.io/AeroSpace/guide#binding-modes
@@ -165,6 +174,8 @@ alt-shift-j = ['join-with down', 'mode main']
 alt-shift-k = ['join-with up', 'mode main']
 alt-shift-l = ['join-with right', 'mode main']
 
+
+# this needs to be on the bottom of the file
 # run 'aerospace list-apps'  to list to apps IDs
 # workspace 1 apps : browsers
 [[on-window-detected]]
