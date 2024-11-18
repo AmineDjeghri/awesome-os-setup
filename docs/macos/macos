@@ -6,14 +6,17 @@ feel free to do so :
 
 - install brave browser
 - install sdk tools (it installs git) (i used pycharm since it does it automatically, pycharm activate sync settings)
-- install omz, powerlvl10k ? always install this first, becasue it updates the .zshrc file
-
-- install brew + copy path
-- install
-- install raycast
+- install omz, powerlvl10k ? always install this first, because it updates the .zshrc file
+- (optional) install uv and copy this to zshrc :
 
 - install brew then : echo "export PATH=/opt/homebrew/bin:$PATH" >> ~/.zshrc
-- brew install bat fastfetch btop ....
+- install raycast (import settings if previously installed)
+- brew install iTerm2 (if manual from raycast) . import settings : it includes
+    - iterm2 ( change the font to Jetbrains font, change also the color)
+        - command +t : new tab
+        - command+d :
+        - command + i : settings
+- brew install bat fastfetch btop , lsd....
 ...
     echo 'alias cat="bat"' >>~/.zshrc
   bat is the macos equivalent of ubuntu's batcat
@@ -23,10 +26,9 @@ feel free to do so :
     - you can alias another python if you want echo this : alias python=/usr/bin/python3 in .zshrc (this is the python that comes with macos)
     - alias python="uv run python" in .zshrc
 
-- install new terminal ? iterm2 ( change the font to Jetbrains font, change also the color)
-    - command +t : new tab
-    - command+d :
-    - command + i : settings
+
+
+
  - alttab : alttab as in windows & also, close directly apps from there (if you switch the keys like i did, you will have a similar env as in windows)
 - raycast (powershell alternative) with extensions. it also has a camera preview, brew search, and loooot more
 - extensions to isntall :
