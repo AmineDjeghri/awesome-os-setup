@@ -37,10 +37,15 @@ you can use thr F4 key (with the glass) to use finder . Finder is still usefull 
 sudo terminal with touch ID : sed -e 's/^#auth/auth/' /etc/pam.d/sudo_local.template | sudo tee /etc/pam.d/sudo_local
 - if you installed iTerm2 or another terminal, run raycast ans search for terminal, right click and select disable application. you won't see the native terminal anymore
 
+- hidden bar : hide icons from menu bar ( put it in hidden on the left to hide it )
+- Badgefy : shows the number of notifications on icons of the menu bar (teams, emails)
+
+- shottr, screenshots, text , draw and ocr (keep it in the meu icons for easy access to features)
 
 UI UX :
 - night shift
 - auto hide the dock
+- choose which icons to delete from the menu bar (command +  drag an icon out of the menu bar until a cross shows, not all apps allows this)
 - group windows same app in dock option
 - default browser : brave (with different profiles : personal, work, etc..)
 in finder

@@ -157,9 +157,8 @@ Download [Windows store](https://apps.microsoft.com/detail/XP89DCGQ3K6VLD?hl). [
 - You can write a ``#TODO`` in the .py files or ``[//]: # (TODO  Add Google TV setup  ) `` in the markdown files to see them
   in the TODO panel.
 - Commits : [doc](https://www.jetbrains.com/help/pycharm/log-tab.html)
-    - pre-commit hooks: If you use conda as an interpreter in pycharm, you need to install pre-commit with pip in the
-      environment that you are using. After the installation, see in the commit options (wheel button) next to the
-      message if `Run git hooks` is there. If it isn't, then restart pycharm.
+    - pre-commit hooks: Just run in the interminal pre-commit install. Pycharm should detect it. After the installation, see in the commit panel (where you enter the commit message) (wheel button) next to the
+      message if `Run git hooks` is there. If it isn't, then restart pycharm. Next time your commit, pycharm will run the pre-commit hooks
     - When you write in your terminal: `pip list | grep pre-commit` you should see the package.
       Running `pre-commit --version` should also work.
     - Check the Amend commit box if you want to concatenate commits
