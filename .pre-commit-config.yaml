@@ -8,7 +8,7 @@ repos:
         args: [ '--maxkb=5000' ]
       - id: check-toml
       - id: check-yaml
-      - id: check-json
+#      - id: check-json # is replaced with check-json5 bellow
       - id: detect-private-key
       - id: end-of-file-fixer
       #      - id: requirements-txt-fixer
@@ -16,6 +16,11 @@ repos:
       - id: trailing-whitespace
       - id: name-tests-test
         args: [ --pytest-test-first ]
+  - repo: https://gitlab.com/bmares/check-json5
+    rev: v1.0.0
+    hooks:
+      - id: check-json5
+
   - repo: https://github.com/astral-sh/ruff-pre-commit
     rev: v0.4.2
     hooks:

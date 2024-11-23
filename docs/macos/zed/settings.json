@@ -5,7 +5,7 @@
 //
 // To see all of Zed's default settings without changing your
 // custom settings, run `zed: open default settings` from the
-// command palette (cmd-shift-p / ctrl-shift-p)
+//command palette (cmd-shift-p / ctrl-shift-p)
 {
   "telemetry": {
     "diagnostics": false,
