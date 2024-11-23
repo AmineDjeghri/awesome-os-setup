@@ -69,6 +69,7 @@ apps ui :
 
 - - commander one : sftp and easy copy paste stuff, multiple windows
 - config : (do not change the order of the elements)
+- shottr
 - SwiftQuit ( add raycast and shottr to exceptions of this app)
 - zed editor (brew) :
     - (open for example the home folder, or other project)
@@ -78,7 +79,7 @@ apps ui :
 shorctus :
 - lock macbook : press touch id button
 
-
+- install uv and remap it
 macOS vs. Windows Keyboard Layout
 
 	1.	Command (⌘) Key: The ⌘ key (command) is the macOS equivalent of the Ctrl key in Windows for most shortcuts. If you’re used to pressing Ctrl+C to copy in Windows, it’s ⌘+C on macOS.

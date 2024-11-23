@@ -108,7 +108,7 @@ Download [Windows store](https://apps.microsoft.com/detail/XP89DCGQ3K6VLD?hl). [
 - The source control panel can be found on the left panel. Maybe need to change the size of the left panel to view it
 - if you face a problem with dubious ownership of repository, run this
   command `git config --global --add safe.directory '*'`
-
+- if you face a problem with fatal: could not read Username for 'https://github.com'. go to the folder from a terminal and run git pull. If you are on MacOS, you need to use a token instead of writing your password.
 ## 1.7. DisplayFusion (Windows only & paid)
 
 - DisplayFusion is a program that will help you to manage your multiple monitors. It allows you to create different
@@ -141,6 +141,7 @@ Download [Windows store](https://apps.microsoft.com/detail/XP89DCGQ3K6VLD?hl). [
 
 - I've been using PyCharm (professional edition) for more than 3 years now, even if I used VSCode for 2 years before
   that, the Intellij suite is just amazing. Intellij suite with all the plugins for students is completely free.
+- Change the default location of projects : instead of PycharmProjects. Settings -> Appearance & behavior -> system settings
 - If you are on Windows, use pycharm with WSL.
 - Sync pycharm settings : https://www.jetbrains.com/help/pycharm/sharing-your-ide-settings.html#IDE_settings_sync
 - You can save your current layout (all plugin positions) by going to Window | Layouts | Save Current Layout as New and
