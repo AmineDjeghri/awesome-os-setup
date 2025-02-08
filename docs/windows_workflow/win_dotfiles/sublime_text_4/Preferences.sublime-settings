@@ -1,0 +1,9 @@
+{
+	"ignored_packages":
+	[
+	],
+	"font_size": 9,
+	"index_files": true,
+	"theme": "One Dark.sublime-theme",
+	"color_scheme": "Packages/Theme - One Dark/One Dark.tmTheme",
+}
