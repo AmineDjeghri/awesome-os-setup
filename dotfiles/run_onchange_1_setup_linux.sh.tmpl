@@ -1,3 +1,20 @@
+#!/bin/sh
+install_homebrew() {
+echo "Installing Homebrew"
+yes | /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+}
+
+# Function to update and upgrade packages
+update_upgrade_packages() {
+  if ask_yes_no "Do you want to run sudo apt update & upgrade to load the latest packages?"; then
+    echo "${YELLOW} Upgrading & Updating your OS ${RESET}"
+    sudo apt update
+    sudo apt upgrade
+    sudo apt autoremove
+    sudo apt autoclean
+  fi
+}
+
 {{ if eq .chezmoi.os "linux" -}}
 #!/bin/sh
 sudo apt update -y

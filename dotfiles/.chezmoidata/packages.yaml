@@ -2,6 +2,7 @@ packages:
   darwin:
     brews:
       - 'git'
+      - 'zsh'
     casks:
       - 'brave-browser'
       - 'raycast'

@@ -1,9 +1,13 @@
 #!/bin/sh
-install_homebrew() {
+install_base_packages() {
+
 echo "Installing Homebrew"
 yes | /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+
+echo "Installing UV"
+curl -LsSf https://astral.sh/uv/install.sh | sh
 }
 
 {{ if eq .chezmoi.os "darwin" -}}
-install_homebrew
+install_base_packages
 {{ end -}}
