@@ -1,21 +1,18 @@
+note aside : we use chezmoi, to develop tmpl scripts, no need to learn go, just code everything in functions and call them in the script inside the go template.
+
+
 - i switched the macos keys to have a similar behaviour as a windows keyboard. I feel that it's more natural to cpy maste with your last finger of your left hand hitting the command key (now being mapped to fn/globe) rather that the original command key
 feel free to do so :
 
 (insert image here in the readme)
 - (to update ) create the script like WSL (since it's omz, it cross platform) for terminal
 
-- install brave browser
 - install sdk tools (it installs git) (i used pycharm since it does it automatically, pycharm activate sync settings)
 - install omz, powerlvl10k ? always install this first, because it updates the .zshrc file
 - (optional) install uv and copy this to zshrc :
 
 - install brew then : echo "export PATH=/opt/homebrew/bin:$PATH" >> ~/.zshrc
 - install raycast (import settings if previously installed)
-- brew install iTerm2 (if manual from raycast) . import settings : it includes
-    - iterm2 ( change the font to Jetbrains font, change also the color)
-        - command +t : new tab
-        - command+d :
-        - command + i : settings
 - brew install bat fastfetch btop , lsd....
 ...
     echo 'alias cat="bat"' >>~/.zshrc
@@ -88,3 +85,13 @@ macOS vs. Windows Keyboard Layout
 	4.	Delete Key: The delete key on macOS behaves like Backspace in Windows. To delete forward, use Fn+Delete.
 
 So, while Command (⌘) usually works as the Ctrl key on macOS, for app switching specifically, it behaves like Alt in Windows. This dual role is unique to macOS, and it can feel a little counterintuitive at first. But once you’re familiar, switching between apps on macOS will feel just as fluid!
+
+Configurations to import/export manually :
+The following apps don't have settings that we can import/export, you need to manually open the app and configure it :
+- Ice
+- Altab
+App to install manually :
+- Badgeify : shows the number of notifications on icons of the menu bar (teams, emails)
+
+
+replace python by uv python in .zshrc

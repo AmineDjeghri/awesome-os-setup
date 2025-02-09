@@ -1,0 +1,9 @@
+#!/bin/sh
+install_homebrew() {
+echo "Installing Homebrew"
+yes | /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+}
+
+{{ if eq .chezmoi.os "darwin" -}}
+install_homebrew
+{{ end -}}

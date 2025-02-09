@@ -152,67 +152,9 @@ install_powerlevel10k() {
 
 }
 
-initialize_conda_shell() {
-  # Initialize Conda for the current shell
-  source $HOME/miniconda3/etc/profile.d/conda.sh
-
-  echo "${YELLOW}Initializing Conda for the default shell $(basename $SHELL) ${RESET}"
-  # Get the shell's configuration file
-  shell_config=""
-
-  case "$(basename $SHELL)" in
-  bash) shell_config=~/.bashrc ;;
-  zsh) shell_config=~/.zshrc ;;
-  *) echo "${RED}Shell type $(basename $SHELL) is not supported. Manual initialization may be required.${RESET}" ;;
-  esac
-
-  if [ -n "$shell_config" ]; then
-    # Initialize Conda for the default shell , and also for bash shell
-    ~/miniconda3/bin/conda init $(basename $SHELL)
-    ~/miniconda3/bin/conda init bash
-    echo "${YELLOW} Conda has been automatically initialized in your terminal and you should see (base). if not, restart it manually and verify that it's inside your file shell_config.${RESET}"
-    exec $SHELL
-  fi
-}
-
 # Function to install miniconda
 install_miniconda3() {
   # check if directory exists
-  if [ -d "$HOME/miniconda3" ]; then
-    echo "${YELLOW} Miniconda is already installed at $HOME/miniconda3 ${RESET}"
-    if ask_yes_no "Do you want to remove the directory and reinstall it ? (All environments will be deleted). If not, it will be reinitialized"; then
-      rm -rf $HOME/miniconda3
-    else
-      echo "${GREEN} Conda has been initialized${RESET}"
-      initialize_conda_shell
-      exec zsh
-    fi
-  fi
-
-  # Check if Conda is already installed
-  if command -v conda >/dev/null 2>&1; then
-    echo "${YELLOW} Conda is already installed${RESET}"
-    if ask_yes_no "Do you want to initialize it?"; then
-      initialize_conda_shell
-    fi
-
-  else
-    echo "${YELLOW} Conda is not installed. Installing miniconda3... ${RESET}"
-
-    case "$(uname -s)" in
-    Linux*)
-      # Download and install Miniconda
-      wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
-      chmod +x Miniconda3-latest-Linux-x86_64.sh
-      bash Miniconda3-latest-Linux-x86_64.sh -b
-      initialize_conda_shell
-
-      ;;
-    *)
-      echo "${RED}Miniconda installation with this script is only supported on Linux at the moment.${RESET}"
-      ;;
-    esac
-  fi
 }
 
 # Function to install nvidia driver

@@ -1,0 +1,5 @@
+{{ if eq .chezmoi.os "linux" -}}
+#!/bin/sh
+sudo apt update -y
+sudo apt upgrade -y
+{{ end -}}

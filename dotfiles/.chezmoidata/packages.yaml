@@ -1,0 +1,23 @@
+packages:
+  darwin:
+    brews:
+      - 'git'
+    casks:
+      - 'brave-browser'
+      - 'raycast'
+      - 'ghostty'
+      - 'jordanbaird-ice' # Menu bar management tool
+      - 'shottr'
+      - 'swift-quit'
+      - 'alt-tab'
+      - 'anydesk'
+      - 'obsidian'
+      - 'zed'
+      - 'discord'
+
+#    ubuntu:
+#      apt:
+#        - 'git'
+#      snap:
+#        - 'brave'
+#        - 'raycast'
