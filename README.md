@@ -30,6 +30,12 @@ You can follow this repository to get a similar setup on Windows11, Linux or bot
 
 #todo: add load yaml packages.yaml config (from path or url )
 
+One command to run the app:
+
+```sh
+curl -fsSL https:/github.com/AmineDjeghri/awesome-os-setup/install.sh | sh
+```
+
 ## 1. Windows 11-WSL2
 
 Valuable applications & tips for enhancing your Windows user experience, with a focus on creating a productive

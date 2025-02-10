@@ -11,10 +11,13 @@ UV := "$$HOME/.local/bin/uv" # keep the quotes incase the path contains spaces
 
 install:
 	./setup_os.sh
-	@chezmoi apply
 #	@echo "${YELLOW}=========> Installing dependencies...${NC}"
 #	@$(UV) sync
 #	@echo "${GREEN}Dependencies installed.${NC}"
+
+run:
+	@echo "${YELLOW}=========> Running app...${NC}"
+	@$(UV) run python main.py
 
 pre-commit:
 	@echo "${YELLOW}=========> Running pre-commit...${NC}"
