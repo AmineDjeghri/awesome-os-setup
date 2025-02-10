@@ -35,6 +35,10 @@ By participating, you are expected to uphold this code. Please report unacceptab
 ### 4.1 File structure (🌳 Tree)
 Check the readme file.
 
+- When you run ``make install``, it will run ``[setup_os.sh](setup_os.sh)`` and ``chezmoi apply``.
+- chezmoi apply will run all the scripts that start with ``run_``.
+- You can check the [documentation of chezmoi](https://www.chezmoi.io/)
+
 ### 4.2 Steps for Installation (Contributors and maintainers)
 
 - The first step is [to install, read and test the project as a user](README.md#-steps-for-installation-users)

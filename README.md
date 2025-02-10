@@ -28,6 +28,8 @@ You can follow this repository to get a similar setup on Windows11, Linux or bot
   * [Contributing](#contributing)
 <!-- TOC -->
 
+
+
 ## 1. Windows 11-WSL2
 
 Valuable applications & tips for enhancing your Windows user experience, with a focus on creating a productive
@@ -97,23 +99,7 @@ Based on your needs, you can choose your OS.
 
 ## Contributing
 
-- Git clone the repository
-- Install and run pre-commit to check the code before pushing it with :
-    - `pip install pre-commit`
-    - `pre-commit install`
-    - `pre-commit run --all-files`
 
-- Generated docs:
-    - If you modify the README.md file, remember to modify it in the `docs` folder as well and adapt the paths.
-    - A folder named `docs` contains the docs for generating the website with Jetbrains Writerside plugin.
-    - Writerside supports only one file named `README.md`, that's why you will find other readme files
-      like `unix_workflow/README_unix.md` instead of being named `unix_workflow/README.md`.
-- Modifying dotfiles like `.zshrc`:
-- use `stow` to create symlinks to the dotfiles in your home directory as follows:
-- `cd docs/unix_workflow/` then ``stow -t $HOME -R dotfiles ``
-    - This will create symlinks to the dotfiles in your home directory: ``cd ~ && cat .zshrc``
-- WARNING: Windows users can't open the dotfiles in their home directory with their text editor, you can only do it with
-  the terminal or open them in the repo folder.
 
 **Star History Chart**
 [![Star History Chart](https://api.star-history.com/svg?repos=aminedjeghri/awesomewindows11&type=Date)](https://star-history.com/#aminedjeghri/awesomewindows11&Date)

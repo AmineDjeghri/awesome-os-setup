@@ -3,6 +3,7 @@ packages:
     brews:
       - 'git'
       - 'zsh'
+      - 'chezmoi'
     casks:
       - 'brave-browser'
       - 'raycast'

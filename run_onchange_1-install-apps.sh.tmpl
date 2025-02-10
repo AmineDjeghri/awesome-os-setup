@@ -7,7 +7,7 @@ RESET=$(printf '\033[0m')
 GREEN=$(printf '\033[0;32m')
 
 echo " ${YELLOW}===========> Second step : running chezmoi apply ${RESET}"
-echo " ${YELLOW}===========> Installing apps ${RESET}"
+echo " ${YELLOW} Installing apps ${RESET}"
 # Function to check for a command and install it if not found
 check_and_install() {
     local command_name=$1
@@ -24,18 +24,15 @@ check_and_install() {
     fi
 }
 
-echo " ${YELLOW} Installing apps ${RESET}"
+########## MacOS
 {{ if eq .chezmoi.os "darwin" -}}
 
-# Precompute installed brew formulas and casks
 installed_brew_apps=$(brew list)
 
-# Install brew formulas
 {{ range .packages.darwin.brews -}}
 check_and_install {{ . | quote }} "brew install {{ . | quote }}" "${installed_brew_apps}"
 {{ end -}}
 
-# Install cask packages
 {{ range .packages.darwin.casks -}}
 check_and_install {{ . | quote }} "brew install --cask {{ . | quote }}" "${installed_brew_apps}"
 {{ end -}}
