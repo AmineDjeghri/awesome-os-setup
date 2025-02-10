@@ -35,27 +35,20 @@ By participating, you are expected to uphold this code. Please report unacceptab
 ### 4.1 File structure (🌳 Tree)
 Check the readme file.
 
-- When you run ``make install``, it will run ``[setup_os.sh](setup_os.sh)`` and ``chezmoi apply``.
+- ``make install`` will run ``[setup_os.sh](setup_os.sh)`` and ``chezmoi apply``.
 - chezmoi apply will run all the scripts that start with ``run_``.
 - You can check the [documentation of chezmoi](https://www.chezmoi.io/)
 
 ### 4.2 Steps for Installation (Contributors and maintainers)
 
 - The first step is [to install, read and test the project as a user](README.md#-steps-for-installation-users)
-- Then you can either [develop in a container](#22-or-develop-in-a-container) or [develop locally](#21-local-development)
 
 #### a. Local development
 - Requires Debian (Ubuntu 22.04) or MacOS.
 - git clone the repository
-- Install using ``make install`` to install uv, python, dependencies and chezmoi
+- Install using ``make install`` to install uv, python, dependencies and chezmoi with all the necessary apps
 - run ``make pre-commit install`` to install pre-commit hooks
 - To install the GitHub actions locally, run ``make install-act``
-- To install the gitlab ci locally, run ``make install-ci``
-
-#### b. or Develop in a container
-- If you have a .venv folder locally, you need to delete it; otherwise it will create a conflict since the project is mounted in the container.
-- You can run a docker image containing the project with ``make docker-prod`` (or ``make docker-dev`` if you want the project to be mounted in the container).
-- A venv is created inside the container and the dependencies are installed.
 
 ### 4.4. Pushing your work
 - Before you start working on an issue, please comment on (or create) the issue and wait for it to be assigned to you. If
@@ -81,7 +74,6 @@ Check the readme file.
    - if your project is a python package, run ``make build-pacakge`` to build the package and create the wheel in the `dist` folder
 3. Run CI/CD Locally: Depending on the platform you use:
    - GitHub Actions: run `make install-act` then `make act` for GitHub Actions
-   - GitLab CI: run `make install-gitlab-ci-local` then `make gitlab-ci-local` for GitLab CI.
 4. Create a pull request. If the GitHub actions pass, the PR will be accepted and merged to dev.
 
 ### 4.5. (For repository maintainers) Merging strategies & GitHub actions guidelines**

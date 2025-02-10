@@ -12,17 +12,36 @@ echo " ${YELLOW} Installing apps ${RESET}"
 check_and_install() {
     local command_name=$1
     local install_command=$2
-    local installed_packages=$3  # Precomputed list of installed packages
+    local installed_packages=$3
+    local ask_confirmation=$4  # "true" if the user wants manual approval
 
     echo "${YELLOW}Checking for ${command_name}...${NC}"
 
     if echo "${installed_packages}" | grep -qw "${command_name}"; then
         echo "${GREEN}${command_name} is already installed.${NC}"
     else
-        echo "${YELLOW}${command_name} not found. Installing ${command_name}...${NC}"
+        echo "${YELLOW}${command_name} not found.${NC}"
+
+        if [[ "$ask_confirmation" == "true" ]]; then
+            read -p "Do you want to install ${command_name}? (y/n) " response
+            if [[ "$response" != "y" ]]; then
+                echo "${RED}Skipping ${command_name}.${NC}"
+                return
+            fi
+        fi
+
+        echo "${YELLOW}Installing ${command_name}...${NC}"
         eval "${install_command}"
     fi
 }
+
+# Ask the user if they want automatic installation
+read -p "Do you want to automatically install all missing packages? (y/n) " auto_install
+if [[ "$auto_install" == "y" ]]; then
+    ask_confirmation="false"
+else
+    ask_confirmation="true"
+fi
 
 ########## MacOS
 {{ if eq .chezmoi.os "darwin" -}}
@@ -30,11 +49,11 @@ check_and_install() {
 installed_brew_apps=$(brew list)
 
 {{ range .packages.darwin.brews -}}
-check_and_install {{ . | quote }} "brew install {{ . | quote }}" "${installed_brew_apps}"
+check_and_install {{ . | quote }} "brew install {{ . | quote }}" "${installed_brew_apps}" "$ask_confirmation"
 {{ end -}}
 
 {{ range .packages.darwin.casks -}}
-check_and_install {{ . | quote }} "brew install --cask {{ . | quote }}" "${installed_brew_apps}"
+check_and_install {{ . | quote }} "brew install --cask {{ . | quote }}" "${installed_brew_apps}" "$ask_confirmation"
 {{ end -}}
 
 {{ end -}}
@@ -43,34 +62,18 @@ check_and_install {{ . | quote }} "brew install --cask {{ . | quote }}" "${insta
 {{ if eq .chezmoi.os "linux" -}}
 
 # Function to check and install apt packages
-install_apt_package() {
-  local package=$1
-  if ! dpkg -l | grep -q "^ii  $package "; then
-    sudo apt-get update
-    sudo apt-get install -y "$package"
-  else
-    echo "$package is already installed."
-  fi
-}
+installed_apt_packages=$(dpkg --get-selections | awk '{print $1}')
 
-# Function to check and install snap packages
-install_snap_package() {
-  local package=$1
-  if ! snap list | grep -q "^$package "; then
-    sudo snap install "$package"
-  else
-    echo "$package is already installed."
-  fi
-}
+installed_snap_packages=$(snap list | awk 'NR>1 {print $1}')
 
-# Install apt packages
+# Install APT packages (Debian/Ubuntu)
 {{ range .packages.linux.apt -}}
-install_apt_package {{ . | quote }}
+check_and_install {{ . | quote }} "sudo apt install -y {{ . | quote }}" "${installed_apt_packages}" "$ask_confirmation"
 {{ end -}}
 
-# Install snap packages
+# Install Snap packages (Ubuntu & compatible)
 {{ range .packages.linux.snap -}}
-install_snap_package {{ . | quote }}
+check_and_install {{ . | quote }} "sudo snap install {{ . | quote }}" "${installed_snap_packages}" "$ask_confirmation"
 {{ end -}}
 
 {{ end -}}
