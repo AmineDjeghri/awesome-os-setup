@@ -17,9 +17,8 @@ packages:
       - 'zed'
       - 'discord'
 
-#    ubuntu:
-#      apt:
-#        - 'git'
-#      snap:
-#        - 'brave'
-#        - 'raycast'
+    ubuntu:
+      apt:
+        - 'git'
+      snap:
+        - 'brave'

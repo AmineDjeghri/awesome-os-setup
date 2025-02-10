@@ -28,7 +28,7 @@ You can follow this repository to get a similar setup on Windows11, Linux or bot
   * [Contributing](#contributing)
 <!-- TOC -->
 
-
+#todo: add load yaml packages.yaml config (from path or url )
 
 ## 1. Windows 11-WSL2
 
