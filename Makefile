@@ -9,20 +9,11 @@ NC=\033[0m
 NVM_USE := export NVM_DIR="$$HOME/.nvm" && . "$$NVM_DIR/nvm.sh" && nvm use
 UV := "$$HOME/.local/bin/uv" # keep the quotes incase the path contains spaces
 
-# installation
-install-uv:
-	@echo "${YELLOW}=========> installing uv ${NC}"
-	@if [ -f $(UV) ]; then \
-		echo "${GREEN}uv exists at $(UV) ${NC}"; \
-		$(UV) self update; \
-	else \
-	     echo "${YELLOW}Installing uv${NC}"; \
-		 curl -LsSf https://astral.sh/uv/install.sh | env UV_INSTALL_DIR="$$HOME/.local/bin" sh ; \
-	fi
-
-install:install-uv
-	@echo "${YELLOW}=========> Installing dependencies...${NC}"
-	@$(UV) sync
+install:
+	./setup_os.sh
+	chezmoi apply
+#	@echo "${YELLOW}=========> Installing dependencies...${NC}"
+#	@$(UV) sync
 	@echo "${GREEN}Dependencies installed.${NC}"
 
 pre-commit:

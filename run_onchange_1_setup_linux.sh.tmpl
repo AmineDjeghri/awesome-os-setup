@@ -1,0 +1,12 @@
+#!/bin/sh
+
+
+{{ if eq .chezmoi.os "linux" -}}
+. run_once_before_0_setup.sh
+
+
+# Function to update and upgrade packages
+
+check_and_install "uv" "curl -LsSf https://astral.sh/uv/install.sh | env UV_INSTALL_DIR=\"$HOME/.local/bin\" sh"
+
+{{ end -}}
