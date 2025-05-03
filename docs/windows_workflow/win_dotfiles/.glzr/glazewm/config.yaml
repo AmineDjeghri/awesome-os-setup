@@ -135,10 +135,9 @@ window_rules:
         window_class: { regex: 'HwndWrapper\[PowerToys\.PowerAccent.*?\]' }
       - window_process: { equals: 'Lively' }
         window_class: { regex: 'HwndWrapper*' }
-      - window_process: { regex: 'Taskmgr|WindowsTerminal'}
-
-# move to workspaces
- # Move to workspace 1
+      - window_process: { regex: 'Taskmgr|WindowsTerminal|hl|cs2'}
+  # move to workspaces
+  # Move to workspace 1
   - commands: ['move --workspace 1','focus --workspace 1']
     match:
       - window_process: { regex: 'msedge|brave|chrome' }
@@ -161,7 +160,8 @@ window_rules:
   # Move to workspace 5
   - commands: ['move --workspace 5','focus --workspace 5']
     match:
-      - window_process: { regex: 'Messenger|messenger|Discord|olk|msedgewebview2|ms-teams' }
+      - window_process: { regex: 'Discord|olk|msedgewebview2|ms-teams' }
+      - window_title: { regex: "Messenger" }
 
   # Move to workspace 6
   - commands: ['move --workspace 6','focus --workspace 6']
