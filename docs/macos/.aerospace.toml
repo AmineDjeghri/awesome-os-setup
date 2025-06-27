@@ -229,9 +229,11 @@ if.app-id = 'com.microsoft.Powerpoint'
 run = 'move-node-to-workspace 4'
 
 # workspace 5 apps (chats, mails, calendar)
+
 [[on-window-detected]]
-if.app-id = 'com.openai.chat'
+if.app-id = 'com.hnc.Discord'
 run = 'move-node-to-workspace 5'
+
 
 [[on-window-detected]]
 if.app-id = 'app.mindmac.macos'
@@ -241,10 +243,10 @@ run = 'move-node-to-workspace 5'
 if.app-id = 'com.microsoft.teams2'
 run = 'move-node-to-workspace 5'
 
-
 [[on-window-detected]]
-if.app-id = 'com.hnc.Discord'
+if.app-id = 'com.microsoft.Outlook'
 run = 'move-node-to-workspace 5'
+
 
 [[on-window-detected]]
 if.app-id = 'com.facebook.archon'
@@ -259,15 +261,22 @@ if.app-id = 'com.apple.mail'
 run = 'move-node-to-workspace 5'
 
 [[on-window-detected]]
-if.app-id = 'com.microsoft.Outlook'
+if.app-id = 'com.anythingllm'
+run = 'move-node-to-workspace 5'
+
+[[on-window-detected]]
+if.app-id = 'com.openai.chat'
 run = 'move-node-to-workspace 5'
 
 [[on-window-detected]]
 if.app-id = 'com.anythingllm'
 run = 'move-node-to-workspace 5'
 
-
 # workspace 6 apps (games & movies)
+[[on-window-detected]]
+if.app-id = 'com.valvesoftware.steam.helper'
+run = ['layout tiling', 'move-node-to-workspace 6']
+
 [[on-window-detected]]
 if.app-id = 'com.valvesoftware.steam.helper'
 run = ['layout tiling', 'move-node-to-workspace 6']
@@ -280,4 +289,9 @@ run = 'layout floating'
 
 [[on-window-detected]]
 if.app-id = 'com.mitchellh.ghostty'
+run = 'layout floating'
+
+
+[[on-window-detected]]
+if.app-id = 'com.colliderli.iina'
 run = 'layout floating'
