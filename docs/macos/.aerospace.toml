@@ -66,6 +66,21 @@ outer.bottom = 5
 outer.top = 5
 outer.right = 5
 
+
+[workspace-to-monitor-force-assignment]
+# values can be
+# 1 Monitor sequence number from left to right. 1-based indexing
+# 'main' Main monitor
+# 'built-in' Case insensitive regex substring
+# '^built-in retina display$' Case insensitive regex match
+# ['secondary', 'dell']  You can specify multiple patterns. The first matching pattern will be used
+1 = ['T24m-29', 1]
+2 = ['T24m-29', 3, 1]
+3 = ['T24m-29', 1]
+4 = ['T24m-29', 3, 1]
+5 = '^built-in retina display$'
+6 = ['secondary', 'dell']
+
 # 'main' binding mode declaration
 # See: https://nikitabobko.github.io/AeroSpace/guide#binding-modes
 # 'main' binding mode must be always presented
@@ -181,6 +196,10 @@ alt-shift-l = ['join-with right', 'mode main']
 [[on-window-detected]]
 if.app-id = 'com.brave.Browser'
 run = 'move-node-to-workspace 1'
+[[on-window-detected]]
+if.app-id = 'com.apple.Safari'
+run = 'move-node-to-workspace 1'
+
 
 # workspace 2 apps ; Pycharm
 [[on-window-detected]]
@@ -201,11 +220,27 @@ run = 'move-node-to-workspace 4'
 if.app-id = 'md.obsidian'
 run = 'move-node-to-workspace 4'
 
+[[on-window-detected]]
+if.app-id = 'com.microsoft.Word'
+run = 'move-node-to-workspace 4'
+
+[[on-window-detected]]
+if.app-id = 'com.microsoft.Powerpoint'
+run = 'move-node-to-workspace 4'
 
 # workspace 5 apps (chats, mails, calendar)
 [[on-window-detected]]
 if.app-id = 'com.openai.chat'
 run = 'move-node-to-workspace 5'
+
+[[on-window-detected]]
+if.app-id = 'app.mindmac.macos'
+run = 'move-node-to-workspace 5'
+
+[[on-window-detected]]
+if.app-id = 'com.microsoft.teams2'
+run = 'move-node-to-workspace 5'
+
 
 [[on-window-detected]]
 if.app-id = 'com.hnc.Discord'
@@ -223,6 +258,14 @@ run = 'move-node-to-workspace 5'
 if.app-id = 'com.apple.mail'
 run = 'move-node-to-workspace 5'
 
+[[on-window-detected]]
+if.app-id = 'com.microsoft.Outlook'
+run = 'move-node-to-workspace 5'
+
+[[on-window-detected]]
+if.app-id = 'com.anythingllm'
+run = 'move-node-to-workspace 5'
+
 
 # workspace 6 apps (games & movies)
 [[on-window-detected]]
@@ -233,4 +276,8 @@ run = ['layout tiling', 'move-node-to-workspace 6']
 # floating apps
 [[on-window-detected]]
 if.app-id = 'com.googlecode.iterm2'
+run = 'layout floating'
+
+[[on-window-detected]]
+if.app-id = 'com.mitchellh.ghostty'
 run = 'layout floating'
