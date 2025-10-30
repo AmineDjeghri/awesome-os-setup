@@ -208,21 +208,22 @@ Official[Link to Cheatsheet](https://resources.jetbrains.com/storage/products/py
 
 Some of them are re-mapped :
 
+The macos shortcuts are inverted in my system so i can use the same commands as in windows. The ones in this list works for both since i use the name of the key and not the real inverted key.
 **Panels & windows :**
 
-| Panel                        | Shortcut                               |
+| Panel                        | Windows (MacOS) Shortcut                               
 |------------------------------|----------------------------------------|
-| Press the blue button        | alt+p                                  |
+| Press the blue button        | alt+p  (command+p)                                | 
 | project panel          alt+P |                                        |
-| terminal panel               | alt + T                                |
+| terminal panel               | alt + T  (command+t)                                |
 | new terminal                 | alt maj T                              |
-| settings                     | ctrl+alt+S then type with the keyboard |
+| settings                     | ctrl+alt+S (fn+,)then type with the keyboard |
 | **Git**                      |                                        |
-| Git commit  panel            | ctrl + K                               |
-| Git panel                    | alt + g                                |
+| Git commit  panel            | ctrl + K (command +t)                              |
+| Git panel                    | alt + g (command +g)                               |
 | Git update                   | not defined yet                        |
 | git emoji                    | show toolbar like alt+w then alt+g     |
-| git menu                     | alt+k then alt+ctrl+g                  |
+| git emoji                     | open git panel with alt+k then alt+ctrl+g                  |
 | git menu                     | show toolbar like alt+w then alt+g     |
 | git menu                     | show toolbar like alt+w then alt+g     |
 | **run/debug**                |                                        |

@@ -114,7 +114,7 @@ workspaces:
   - name: "6"
     display_name: "6.🎮Gaming"
     keep_alive: true
-    bind_to_monitor: 0
+    bind_to_monitor: 1
 
   - name: "7"
   - name: "8"
@@ -136,8 +136,8 @@ window_rules:
       - window_process: { equals: 'Lively' }
         window_class: { regex: 'HwndWrapper*' }
       - window_process: { regex: 'Taskmgr|WindowsTerminal|hl|cs2'}
-  # move to workspaces
-  # Move to workspace 1
+# move to workspaces 
+ # Move to workspace 1
   - commands: ['move --workspace 1','focus --workspace 1']
     match:
       - window_process: { regex: 'msedge|brave|chrome' }
@@ -145,7 +145,7 @@ window_rules:
   # Move to workspace 2
   - commands: ['move --workspace 2','focus --workspace 2']
     match:
-      - window_process: { regex: 'pycharm64|Code' }
+      - window_process: { regex: 'pycharm64|Code|ComfyUI' }
 
   # Move to workspace 3
   - commands: ['move --workspace 3','focus --workspace 3']
@@ -160,7 +160,7 @@ window_rules:
   # Move to workspace 5
   - commands: ['move --workspace 5','focus --workspace 5']
     match:
-      - window_process: { regex: 'Discord|olk|msedgewebview2|ms-teams' }
+      - window_process: { regex: 'Discord|olk|msedgewebview2|ms-teams|ChatGPT' }
       - window_title: { regex: "Messenger" }
 
   # Move to workspace 6
@@ -251,7 +251,7 @@ keybindings:
 
   # Change the focused window to be fullscreen.
   - commands: ['toggle-fullscreen']
-    bindings: ['alt+f']
+    bindings: ['alt+f'] 
 
   # Minimize focused window.
   - commands: ['toggle-minimized']
