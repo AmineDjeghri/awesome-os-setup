@@ -35,16 +35,6 @@ docs = [
     "mkdocs-exclude"
 ]
 
-
-# scripts : inside the root folder, you can run `uv run --directory . hi` or
-[project.scripts]
-hello = "tmp" # will read from __init__.py.
-
-# pytest configuration
-[tool.pytest.ini_options]
-pythonpath = ["src"]
-
-
 # ruff configuration
 [tool.ruff]
 extend-exclude = ["*.ipynb"]

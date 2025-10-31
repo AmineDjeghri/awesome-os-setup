@@ -17,6 +17,8 @@ else
     if [ -d "$FOLDER_NAME" ]; then
         echo "✅ Repository found! Entering..."
         cd "$FOLDER_NAME"
+        echo "⬇️ Pulling..."
+        git pull
     else
         echo "📂 Repository not found. Cloning..."
         git clone "$REPO_URL"

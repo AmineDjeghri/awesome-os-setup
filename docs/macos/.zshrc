@@ -1,4 +1,4 @@
-
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
@@ -7,6 +7,8 @@ fi
 
 # If you come from bash you might have to change your $PATH.
 export PATH="$HOME/.local/bin:$PATH"
+
+# (MACOS only)
 # Ensure local user binaries (uv, etc.) are found
 export PATH="/opt/homebrew/bin:/usr/local/bin:/System/Cryptexes/App/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Applications/iTerm.app/Contents/Resources/utilities:$PATH"
 
@@ -55,20 +57,14 @@ if command -v uv >/dev/null 2>&1; then
   eval "$(uv generate-shell-completion zsh)"
 fi
 
-# Pycharm
+
+# NVM (guarded)
+if [ -s "$HOME/.nvm/nvm.sh" ]; then
+  export NVM_DIR="$HOME/.nvm"
+  . "$NVM_DIR/nvm.sh"  # This loads nvm
+  [ -s "$NVM_DIR/bash_completion" ] && . "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+fi
+
+
+# (MACOS only)
 export PATH="/Applications/PyCharm.app/Contents/MacOS:$PATH"
-
-# NVM
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
-# Postgresql
-export PATH="/usr/local/opt/postgresql@17/bin:$PATH"
-
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f '/Users/z736kw/Downloads/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/z736kw/Downloads/google-cloud-sdk/path.zsh.inc'; fi
-
-# The next line enables shell command completion for gcloud.
-if [ -f '/Users/z736kw/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/z736kw/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
-
