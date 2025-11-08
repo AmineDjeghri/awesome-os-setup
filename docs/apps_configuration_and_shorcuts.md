@@ -78,17 +78,8 @@ Download [Windows store](https://apps.microsoft.com/detail/XP89DCGQ3K6VLD?hl). [
   this [command](windows_workflow/README_windows.md#2-software). Select the second option.
 - wget on Windows terminal: add it to your terminal: https://www.programmersought.com/article/90723524682/
 
-## 1.5. Sublime Text 4 (All platforms)
-
-- Install the package control: https://packagecontrol.io/installation
-- (Windows) Copy and paste the [Package Control.sublime-settings](windows_workflow/win_dotfiles/sublime_text_4/Package%20Control.sublime-settings)
-  and [Preferences.sublime-settings](windows_workflow/win_dotfiles/sublime_text_4/Preferences.sublime-settings)
-  in : `%UserProfile%\AppData\Roaming\Sublime Text\Packages\User`
-- You may need to restart sublime text to see the changes.
-- If the editor color is not changed, you can change the theme in the settings :
-    - (preferences -> select color scheme-> select one dark)
-    - (preferences -> select theme -> select one dark)
-    -
+## 1.5. ZED (All platforms)
+- (TBD)
 
 ## 1.6. Obsidian (All platforms)
 
@@ -348,16 +339,29 @@ Print color and select full black and white
   from various sources. And with its commitment to security, Stremio is the ultimate choice for a worry-free,
   high-quality streaming experience.
 - You can either use your favorite platforms to watch movies or series or use torrent without any risk.
-- Stremio is available on all platforms: Windows, Mac, Linux, Android, iOS, Android TV & Web.
+- Stremio is available on all platforms: Web, Windows, Mac, Linux, Android, iOS, Android TV & Web.
+- Settings will be synchronized between all your devices
+- (Depreated) [Tutorial](https://www.reddit.com/r/StremioAddons/comments/17833ms/stremio_all_you_need_to_know/)
+- What is a debrid service? A debrid service is an unrestricted multi-hoster that allows you to stream and download videos instantly at the best speeds. In plain English, the debrid services act as a proxy between the BitTorrent tracker and you, so you download the content directly from their servers at high speed. Most of the content is already cached, meaning you can instantly access it.
+- Personnaly, I use ALL Debrid, but others exist like : TorBox, Real Debrid...
 
 ### 1.13.1. Installation:
+- (Update November 2025)
 
-- Always use the desktop app to install addons & configure them, settings will be synchronized between all your devices
-- (Update July 2024): You need both `stremio` and `stremio service` on PC to make it work perfectly.
-- Setup : [Tutorial](https://www.reddit.com/r/StremioAddons/comments/17833ms/stremio_all_you_need_to_know/)
-    - Force stop or restart the app on your deivces to synchronize the settings if you add an addon with the desktop
-      app.
-    - My recommended official addons: Watchhub, Cinemeta, Opensubtitles V3, Opensubtitles, Local Files
+
+- Setup :
+    - To synchronize the addons, just click on the addons, and go back to home.
+    - Preferred audio and subs language aren't synchrnized, you need to do it on each platform.
+    - My recommended Setup:
+     
+     - Ratings Addon : https://72059fbbd1e5-stremio-addon-ratings.baby-beamup.club
+ 
+     - 
+     - AIOStreams:
+       - 
+       - In stremio, after selecting a movie, you should see [this](https://www.reddit.com/media?url=https%3A%2F%2Fpreview.redd.it%2Faiostreams-setup-guide-optimized-for-tv-v0-mnckhq45y5tf1.png%3Fwidth%3D515%26format%3Dpng%26auto%3Dwebp%26s%3Dd47fb2f619f0e1f4afd0df0085bb7f0235f565f3) 
+     - (optional) disable Cinemeta : https://www.reddit.com/r/StremioAddons/comments/1d8wbul/how_to_remove_cinemeta/
+       - If you disable Cinemeta, enable then the ' Cinemeta (custom) ' in AIOStreams and reinstall the addon.
     - My recommended community addons : Streaming Catalogs, Trakt TV (with two
       websites : [trakt.tv](https://trakt.tv/dashboard) + [couchmoney](https://couchmoney.tv/), Torrentio (With
       real-debrid), YggStremio (for french), debrid search (with real-debrid)
@@ -368,26 +372,15 @@ Print color and select full black and white
           items with today's date).
         - If you want to syncronize everything with IMDB and/or the streaming platforms, you can use these two
           applications:
-            - [Universal Trakt Scrobbler](https://chromewebstore.google.com/detail/universal-trakt-scrobbler/mbhadeogepkjdjeikcckdkjdjhhkhlid) -
-              a Chrome extension for synchronizing Streaming platforms (netflix, prime,...) watched history with Trakt
             - [IMDB-Trakt-Syncer](https://github.com/RileyXX/IMDB-Trakt-Syncer)a python app to synchronize IMDB ratings,
               watchlist... with Trakt both ways (You can use it in WSL2, install Google Chrome in WSL2 first)
-
+       - (Optional) What is Trakt? It is a media tracking service that helps users sync their TV shows and movies across numerous platforms and devices.
+         - You can enable trakt in Stremio settings. You can download Trakt mobile app or use their website. 
   Tips :
-    - Use Stremio desktop to configure addons. ALl settings & addons will sync between your devices if you use the same
+    - Use Stremio web to configure addons. ALl settings & addons will sync between your devices if you use the same
       account.
-    - You can install multiple times addons with different configurations (for example, a Torrentio specific for french
-      audio).
-    - Order of a list in Stremio home is determined by the installation order.
-    - Sort and filter movies inside a list by clicking on 'see more' on a list.
-    - You can find and safely download all the torrents from real debrid in
-      the [torrents section](https://real-debrid.com/torrents). Click on the green box to either download or stream the
-      torrent.
-    - You can also use stremio on iOS with VLC: go to [stremio web](https://web.stremio.com/) and
-      follow [this tutorial](https://blog.stremio.com/using-stremio-web-on-iphone-ipad/). It works with torrents and
-      everything.
-    - Remember to rate what you watch on IMDB or trakt and run the Chrome extension & python app to sync everything.
-    - If you didn't rate some movies & tv shows, you can add them to history in Trakt to avoid being recommended in
-      couchmoney (no need to rate them if you forget how good or bad the movie was)
+    - Order of a list(catalogà in Stremio home is determined by the installation order (except in AIOSteams were you can order them manually).
+    - You can what you watch on IMDB or trakt and run the Chrome extension & python app to sync everything.
+    - If you didn't rate some movies & tv shows, you can add them to history in Trakt to avoid being recommended by the 'AI Search' addon.
 
 ## 1.14. WinToys
