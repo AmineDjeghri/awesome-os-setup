@@ -151,7 +151,7 @@ the Projectivy and add stremio there. Also make it the default launcher for your
   
             ##### 💾 Step 7 — Save and Install
             1. Go back to the **Install** section.  
-            2. Click **Save** — this saves your configuration to your online AIOStreams account.  If you see a timeout error with the name of an addon, it means that this addon is down right now. Just deactivate it and save again.
+            2. Click **Save** — this saves your configuration to your online AIOStreams account.  If you see a timeout error with the name of an addon, it means that this addon is down right now. Just deactivate it and save again (sometimes StremFusion and Opensubtitles V3+ are down)
             3. Then click **Install** and choose **Stremio Web** (or your preferred option).  
             4. Stremio will open and prompt you to install your configured addons.
   
@@ -190,6 +190,7 @@ the Projectivy and add stremio there. Also make it the default launcher for your
       - Order of a list(catalogà in Stremio home is determined by the installation order (except in AIOSteams were you can order them manually).
       -
       - If you didn't rate some movies & tv shows, you can add them to history in Trakt to avoid being recommended by the 'AI Search' addon.
+
 
 
 
