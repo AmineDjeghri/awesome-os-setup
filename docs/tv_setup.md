@@ -100,7 +100,7 @@ the Projectivy and add stremio there. Also make it the default launcher for your
             ---
   
             ##### 📂 Step 4 — Import Your Settings 
-            1. Download[ my configuration file](https://github.com/AmineDjeghri/awesome-os-setup/blob/v2/docs/AIOSTREAMS_config.json)
+            1. Download[ my configuration file](aiostreams-config.json)
             2. Go to **“Navigate and Install”**.  
             3. Click **Import**.  
             4. Select and upload your saved configuration file. You will an error message saying that 'StreamFusion API Key is invalid' which is normal for now.
@@ -190,6 +190,7 @@ the Projectivy and add stremio there. Also make it the default launcher for your
       - Order of a list(catalogà in Stremio home is determined by the installation order (except in AIOSteams were you can order them manually).
       -
       - If you didn't rate some movies & tv shows, you can add them to history in Trakt to avoid being recommended by the 'AI Search' addon.
+
 
 
 
