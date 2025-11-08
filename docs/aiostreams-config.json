@@ -199,7 +199,7 @@
     {
       "type": "opensubtitles-v3-plus",
       "instanceId": "1e7",
-      "enabled": false,
+      "enabled": true,
       "options": {
         "name": "OpenSubtitles V3+",
         "timeout": 5000,
