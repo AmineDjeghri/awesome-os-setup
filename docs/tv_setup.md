@@ -40,13 +40,12 @@ One of the best TV OS is Google TV. Here are some reasons why you should conside
 the Projectivy and add stremio there. Also make it the default launcher for your tv.
 
 ### Best google TV apps:
-- [Stremio](https://www.stremio.com/).
-  - You can check my setup guide [here](apps_configuration_and_shorcuts.md#113-streamio-streaming-on-all-platforms)
 - [SmartTube](https://smartyoutubetv.github.io/)
 - [Projectivy Launcher](https://play.google.com/store/apps/details?id=com.spocky.projengmenu&hl=en&pli=1)
   -  Remember to export your settings: https://www.reddit.com/r/Projectivy_Launcher/comments/1cdt00f/tell_me_about_exporting_these_launcher_settings/
   -  You can create channels in the menu and add stremio, smartube, spotify to the home screen.
 - [Stremio](https://www.stremio.com/).
+   #### What is Stremio ?
   - Stremio is a video streaming application that allows you to watch and organize video content from different services,
     including movies, series, live TV and video channels. The content is aggregated by an addon system providing streams
     from various sources. And with its commitment to security, Stremio is the ultimate choice for a worry-free,
@@ -57,7 +56,7 @@ the Projectivy and add stremio there. Also make it the default launcher for your
   - (Depreated) [Tutorial](https://www.reddit.com/r/StremioAddons/comments/17833ms/stremio_all_you_need_to_know/)
   - What is a debrid service? A debrid service is an unrestricted multi-hoster that allows you to stream and download videos instantly at the best speeds. In plain English, the debrid services act as a proxy between the BitTorrent tracker and you, so you download the content directly from their servers at high speed. Most of the content is already cached, meaning you can instantly access it. Personnaly, I use ALL Debrid, but others exist like : TorBox, Real Debrid...
   
-  Installation:
+  #### Installation
   - (Update November 2025)
   - Setup :
       - After making any change to any addon, you don't need to close the application to synchronize the changes, just click on the addons tab, and go back to home.
@@ -68,9 +67,9 @@ the Projectivy and add stremio there. Also make it the default launcher for your
      
         - AIOStreams:
   
-            ## 🌐 AIOStreams + Stremio Configuration Guide
+            #### 🌐 AIOStreams + Stremio Configuration Guide
   
-            ### 🧩 What is AIOStreams?
+            ##### 🧩 What is AIOStreams?
             [AIOStreams (ElfHosted)](https://aiostreams.elfhosted.com/) is an all-in-one **Stremio addon manager** that lets you organize, install, and sync all your favorite addons in one place.  
             It also allows you to **save your configuration online**, so you don’t lose your setup.  
   
@@ -78,20 +77,20 @@ the Projectivy and add stremio there. Also make it the default launcher for your
   
             ---
   
-            ### 🪪 Step 1 — Login to Stremio Web
+            ##### 🪪 Step 1 — Login to Stremio Web
             Go to 👉 [https://web.stremio.com/](https://web.stremio.com/)  
             Log in with your regular Stremio account.
   
             ---
   
-            ### ⚙️ Step 2 — Open AIOStreams
+            ##### ⚙️ Step 2 — Open AIOStreams
             Visit 👉 [https://aiostreams.elfhosted.com/](https://aiostreams.elfhosted.com/)  
   
             This page is where you manage everything related to your addons.
   
             ---
   
-            ### 🧱 Step 3 — Create Your Configuration
+            ##### 🧱 Step 3 — Create Your Configuration
             1. Go to the **“Save and Install”** section.  
             2. Enter a **password** of your choice — this will create your AIOStreams account.  
             3. You’ll receive a **UUID** (like your username).  
@@ -99,7 +98,7 @@ the Projectivy and add stremio there. Also make it the default launcher for your
   
             ---
   
-            ### 📂 Step 4 — Import Your Settings 
+            ##### 📂 Step 4 — Import Your Settings 
             1. Download[ my configuration file](https://github.com/AmineDjeghri/awesome-os-setup/blob/v2/docs/AIOSTREAMS_config.json)
             2. Go to **“Navigate and Install”**.  
             3. Click **Import**.  
@@ -109,7 +108,7 @@ the Projectivy and add stremio there. Also make it the default launcher for your
   
             ---
   
-            ### 🔑 Step 5 — Enable Your Debrid Services
+            ##### 🔑 Step 5 — Enable Your Debrid Services
             1. In AIOStreams, go to **Services**.  
             2. Enable your preferred **Debrid service** (e.g.,  AllDebrid, Real-Debrid, TorBox).  
             3. Enter your API key.  
@@ -117,11 +116,11 @@ the Projectivy and add stremio there. Also make it the default launcher for your
   
             ---
   
-            ### (Optional) 🇫🇷 Step 6 — Enable and Configure French Addons
+            ##### (Optional) 🇫🇷 Step 6 — Enable and Configure French Addons
             Go to the **Addons** section. You’ll see a list of installed addons.  
             Some may be deactivated (unsupported ones for now by AIOStreams).
   
-            #### ⚙️ Configure *CometFR (custom)*:
+            ###### ⚙️ Configure *CometFR (custom)*:
             1. Click the **Edit** button.  
             2. Copy the **Manifest URL**.  
             3. Paste it in a **new browser tab**.  
@@ -131,7 +130,7 @@ the Projectivy and add stremio there. Also make it the default launcher for your
                and end with `=/manifest.json`.  
             6. Go back to AIOStreams, paste this link in the URL field, and **Activate** the addon.
   
-            #### ⚙️ Configure *JackettioFR (custom)*:
+            ###### ⚙️ Configure *JackettioFR (custom)*:
             1. Click the **Edit** button.  
             2. Copy the **Manifest URL**.  
             3. Open it in a **new browser tab**.  
@@ -144,7 +143,7 @@ the Projectivy and add stremio there. Also make it the default launcher for your
   
             ---
   
-            ### 💾 Step 7 — Save and Install
+            ##### 💾 Step 7 — Save and Install
             1. Go back to the **Install** section.  
             2. Click **Save** — this saves your configuration to your online AIOStreams account.  
             3. Then click **Install** and choose **Stremio Web** (or your preferred option).  
@@ -152,13 +151,13 @@ the Projectivy and add stremio there. Also make it the default launcher for your
   
             ---
   
-            ### ✅ Step 8 — Test Everything
+            ##### ✅ Step 8 — Test Everything
             Open any movie or TV show in Stremio.  
             You should now see your addons providing streams — including CometFR and JackettioFR!
   
             ---
   
-            ### 💡 Tips
+            ##### 💡 Tips
             - Keep your **UUID** and **password** safe — that’s your AIOStreams login.  
             - You can restore your setup anytime by re-entering your credentials.  
             - AIOStreams makes it easy to sync and manage all your addons from one place.
@@ -183,4 +182,5 @@ the Projectivy and add stremio there. Also make it the default launcher for your
       - Order of a list(catalogà in Stremio home is determined by the installation order (except in AIOSteams were you can order them manually).
       - You can what you watch on IMDB or trakt and run the Chrome extension & python app to sync everything.
       - If you didn't rate some movies & tv shows, you can add them to history in Trakt to avoid being recommended by the 'AI Search' addon.
+
 
