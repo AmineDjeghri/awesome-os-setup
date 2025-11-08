@@ -353,20 +353,18 @@ Print color and select full black and white
     - To synchronize the addons, just click on the addons, and go back to home.
     - Preferred audio and subs language aren't synchrnized, you need to do it on each platform.
     - My recommended Setup:
-     
-     - Ratings Addon : https://72059fbbd1e5-stremio-addon-ratings.baby-beamup.club
- 
-     - 
-     - AIOStreams:
-       - 
-       - In stremio, after selecting a movie, you should see [this](https://www.reddit.com/media?url=https%3A%2F%2Fpreview.redd.it%2Faiostreams-setup-guide-optimized-for-tv-v0-mnckhq45y5tf1.png%3Fwidth%3D515%26format%3Dpng%26auto%3Dwebp%26s%3Dd47fb2f619f0e1f4afd0df0085bb7f0235f565f3) 
-     - (optional) disable Cinemeta : https://www.reddit.com/r/StremioAddons/comments/1d8wbul/how_to_remove_cinemeta/
-       - If you disable Cinemeta, enable then the ' Cinemeta (custom) ' in AIOStreams and reinstall the addon.
-    - My recommended community addons : Streaming Catalogs, Trakt TV (with two
-      websites : [trakt.tv](https://trakt.tv/dashboard) + [couchmoney](https://couchmoney.tv/), Torrentio (With
-      real-debrid), YggStremio (for french), debrid search (with real-debrid)
-        - Order of installed community addons: Trakt TV, Streaming Catalogs, Torrentio, YggStremio, Debrid search
-        - Trakt addon uses trakt.tv (requires login) and couchmoney (if you want recommendations)
+      - Uninstall all the default addons (Exceptr Cinemeta which can't be removed but there is a trick to do it in the end of this tutorial) 
+      - Ratings Addon : https://72059fbbd1e5-stremio-addon-ratings.baby-beamup.club
+        - My config : Copy this [link](https://72059fbbd1e5-stremio-addon-ratings.baby-beamup.club/mdbListApiKey=d9u6lt5a2xzblluxc1jeva83d&tmdbApiKey=204180a30d24982b89ff5796277b1301&ratings=imdb%2Ctomatoes%2Cmetacritic%2Cmetacriticuser%2Ctrakt&showAllRatingsInPercent=true&showPercentSymbol=false&showOverallRating=true&calculateOverallRatingBasedOn=all&ageRatings=commonsensemedia&ageRatingCountryNames=flag&displayAgeRatingsAtTop=false&showUnavailableAgeRatings=false&ratingColorMarkers=hearts&ratingColorMarkersCustom=%F0%9F%92%8B%2C%F0%9F%8D%8A%2C%F0%9F%8C%B3%2C%E2%99%A0%EF%B8%8F&showRatingVotes=true&showRatingVotesIcon=true&showUnavailableRatings=false&openOnClick=show-all-ratings&allRatingsAndDetailsBlocks=Details%2COverview%2CCastAndCrew%2CRecommendations%2CAllScores%2CAllAgeRatings%2CButtonLinks&whereToWatchCountry=US&installEmojiChecker=false&widgets=&randomEpisodeIncludedScope=all&randomEpisodeIncludedShows=&randomEpisodeShowSeasonEpisodeNumber=false&sessionId=a3e22347-a258-4d4e-97b1-aa8bb9c7fc9a/manifest.json) and paste it in Stremio Addons : 
+   
+      - AIOStreams:
+        - Download the config file:
+        - In stremio, after selecting a movie, you should see [this](https://www.reddit.com/media?url=https%3A%2F%2Fpreview.redd.it%2Faiostreams-setup-guide-optimized-for-tv-v0-mnckhq45y5tf1.png%3Fwidth%3D515%26format%3Dpng%26auto%3Dwebp%26s%3Dd47fb2f619f0e1f4afd0df0085bb7f0235f565f3) 
+      - (optional) disable Cinemeta : https://www.reddit.com/r/StremioAddons/comments/1d8wbul/how_to_remove_cinemeta/
+        - If you disable Cinemeta, enable then the ' Cinemeta (custom) ' in AIOStreams and reinstall the addon.
+      - (Optional) Trakt :
+         - Trakt is a media tracking service that helps users sync their TV shows and movies across numerous platforms and devices.
+         - You can enable trakt in Stremio settings. You can download Trakt mobile app or use their website. 
         - Ratings & history: I rank my movies (and series) on trakt (they will automatically mark as watched if you
           activate that setting in trakt's website : settings -> Mark Watched After Rating: Automatically mark unwatched
           items with today's date).
@@ -374,8 +372,7 @@ Print color and select full black and white
           applications:
             - [IMDB-Trakt-Syncer](https://github.com/RileyXX/IMDB-Trakt-Syncer)a python app to synchronize IMDB ratings,
               watchlist... with Trakt both ways (You can use it in WSL2, install Google Chrome in WSL2 first)
-       - (Optional) What is Trakt? It is a media tracking service that helps users sync their TV shows and movies across numerous platforms and devices.
-         - You can enable trakt in Stremio settings. You can download Trakt mobile app or use their website. 
+
   Tips :
     - Use Stremio web to configure addons. ALl settings & addons will sync between your devices if you use the same
       account.
