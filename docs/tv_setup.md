@@ -62,8 +62,8 @@ the Projectivy and add stremio there. Also make it the default launcher for your
       - After making any change to any addon, you don't need to close the application to synchronize the changes, just click on the addons tab, and go back to home.
       - My recommended Setup:
         - Uninstall all the default addons (Except 'Cinemeta' which can't be removed but there is a trick to do it in the end of this tutorial) 
-        - Ratings Addon : https://72059fbbd1e5-stremio-addon-ratings.baby-beamup.club
-          - My config : Copy this [link](https://72059fbbd1e5-stremio-addon-ratings.baby-beamup.club) and paste it in Stremio Addons : 
+        - (Optional) Ratings Addon : https://72059fbbd1e5-stremio-addon-ratings.baby-beamup.club
+          - After configuring the addon, paste it in Stremio Addons 
           - In stremio, select a movie, you should see the Rating of the movie
  
         - AIOStreams:
@@ -103,23 +103,28 @@ the Projectivy and add stremio there. Also make it the default launcher for your
             1. Download[ my configuration file](https://github.com/AmineDjeghri/awesome-os-setup/blob/v2/docs/AIOSTREAMS_config.json)
             2. Go to **“Navigate and Install”**.  
             3. Click **Import**.  
-            4. Select and upload your saved configuration file.
+            4. Select and upload your saved configuration file. You will an error message saying that 'StreamFusion API Key is invalid' which is normal for now.
   
             Your addons and settings will load automatically.
   
             ---
   
-            ##### 🔑 Step 5 — Enable Your Debrid Services
+            ##### 🔑 Step 5 — Enable Your Debrid Services and TMDB API
             1. In AIOStreams, go to **Services**.  
-            2. Enable your preferred **Debrid service** (e.g.,  AllDebrid, Real-Debrid, TorBox).  
+            2. Enable your preferred **Debrid service** (e.g.,  AllDebrid, Real-Debrid, TorBox).  I am using All Debrid, if you choose another Debrid provider, you will need to edit the provider in each addon (which is very easy since it's just a select box)
             3. Enter your API key.  
-            4. Click **Save**.
+            4. After adding your Debrid api key, go down and look for 'TMDB' and follow the instructions to add your TMDB API keys.
   
             ---
   
             ##### (Optional) 🇫🇷 Step 6 — Enable and Configure French Addons
             Go to the **Addons** section. You’ll see a list of installed addons.  
             Some may be deactivated (unsupported ones for now by AIOStreams).
+          
+            ###### ⚙️ Configure *StremFusion*:
+            1. Click the **Edit** button.  
+            2. look for StreamFusion API Key and follow the instructions toget the api key from the telegram bot.  
+            6. Copy the key, click on 'update' at the bottom of the configuration and **Activate** the addon with the switch button.
   
             ###### ⚙️ Configure *CometFR (custom)*:
             1. Click the **Edit** button.  
@@ -129,7 +134,7 @@ the Projectivy and add stremio there. Also make it the default launcher for your
             5. Click **Copy Link** — the link should start with  
                `https://comet.stremiofr.com/`  
                and end with `=/manifest.json`.  
-            6. Go back to AIOStreams, paste this link in the URL field, and **Activate** the addon.
+            6. Go back to AIOStreams, paste this link in the URL field, click on 'update' at the bottom of the configuration and **Activate** the addon with the switch button.
   
             ###### ⚙️ Configure *JackettioFR (custom)*:
             1. Click the **Edit** button.  
@@ -140,7 +145,7 @@ the Projectivy and add stremio there. Also make it the default launcher for your
                It should start with  
                `https://jackettio.stremiofr.com/`  
                and end with `=/manifest.json`.  
-            6. Go back to AIOStreams, paste this link, and **Activate** the addon.
+            6. Go back to AIOStreams, paste this link, click on 'update' at the bottom of the configuration and **Activate** the addon with the switch button.
   
             ---
   
@@ -185,6 +190,7 @@ the Projectivy and add stremio there. Also make it the default launcher for your
       - Order of a list(catalogà in Stremio home is determined by the installation order (except in AIOSteams were you can order them manually).
       -
       - If you didn't rate some movies & tv shows, you can add them to history in Trakt to avoid being recommended by the 'AI Search' addon.
+
 
 
 
