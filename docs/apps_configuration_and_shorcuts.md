@@ -339,39 +339,144 @@ Print color and select full black and white
   from various sources. And with its commitment to security, Stremio is the ultimate choice for a worry-free,
   high-quality streaming experience.
 - You can either use your favorite platforms to watch movies or series or use torrent without any risk.
-- Stremio is available on all platforms: Web, Windows, Mac, Linux, Android, iOS, Android TV & Web.
-- Settings will be synchronized between all your devices
+- Stremio is available on all platforms: Web, Windows, Mac, Linux, Android, iOS, Android TV, Apple TV...
+- Addons...etc will be synchronized between all your devices.
 - (Depreated) [Tutorial](https://www.reddit.com/r/StremioAddons/comments/17833ms/stremio_all_you_need_to_know/)
-- What is a debrid service? A debrid service is an unrestricted multi-hoster that allows you to stream and download videos instantly at the best speeds. In plain English, the debrid services act as a proxy between the BitTorrent tracker and you, so you download the content directly from their servers at high speed. Most of the content is already cached, meaning you can instantly access it.
-- Personnaly, I use ALL Debrid, but others exist like : TorBox, Real Debrid...
+- What is a debrid service? A debrid service is an unrestricted multi-hoster that allows you to stream and download videos instantly at the best speeds. In plain English, the debrid services act as a proxy between the BitTorrent tracker and you, so you download the content directly from their servers at high speed. Most of the content is already cached, meaning you can instantly access it. Personnaly, I use ALL Debrid, but others exist like : TorBox, Real Debrid...
 
 ### 1.13.1. Installation:
 - (Update November 2025)
 
 
 - Setup :
-    - To synchronize the addons, just click on the addons, and go back to home.
-    - Preferred audio and subs language aren't synchrnized, you need to do it on each platform.
+    - After making any change to any addon, you don't need to close the application to synchronize the changes, just click on the addons tab, and go back to home.
     - My recommended Setup:
-      - Uninstall all the default addons (Exceptr Cinemeta which can't be removed but there is a trick to do it in the end of this tutorial) 
+      - Uninstall all the default addons (Except 'Cinemeta' which can't be removed but there is a trick to do it in the end of this tutorial) 
       - Ratings Addon : https://72059fbbd1e5-stremio-addon-ratings.baby-beamup.club
         - My config : Copy this [link](https://72059fbbd1e5-stremio-addon-ratings.baby-beamup.club/mdbListApiKey=d9u6lt5a2xzblluxc1jeva83d&tmdbApiKey=204180a30d24982b89ff5796277b1301&ratings=imdb%2Ctomatoes%2Cmetacritic%2Cmetacriticuser%2Ctrakt&showAllRatingsInPercent=true&showPercentSymbol=false&showOverallRating=true&calculateOverallRatingBasedOn=all&ageRatings=commonsensemedia&ageRatingCountryNames=flag&displayAgeRatingsAtTop=false&showUnavailableAgeRatings=false&ratingColorMarkers=hearts&ratingColorMarkersCustom=%F0%9F%92%8B%2C%F0%9F%8D%8A%2C%F0%9F%8C%B3%2C%E2%99%A0%EF%B8%8F&showRatingVotes=true&showRatingVotesIcon=true&showUnavailableRatings=false&openOnClick=show-all-ratings&allRatingsAndDetailsBlocks=Details%2COverview%2CCastAndCrew%2CRecommendations%2CAllScores%2CAllAgeRatings%2CButtonLinks&whereToWatchCountry=US&installEmojiChecker=false&widgets=&randomEpisodeIncludedScope=all&randomEpisodeIncludedShows=&randomEpisodeShowSeasonEpisodeNumber=false&sessionId=a3e22347-a258-4d4e-97b1-aa8bb9c7fc9a/manifest.json) and paste it in Stremio Addons : 
    
       - AIOStreams:
-        - Download the config file:
-        - In stremio, after selecting a movie, you should see [this](https://www.reddit.com/media?url=https%3A%2F%2Fpreview.redd.it%2Faiostreams-setup-guide-optimized-for-tv-v0-mnckhq45y5tf1.png%3Fwidth%3D515%26format%3Dpng%26auto%3Dwebp%26s%3Dd47fb2f619f0e1f4afd0df0085bb7f0235f565f3) 
-      - (optional) disable Cinemeta : https://www.reddit.com/r/StremioAddons/comments/1d8wbul/how_to_remove_cinemeta/
-        - If you disable Cinemeta, enable then the ' Cinemeta (custom) ' in AIOStreams and reinstall the addon.
-      - (Optional) Trakt :
-         - Trakt is a media tracking service that helps users sync their TV shows and movies across numerous platforms and devices.
-         - You can enable trakt in Stremio settings. You can download Trakt mobile app or use their website. 
-        - Ratings & history: I rank my movies (and series) on trakt (they will automatically mark as watched if you
-          activate that setting in trakt's website : settings -> Mark Watched After Rating: Automatically mark unwatched
-          items with today's date).
-        - If you want to syncronize everything with IMDB and/or the streaming platforms, you can use these two
-          applications:
-            - [IMDB-Trakt-Syncer](https://github.com/RileyXX/IMDB-Trakt-Syncer)a python app to synchronize IMDB ratings,
-              watchlist... with Trakt both ways (You can use it in WSL2, install Google Chrome in WSL2 first)
+        ```
+            🌐 AIOStreams + Stremio Configuration Guide
+        
+        🧩 What is AIOStreams?
+        
+        [AIOStreams (ElfHosted)](https://aiostreams.elfhosted.com/) is an all-in-one **Stremio addon manager** that lets you organize, install, and sync all your favorite addons in one place.
+        It also allows you to **save your configuration online**, so you don’t lose your setup.
+        
+        Your data is linked to a **UUID** (your unique ID) and a **password**, so you can restore your configuration anytime.
+        🪪 Step 1 — Login to Stremio Web
+        
+        Go to 👉 [https://web.stremio.com/](https://web.stremio.com/)
+        Log in with your regular Stremio account.
+        
+        ---
+        
+        ⚙️ Step 2 — Open AIOStreams
+        Download [my config file](https://github.com/AmineDjeghri/awesome-os-setup/blob/v2/docs/AIOSTREAMS_config.json)
+        
+        Visit 👉 [https://aiostreams.elfhosted.com/](https://aiostreams.elfhosted.com/)
+        
+        This page is where you manage everything related to your addons.
+        
+        ---
+        
+        🧱 Step 3 — Create Your Configuration
+        
+        1. Go to the **“Save and Install”** section.
+        2. Enter a **password** of your choice — this will create your AIOStreams account.
+        3. You’ll receive a **UUID** (like your username).
+        4. **Save both the UUID and your password!** You’ll need them to restore or import your configuration later.
+        
+        ---
+        
+        📂 Step 4 — Import Your Settings (Optional)
+        
+        If you already have a saved configuration file:
+        
+        1. Go to **“Navigate and Install”**.
+        2. Click **Import**.
+        3. Select and upload your saved configuration file.
+        
+        Your addons and settings will load automatically.
+        
+        ---
+        
+        🔑 Step 5 — Enable Your Debrid Services
+        
+        1. In AIOStreams, go to **Services**.
+        2. Enable your preferred **Debrid service** (e.g., Real-Debrid, AllDebrid, Premiumize).
+        3. Enter your API key.
+        4. Click **Save**.
+        
+        ---
+        
+        🇫🇷 Step 6 — Enable and Configure French Addons
+        
+        Go to the **Addons** section. You’ll see a list of installed addons.
+        Some may be deactivated (unsupported ones for now).
+        
+        1. ⚙️ Configure *CometFR (custom)*:
+        
+        1. Click the **Edit** button.
+        2. Copy the **Manifest URL**.
+        3. Paste it in a **new browser tab**.
+        4. Configure the addon (enter your debrid key).
+        5. Click **Copy Link** — the link should start with
+           `https://comet.stremiofr.com/`
+           and end with `=/manifest.json`.
+        6. Go back to AIOStreams, paste this link in the URL field, and **Activate** the addon.
+        
+        2. ⚙️ Configure *JackettioFR (custom)*:
+        
+        1. Click the **Edit** button.
+        2. Copy the **Manifest URL**.
+        3. Open it in a **new browser tab**.
+        4. Configure it (enter your debrid key) and click **Install**.
+        5. A **Stremio Link** will appear — right-click and choose **Copy link**.
+           It should start with
+           `https://jackettio.stremiofr.com/`
+           and end with `=/manifest.json`.
+        6. Go back to AIOStreams, paste this link, and **Activate** the addon.
+        
+        ---
+        
+        💾 Step 7 — Save and Install
+        
+        1. Go back to the **Install** section.
+        2. Click **Save** — this saves your configuration to your online AIOStreams account.
+        3. Then click **Install** and choose **Stremio Web** (or your preferred option).
+        4. Stremio will open and prompt you to install your configured addons.
+        
+        ---
+        
+         ✅ Step 8 — Test Everything
+        
+        Open any movie or TV show in Stremio.
+        You should now see your addons providing streams — including CometFR and JackettioFR!
+        
+        After selecting a movie, you should see [this](https://www.reddit.com/media?url=https%3A%2F%2Fpreview.redd.it%2Faiostreams-setup-guide-optimized-for-tv-v0-mnckhq45y5tf1.png%3Fwidth%3D515%26format%3Dpng%26auto%3Dwebp%26s%3Dd47fb2f619f0e1f4afd0df0085bb7f0235f565f3)
+        ---
+        
+        ### 💡 Tips
+        
+        * Keep your **UUID** and **password** safe — that’s your AIOStreams login.
+        * You can restore your setup anytime by re-entering your credentials.
+        * AIOStreams makes it easy to sync and manage all your addons from one place.
+        ```
+     -  In Stremio Settings, you can select the prefered 'Audio language' and 'Subtitles'. This will automatically set the audio and subs automatically when you watch something. This is not synced between devices, you need to do it manually on each of your device.
+     - (optional) Uninstall Cinemeta : https://www.reddit.com/r/StremioAddons/comments/1d8wbul/how_to_remove_cinemeta/
+       - If you disable Cinemeta, enable then the ' Cinemeta (custom) ' in AIOStreams and reinstall the addon.
+     - (Optional) Trakt :
+        - Trakt is a media tracking service that helps users sync their TV shows and movies across numerous platforms and devices.
+        - You can enable trakt in Stremio settings. You can download Trakt mobile app or use their website. 
+       - Ratings & history: I rank my movies (and series) on trakt (they will automatically mark as watched if you
+         activate that setting in trakt's website : settings -> Mark Watched After Rating: Automatically mark unwatched
+         items with today's date).
+       - If you want to syncronize everything with IMDB and/or the streaming platforms, you can use these two
+         applications:
+           - [IMDB-Trakt-Syncer](https://github.com/RileyXX/IMDB-Trakt-Syncer)a python app to synchronize IMDB ratings,
+             watchlist... with Trakt both ways (You can use it in WSL2, install Google Chrome in WSL2 first)
 
   Tips :
     - Use Stremio web to configure addons. ALl settings & addons will sync between your devices if you use the same
