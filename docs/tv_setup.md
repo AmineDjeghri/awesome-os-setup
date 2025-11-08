@@ -63,8 +63,9 @@ the Projectivy and add stremio there. Also make it the default launcher for your
       - My recommended Setup:
         - Uninstall all the default addons (Except 'Cinemeta' which can't be removed but there is a trick to do it in the end of this tutorial) 
         - Ratings Addon : https://72059fbbd1e5-stremio-addon-ratings.baby-beamup.club
-          - My config : Copy this [link](https://72059fbbd1e5-stremio-addon-ratings.baby-beamup.club/mdbListApiKey=d9u6lt5a2xzblluxc1jeva83d&tmdbApiKey=204180a30d24982b89ff5796277b1301&ratings=imdb%2Ctomatoes%2Cmetacritic%2Cmetacriticuser%2Ctrakt&showAllRatingsInPercent=true&showPercentSymbol=false&showOverallRating=true&calculateOverallRatingBasedOn=all&ageRatings=commonsensemedia&ageRatingCountryNames=flag&displayAgeRatingsAtTop=false&showUnavailableAgeRatings=false&ratingColorMarkers=hearts&ratingColorMarkersCustom=%F0%9F%92%8B%2C%F0%9F%8D%8A%2C%F0%9F%8C%B3%2C%E2%99%A0%EF%B8%8F&showRatingVotes=true&showRatingVotesIcon=true&showUnavailableRatings=false&openOnClick=show-all-ratings&allRatingsAndDetailsBlocks=Details%2COverview%2CCastAndCrew%2CRecommendations%2CAllScores%2CAllAgeRatings%2CButtonLinks&whereToWatchCountry=US&installEmojiChecker=false&widgets=&randomEpisodeIncludedScope=all&randomEpisodeIncludedShows=&randomEpisodeShowSeasonEpisodeNumber=false&sessionId=a3e22347-a258-4d4e-97b1-aa8bb9c7fc9a/manifest.json) and paste it in Stremio Addons : 
-     
+          - My config : Copy this [link](https://72059fbbd1e5-stremio-addon-ratings.baby-beamup.club) and paste it in Stremio Addons : 
+          - In stremio, select a movie, you should see the Rating of the movie
+ 
         - AIOStreams:
   
             #### 🌐 AIOStreams + Stremio Configuration Guide
@@ -153,7 +154,9 @@ the Projectivy and add stremio there. Also make it the default launcher for your
   
             ##### ✅ Step 8 — Test Everything
             Open any movie or TV show in Stremio.  
-            You should now see your addons providing streams — including CometFR and JackettioFR!
+            You should now see your addons providing streams.
+            After selecting a movie, you should see [this](https://www.reddit.com/media?url=https%3A%2F%2Fpreview.redd.it%2Faiostreams-setup-guide-optimized-for-tv-v0-mnckhq45y5tf1.png%3Fwidth%3D515%26format%3Dpng%26auto%3Dwebp%26s%3Dd47fb2f619f0e1f4afd0df0085bb7f0235f565f3)
+
   
             ---
   
@@ -174,13 +177,14 @@ the Projectivy and add stremio there. Also make it the default launcher for your
          - If you want to syncronize everything with IMDB and/or the streaming platforms, you can use these two
            applications:
              - [IMDB-Trakt-Syncer](https://github.com/RileyXX/IMDB-Trakt-Syncer)a python app to synchronize IMDB ratings,
-               watchlist... with Trakt both ways (You can use it in WSL2, install Google Chrome in WSL2 first)
+               watchlist...)  You can rate what you watch on IMDB or trakt and run the python app to sync everything.
   
     Tips :
       - Use Stremio web to configure addons. ALl settings & addons will sync between your devices if you use the same
         account.
       - Order of a list(catalogà in Stremio home is determined by the installation order (except in AIOSteams were you can order them manually).
-      - You can what you watch on IMDB or trakt and run the Chrome extension & python app to sync everything.
+      -
       - If you didn't rate some movies & tv shows, you can add them to history in Trakt to avoid being recommended by the 'AI Search' addon.
+
 
 
