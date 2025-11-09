@@ -118,7 +118,7 @@ the Projectivy and add stremio there. Also make it the default launcher for your
   
             ---
   
-            ##### (Optional) 🇫🇷 Step 6 — Enable and Configure French Addons
+            ##### (Optional) 🇫🇷 Step 6 — Configure French Addons, AI Search and remove the Official Cinemeta
             Go to the **Addons** section. You’ll see a list of installed addons.  
             Some may be deactivated (unsupported ones for now by AIOStreams).
           
@@ -145,8 +145,19 @@ the Projectivy and add stremio there. Also make it the default launcher for your
             5. A **Stremio Link** will appear — right-click and choose **Copy link**.  
                It should start with  
                `https://jackettio.stremiofr.com/`  
-               and end with `=/manifest.json`.  
+               and end with `=/manifest.json`.
+               
             6. Go back to AIOStreams, paste this link, click on 'update' at the bottom of the configuration and **Activate** the addon with the switch button.
+             ###### ⚙️ (optional) Uninstall Cinemeta:
+             Since we already have the TMDB addon, we don't need Cinemeta anymore except when new episodes are released. Stremio will use Cinemeta to add the number of episodes on the poster.
+          
+             The Cinemeta addon provided in this AIOStreams config excludes everything and keep only the calendar.
+             1. Uninstall Cinemeta https://www.reddit.com/r/StremioAddons/comments/1d8wbul/how_to_remove_cinemeta/
+             2. Enable  the 'Cinemeta (custom) ' in AIOStreams.
+         
+             ###### ⚙️ (optional) Configure *AI Search (custom)*:
+            - It is preferable to use this addon with Trakt.
+            - Follow the tutorial when activating the addon.
   
             ---
   
@@ -172,8 +183,6 @@ the Projectivy and add stremio there. Also make it the default launcher for your
             - AIOStreams makes it easy to sync and manage all your addons from one place.
          
        -  In Stremio Settings, you can select the prefered 'Audio language' and 'Subtitles'. This will automatically set the audio and subs automatically when you watch something. This is not synced between devices, you need to do it manually on each of your device.
-       - (optional) Uninstall Cinemeta : https://www.reddit.com/r/StremioAddons/comments/1d8wbul/how_to_remove_cinemeta/
-         - If you disable Cinemeta, enable then the ' Cinemeta (custom) ' in AIOStreams and reinstall the addon.
        - (Optional) Trakt :
           - Trakt is a media tracking service that helps users sync their TV shows and movies across numerous platforms and devices.
           - You can enable trakt in Stremio settings. You can download Trakt mobile app or use their website. 
@@ -191,6 +200,7 @@ the Projectivy and add stremio there. Also make it the default launcher for your
       - Order of a list(catalogà in Stremio home is determined by the installation order (except in AIOSteams were you can order them manually).
       -
       - If you didn't rate some movies & tv shows, you can add them to history in Trakt to avoid being recommended by the 'AI Search' addon.
+
 
 
 
