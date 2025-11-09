@@ -71,7 +71,7 @@ the Projectivy and add stremio there. Also make it the default launcher for your
             #### 🌐 AIOStreams + Stremio Configuration Guide
   
             ##### 🧩 What is AIOStreams?
-            [AIOStreams (ElfHosted)](https://aiostreams.elfhosted.com/) is an all-in-one **Stremio addon manager** that lets you organize, install, and sync all your favorite addons in one place.  
+            AIOStreams is an all-in-one **Stremio addon manager** that lets you organize, install, and sync all your favorite addons in one place.  
             It also allows you to **save your configuration online**, so you don’t lose your setup.  
   
             Your data is linked to a **UUID** (your unique ID) and a **password**, so you can restore your configuration anytime.
@@ -85,7 +85,8 @@ the Projectivy and add stremio there. Also make it the default launcher for your
             ---
   
             ##### ⚙️ Step 2 — Open AIOStreams
-            Visit 👉 [https://aiostreams.elfhosted.com/](https://aiostreams.elfhosted.com/)  
+            Visit 👉  [https://aiostreamsfortheweebs.midnightignite.me/](https://aiostreamsfortheweebs.midnightignite.me/)
+            Your can also use the [AIOStreams (ElfHosted)](https://aiostreams.elfhosted.com/) but it is limited to 10 addons and there is no Torrentio support.
   
             This page is where you manage everything related to your addons.
   
@@ -190,6 +191,7 @@ the Projectivy and add stremio there. Also make it the default launcher for your
       - Order of a list(catalogà in Stremio home is determined by the installation order (except in AIOSteams were you can order them manually).
       -
       - If you didn't rate some movies & tv shows, you can add them to history in Trakt to avoid being recommended by the 'AI Search' addon.
+
 
 
 
