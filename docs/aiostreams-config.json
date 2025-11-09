@@ -7,7 +7,7 @@
     },
     {
       "id": "alldebrid",
-      "enabled": false,
+      "enabled": true,
       "credentials": {}
     },
     {
@@ -59,63 +59,29 @@
       "id": "seedr",
       "enabled": false,
       "credentials": {}
+    },
+    {
+      "id": "nzbdav",
+      "enabled": false,
+      "credentials": {}
+    },
+    {
+      "id": "altmount",
+      "enabled": false,
+      "credentials": {}
     }
   ],
   "presets": [
     {
-      "type": "custom",
-      "instanceId": "6c2",
-      "enabled": false,
+      "type": "torrentio",
+      "instanceId": "392",
+      "enabled": true,
       "options": {
-        "name": "CometFR (custom)",
-        "manifestUrl": "https://comet.stremiofr.com/configure",
-        "libraryAddon": false,
-        "resultPassthrough": false,
-        "forceToTop": false,
+        "name": "Torrentio",
         "timeout": 10000,
-        "mediaTypes": [],
-        "resources": []
-      }
-    },
-    {
-      "type": "custom",
-      "instanceId": "532",
-      "enabled": false,
-      "options": {
-        "name": "JackettioFR (custom)",
-        "manifestUrl": "https://jackettio.stremiofr.com/",
-        "libraryAddon": false,
-        "formatPassthrough": false,
-        "resultPassthrough": false,
-        "forceToTop": false,
-        "timeout": 10000,
-        "mediaTypes": [],
-        "resources": []
-      }
-    },
-    {
-      "type": "streamfusion",
-      "instanceId": "12b",
-      "enabled": false,
-      "options": {
-        "name": "StreamFusion",
-        "timeout": 10000,
-        "resources": [
-          "stream",
-          "meta",
-          "catalog"
-        ],
-        "torboxSearch": true,
-        "torboxUsenet": true,
-        "catalogs": [
-          "yggtorrent",
-          "yggflix"
-        ],
-        "torrenting": false,
-        "services": [
-          "alldebrid"
-        ],
-        "mediaTypes": []
+        "resources": ["stream", "catalog", "meta"],
+        "providers": [],
+        "useMultipleInstances": false
       }
     },
     {
@@ -125,9 +91,7 @@
       "options": {
         "name": "StremThru Torz",
         "timeout": 10000,
-        "resources": [
-          "stream"
-        ],
+        "resources": ["stream"],
         "mediaTypes": [],
         "includeP2P": false,
         "useMultipleInstances": false
@@ -140,14 +104,8 @@
       "options": {
         "name": "StremThru Store",
         "timeout": 10000,
-        "resources": [
-          "stream",
-          "catalog",
-          "meta"
-        ],
-        "services": [
-          "alldebrid"
-        ]
+        "resources": ["stream", "catalog", "meta"],
+        "services": ["alldebrid"]
       }
     },
     {
@@ -157,20 +115,14 @@
       "options": {
         "name": "MediaFusion",
         "timeout": 10000,
-        "resources": [
-          "stream",
-          "catalog",
-          "meta"
-        ],
+        "resources": ["stream", "catalog", "meta"],
         "useCachedResultsOnly": false,
         "enableWatchlistCatalogs": false,
         "downloadViaBrowser": false,
         "contributorStreams": false,
         "certificationLevelsFilter": [],
         "nudityFilter": [],
-        "services": [
-          "alldebrid"
-        ],
+        "services": ["alldebrid"],
         "mediaTypes": []
       }
     },
@@ -181,38 +133,8 @@
       "options": {
         "name": "Streaming Catalogs",
         "timeout": 5000,
-        "resources": [
-          "catalog"
-        ],
-        "catalogs": [
-          "nfx",
-          "hbm",
-          "dnp",
-          "amp",
-          "atp",
-          "pmp",
-          "hlu",
-          "cpd"
-        ]
-      }
-    },
-    {
-      "type": "opensubtitles-v3-plus",
-      "instanceId": "1e7",
-      "enabled": true,
-      "options": {
-        "name": "OpenSubtitles V3+",
-        "timeout": 5000,
-        "resources": [
-          "subtitles"
-        ],
-        "language": [
-          "fr",
-          "en"
-        ],
-        "sources": "all",
-        "includeAiTranslated": true,
-        "movieHashPlusAutoAdjustment": true
+        "resources": ["catalog"],
+        "catalogs": ["nfx", "hbm", "dnp", "amp", "atp", "pmp", "hlu", "cpd"]
       }
     },
     {
@@ -222,14 +144,83 @@
       "options": {
         "name": "The Movie Database",
         "timeout": 10000,
-        "resources": [
-          "meta",
-          "catalog"
-        ],
+        "resources": ["meta", "catalog"],
         "Enable Adult Content": true,
         "hideEpisodeThumbnails": false,
         "provideImdbId": true,
         "language": "en-US"
+      }
+    },
+    {
+      "type": "comet",
+      "instanceId": "df3",
+      "enabled": true,
+      "options": {
+        "name": "Comet",
+        "timeout": 10000,
+        "resources": ["stream"],
+        "includeP2P": false,
+        "removeTrash": true,
+        "mediaTypes": []
+      }
+    },
+    {
+      "type": "opensubtitles-v3-plus",
+      "instanceId": "4fd",
+      "enabled": true,
+      "options": {
+        "name": "OpenSubtitles V3+",
+        "timeout": 7000,
+        "resources": ["subtitles"],
+        "language": ["fr", "en"],
+        "sources": "all",
+        "includeAiTranslated": true,
+        "movieHashPlusAutoAdjustment": true
+      }
+    },
+    {
+      "type": "custom",
+      "instanceId": "532",
+      "enabled": false,
+      "options": {
+        "name": "JackettioFR (custom)",
+        "manifestUrl": "https://jackettio.stremiofr.com",
+        "libraryAddon": false,
+        "formatPassthrough": false,
+        "resultPassthrough": false,
+        "forceToTop": false,
+        "timeout": 10000,
+        "mediaTypes": []
+      }
+    },
+    {
+      "type": "custom",
+      "instanceId": "6c2",
+      "enabled": false,
+      "options": {
+        "name": "CometFR (custom)",
+        "manifestUrl": "https://comet.stremiofr.com",
+        "libraryAddon": false,
+        "resultPassthrough": false,
+        "forceToTop": false,
+        "timeout": 10000,
+        "mediaTypes": []
+      }
+    },
+    {
+      "type": "streamfusion",
+      "instanceId": "12b",
+      "enabled": false,
+      "options": {
+        "name": "StreamFusion",
+        "timeout": 10000,
+        "resources": ["stream", "meta", "catalog"],
+        "torboxSearch": true,
+        "torboxUsenet": true,
+        "catalogs": ["yggtorrent", "yggflix"],
+        "torrenting": false,
+        "services": ["alldebrid"],
+        "mediaTypes": []
       }
     },
     {
@@ -262,21 +253,6 @@
         "resources": [],
         "mediaTypes": []
       }
-    },
-    {
-      "type": "comet",
-      "instanceId": "df3",
-      "enabled": false,
-      "options": {
-        "name": "Comet",
-        "timeout": 10000,
-        "resources": [
-          "stream"
-        ],
-        "includeP2P": false,
-        "removeTrash": true,
-        "mediaTypes": []
-      }
     }
   ],
   "formatter": {
@@ -301,12 +277,7 @@
     "SCR",
     "Unknown"
   ],
-  "preferredResolutions": [
-    "2160p",
-    "1440p",
-    "1080p",
-    "720p"
-  ],
+  "preferredResolutions": ["2160p", "1440p", "1080p", "720p"],
   "excludedQualities": [],
   "excludedVisualTags": [],
   "sortCriteria": {
@@ -333,15 +304,11 @@
   "deduplicator": {
     "enabled": true,
     "multiGroupBehaviour": "aggressive",
-    "keys": [
-      "filename",
-      "infoHash"
-    ],
+    "keys": ["filename", "infoHash"],
     "cached": "single_result",
     "uncached": "per_service",
     "p2p": "single_result"
   },
-  "uuid": "3d998d71-0ecd-43fd-8162-ac8b90c0c5b1",
   "trusted": false,
   "addonName": "AIOStreams | ElfHosted",
   "addonDescription": "The Ultimate Stremio Experience.",
@@ -353,11 +320,7 @@
   "excludedLanguages": [],
   "includedLanguages": [],
   "requiredLanguages": [],
-  "preferredLanguages": [
-    "French",
-    "Multi",
-    "English"
-  ],
+  "preferredLanguages": ["French", "Multi", "English"],
   "includedVisualTags": [],
   "requiredVisualTags": [],
   "preferredVisualTags": [],
@@ -380,14 +343,8 @@
   "preferredRegexPatterns": [],
   "requiredKeywords": [],
   "excludedKeywords": [],
-  "excludeSeederRange": [
-    0,
-    1000
-  ],
-  "requiredSeederRange": [
-    3,
-    1000
-  ],
+  "excludeSeederRange": [0, 1000],
+  "requiredSeederRange": [3, 1000],
   "seederRangeTypes": [],
   "excludeCached": false,
   "excludeCachedFromAddons": [],
@@ -407,9 +364,9 @@
     "enabled": false,
     "groupings": []
   },
-  "rpdbApiKey": "t0-free-rpdb",
   "proxy": {
-    "id": "builtin",
+    "enabled": false,
+    "id": "mediaflow",
     "proxiedAddons": [],
     "proxiedServices": []
   },
@@ -418,21 +375,13 @@
   },
   "size": {
     "global": {
-      "movies": [
-        0,
-        100000000000
-      ]
+      "movies": [0, 100000000000]
     }
   },
   "hideErrorsForResources": [],
   "statistics": {
-    "statsToShow": [
-      "addon",
-      "filter"
-    ]
+    "statsToShow": ["addon", "filter"]
   },
-  "tmdbAccessToken": "",
-  "tmdbApiKey": "",
   "yearMatching": {
     "requestTypes": [],
     "addons": []
@@ -792,109 +741,162 @@
       "addonName": "Cinemeta (custom)"
     },
     {
+      "id": "f0ce3b0.tmdb.year",
+      "type": "series",
+      "name": "Year",
+      "shuffle": false,
+      "enabled": false,
+      "rpdb": true,
+      "hideable": true,
+      "searchable": false,
+      "addonName": "The Movie Database"
+    },
+    {
+      "id": "f0ce3b0.tmdb.language",
+      "type": "movie",
+      "name": "Language",
+      "shuffle": false,
+      "enabled": false,
+      "rpdb": true,
+      "hideable": true,
+      "searchable": false,
+      "addonName": "The Movie Database"
+    },
+    {
+      "id": "f0ce3b0.tmdb.language",
+      "type": "series",
+      "name": "Language",
+      "shuffle": false,
+      "enabled": false,
+      "rpdb": true,
+      "hideable": true,
+      "searchable": false,
+      "addonName": "The Movie Database"
+    },
+    {
+      "id": "f0ce3b0.tmdb.year",
+      "type": "movie",
+      "name": "Year",
+      "shuffle": false,
+      "enabled": false,
+      "rpdb": true,
+      "hideable": true,
+      "searchable": false,
+      "addonName": "The Movie Database"
+    },
+    {
+      "id": "2f0e3b0.top",
+      "type": "movie",
+      "name": "Popular",
+      "shuffle": false,
+      "enabled": false,
+      "rpdb": true,
+      "hideable": true,
+      "searchable": true,
+      "addonName": "Cinemeta (custom)"
+    },
+    {
+      "id": "2f0e3b0.top",
+      "type": "series",
+      "name": "Popular",
+      "shuffle": false,
+      "enabled": false,
+      "rpdb": true,
+      "hideable": true,
+      "searchable": true,
+      "addonName": "Cinemeta (custom)"
+    },
+    {
+      "id": "2f0e3b0.imdbRating",
+      "type": "movie",
+      "name": "Featured",
+      "shuffle": false,
+      "enabled": false,
+      "rpdb": true,
+      "hideable": true,
+      "searchable": false,
+      "addonName": "Cinemeta (custom)"
+    },
+    {
+      "id": "2f0e3b0.imdbRating",
+      "type": "series",
+      "name": "Featured",
+      "shuffle": false,
+      "enabled": false,
+      "rpdb": true,
+      "hideable": true,
+      "searchable": false,
+      "addonName": "Cinemeta (custom)"
+    },
+    {
+      "id": "12bc7bf.latest_movies",
+      "type": "movie",
+      "name": "Yggflix",
+      "shuffle": false,
+      "enabled": true,
+      "rpdb": true,
+      "hideable": true,
+      "searchable": false,
+      "addonName": "StreamFusion"
+    },
+    {
+      "id": "12bc7bf.latest_tv_shows",
+      "type": "series",
+      "name": "Yggflix",
+      "shuffle": false,
+      "enabled": true,
+      "rpdb": true,
+      "hideable": true,
+      "searchable": false,
+      "addonName": "StreamFusion"
+    },
+    {
+      "id": "12bc7bf.recently_added_movies",
+      "type": "movie",
+      "name": "YGGtorrent - Récemment Ajoutés",
+      "shuffle": false,
+      "enabled": true,
+      "rpdb": true,
+      "hideable": true,
+      "searchable": false,
+      "addonName": "StreamFusion"
+    },
+    {
+      "id": "12bc7bf.recently_added_tv_shows",
+      "type": "series",
+      "name": "YGGtorrent - Récemment Ajoutées",
+      "shuffle": false,
+      "enabled": true,
+      "rpdb": true,
+      "hideable": true,
+      "searchable": false,
+      "addonName": "StreamFusion"
+    },
+    {
       "id": "bb2c7bf.st:store:ad",
       "type": "other",
       "name": "Store AD",
       "shuffle": false,
-      "enabled": false,
+      "enabled": true,
       "rpdb": true,
       "hideable": true,
       "searchable": true,
       "addonName": "StremThru Store"
     },
     {
-      "id": "f0ce3b0.tmdb.year",
-      "type": "series",
-      "name": "Year",
+      "id": "392c7bf.torrentio-alldebrid",
+      "type": "other",
+      "name": "AllDebrid",
       "shuffle": false,
-      "enabled": false,
+      "enabled": true,
       "rpdb": true,
       "hideable": true,
       "searchable": false,
-      "addonName": "The Movie Database"
-    },
-    {
-      "id": "f0ce3b0.tmdb.language",
-      "type": "movie",
-      "name": "Language",
-      "shuffle": false,
-      "enabled": false,
-      "rpdb": true,
-      "hideable": true,
-      "searchable": false,
-      "addonName": "The Movie Database"
-    },
-    {
-      "id": "f0ce3b0.tmdb.language",
-      "type": "series",
-      "name": "Language",
-      "shuffle": false,
-      "enabled": false,
-      "rpdb": true,
-      "hideable": true,
-      "searchable": false,
-      "addonName": "The Movie Database"
-    },
-    {
-      "id": "f0ce3b0.tmdb.year",
-      "type": "movie",
-      "name": "Year",
-      "shuffle": false,
-      "enabled": false,
-      "rpdb": true,
-      "hideable": true,
-      "searchable": false,
-      "addonName": "The Movie Database"
-    },
-    {
-      "id": "2f0e3b0.top",
-      "type": "movie",
-      "name": "Popular",
-      "shuffle": false,
-      "enabled": false,
-      "rpdb": true,
-      "hideable": true,
-      "searchable": true,
-      "addonName": "Cinemeta (custom)"
-    },
-    {
-      "id": "2f0e3b0.top",
-      "type": "series",
-      "name": "Popular",
-      "shuffle": false,
-      "enabled": false,
-      "rpdb": true,
-      "hideable": true,
-      "searchable": true,
-      "addonName": "Cinemeta (custom)"
-    },
-    {
-      "id": "2f0e3b0.imdbRating",
-      "type": "movie",
-      "name": "Featured",
-      "shuffle": false,
-      "enabled": false,
-      "rpdb": true,
-      "hideable": true,
-      "searchable": false,
-      "addonName": "Cinemeta (custom)"
-    },
-    {
-      "id": "2f0e3b0.imdbRating",
-      "type": "series",
-      "name": "Featured",
-      "shuffle": false,
-      "enabled": false,
-      "rpdb": true,
-      "hideable": true,
-      "searchable": false,
-      "addonName": "Cinemeta (custom)"
+      "addonName": "Torrentio"
     }
   ],
   "externalDownloads": false,
   "cacheAndPlay": {
-    "streamTypes": [
-      "usenet"
-    ]
+    "streamTypes": ["usenet"]
   }
 }
