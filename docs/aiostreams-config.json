@@ -79,7 +79,7 @@
       "options": {
         "name": "Torrentio",
         "timeout": 10000,
-        "resources": ["stream", "catalog", "meta"],
+        "resources": ["stream", "meta"],
         "providers": [],
         "useMultipleInstances": false
       }
@@ -104,8 +104,9 @@
       "options": {
         "name": "StremThru Store",
         "timeout": 10000,
-        "resources": ["stream", "catalog", "meta"],
-        "services": ["alldebrid"]
+        "resources": ["stream", "meta"],
+        "services": ["alldebrid"],
+        "mediaTypes": []
       }
     },
     {
@@ -181,7 +182,7 @@
     {
       "type": "custom",
       "instanceId": "532",
-      "enabled": false,
+      "enabled": true,
       "options": {
         "name": "JackettioFR (custom)",
         "manifestUrl": "https://jackettio.stremiofr.com",
@@ -196,7 +197,7 @@
     {
       "type": "custom",
       "instanceId": "6c2",
-      "enabled": false,
+      "enabled": true,
       "options": {
         "name": "CometFR (custom)",
         "manifestUrl": "https://comet.stremiofr.com",
@@ -210,23 +211,24 @@
     {
       "type": "streamfusion",
       "instanceId": "12b",
-      "enabled": false,
+      "enabled": true,
       "options": {
         "name": "StreamFusion",
         "timeout": 10000,
         "resources": ["stream", "meta", "catalog"],
         "torboxSearch": true,
         "torboxUsenet": true,
-        "catalogs": ["yggtorrent", "yggflix"],
+        "catalogs": [],
         "torrenting": false,
         "services": ["alldebrid"],
-        "mediaTypes": []
+        "mediaTypes": [],
+        "torrentProviders": ["publicCacheServer", "zilean"]
       }
     },
     {
       "type": "custom",
       "instanceId": "2f0",
-      "enabled": false,
+      "enabled": true,
       "options": {
         "name": "Cinemeta (custom)",
         "manifestUrl": "https://v3-cinemeta.strem.io/manifest.json",
@@ -242,10 +244,10 @@
     {
       "type": "custom",
       "instanceId": "0d2",
-      "enabled": false,
+      "enabled": true,
       "options": {
         "name": "AISearch (custom)",
-        "manifestUrl": "https://stremio.itcon.au",
+        "manifestUrl": "https://stremio.itcon.au/aisearch",
         "libraryAddon": false,
         "resultPassthrough": false,
         "forceToTop": false,
@@ -827,72 +829,6 @@
       "hideable": true,
       "searchable": false,
       "addonName": "Cinemeta (custom)"
-    },
-    {
-      "id": "12bc7bf.latest_movies",
-      "type": "movie",
-      "name": "Yggflix",
-      "shuffle": false,
-      "enabled": true,
-      "rpdb": true,
-      "hideable": true,
-      "searchable": false,
-      "addonName": "StreamFusion"
-    },
-    {
-      "id": "12bc7bf.latest_tv_shows",
-      "type": "series",
-      "name": "Yggflix",
-      "shuffle": false,
-      "enabled": true,
-      "rpdb": true,
-      "hideable": true,
-      "searchable": false,
-      "addonName": "StreamFusion"
-    },
-    {
-      "id": "12bc7bf.recently_added_movies",
-      "type": "movie",
-      "name": "YGGtorrent - Récemment Ajoutés",
-      "shuffle": false,
-      "enabled": true,
-      "rpdb": true,
-      "hideable": true,
-      "searchable": false,
-      "addonName": "StreamFusion"
-    },
-    {
-      "id": "12bc7bf.recently_added_tv_shows",
-      "type": "series",
-      "name": "YGGtorrent - Récemment Ajoutées",
-      "shuffle": false,
-      "enabled": true,
-      "rpdb": true,
-      "hideable": true,
-      "searchable": false,
-      "addonName": "StreamFusion"
-    },
-    {
-      "id": "bb2c7bf.st:store:ad",
-      "type": "other",
-      "name": "Store AD",
-      "shuffle": false,
-      "enabled": true,
-      "rpdb": true,
-      "hideable": true,
-      "searchable": true,
-      "addonName": "StremThru Store"
-    },
-    {
-      "id": "392c7bf.torrentio-alldebrid",
-      "type": "other",
-      "name": "AllDebrid",
-      "shuffle": false,
-      "enabled": true,
-      "rpdb": true,
-      "hideable": true,
-      "searchable": false,
-      "addonName": "Torrentio"
     }
   ],
   "externalDownloads": false,
