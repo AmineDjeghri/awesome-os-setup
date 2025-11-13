@@ -54,7 +54,8 @@ the Projectivy and add stremio there. Also make it the default launcher for your
   - Stremio is available on all platforms: Web, Windows, Mac, Linux, Android, iOS, Android TV, Apple TV...
   - Addons...etc will be synchronized between all your devices.
   - (Depreated) [Tutorial](https://www.reddit.com/r/StremioAddons/comments/17833ms/stremio_all_you_need_to_know/)
-  - What is a debrid service? A debrid service is an unrestricted multi-hoster that allows you to stream and download videos instantly at the best speeds. In plain English, the debrid services act as a proxy between the BitTorrent tracker and you, so you download the content directly from their servers at high speed. Most of the content is already cached, meaning you can instantly access it. Personnaly, I use ALL Debrid, but others exist like : TorBox, Real Debrid...
+  - You will use a debrid service (like Real Debrid, All Debrid), so you won't need any VPN. 
+    What is a debrid service? A debrid service is an unrestricted multi-hoster that allows you to stream and download videos instantly at the best speeds. In plain English, the debrid services act as a proxy between the BitTorrent tracker and you, so you download the content directly from their servers at high speed. Most of the content is already cached, meaning you can instantly access it. Personnaly, I use ALL Debrid, but others exist like : TorBox, Real Debrid...
   
   #### Installation
   - (Update November 2025)
@@ -200,6 +201,7 @@ the Projectivy and add stremio there. Also make it the default launcher for your
       - Order of a list(catalogà in Stremio home is determined by the installation order (except in AIOSteams were you can order them manually).
       -
       - If you didn't rate some movies & tv shows, you can add them to history in Trakt to avoid being recommended by the 'AI Search' addon.
+
 
 
 
