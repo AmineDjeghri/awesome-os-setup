@@ -44,8 +44,10 @@ the Projectivy and add stremio there. Also make it the default launcher for your
 - [Projectivy Launcher](https://play.google.com/store/apps/details?id=com.spocky.projengmenu&hl=en&pli=1)
   -  Remember to export your settings: https://www.reddit.com/r/Projectivy_Launcher/comments/1cdt00f/tell_me_about_exporting_these_launcher_settings/
   -  You can create channels in the menu and add stremio, smartube, spotify to the home screen.
-- [Stremio](https://www.stremio.com/).
+- [Stremio](https://www.stremio.com/)
    #### What is Stremio ?
+  <img width="1908" height="912" alt="image" src="https://github.com/user-attachments/assets/1f5388f6-3a97-4d7a-b5e1-d66eaea07728" />
+
   - Stremio is a video streaming application that allows you to watch and organize video content from different services,
     including movies, series, live TV and video channels. The content is aggregated by an addon system providing streams
     from various sources. And with its commitment to security, Stremio is the ultimate choice for a worry-free,
@@ -63,10 +65,6 @@ the Projectivy and add stremio there. Also make it the default launcher for your
       - After making any change to any addon, you don't need to close the application to synchronize the changes, just click on the addons tab, and go back to home.
       - My recommended Setup:
         - Uninstall all the default addons (Except 'Cinemeta' which can't be removed but there is a trick to do it in the end of this tutorial) 
-        - (Optional) Ratings Addon : https://72059fbbd1e5-stremio-addon-ratings.baby-beamup.club
-          - After configuring the addon, paste it in Stremio Addons 
-          - In stremio, select a movie, you should see the Rating of the movie
- 
         - AIOStreams:
   
             #### 🌐 AIOStreams + Stremio Configuration Guide
@@ -155,7 +153,17 @@ the Projectivy and add stremio there. Also make it the default launcher for your
              The Cinemeta addon provided in this AIOStreams config excludes everything and keep only the calendar.
              1. Uninstall Cinemeta https://www.reddit.com/r/StremioAddons/comments/1d8wbul/how_to_remove_cinemeta/
              2. Enable  the 'Cinemeta (custom) ' in AIOStreams.
-         
+       
+             ###### ⚙️ (optional) Configure *Ratings (custom)*:
+            1. Configure your rating addon https://72059fbbd1e5-stremio-addon-ratings.baby-beamup.club
+            2. Copy the manifest URL in the 'Ratings (custom)' manifest URL field.
+            3. Save and enable the addon.
+
+            ###### ⚙️ (optional) Configure *Statusio (custom)*:
+            1. Configure your statusio addon https://statusio.elfhosted.com/configure
+            2. Copy the manifest URL in the 'Ratings (custom)' manifest URL field.
+            3. Save and enable the addon.
+          
              ###### ⚙️ (optional) Configure *AI Search (custom)*:
             - It is preferable to use this addon with Trakt.
             - Follow the tutorial when activating the addon.
@@ -202,6 +210,9 @@ the Projectivy and add stremio there. Also make it the default launcher for your
       -
       - If you didn't rate some movies & tv shows, you can add them to history in Trakt to avoid being recommended by the 'AI Search' addon.
 
+
+     Your Stremio should look like this:
+     <img width="1908" height="912" alt="image" src="https://github.com/user-attachments/assets/1f5388f6-3a97-4d7a-b5e1-d66eaea07728" />
 
 
 
