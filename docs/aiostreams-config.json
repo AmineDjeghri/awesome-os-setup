@@ -73,9 +73,41 @@
   ],
   "presets": [
     {
+      "type": "custom",
+      "instanceId": "4be",
+      "enabled": false,
+      "options": {
+        "name": "ratings (custom)",
+        "manifestUrl": "https://72059fbbd1e5-stremio-addon-ratings.baby-beamup.club",
+        "libraryAddon": false,
+        "formatPassthrough": true,
+        "resultPassthrough": true,
+        "forceToTop": true,
+        "timeout": 15000,
+        "resources": [],
+        "mediaTypes": []
+      }
+    },
+    {
+      "type": "custom",
+      "instanceId": "127",
+      "enabled": false,
+      "options": {
+        "name": "statusio (custom)",
+        "manifestUrl": "https://statusio.elfhosted.com",
+        "libraryAddon": false,
+        "formatPassthrough": true,
+        "resultPassthrough": true,
+        "forceToTop": true,
+        "timeout": 15000,
+        "resources": [],
+        "mediaTypes": []
+      }
+    },
+    {
       "type": "torrentio",
       "instanceId": "392",
-      "enabled": true,
+      "enabled": false,
       "options": {
         "name": "Torrentio",
         "timeout": 10000,
@@ -182,7 +214,7 @@
     {
       "type": "custom",
       "instanceId": "532",
-      "enabled": true,
+      "enabled": false,
       "options": {
         "name": "JackettioFR (custom)",
         "manifestUrl": "https://jackettio.stremiofr.com",
@@ -197,7 +229,7 @@
     {
       "type": "custom",
       "instanceId": "6c2",
-      "enabled": true,
+      "enabled": false,
       "options": {
         "name": "CometFR (custom)",
         "manifestUrl": "https://comet.stremiofr.com",
@@ -247,7 +279,7 @@
       "enabled": true,
       "options": {
         "name": "AISearch (custom)",
-        "manifestUrl": "https://stremio.itcon.au/aisearch",
+        "manifestUrl": "https://stremio.itcon.au",
         "libraryAddon": false,
         "resultPassthrough": false,
         "forceToTop": false,
@@ -311,6 +343,12 @@
     "uncached": "per_service",
     "p2p": "single_result"
   },
+  "proxy": {
+    "enabled": false,
+    "id": "mediaflow",
+    "proxiedAddons": [],
+    "proxiedServices": []
+  },
   "trusted": false,
   "addonName": "AIOStreams | ElfHosted",
   "addonDescription": "The Ultimate Stremio Experience.",
@@ -365,12 +403,6 @@
   "groups": {
     "enabled": false,
     "groupings": []
-  },
-  "proxy": {
-    "enabled": false,
-    "id": "mediaflow",
-    "proxiedAddons": [],
-    "proxiedServices": []
   },
   "resultLimits": {
     "global": 20
