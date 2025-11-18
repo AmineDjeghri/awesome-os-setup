@@ -117,9 +117,19 @@ the Projectivy and add stremio there. Also make it the default launcher for your
             ---
 
   
-            ##### (Optional) 🇫🇷 Step 6 — Configure French Addons, AI Search
+            ##### (Optional) 🇫🇷 Step 6 — Configure Ratings, Debdrid Statuts, French Addons and AI Search
             Go to the **Addons** section. You’ll see a list of installed addons.  
             Some may be deactivated (unsupported ones for now by AIOStreams).
+
+            ###### ⚙️ (optional) Configure *Ratings (custom)*:
+            1. Configure your rating addon https://72059fbbd1e5-stremio-addon-ratings.baby-beamup.club
+            2. Copy the manifest URL in the 'Ratings (custom)' manifest URL field.
+            3. Save and enable the addon.
+
+            ###### ⚙️ (optional) Configure *Statusio (custom)*:
+            1. Configure your statusio addon https://statusio.elfhosted.com/configure
+            2. Copy the manifest URL in the 'Ratings (custom)' manifest URL field.
+            3. Save and enable the addon.
           
             ###### ⚙️ Configure *StremFusion*:
             1. Click the **Edit** button.  
@@ -127,9 +137,8 @@ the Projectivy and add stremio there. Also make it the default launcher for your
             6. Copy the key, click on 'update' at the bottom of the configuration and **Activate** the addon with the switch button.
   
             ###### ⚙️ Configure *CometFR (custom)*:
-            1. Click the **Edit** button.  
-            2. Copy the **Manifest URL**.  
-            3. Paste it in a **new browser tab**.  
+            1. Configure your CometFR addon https://comet.stremiofr.com/
+            2. Copy the manifest URL in the 'CometFR (custom)' manifest URL field.
             4. Configure the addon (enter your debrid key).  
             5. Click **Copy Link** — the link should start with  
                `https://comet.stremiofr.com/`  
@@ -137,9 +146,8 @@ the Projectivy and add stremio there. Also make it the default launcher for your
             6. Go back to AIOStreams, paste this link in the URL field, click on 'update' at the bottom of the configuration and **Activate** the addon with the switch button.
   
             ###### ⚙️ Configure *JackettioFR (custom)*:
-            1. Click the **Edit** button.  
-            2. Copy the **Manifest URL**.  
-            3. Open it in a **new browser tab**.  
+            1. Configure your JackettioFR addon https://jackettio.stremiofr.com/
+            2. Copy the manifest URL in the 'JackettioFR (custom)' manifest URL field.  
             4. Configure it (enter your debrid key) and click **Install**.  
             5. A **Stremio Link** will appear — right-click and choose **Copy link**.  
                It should start with  
@@ -150,16 +158,6 @@ the Projectivy and add stremio there. Also make it the default launcher for your
              The Cinemeta addon provided in this AIOStreams config excludes everything and keep only the calendar.
              1. Uninstall Cinemeta https://www.reddit.com/r/StremioAddons/comments/1d8wbul/how_to_remove_cinemeta/
              2. Enable  the 'Cinemeta (custom) ' in AIOStreams.
-       
-             ###### ⚙️ (optional) Configure *Ratings (custom)*:
-            1. Configure your rating addon https://72059fbbd1e5-stremio-addon-ratings.baby-beamup.club
-            2. Copy the manifest URL in the 'Ratings (custom)' manifest URL field.
-            3. Save and enable the addon.
-
-            ###### ⚙️ (optional) Configure *Statusio (custom)*:
-            1. Configure your statusio addon https://statusio.elfhosted.com/configure
-            2. Copy the manifest URL in the 'Ratings (custom)' manifest URL field.
-            3. Save and enable the addon.
           
              ###### ⚙️ (optional) Configure *AI Search (custom)*:
             - It is preferable to use this addon with Trakt.
@@ -222,6 +220,7 @@ the Projectivy and add stremio there. Also make it the default launcher for your
 
      Your Stremio should look like this:
      <img width="1908" height="912" alt="image" src="https://github.com/user-attachments/assets/1f5388f6-3a97-4d7a-b5e1-d66eaea07728" />
+
 
 
 
