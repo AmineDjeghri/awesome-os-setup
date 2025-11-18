@@ -123,56 +123,52 @@ the Projectivy and add stremio there. Also make it the default launcher for your
 
             ###### ⚙️ (optional) Configure *Ratings (custom)*:
             1. Configure your rating addon https://72059fbbd1e5-stremio-addon-ratings.baby-beamup.club
-            2. Copy the manifest URL in the 'Ratings (custom)' manifest URL field.
+            2. Go back to AIOStreams, and copy the manifest URL in the 'Ratings (custom)' manifest URL field.
             3. Save and enable the addon.
 
             ###### ⚙️ (optional) Configure *Statusio (custom)*:
             1. Configure your statusio addon https://statusio.elfhosted.com/configure
-            2. Copy the manifest URL in the 'Ratings (custom)' manifest URL field.
+            2. Go back to AIOStreams, and copy the manifest URL in the 'Ratings (custom)' manifest URL field.
             3. Save and enable the addon.
           
-            ###### ⚙️ Configure *StremFusion*:
-            1. Click the **Edit** button.  
-            2. look for StreamFusion API Key and follow the instructions toget the api key from the telegram bot.  
-            6. Copy the key, click on 'update' at the bottom of the configuration and **Activate** the addon with the switch button.
+
   
-            ###### ⚙️ Configure *CometFR (custom)*:
+            ###### ⚙️ Configure French addon *CometFR (custom)*:
             1. Configure your CometFR addon https://comet.stremiofr.com/
-            2. Copy the manifest URL in the 'CometFR (custom)' manifest URL field.
-            4. Configure the addon (enter your debrid key).  
+            2. Go back to AIOStreams, and copy the manifest URL in the 'CometFR (custom)' manifest URL field.
             5. Click **Copy Link** — the link should start with  
                `https://comet.stremiofr.com/`  
                and end with `=/manifest.json`.  
             6. Go back to AIOStreams, paste this link in the URL field, click on 'update' at the bottom of the configuration and **Activate** the addon with the switch button.
   
-            ###### ⚙️ Configure *JackettioFR (custom)*:
+            ###### ⚙️ Configure French addon *JackettioFR (custom)*:
             1. Configure your JackettioFR addon https://jackettio.stremiofr.com/
-            2. Copy the manifest URL in the 'JackettioFR (custom)' manifest URL field.  
-            4. Configure it (enter your debrid key) and click **Install**.  
-            5. A **Stremio Link** will appear — right-click and choose **Copy link**.  
+            2. Go back to AIOStreams, and copy the manifest URL in the 'JackettioFR (custom)' manifest URL field.  
+            3. A **Stremio Link** will appear — right-click and choose **Copy link**.  
                It should start with  
                `https://jackettio.stremiofr.com/`  
-               and end with `=/manifest.json`.
-               
-            6. Go back to AIOStreams, paste this link, click on 'update' at the bottom of the configuration and **Activate** the addon with the switch button.         
-             The Cinemeta addon provided in this AIOStreams config excludes everything and keep only the calendar.
-             1. Uninstall Cinemeta https://www.reddit.com/r/StremioAddons/comments/1d8wbul/how_to_remove_cinemeta/
-             2. Enable  the 'Cinemeta (custom) ' in AIOStreams.
-          
-             ###### ⚙️ (optional) Configure *AI Search (custom)*:
+               and end with `=/manifest.json`.         
+
+           ###### ⚙️ (optional) Configure French addon *StremFusion*:
+            1. Click the **Edit** button.  
+            2. look for StreamFusion API Key and follow the instructions toget the api key from the telegram bot.  
+            6. Copy the key, click on 'update' at the bottom of the configuration and **Activate** the addon with the switch button.
+            ###### ⚙️ (optional) Configure *AI Search (custom)*:
+           1. Configure your AI Search addon https://stremio.itcon.au/
             - It is preferable to use this addon with Trakt.
-            - Follow the tutorial when activating the addon.
-         
+            - Follow the tutorial on their website to get the api keys.
+           2. Go back to AIOStreams, and copy the manifest URL in the 'JackettioFR (custom)' manifest URL field.
+              
             ###### ⚙️ (optional) Remove Cinemeta catalogs and metadata:
             This will remove the 4 first default catalogs provided by Stremio using their official addon named 'Cinemeta'. We can remove this and controle everything needed using TMDB Addon.
             The TMDB Addon in AIOStreams lets you choose the movies and series language description for example.
-            - Go to [cinebye website](https://cinebye.dinsden.top/) 
-            - Go to section #1 Called 'Authenticate' and login using your stremio credentials
-            - Go to section #2 called 'Options' and uncheck these three functionalities :
+            1. Go to [cinebye website](https://cinebye.dinsden.top/) 
+            2. Go to section #1 Called 'Authenticate' and login using your stremio credentials
+            3. Go to section #2 called 'Options' and uncheck these three functionalities :
               - Remove Cinemeta Search
               - Remove Cinemeta Catalogs
               - Remove Cinemeta Metadata
-            - Go to section #3 Called 'Sync Addons' and click on 'Sync to Stremio'.
+            3. Go to section #3 Called 'Sync Addons' and click on 'Sync to Stremio'.
             
 
             ---
@@ -220,6 +216,7 @@ the Projectivy and add stremio there. Also make it the default launcher for your
 
      Your Stremio should look like this:
      <img width="1908" height="912" alt="image" src="https://github.com/user-attachments/assets/1f5388f6-3a97-4d7a-b5e1-d66eaea07728" />
+
 
 
 
