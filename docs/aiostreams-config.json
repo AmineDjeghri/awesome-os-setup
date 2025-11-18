@@ -78,7 +78,7 @@
       "enabled": false,
       "options": {
         "name": "ratings (custom)",
-        "manifestUrl": "https://72059fbbd1e5-stremio-addon-ratings.baby-beamup.club",
+        "manifestUrl": "",
         "libraryAddon": false,
         "formatPassthrough": true,
         "resultPassthrough": true,
@@ -94,7 +94,7 @@
       "enabled": false,
       "options": {
         "name": "statusio (custom)",
-        "manifestUrl": "https://statusio.elfhosted.com",
+        "manifestUrl": "",
         "libraryAddon": false,
         "formatPassthrough": true,
         "resultPassthrough": true,
@@ -105,9 +105,23 @@
       }
     },
     {
+      "type": "tmdb-addon",
+      "instanceId": "fe4",
+      "enabled": true,
+      "options": {
+        "name": "The Movie Database",
+        "timeout": 15000,
+        "resources": ["catalog", "meta"],
+        "Enable Adult Content": true,
+        "hideEpisodeThumbnails": false,
+        "provideImdbId": true,
+        "language": "en-US"
+      }
+    },
+    {
       "type": "torrentio",
       "instanceId": "392",
-      "enabled": false,
+      "enabled": true,
       "options": {
         "name": "Torrentio",
         "timeout": 10000,
@@ -160,31 +174,6 @@
       }
     },
     {
-      "type": "streaming-catalogs",
-      "instanceId": "2c0",
-      "enabled": true,
-      "options": {
-        "name": "Streaming Catalogs",
-        "timeout": 5000,
-        "resources": ["catalog"],
-        "catalogs": ["nfx", "hbm", "dnp", "amp", "atp", "pmp", "hlu", "cpd"]
-      }
-    },
-    {
-      "type": "tmdb-addon",
-      "instanceId": "f0c",
-      "enabled": true,
-      "options": {
-        "name": "The Movie Database",
-        "timeout": 10000,
-        "resources": ["meta", "catalog"],
-        "Enable Adult Content": true,
-        "hideEpisodeThumbnails": false,
-        "provideImdbId": true,
-        "language": "en-US"
-      }
-    },
-    {
       "type": "comet",
       "instanceId": "df3",
       "enabled": true,
@@ -217,7 +206,7 @@
       "enabled": false,
       "options": {
         "name": "JackettioFR (custom)",
-        "manifestUrl": "https://jackettio.stremiofr.com",
+        "manifestUrl": "",
         "libraryAddon": false,
         "formatPassthrough": false,
         "resultPassthrough": false,
@@ -232,7 +221,7 @@
       "enabled": false,
       "options": {
         "name": "CometFR (custom)",
-        "manifestUrl": "https://comet.stremiofr.com",
+        "manifestUrl": "",
         "libraryAddon": false,
         "resultPassthrough": false,
         "forceToTop": false,
@@ -243,7 +232,7 @@
     {
       "type": "streamfusion",
       "instanceId": "12b",
-      "enabled": true,
+      "enabled": false,
       "options": {
         "name": "StreamFusion",
         "timeout": 10000,
@@ -259,14 +248,13 @@
     },
     {
       "type": "custom",
-      "instanceId": "2f0",
-      "enabled": true,
+      "instanceId": "0d2",
+      "enabled": false,
       "options": {
-        "name": "Cinemeta (custom)",
-        "manifestUrl": "https://v3-cinemeta.strem.io/manifest.json",
-        "libraryAddon": true,
-        "formatPassthrough": true,
-        "resultPassthrough": true,
+        "name": "AISearch (custom)",
+        "manifestUrl": "",
+        "libraryAddon": false,
+        "resultPassthrough": false,
         "forceToTop": false,
         "timeout": 10000,
         "resources": [],
@@ -274,18 +262,14 @@
       }
     },
     {
-      "type": "custom",
-      "instanceId": "0d2",
-      "enabled": true,
+      "type": "streaming-catalogs",
+      "instanceId": "2c0",
+      "enabled": false,
       "options": {
-        "name": "AISearch (custom)",
-        "manifestUrl": "https://stremio.itcon.au",
-        "libraryAddon": false,
-        "resultPassthrough": false,
-        "forceToTop": false,
-        "timeout": 10000,
-        "resources": [],
-        "mediaTypes": []
+        "name": "Streaming Catalogs",
+        "timeout": 5000,
+        "resources": ["catalog"],
+        "catalogs": ["nfx", "hbm", "dnp", "amp", "atp", "pmp", "hlu", "cpd"]
       }
     }
   ],
@@ -343,12 +327,6 @@
     "uncached": "per_service",
     "p2p": "single_result"
   },
-  "proxy": {
-    "enabled": false,
-    "id": "mediaflow",
-    "proxiedAddons": [],
-    "proxiedServices": []
-  },
   "trusted": false,
   "addonName": "AIOStreams | ElfHosted",
   "addonDescription": "The Ultimate Stremio Experience.",
@@ -404,8 +382,14 @@
     "enabled": false,
     "groupings": []
   },
+  "proxy": {
+    "enabled": false,
+    "id": "mediaflow",
+    "proxiedAddons": [],
+    "proxiedServices": []
+  },
   "resultLimits": {
-    "global": 20
+    "global": 30
   },
   "size": {
     "global": {
@@ -445,26 +429,15 @@
   "alwaysPrecache": true,
   "catalogModifications": [
     {
-      "id": "f0ce3b0.tmdb.trending",
+      "id": "0d2e3b0.aisearch.home.0.movie",
       "type": "movie",
-      "name": "Trending",
+      "name": "AI Recommendations",
       "shuffle": false,
       "enabled": true,
       "rpdb": true,
       "hideable": true,
       "searchable": false,
-      "addonName": "The Movie Database"
-    },
-    {
-      "id": "f0ce3b0.tmdb.trending",
-      "type": "series",
-      "name": "Trending",
-      "shuffle": false,
-      "enabled": true,
-      "rpdb": true,
-      "hideable": true,
-      "searchable": false,
-      "addonName": "The Movie Database"
+      "addonName": "AISearch (custom)"
     },
     {
       "id": "0d2e3b0.aisearch.home.1.series",
@@ -478,13 +451,35 @@
       "addonName": "AISearch (custom)"
     },
     {
-      "id": "0d2e3b0.aisearch.home.0.movie",
+      "id": "fe4e3b0.tmdb.search",
+      "name": "Search",
       "type": "movie",
-      "name": "AI Recommendations",
+      "enabled": true,
+      "shuffle": false,
+      "rpdb": true,
+      "hideable": false,
+      "searchable": false,
+      "addonName": "The Movie Database"
+    },
+    {
+      "id": "fe4e3b0.tmdb.search",
+      "name": "Search",
+      "type": "series",
+      "enabled": true,
+      "shuffle": false,
+      "rpdb": true,
+      "hideable": false,
+      "searchable": false,
+      "addonName": "The Movie Database"
+    },
+    {
+      "id": "0d2e3b0.aisearch.top",
+      "type": "movie",
+      "name": "AI Movie Search",
       "shuffle": false,
       "enabled": true,
       "rpdb": true,
-      "hideable": true,
+      "hideable": false,
       "searchable": false,
       "addonName": "AISearch (custom)"
     },
@@ -500,367 +495,246 @@
       "addonName": "AISearch (custom)"
     },
     {
-      "id": "0d2e3b0.aisearch.top",
+      "id": "fe4e3b0.tmdb.trending",
+      "name": "Trending",
       "type": "movie",
-      "name": "AI Movie Search",
-      "shuffle": false,
       "enabled": true,
-      "rpdb": true,
-      "hideable": false,
-      "searchable": false,
-      "addonName": "AISearch (custom)"
-    },
-    {
-      "id": "f0ce3b0.tmdb.search",
-      "type": "series",
-      "name": "Search",
       "shuffle": false,
-      "enabled": true,
-      "rpdb": true,
-      "hideable": false,
-      "searchable": false,
-      "addonName": "The Movie Database"
-    },
-    {
-      "id": "f0ce3b0.tmdb.search",
-      "type": "movie",
-      "name": "Search",
-      "shuffle": false,
-      "enabled": true,
-      "rpdb": true,
-      "hideable": false,
-      "searchable": false,
-      "addonName": "The Movie Database"
-    },
-    {
-      "id": "f0ce3b0.tmdb.top",
-      "type": "movie",
-      "name": "Popular",
-      "shuffle": false,
-      "enabled": true,
       "rpdb": true,
       "hideable": true,
       "searchable": false,
       "addonName": "The Movie Database"
     },
     {
-      "id": "f0ce3b0.tmdb.top",
+      "id": "fe4e3b0.tmdb.trending",
+      "name": "Trending",
       "type": "series",
-      "name": "Popular",
-      "shuffle": false,
       "enabled": true,
+      "shuffle": false,
       "rpdb": true,
       "hideable": true,
       "searchable": false,
       "addonName": "The Movie Database"
     },
     {
-      "id": "2c0e3b0.nfx",
-      "type": "movie",
+      "id": "e2ce3b0.nfx",
       "name": "Netflix",
-      "shuffle": false,
+      "type": "movie",
       "enabled": true,
+      "shuffle": false,
       "rpdb": true,
       "hideable": true,
       "searchable": false,
       "addonName": "Streaming Catalogs"
     },
     {
-      "id": "2c0e3b0.nfx",
-      "type": "series",
+      "id": "e2ce3b0.nfx",
       "name": "Netflix",
-      "shuffle": false,
+      "type": "series",
       "enabled": true,
+      "shuffle": false,
       "rpdb": true,
       "hideable": true,
       "searchable": false,
       "addonName": "Streaming Catalogs"
     },
     {
-      "id": "2c0e3b0.hbm",
-      "type": "movie",
+      "id": "e2ce3b0.hbm",
       "name": "HBO Max",
-      "shuffle": false,
+      "type": "movie",
       "enabled": true,
+      "shuffle": false,
       "rpdb": true,
       "hideable": true,
       "searchable": false,
       "addonName": "Streaming Catalogs"
     },
     {
-      "id": "2c0e3b0.hbm",
-      "type": "series",
+      "id": "e2ce3b0.hbm",
       "name": "HBO Max",
-      "shuffle": false,
+      "type": "series",
       "enabled": true,
+      "shuffle": false,
       "rpdb": true,
       "hideable": true,
       "searchable": false,
       "addonName": "Streaming Catalogs"
     },
     {
-      "id": "2c0e3b0.dnp",
-      "type": "movie",
+      "id": "e2ce3b0.dnp",
       "name": "Disney+",
-      "shuffle": false,
+      "type": "movie",
       "enabled": true,
+      "shuffle": false,
       "rpdb": true,
       "hideable": true,
       "searchable": false,
       "addonName": "Streaming Catalogs"
     },
     {
-      "id": "2c0e3b0.dnp",
-      "type": "series",
+      "id": "e2ce3b0.dnp",
       "name": "Disney+",
-      "shuffle": false,
+      "type": "series",
       "enabled": true,
+      "shuffle": false,
       "rpdb": true,
       "hideable": true,
       "searchable": false,
       "addonName": "Streaming Catalogs"
     },
     {
-      "id": "2c0e3b0.amp",
-      "type": "movie",
+      "id": "e2ce3b0.amp",
       "name": "Prime Video",
-      "shuffle": false,
+      "type": "movie",
       "enabled": true,
+      "shuffle": false,
       "rpdb": true,
       "hideable": true,
       "searchable": false,
       "addonName": "Streaming Catalogs"
     },
     {
-      "id": "2c0e3b0.amp",
-      "type": "series",
+      "id": "e2ce3b0.amp",
       "name": "Prime Video",
-      "shuffle": false,
+      "type": "series",
       "enabled": true,
+      "shuffle": false,
       "rpdb": true,
       "hideable": true,
       "searchable": false,
       "addonName": "Streaming Catalogs"
     },
     {
-      "id": "2c0e3b0.pmp",
-      "type": "movie",
+      "id": "e2ce3b0.pmp",
       "name": "Paramount+",
-      "shuffle": false,
+      "type": "movie",
       "enabled": true,
+      "shuffle": false,
       "rpdb": true,
       "hideable": true,
       "searchable": false,
       "addonName": "Streaming Catalogs"
     },
     {
-      "id": "2c0e3b0.pmp",
-      "type": "series",
+      "id": "e2ce3b0.pmp",
       "name": "Paramount+",
-      "shuffle": false,
+      "type": "series",
       "enabled": true,
+      "shuffle": false,
       "rpdb": true,
       "hideable": true,
       "searchable": false,
       "addonName": "Streaming Catalogs"
     },
     {
-      "id": "2c0e3b0.atp",
-      "type": "movie",
+      "id": "e2ce3b0.atp",
       "name": "Apple TV+",
-      "shuffle": false,
+      "type": "movie",
       "enabled": true,
+      "shuffle": false,
       "rpdb": true,
       "hideable": true,
       "searchable": false,
       "addonName": "Streaming Catalogs"
     },
     {
-      "id": "2c0e3b0.atp",
-      "type": "series",
+      "id": "e2ce3b0.atp",
       "name": "Apple TV+",
-      "shuffle": false,
-      "enabled": true,
-      "rpdb": true,
-      "hideable": true,
-      "searchable": false,
-      "addonName": "Streaming Catalogs"
-    },
-    {
-      "id": "2c0e3b0.hlu",
-      "type": "movie",
-      "name": "Hulu",
-      "shuffle": false,
-      "enabled": true,
-      "rpdb": true,
-      "hideable": true,
-      "searchable": false,
-      "addonName": "Streaming Catalogs"
-    },
-    {
-      "id": "2c0e3b0.hlu",
       "type": "series",
-      "name": "Hulu",
-      "shuffle": false,
       "enabled": true,
+      "shuffle": false,
       "rpdb": true,
       "hideable": true,
       "searchable": false,
       "addonName": "Streaming Catalogs"
     },
     {
-      "id": "2c0e3b0.cpd",
-      "type": "movie",
+      "id": "e2ce3b0.cpd",
       "name": "Canal+",
-      "shuffle": false,
+      "type": "movie",
       "enabled": true,
+      "shuffle": false,
       "rpdb": true,
       "hideable": true,
       "searchable": false,
       "addonName": "Streaming Catalogs"
     },
     {
-      "id": "2c0e3b0.cpd",
-      "type": "series",
+      "id": "e2ce3b0.cpd",
       "name": "Canal+",
-      "shuffle": false,
+      "type": "series",
       "enabled": true,
+      "shuffle": false,
       "rpdb": true,
       "hideable": true,
       "searchable": false,
       "addonName": "Streaming Catalogs"
     },
     {
-      "id": "2f0e3b0.last-videos",
-      "type": "series",
-      "name": "Last videos",
-      "shuffle": false,
-      "enabled": true,
-      "rpdb": true,
-      "hideable": false,
-      "searchable": false,
-      "addonName": "Cinemeta (custom)"
-    },
-    {
-      "id": "2f0e3b0.calendar-videos",
-      "type": "series",
-      "name": "Calendar videos",
-      "shuffle": false,
-      "enabled": true,
-      "rpdb": true,
-      "hideable": false,
-      "searchable": false,
-      "addonName": "Cinemeta (custom)"
-    },
-    {
-      "id": "2f0e3b0.year",
-      "type": "movie",
-      "name": "New",
-      "shuffle": false,
-      "enabled": true,
-      "rpdb": true,
-      "hideable": false,
-      "searchable": false,
-      "addonName": "Cinemeta (custom)"
-    },
-    {
-      "id": "2f0e3b0.year",
-      "type": "series",
-      "name": "New",
-      "shuffle": false,
-      "enabled": true,
-      "rpdb": true,
-      "hideable": false,
-      "searchable": false,
-      "addonName": "Cinemeta (custom)"
-    },
-    {
-      "id": "f0ce3b0.tmdb.year",
-      "type": "series",
-      "name": "Year",
-      "shuffle": false,
-      "enabled": false,
-      "rpdb": true,
-      "hideable": true,
-      "searchable": false,
-      "addonName": "The Movie Database"
-    },
-    {
-      "id": "f0ce3b0.tmdb.language",
-      "type": "movie",
-      "name": "Language",
-      "shuffle": false,
-      "enabled": false,
-      "rpdb": true,
-      "hideable": true,
-      "searchable": false,
-      "addonName": "The Movie Database"
-    },
-    {
-      "id": "f0ce3b0.tmdb.language",
-      "type": "series",
-      "name": "Language",
-      "shuffle": false,
-      "enabled": false,
-      "rpdb": true,
-      "hideable": true,
-      "searchable": false,
-      "addonName": "The Movie Database"
-    },
-    {
-      "id": "f0ce3b0.tmdb.year",
-      "type": "movie",
-      "name": "Year",
-      "shuffle": false,
-      "enabled": false,
-      "rpdb": true,
-      "hideable": true,
-      "searchable": false,
-      "addonName": "The Movie Database"
-    },
-    {
-      "id": "2f0e3b0.top",
-      "type": "movie",
+      "id": "fe4e3b0.tmdb.top",
       "name": "Popular",
-      "shuffle": false,
-      "enabled": false,
-      "rpdb": true,
-      "hideable": true,
-      "searchable": true,
-      "addonName": "Cinemeta (custom)"
-    },
-    {
-      "id": "2f0e3b0.top",
-      "type": "series",
-      "name": "Popular",
-      "shuffle": false,
-      "enabled": false,
-      "rpdb": true,
-      "hideable": true,
-      "searchable": true,
-      "addonName": "Cinemeta (custom)"
-    },
-    {
-      "id": "2f0e3b0.imdbRating",
       "type": "movie",
-      "name": "Featured",
-      "shuffle": false,
       "enabled": false,
+      "shuffle": false,
       "rpdb": true,
       "hideable": true,
       "searchable": false,
-      "addonName": "Cinemeta (custom)"
+      "addonName": "The Movie Database"
     },
     {
-      "id": "2f0e3b0.imdbRating",
+      "id": "fe4e3b0.tmdb.top",
+      "name": "Popular",
       "type": "series",
-      "name": "Featured",
-      "shuffle": false,
       "enabled": false,
+      "shuffle": false,
       "rpdb": true,
       "hideable": true,
       "searchable": false,
-      "addonName": "Cinemeta (custom)"
+      "addonName": "The Movie Database"
+    },
+    {
+      "id": "fe4e3b0.tmdb.year",
+      "name": "Year",
+      "type": "movie",
+      "enabled": false,
+      "shuffle": false,
+      "rpdb": true,
+      "hideable": true,
+      "searchable": false,
+      "addonName": "The Movie Database"
+    },
+    {
+      "id": "fe4e3b0.tmdb.year",
+      "name": "Year",
+      "type": "series",
+      "enabled": false,
+      "shuffle": false,
+      "rpdb": true,
+      "hideable": true,
+      "searchable": false,
+      "addonName": "The Movie Database"
+    },
+    {
+      "id": "fe4e3b0.tmdb.language",
+      "name": "Language",
+      "type": "movie",
+      "enabled": false,
+      "shuffle": false,
+      "rpdb": true,
+      "hideable": true,
+      "searchable": false,
+      "addonName": "The Movie Database"
+    },
+    {
+      "id": "fe4e3b0.tmdb.language",
+      "name": "Language",
+      "type": "series",
+      "enabled": false,
+      "shuffle": false,
+      "rpdb": true,
+      "hideable": true,
+      "searchable": false,
+      "addonName": "The Movie Database"
     }
   ],
   "externalDownloads": false,
