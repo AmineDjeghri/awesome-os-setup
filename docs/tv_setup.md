@@ -166,8 +166,17 @@ the Projectivy and add stremio there. Also make it the default launcher for your
             - Follow the tutorial when activating the addon.
          
             ###### ⚙️ (optional) Remove Cinemeta catalogs and metadata:
-            https://cinebye.dinsden.top/
-  
+            This will remove the 4 first default catalogs provided by Stremio using their official addon named 'Cinemeta'. We can remove this and controle everything needed using TMDB Addon.
+            The TMDB Addon in AIOStreams lets you choose the movies and series language description for example.
+            - Go to [cinebye website](https://cinebye.dinsden.top/) 
+            - Go to section #1 Called 'Authenticate' and login using your stremio credentials
+            - Go to section #2 called 'Options' and uncheck these three functionalities :
+              - Remove Cinemeta Search
+              - Remove Cinemeta Catalogs
+              - Remove Cinemeta Metadata
+            - Go to section #3 Called 'Sync Addons' and click on 'Sync to Stremio'.
+            
+
             ---
   
             ##### 💾 Step 7 — Save and Install
@@ -213,6 +222,7 @@ the Projectivy and add stremio there. Also make it the default launcher for your
 
      Your Stremio should look like this:
      <img width="1908" height="912" alt="image" src="https://github.com/user-attachments/assets/1f5388f6-3a97-4d7a-b5e1-d66eaea07728" />
+
 
 
 
