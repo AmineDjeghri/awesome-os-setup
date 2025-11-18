@@ -40,8 +40,8 @@ One of the best TV OS is Google TV. Here are some reasons why you should conside
 the Projectivy and add stremio there. Also make it the default launcher for your tv.
 
 ### Best google TV apps:
-- [SmartTube](https://smartyoutubetv.github.io/)
-- [Projectivy Launcher](https://play.google.com/store/apps/details?id=com.spocky.projengmenu&hl=en&pli=1)
+- [SmartTube](https://smartyoutubetv.github.io/): A free Android TV app alternative to youtube with no ads, designed for TV screens, up to 8K video resolution, supports youtube accounts.
+- [Projectivy Launcher](https://play.google.com/store/apps/details?id=com.spocky.projengmenu&hl=en&pli=1):  an alternative app launcher for Android TV devices that provides users with a different home screen and method for navigation and opening apps.
   -  Remember to export your settings: https://www.reddit.com/r/Projectivy_Launcher/comments/1cdt00f/tell_me_about_exporting_these_launcher_settings/
   -  You can create channels in the menu and add stremio, smartube, spotify to the home screen.
 - [Stremio](https://www.stremio.com/)
@@ -213,6 +213,7 @@ the Projectivy and add stremio there. Also make it the default launcher for your
 
      Your Stremio should look like this:
      <img width="1908" height="912" alt="image" src="https://github.com/user-attachments/assets/1f5388f6-3a97-4d7a-b5e1-d66eaea07728" />
+
 
 
 
