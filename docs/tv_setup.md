@@ -63,8 +63,7 @@ the Projectivy and add stremio there. Also make it the default launcher for your
   - (Update November 2025)
   - Setup :
       - After making any change to any addon, you don't need to close the application to synchronize the changes, just click on the addons tab, and go back to home.
-      - My recommended Setup:
-        - Uninstall all the default addons (Except 'Cinemeta' which can't be removed but there is a trick to do it in the end of this tutorial) 
+      - My recommended Setup: 
         - AIOStreams:
   
             #### 🌐 AIOStreams + Stremio Configuration Guide
@@ -116,8 +115,9 @@ the Projectivy and add stremio there. Also make it the default launcher for your
             4. After adding your Debrid api key, go down and look for 'TMDB' and follow the instructions to add your TMDB API keys.
   
             ---
+
   
-            ##### (Optional) 🇫🇷 Step 6 — Configure French Addons, AI Search and remove the Official Cinemeta
+            ##### (Optional) 🇫🇷 Step 6 — Configure French Addons, AI Search
             Go to the **Addons** section. You’ll see a list of installed addons.  
             Some may be deactivated (unsupported ones for now by AIOStreams).
           
@@ -146,10 +146,7 @@ the Projectivy and add stremio there. Also make it the default launcher for your
                `https://jackettio.stremiofr.com/`  
                and end with `=/manifest.json`.
                
-            6. Go back to AIOStreams, paste this link, click on 'update' at the bottom of the configuration and **Activate** the addon with the switch button.
-             ###### ⚙️ (optional) Uninstall Cinemeta:
-             Since we already have the TMDB addon, we don't need Cinemeta anymore except when new episodes are released. Stremio will use Cinemeta to add the number of episodes on the poster.
-          
+            6. Go back to AIOStreams, paste this link, click on 'update' at the bottom of the configuration and **Activate** the addon with the switch button.         
              The Cinemeta addon provided in this AIOStreams config excludes everything and keep only the calendar.
              1. Uninstall Cinemeta https://www.reddit.com/r/StremioAddons/comments/1d8wbul/how_to_remove_cinemeta/
              2. Enable  the 'Cinemeta (custom) ' in AIOStreams.
@@ -167,6 +164,9 @@ the Projectivy and add stremio there. Also make it the default launcher for your
              ###### ⚙️ (optional) Configure *AI Search (custom)*:
             - It is preferable to use this addon with Trakt.
             - Follow the tutorial when activating the addon.
+         
+            ###### ⚙️ (optional) Remove Cinemeta catalogs and metadata:
+            https://cinebye.dinsden.top/
   
             ---
   
@@ -182,14 +182,14 @@ the Projectivy and add stremio there. Also make it the default launcher for your
             Open any movie or TV show in Stremio.  
             You should now see your addons providing streams.
             After selecting a movie, you should see [this](https://www.reddit.com/media?url=https%3A%2F%2Fpreview.redd.it%2Faiostreams-setup-guide-optimized-for-tv-v0-mnckhq45y5tf1.png%3Fwidth%3D515%26format%3Dpng%26auto%3Dwebp%26s%3Dd47fb2f619f0e1f4afd0df0085bb7f0235f565f3)
-
-  
             ---
   
             ##### 💡 Tips
             - Keep your **UUID** and **password** safe — that’s your AIOStreams login.  
             - You can restore your setup anytime by re-entering your credentials.  
             - AIOStreams makes it easy to sync and manage all your addons from one place.
+
+
          
        -  In Stremio Settings, you can select the prefered 'Audio language' and 'Subtitles'. This will automatically set the audio and subs automatically when you watch something. This is not synced between devices, you need to do it manually on each of your device.
        - (Optional) Trakt :
@@ -213,6 +213,7 @@ the Projectivy and add stremio there. Also make it the default launcher for your
 
      Your Stremio should look like this:
      <img width="1908" height="912" alt="image" src="https://github.com/user-attachments/assets/1f5388f6-3a97-4d7a-b5e1-d66eaea07728" />
+
 
 
 
