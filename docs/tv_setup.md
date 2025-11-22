@@ -199,7 +199,19 @@ the Projectivy and add stremio there. Also make it the default launcher for your
            
            - Cached streams: [AD⚡️]: The lightning symbol means the stream is cached, ⏳️ means not cached. It's preferable to select a cached stream because a non-cached stream means that you the debrid service will try to download it, and if there isn't any seeders, you won't be able to stream it.
 
-          
+          - If every stream appears with the ⏳ (not cached) icon and none show the ⚡️ (cached) indicator, it usually means your IP address has not been validated on your AllDebrid account.
+            Some debrid services (including AllDebrid) require you to confirm your current IP before they allow cached torrents to be accessed.
+            So when you start a stream for the first time from a new addon, the service blocks cached access until the IP is verified.
+            
+            To fix this:
+            
+            Start any stream in Stremio (this triggers the request on the debrid side).
+            
+            Go to your debrid service’s website (e.g., AllDebrid).
+            
+            You should see a prompt asking you to validate or authorize your IP address.
+            
+            Confirm it — and cached streams will immediately switch from ⏳ to ⚡️.
           - Keep your **UUID** and **password** safe — that’s your AIOStreams login.  
           - You can restore your setup anytime by re-entering your credentials.  
           - AIOStreams makes it easy to sync and manage all your addons from one place.
@@ -220,6 +232,7 @@ the Projectivy and add stremio there. Also make it the default launcher for your
           - If you didn't rate some movies & tv shows, you can add them to history in Trakt to avoid being recommended by the 'AI Search' addon.
          - If you want to syncronize Trakt with IMDB you can use [IMDB-Trakt-Syncer](https://github.com/RileyXX/IMDB-Trakt-Syncer). You can rate what you watch on IMDB or trakt and run the python app to sync everything.
           
+
 
 
 
