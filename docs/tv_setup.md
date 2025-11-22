@@ -197,7 +197,7 @@ the Projectivy and add stremio there. Also make it the default launcher for your
            
            🏷️ Quality Labels (From top to worst): 📀 Remux, 💿 Blu-ray, 🌐 WEB-DL, 🖥️ WEBRip, 💾 HDRip / DVDRip / HDTV / TS / TC, ⚪ N/A if no quality tag exists
            
-           [RD⚡️] The lightning symbol means the stream is cached in the Debrid cache.
+           [RD⚡️] The lightning symbol means the stream is cached in the Debrid cache. It's preferable to select a cached stream.
 
           
           - Keep your **UUID** and **password** safe — that’s your AIOStreams login.  
@@ -220,6 +220,7 @@ the Projectivy and add stremio there. Also make it the default launcher for your
           - If you didn't rate some movies & tv shows, you can add them to history in Trakt to avoid being recommended by the 'AI Search' addon.
          - If you want to syncronize Trakt with IMDB you can use [IMDB-Trakt-Syncer](https://github.com/RileyXX/IMDB-Trakt-Syncer). You can rate what you watch on IMDB or trakt and run the python app to sync everything.
           
+
 
 
 
