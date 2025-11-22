@@ -198,7 +198,7 @@ the Projectivy and add stremio there. Also make it the default launcher for your
            - 🏷️ Quality Labels (From top to worst): 📀 Remux, 💿 Blu-ray, 🌐 WEB-DL, 🖥️ WEBRip, 💾 HDRip / DVDRip / HDTV / TS / TC, ⚪ N/A if no quality tag exists
            
            - Cached streams: [AD⚡️]: The lightning symbol means the stream is cached, ⏳️ means not cached. It's preferable to select a cached stream because a non-cached stream means that you the debrid service will try to download it, and if there isn't any seeders, you won't be able to stream it.
-
+          ##### ✅ Step 9 — Watch an episode of a popular show:
           - If every stream appears with the ⏳ (not cached) icon and none show the ⚡️ (cached) indicator, it usually means your IP address has not been validated on your AllDebrid account.
             Some debrid services (including AllDebrid) require you to confirm your current IP before they allow cached torrents to be accessed.
             So when you start a stream for the first time from a new addon, the service blocks cached access until the IP is verified.
@@ -232,6 +232,7 @@ the Projectivy and add stremio there. Also make it the default launcher for your
           - If you didn't rate some movies & tv shows, you can add them to history in Trakt to avoid being recommended by the 'AI Search' addon.
          - If you want to syncronize Trakt with IMDB you can use [IMDB-Trakt-Syncer](https://github.com/RileyXX/IMDB-Trakt-Syncer). You can rate what you watch on IMDB or trakt and run the python app to sync everything.
           
+
 
 
 
