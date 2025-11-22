@@ -254,8 +254,9 @@
         "name": "AISearch (custom)",
         "manifestUrl": "",
         "libraryAddon": false,
-        "resultPassthrough": false,
-        "forceToTop": false,
+        "formatPassthrough": true,
+        "resultPassthrough": true,
+        "forceToTop": true,
         "timeout": 10000,
         "resources": [],
         "mediaTypes": []
