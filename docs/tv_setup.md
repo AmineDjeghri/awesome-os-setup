@@ -184,38 +184,44 @@ the Projectivy and add stremio there. Also make it the default launcher for your
             ##### ✅ Step 8 — Test Everything
             Open any movie or TV show in Stremio.  
             You should now see your addons providing streams.
-            After selecting a movie, you should see [this](https://www.reddit.com/media?url=https%3A%2F%2Fpreview.redd.it%2Faiostreams-setup-guide-optimized-for-tv-v0-mnckhq45y5tf1.png%3Fwidth%3D515%26format%3Dpng%26auto%3Dwebp%26s%3Dd47fb2f619f0e1f4afd0df0085bb7f0235f565f3)
+            After selecting a movie, you should see this (Ratings and Statutios appears only if you installed them:
+   
+        
+            <img width="389" height="719" alt="image" src="https://github.com/user-attachments/assets/fdb37b6a-68f9-4a33-abc6-c1adfd21a699" />
+
+          
             ---
-  
-            ##### 💡 Tips
-            - Keep your **UUID** and **password** safe — that’s your AIOStreams login.  
-            - You can restore your setup anytime by re-entering your credentials.  
-            - AIOStreams makes it easy to sync and manage all your addons from one place.
+            As you can see, the streams display clean, readable, and emoji-enhanced stream information inside Stremio. But what does these emojis mean ?
 
+           🎞️ Resolution Badges(From top to worst): ⚜️ 4K for 2160p, 📀 1440p, 📀 1080p ...etc ⚪ N/A if resolution is missing
+           
+           🏷️ Quality Labels (From top to worst): 📀 Remux, 💿 Blu-ray, 🌐 WEB-DL, 🖥️ WEBRip, 💾 HDRip / DVDRip / HDTV / TS / TC, ⚪ N/A if no quality tag exists
+           
+           [RD⚡️] The lightning symbol means the stream is cached in the Debrid cache.
 
+          
+          - Keep your **UUID** and **password** safe — that’s your AIOStreams login.  
+          - You can restore your setup anytime by re-entering your credentials.  
+          - AIOStreams makes it easy to sync and manage all your addons from one place.
+          - The order of a list(catalogs) in Stremio home is determined by the installation order (except in AIOSteams were you can order them manually).
          
+         Your Stremio should look like this: <img width="1908" height="912" alt="image" src="https://github.com/user-attachments/assets/1f5388f6-3a97-4d7a-b5e1-d66eaea07728" />
+            
+     ##### 💡 Stremio Tips
        -  In Stremio Settings, you can select the prefered 'Audio language' and 'Subtitles'. This will automatically set the audio and subs automatically when you watch something. This is not synced between devices, you need to do it manually on each of your device.
+       -  Use Stremio web to configure addons. ALl settings & addons will sync between your devices if you use the same
+            account.
        - (Optional) Trakt :
           - Trakt is a media tracking service that helps users sync their TV shows and movies across numerous platforms and devices.
           - You can enable trakt in Stremio settings. You can download Trakt mobile app or use their website. 
-         - Ratings & history: I rank my movies (and series) on trakt (they will automatically mark as watched if you
+          - Ratings & history: I rank my movies (and series) on trakt (they will automatically mark as watched if you
            activate that setting in trakt's website : settings -> Mark Watched After Rating: Automatically mark unwatched
            items with today's date).
-         - If you want to syncronize everything with IMDB and/or the streaming platforms, you can use these two
-           applications:
-             - [IMDB-Trakt-Syncer](https://github.com/RileyXX/IMDB-Trakt-Syncer)a python app to synchronize IMDB ratings,
-               watchlist...)  You can rate what you watch on IMDB or trakt and run the python app to sync everything.
-  
-    Tips :
-      - Use Stremio web to configure addons. ALl settings & addons will sync between your devices if you use the same
-        account.
-      - Order of a list(catalogà in Stremio home is determined by the installation order (except in AIOSteams were you can order them manually).
-      -
-      - If you didn't rate some movies & tv shows, you can add them to history in Trakt to avoid being recommended by the 'AI Search' addon.
+          - If you didn't rate some movies & tv shows, you can add them to history in Trakt to avoid being recommended by the 'AI Search' addon.
+         - If you want to syncronize Trakt with IMDB you can use [IMDB-Trakt-Syncer](https://github.com/RileyXX/IMDB-Trakt-Syncer). You can rate what you watch on IMDB or trakt and run the python app to sync everything.
+          
 
 
-     Your Stremio should look like this:
-     <img width="1908" height="912" alt="image" src="https://github.com/user-attachments/assets/1f5388f6-3a97-4d7a-b5e1-d66eaea07728" />
 
 
 
