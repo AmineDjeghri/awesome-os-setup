@@ -163,7 +163,7 @@ the Projectivy and add stremio there. Also make it the default launcher for your
             This will remove the 4 first default catalogs provided by Stremio using their official addon named 'Cinemeta'. We can remove this and controle everything needed using TMDB Addon.
             The TMDB Addon in AIOStreams lets you choose the movies and series language description for example.
             1. Go to [cinebye website](https://cinebye.dinsden.top/) 
-            2. Go to section #1 Called 'Authenticate' and login using your stremio credentials
+            2. Go to section #1 Called 'Authenticate' and login using your stremio credentials (or use the auth key with this command in the console in web.stremio.com `JSON.parse(localStorage.getItem("profile")).auth.key` )
             3. Go to section #2 called 'Options' and uncheck these functionalities :
               - (Optional) Remove Cinemeta Search. (Will be replaced by TMDB search)
               - (Recommended) Remove Cinemeta Catalogs. Will be replaced by TMDB catalogs with the ratingd.
@@ -232,6 +232,7 @@ the Projectivy and add stremio there. Also make it the default launcher for your
           - If you didn't rate some movies & tv shows, you can add them to history in Trakt to avoid being recommended by the 'AI Search' addon.
          - If you want to syncronize Trakt with IMDB you can use [IMDB-Trakt-Syncer](https://github.com/RileyXX/IMDB-Trakt-Syncer). You can rate what you watch on IMDB or trakt and run the python app to sync everything.
           
+
 
 
 
