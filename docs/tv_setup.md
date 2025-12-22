@@ -133,6 +133,7 @@ the Projectivy and add stremio there. Also make it the default launcher for your
 
             ###### ⚙️ (optional) Configure *Top-Streaming (custom)*:
             1. Configure your statusio addon https://top-streaming.stream/configure?lang=en
+            2. In Poster type, select 'Standard Posters'
             2. Go back to AIOStreams, and copy the manifest URL in the 'Top-Streaming (custom)' manifest URL field.
             3. Save and enable the addon.
           
