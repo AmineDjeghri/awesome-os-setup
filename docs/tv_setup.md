@@ -153,25 +153,25 @@ the Projectivy and add stremio there. Also make it the default launcher for your
             1. Click the **Edit** button.  
             2. look for StreamFusion API Key and follow the instructions toget the api key from the telegram bot.  
             6. Copy the key, click on 'update' at the bottom of the configuration and **Activate** the addon with the switch button.
+
             ###### ⚙️ (optional) Configure *AI Search (custom)*:
            1. Configure your AI Search addon https://stremio.itcon.au/
             - It is preferable to use this addon with Trakt.
             - Follow the tutorial on their website to get the api keys.
            2. Go back to AIOStreams, and copy the manifest URL in the 'JackettioFR (custom)' manifest URL field.
               
-            ###### ⚙️ (optional) Remove Cinemeta catalogs and metadata:
+            ###### ⚙️ ⚙️ (optional) reorder the addons and remove Cinemeta catalogs:
             This will remove the 4 first default catalogs provided by Stremio using their official addon named 'Cinemeta'. We can remove this and controle everything needed using TMDB Addon.
-            The TMDB Addon in AIOStreams lets you choose the movies and series language description for example.
             1. Go to [cinebye website](https://cinebye.dinsden.top/) 
             2. Go to section #1 Called 'Authenticate' and login using your stremio credentials (or use the auth key with this command in the console in web.stremio.com `JSON.parse(localStorage.getItem("profile")).auth.key` )
             3. Go to section #2 called 'Options' and uncheck these functionalities :
-               - (Optional) Remove Cinemeta Search. (Will be replaced by TMDB search)
+               - (Optional) Remove Cinemeta Search. (Will be replaced by AIOMetadata search)
                
                - (Recommended) Remove Cinemeta Catalogs. Will be replaced by TMDB catalogs with the ratingd.
           
-               - (Warning) Remove Cinemeta Metadata. This will break your Trakt Sync and Calendar functionalities. Do not uncheck it unless you want the metadata of TMDB (for example you want the description of movies in another language)
-          
-            3. Go to section #3 Called 'Sync Addons' and click on 'Sync to Stremio'.
+               - (Warning) Remove Cinemeta Metadata. This will break your Trakt Sync and Calendar functionalities. Do not uncheck it unless you want this.
+            4. Go down until you see the list of installed addons, reorder the addons, put cinemeta last.
+            5. Go to section #3 Called 'Sync Addons' and click on 'Sync to Stremio'.
             
 
             ---
