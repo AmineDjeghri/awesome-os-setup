@@ -128,7 +128,12 @@ the Projectivy and add stremio there. Also make it the default launcher for your
 
             ###### ⚙️ (optional) Configure *Statusio (custom)*:
             1. Configure your statusio addon https://statusio.elfhosted.com/configure
-            2. Go back to AIOStreams, and copy the manifest URL in the 'Ratings (custom)' manifest URL field.
+            2. Go back to AIOStreams, and copy the manifest URL in the 'Statusio (custom)' manifest URL field.
+            3. Save and enable the addon.
+
+            ###### ⚙️ (optional) Configure *Top-Streaming (custom)*:
+            1. Configure your statusio addon https://top-streaming.stream/configure?lang=en
+            2. Go back to AIOStreams, and copy the manifest URL in the 'Top-Streaming (custom)' manifest URL field.
             3. Save and enable the addon.
           
 
