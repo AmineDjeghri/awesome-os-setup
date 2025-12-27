@@ -65,31 +65,43 @@ iex ((New-Object System.Net.WebClient).DownloadString('https://raw.githubusercon
   lock [here](https://consumer.huawei.com/en/support/content/en-us15592807/##:~:text=Click%20the%20Windows%20icon%20and,Screen%20and%20Sleep%20to%20Never)
 - If you have a 3200mhz RAM, and it runs bellow this frequency, activate XMP profile in the BIOS
 - Turn off usb ports and pc lights when in sleep mode in the BIOS
-- 🎧Audio settings
+#### 🎧Audio settings
   - If you have bluetooth and audio devices, you can sort them in audio settings → use as default for both audio and
     communications.
   - You can also deactivate some audio devices if the are unused in the audio settings. Check this [link](https://www.reddit.com/r/Windows10/comments/hcxksq/how_do_you_remove_an_unused_device_from_the_sound/)
   - Deactivate lowering communication sounds in advanced audio settings.
 
-- Monitor and display settings:
-  - Change the display settings if you want to adjust the refresh rate, resolution, etc. (windows + p) → display
-  settings
-  - Disconnect/extend/duplicate a monitor if you have multiple ones (windows + p) → display settings → select
-  the monitor -> next to identify, select the right option. Or use DisplayFusion (paid).
-  - Remember, each monitor configuration requires its own settings adjustments. Here's how it works:
-  - If you have one monitor and customize the refresh rate, then you moved to two monitors, you need to adjust
-  the refresh rate for this new configuration. Next time when you switch between a single monitor and a dual
-  monitor, Windows will remember your settings for both configurations.
-  - If you switch to three monitors, you need to customize the settings (like the refresh rate) for each one
-  for this new configuration (triple monitor settings),
-  - When you return to the two-monitor/ single monitor setup, Windows will remember your previous settings, so
-  you won't need to change them again.
-  - You nca use DisplayFusion if you want to easily configure displays and monitors. For example, you can create a configuration to use two monitors, and a configuration to use only one and turn off the second, a configuration to use the tv only ...etc.
-  - Display Fusion configurations are meant to be used when you don't need to turn off manually the monitors ...etc. So if you have a TV, no need to change the configuration from monitors to TV. You just need to turn off the monitors, and turn on the TV; Windows will recognize that there is a change in the displays and will use the TV.
-- Gaming:
+#### 🖥️ Monitor and Display Settings
+  - **Change display settings** (refresh rate, resolution, scaling, etc.): 
+    - `Windows + I` → **System** → **Display** .  Or **Right-click Desktop** → **Display settings** 
+  - **🚀 Critical Step – Refresh Rate** :  Go to **Advanced display**. Select the **highest available refresh rate** from the dropdown  
+   - Optimize Overdrive: Avoid using the "Extreme" or "Ultra-fast" response time settings. These usually degrade performance. 
+      - Visit testufo.com/ghosting and adjust your monitor's Overdrive (OD) settings until the UFO images look as clean and sharp as possible. 
+   - Color Calibration: When adjusting your monitor's RGB values, only adjust them down from the default (e.g., if you want more green, decrease red and blue). Increasing values beyond default reduces maximum brightness and can lower contrast on LCD screens. 
+   - Manage Brightness: High brightness causes eye strain and fatigue over long sessions, making it harder to spot enemies. Instead of maxing out brightness, use the Shadow Boost feature to brighten only dark areas.  
+     - Use Twinkle Tray to control brightness via the taskbar or keyboard shortcuts during gameplay. 
+   - Bias Lighting: Place lights behind your monitor to improve perceived contrast and further reduce eye strain. 
+   - Monitor Latency: Use the Nvidia statistics overlay (Alt + Z) to track your PC latency. 
+   - GPU Utilization: System latency spikes when your GPU hits 100% utilization. To keep latency low, use an FPS limiter, lower graphics settings, or enable Nvidia Reflex to ensure you are not "GPU bound".
   - Full-screen games optimization: uncheck “disable fullscreen optimization” for the .exe. You will get a fast alt tab (only on the latest windows versions). Example: Make your way to the following file location on your desktop: C:
     \Program Files (x86)\Steam\steamapps\common\Counter-Strike Global Offensive\game. The goal here is to locate the
     CS2.exe file.
+- 🧠 Multiple Monitor Logic:
+    - Each monitor configuration has **its own saved settings**
+    - **Single Monitor Setup**
+      - Customize refresh rate and resolution
+    - **Dual Monitor Setup**
+      - You must re-adjust refresh rates for this configuration
+      - Windows remembers these settings separately
+    - **Triple Monitor Setup**
+      - Each monitor must be configured individually again
+    - 🔄 When switching back to a previous setup, **Windows automatically restores**
+      - Use `Windows + P` to disconnect/extend/duplicate a monitor if you have multiple ones: (Windows + P) → Select the monitor → Next to identify, select the right option.
+      - Select **Identify** to confirm monitor positions  
+      - For advanced setups, consider **DisplayFusion (paid)****** :
+        - You can use DisplayFusion if you want to easily configure displays and monitors. For example, you can create a configuration to use two monitors, and a configuration to use only one and turn off the second, a configuration to use the tv only ...etc.
+       - Display Fusion configurations are meant to be used when you don't need to turn off manually the monitors ...etc. So if you have a TV, no need to change the configuration from monitors to TV. You just need to turn off the monitors, and turn on the TV; Windows will recognize that there is a change in the displays and will use the TV.
+       -  You can use DisplayFusion to easily create profiles for different configurations (e.g., a "Gaming" profile for one monitor, a "Work" profile for two, or a "Movie" profile for the TV).
 
 - Windows UI/UX Tips:
     - Hide the Windows taskbar (right-click on the taskbar -> taskbar settings-> taskbar behavior (at the bottom) ->
