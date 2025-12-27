@@ -271,7 +271,7 @@ machine.
 
 ### 3.1. Install WSL:
 - Automatic installation of WSL available with this [command](##1-2-software)
-- Or manual installation: Run this command in PowerShell ``` wsl --install ```
+- Or manual installation: Run this command in PowerShell ``` wsl --install ```. You can also select the drive where you want to install it instead of the default 'C' drive and this is what I recommand doing. 
 
 - Restart your computer
 - When installing WSL, it comes with Ubuntu (you can always install other distibutions from the microsoft store)
