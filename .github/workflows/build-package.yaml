@@ -1,0 +1,12 @@
+name: Build Package
+
+on:
+  workflow_call:
+
+jobs:
+  build-package:
+    uses: ./.github/workflows/_base-job.yaml
+    with:
+      job-name: 'Build Package'
+      command: 'make build-package'
+      fetch-depth: 0

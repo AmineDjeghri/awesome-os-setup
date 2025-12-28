@@ -1,4 +1,4 @@
-site_name: Generative AI Project Template
+site_name: Stremio Addon Python Template
 site_description: Documentation
 site_author: Amine Djeghri
 docs_dir: .
@@ -49,9 +49,11 @@ plugins:
       handlers:
         python:
           paths: [., source]
+  - gen-files:
+      scripts:
+        - scripts/gen_doc_stubs.py
   - search
   - same-dir
   - exclude:
       glob:
         - node_modules/**
-        - .venv/**

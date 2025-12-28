@@ -1,0 +1,19 @@
+packages:
+  ubuntu:
+    apt:
+      core:
+        - git
+        - curl
+        - zsh
+      terminal_tools:
+        - bat
+        - fzf
+        - btop
+        - neofetch
+  arch:
+    pacman: {}
+  darwin:
+    brew: {}
+    cask: {}
+  windows:
+    winget: {}

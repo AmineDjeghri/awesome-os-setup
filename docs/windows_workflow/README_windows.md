@@ -13,6 +13,8 @@ You can follow this repository to get a similar setup.
   * [1. Windows account & configuration](#1-windows-account--configuration)
     * [1.1. Windows account](#11-windows-account)
     * [1.2. Windows configuration](#12-windows-configuration)
+      * [🎧Audio settings](#audio-settings)
+      * [🖥️ Monitor and Display Settings](#-monitor-and-display-settings)
   * [2. Software](#2-software)
     * [2.1. Web Browsers:](#21-web-browsers)
     * [2.2. Messaging](#22-messaging)
@@ -55,7 +57,7 @@ iex ((New-Object System.Net.WebClient).DownloadString('https://raw.githubusercon
 ### 1.2. Windows configuration
 
 - 🔑 Save your key: Connect windows with your Microsoft/Outlook account to save and link the key to your account
-- 📍 Activate localization on windows (if you want to localize your device)
+- 📍 Activate localization on Windows (if you want to localize your device)
 - 🔐 Activate bitlocker to encrypt your data (Exists only on Windows pro, education and enterprise edition)
 - 🖥️ When placing an external monitor that runs 144HZ, make sure to activate the `144Hz` in display settings
 - ⚠️ If you're using OneDrive, careful when you sync your Desktop and Windows specific folders, you can face some
@@ -72,16 +74,26 @@ iex ((New-Object System.Net.WebClient).DownloadString('https://raw.githubusercon
   - Deactivate lowering communication sounds in advanced audio settings.
 
 #### 🖥️ Monitor and Display Settings
-  - **Change display settings** (refresh rate, resolution, scaling, etc.): 
-    - `Windows + I` → **System** → **Display** .  Or **Right-click Desktop** → **Display settings** 
-  - **🚀 Critical Step – Refresh Rate** :  Go to **Advanced display**. Select the **highest available refresh rate** from the dropdown  
-   - Optimize Overdrive: Avoid using the "Extreme" or "Ultra-fast" response time settings. These usually degrade performance. 
-      - Visit testufo.com/ghosting and adjust your monitor's Overdrive (OD) settings until the UFO images look as clean and sharp as possible. 
-   - Color Calibration: When adjusting your monitor's RGB values, only adjust them down from the default (e.g., if you want more green, decrease red and blue). Increasing values beyond default reduces maximum brightness and can lower contrast on LCD screens. 
-   - Manage Brightness: High brightness causes eye strain and fatigue over long sessions, making it harder to spot enemies. Instead of maxing out brightness, use the Shadow Boost feature to brighten only dark areas.  
-     - Use Twinkle Tray to control brightness via the taskbar or keyboard shortcuts during gameplay. 
-   - Bias Lighting: Place lights behind your monitor to improve perceived contrast and further reduce eye strain. 
-   - Monitor Latency: Use the Nvidia statistics overlay (Alt + Z) to track your PC latency. 
+  - **Change display settings** (refresh rate, resolution, scaling, etc.):
+    - `Windows + I` → **System** → **Display** .  Or **Right-click Desktop** → **Display settings**
+  - **🚀 Critical Step – Refresh Rate** :  Go to **Advanced display**. Select the **highest available refresh rate** from the dropdown
+   - Optimize Overdrive: Avoid using the "Extreme" or "Ultra-fast" response time settings. These usually degrade performance.
+   - Use the following to check the performance of your monitor, and read the instructions on the top of each test. Make sure to use the full screen mode.
+   - Do not move your mouse between the area of the test and the rest of the screen because it will cause stuttering. You can move your mouse outside the area of the test. The best is to use the full screen mode of the test.
+      - Ghosting: Visit https://testufo.com/ghosting and adjust your monitor's Overdrive (OD) settings until the UFO images look as clean and sharp as possible.
+      - FPS: https://testufo.com/
+      - Black Level Test: https://testufo.com/blacklevels
+      - Local Dimming: https://testufo.com/localdimming
+   - Color Calibration: When adjusting your monitor's RGB values, only adjust them down from the default (e.g., if you want more green, decrease red and blue). Increasing values beyond default reduces maximum brightness and can lower contrast on LCD screens.
+   - Manage Brightness: High brightness causes eye strain and fatigue over long sessions, making it harder to spot enemies. Instead of maxing out brightness, use the Shadow Boost feature to brighten only dark areas.
+     - Use Twinkle Tray to control brightness via the taskbar or keyboard shortcuts during gameplay.
+   - HDR settings:
+     - If your monitor supports HDR, make sure to activate it.
+     - Keep the HDR brightness to the maximum value (or to 80% minimum). If you want to reduce the brightness, do it in the games or applications.
+     - You can change the brightness of SDR content when HDR is enabled in the Windows HDR settings of your monitor, if it's too bright for you.
+     - Use the Windows [HDR Calibration app](https://apps.microsoft.com/detail/9n7f2sm5d1lr?hl=fr-FR&gl=FR) to calibrate your monitor.
+   - Bias Lighting: Place lights behind your monitor to improve perceived contrast and further reduce eye strain.
+   - Monitor Latency: Use the Nvidia statistics overlay (Alt + Z) to track your PC latency.
    - GPU Utilization: System latency spikes when your GPU hits 100% utilization. To keep latency low, use an FPS limiter, lower graphics settings, or enable Nvidia Reflex to ensure you are not "GPU bound".
   - Full-screen games optimization: uncheck “disable fullscreen optimization” for the .exe. You will get a fast alt tab (only on the latest windows versions). Example: Make your way to the following file location on your desktop: C:
     \Program Files (x86)\Steam\steamapps\common\Counter-Strike Global Offensive\game. The goal here is to locate the
@@ -97,7 +109,7 @@ iex ((New-Object System.Net.WebClient).DownloadString('https://raw.githubusercon
       - Each monitor must be configured individually again
     - 🔄 When switching back to a previous setup, **Windows automatically restores**
       - Use `Windows + P` to disconnect/extend/duplicate a monitor if you have multiple ones: (Windows + P) → Select the monitor → Next to identify, select the right option.
-      - Select **Identify** to confirm monitor positions  
+      - Select **Identify** to confirm monitor positions
       - For advanced setups, consider **DisplayFusion (paid)****** :
         - You can use DisplayFusion if you want to easily configure displays and monitors. For example, you can create a configuration to use two monitors, and a configuration to use only one and turn off the second, a configuration to use the tv only ...etc.
        - Display Fusion configurations are meant to be used when you don't need to turn off manually the monitors ...etc. So if you have a TV, no need to change the configuration from monitors to TV. You just need to turn off the monitors, and turn on the TV; Windows will recognize that there is a change in the displays and will use the TV.
@@ -123,6 +135,21 @@ iex ((New-Object System.Net.WebClient).DownloadString('https://raw.githubusercon
       the deep settings are accessible from the search bar.
     - You can use PowerToys to search for files, folders, and more. It's faster than the Windows search bar but does not
       contain deep settings.
+    - (Need to update) Disable mouse from waking up computer from sleep and allowing only the keyboard to do that:
+    ```
+    PS C:\Users\amine> ``powercfg /devicequery wake_armed``
+    Périphérique clavier PIH
+    Périphérique clavier PIH (001)
+    Souris HID (001)
+    Realtek PCIe 2.5GbE Family Controller
+    Souris HID (002)
+    Périphérique clavier PIH (004)
+    Périphérique clavier PIH (005)
+
+    PS C:\Users\amine> ``powercfg /devicedisablewake "Souris HID (001)"``
+    PS C:\Users\amine> ``powercfg /devicedisablewake "Souris HID (002)"``
+    ```
+    If your mouse has some buttons, they will be registered as a keyboard, so you need also to disable them.
 
 Other apps, websites and tips: (DEPRECATED)
 
@@ -271,7 +298,7 @@ machine.
 
 ### 3.1. Install WSL:
 - Automatic installation of WSL available with this [command](##1-2-software)
-- Or manual installation: Run this command in PowerShell ``` wsl --install ```. You can also select the drive where you want to install it instead of the default 'C' drive and this is what I recommand doing. 
+- Or manual installation: Run this command in PowerShell ``` wsl --install ```. You can also select the drive where you want to install it instead of the default 'C' drive and this is what I recommand doing.
 
 - Restart your computer
 - When installing WSL, it comes with Ubuntu (you can always install other distibutions from the microsoft store)

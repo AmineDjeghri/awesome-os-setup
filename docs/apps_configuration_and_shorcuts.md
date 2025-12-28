@@ -202,9 +202,9 @@ Some of them are re-mapped :
 The macos shortcuts are inverted in my system so i can use the same commands as in windows. The ones in this list works for both since i use the name of the key and not the real inverted key.
 **Panels & windows :**
 
-| Panel                        | Windows (MacOS) Shortcut                               
+| Panel                        | Windows (MacOS) Shortcut
 |------------------------------|----------------------------------------|
-| Press the blue button        | alt+p  (command+p)                                | 
+| Press the blue button        | alt+p  (command+p)                                |
 | project panel          alt+P |                                        |
 | terminal panel               | alt + T  (command+t)                                |
 | new terminal                 | alt maj T                              |

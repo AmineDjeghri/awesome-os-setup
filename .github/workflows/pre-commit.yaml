@@ -1,15 +1,11 @@
-name: pre-commit
+name: Pre-commit
 
 on:
-  pull_request:
-  push:
+  workflow_call:
 
 jobs:
   pre-commit:
-    runs-on: ubuntu-22.04
-    steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-python@v4
-        with:
-          python-version: '3.11'
-      - uses: pre-commit/action@v3.0.1
+    uses: ./.github/workflows/_base-job.yaml
+    with:
+      job-name: 'Pre-commit'
+      command: 'make pre-commit'

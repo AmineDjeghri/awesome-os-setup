@@ -1,0 +1,12 @@
+name: Deploy GitHub Pages
+
+on:
+  workflow_call:
+
+jobs:
+  deploy-github-pages:
+    uses: ./.github/workflows/_base-job.yaml
+    with:
+      job-name: 'Deploy GitHub Pages'
+      command: 'make deploy-doc-gh'
+      fetch-depth: 0

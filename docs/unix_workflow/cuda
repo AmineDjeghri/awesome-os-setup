@@ -2,4 +2,4 @@
 - sudo dpkg -i cuda-keyring_1.1-1_all.deb
 -  sudo dpkg -i cuda-keyring_1.1-1_all.deb
 -  sudo apt-get update
--  sudo apt-get install -y cudnn9-cuda-12  
+-  sudo apt-get install -y cudnn9-cuda-12

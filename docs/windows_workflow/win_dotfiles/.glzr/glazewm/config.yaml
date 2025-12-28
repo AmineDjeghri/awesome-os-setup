@@ -136,7 +136,7 @@ window_rules:
       - window_process: { equals: 'Lively' }
         window_class: { regex: 'HwndWrapper*' }
       - window_process: { regex: 'Taskmgr|WindowsTerminal|hl|cs2'}
-# move to workspaces 
+# move to workspaces
  # Move to workspace 1
   - commands: ['move --workspace 1','focus --workspace 1']
     match:
@@ -251,7 +251,7 @@ keybindings:
 
   # Change the focused window to be fullscreen.
   - commands: ['toggle-fullscreen']
-    bindings: ['alt+f'] 
+    bindings: ['alt+f']
 
   # Minimize focused window.
   - commands: ['toggle-minimized']

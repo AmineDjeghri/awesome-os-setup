@@ -1,0 +1,42 @@
+name: Base Reusable Job
+
+on:
+  workflow_call:
+    inputs:
+      job-name:
+        required: true
+        type: string
+        description: 'Name of the job to run'
+      command:
+        required: true
+        type: string
+        description: 'Command to execute'
+      python-version:
+        required: false
+        type: string
+        default: '3.13'
+        description: 'Python version to use'
+      fetch-depth:
+        required: false
+        type: number
+        default: 0
+        description: 'Git fetch depth for checkout'
+
+jobs:
+  run-job:
+    name: ${{ inputs.job-name }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check Out
+        uses: actions/checkout@v6
+        with:
+          fetch-depth: ${{ inputs.fetch-depth }}
+
+      - name: Install Python Dependencies
+        uses: ./.github/actions/install-python-deps
+        with:
+          python-version: ${{ inputs.python-version }}
+
+      - name: Run Command
+        shell: bash
+        run: ${{ inputs.command }}

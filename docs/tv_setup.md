@@ -56,69 +56,69 @@ the Projectivy and add stremio there. Also make it the default launcher for your
   - Stremio is available on all platforms: Web, Windows, Mac, Linux, Android, iOS, Android TV, Apple TV...
   - Addons...etc will be synchronized between all your devices.
   - (Depreated) [Tutorial](https://www.reddit.com/r/StremioAddons/comments/17833ms/stremio_all_you_need_to_know/)
-  - You will use a debrid service (like Real Debrid, All Debrid), so you won't need any VPN. 
+  - You will use a debrid service (like Real Debrid, All Debrid), so you won't need any VPN.
     What is a debrid service? A debrid service is an unrestricted multi-hoster that allows you to stream and download videos instantly at the best speeds. In plain English, the debrid services act as a proxy between the BitTorrent tracker and you, so you download the content directly from their servers at high speed. Most of the content is already cached, meaning you can instantly access it. Personnaly, I use ALL Debrid, but others exist like : TorBox, Real Debrid...
-  
+
   #### Installation
   - (Update November 2025)
   - Setup :
       - After making any change to any addon, you don't need to close the application to synchronize the changes, just click on the addons tab, and go back to home.
-      - My recommended Setup: 
+      - My recommended Setup:
         - AIOStreams:
-  
+
             #### 🌐 AIOStreams + Stremio Configuration Guide
-  
+
             ##### 🧩 What is AIOStreams?
-            AIOStreams is an all-in-one **Stremio addon manager** that lets you organize, install, and sync all your favorite addons in one place.  
-            It also allows you to **save your configuration online**, so you don’t lose your setup.  
-  
+            AIOStreams is an all-in-one **Stremio addon manager** that lets you organize, install, and sync all your favorite addons in one place.
+            It also allows you to **save your configuration online**, so you don’t lose your setup.
+
             Your data is linked to a **UUID** (your unique ID) and a **password**, so you can restore your configuration anytime.
-  
+
             ---
-  
+
             ##### 🪪 Step 1 — Login to Stremio Web
-            Go to 👉 [https://web.stremio.com/](https://web.stremio.com/)  
+            Go to 👉 [https://web.stremio.com/](https://web.stremio.com/)
             Log in with your regular Stremio account.
-  
+
             ---
-  
+
             ##### ⚙️ Step 2 — Open AIOStreams
             Visit 👉  [https://aiostreamsfortheweebs.midnightignite.me/](https://aiostreamsfortheweebs.midnightignite.me/)
             Your can also use the [AIOStreams (ElfHosted)](https://aiostreams.elfhosted.com/) but it is limited to 10 addons and there is no Torrentio support.
-  
+
             This page is where you manage everything related to your addons.
-  
-            ---
-  
-            ##### 🧱 Step 3 — Create Your Configuration
-            1. Go to the **“Save and Install”** section.  
-            2. Enter a **password** of your choice — this will create your AIOStreams account.  
-            3. You’ll receive a **UUID** (like your username).  
-            4. **Save both the UUID and your password!** You’ll need them to restore or import your configuration later.
-  
-            ---
-  
-            ##### 📂 Step 4 — Import Your Settings 
-            1. Download[ my configuration file](aiostreams-config.json)
-            2. Go to **“Navigate and Install”**.  
-            3. Click **Import**.  
-            4. Select and upload your saved configuration file. You will an error message saying that 'StreamFusion API Key is invalid' which is normal for now.
-  
-            Your addons and settings will load automatically.
-  
-            ---
-  
-            ##### 🔑 Step 5 — Enable Your Debrid Services and TMDB API
-            1. In AIOStreams, go to **Services**.  
-            2. Enable your preferred **Debrid service** (e.g.,  AllDebrid, Real-Debrid, TorBox).  I am using All Debrid, if you choose another Debrid provider, you will need to edit the provider in each addon (which is very easy since it's just a select box)
-            3. Enter your API key.  
-            4. After adding your Debrid api key, go down and look for 'TMDB' and follow the instructions to add your TMDB API keys.
-  
+
             ---
 
-  
+            ##### 🧱 Step 3 — Create Your Configuration
+            1. Go to the **“Save and Install”** section.
+            2. Enter a **password** of your choice — this will create your AIOStreams account.
+            3. You’ll receive a **UUID** (like your username).
+            4. **Save both the UUID and your password!** You’ll need them to restore or import your configuration later.
+
+            ---
+
+            ##### 📂 Step 4 — Import Your Settings
+            1. Download[ my configuration file](aiostreams-config.json)
+            2. Go to **“Navigate and Install”**.
+            3. Click **Import**.
+            4. Select and upload your saved configuration file. You will an error message saying that 'StreamFusion API Key is invalid' which is normal for now.
+
+            Your addons and settings will load automatically.
+
+            ---
+
+            ##### 🔑 Step 5 — Enable Your Debrid Services and TMDB API
+            1. In AIOStreams, go to **Services**.
+            2. Enable your preferred **Debrid service** (e.g.,  AllDebrid, Real-Debrid, TorBox).  I am using All Debrid, if you choose another Debrid provider, you will need to edit the provider in each addon (which is very easy since it's just a select box)
+            3. Enter your API key.
+            4. After adding your Debrid api key, go down and look for 'TMDB' and follow the instructions to add your TMDB API keys.
+
+            ---
+
+
             ##### (Optional) 🇫🇷 Step 6 — Configure Ratings, Debdrid Statuts, French Addons and AI Search
-            Go to the **Addons** section. You’ll see a list of installed addons.  
+            Go to the **Addons** section. You’ll see a list of installed addons.
             Some may be deactivated (unsupported ones for now by AIOStreams).
 
             ###### ⚙️ (optional) Configure *Ratings (custom)*:
@@ -136,28 +136,28 @@ the Projectivy and add stremio there. Also make it the default launcher for your
             2. In Poster type, select 'Standard Posters'
             2. Go back to AIOStreams, and copy the manifest URL in the 'Top-Streaming (custom)' manifest URL field.
             3. Save and enable the addon.
-          
 
-  
+
+
             ###### ⚙️ Configure French addon *CometFR (custom)*:
             1. Configure your CometFR addon https://comet.stremiofr.com/
             2. Go back to AIOStreams, and copy the manifest URL in the 'CometFR (custom)' manifest URL field.
-            5. Click **Copy Link** — the link should start with  
-               `https://comet.stremiofr.com/`  
-               and end with `=/manifest.json`.  
+            5. Click **Copy Link** — the link should start with
+               `https://comet.stremiofr.com/`
+               and end with `=/manifest.json`.
             6. Go back to AIOStreams, paste this link in the URL field, click on 'update' at the bottom of the configuration and **Activate** the addon with the switch button.
-  
+
             ###### ⚙️ Configure French addon *JackettioFR (custom)*:
             1. Configure your JackettioFR addon https://jackettio.stremiofr.com/
-            2. Go back to AIOStreams, and copy the manifest URL in the 'JackettioFR (custom)' manifest URL field.  
-            3. A **Stremio Link** will appear — right-click and choose **Copy link**.  
-               It should start with  
-               `https://jackettio.stremiofr.com/`  
-               and end with `=/manifest.json`.         
+            2. Go back to AIOStreams, and copy the manifest URL in the 'JackettioFR (custom)' manifest URL field.
+            3. A **Stremio Link** will appear — right-click and choose **Copy link**.
+               It should start with
+               `https://jackettio.stremiofr.com/`
+               and end with `=/manifest.json`.
 
            ###### ⚙️ (optional) Configure French addon *StremFusion*:
-            1. Click the **Edit** button.  
-            2. look for StreamFusion API Key and follow the instructions toget the api key from the telegram bot.  
+            1. Click the **Edit** button.
+            2. look for StreamFusion API Key and follow the instructions toget the api key from the telegram bot.
             6. Copy the key, click on 'update' at the bottom of the configuration and **Activate** the addon with the switch button.
 
             ###### ⚙️ (optional) Configure *AI Search (custom)*:
@@ -165,103 +165,78 @@ the Projectivy and add stremio there. Also make it the default launcher for your
             - It is preferable to use this addon with Trakt.
             - Follow the tutorial on their website to get the api keys.
            2. Go back to AIOStreams, and copy the manifest URL in the 'JackettioFR (custom)' manifest URL field.
-              
+
             ###### ⚙️ ⚙️ (optional) reorder the addons and remove Cinemeta catalogs:
             This will remove the 4 first default catalogs provided by Stremio using their official addon named 'Cinemeta'. We can remove this and controle everything needed using TMDB Addon.
-            1. Go to [cinebye website](https://cinebye.dinsden.top/) 
+            1. Go to [cinebye website](https://cinebye.dinsden.top/)
             2. Go to section #1 Called 'Authenticate' and login using your stremio credentials (or use the auth key with this command in the console in web.stremio.com `JSON.parse(localStorage.getItem("profile")).auth.key` )
             3. Go to section #2 called 'Options' and uncheck these functionalities :
                - (Optional) Remove Cinemeta Search. (Will be replaced by AIOMetadata search)
-               
+
                - (Recommended) Remove Cinemeta Catalogs. Will be replaced by TMDB catalogs with the ratingd.
-          
+
                - (Warning) Remove Cinemeta Metadata. This will break your Trakt Sync and Calendar functionalities. Do not uncheck it unless you want this.
             4. Go down until you see the list of installed addons, reorder the addons, put cinemeta last.
             5. Go to section #3 Called 'Sync Addons' and click on 'Sync to Stremio'.
-            
+
 
             ---
-  
+
             ##### 💾 Step 7 — Save and Install
-            1. Go back to the **Install** section.  
+            1. Go back to the **Install** section.
             2. Click **Save** — this saves your configuration to your online AIOStreams account.  If you see a timeout error with the name of an addon, it means that this addon is down right now. Just deactivate it and save again (sometimes StremFusion and Opensubtitles V3+ are down)
-            3. Then click **Install** and choose **Stremio Web** (or your preferred option).  
+            3. Then click **Install** and choose **Stremio Web** (or your preferred option).
             4. Stremio will open and prompt you to install your configured addons.
-  
+
             ---
-  
+
             ##### ✅ Step 8 — Test Everything
-            Open any movie or TV show in Stremio.  
+            Open any movie or TV show in Stremio.
             You should now see your addons providing streams.
             After selecting a movie, you should see this (Ratings and Statutios appears only if you installed them:
-   
-        
+
+
             <img width="389" height="719" alt="image" src="https://github.com/user-attachments/assets/fdb37b6a-68f9-4a33-abc6-c1adfd21a699" />
 
-          
+
             ---
             As you can see, the streams display clean, readable, and emoji-enhanced stream information inside Stremio. But what does these emojis mean ?
 
            - 🎞️ Resolution Badges (From top to worst): ⚜️ 4K for 2160p, 📀 1440p, 📀 1080p ...etc ⚪ N/A if resolution is missing
-           
+
            - 🏷️ Quality Labels (From top to worst): 📀 Remux, 💿 Blu-ray, 🌐 WEB-DL, 🖥️ WEBRip, 💾 HDRip / DVDRip / HDTV / TS / TC, ⚪ N/A if no quality tag exists
-           
+
            - Cached streams: [AD⚡️]: The lightning symbol means the stream is cached, ⏳️ means not cached. It's preferable to select a cached stream because a non-cached stream means that you the debrid service will try to download it, and if there isn't any seeders, you won't be able to stream it.
           ##### ✅ Step 9 — Watch an episode of a popular show:
           - If every stream appears with the ⏳ (not cached) icon and none show the ⚡️ (cached) indicator, it usually means your IP address has not been validated on your AllDebrid account.
             Some debrid services (including AllDebrid) require you to confirm your current IP before they allow cached torrents to be accessed.
             So when you start a stream for the first time from a new addon, the service blocks cached access until the IP is verified.
-            
+
             To fix this:
-            
+
             Start any stream in Stremio (this triggers the request on the debrid side).
-            
+
             Go to your debrid service’s website (e.g., AllDebrid).
-            
+
             You should see a prompt asking you to validate or authorize your IP address.
-            
+
             Confirm it — and cached streams will immediately switch from ⏳ to ⚡️.
-          - Keep your **UUID** and **password** safe — that’s your AIOStreams login.  
-          - You can restore your setup anytime by re-entering your credentials.  
+          - Keep your **UUID** and **password** safe — that’s your AIOStreams login.
+          - You can restore your setup anytime by re-entering your credentials.
           - AIOStreams makes it easy to sync and manage all your addons from one place.
           - The order of a list(catalogs) in Stremio home is determined by the installation order (except in AIOSteams were you can order them manually).
-         
+
          Your Stremio should look like this: <img width="1908" height="912" alt="image" src="https://github.com/user-attachments/assets/1f5388f6-3a97-4d7a-b5e1-d66eaea07728" />
-            
+
      ##### 💡 Stremio Tips
        -  In Stremio Settings, you can select the prefered 'Audio language' and 'Subtitles'. This will automatically set the audio and subs automatically when you watch something. This is not synced between devices, you need to do it manually on each of your device.
        -  Use Stremio web to configure addons. ALl settings & addons will sync between your devices if you use the same
             account.
        - (Optional) Trakt :
           - Trakt is a media tracking service that helps users sync their TV shows and movies across numerous platforms and devices.
-          - You can enable trakt in Stremio settings. You can download Trakt mobile app or use their website. 
+          - You can enable trakt in Stremio settings. You can download Trakt mobile app or use their website.
           - Ratings & history: I rank my movies (and series) on trakt (they will automatically mark as watched if you
            activate that setting in trakt's website : settings -> Mark Watched After Rating: Automatically mark unwatched
            items with today's date).
           - If you didn't rate some movies & tv shows, you can add them to history in Trakt to avoid being recommended by the 'AI Search' addon.
          - If you want to syncronize Trakt with IMDB you can use [IMDB-Trakt-Syncer](https://github.com/RileyXX/IMDB-Trakt-Syncer). You can rate what you watch on IMDB or trakt and run the python app to sync everything.
-          
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

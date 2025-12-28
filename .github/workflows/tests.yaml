@@ -1,0 +1,12 @@
+name: Tests
+
+on:
+  workflow_call:
+
+jobs:
+  tests:
+    uses: ./.github/workflows/_base-job.yaml
+    with:
+      job-name: 'Tests'
+      command: 'make test'
+      fetch-depth: 0

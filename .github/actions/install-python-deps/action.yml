@@ -1,0 +1,29 @@
+name: 'Install Python Dependencies'
+description: 'Install Python dependencies using uv and make'
+
+runs:
+  using: 'composite'
+  steps:
+      - name: Restore cache venv
+        uses: actions/cache/restore@v4
+        with:
+          path: |
+            .venv
+            ~/.cache/uv
+
+          key: ${{ runner.os }}-venv-${{ hashFiles('uv.lock') }}
+
+      - name: Install uv and Python dependencies
+        shell: bash
+        run: |
+          cp .env.example .env
+          make install-dev
+
+      - name: Save cache venv
+        uses: actions/cache/save@v4
+        with:
+          path: |
+            .venv
+            ~/.cache/uv
+
+          key: ${{ runner.os }}-venv-${{ hashFiles('uv.lock') }}
