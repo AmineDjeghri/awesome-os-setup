@@ -1,17 +1,9 @@
 # Initialize settings and configure logging
-import os
+import sys
 
 from awesome_os.env_settings import Settings
 
-import sys
-
 from loguru import logger as loguru_logger
-
-
-if "awesome-os-setup" not in os.getcwd().split(os.sep)[-1]:
-    raise Exception(
-        f"Please run the library from the root directory. Current directory: {os.getcwd()}"
-    )
 
 
 def initialize():

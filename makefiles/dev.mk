@@ -5,7 +5,7 @@
 
 run: ## Run the Stremio Addon (Dev Mode)
 	@echo "Starting server..."
-	uv run main.py
+	uv run python -m awesome_os
 
 pre-commit-install:
 	@echo "${YELLOW}=========> Installing pre-commit...${NC}"

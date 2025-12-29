@@ -3,10 +3,11 @@ from __future__ import annotations
 from importlib import resources
 
 import TermTk as ttk
+from TermTk import TTkString
 
 from awesome_os import logger
 
-from awesome_os.installers.factory import get_installer
+from awesome_os.tasks.factory import get_package_manager, get_system_action_sections
 from awesome_os.os_detect import detect_os
 from awesome_os.packages import PackageRef, iter_packages, load_catalog_from_text
 
@@ -86,22 +87,40 @@ def run_app() -> None:
             return
 
         for p in selected:
-            installer = get_installer(distro=distro, manager=p.manager)
-            if installer is None:
+            pm = get_package_manager(distro=distro, manager=p.manager)
+            if pm is None:
                 ui_log(f"No installer available for {p.manager} on {distro} (coming soon)")
                 continue
 
-            if installer.is_installed(p.name):
+            if pm.is_installed(p.name):
                 ui_log(f"{p.name}: already installed")
                 continue
 
-            res = installer.install(p.name)
+            res = pm.install(p.name)
             ui_log(res.summary)
             if res.details:
                 ui_log(res.details)
 
-    buttons = ttk.TTkFrame(parent=left, layout=ttk.TTkHBoxLayout())
-    install_btn = ttk.TTkButton(parent=buttons, text="Install selected")
+    footer = ttk.TTkFrame(parent=win, layout=ttk.TTkVBoxLayout())
+
+    for section_name, actions in get_system_action_sections(distro=distro):
+        row = ttk.TTkFrame(parent=footer, layout=ttk.TTkHBoxLayout())
+        ttk.TTkLabel(parent=row, text=f"{section_name}:", maxWidth=14)
+
+        for label, action in actions:
+            btn = ttk.TTkButton(parent=row, text=TTkString(label))
+
+            def _handler(act=action, name=f"{section_name}: {label}") -> None:
+                ui_log(f"Running: {name}...")
+                res = act()
+                ui_log(res.summary)
+                if res.details:
+                    ui_log(res.details)
+
+            btn.clicked.connect(_handler)
+
+    install_row = ttk.TTkFrame(parent=footer, layout=ttk.TTkHBoxLayout())
+    install_btn = ttk.TTkButton(parent=install_row, text=TTkString("Install selected"))
     install_btn.clicked.connect(do_install_selected)
 
     try:

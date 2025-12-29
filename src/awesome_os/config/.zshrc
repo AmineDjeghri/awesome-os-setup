@@ -50,17 +50,23 @@ source $ZSH/oh-my-zsh.sh
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-# Aliases. For a full list of active aliases, run `alias`.
+# Aliases for both MacOS and Linux. For a full list of active aliases, run `alias`.
 alias zshrc="pycharm -e ~/.zshrc"
 alias cat="bat"
 alias ls="lsd"
 alias top="btop"
+
+# Aliases for Linux.
+if [ "$IS_LINUX" = true ]; then
+  alias bat="batcat"
+fi
 
 
 # ============================================================================
 # PATH Configuration
 # ============================================================================
 
+# Paths for MacOS
 if [ "$IS_MACOS" = true ]; then
   # macOS-specific paths (Homebrew, Cryptexes)
   export PATH="/opt/homebrew/bin:/System/Cryptexes/App/usr/bin:$PATH"
@@ -120,12 +126,6 @@ if command -v uv >/dev/null 2>&1; then
   # Completions for uv
   eval "$(uv generate-shell-completion zsh)"
 fi
-
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f '/Users/z736kw/Downloads/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/z736kw/Downloads/google-cloud-sdk/path.zsh.inc'; fi
-
-# The next line enables shell command completion for gcloud.
-if [ -f '/Users/z736kw/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/z736kw/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
 
 # ============================================================================
 # Auto-activate Python venv - Only if .venv exists in current directory
