@@ -31,13 +31,26 @@ class UbuntuAptManager:
     def is_installed(self, package: str) -> bool:
         """Return whether the given package is already installed."""
         res = run(["dpkg", "-s", package], check=False)
-        return res.returncode == 0
+        if res.returncode != 0:
+            return False
+
+        # `dpkg -s` can still exit 0 when a package is removed but config files remain
+        # (e.g. `Status: deinstall ok config-files`). Only treat `install ok installed`
+        # as installed.
+        for line in res.stdout.splitlines():
+            if not line.startswith("Status:"):
+                continue
+            status = line.removeprefix("Status:").strip().lower()
+            return status == "install ok installed"
+
+        # If we can't find the status line, be conservative and assume it's not installed.
+        return False
 
     def install(self, package: str) -> InstallResult:
         """Install a package using `apt-get`."""
         logger.info(f"Installing {package} via {self.name}...")
-        update_res = run(["sudo", "apt-get", "update", "-y"], check=False)
-        install_res = run(["sudo", "apt-get", "install", "-y", package], check=False)
+        update_res = run(["sudo", "apt", "update", "-y"], check=False)
+        install_res = run(["sudo", "apt", "install", "-y", package], check=False)
         if update_res.returncode == 0 and install_res.returncode == 0:
             return InstallResult(ok=True, summary=f"Installed {package}")
 

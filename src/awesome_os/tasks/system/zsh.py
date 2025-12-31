@@ -62,6 +62,90 @@ def apply_p10k_force() -> TaskResult:
     return TaskResult(ok=True, summary="wrote ~/.p10k.zsh (force)")
 
 
+def uninstall_oh_my_zsh_and_p10k() -> TaskResult:
+    home = Path.home()
+    candidates = [
+        home / ".oh-my-zsh",
+        home / ".p10k.zsh",
+        home / ".zshrc",
+        home / ".fzf.zsh",
+        home / ".zsh_history",
+    ]
+
+    actions: list[str] = []
+    try:
+        for p in candidates:
+            if not p.exists():
+                actions.append(f"skip: {p} (not found)")
+                continue
+
+            if p.is_dir():
+                shutil.rmtree(p)
+                actions.append(f"removed dir: {p}")
+            else:
+                p.unlink()
+                actions.append(f"removed file: {p}")
+    except Exception as e:  # noqa: BLE001
+        return TaskResult(ok=False, summary="uninstall zsh config: failed", details=str(e))
+
+    return TaskResult(
+        ok=True,
+        summary="uninstalled: oh-my-zsh + p10k files",
+        details="\n".join(actions).strip(),
+    )
+
+
+def uninstall_zsh_apt() -> TaskResult:
+    system = platform.system().lower()
+    if system != "linux":
+        return TaskResult(ok=False, summary=f"Unsupported OS for uninstalling zsh: {system}")
+
+    # First, attempt to switch the user's default shell back to bash.
+    # This mirrors the shell script behavior and reduces the chance of locking the user out.
+    res_shell = set_bash_as_default_shell()
+    actions: list[str] = [res_shell.summary]
+    if res_shell.details:
+        actions.append(res_shell.details)
+
+    apt_get = shutil.which("apt-get")
+    if apt_get is None:
+        return TaskResult(
+            ok=False,
+            summary="apt-get not found",
+            details="This action currently supports Debian/Ubuntu-like systems.",
+        )
+
+    cmd = ["sudo", "-n", apt_get, "remove", "-y", "zsh"]
+    res = run(cmd, check=False)
+    details = (res.stdout + "\n" + res.stderr).strip()
+    actions.append(f"ran: {' '.join(cmd)}")
+    if details:
+        actions.append(details)
+
+    if res.returncode == 0:
+        actions.append(
+            "Please restart your terminal to complete the uninstallation. "
+            "If there is an error to access WSL, run in PowerShell: wsl ~ -e bash"
+        )
+        return TaskResult(
+            ok=True, summary="zsh uninstalled (apt)", details="\n".join(actions).strip()
+        )
+
+    if "a password is required" in details.lower() or "sudo:" in details.lower():
+        actions.append(
+            "sudo needs a password. Run manually in a terminal:\nsudo apt-get remove -y zsh"
+        )
+        return TaskResult(
+            ok=False,
+            summary="zsh uninstall requires sudo password",
+            details="\n".join(actions).strip(),
+        )
+
+    return TaskResult(
+        ok=False, summary="failed to uninstall zsh (apt)", details="\n".join(actions).strip()
+    )
+
+
 def _parse_plugins_from_zshrc(zshrc_text: str) -> list[str]:
     m = re.search(r"plugins=\((.*?)\n\s*\)", zshrc_text, flags=re.DOTALL)
     if not m:

@@ -12,6 +12,7 @@ from awesome_os.tasks.system.chezmoi_tasks import (
     chezmoi_init,
     chezmoi_update,
 )
+from awesome_os.tasks.system.help import show_commands
 from awesome_os.tasks.system.zsh import (
     apply_p10k,
     apply_p10k_force,
@@ -20,6 +21,8 @@ from awesome_os.tasks.system.zsh import (
     set_bash_as_default_shell,
     set_zsh_as_default_shell,
     sync_zsh_plugins_and_theme,
+    uninstall_oh_my_zsh_and_p10k,
+    uninstall_zsh_apt,
 )
 from awesome_os.tasks.system.nvidia_tasks import detect_cuda, detect_nvidia, setup_cuda
 from awesome_os.tasks.managers.base import PackageManager
@@ -63,6 +66,12 @@ def get_system_action_sections(*, distro: str) -> list[tuple[str, list[SystemAct
     home = Path.home()
     sections: list[tuple[str, list[SystemAction]]] = [
         (
+            "help",
+            [
+                SystemAction(label="show commands", run=show_commands),
+            ],
+        ),
+        (
             "zsh",
             [
                 SystemAction(label="apply ~/.zshrc", run=apply_zshrc),
@@ -84,6 +93,21 @@ def get_system_action_sections(*, distro: str) -> list[tuple[str, list[SystemAct
                 SystemAction(label="sync zsh plugins/theme", run=sync_zsh_plugins_and_theme),
                 SystemAction(
                     label="set zsh as default shell", run=set_zsh_as_default_shell, confirm=True
+                ),
+            ],
+        ),
+        (
+            "zsh uninstall",
+            [
+                SystemAction(
+                    label="uninstall: oh-my-zsh + p10k files",
+                    run=uninstall_oh_my_zsh_and_p10k,
+                    confirm=True,
+                ),
+                SystemAction(
+                    label="uninstall zsh (apt)",
+                    run=uninstall_zsh_apt,
+                    confirm=True,
                 ),
                 SystemAction(
                     label="set bash as default shell", run=set_bash_as_default_shell, confirm=True
