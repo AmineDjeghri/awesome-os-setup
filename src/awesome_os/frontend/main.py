@@ -2,10 +2,13 @@
 
 from __future__ import annotations
 
+from pathlib import Path
+
 import TermTk as ttk
 from TermTk import TTkString
 
-from awesome_os.frontend.app import _build_package_checkboxes, AppController
+from awesome_os import logger
+from awesome_os.frontend.controller import _build_package_checkboxes, AppController
 from awesome_os.frontend.runner import JobRunner
 from awesome_os.packages import build_packages_for_os
 from awesome_os.tasks.factory import get_system_action_sections, SystemAction
@@ -19,11 +22,12 @@ def run_app() -> None:
     win = ttk.TTkWindow(
         parent=root,
         title="Awesome OS Setup",
-        size=(200, 50),
+        size=(150, 50),
         border=True,
         layout=ttk.TTkVBoxLayout(),
     )
 
+    # header
     header = ttk.TTkFrame(parent=win, layout=ttk.TTkHBoxLayout())
     ttk.TTkLabel(
         parent=header,
@@ -32,18 +36,19 @@ def run_app() -> None:
         maxHeight=2,
     )
 
+    # body
     body = ttk.TTkFrame(parent=win, layout=ttk.TTkHBoxLayout())
 
-    left = ttk.TTkFrame(
-        parent=body, title=TTkString("Packages"), layout=ttk.TTkVBoxLayout(), height=2
-    )
-    right = ttk.TTkFrame(parent=body, title=TTkString("Log"), layout=ttk.TTkVBoxLayout())
+    # left
+    left = ttk.TTkFrame(parent=body, title=TTkString("Packages"), layout=ttk.TTkVBoxLayout())
+    checks = _build_package_checkboxes(parent=left, packages=packages)
 
+    # right
+    right = ttk.TTkFrame(parent=body, title=TTkString("Log"), layout=ttk.TTkVBoxLayout())
     log = ttk.TTkTextEdit(parent=right, readOnly=True)
     right.layout().addWidget(log)  # type: ignore[call-arg]
 
-    checks = _build_package_checkboxes(parent=left, packages=packages)
-
+    # footer
     footer = ttk.TTkFrame(parent=win, layout=ttk.TTkVBoxLayout())
 
     # Display install button
@@ -97,5 +102,14 @@ def run_app() -> None:
         controller.shutdown()
 
 
-if __name__ == "__main__":
+def main():
+    if not Path.cwd().name == "awesome-os-setup":
+        logger.warning(
+            "You are launching the UI from a directory that does not look like the repo root. "
+            "For the intended workflow, run it from the repo root (or use install.sh / make)."
+        )
     run_app()
+
+
+if __name__ == "__main__":
+    main()

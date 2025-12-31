@@ -13,6 +13,8 @@ import queue
 import threading
 from typing import Callable
 
+from awesome_os.tasks import commands
+
 
 UIEvent = tuple[str, str]
 Job = tuple[str, Callable[[], None]]
@@ -82,6 +84,7 @@ class JobRunner:
             name, fn = job
             self._post_busy(True)
             self._post_log(f"Running: {name}...")
+            token = commands.set_stream_sink(self._post_log)
             try:
                 fn()
             except Exception as e:  # noqa: BLE001
@@ -89,4 +92,5 @@ class JobRunner:
                 self._post_log(f"{name}: failed")
                 self._post_log(str(e))
             finally:
+                commands.reset_stream_sink(token)
                 self._post_busy(False)

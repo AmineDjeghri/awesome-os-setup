@@ -21,11 +21,6 @@ from awesome_os.frontend.dialogs import confirm, prompt_text
 from awesome_os.frontend.runner import JobRunner
 
 
-def _add_log_line(text_edit: ttk.TTkTextEdit, line: str) -> None:
-    """Append a log line to the UI log widget."""
-    text_edit.append(line + "\n")
-
-
 class AppController:
     """Controller for handling UI events and dispatching background work.
 
@@ -209,7 +204,7 @@ def _build_package_checkboxes(
         by_cat.setdefault(p.category, []).append(p)
 
     for cat in sorted(by_cat.keys()):
-        ttk.TTkLabel(parent=parent, text=f"[{cat}]", color=ttk.TTkColor.fg("#ffaa00"))
+        ttk.TTkLabel(parent=parent, text=f"[{cat}]", color=ttk.TTkColor.fg("#ffaa00"), maxHeight=1)
         for p in sorted(by_cat[cat], key=lambda x: x.name):
             cb = ttk.TTkCheckbox(text=f"{p.name} ({p.manager})")
             parent.layout().addWidget(cb)  # type: ignore[call-arg]

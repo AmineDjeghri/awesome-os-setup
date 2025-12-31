@@ -7,6 +7,15 @@ import TermTk as ttk
 from TermTk import TTkString
 
 
+def _center_over_parent(*, widget: ttk.TTkWidget, parent: ttk.TTkWidget) -> None:
+    pw, ph = parent.width(), parent.height()
+    ww, wh = widget.width(), widget.height()
+    x = max(0, (pw - ww) // 2)
+    y = max(0, (ph - wh) // 5)
+    widget.move(x, y)
+    widget.raiseWidget()
+
+
 def confirm(
     *,
     parent: ttk.TTkWidget,
@@ -28,6 +37,8 @@ def confirm(
         ),
         defaultButton=ttk.TTkMessageBox.StandardButton.No,
     )
+
+    _center_over_parent(widget=mb, parent=parent)
 
     def _on_selected(sb: ttk.TTkMessageBox.StandardButton) -> None:
         if sb == ttk.TTkMessageBox.StandardButton.Yes:
@@ -55,6 +66,7 @@ def prompt_text(
         border=True,
         layout=ttk.TTkVBoxLayout(),
     )
+    _center_over_parent(widget=dialog, parent=parent)
     ttk.TTkLabel(parent=dialog, text=label, maxHeight=2)
     edit = ttk.TTkLineEdit(parent=dialog)
     edit.setText(initial)

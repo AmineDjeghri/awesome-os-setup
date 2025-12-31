@@ -167,3 +167,5 @@ docs/macos/zed
 
 .qodo
 bin
+
+*tmp.*

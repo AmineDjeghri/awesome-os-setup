@@ -49,7 +49,7 @@ packages = ["src/awesome_os"]
 ## inside the root folder, you can run `uv run --directory . hello`
 [project.scripts]
 hello = "awesome_os:hello" # will read from __init__.py.
-awesome-os = "awesome_os.cli:main"
+awesome-os = "awesome_os.frontend.main:main"
 
 ############### pytest configuration
 [tool.pytest.ini_options]
