@@ -6,7 +6,7 @@ readme = "README.md"
 requires-python = ">=3.13"
 dependencies = [
     # Engineering
-    "pyTermTk==0.41.0a54",
+    "pyTermTk==0.48.1a0",
     "pydantic==2.10.1",
     "pydantic-settings>=2.6.1",
     "loguru==0.7.2",

@@ -46,7 +46,7 @@ requires-dist = [
     { name = "loguru", specifier = "==0.7.2" },
     { name = "pydantic", specifier = "==2.10.1" },
     { name = "pydantic-settings", specifier = ">=2.6.1" },
-    { name = "pytermtk", specifier = "==0.41.0a54" },
+    { name = "pytermtk", specifier = "==0.48.1a0" },
     { name = "pyyaml", specifier = "==6.0.2" },
 ]
 
@@ -638,11 +638,11 @@ wheels = [
 
 [[package]]
 name = "pytermtk"
-version = "0.41.0a54"
+version = "0.48.1a0"
 source = { registry = "https://pypi.org/simple" }
-sdist = { url = "https://files.pythonhosted.org/packages/9d/96/74989b8e228fb99b9a00519bbf0ed603c423202fee2c2653f6696b264715/pytermtk-0.41.0a54.tar.gz", hash = "sha256:f1b08658334131fcaef1c8d760ce949a976591de937e296c24b6af9b86542bfc", size = 292260 }
+sdist = { url = "https://files.pythonhosted.org/packages/d0/a1/dbfec0908a506d1d280524164c66e7dc7da5c8801589fb76d4213eea0994/pytermtk-0.48.1a0.tar.gz", hash = "sha256:8a447c8ec6ad9d8485c30d4a2669df26d9c11ac5c92afe340c27511d2c16e57c", size = 334357 }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/31/80/3641dcfd7932dd96feeed79bb633b1de07fb42076dba3f5095a81951ca71/pyTermTk-0.41.0a54-py3-none-any.whl", hash = "sha256:8803053d18eb9e06a8f3d8038b7ed09df1769950dfb0b3ec417fc8432d290502", size = 454432 },
+    { url = "https://files.pythonhosted.org/packages/15/1e/eca23c42e3a59b32b81fd2c79d9562c87a129dffc4bdde8e16793c235598/pytermtk-0.48.1a0-py3-none-any.whl", hash = "sha256:554890f988106c6be4cc0c27ad25ddb0e06745bbffb6bf89207165a91f77a266", size = 507033 },
 ]
 
 [[package]]

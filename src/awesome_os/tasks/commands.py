@@ -27,6 +27,8 @@ def run(
         check=False,
         capture_output=capture_output,
         text=text,
+        encoding="utf-8" if text else None,
+        errors="replace" if text else None,
     )
     if check and completed.returncode != 0:
         raise subprocess.CalledProcessError(

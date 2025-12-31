@@ -3,7 +3,7 @@ from __future__ import annotations
 from pathlib import Path
 
 from awesome_os import logger
-from awesome_os.ui import run_app
+from awesome_os.frontend.main import run_app
 
 
 def main() -> None:
