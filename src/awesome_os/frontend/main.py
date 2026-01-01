@@ -10,14 +10,14 @@ from TermTk import TTkString
 from awesome_os import logger
 from awesome_os.frontend.controller import _build_package_checkboxes, AppController
 from awesome_os.frontend.runner import JobRunner
-from awesome_os.packages import build_packages_for_os
+from awesome_os.detect_os import build_packages_for_os
 from awesome_os.tasks.factory import get_system_action_sections, SystemAction
 
 
 def run_app() -> None:
     """Entry point for launching the terminal UI."""
-    distro, packages = build_packages_for_os()
-
+    system, distro, info, packages = build_packages_for_os()
+    info = f" info:{info}" if info else ""
     root = ttk.TTk()
     win = ttk.TTkWindow(
         parent=root,
@@ -31,7 +31,7 @@ def run_app() -> None:
     header = ttk.TTkFrame(parent=win, layout=ttk.TTkHBoxLayout())
     ttk.TTkLabel(
         parent=header,
-        text=f"Detected distro: {distro}",
+        text=f"OS: {system} | Distro: {distro} | {info}",
         color=ttk.TTkColor.fg("#00ff00"),
         maxHeight=2,
     )
@@ -79,7 +79,9 @@ def run_app() -> None:
         controller.ui_log("Unsupported OS")
 
     # Display actions buttons
-    for section_name, actions in get_system_action_sections(distro=distro):
+    for section_name, actions in get_system_action_sections(
+        system=system, distro=distro, info=info
+    ):
         row = ttk.TTkFrame(parent=footer, layout=ttk.TTkHBoxLayout())
         ttk.TTkLabel(parent=row, text=f"{section_name}:", maxWidth=14)
         for action in actions:

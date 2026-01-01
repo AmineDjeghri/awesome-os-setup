@@ -8,16 +8,16 @@ This module wires together:
 
 from __future__ import annotations
 
+from datetime import datetime
 import shutil
-from pathlib import Path
 
 import TermTk as ttk
 
 from awesome_os import logger
-from awesome_os.packages import PackageRef
+from awesome_os.detect_os import PackageRef
 from awesome_os.tasks.factory import SystemAction, get_package_manager
 
-from awesome_os.frontend.dialogs import confirm, prompt_text
+from awesome_os.frontend.dialogs import confirm
 from awesome_os.frontend.runner import JobRunner
 
 
@@ -117,23 +117,24 @@ class AppController:
 
         name = f"{section_name}: {action.label}"
 
-        if (
-            action.confirm
-            and action.backup_target is not None
-            and action.backup_default is not None
-        ):
-            # Some actions mutate a config file; ask for confirmation and offer an optional backup.
-            self._confirm_with_optional_backup(action, name)
-            return
-
         if action.confirm:
 
             def _on_yes() -> None:
-                self._enqueue_action(action, name)
+                if action.backup_target is not None:
+                    self._confirm_with_optional_backup(action, name)
+                else:
+                    self._enqueue_action(action, name)
 
             confirm(
-                parent=self._win, title="Confirm", text=f"Proceed with: {name}?", on_yes=_on_yes
+                parent=self._win,
+                title="Confirm",
+                text=action.confirm_message or f"Proceed with: {name}?",
+                on_yes=_on_yes,
             )
+            return
+
+        if action.backup_target is not None:
+            self._confirm_with_optional_backup(action, name)
             return
 
         self._enqueue_action(action, name)
@@ -150,45 +151,31 @@ class AppController:
         self._runner.enqueue(name, _run_action)
 
     def _confirm_with_optional_backup(self, action: SystemAction, name: str) -> None:
-        """Confirm an action, optionally copying a backup of a target file first."""
+        """Optionally copy a backup of a target file first, then run the action."""
+        target = action.backup_target
+        if target is None:
+            self._enqueue_action(action, name)
+            return
 
-        def _after_confirm() -> None:
-            default_backup = action.backup_default
-            prompt_text(
-                parent=self._win,
-                title="Backup (optional)",
-                label="Backup path (leave empty to skip)",
-                initial=str(default_backup) if default_backup else "",
-                on_ok=_on_backup_path,
-            )
+        ts = datetime.now().strftime("%Y%m%d_%H%M%S")
+        default_backup = target.with_name(f"{target.name}_{ts}_backup")
 
-        def _on_backup_path(path_text: str) -> None:
-            backup_path = Path(path_text).expanduser() if path_text.strip() else None
+        def _run_action_with_backup() -> None:
+            try:
+                if target.exists():
+                    # Ensure parent dirs exist before writing backup.
+                    default_backup.parent.mkdir(parents=True, exist_ok=True)
+                    shutil.copy2(target, default_backup)
+                    self._runner.ui_events.put(("log", f"backup created: {default_backup}"))
+            except Exception as e:  # noqa: BLE001
+                self._runner.ui_events.put(("log", f"backup: failed ({e})"))
 
-            def _run_action_with_backup() -> None:
-                try:
-                    target = action.backup_target
-                    if backup_path is not None and target is not None and target.exists():
-                        # Ensure parent dirs exist before writing backup.
-                        backup_path.parent.mkdir(parents=True, exist_ok=True)
-                        shutil.copy2(target, backup_path)
-                        self._runner.ui_events.put(("log", f"backup created: {backup_path}"))
-                except Exception as e:  # noqa: BLE001
-                    self._runner.ui_events.put(("log", f"backup: failed ({e})"))
+            res = action.run()
+            self._runner.ui_events.put(("log", res.summary))
+            if res.details:
+                self._runner.ui_events.put(("log", res.details))
 
-                res = action.run()
-                self._runner.ui_events.put(("log", res.summary))
-                if res.details:
-                    self._runner.ui_events.put(("log", res.details))
-
-            self._runner.enqueue(name, _run_action_with_backup)
-
-        confirm(
-            parent=self._win,
-            title="Confirm",
-            text=f"Overwrite file? Proceed with: {name}?",
-            on_yes=_after_confirm,
-        )
+        self._runner.enqueue(name, _run_action_with_backup)
 
 
 def _build_package_checkboxes(

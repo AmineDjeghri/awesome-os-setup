@@ -3,6 +3,7 @@ from __future__ import annotations
 import platform
 import shutil
 
+from awesome_os.detect_os import _is_wsl
 from awesome_os.tasks.commands import run
 from awesome_os.tasks.task import TaskResult
 
@@ -55,3 +56,86 @@ def setup_cuda() -> TaskResult:
         summary=f"CUDA setup (advanced) not implemented yet ({system})",
         details="Planned: provide guided installation steps for Windows/Linux, then validate with nvcc and nvidia-smi.",
     )
+
+
+def setup_nvidia_wsl_instructions() -> TaskResult:
+    """WSL: provide instructions for installing NVIDIA drivers on the Windows host."""
+    return TaskResult(
+        ok=True,
+        summary="NVIDIA setup: WSL detected",
+        details=(
+            "You are running inside WSL. Install/update the NVIDIA driver on Windows (host), then restart WSL.\n"
+            "Steps:\n"
+            "1) Install latest NVIDIA Windows driver from https://www.nvidia.com/en-us/drivers/\n"
+            "2) Reboot Windows\n"
+            "3) In PowerShell: nvidia-smi\n"
+            "4) In PowerShell: wsl --shutdown\n"
+            "5) Re-open your Ubuntu/WSL terminal and run: nvidia-smi"
+        ),
+    )
+
+
+def setup_nvidia_ubuntu() -> TaskResult:
+    """Setup NVIDIA driver on Ubuntu."""
+    if _is_wsl():
+        return setup_nvidia_wsl_instructions()
+
+    ubuntu_drivers = shutil.which("ubuntu-drivers")
+    if ubuntu_drivers is None:
+        return TaskResult(
+            ok=False,
+            summary="ubuntu-drivers not found",
+            details=(
+                "Recommended (Ubuntu): install it first, then re-run:\n"
+                "sudo apt-get update\n"
+                "sudo apt-get install -y ubuntu-drivers-common"
+            ),
+        )
+
+    actions: list[str] = []
+
+    actions.append("Planned steps (native Linux):")
+    actions.append("1) sudo ubuntu-drivers devices")
+    actions.append("2) sudo ubuntu-drivers autoinstall")
+    actions.append("3) reboot")
+    actions.append("4) verify: nvidia-smi")
+
+    devices = run([ubuntu_drivers, "devices"], check=False)
+    devices_out = (devices.stdout + "\n" + devices.stderr).strip()
+    if devices_out:
+        actions.append("\nubuntu-drivers devices output:")
+        actions.append(devices_out)
+
+    cmd = ["sudo", ubuntu_drivers, "autoinstall"]
+    res = run(cmd, check=False)
+    details = (res.stdout + "\n" + res.stderr).strip()
+    actions.append(f"\nran: {' '.join(cmd)}")
+    if details:
+        actions.append(details)
+
+    if res.returncode == 0:
+        actions.append("\nDriver install complete. Please reboot, then run: nvidia-smi")
+        return TaskResult(
+            ok=True,
+            summary="NVIDIA driver install: completed (reboot required)",
+            details="\n".join(actions).strip(),
+        )
+
+    if "a password is required" in details.lower() or "sudo:" in details.lower():
+        actions.append(
+            "\nsudo needs a password. Run manually in a terminal:\nsudo ubuntu-drivers autoinstall"
+        )
+        return TaskResult(
+            ok=False,
+            summary="NVIDIA install requires sudo password",
+            details="\n".join(actions).strip(),
+        )
+
+    return TaskResult(
+        ok=False, summary="NVIDIA driver install: failed", details="\n".join(actions).strip()
+    )
+
+
+def setup_nvidia_windows() -> TaskResult:
+    """Setup NVIDIA driver on Windows."""
+    return TaskResult(ok=False, summary="NVIDIA setup for Windows not implemented yet")

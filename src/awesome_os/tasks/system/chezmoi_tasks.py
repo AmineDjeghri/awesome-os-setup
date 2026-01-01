@@ -55,23 +55,6 @@ def chezmoi_init() -> TaskResult:
     return TaskResult(ok=False, summary="chezmoi init: failed", details=details)
 
 
-def chezmoi_diff() -> TaskResult:
-    guard = _ensure_chezmoi_initialized()
-    if guard is not None:
-        return guard
-
-    argv = ["chezmoi", "diff"]
-    try:
-        res = run(argv, check=False)
-    except Exception as e:  # noqa: BLE001
-        return TaskResult(ok=False, summary="chezmoi diff: failed", details=str(e))
-
-    details = (res.stdout + "\n" + res.stderr).strip()
-    if res.returncode == 0:
-        return TaskResult(ok=True, summary="chezmoi diff: ok", details=details)
-    return TaskResult(ok=False, summary="chezmoi diff: failed", details=details)
-
-
 def chezmoi_apply() -> TaskResult:
     guard = _ensure_chezmoi_initialized()
     if guard is not None:

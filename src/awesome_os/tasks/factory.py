@@ -1,22 +1,13 @@
 from __future__ import annotations
 
 from pathlib import Path
-import platform
 from typing import Callable
 
 from pydantic import BaseModel, ConfigDict
 
-from awesome_os.tasks.system.chezmoi_tasks import (
-    chezmoi_apply,
-    chezmoi_diff,
-    chezmoi_init,
-    chezmoi_update,
-)
 from awesome_os.tasks.system.help import show_commands
 from awesome_os.tasks.system.zsh import (
-    apply_p10k,
     apply_p10k_force,
-    apply_zshrc,
     apply_zshrc_force,
     set_bash_as_default_shell,
     set_zsh_as_default_shell,
@@ -24,7 +15,15 @@ from awesome_os.tasks.system.zsh import (
     uninstall_oh_my_zsh_and_p10k,
     uninstall_zsh_apt,
 )
-from awesome_os.tasks.system.nvidia_tasks import detect_cuda, detect_nvidia, setup_cuda
+from awesome_os.detect_os import _is_wsl
+from awesome_os.tasks.system.nvidia_tasks import (
+    detect_cuda,
+    detect_nvidia,
+    setup_cuda,
+    setup_nvidia_ubuntu,
+    setup_nvidia_windows,
+    setup_nvidia_wsl_instructions,
+)
 from awesome_os.tasks.managers.base import PackageManager
 from awesome_os.tasks.managers.ubuntu_snap import UbuntuSnapManager
 from awesome_os.tasks.managers.ubuntu_apt import UbuntuAptManager
@@ -41,8 +40,8 @@ class SystemAction(BaseModel):
     label: str
     run: Callable[[], TaskResult]
     confirm: bool = False
+    confirm_message: str | None = None
     backup_target: Path | None = None
-    backup_default: Path | None = None
 
 
 def get_package_manager(*, distro: str, manager: str) -> PackageManager | None:
@@ -59,84 +58,148 @@ def get_package_manager(*, distro: str, manager: str) -> PackageManager | None:
     return factory() if factory else None
 
 
-def get_system_action_sections(*, distro: str) -> list[tuple[str, list[SystemAction]]]:
-    factories = _PACKAGE_MANAGER_FACTORY_BY_DISTRO.get(distro, {})
-    system = platform.system().lower()
-
+def get_system_action_sections(
+    *, system: str, distro: str, info: str | None
+) -> list[tuple[str, list[SystemAction]]]:
     home = Path.home()
-    sections: list[tuple[str, list[SystemAction]]] = [
-        (
-            "help",
-            [
-                SystemAction(label="show commands", run=show_commands),
-            ],
-        ),
-        (
-            "zsh",
-            [
-                SystemAction(label="apply ~/.zshrc", run=apply_zshrc),
-                SystemAction(
-                    label="apply ~/.zshrc (force)",
-                    run=apply_zshrc_force,
-                    confirm=True,
-                    backup_target=(home / ".zshrc"),
-                    backup_default=(home / ".zshrc.bak"),
-                ),
-                SystemAction(label="apply ~/.p10k.zsh", run=apply_p10k),
-                SystemAction(
-                    label="apply ~/.p10k.zsh (force)",
-                    run=apply_p10k_force,
-                    confirm=True,
-                    backup_target=(home / ".p10k.zsh"),
-                    backup_default=(home / ".p10k.zsh.bak"),
-                ),
-                SystemAction(label="sync zsh plugins/theme", run=sync_zsh_plugins_and_theme),
-                SystemAction(
-                    label="set zsh as default shell", run=set_zsh_as_default_shell, confirm=True
-                ),
-            ],
-        ),
-        (
-            "zsh uninstall",
-            [
-                SystemAction(
-                    label="uninstall: oh-my-zsh + p10k files",
-                    run=uninstall_oh_my_zsh_and_p10k,
-                    confirm=True,
-                ),
-                SystemAction(
-                    label="uninstall zsh (apt)",
-                    run=uninstall_zsh_apt,
-                    confirm=True,
-                ),
-                SystemAction(
-                    label="set bash as default shell", run=set_bash_as_default_shell, confirm=True
-                ),
-            ],
-        ),
-        (
-            "advanced",
-            [
-                SystemAction(label="chezmoi init", run=chezmoi_init),
-                SystemAction(label="chezmoi diff", run=chezmoi_diff),
-                SystemAction(label="chezmoi apply", run=chezmoi_apply),
-                SystemAction(label="chezmoi update", run=chezmoi_update),
-            ],
-        ),
-    ]
+    sections: list[tuple[str, list[SystemAction]]] = []
+    if system in {"darwin", "linux"}:
+        # help
+        sections.append(
+            (
+                "help",
+                [
+                    SystemAction(label="show commands", run=show_commands),
+                ],
+            )
+        )
+        # zsh
+        sections.append(
+            (
+                "zsh",
+                [
+                    SystemAction(
+                        label="apply ~/.zshrc",
+                        run=apply_zshrc_force,
+                        confirm=True,
+                        confirm_message="This will overwrite ~/.zshrc if it exists. Proceed? (A backup will be created)",
+                        backup_target=(home / ".zshrc"),
+                    ),
+                    SystemAction(
+                        label="apply ~/.p10k.zsh",
+                        run=apply_p10k_force,
+                        confirm=True,
+                        confirm_message="FiraCode Nerd Font is required for best results. \n"
+                        "This will overwrite ~/.p10k.zsh if it exists. Proceed? (A backup will be created)",
+                        backup_target=(home / ".p10k.zsh"),
+                    ),
+                    SystemAction(label="sync zsh plugins/theme", run=sync_zsh_plugins_and_theme),
+                    SystemAction(
+                        label="set zsh as default shell",
+                        run=set_zsh_as_default_shell,
+                        confirm=True,
+                        confirm_message="Set your default shell to zsh?",
+                    ),
+                ],
+            )
+        )
+        # zsh uninstall
+        sections.append(
+            (
+                "zsh uninstall",
+                [
+                    SystemAction(
+                        label="uninstall: oh-my-zsh + p10k files",
+                        run=uninstall_oh_my_zsh_and_p10k,
+                        confirm=True,
+                        confirm_message="This will delete oh-my-zsh and related zsh config files. Proceed?",
+                    ),
+                    SystemAction(
+                        label="uninstall zsh (apt)",
+                        run=uninstall_zsh_apt,
+                        confirm=True,
+                        confirm_message="This will uninstall zsh via apt (sudo required). Proceed?",
+                    ),
+                    SystemAction(
+                        label="set bash as default shell",
+                        run=set_bash_as_default_shell,
+                        confirm=True,
+                        confirm_message="Set your default shell to bash?",
+                    ),
+                ],
+            )
+        )
 
+        # chezmoi
+        # sections.append(
+        #         (
+        #             "chezmoi",
+        #             [
+        #                 SystemAction(label="chezmoi init", run=chezmoi_init),
+        #                 SystemAction(label="chezmoi apply", run=chezmoi_apply),
+        #                 SystemAction(label="chezmoi update", run=chezmoi_update),
+        #             ],
+        #         )
+        #     )
+
+    # NVIDIA
     if system in {"windows", "linux"}:
+        nvidia_actions: list[SystemAction] = [
+            SystemAction(label="detect nvidia", run=detect_nvidia)
+        ]
+
+        if system == "windows":
+            nvidia_actions.append(
+                SystemAction(
+                    label="setup nvidia (windows)",
+                    run=setup_nvidia_windows,
+                    confirm=True,
+                    confirm_message="This will show NVIDIA setup guidance for Windows. Proceed?",
+                )
+            )
+        elif system == "linux" and _is_wsl():
+            nvidia_actions.append(
+                SystemAction(
+                    label="setup nvidia (wsl)",
+                    run=setup_nvidia_wsl_instructions,
+                    confirm=True,
+                    confirm_message="This will show NVIDIA setup guidance for WSL (Windows host driver). Proceed?",
+                )
+            )
+        elif distro == "ubuntu":
+            nvidia_actions.append(
+                SystemAction(
+                    label="setup nvidia (ubuntu)",
+                    run=setup_nvidia_ubuntu,
+                    confirm=True,
+                    confirm_message="This will attempt to install NVIDIA drivers on Ubuntu (reboot required). Proceed?",
+                )
+            )
+        else:
+            nvidia_actions.append(
+                SystemAction(
+                    label=f"setup nvidia ({distro})",
+                    run=lambda: TaskResult(
+                        ok=False, summary=f"NVIDIA setup not implemented for distro: {distro}"
+                    ),
+                    confirm=True,
+                    confirm_message=f"NVIDIA setup is not implemented for distro '{distro}'. Proceed to show details?",
+                )
+            )
+
         sections.append(
             (
                 "system",
                 [
-                    SystemAction(label="detect nvidia", run=detect_nvidia),
+                    *nvidia_actions,
                     SystemAction(label="detect cuda", run=detect_cuda),
                     SystemAction(label="setup cuda (advanced)", run=setup_cuda),
                 ],
             )
         )
 
+    # Package managers (apt, snap, brew...)
+    factories = _PACKAGE_MANAGER_FACTORY_BY_DISTRO.get(distro, {})
     for manager_name, factory in factories.items():
         pm = factory()
         sections.append(

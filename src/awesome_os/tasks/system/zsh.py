@@ -18,10 +18,8 @@ def _read_packaged_text_config(filename: str) -> str:
     return (pkg / "config" / filename).read_text(encoding="utf-8")
 
 
-def apply_zshrc() -> TaskResult:
+def apply_zshrc_force() -> TaskResult:
     dest = Path.home() / ".zshrc"
-    if dest.exists():
-        return TaskResult(ok=True, summary="~/.zshrc already exists")
     try:
         content = _read_packaged_text_config(".zshrc")
         dest.write_text(content, encoding="utf-8")
@@ -30,36 +28,14 @@ def apply_zshrc() -> TaskResult:
     return TaskResult(ok=True, summary="wrote ~/.zshrc")
 
 
-def apply_zshrc_force() -> TaskResult:
-    dest = Path.home() / ".zshrc"
-    try:
-        content = _read_packaged_text_config(".zshrc")
-        dest.write_text(content, encoding="utf-8")
-    except Exception as e:  # noqa: BLE001
-        return TaskResult(ok=False, summary="write ~/.zshrc (force): failed", details=str(e))
-    return TaskResult(ok=True, summary="wrote ~/.zshrc (force)")
-
-
-def apply_p10k() -> TaskResult:
-    dest = Path.home() / ".p10k.zsh"
-    if dest.exists():
-        return TaskResult(ok=True, summary="~/.p10k.zsh already exists")
-    try:
-        content = _read_packaged_text_config(".p10k.zsh")
-        dest.write_text(content, encoding="utf-8")
-    except Exception as e:  # noqa: BLE001
-        return TaskResult(ok=False, summary="write ~/.p10k.zsh: failed", details=str(e))
-    return TaskResult(ok=True, summary="wrote ~/.p10k.zsh")
-
-
 def apply_p10k_force() -> TaskResult:
     dest = Path.home() / ".p10k.zsh"
     try:
         content = _read_packaged_text_config(".p10k.zsh")
         dest.write_text(content, encoding="utf-8")
     except Exception as e:  # noqa: BLE001
-        return TaskResult(ok=False, summary="write ~/.p10k.zsh (force): failed", details=str(e))
-    return TaskResult(ok=True, summary="wrote ~/.p10k.zsh (force)")
+        return TaskResult(ok=False, summary="write ~/.p10k.zsh: failed", details=str(e))
+    return TaskResult(ok=True, summary="wrote ~/.p10k.zsh")
 
 
 def uninstall_oh_my_zsh_and_p10k() -> TaskResult:

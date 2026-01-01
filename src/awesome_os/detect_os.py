@@ -14,6 +14,7 @@ class OSInfo(BaseModel):
 
     family: str
     distro: str
+    info: str | None
 
 
 class PackageCatalog(BaseModel):
@@ -37,6 +38,15 @@ class PackageRef(BaseModel):
     category: str
 
 
+def _is_wsl() -> bool:
+    if Path("/proc/sys/fs/binfmt_misc/WSLInterop").exists():
+        return True
+    try:
+        return "microsoft" in Path("/proc/version").read_text(encoding="utf-8").lower()
+    except Exception:  # noqa: BLE001
+        return False
+
+
 def detect_os() -> OSInfo:
     system = platform.system().lower()
     if system == "windows":
@@ -56,7 +66,9 @@ def detect_os() -> OSInfo:
                 data[k.strip()] = v.strip().strip('"')
 
             distro = data.get("ID", "linux").lower()
-        return OSInfo(family="linux", distro=distro)
+        return OSInfo(
+            family=system, distro=distro, info="OS running inside WSL" if _is_wsl() else None
+        )
     return OSInfo(family="unknown", distro="unknown")
 
 
@@ -73,10 +85,12 @@ def iter_packages(distro_block: dict) -> Iterable[PackageRef]:
                 yield PackageRef(name=name.strip(), manager=str(manager), category=str(category))
 
 
-def build_packages_for_os() -> tuple[str, list[PackageRef]]:
+def build_packages_for_os() -> tuple[str, str, str | None, list[PackageRef]]:
     """Detect OS/distro and return the filtered package list for that distro."""
     os_info = detect_os()
+    system = os_info.family
     distro = os_info.distro
+    info = os_info.info
     pkg = resources.files("awesome_os")
     data = yaml.safe_load((pkg / "config" / "packages.yaml").read_text(encoding="utf-8")) or {}
     if not isinstance(data, dict):
@@ -85,4 +99,4 @@ def build_packages_for_os() -> tuple[str, list[PackageRef]]:
 
     distro_block = catalog.for_distro(distro)
     packages = list(iter_packages(distro_block))
-    return distro, packages
+    return system, distro, info, packages
