@@ -190,7 +190,7 @@ def add_windows_terminal_ubuntu_profile() -> TaskResult:
     profiles.append(
         {
             "name": "Ubuntu",
-            "guid": str(uuid.uuid4()),
+            "guid": "{" + str(uuid.uuid4()) + "}",
             "startingDirectory": "~",
             "commandline": "ubuntu run",
             "icon": "https://assets.ubuntu.com/v1/49a1a858-favicon-32x32.png",
