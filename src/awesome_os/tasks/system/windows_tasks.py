@@ -3,7 +3,6 @@ from __future__ import annotations
 import json
 import os
 from pathlib import Path
-import tempfile
 from urllib.request import urlopen
 
 from awesome_os.tasks.commands import run
@@ -24,104 +23,154 @@ def _windows_terminal_settings_path() -> Path:
 
 
 def install_wsl_ubuntu() -> TaskResult:
-    res = run(["wsl.exe", "--install", "-d", "Ubuntu", "--no-launch"], check=False)
+    return wsl_install("Ubuntu")
+
+
+def wsl_install(value: str) -> TaskResult:
+    parts = [p.strip() for p in (value or "").split("|") if p.strip()]
+    distro = parts[0] if parts else ""
+    options = parts[1:] if parts else []
+
+    location: str | None = None
+    flags: set[str] = set()
+    for opt in options:
+        if "=" in opt:
+            k, v = [x.strip() for x in opt.split("=", 1)]
+            if k.lower() == "location":
+                location = v
+        else:
+            flags.add(opt.lower())
+
+    argv: list[str] = ["wsl.exe", "--install"]
+    if distro:
+        argv += ["--distribution", distro]
+    # Default behavior: don't auto-launch the distro after install.
+    argv.append("--no-launch")
+    if location:
+        argv += ["--location", location]
+
+    res = run(argv, check=False)
     details = (res.stdout + "\n" + res.stderr).strip()
     if res.returncode == 0:
+        return TaskResult(ok=True, summary=f"wsl --install {distro}".strip(), details=details)
+    return TaskResult(ok=False, summary=f"wsl --install {distro} failed".strip(), details=details)
+
+
+def wsl_list_online() -> TaskResult:
+    res = run(["wsl.exe", "--list", "--online"], check=False)
+    details = (res.stdout + "\n" + res.stderr).strip()
+    if res.returncode == 0:
+        return TaskResult(ok=True, summary="wsl --list --online", details=details)
+    return TaskResult(ok=False, summary="wsl --list --online failed", details=details)
+
+
+def wsl_list_verbose() -> TaskResult:
+    res = run(["wsl.exe", "--list", "--verbose"], check=False)
+    details = (res.stdout + "\n" + res.stderr).strip()
+    if res.returncode == 0:
+        return TaskResult(ok=True, summary="wsl --list --verbose", details=details)
+    return TaskResult(ok=False, summary="wsl --list --verbose failed", details=details)
+
+
+def wsl_update() -> TaskResult:
+    res = run(["wsl.exe", "--update"], check=False)
+    details = (res.stdout + "\n" + res.stderr).strip()
+    if res.returncode == 0:
+        return TaskResult(ok=True, summary="wsl --update", details=details)
+    return TaskResult(ok=False, summary="wsl --update failed", details=details)
+
+
+def wsl_version() -> TaskResult:
+    res = run(["wsl.exe", "--version"], check=False)
+    details = (res.stdout + "\n" + res.stderr).strip()
+    if res.returncode == 0:
+        return TaskResult(ok=True, summary="wsl --version", details=details)
+    return TaskResult(ok=False, summary="wsl --version failed", details=details)
+
+
+def wsl_shutdown() -> TaskResult:
+    res = run(["wsl.exe", "--shutdown"], check=False)
+    details = (res.stdout + "\n" + res.stderr).strip()
+    if res.returncode == 0:
+        return TaskResult(ok=True, summary="wsl --shutdown", details=details)
+    return TaskResult(ok=False, summary="wsl --shutdown failed", details=details)
+
+
+def _parse_two_fields(value: str, *, sep: str = "|") -> tuple[str, str] | None:
+    parts = [p.strip() for p in (value or "").split(sep, 1)]
+    if len(parts) != 2:
+        return None
+    if not parts[0] or not parts[1]:
+        return None
+    return parts[0], parts[1]
+
+
+def wsl_unregister(distribution: str) -> TaskResult:
+    distribution = (distribution or "").strip()
+    if not distribution:
+        return TaskResult(ok=False, summary="wsl --unregister: missing distribution name")
+    res = run(["wsl.exe", "--unregister", distribution], check=False)
+    details = (res.stdout + "\n" + res.stderr).strip()
+    if res.returncode == 0:
+        return TaskResult(ok=True, summary=f"wsl --unregister {distribution}", details=details)
+    return TaskResult(ok=False, summary=f"wsl --unregister {distribution} failed", details=details)
+
+
+def wsl_export(value: str) -> TaskResult:
+    parsed = _parse_two_fields(value)
+    if parsed is None:
         return TaskResult(
-            ok=True,
-            summary="WSL install started (Ubuntu)",
+            ok=False,
+            summary="wsl --export: invalid input",
+            details="Expected format: <DistributionName>|<FileName>, e.g. Ubuntu|C:\\Temp\\ubuntu.tar",
+        )
+    distro, filename = parsed
+    res = run(["wsl.exe", "--export", distro, filename], check=False)
+    details = (res.stdout + "\n" + res.stderr).strip()
+    if res.returncode == 0:
+        return TaskResult(ok=True, summary=f"wsl --export {distro}", details=details)
+    return TaskResult(ok=False, summary=f"wsl --export {distro} failed", details=details)
+
+
+def wsl_import(value: str) -> TaskResult:
+    parts = [p.strip() for p in (value or "").split("|")]
+    if len(parts) < 3 or not parts[0] or not parts[1] or not parts[2]:
+        return TaskResult(
+            ok=False,
+            summary="wsl --import: invalid input",
             details=(
-                details
-                or "If Ubuntu doesn't start automatically, open a new terminal and run: ubuntu"
+                "Expected format: <DistributionName>|<InstallLocation>|<FileName>, "
+                "e.g. Ubuntu|D:\\WSL\\Ubuntu|C:\\Temp\\ubuntu.tar"
             ),
         )
-    return TaskResult(ok=False, summary="WSL install failed", details=details)
+
+    distro, install_location, filename = parts[0], parts[1], parts[2]
+    argv = ["wsl.exe", "--import", distro, install_location, filename]
+    if len(parts) >= 4 and parts[3]:
+        argv += ["--version", parts[3]]
+    res = run(argv, check=False)
+    details = (res.stdout + "\n" + res.stderr).strip()
+    if res.returncode == 0:
+        return TaskResult(ok=True, summary=f"wsl --import {distro}", details=details)
+    return TaskResult(ok=False, summary=f"wsl --import {distro} failed", details=details)
 
 
-def install_or_move_wsl_ubuntu(target_dir: str) -> TaskResult:
-    """Install Ubuntu WSL, optionally relocating it to a user-selected folder.
-
-    Notes:
-        - `wsl.exe --install` does not support a custom install directory.
-        - Relocation is done via: export -> unregister -> import.
-        - If `target_dir` is empty/whitespace, we use the default WSL install.
-    """
-    target_dir = (target_dir or "").strip()
-    if not target_dir:
-        return install_wsl_ubuntu()
-
-    # We only support moving an existing registered distro. Installing directly
-    # into a custom location is not supported by WSL.
-    list_res = run(["wsl.exe", "-l", "-q"], check=False)
-    installed = any(line.strip() == "Ubuntu" for line in list_res.stdout.splitlines())
-    if not installed:
+def wsl_move(value: str) -> TaskResult:
+    parsed = _parse_two_fields(value)
+    if parsed is None:
         return TaskResult(
             ok=False,
-            summary="Ubuntu WSL is not installed yet",
-            details=(
-                "Install Ubuntu first (default WSL location) using the 'install WSL (Ubuntu)' action, "
-                "then re-run this action to move it to a custom folder."
-            ),
+            summary="wsl --manage --move: invalid input",
+            details="Expected format: <DistributionName>|<NewLocation>, e.g. Ubuntu|D:\\WSL\\Ubuntu",
         )
+    distro, new_location = parsed
 
-    if not os.path.isabs(target_dir):
-        return TaskResult(
-            ok=False,
-            summary="Invalid target directory",
-            details="Please provide an absolute Windows path, e.g. D:\\WSL\\Ubuntu",
-        )
-
-    try:
-        Path(target_dir).mkdir(parents=True, exist_ok=True)
-    except Exception as e:  # noqa: BLE001
-        return TaskResult(ok=False, summary="Create target directory failed", details=str(e))
-
-    export_path = Path(tempfile.gettempdir()) / "awesome_os_ubuntu_wsl_export.tar"
-
-    export_res = run(["wsl.exe", "--export", "Ubuntu", str(export_path)], check=False)
-    export_details = (export_res.stdout + "\n" + export_res.stderr).strip()
-    if export_res.returncode != 0:
-        return TaskResult(
-            ok=False,
-            summary="WSL export failed (Ubuntu)",
-            details=export_details,
-        )
-
-    unreg_res = run(["wsl.exe", "--unregister", "Ubuntu"], check=False)
-    unreg_details = (unreg_res.stdout + "\n" + unreg_res.stderr).strip()
-    if unreg_res.returncode != 0:
-        return TaskResult(
-            ok=False,
-            summary="WSL unregister failed (Ubuntu)",
-            details=unreg_details,
-        )
-
-    import_res = run(
-        ["wsl.exe", "--import", "Ubuntu", target_dir, str(export_path), "--version", "2"],
-        check=False,
-    )
-    import_details = (import_res.stdout + "\n" + import_res.stderr).strip()
-    try:
-        export_path.unlink(missing_ok=True)
-    except Exception:
-        pass
-
-    if import_res.returncode != 0:
-        return TaskResult(
-            ok=False,
-            summary="WSL import failed (Ubuntu)",
-            details=import_details,
-        )
-
+    manage_res = run(["wsl.exe", "--manage", distro, "--move", new_location], check=False)
+    manage_details = (manage_res.stdout + "\n" + manage_res.stderr).strip()
+    if manage_res.returncode == 0:
+        return TaskResult(ok=True, summary=f"wsl --manage {distro} --move", details=manage_details)
     return TaskResult(
-        ok=True,
-        summary="Ubuntu WSL moved successfully",
-        details=(
-            f"Imported Ubuntu into: {target_dir}\n"
-            "Next steps:\n"
-            "- Start it: ubuntu\n"
-            "- If needed: wsl.exe -d Ubuntu"
-        ),
+        ok=False, summary=f"wsl --manage {distro} --move failed", details=manage_details
     )
 
 

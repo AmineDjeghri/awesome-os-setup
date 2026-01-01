@@ -33,9 +33,18 @@ from awesome_os.tasks.task import TaskResult
 from awesome_os.tasks.system.windows_tasks import (
     apply_windows_terminal_ui_defaults,
     download_glazewm_config,
-    install_or_move_wsl_ubuntu,
     install_wsl_ubuntu,
     update_windows_terminal_ubuntu_profile,
+    wsl_export,
+    wsl_import,
+    wsl_install,
+    wsl_list_online,
+    wsl_list_verbose,
+    wsl_move,
+    wsl_shutdown,
+    wsl_unregister,
+    wsl_update,
+    wsl_version,
 )
 
 _PACKAGE_MANAGER_FACTORY_BY_DISTRO: dict[str, dict[str, Callable[[], PackageManager]]] = {
@@ -222,6 +231,103 @@ def get_system_action_sections(
 
         sections.append(
             (
+                "wsl",
+                [
+                    SystemAction(label="installed distros", run=wsl_list_verbose),
+                    SystemAction(label="online distros", run=wsl_list_online),
+                    SystemAction(
+                        label="install distro",
+                        run=lambda: TaskResult(
+                            ok=True,
+                            summary=(
+                                "Provide input as: <DistributionName>|location=<Folder(optional)>\n"
+                                "Examples:\n"
+                                "- Ubuntu\n"
+                                "- Ubuntu|location=D:\\WSL\\Ubuntu\n"
+                                "Note: this action uses --no-launch by default."
+                            ),
+                        ),
+                        run_with_prompt=wsl_install,
+                        prompt_label=(
+                            "Install input: <DistributionName>|location=<Folder(optional)>\n"
+                            "Example: Ubuntu|location=D:\\WSL\\Ubuntu"
+                        ),
+                        prompt_initial="Ubuntu",
+                        confirm=True,
+                        confirm_message="This will run wsl --install (no-launch by default). Proceed?",
+                    ),
+                    SystemAction(label="version", run=wsl_version),
+                    SystemAction(
+                        label="update WSL",
+                        run=wsl_update,
+                        confirm=True,
+                        confirm_message="This will update WSL components. Proceed?",
+                    ),
+                    SystemAction(
+                        label="shutdown WSL",
+                        run=wsl_shutdown,
+                        confirm=True,
+                        confirm_message="This will shut down all running WSL distros. Proceed?",
+                    ),
+                    SystemAction(
+                        label="Export distro",
+                        run=lambda: TaskResult(
+                            ok=True,
+                            summary="Provide input as: <DistributionName>|<FileName> . For example: "
+                            "Ubuntu|C:\\Temp\\ubuntu.tar  . You can get the distro name with the button 'installed "
+                            "distros'",
+                        ),
+                        run_with_prompt=wsl_export,
+                        prompt_label="Export input: <DistributionName>|<FileName>  e.g. Ubuntu|C:\\Temp\\ubuntu.tar",
+                        prompt_initial="Ubuntu|C:\\Temp\\ubuntu.tar",
+                        confirm=True,
+                        confirm_message="This will export the distro to a tar file. Proceed?",
+                    ),
+                    SystemAction(
+                        label="Import distro",
+                        run=lambda: TaskResult(
+                            ok=True,
+                            summary="Provide input as: <DistributionName>|<InstallLocation>|<FileName>",
+                        ),
+                        run_with_prompt=wsl_import,
+                        prompt_label=(
+                            "Import input: <DistributionName>|<InstallLocation>|<FileName>"
+                            "e.g. Ubuntu|D:\\WSL\\Ubuntu|C:\\Temp\\ubuntu.tar"
+                        ),
+                        prompt_initial="Ubuntu|D:\\WSL\\Ubuntu|C:\\Temp\\ubuntu.tar",
+                        confirm=True,
+                        confirm_message="This will import a distro from a tar file. Proceed?",
+                    ),
+                    SystemAction(
+                        label="Delete distro",
+                        run=lambda: TaskResult(
+                            ok=True,
+                            summary="Provide the DistributionName to unregister",
+                        ),
+                        run_with_prompt=wsl_unregister,
+                        prompt_label="DistributionName to unregister (DELETES the distro)",
+                        prompt_initial="Ubuntu",
+                        confirm=True,
+                        confirm_message="This will unregister (DELETE) the distro. Proceed?",
+                    ),
+                    SystemAction(
+                        label="Move distro to new location",
+                        run=lambda: TaskResult(
+                            ok=True,
+                            summary="Provide input as: <DistributionName>|<NewLocation>",
+                        ),
+                        run_with_prompt=wsl_move,
+                        prompt_label="Move input: <DistributionName>|<NewLocation>  e.g. Ubuntu|D:\\WSL\\Ubuntu",
+                        prompt_initial="Ubuntu|D:\\WSL\\Ubuntu",
+                        confirm=True,
+                        confirm_message=("This will move the distro to a new location. Proceed?"),
+                    ),
+                ],
+            )
+        )
+
+        sections.append(
+            (
                 "windows",
                 [
                     SystemAction(
@@ -229,21 +335,6 @@ def get_system_action_sections(
                         run=install_wsl_ubuntu,
                         confirm=True,
                         confirm_message="This will run wsl.exe --install for Ubuntu. Proceed?",
-                    ),
-                    SystemAction(
-                        label="install/move WSL (Ubuntu) to a folder",
-                        run=lambda: TaskResult(
-                            ok=True,
-                            summary="Provide a target directory to move Ubuntu, or leave empty for default install.",
-                        ),
-                        run_with_prompt=install_or_move_wsl_ubuntu,
-                        prompt_label="Target directory for Ubuntu WSL (leave empty for default). Example: D:\\WSL\\Ubuntu",
-                        prompt_initial="",
-                        confirm=True,
-                        confirm_message=(
-                            "If you provide a directory, this will export and UNREGISTER the current Ubuntu distro, "
-                            "then import it into the new folder. Proceed?"
-                        ),
                     ),
                     SystemAction(
                         label="update Windows Terminal Ubuntu profile",

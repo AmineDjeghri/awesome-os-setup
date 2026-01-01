@@ -149,6 +149,16 @@ class AppController:
                 self._runner.enqueue(name, _run_action)
 
         def _maybe_prompt_then_enqueue() -> None:
+            """Conditionally prompt the user for input before enqueuing a system action.
+
+            If the system action has a non-None `run_with_prompt` and a non-None `prompt_label`,
+            then prompt the user for input using `prompt_text`. Otherwise, if the system action
+            has a non-None `backup_target`, then confirm with the user before enqueuing the
+            action using `_confirm_with_optional_backup`. Otherwise, enqueue the action
+            directly using `_enqueue_action`.
+
+
+            """
             if action.run_with_prompt is not None and action.prompt_label is not None:
                 prompt_text(
                     parent=self._win,
