@@ -34,17 +34,19 @@ from awesome_os.tasks.task import TaskResult
 from awesome_os.tasks.system.windows_tasks import (
     apply_windows_terminal_ui_defaults,
     download_glazewm_config,
-    update_windows_terminal_ubuntu_profile,
-    wsl_export,
-    wsl_import,
+)
+from awesome_os.tasks.system.windows_wsl_tasks import (
     wsl_install,
     wsl_list_online,
     wsl_list_verbose,
-    wsl_move,
-    wsl_shutdown,
-    wsl_unregister,
     wsl_update,
     wsl_version,
+    wsl_shutdown,
+    wsl_unregister,
+    wsl_export,
+    wsl_import,
+    wsl_move,
+    add_windows_terminal_ubuntu_profile,
 )
 
 _PACKAGE_MANAGER_FACTORY_BY_DISTRO: dict[str, dict[str, Callable[[], PackageManager]]] = {
@@ -220,12 +222,12 @@ def get_system_action_sections(
 
         sections.append(
             (
-                "wsl",
+                "WSL",
                 [
-                    SystemAction(label="installed distros", run=wsl_list_verbose),
-                    SystemAction(label="online distros", run=wsl_list_online),
+                    SystemAction(label="List installed distros", run=wsl_list_verbose),
+                    SystemAction(label="List online distros", run=wsl_list_online),
                     SystemAction(
-                        label="install distro",
+                        label="Install distro",
                         run=lambda: TaskResult(
                             ok=True,
                             summary=(
@@ -247,22 +249,22 @@ def get_system_action_sections(
                     ),
                     SystemAction(label="version", run=wsl_version),
                     SystemAction(
-                        label="update WSL",
+                        label="Update WSL",
                         run=wsl_update,
                         confirm=True,
                         confirm_message="This will update WSL components. Proceed?",
                     ),
                     SystemAction(
-                        label="shutdown WSL",
+                        label="Shutdown WSL",
                         run=wsl_shutdown,
                         confirm=True,
                         confirm_message="This will shut down all running WSL distros. Proceed?",
                     ),
                     SystemAction(
-                        label="update Windows Terminal Ubuntu profile",
-                        run=update_windows_terminal_ubuntu_profile,
+                        label="Add Windows Terminal profile for WSL Ubuntu",
+                        run=add_windows_terminal_ubuntu_profile,
                         confirm=True,
-                        confirm_message="This will update Windows Terminal settings.json (Ubuntu profile). Proceed?",
+                        confirm_message="This will add a new profile for Ubuntu in Windows Terminal. Proceed?",
                         backup_target=settings_path,
                     ),
                 ],
@@ -274,7 +276,7 @@ def get_system_action_sections(
                 "Advanced WSL",
                 [
                     SystemAction(
-                        label="Move distro to new location",
+                        label="Move WSL distro to new location",
                         run=lambda: TaskResult(
                             ok=True,
                             summary="Provide input as: <DistributionName>|<NewLocation>",
@@ -332,17 +334,18 @@ def get_system_action_sections(
 
         sections.append(
             (
-                "windows",
+                "Windows utilities",
                 [
                     SystemAction(
-                        label="apply Windows Terminal UI defaults",
+                        label="Update Windows Terminal default UI",
                         run=apply_windows_terminal_ui_defaults,
                         confirm=True,
-                        confirm_message="This will update Windows Terminal settings.json (theme/font/opacity). Proceed?",
+                        confirm_message="This will update Windows Terminal settings.json (theme/font/opacity) and "
+                        "requires FiraCode Nerd font installed. Proceed?",
                         backup_target=settings_path,
                     ),
                     SystemAction(
-                        label="install GlazeWM config",
+                        label="Install GlazeWM config",
                         run=download_glazewm_config,
                         confirm=True,
                         confirm_message="This will download and overwrite GlazeWM config.yaml. Proceed?",
