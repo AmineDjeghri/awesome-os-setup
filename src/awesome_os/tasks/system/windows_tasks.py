@@ -200,28 +200,16 @@ def update_windows_terminal_ubuntu_profile() -> TaskResult:
     if not isinstance(profiles, list):
         return TaskResult(ok=False, summary="Windows Terminal settings: profiles.list missing")
 
-    updated = False
-    for p in profiles:
-        if not isinstance(p, dict):
-            continue
-        if p.get("name") != "Ubuntu":
-            continue
-        p["startingDirectory"] = "~"
-        # Use a robust WSL command targeting the Ubuntu distro explicitly.
-        p["commandline"] = "wsl.exe -d Ubuntu"
-        updated = True
-        break
-
-    if not updated:
-        # Create a new Ubuntu profile wired to the Ubuntu WSL distro.
-        profiles.append(
-            {
-                "name": "Ubuntu",
-                "source": "Windows.Terminal.Wsl",
-                "startingDirectory": "~",
-                "commandline": "wsl.exe -d Ubuntu",
-            }
-        )
+    # Always create a new Ubuntu profile
+    profiles.append(
+        {
+            "name": "Ubuntu",
+            "source": "Windows.Terminal.Wsl",
+            "startingDirectory": "~",
+            "commandline": "ubuntu run",
+            "icon": "https://assets.ubuntu.com/v1/49a1a858-favicon-32x32.png",
+        }
+    )
 
     try:
         settings_path.write_text(json.dumps(data, indent=2), encoding="utf-8")
@@ -230,9 +218,7 @@ def update_windows_terminal_ubuntu_profile() -> TaskResult:
             ok=False, summary="write Windows Terminal settings: failed", details=str(e)
         )
 
-    return TaskResult(
-        ok=True, summary="Windows Terminal: ensured Ubuntu profile for installed distro"
-    )
+    return TaskResult(ok=True, summary="Windows Terminal: Ubuntu profile applied")
 
 
 def apply_windows_terminal_ui_defaults() -> TaskResult:
