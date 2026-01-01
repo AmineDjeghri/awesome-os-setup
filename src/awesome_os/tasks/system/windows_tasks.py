@@ -181,15 +181,6 @@ def update_windows_terminal_ubuntu_profile() -> TaskResult:
             details=details,
         )
 
-    text = details.lower()
-    has_ubuntu = "ubuntu" in text
-    if not has_ubuntu:
-        return TaskResult(
-            ok=False,
-            summary="Ubuntu distro not found",
-            details=wsl_res.stdout.strip(),
-        )
-
     settings_path = _windows_terminal_settings_path()
     if not settings_path.exists():
         return TaskResult(
