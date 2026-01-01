@@ -264,7 +264,7 @@ def get_system_action_sections(
                         label="Add Windows Terminal profile for WSL Ubuntu",
                         run=add_windows_terminal_ubuntu_profile,
                         confirm=True,
-                        confirm_message="This will add a new profile for Ubuntu in Windows Terminal. Proceed?",
+                        confirm_message="This will add a new profile for Ubuntu in Windows Terminal. A backup of the settings.json file will be created. Proceed?",
                         backup_target=settings_path,
                     ),
                 ],
