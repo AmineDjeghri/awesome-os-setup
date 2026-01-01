@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import os
 from pathlib import Path
 from typing import Callable
 
@@ -27,10 +28,19 @@ from awesome_os.tasks.system.nvidia_tasks import (
 from awesome_os.tasks.managers.base import PackageManager
 from awesome_os.tasks.managers.ubuntu_snap import UbuntuSnapManager
 from awesome_os.tasks.managers.ubuntu_apt import UbuntuAptManager
+from awesome_os.tasks.managers.windows_winget import WindowsWingetManager
 from awesome_os.tasks.task import TaskResult
+from awesome_os.tasks.system.windows_tasks import (
+    apply_windows_terminal_ui_defaults,
+    download_glazewm_config,
+    install_or_move_wsl_ubuntu,
+    install_wsl_ubuntu,
+    update_windows_terminal_ubuntu_profile,
+)
 
 _PACKAGE_MANAGER_FACTORY_BY_DISTRO: dict[str, dict[str, Callable[[], PackageManager]]] = {
     "ubuntu": {"apt": UbuntuAptManager, "snap": UbuntuSnapManager},
+    "windows": {"winget": WindowsWingetManager},
 }
 
 
@@ -39,6 +49,9 @@ class SystemAction(BaseModel):
 
     label: str
     run: Callable[[], TaskResult]
+    prompt_label: str | None = None
+    prompt_initial: str = ""
+    run_with_prompt: Callable[[str], TaskResult] | None = None
     confirm: bool = False
     confirm_message: str | None = None
     backup_target: Path | None = None
@@ -194,6 +207,64 @@ def get_system_action_sections(
                     *nvidia_actions,
                     SystemAction(label="detect cuda", run=detect_cuda),
                     SystemAction(label="setup cuda (advanced)", run=setup_cuda),
+                ],
+            )
+        )
+
+    if system == "windows":
+        settings_path = (
+            Path(os.environ.get("LOCALAPPDATA", ""))
+            / "Packages"
+            / "Microsoft.WindowsTerminal_8wekyb3d8bbwe"
+            / "LocalState"
+            / "settings.json"
+        )
+
+        sections.append(
+            (
+                "windows",
+                [
+                    SystemAction(
+                        label="install WSL (Ubuntu)",
+                        run=install_wsl_ubuntu,
+                        confirm=True,
+                        confirm_message="This will run wsl.exe --install for Ubuntu. Proceed?",
+                    ),
+                    SystemAction(
+                        label="install/move WSL (Ubuntu) to a folder",
+                        run=lambda: TaskResult(
+                            ok=True,
+                            summary="Provide a target directory to move Ubuntu, or leave empty for default install.",
+                        ),
+                        run_with_prompt=install_or_move_wsl_ubuntu,
+                        prompt_label="Target directory for Ubuntu WSL (leave empty for default). Example: D:\\WSL\\Ubuntu",
+                        prompt_initial="",
+                        confirm=True,
+                        confirm_message=(
+                            "If you provide a directory, this will export and UNREGISTER the current Ubuntu distro, "
+                            "then import it into the new folder. Proceed?"
+                        ),
+                    ),
+                    SystemAction(
+                        label="update Windows Terminal Ubuntu profile",
+                        run=update_windows_terminal_ubuntu_profile,
+                        confirm=True,
+                        confirm_message="This will update Windows Terminal settings.json (Ubuntu profile). Proceed?",
+                        backup_target=settings_path,
+                    ),
+                    SystemAction(
+                        label="apply Windows Terminal UI defaults",
+                        run=apply_windows_terminal_ui_defaults,
+                        confirm=True,
+                        confirm_message="This will update Windows Terminal settings.json (theme/font/opacity). Proceed?",
+                        backup_target=settings_path,
+                    ),
+                    SystemAction(
+                        label="install GlazeWM config",
+                        run=download_glazewm_config,
+                        confirm=True,
+                        confirm_message="This will download and overwrite GlazeWM config.yaml. Proceed?",
+                    ),
                 ],
             )
         )

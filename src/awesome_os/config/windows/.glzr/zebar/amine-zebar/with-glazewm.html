@@ -8,7 +8,7 @@
     <link rel="stylesheet" type="text/css" href="../normalize.css" />
 
     <!-- Custom styles. -->
-    <link rel="stylesheet" type="text/css" href="./styles.css" />
+    <link rel="stylesheet" type="text/css" href="styles.css" />
 
     <!-- Allows React to be run buildless via "text/babel" script below. -->
     <script
@@ -26,16 +26,18 @@
         useEffect,
       } from 'https://esm.sh/react@18?dev';
       import { createRoot } from 'https://esm.sh/react-dom@18/client?dev';
-      import * as zebar from 'https://esm.sh/zebar@2';
+      import * as zebar from 'https://esm.sh/zebar@latest';
 
       const providers = zebar.createProviderGroup({
-        network: { type: 'network' },
         glazewm: { type: 'glazewm' },
-        cpu: { type: 'cpu' },
         date: { type: 'date', formatting: 'EEE d MMM t' },
         battery: { type: 'battery' },
-        memory: { type: 'memory' },
+        media: { type: 'media' },
+        // network: { type: 'network' },
+        // cpu: { type: 'cpu' },
+        // memory: { type: 'memory' },
         weather: { type: 'weather' },
+        systray: { type: 'systray'}
       });
 
       createRoot(document.getElementById('root')).render(<App />);
@@ -143,9 +145,80 @@
               )}
             </div>
 
-            <div className="center">{output.date?.formatted}</div>
+            <div className="center">
+              {output.date?.formatted}
+              {output.media && output.media.currentSession && (
+                <div className="media-controls">
+                  <button
+                    className="media-button"
+                    onClick={() => output.media.previous()}
+                    title="Previous"
+                  >
+                    <i className="nf nf-fa-step_backward"></i>
+                  </button>
+                  <button
+                    className="media-button"
+                    onClick={() => output.media.togglePlayPause()}
+                    title={output.media.currentSession.isPlaying ? 'Pause' : 'Play'}
+                  >
+                    <i className={`nf ${output.media.currentSession.isPlaying ? 'nf-fa-pause' : 'nf-fa-play'}`}></i>
+                  </button>
+                  <button
+                    className="media-button"
+                    onClick={() => output.media.next()}
+                    title="Next"
+                  >
+                    <i className="nf nf-fa-step_forward"></i>
+                  </button>
+                  {output.media.currentSession.title && (
+                    <span className="media-info">
+                      {output.media.currentSession.title}
+                      {output.media.currentSession.artist && ` - ${output.media.currentSession.artist}`}
+                    </span>
+                  )}
+                </div>
+              )}
+            </div>
 
             <div className="right">
+              {output.systray && (
+                <div className="systray">
+                  {(() => {
+                    // Add or remove items here to show specific systray icons.
+                    const allowList = [
+                      /Zebar/,
+                      /ShareX/,
+                      /EarTrumpet/,
+                      /VPN/,
+                      /Steam/,
+                      /Bing/,
+                      /^$/,
+
+                    ];
+                    return output.systray.icons.map(icon => {
+                      if (!allowList.some(rx => rx.test(icon.tooltip))) {
+                        return null;
+                      }
+                      return (
+                        <img
+                          className="systray-icon"
+                          src={icon.iconUrl}
+                          key={icon.id}
+                          title={icon.tooltip}
+                          onClick={e => {
+                            e.preventDefault();
+                            output.systray.onLeftClick(icon.id);
+                          }}
+                          onContextMenu={e => {
+                            e.preventDefault();
+                            output.systray.onRightClick(icon.id);
+                          }}
+                        />
+                      );
+                    });
+                  })()}
+                </div>
+              )}
               {output.glazewm && (
                 <>
                   {output.glazewm.bindingModes.map(bindingMode => (

@@ -17,7 +17,7 @@ from awesome_os import logger
 from awesome_os.detect_os import PackageRef
 from awesome_os.tasks.factory import SystemAction, get_package_manager
 
-from awesome_os.frontend.dialogs import confirm
+from awesome_os.frontend.dialogs import confirm, prompt_text
 from awesome_os.frontend.runner import JobRunner
 
 
@@ -117,13 +117,58 @@ class AppController:
 
         name = f"{section_name}: {action.label}"
 
+        def _enqueue_prompted_action(*, value: str) -> None:
+            def _run_action() -> None:
+                fn = action.run_with_prompt
+                if fn is None:
+                    res = action.run()
+                else:
+                    res = fn(value)
+                self._runner.ui_events.put(("log", res.summary))
+                if res.details:
+                    self._runner.ui_events.put(("log", res.details))
+
+            def _run_action_with_backup() -> None:
+                target = action.backup_target
+                if target is not None:
+                    ts = datetime.now().strftime("%Y%m%d_%H%M%S")
+                    default_backup = target.with_name(f"{target.name}_{ts}_backup")
+                    try:
+                        if target.exists():
+                            default_backup.parent.mkdir(parents=True, exist_ok=True)
+                            shutil.copy2(target, default_backup)
+                            self._runner.ui_events.put(("log", f"backup created: {default_backup}"))
+                    except Exception as e:  # noqa: BLE001
+                        self._runner.ui_events.put(("log", f"backup: failed ({e})"))
+
+                _run_action()
+
+            if action.backup_target is not None:
+                self._runner.enqueue(name, _run_action_with_backup)
+            else:
+                self._runner.enqueue(name, _run_action)
+
+        def _maybe_prompt_then_enqueue() -> None:
+            if action.run_with_prompt is not None and action.prompt_label is not None:
+                prompt_text(
+                    parent=self._win,
+                    title="Input",
+                    label=action.prompt_label,
+                    initial=action.prompt_initial,
+                    on_ok=lambda v: _enqueue_prompted_action(value=v),
+                )
+                return
+
+            if action.backup_target is not None:
+                self._confirm_with_optional_backup(action, name)
+                return
+
+            self._enqueue_action(action, name)
+
         if action.confirm:
 
             def _on_yes() -> None:
-                if action.backup_target is not None:
-                    self._confirm_with_optional_backup(action, name)
-                else:
-                    self._enqueue_action(action, name)
+                _maybe_prompt_then_enqueue()
 
             confirm(
                 parent=self._win,
@@ -133,11 +178,7 @@ class AppController:
             )
             return
 
-        if action.backup_target is not None:
-            self._confirm_with_optional_backup(action, name)
-            return
-
-        self._enqueue_action(action, name)
+        _maybe_prompt_then_enqueue()
 
     def _enqueue_action(self, action: SystemAction, name: str) -> None:
         """Enqueue a system action into the background runner."""
