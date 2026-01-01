@@ -173,15 +173,16 @@ def wsl_move(value: str) -> TaskResult:
 def update_windows_terminal_ubuntu_profile() -> TaskResult:
     # First, ensure WSL is available and an Ubuntu distro is installed.
     wsl_res = run(["wsl.exe", "--list", "--verbose"], check=False)
+    details = (wsl_res.stdout + "\n" + wsl_res.stderr).strip()
     if wsl_res.returncode != 0:
-        details = (wsl_res.stdout + "\n" + wsl_res.stderr).strip()
         return TaskResult(
             ok=False,
             summary="WSL not available (wsl --list --verbose failed)",
             details=details,
         )
 
-    has_ubuntu = any("ubuntu" in (line or "").lower() for line in wsl_res.stdout.splitlines())
+    text = details.lower()
+    has_ubuntu = "ubuntu" in text
     if not has_ubuntu:
         return TaskResult(
             ok=False,
