@@ -1,4 +1,4 @@
-note aside : we use chezmoi, to develop tmpl scripts, no need to learn go, just code everything in functions and call them in the script inside the go template.
+note aside : older iterations used chezmoi templates; the current direction is to let the Python app manage dotfiles and configs directly.
 
 
 - i switched the macos keys to have a similar behaviour as a windows keyboard. I feel that it's more natural to cpy maste with your last finger of your left hand hitting the command key (now being mapped to fn/globe) rather that the original command key

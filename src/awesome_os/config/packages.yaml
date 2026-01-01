@@ -13,12 +13,22 @@ packages:
     snap:
       apps:
         - code
-        - chezmoi
-  arch:
-    pacman: {}
   darwin:
-    brew: {}
-    cask: {}
+    brews:
+      - 'git'
+      - 'zsh'
+    casks:
+      - 'brave-browser'
+      - 'raycast'
+      - 'ghostty'
+      - 'jordanbaird-ice' # Menu bar management tool
+      - 'shottr'
+      - 'swift-quit'
+      - 'alt-tab'
+      - 'anydesk'
+      - 'obsidian'
+      - 'zed'
+      - 'discord'
   windows:
     winget:
       core:

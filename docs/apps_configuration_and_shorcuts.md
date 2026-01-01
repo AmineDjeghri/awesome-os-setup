@@ -306,7 +306,7 @@ the Always mode.
 
 - export file: regedit -> ``Ordinateur\HKEY_CURRENT_USER\Software\HWiNFO64``
 - import settings: double-click on the downloaded file to restore settings. Check
-  mine [here](windows_workflow/win_dotfiles/HWINFO_settings.reg)
+  mine [here](../src/awesome_os/config/windows/HWINFO_settings.reg)
 
 ## 1.11. Google colab:
 

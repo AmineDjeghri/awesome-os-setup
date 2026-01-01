@@ -16,8 +16,6 @@ class UbuntuSnapManager:
     def install(self, package: str) -> InstallResult:
         logger.info(f"Installing {package} via {self.name}...")
         argv = ["sudo", "snap", "install", package]
-        if package == "chezmoi":
-            argv.append("--classic")
         res = run(argv, check=False)
         if res.returncode == 0:
             return InstallResult(ok=True, summary=f"Installed {package}")

@@ -6,6 +6,7 @@ from typing import Callable
 
 from pydantic import BaseModel, ConfigDict
 
+from awesome_os.tasks.managers.darwin_brew import DarwinBrewManager, DarwinBrewCaskManager
 from awesome_os.tasks.system.help import show_commands
 from awesome_os.tasks.system.zsh import (
     apply_p10k_force,
@@ -33,7 +34,6 @@ from awesome_os.tasks.task import TaskResult
 from awesome_os.tasks.system.windows_tasks import (
     apply_windows_terminal_ui_defaults,
     download_glazewm_config,
-    install_wsl_ubuntu,
     update_windows_terminal_ubuntu_profile,
     wsl_export,
     wsl_import,
@@ -49,6 +49,7 @@ from awesome_os.tasks.system.windows_tasks import (
 
 _PACKAGE_MANAGER_FACTORY_BY_DISTRO: dict[str, dict[str, Callable[[], PackageManager]]] = {
     "ubuntu": {"apt": UbuntuAptManager, "snap": UbuntuSnapManager},
+    "darwin": {"brew": DarwinBrewManager, "cask": DarwinBrewCaskManager},
     "windows": {"winget": WindowsWingetManager},
 }
 
@@ -151,18 +152,6 @@ def get_system_action_sections(
                 ],
             )
         )
-
-        # chezmoi
-        # sections.append(
-        #         (
-        #             "chezmoi",
-        #             [
-        #                 SystemAction(label="chezmoi init", run=chezmoi_init),
-        #                 SystemAction(label="chezmoi apply", run=chezmoi_apply),
-        #                 SystemAction(label="chezmoi update", run=chezmoi_update),
-        #             ],
-        #         )
-        #     )
 
     # NVIDIA
     if system in {"windows", "linux"}:
@@ -270,6 +259,33 @@ def get_system_action_sections(
                         confirm_message="This will shut down all running WSL distros. Proceed?",
                     ),
                     SystemAction(
+                        label="update Windows Terminal Ubuntu profile",
+                        run=update_windows_terminal_ubuntu_profile,
+                        confirm=True,
+                        confirm_message="This will update Windows Terminal settings.json (Ubuntu profile). Proceed?",
+                        backup_target=settings_path,
+                    ),
+                ],
+            )
+        )
+
+        sections.append(
+            (
+                "Advanced WSL",
+                [
+                    SystemAction(
+                        label="Move distro to new location",
+                        run=lambda: TaskResult(
+                            ok=True,
+                            summary="Provide input as: <DistributionName>|<NewLocation>",
+                        ),
+                        run_with_prompt=wsl_move,
+                        prompt_label="Move input: <DistributionName>|<NewLocation>  e.g. Ubuntu|D:\\WSL\\Ubuntu",
+                        prompt_initial="Ubuntu|D:\\WSL\\Ubuntu",
+                        confirm=True,
+                        confirm_message="This will move the distro to a new location. Proceed?",
+                    ),
+                    SystemAction(
                         label="Export distro",
                         run=lambda: TaskResult(
                             ok=True,
@@ -310,18 +326,6 @@ def get_system_action_sections(
                         confirm=True,
                         confirm_message="This will unregister (DELETE) the distro. Proceed?",
                     ),
-                    SystemAction(
-                        label="Move distro to new location",
-                        run=lambda: TaskResult(
-                            ok=True,
-                            summary="Provide input as: <DistributionName>|<NewLocation>",
-                        ),
-                        run_with_prompt=wsl_move,
-                        prompt_label="Move input: <DistributionName>|<NewLocation>  e.g. Ubuntu|D:\\WSL\\Ubuntu",
-                        prompt_initial="Ubuntu|D:\\WSL\\Ubuntu",
-                        confirm=True,
-                        confirm_message=("This will move the distro to a new location. Proceed?"),
-                    ),
                 ],
             )
         )
@@ -330,19 +334,6 @@ def get_system_action_sections(
             (
                 "windows",
                 [
-                    SystemAction(
-                        label="install WSL (Ubuntu)",
-                        run=install_wsl_ubuntu,
-                        confirm=True,
-                        confirm_message="This will run wsl.exe --install for Ubuntu. Proceed?",
-                    ),
-                    SystemAction(
-                        label="update Windows Terminal Ubuntu profile",
-                        run=update_windows_terminal_ubuntu_profile,
-                        confirm=True,
-                        confirm_message="This will update Windows Terminal settings.json (Ubuntu profile). Proceed?",
-                        backup_target=settings_path,
-                    ),
                     SystemAction(
                         label="apply Windows Terminal UI defaults",
                         run=apply_windows_terminal_ui_defaults,

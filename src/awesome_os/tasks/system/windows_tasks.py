@@ -22,10 +22,6 @@ def _windows_terminal_settings_path() -> Path:
     )
 
 
-def install_wsl_ubuntu() -> TaskResult:
-    return wsl_install("Ubuntu")
-
-
 def wsl_install(value: str) -> TaskResult:
     parts = [p.strip() for p in (value or "").split("|") if p.strip()]
     distro = parts[0] if parts else ""
@@ -175,6 +171,24 @@ def wsl_move(value: str) -> TaskResult:
 
 
 def update_windows_terminal_ubuntu_profile() -> TaskResult:
+    # First, ensure WSL is available and an Ubuntu distro is installed.
+    wsl_res = run(["wsl.exe", "--list", "--verbose"], check=False)
+    if wsl_res.returncode != 0:
+        details = (wsl_res.stdout + "\n" + wsl_res.stderr).strip()
+        return TaskResult(
+            ok=False,
+            summary="WSL not available (wsl --list --verbose failed)",
+            details=details,
+        )
+
+    has_ubuntu = any("ubuntu" in (line or "").lower() for line in wsl_res.stdout.splitlines())
+    if not has_ubuntu:
+        return TaskResult(
+            ok=False,
+            summary="Ubuntu distro not found",
+            details=wsl_res.stdout.strip(),
+        )
+
     settings_path = _windows_terminal_settings_path()
     if not settings_path.exists():
         return TaskResult(
@@ -201,12 +215,21 @@ def update_windows_terminal_ubuntu_profile() -> TaskResult:
         if p.get("name") != "Ubuntu":
             continue
         p["startingDirectory"] = "~"
-        p["commandline"] = "ubuntu run"
+        # Use a robust WSL command targeting the Ubuntu distro explicitly.
+        p["commandline"] = "wsl.exe -d Ubuntu"
         updated = True
         break
 
     if not updated:
-        return TaskResult(ok=False, summary="Ubuntu profile not found in Windows Terminal settings")
+        # Create a new Ubuntu profile wired to the Ubuntu WSL distro.
+        profiles.append(
+            {
+                "name": "Ubuntu",
+                "source": "Windows.Terminal.Wsl",
+                "startingDirectory": "~",
+                "commandline": "wsl.exe -d Ubuntu",
+            }
+        )
 
     try:
         settings_path.write_text(json.dumps(data, indent=2), encoding="utf-8")
@@ -215,7 +238,9 @@ def update_windows_terminal_ubuntu_profile() -> TaskResult:
             ok=False, summary="write Windows Terminal settings: failed", details=str(e)
         )
 
-    return TaskResult(ok=True, summary="Windows Terminal: updated Ubuntu profile")
+    return TaskResult(
+        ok=True, summary="Windows Terminal: ensured Ubuntu profile for installed distro"
+    )
 
 
 def apply_windows_terminal_ui_defaults() -> TaskResult:
