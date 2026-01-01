@@ -40,7 +40,9 @@ def run_app() -> None:
     body = ttk.TTkFrame(parent=win, layout=ttk.TTkHBoxLayout())
 
     # left
-    left = ttk.TTkFrame(parent=body, title=TTkString("Packages"), layout=ttk.TTkVBoxLayout())
+    left = ttk.TTkFrame(
+        parent=body, title=TTkString("Packages"), layout=ttk.TTkVBoxLayout(), maxHeight=20
+    )
     checks = _build_package_checkboxes(parent=left, packages=packages)
 
     # right
