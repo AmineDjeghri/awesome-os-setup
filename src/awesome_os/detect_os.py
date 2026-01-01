@@ -14,7 +14,7 @@ class OSInfo(BaseModel):
 
     family: str
     distro: str
-    info: str | None
+    info: str | None = None
 
 
 class PackageCatalog(BaseModel):
