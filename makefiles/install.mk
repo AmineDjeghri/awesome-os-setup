@@ -7,8 +7,8 @@ install-uv: ## Install uv
 	@echo "${YELLOW}=========> installing uv ${NC}"
 ifeq ($(OS),Windows_NT)
 	@powershell -NoProfile -ExecutionPolicy Bypass -Command "\
-		$errActionPreference = 'Stop'; \
-		$uv = Get-Command uv -ErrorAction SilentlyContinue; \
+		$$ErrorActionPreference = 'Stop'; \
+		$$uv = Get-Command uv -ErrorAction SilentlyContinue; \
 		if ($$uv) { \
 		  Write-Host 'uv exists at' $$uv.Source -ForegroundColor Green; \
 		  uv self update; \
