@@ -68,6 +68,14 @@ Get started with one command (linux):
 sh -c "$(wget https://raw.githubusercontent.com/AmineDjeghri/awesome-os-setup/main/docs/unix_workflow/setup_linux.sh -O -)"
 ```
 
+## Arch Linux / Arch-based (yay)
+
+The interactive app also supports **Arch Linux and Arch-based distros** (e.g. Manjaro, EndeavourOS, Garuda, CachyOS)
+by using `yay` for package installation.
+
+- If `yay` is missing, the app will attempt to bootstrap it (requires non-interactive `sudo`).
+- Package list is configured in `src/awesome_os/config/packages.yaml` under `packages.arch.yay`.
+
 ## 3. TV setup
 
 - **My TV setup docs**: Read me about it

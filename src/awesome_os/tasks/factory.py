@@ -7,6 +7,7 @@ from typing import Callable
 from pydantic import BaseModel, ConfigDict
 
 from awesome_os.tasks.managers.darwin_brew import DarwinBrewManager, DarwinBrewCaskManager
+from awesome_os.tasks.managers.arch_yay import ArchYayManager
 from awesome_os.tasks.system.help import show_commands
 from awesome_os.tasks.system.zsh import (
     apply_p10k_force,
@@ -53,6 +54,7 @@ _PACKAGE_MANAGER_FACTORY_BY_DISTRO: dict[str, dict[str, Callable[[], PackageMana
     "ubuntu": {"apt": UbuntuAptManager, "snap": UbuntuSnapManager},
     "darwin": {"brew": DarwinBrewManager, "cask": DarwinBrewCaskManager},
     "windows": {"winget": WindowsWingetManager},
+    "arch": {"yay": ArchYayManager},
 }
 
 

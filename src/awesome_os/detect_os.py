@@ -66,6 +66,20 @@ def detect_os() -> OSInfo:
                 data[k.strip()] = v.strip().strip('"')
 
             distro = data.get("ID", "linux").lower()
+            id_like = data.get("ID_LIKE", "").lower()
+
+            # Normalize Arch-based distros to a single identifier so we can use one package
+            # catalog and one package-manager backend.
+            arch_like_ids = {
+                "arch",
+                "manjaro",
+                "endeavouros",
+                "garuda",
+                "arcolinux",
+                "cachyos",
+            }
+            if distro in arch_like_ids or "arch" in id_like.split():
+                distro = "arch"
         return OSInfo(
             family=system, distro=distro, info="OS running inside WSL" if _is_wsl() else None
         )

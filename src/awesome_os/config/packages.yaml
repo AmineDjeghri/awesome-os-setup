@@ -14,21 +14,34 @@ packages:
       apps:
         - code
   darwin:
-    brews:
-      - 'git'
-      - 'zsh'
-    casks:
-      - 'brave-browser'
-      - 'raycast'
-      - 'ghostty'
-      - 'jordanbaird-ice' # Menu bar management tool
-      - 'shottr'
-      - 'swift-quit'
-      - 'alt-tab'
-      - 'anydesk'
-      - 'obsidian'
-      - 'zed'
-      - 'discord'
+    brew:
+      core:
+        - git
+        - zsh
+    cask:
+      apps:
+        - brave-browser
+        - raycast
+        - ghostty
+        - jordanbaird-ice # Menu bar management tool
+        - shottr
+        - swift-quit
+        - alt-tab
+        - anydesk
+        - obsidian
+        - zed
+        - discord
+  arch:
+    yay:
+      core:
+        - git
+        - curl
+        - zsh
+      terminal_tools:
+        - bat
+        - fzf
+        - btop
+        - neofetch
   windows:
     winget:
       core:
