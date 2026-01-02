@@ -29,4 +29,3 @@ VOLUME /home/tester/awesome-os-setup
 
 # Helpful default so running the container drops you into the repo.
 CMD ["bash"]
-

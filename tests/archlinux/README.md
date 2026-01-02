@@ -27,4 +27,3 @@ From there you can try your normal workflow, for example:
 make install
 make run
 ```
-

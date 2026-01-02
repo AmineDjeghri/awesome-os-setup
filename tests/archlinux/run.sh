@@ -7,4 +7,3 @@ cd "$(dirname "$0")/../.." # repo root (awesome-os-setup/)
 
 docker build -f tests/archlinux/Dockerfile -t "$IMAGE_NAME" .
 docker run --rm -it -v "$(pwd):/home/tester/awesome-os-setup" "$IMAGE_NAME"
-
