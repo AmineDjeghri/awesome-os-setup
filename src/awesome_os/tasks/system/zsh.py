@@ -15,7 +15,20 @@ from awesome_os.tasks.task import TaskResult
 
 def _read_packaged_text_config(filename: str) -> str:
     pkg = resources.files("awesome_os")
-    return (pkg / "config" / filename).read_text(encoding="utf-8")
+    # Prefer root config/ for backward compatibility, but fall back to unix/
+    # where dotfile templates live.
+    candidates = [
+        pkg / "config" / filename,
+        pkg / "config" / "unix" / filename,
+    ]
+    last_err: Exception | None = None
+    for p in candidates:
+        try:
+            return p.read_text(encoding="utf-8")
+        except Exception as e:  # noqa: BLE001
+            last_err = e
+            continue
+    raise FileNotFoundError(f"Packaged config not found: {filename}") from last_err
 
 
 def apply_zshrc_force() -> TaskResult:
@@ -161,7 +174,13 @@ def sync_zsh_plugins_and_theme() -> TaskResult:
 
     try:
         pkg = resources.files("awesome_os")
-        raw = (pkg / "config" / "zshrc_external_plugins.json").read_text(encoding="utf-8")
+        # Same fallback logic as the dotfile templates.
+        try:
+            raw = (pkg / "config" / "zshrc_external_plugins.json").read_text(encoding="utf-8")
+        except Exception:  # noqa: BLE001
+            raw = (pkg / "config" / "unix" / "zshrc_external_plugins.json").read_text(
+                encoding="utf-8"
+            )
         registry = json.loads(raw)
     except Exception as e:  # noqa: BLE001
         return TaskResult(

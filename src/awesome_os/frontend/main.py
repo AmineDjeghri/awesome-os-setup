@@ -40,10 +40,46 @@ def run_app() -> None:
     body = ttk.TTkFrame(parent=win, layout=ttk.TTkHBoxLayout())
 
     # left
-    left = ttk.TTkFrame(
-        parent=body, title=TTkString("Packages"), layout=ttk.TTkVBoxLayout(), maxHeight=20
-    )
-    checks = _build_package_checkboxes(parent=left, packages=packages)
+    left = ttk.TTkFrame(parent=body, title=TTkString("Packages"), layout=ttk.TTkVBoxLayout())
+
+    # Make the packages list scrollable.
+    #
+    # TermTk versions differ a bit, but the common pattern is:
+    #   TTkScrollArea -> setViewport(TTkScrollView) -> scrollView.setWidget(<content>)
+    #
+    # We keep this best-effort and never crash the UI if scrolling is unavailable.
+    try:
+        ScrollArea = getattr(ttk, "TTkScrollArea", None)
+        ScrollView = getattr(ttk, "TTkScrollView", None)
+
+        if ScrollArea is not None and ScrollView is not None:
+            scroll_area = ScrollArea(parent=left)  # type: ignore[operator]
+            left.layout().addWidget(scroll_area)  # type: ignore[call-arg]
+
+            scroll_view = ScrollView(parent=scroll_area)  # type: ignore[operator]
+            if hasattr(scroll_area, "setViewport"):
+                scroll_area.setViewport(scroll_view)  # type: ignore[attr-defined]
+
+            inner = ttk.TTkFrame(layout=ttk.TTkVBoxLayout())
+            if hasattr(scroll_view, "setWidget"):
+                scroll_view.setWidget(inner)  # type: ignore[attr-defined]
+            else:
+                # Fallback: at least parent it so it renders.
+                try:
+                    inner.setParent(scroll_view)  # type: ignore[attr-defined]
+                except Exception:  # noqa: BLE001
+                    pass
+
+            checks = _build_package_checkboxes(parent=inner, packages=packages)
+        else:
+            logger.warning(
+                "TermTk scrolling widgets not available (TTkScrollArea/TTkScrollView missing); "
+                "packages pane will not be scrollable."
+            )
+            checks = _build_package_checkboxes(parent=left, packages=packages)
+    except Exception as e:  # noqa: BLE001
+        logger.warning(f"Failed to initialize scrollable packages pane; falling back. ({e})")
+        checks = _build_package_checkboxes(parent=left, packages=packages)
 
     # right
     right = ttk.TTkFrame(parent=body, title=TTkString("Log"), layout=ttk.TTkVBoxLayout())

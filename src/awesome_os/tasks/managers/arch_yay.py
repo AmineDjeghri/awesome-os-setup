@@ -119,11 +119,15 @@ class ArchYayManager:
     def install(self, package: str) -> InstallResult:
         ensure = self._ensure_yay()
         if not ensure.ok:
-            return InstallResult(ok=False, summary=f"{package}: install failed (yay missing)", details=ensure.details)
+            return InstallResult(
+                ok=False, summary=f"{package}: install failed (yay missing)", details=ensure.details
+            )
 
         yay = self._yay()
         if yay is None:
-            return InstallResult(ok=False, summary="yay not found on PATH", details="Ensure `yay` is installed.")
+            return InstallResult(
+                ok=False, summary="yay not found on PATH", details="Ensure `yay` is installed."
+            )
 
         logger.info(f"Installing {package} via yay...")
         res = run([yay, "-S", "--needed", "--noconfirm", package], check=False)
@@ -141,11 +145,17 @@ class ArchYayManager:
             return TaskResult(ok=False, summary="yay update: failed", details=ensure.details)
         yay = self._yay()
         if yay is None:
-            return TaskResult(ok=False, summary="yay update: failed", details="yay not found on PATH")
+            return TaskResult(
+                ok=False, summary="yay update: failed", details="yay not found on PATH"
+            )
         res = run([yay, "-Sy", "--noconfirm"], check=False)
         if res.returncode == 0:
             return TaskResult(ok=True, summary="yay sync: done")
-        return TaskResult(ok=False, summary="yay sync: failed", details=_format_failed(res.argv, res.stdout, res.stderr))
+        return TaskResult(
+            ok=False,
+            summary="yay sync: failed",
+            details=_format_failed(res.argv, res.stdout, res.stderr),
+        )
 
     def upgrade(self) -> TaskResult:
         ensure = self._ensure_yay()
@@ -153,11 +163,17 @@ class ArchYayManager:
             return TaskResult(ok=False, summary="yay upgrade: failed", details=ensure.details)
         yay = self._yay()
         if yay is None:
-            return TaskResult(ok=False, summary="yay upgrade: failed", details="yay not found on PATH")
+            return TaskResult(
+                ok=False, summary="yay upgrade: failed", details="yay not found on PATH"
+            )
         res = run([yay, "-Syu", "--noconfirm"], check=False)
         if res.returncode == 0:
             return TaskResult(ok=True, summary="yay -Syu: done")
-        return TaskResult(ok=False, summary="yay -Syu: failed", details=_format_failed(res.argv, res.stdout, res.stderr))
+        return TaskResult(
+            ok=False,
+            summary="yay -Syu: failed",
+            details=_format_failed(res.argv, res.stdout, res.stderr),
+        )
 
     def cleanup(self) -> TaskResult:
         ensure = self._ensure_yay()
@@ -165,10 +181,15 @@ class ArchYayManager:
             return TaskResult(ok=False, summary="yay cleanup: failed", details=ensure.details)
         yay = self._yay()
         if yay is None:
-            return TaskResult(ok=False, summary="yay cleanup: failed", details="yay not found on PATH")
+            return TaskResult(
+                ok=False, summary="yay cleanup: failed", details="yay not found on PATH"
+            )
         # `-Sc` removes unused packages from cache. `--noconfirm` to avoid prompts.
         res = run([yay, "-Sc", "--noconfirm"], check=False)
         if res.returncode == 0:
             return TaskResult(ok=True, summary="yay cache cleanup: done")
-        return TaskResult(ok=False, summary="yay cache cleanup: failed", details=_format_failed(res.argv, res.stdout, res.stderr))
-
+        return TaskResult(
+            ok=False,
+            summary="yay cache cleanup: failed",
+            details=_format_failed(res.argv, res.stdout, res.stderr),
+        )

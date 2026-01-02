@@ -28,7 +28,7 @@ endif
 
 install: install-uv ## Install dependencies using uv
 	@echo "Installing dependencies (required and docs)..."
-	uv sync
+	@$(UV) sync
 	@echo "${GREEN}Dependencies installed.${NC}"
 
 install-dev: install-uv ## Install dev dependencies using uv

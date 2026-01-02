@@ -5,7 +5,7 @@
 
 run: ## Run the Stremio Addon (Dev Mode)
 	@echo "Starting server..."
-	uv run python src/awesome_os/frontend/main.py
+	@$(UV) run python src/awesome_os/frontend/main.py
 
 pre-commit-install:
 	@echo "${YELLOW}=========> Installing pre-commit...${NC}"
@@ -17,8 +17,8 @@ pre-commit: pre-commit-install ## Run pre-commit
 
 lint: ## Lint code with Ruff
 	@echo "Linting code..."
-	uv run ruff check .
+	@$(UV) run ruff check .
 
 format: ## Format code with Ruff
 	@echo "Formatting code..."
-	uv run ruff format .
+	@$(UV) run ruff format .
