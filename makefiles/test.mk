@@ -9,4 +9,10 @@ test-installation: ## Test installation
 
 test: ## Run tests with pytest
 	@echo "${YELLOW}Running tests...${NC}"
-	@$(UV) run pytest tests
+	@set -e; \
+	$(UV) run pytest tests || rc=$$?; \
+	if [ "$${rc:-0}" -eq 5 ]; then \
+		echo "${YELLOW}No tests collected (pytest exit code 5) — treating as success.${NC}"; \
+	else \
+		exit "$${rc:-0}"; \
+	fi
