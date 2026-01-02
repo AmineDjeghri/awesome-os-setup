@@ -8,7 +8,7 @@ import TermTk as ttk
 from TermTk import TTkString
 
 from awesome_os import logger
-from awesome_os.frontend.controller import _build_package_checkboxes, AppController
+from awesome_os.frontend.controller import AppController
 from awesome_os.frontend.runner import JobRunner
 from awesome_os.detect_os import build_packages_for_os
 from awesome_os.tasks.factory import get_system_action_sections, SystemAction
@@ -36,50 +36,29 @@ def run_app() -> None:
         maxHeight=2,
     )
 
-    # body
-    body = ttk.TTkFrame(parent=win, layout=ttk.TTkHBoxLayout())
+    # body — limit height so footer action buttons remain visible
+    body = ttk.TTkFrame(parent=win, layout=ttk.TTkHBoxLayout(), maxHeight=25)
 
-    # left
+    # left: packages list (native TermTk list widget, multi-select)
     left = ttk.TTkFrame(parent=body, title=TTkString("Packages"), layout=ttk.TTkVBoxLayout())
 
-    # Make the packages list scrollable.
-    #
-    # TermTk versions differ a bit, but the common pattern is:
-    #   TTkScrollArea -> setViewport(TTkScrollView) -> scrollView.setWidget(<content>)
-    #
-    # We keep this best-effort and never crash the UI if scrolling is unavailable.
-    try:
-        ScrollArea = getattr(ttk, "TTkScrollArea", None)
-        ScrollView = getattr(ttk, "TTkScrollView", None)
+    ttk.TTkLabel(parent=left, text="[ MultiSelect ]", maxHeight=1)
+    package_list = ttk.TTkList(parent=left, selectionMode=ttk.TTkK.MultiSelection)
 
-        if ScrollArea is not None and ScrollView is not None:
-            scroll_area = ScrollArea(parent=left)  # type: ignore[operator]
-            left.layout().addWidget(scroll_area)  # type: ignore[call-arg]
+    # Map list labels back to PackageRef so we can install selections.
+    label_to_pkg: dict[str, object] = {}
+    for p in sorted(packages, key=lambda x: (x.category, x.manager, x.name)):
+        label = f"[{p.category}] {p.name} ({p.manager})"
+        package_list.addItem(label)
+        label_to_pkg[label] = p
 
-            scroll_view = ScrollView(parent=scroll_area)  # type: ignore[operator]
-            if hasattr(scroll_area, "setViewport"):
-                scroll_area.setViewport(scroll_view)  # type: ignore[attr-defined]
-
-            inner = ttk.TTkFrame(layout=ttk.TTkVBoxLayout())
-            if hasattr(scroll_view, "setWidget"):
-                scroll_view.setWidget(inner)  # type: ignore[attr-defined]
-            else:
-                # Fallback: at least parent it so it renders.
-                try:
-                    inner.setParent(scroll_view)  # type: ignore[attr-defined]
-                except Exception:  # noqa: BLE001
-                    pass
-
-            checks = _build_package_checkboxes(parent=inner, packages=packages)
-        else:
-            logger.warning(
-                "TermTk scrolling widgets not available (TTkScrollArea/TTkScrollView missing); "
-                "packages pane will not be scrollable."
-            )
-            checks = _build_package_checkboxes(parent=left, packages=packages)
-    except Exception as e:  # noqa: BLE001
-        logger.warning(f"Failed to initialize scrollable packages pane; falling back. ({e})")
-        checks = _build_package_checkboxes(parent=left, packages=packages)
+    def _get_selected_packages() -> list[object]:
+        out: list[object] = []
+        for l in package_list.selectedLabels():
+            pkg = label_to_pkg.get(str(l))
+            if pkg is not None:
+                out.append(pkg)
+        return out
 
     # right
     right = ttk.TTkFrame(parent=body, title=TTkString("Log"), layout=ttk.TTkVBoxLayout())
@@ -104,7 +83,7 @@ def run_app() -> None:
         win=win,
         log=log,
         distro=distro,
-        checks=checks,
+        get_selected_packages=_get_selected_packages,  # type: ignore[arg-type]
         install_btn=install_btn,
         action_buttons=action_buttons,
         runner=runner,

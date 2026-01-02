@@ -8,6 +8,7 @@ This module wires together:
 
 from __future__ import annotations
 
+from typing import Callable
 from datetime import datetime
 import shutil
 
@@ -36,7 +37,7 @@ class AppController:
         win: ttk.TTkWindow,
         log: ttk.TTkTextEdit,
         distro: str,
-        checks: list[tuple[PackageRef, ttk.TTkCheckbox]],
+        get_selected_packages: Callable[[], list[PackageRef]],
         install_btn: ttk.TTkButton,
         action_buttons: list[ttk.TTkButton],
         runner: JobRunner,
@@ -45,7 +46,7 @@ class AppController:
         self._win = win
         self._log = log
         self._distro = distro
-        self._checks = checks
+        self._get_selected_packages = get_selected_packages
         self._install_btn = install_btn
         self._action_buttons = action_buttons
         self._runner = runner
@@ -81,7 +82,7 @@ class AppController:
             self.ui_log("Busy: another task is running")
             return
 
-        selected = [p for (p, cb) in self._checks if cb.isChecked()]
+        selected = list(self._get_selected_packages() or [])
         if not selected:
             self.ui_log("No packages selected")
             return
@@ -231,7 +232,7 @@ class AppController:
 
 def _build_package_checkboxes(
     *,
-    parent: ttk.TTkFrame,
+    parent: ttk.TTkWidget,
     packages: list[PackageRef],
 ) -> list[tuple[PackageRef, ttk.TTkCheckbox]]:
     """Render a categorized list of packages into the left pane."""
@@ -241,11 +242,22 @@ def _build_package_checkboxes(
     for p in packages:
         by_cat.setdefault(p.category, []).append(p)
 
+    parent_layout = parent.layout() if hasattr(parent, "layout") else None
+    if parent_layout is None:
+        # If no layout exists, we cannot reliably add widgets; return empty with no crash.
+        return checks
+
     for cat in sorted(by_cat.keys()):
-        ttk.TTkLabel(parent=parent, text=f"[{cat}]", color=ttk.TTkColor.fg("#ffaa00"), maxHeight=1)
+        label = ttk.TTkLabel(
+            parent=parent,
+            text=f"[{cat}]",
+            color=ttk.TTkColor.fg("#ffaa00"),
+            maxHeight=1,
+        )
+        parent_layout.addWidget(label)  # type: ignore[call-arg]
         for p in sorted(by_cat[cat], key=lambda x: x.name):
-            cb = ttk.TTkCheckbox(text=f"{p.name} ({p.manager})")
-            parent.layout().addWidget(cb)  # type: ignore[call-arg]
+            cb = ttk.TTkCheckbox(parent=parent, text=f"{p.name} ({p.manager})")
+            parent_layout.addWidget(cb)  # type: ignore[call-arg]
             checks.append((p, cb))
 
     return checks

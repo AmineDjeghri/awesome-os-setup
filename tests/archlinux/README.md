@@ -11,10 +11,10 @@ From the `awesome-os-setup/` directory:
 docker build -f tests/archlinux/Dockerfile -t awesome-os-setup-arch-test .
 ```
 
-### Run (interactive)
+### Run (interactive) and mount
 
 ```bash
-docker run --rm -it awesome-os-setup-arch-test
+docker run --rm -it -v "$(pwd):/home/tester/awesome-os-setup" awesome-os-setup-arch-test
 ```
 
 This drops you into `bash` in:
