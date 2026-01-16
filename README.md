@@ -20,9 +20,9 @@ You can follow this repository to get a similar setup on Windows11, Linux or bot
 **Table of contents**
 <!-- TOC -->
 * [Awesome OS Setup](#awesome-os-setup)
-  * [Get started](#get-started)
-    * [Linux / WSL2 / MacOS](#linux--wsl2--macos)
-    * [Windows 11](#windows-11)
+    * [Get started](#get-started)
+      * [Linux / WSL2 / MacOS](#linux--wsl2--macos)
+      * [Windows 11](#windows-11)
   * [What is this repo?](#what-is-this-repo)
     * [Features & Benefits](#features--benefits)
     * [Docs and websites](#docs-and-websites)
@@ -40,13 +40,13 @@ You can follow this repository to get a similar setup on Windows11, Linux or bot
 Get started with one command in bash/zsh:
 
 ```bash
-sh -c "$(wget https://raw.githubusercontent.com/AmineDjeghri/awesome-os-setup/v2/install_unix.sh -O -)"
+sh -c "$(wget https://raw.githubusercontent.com/AmineDjeghri/awesome-os-setup/main/install_unix.sh -O -)"
 ```
 
 #### Windows 11
 Get started with one command (run it in PowerShell as administrator):
 ```powershell
-iex ((New-Object System.Net.WebClient).DownloadString('https://raw.githubusercontent.com/AmineDjeghri/awesome-os-setup/v2/install_windows.ps1'))
+iex ((New-Object System.Net.WebClient).DownloadString('https://raw.githubusercontent.com/AmineDjeghri/awesome-os-setup/main/install_windows.ps1'))
 ```
 
 ## What is this repo?
