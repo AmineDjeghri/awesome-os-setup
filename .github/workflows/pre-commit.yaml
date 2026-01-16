@@ -1,0 +1,11 @@
+name: Pre-commit
+
+on:
+  workflow_call:
+
+jobs:
+  pre-commit:
+    uses: ./.github/workflows/_base-job.yaml
+    with:
+      job-name: 'Pre-commit'
+      command: 'make pre-commit'

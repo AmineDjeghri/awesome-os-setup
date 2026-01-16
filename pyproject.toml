@@ -1,0 +1,69 @@
+[project]
+name = "awesome-os-setup"
+version = "0.1.0"
+description = "A terminal-based interactive app that helps you setup and enhance your OS."
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    # Engineering
+    "pyTermTk==0.48.1a0",
+    "pydantic==2.12.5",
+    "pydantic-settings>=2.12.0",
+    "loguru==0.7.3",
+    "PyYAML==6.0.3",
+]
+
+############### uv configuration
+[tool.uv]
+managed = true
+default-groups = ["dev", "docs"]
+
+[dependency-groups]
+# if you add new dependencies here, make sure to add them to [tool.uv] default-groups up above
+dev = [
+    "pre-commit == 4.5.0",
+    "pytest == 9.0.1",
+    "pytest-asyncio == 1.3.0",
+    "ruff==0.14.6",
+    "ty==0.0.7"
+]
+docs = [
+    "mkdocs == 1.6.1",
+    "mkdocs-material==9.7.0",
+    "mkdocstrings==0.30.1",
+    "mkdocs-mermaid2-plugin==1.2.3",
+    "mkdocs-gen-files==0.6.0",
+    "mkdocstrings-python==1.19.0",
+    "mkdocs-same-dir==0.1.3",
+    "mkdocs-exclude==1.0.2"
+]
+
+# Build configuration to make this an installable package
+[build-system]
+requires = ["hatchling>=1.27.0"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/awesome_os"]
+
+## inside the root folder, you can run `uv run --directory . hello`
+[project.scripts]
+hello = "awesome_os:hello" # will read from __init__.py.
+awesome-os = "awesome_os.frontend.main:main"
+
+############### pytest configuration
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+
+############### ruff configuration
+[tool.ruff]
+extend-exclude = ["*.ipynb"]
+line-length = 100
+
+# Enable all `pydocstyle` rules, limiting to those that adhere to the Google convention via `convention = "google"`
+select = ["D", "F401"]
+ignore = ["D100", "D101", "D102", "D103", "D104", "D107", "D417"]
+
+[tool.ruff.pydocstyle]
+# Use Google-style docstrings.
+convention = "google"

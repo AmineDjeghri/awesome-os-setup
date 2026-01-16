@@ -1,0 +1,37 @@
+name: CI Pipeline
+
+on:
+  pull_request:
+  push:
+
+jobs:
+  pre-commit:
+    name: Pre-commit
+    uses: ./.github/workflows/pre-commit.yaml
+
+  build-package:
+    name: Build Package
+    needs: [pre-commit]
+    uses: ./.github/workflows/build-package.yaml
+
+  tests:
+    name: Tests
+    needs: [build-package]
+    uses: ./.github/workflows/tests.yaml
+
+#  docker:
+#    name: Docker App Startup Check
+#    needs: [tests]
+#    uses: ./.github/workflows/check-docker-app-startup.yaml
+
+#  publish-wheel:
+#    name: Publish Wheel (Draft)
+#    needs: [docker]
+#    if: github.ref == 'refs/heads/main'
+#    uses: ./.github/workflows/publish-wheel.yaml
+#
+  github-pages:
+    name: Deploy GitHub Pages
+#    needs: [publish-wheel]
+    if: github.ref == 'refs/heads/main'
+    uses: ./.github/workflows/deploy-docs.yaml

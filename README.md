@@ -10,70 +10,104 @@
 You can follow this repository to get a similar setup on Windows11, Linux or both.
 
 ![Windows 11](https://img.shields.io/badge/Windows%2011-%230079d5.svg?style=for-the-badge&logo=Windows%2011&logoColor=white)
+![macOS](https://img.shields.io/badge/mac%20os-000000?style=for-the-badge&logo=macos&logoColor=F0F0F0)
 [![Linux](https://img.shields.io/badge/-Linux-grey?style=for-the-badge&logo=linux)](https://www.microsoft.com/en-in/windows)
 ![Ubuntu](https://img.shields.io/badge/Ubuntu-E95420?style=for-the-badge&logo=ubuntu&logoColor=white)
-![Anaconda](https://img.shields.io/badge/Anaconda-%2344A833.svg?style=for-the-badge&logo=anaconda&logoColor=white)
-![Shell Script](https://img.shields.io/badge/shell_script-%23121011.svg?style=for-the-badge&logo=gnu-bash&logoColor=white)
-![Windows Terminal](https://img.shields.io/badge/Windows%20Terminal-%234D4D4D.svg?style=for-the-badge&logo=windows-terminal&logoColor=white)
+![Arch](https://img.shields.io/badge/Arch%20Linux-1793D1?logo=arch-linux&logoColor=fff&style=for-the-badge)
+
 </div>
 
 **Table of contents**
 <!-- TOC -->
 * [Awesome OS Setup](#awesome-os-setup)
-  * [1. Windows 11-WSL2](#1-windows-11-wsl2)
-  * [2. Linux WSL2 (Ubuntu)](#2-linux-wsl2-ubuntu)
-    * [3. TV setup](#3-tv-setup)
-  * [4. Shortcuts_and_apps_setup](#4-shortcuts_and_apps_setup)
-  * [5. Awesome Websites & Browser extensions](#5-awesome-websites--browser-extensions)
-  * [Contributing](#contributing)
+  * [Get started](#get-started)
+    * [Linux / WSL2 / MacOS](#linux--wsl2--macos)
+    * [Windows 11](#windows-11)
+  * [What is this repo?](#what-is-this-repo)
+    * [Features & Benefits](#features--benefits)
+    * [Docs and websites](#docs-and-websites)
+  * [Project TODO / Roadmap](#project-todo--roadmap)
+    * [Docs & site](#docs--site)
+    * [Quality & UX](#quality--ux)
+  * [Check the documentation](#check-the-documentation)
+  * [Contributing (For developers)](#contributing-for-developers)
 <!-- TOC -->
 
-## 1. Windows 11-WSL2
 
-Valuable applications & tips for enhancing your Windows user experience, with a focus on creating a productive
-environment incorporating WSL 2 (Linux).
+### Get started
 
-- **My Windows/WSL2 docs**: Read more about it
-  here: [windows_workflow_README.](docs/windows_workflow/README_windows.md) / [Website](https://setup.aminedjeghri.com/readme-windows.html)
-
-Get started with one command (run it in powershell as administrator):
-
-```powershell
-## Run it in powershell as ADMINISTRATOR
-iex ((New-Object System.Net.WebClient).DownloadString('https://raw.githubusercontent.com/AmineDjeghri/awesome-os-setup/main/docs/windows_workflow/setup_windows.ps1'))
-
-```
-
-## 2. Linux WSL2 (Ubuntu)
-
-A set of configurations,
-dotfiles and a script to automatically set up a powerful terminal & shell utilities(zsh,fzf, ctrl+f on terminal to
-search files & folder...),
-themes like Powerlvl10k, Conda, GPU drivers, and more on Linux/WSL2, again automatically.
-
-- **My Linux/WSL2 docs**: Read more about it
-  here: [README](docs/unix_workflow/README_unix.md) / [website](https://setup.aminedjeghri.com/readme-unix.html)
-
-Get started with one command (linux):
+#### Linux / WSL2 / MacOS
+Get started with one command in bash/zsh:
 
 ```bash
-sh -c "$(wget https://raw.githubusercontent.com/AmineDjeghri/awesome-os-setup/main/docs/unix_workflow/setup_linux.sh -O -)"
+sh -c "$(wget https://raw.githubusercontent.com/AmineDjeghri/awesome-os-setup/v2/install_unix.sh -O -)"
 ```
 
-## 3. TV setup
+#### Windows 11
+Get started with one command (run it in PowerShell as administrator):
+```powershell
+iex ((New-Object System.Net.WebClient).DownloadString('https://raw.githubusercontent.com/AmineDjeghri/awesome-os-setup/v2/install_windows.ps1'))
+```
 
-- **My TV setup docs**: Read me about it
-  here: [README](docs/tv_setup.md) / [website](https://setup.aminedjeghri.com/tv_setup.html)
+## What is this repo?
 
-## 4. Shortcuts_and_apps_setup
+This repo is a personal “OS setup Terminal UI App”:
 
-- **My Apps setup docs**: Read more about it here:
-  [README](docs/apps_configuration_and_shorcuts) / [website](https://setup.aminedjeghri.com/shortcuts_and_apps_setup.html)
 
-## 5. Awesome Websites & Browser extensions
+### Features & Benefits
 
-Read more about it here:
-[README](docs/awesome_websites_browser_extensions) / [website](https://setup.aminedjeghri.com/awesome-websites.html)
+- **One‑liner installers**
+  - Windows: PowerShell script that installs selected apps via `winget`, enables WSL, applies Windows Terminal defaults, and fetches GlazeWM config.
+  - Linux / WSL/ macOS: Bash script that installs Zsh/OMZ/P10k, terminal tools, and optional NVIDIA for Linux.
+
+- **Cross‑OS Python TUI**
+  - TermTk‑based app (`main.py`) with:
+    - OS detection (Windows, WSL, Linux, macOS),
+    - System action sections (WSL tools, Windows utilities, package managers).
+
+- **Unified package catalog**
+  - `src/awesome_os/config/packages.yaml` as a single source of truth for packages.
+  - Concrete backends implemented:
+    - Linux:
+      - Ubuntu: `UbuntuAptManager`, `UbuntuSnapManager`,
+      - Arch: `ArchLinuxYayManager`
+    - Windows: `WindowsWingetManager`,
+    - macOS: `DarwinBrewManager`, `DarwinBrewCaskManager`.
+
+- **WSL workflow helpers**
+  - Actions to:
+    - List installed / online distros,
+    - Install a distro with optional custom location,
+    - Export / import / move / unregister distros,
+    - Shutdown and update WSL.
+
+- **Windows Terminal helpers**
+  - Apply consistent defaults (Night Owl scheme, JetBrains Mono font, opacity, elevation).
+  - Add a dedicated **Ubuntu profile** with an icon.
+
+- **Curated documentation**
+  - Windows & Linux workflows, TV setup, app shortcuts, and browser extensions, mirrored to a static site via `mkdocs`.
+
+
+### Docs and websites
+
+- **Windows/WSL2 docs**:
+  here: [windows_workflow_README.](docs/windows_workflow/README.md) / [Website](https://setup.aminedjeghri.com/readme-windows.html)
+
+- **Linux/WSL2 docs**:
+  here: [README](docs/linux/README.md) / [website](https://setup.aminedjeghri.com/readme-unix.html)
+
+- **macOS docs**:
+  here: [README](docs/macos_darwin/README.md) / [website](https://setup.aminedjeghri.com/readme-macos.html)
+
+- **TV setup docs**: Read me about it
+  here: [README](docs/android-tv/readme.md) / [website](https://setup.aminedjeghri.com/tv_setup.html)
+
+- **Apps setup docs**:
+  [README](docs/apps/apps_configuration_and_shorcuts.md) / [website](https://setup.aminedjeghri.com/shortcuts_and_apps_setup.html)
+
+- **Websites & Browser extensions docs**:
+  [README](docs/apps/awesome_websites_browser_extensions.md) / [website](https://setup.aminedjeghri.com/awesome-websites.html)
 
 **For Windows users: Why you should use WSL2?**
 WSL2 enables users to run Linux applications and use command-line tools natively on their Windows machines.
@@ -95,25 +129,34 @@ regardless of their workplace constraints.
 
 Based on your needs, you can choose your OS.
 
-## Contributing
+## Project TODO / Roadmap
 
-- Git clone the repository
-- Install and run pre-commit to check the code before pushing it with :
-    - `pip install pre-commit`
-    - `pre-commit install`
-    - `pre-commit run --all-files`
+- [ ] Some dotfiles integration (GlazeWM, aerospace, raycast...)
+- [ ] Chezmoi integration
 
-- Generated docs:
-    - If you modify the README.md file, remember to modify it in the `docs` folder as well and adapt the paths.
-    - A folder named `docs` contains the docs for generating the website with Jetbrains Writerside plugin.
-    - Writerside supports only one file named `README.md`, that's why you will find other readme files
-      like `unix_workflow/README_unix.md` instead of being named `unix_workflow/README.md`.
-- Modifying dotfiles like `.zshrc`:
-- use `stow` to create symlinks to the dotfiles in your home directory as follows:
-- `cd docs/unix_workflow/` then ``stow -t $HOME -R dotfiles ``
-    - This will create symlinks to the dotfiles in your home directory: ``cd ~ && cat .zshrc``
-- WARNING: Windows users can't open the dotfiles in their home directory with their text editor, you can only do it with
-  the terminal or open them in the repo folder.
+### Docs & site
+
+- [ ] Fix broken README one‑liners (curl/wget URLs to this repo) and update URL to main branch
+- [ ] Update `mkdocs.yml`:
+
+### Quality & UX
+
+- [ ] Update UX/UI.
+  - [ ] Display a checkmark when a package is installed.
+- [ ] Add tests and CI coverage for:
+  - [ ] Parsing `packages.yaml`.
+  - [ ] Package manager factory mapping.
+  - [ ] Windows/WSL command runner behavior.
+  - [x] Docker image to test Arch
+  - [ ] Docker image to test Ubuntu
+  - [ ] Docker image to test macOS
+
+
+## Check the documentation
+You can check the documentation (website).
+
+## Contributing (For developers)
+Check the [CONTRIBUTING.md](CONTRIBUTING.md) file for more information.
 
 **Star History Chart**
 [![Star History Chart](https://api.star-history.com/svg?repos=aminedjeghri/awesomewindows11&type=Date)](https://star-history.com/#aminedjeghri/awesomewindows11&Date)

@@ -1,0 +1,17 @@
+name: Publish Wheel (Draft)
+
+on:
+  workflow_call:
+
+jobs:
+  publish-wheel:
+    uses: ./.github/workflows/_base-job.yaml
+    with:
+      job-name: 'Build and Publish Wheel (Draft)'
+      command: 'make build-package'
+      fetch-depth: 0
+
+  # TODO: Add artifact upload and release steps
+  # - Use actions/upload-artifact to collect the wheel from ./dist
+  # - Use softprops/action-gh-release to attach it to the release
+  # - Consider signing the artifact if required by policy
