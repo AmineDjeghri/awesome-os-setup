@@ -1,0 +1,129 @@
+packages:
+  ubuntu:
+    apt:
+      core:
+        - git
+        - curl
+        - zsh
+      terminal_tools:
+        - bat
+        - fzf
+        - btop
+        - neofetch
+    snap:
+      apps:
+        - code
+  darwin:
+    brews:
+      core:
+        - git
+        - zsh
+    casks:
+      apps:
+        - brave-browser
+        - raycast
+        - ghostty
+        - jordanbaird-ice # Menu bar management tool
+        - shottr
+        - swift-quit
+        - alt-tab
+        - anydesk
+        - obsidian
+        - zed
+        - discord
+  arch:
+    yay:
+      core:
+        - git
+        - curl
+        - zsh
+      terminal_tools:
+        - bat
+        - fzf
+        - btop
+        - neofetch
+        - eza
+        - lsd
+        - ripgrep
+        - tldr
+        - zoxide
+        - docker
+        - lazygit
+        - lazydocker
+        - tmux
+        - neovim
+        - python
+        - bpytop
+        - fd
+        - opencode
+      apps:
+        - brave-browser
+        - vicinae
+        - ghostty
+        - steam
+        - obsidian
+        - vlc
+        - wine
+        - vesktop
+  windows:
+    winget:
+      core:
+        - Microsoft.WindowsTerminal
+
+      browsers:
+        - Brave.Brave
+        - Mozilla.Firefox
+        - Microsoft.Edge
+      messaging:
+        - Facebook.Messenger
+        - Discord.Discord
+        - WhatsApp.WhatsApp
+        - Viber.Viber
+        - Telegram.TelegramDesktop
+        - Snapchat.Snapchat
+        - Instagram.Instagram
+      meetings:
+        - Zoom.Zoom
+        - Microsoft.Teams
+      media:
+        - VideoLAN.VLC
+        - Spotify.Spotify
+        - Apple.AppleMusic
+      gaming:
+        - Valve.Steam
+        - EpicGames.EpicGamesLauncher
+        - Nvidia.GeForceExperience
+        - Ubisoft.Connect
+        - SideQuestVR.SideQuest
+      documents:
+        - Google.GoogleDrive
+        - Microsoft.OneDrive
+        - Apple.iCloud
+        - Microsoft.Office
+        - Adobe.Acrobat.Reader.64-bit
+        - Notion.Notion
+        - SublimeHQ.SublimeText.4
+        - Obsidian.Obsidian
+      editing:
+        - OBSProject.OBSStudio
+        - Adobe.CreativeCloud
+        - ByteDance.CapCut
+        - Microsoft.Clipchamp
+        - Canva.Canva
+      dev:
+        - JetBrains.PyCharm.Community
+        - JetBrains.PyCharm.Professional
+        - Docker.DockerDesktop
+        - Microsoft.VisualStudioCode
+      utilities:
+        - NordVPN.NordVPN
+        - qBittorrent.qBittorrent
+        - Microsoft.PowerToys
+        - ShareX.ShareX
+        - Ookla.Speedtest.Desktop
+        - Microsoft.BingWallpaper
+        - File-New-Project.EarTrumpet
+        - RevoUninstaller.RevoUninstaller
+        - REALiX.HWiNFO
+      UXUI:
+        - glzr-io.glazewm

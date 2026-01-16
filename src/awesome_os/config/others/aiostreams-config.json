@@ -1,0 +1,951 @@
+{
+  "services": [
+    {
+      "id": "realdebrid",
+      "enabled": false,
+      "credentials": {}
+    },
+    {
+      "id": "alldebrid",
+      "enabled": true,
+      "credentials": {}
+    },
+    {
+      "id": "premiumize",
+      "enabled": false,
+      "credentials": {}
+    },
+    {
+      "id": "debridlink",
+      "enabled": false,
+      "credentials": {}
+    },
+    {
+      "id": "torbox",
+      "enabled": false,
+      "credentials": {}
+    },
+    {
+      "id": "offcloud",
+      "enabled": false,
+      "credentials": {}
+    },
+    {
+      "id": "putio",
+      "enabled": false,
+      "credentials": {}
+    },
+    {
+      "id": "easynews",
+      "enabled": false,
+      "credentials": {}
+    },
+    {
+      "id": "easydebrid",
+      "enabled": false,
+      "credentials": {}
+    },
+    {
+      "id": "debrider",
+      "enabled": false,
+      "credentials": {}
+    },
+    {
+      "id": "pikpak",
+      "enabled": false,
+      "credentials": {}
+    },
+    {
+      "id": "seedr",
+      "enabled": false,
+      "credentials": {}
+    },
+    {
+      "id": "nzbdav",
+      "enabled": false,
+      "credentials": {}
+    },
+    {
+      "id": "altmount",
+      "enabled": false,
+      "credentials": {}
+    },
+    {
+      "id": "stremio_nntp",
+      "enabled": false,
+      "credentials": {}
+    }
+  ],
+  "presets": [
+    {
+      "type": "custom",
+      "instanceId": "4be",
+      "enabled": false,
+      "options": {
+        "name": "ratings (custom)",
+        "manifestUrl": "",
+        "libraryAddon": false,
+        "formatPassthrough": true,
+        "resultPassthrough": true,
+        "forceToTop": true,
+        "timeout": 15000,
+        "resources": [],
+        "mediaTypes": []
+      }
+    },
+    {
+      "type": "custom",
+      "instanceId": "127",
+      "enabled": false,
+      "options": {
+        "name": "statusio (custom)",
+        "manifestUrl": "",
+        "libraryAddon": false,
+        "formatPassthrough": true,
+        "resultPassthrough": true,
+        "forceToTop": true,
+        "timeout": 15000,
+        "resources": [],
+        "mediaTypes": []
+      }
+    },
+    {
+      "type": "tmdb-addon",
+      "instanceId": "f68",
+      "enabled": true,
+      "options": {
+        "name": "The Movie Database",
+        "timeout": 5000,
+        "resources": [
+          "catalog",
+          "meta"
+        ],
+        "Enable Adult Content": true,
+        "hideEpisodeThumbnails": false,
+        "provideImdbId": true,
+        "language": "en-US"
+      }
+    },
+    {
+      "type": "custom",
+      "instanceId": "c38",
+      "enabled": true,
+      "options": {
+        "name": "TV en direct (custom)",
+        "manifestUrl": "stremio://tvdirect.ddns.net/manifest.json",
+        "timeout": 6000,
+        "resources": [],
+        "mediaTypes": [],
+        "libraryAddon": false,
+        "formatPassthrough": true,
+        "resultPassthrough": true,
+        "forceToTop": false
+      }
+    },
+    {
+      "type": "torrentio",
+      "instanceId": "392",
+      "enabled": true,
+      "options": {
+        "name": "Torrentio",
+        "timeout": 5000,
+        "resources": [
+          "stream",
+          "meta"
+        ],
+        "providers": [],
+        "useMultipleInstances": false
+      }
+    },
+    {
+      "type": "stremthruTorz",
+      "instanceId": "9bc",
+      "enabled": true,
+      "options": {
+        "name": "StremThru Torz",
+        "timeout": 10000,
+        "resources": [
+          "stream"
+        ],
+        "mediaTypes": [],
+        "includeP2P": false,
+        "useMultipleInstances": false
+      }
+    },
+    {
+      "type": "stremthruStore",
+      "instanceId": "bb2",
+      "enabled": true,
+      "options": {
+        "name": "StremThru Store",
+        "timeout": 10000,
+        "resources": [
+          "stream",
+          "meta"
+        ],
+        "services": [
+          "alldebrid"
+        ],
+        "mediaTypes": []
+      }
+    },
+    {
+      "type": "mediafusion",
+      "instanceId": "6a5",
+      "enabled": true,
+      "options": {
+        "name": "MediaFusion",
+        "timeout": 10000,
+        "resources": [
+          "stream"
+        ],
+        "useCachedResultsOnly": false,
+        "enableWatchlistCatalogs": false,
+        "downloadViaBrowser": false,
+        "contributorStreams": false,
+        "certificationLevelsFilter": [],
+        "nudityFilter": [],
+        "services": [
+          "alldebrid"
+        ],
+        "mediaTypes": []
+      }
+    },
+    {
+      "type": "comet",
+      "instanceId": "df3",
+      "enabled": true,
+      "options": {
+        "name": "Comet",
+        "timeout": 10000,
+        "resources": [
+          "stream"
+        ],
+        "includeP2P": false,
+        "removeTrash": true,
+        "mediaTypes": []
+      }
+    },
+    {
+      "type": "custom",
+      "instanceId": "532",
+      "enabled": false,
+      "options": {
+        "name": "JackettioFR (custom)",
+        "manifestUrl": "",
+        "libraryAddon": false,
+        "formatPassthrough": false,
+        "resultPassthrough": false,
+        "forceToTop": false,
+        "timeout": 10000,
+        "mediaTypes": []
+      }
+    },
+    {
+      "type": "custom",
+      "instanceId": "6c2",
+      "enabled": false,
+      "options": {
+        "name": "CometFR (custom)",
+        "manifestUrl": "",
+        "libraryAddon": false,
+        "resultPassthrough": false,
+        "forceToTop": false,
+        "timeout": 10000,
+        "mediaTypes": []
+      }
+    },
+    {
+      "type": "streamfusion",
+      "instanceId": "12b",
+      "enabled": false,
+      "options": {
+        "name": "StreamFusion",
+        "timeout": 10000,
+        "resources": [
+          "stream",
+          "meta",
+          "catalog"
+        ],
+        "torboxSearch": true,
+        "torboxUsenet": true,
+        "catalogs": [],
+        "torrenting": false,
+        "services": [
+          "alldebrid"
+        ],
+        "mediaTypes": [],
+        "torrentProviders": [
+          "publicCacheServer",
+          "zilean"
+        ]
+      }
+    },
+    {
+      "type": "custom",
+      "instanceId": "0d2",
+      "enabled": false,
+      "options": {
+        "name": "AISearch (custom)",
+        "manifestUrl": "",
+        "libraryAddon": false,
+        "resultPassthrough": true,
+        "forceToTop": true,
+        "timeout": 7000,
+        "resources": [],
+        "mediaTypes": [],
+        "formatPassthrough": true
+      }
+    },
+    {
+      "type": "custom",
+      "instanceId": "c9a",
+      "enabled": false,
+      "options": {
+        "name": "Top-Streaming (custom)",
+        "manifestUrl": "",
+        "timeout": 5000,
+        "resources": [],
+        "mediaTypes": [],
+        "libraryAddon": false,
+        "resultPassthrough": false,
+        "forceToTop": false
+      }
+    },
+    {
+      "type": "custom",
+      "instanceId": "2e0",
+      "enabled": false,
+      "options": {
+        "name": "Top-streaming FR (custom)",
+        "manifestUrl": "",
+        "timeout": 5000,
+        "resources": [],
+        "mediaTypes": [],
+        "libraryAddon": false,
+        "resultPassthrough": false,
+        "forceToTop": false
+      }
+    }
+  ],
+  "formatter": {
+    "id": "custom",
+    "definition": {
+      "name": "{stream.resolution::exists[\"\"||\"⚪ 𝑁/𝐴\"]}{stream.resolution::=2160p[\"⚜️ 4K\"||\"\"]}{stream.resolution::=1440p[\"📀 1440p\"||\"\"]}{stream.resolution::=1080p[\"📀 1080p\"||\"\"]}{stream.resolution::=720p[\"💿 720p\"||\"\"]}{stream.resolution::=576p[\"📼 576p\"||\"\"]}{stream.resolution::=480p[\"📼 480p\"||\"\"]}{stream.resolution::=360p[\"📺 360p\"||\"\"]}{stream.resolution::=240p[\"📹 240p\"||\"\"]}\n{stream.quality::exists::isfalse[\"⚪ 𝑁/𝐴\"||\"\"]}{stream.quality::~REMUX[\"📀 Remux\"||\"\"]}{stream.quality::=BluRay[\"💿 Blu-ray\"||\"\"]}{stream.quality::~DL[\"🌐 WEB-DL\"||\"\"]}{stream.quality::=WEBRIP[\"🖥️ WebRip\"||\"\"]}{stream.quality::=HDRIP[\"💾 HDRip\"||\"\"]}{stream.quality::~HC[\"💾 HC\"||\"\"]}{stream.quality::=DVDRip[\"💾 DVDRip\"||\"\"]}{stream.quality::=HDTV[\"💾 HDTV\"||\"\"]}{stream.quality::=TS[\"💾 TS\"||\"\"]}{stream.quality::=TC[\"💾 TC\"||\"\"]}\n{stream.regexMatched::exists::isfalse[\"⚪ 𝑁/𝐴\"||\"\"]}{stream.regexMatched::exists::and::stream.regexMatched::~Bad[\"🔴 {stream.regexMatched}\"||\"\"]}{stream.regexMatched::~Remux T1[\"🟢 Tier 1\"||\"\"]}{stream.regexMatched::~Remux T2[\"🟢 Tier 2\"||\"\"]}{stream.regexMatched::~Remux T3[\"🟢 Tier 3\"||\"\"]}{stream.regexMatched::~Bluray T1[\"🟢 Tier 1\"||\"\"]}{stream.regexMatched::~Bluray T2[\"🟢 Tier 2\"||\"\"]}{stream.regexMatched::~Bluray T3[\"🟢 Tier 3\"||\"\"]}{stream.regexMatched::~Anime BD T1[\"🟢 Tier 1\"||\"\"]}{stream.regexMatched::~Anime BD T2[\"🟢 Tier 2\"||\"\"]}{stream.regexMatched::~Anime BD T3[\"🟢 Tier 3\"||\"\"]}{stream.regexMatched::~Anime BD T4[\"🟡 Tier 4\"||\"\"]}{stream.regexMatched::~Anime BD T5[\"🟡 Tier 5\"||\"\"]}{stream.regexMatched::~Anime BD T6[\"🟠 Tier 6\"||\"\"]}{stream.regexMatched::~Anime BD T7[\"🟠 Tier 7\"||\"\"]}{stream.regexMatched::~Anime BD T8[\"🔴 Tier 8\"||\"\"]}{stream.regexMatched::~Anime Web T1[\"🟡 Tier 1\"||\"\"]}{stream.regexMatched::~Anime Web T2[\"🟡 Tier 2\"||\"\"]}{stream.regexMatched::~Anime Web T3[\"🟠 Tier 3\"||\"\"]}{stream.regexMatched::~Anime Web T4[\"🔴 Tier 4\"||\"\"]}{stream.regexMatched::~Anime Web T5[\"🔴 Tier 5\"||\"\"]}{stream.regexMatched::~Anime Web T6[\"🔴 Tier 6\"||\"\"]}{stream.regexMatched::~Web T1[\"🟡 Tier 1\"||\"\"]}{stream.regexMatched::~Web T2[\"🟠 Tier 2\"||\"\"]}{stream.regexMatched::~Web T3[\"🔴 Tier 3\"||\"\"]}\n{stream.filename::~extended[\"🎬 Extended\"||\"\"]}{stream.filename::~director[\"🎬 Director's Cut\"||\"\"]}{stream.filename::~dc[\"🎬 Director's Cut\"||\"\"]}{stream.filename::~theatrical[\"🎭 Theatrical Cut\"||\"\"]}{stream.filename::~assembly[\"📼 Assembly Cut\"||\"\"]}{stream.filename::~producers[\"🏟️ Producer’s Cut\"||\"\"]}{stream.filename::~ultimate[\"💎 Ultimate Cut\"||\"\"]}{stream.filename::~alternate[\"🔀 Alternative Cut\"||\"\"]}{stream.filename::~redux[\"🔄 Redux\"||\"\"]}{stream.filename::~rdx[\"🔄 Redux\"||\"\"]}{stream.filename::~complete[\"📦 Complete Cut\"||\"\"]}{stream.filename::~special[\"🎁 Special Edition\"||\"\"]}{stream.filename::~anniversary[\"🎉 Anniversary Edition\"||\"\"]}{stream.filename::~imax[\"🏟️ IMAX Edition\"||\"\"]}{stream.filename::~remastered[\"✨ Remastered\"||\"\"]}{stream.filename::~restored[\"📜 Restored Cut\"||\"\"]}{stream.filename::~collectors[\"🎖️ Collector’s Edition\"||\"\"]}{stream.filename::~unrated[\"🚫 Unrated\"||\"\"]}{stream.filename::~uncensored[\"🔞 Uncensored\"||\"\"]}\n{addon.name} {service.shortName::exists[\"[{service.shortName}\"||\"\"]}{service.cached::istrue[\"⚡️]\"||\"\"]}{service.cached::isfalse[\"⏳]\"||\"\"]}\n{stream.type::~p2p[\"🔗 P2P 🌱 {stream.seeders}\"||\"\"]}",
+      "description": "{stream.visualTags::exists::isfalse[\"📺 𝑁/𝐴 \"||\"\"]}{stream.visualTags::exists[\"📺 {stream.visualTags::join(' · ')} \"||\"\"]}\n{stream.audioTags::exists::isfalse[\"🔊 𝑁/𝐴 \"||\"\"]}{stream.audioTags::exists[\"🔊 {stream.audioTags::join(' · ')}\"||\"\"]}{stream.audioChannels::exists[\" · {stream.audioChannels::join(' · ')::replace('2.0', '2.0 Stereo')}\"||\"· 𝑁/𝐴\"]}\n{stream.size::exists::isfalse[\"📁 𝑁/𝐴 \"||\"\"]}{stream.size::>0[\"📁 {stream.size::bytes} \"||\"\"]}{stream.folderSize::>0[\"📦 {stream.folderSize::bytes}\"||\"\"]}{stream.age::exists[\"📅 {stream.age} \"||\"\"]}\n{stream.languages::exists::isfalse[\"🌎 𝑁/𝐴 \"||\"\"]}{stream.languages::exists[\"🌎 {stream.languages::join(', ')::replace('Multi, ', 'Multi · ')::replace('Dual Audio, ', 'Dual Audio · ')}\"||\"\"]}\n{stream.filename::~nf[\"🍿 Netflix \"||\"\"]}{stream.filename::~dsnp[\"🏰 Disney+ \"||\"\"]}{stream.filename::~hmax[\"🎭 HBO Max \"||\"\"]}{stream.filename::~amzn[\"🚚 Amazon \"||\"\"]}{stream.filename::~prme[\"🚚 Prime Video \"||\"\"]}{stream.filename::~aptv[\"🍏 Apple TV+ \"||\"\"]}{stream.filename::~hulu[\"📽️ Hulu \"||\"\"]}{stream.filename::~pmtp[\"🏔️ Paramount+ \"||\"\"]}{stream.filename::~pckk[\"🦚 Peacock \"||\"\"]}{stream.filename::~crtc[\"🍊 Crunchyroll \"||\"\"]}{stream.filename::~anpx[\"🎌 Anime Plex \"||\"\"]}{stream.filename::~stz[\"⭐ Starz \"||\"\"]}{stream.filename::~dscv[\"🌎 Discovery+ \"||\"\"]}{stream.filename::~glob[\"🌐 Globoplay \"||\"\"]}{stream.filename::~mubi[\"🎬 Mubi \"||\"\"]}{stream.filename::~tlcn[\"🎦 Telecine \"||\"\"]}{stream.filename::~look[\"👁️ Looke \"||\"\"]}{stream.filename::~cltv[\"📡 Claro TV+ \"||\"\"]}{stream.filename::~mcrp[\"🛍️ Mercado Play \"||\"\"]}{stream.filename::~itun[\"💿 iTunes \"||\"\"]}{stream.filename::~stan[\"🇦🇺 Stan \"||\"\"]}{stream.filename::~hotstar[\"🌟 Hotstar \"||\"\"]}{stream.filename::~videoland[\"🇳🇱 Videoland \"||\"\"]}{stream.filename::~brvc[\"📽️ Bravia Core \"||\"\"]}{stream.filename::~tver[\"📡 TVer \"||\"\"]}{stream.filename::~crit[\"🎞️ Criterion Channel \"||\"\"]}{stream.filename::~tving[\"📡 TVING \"||\"\"]}{stream.filename::~unext[\"📖 U-NEXT \"||\"\"]}{stream.filename::~viu[\"👁️ VIU \"||\"\"]}{stream.filename::~bbc[\"📻 BBC iPlayer \"||\"\"]}{stream.filename::~itvx[\"🎥 ITVX \"||\"\"]}{stream.filename::~cbc[\"🍁 CBC \"||\"\"]}{stream.filename::~crave[\"🎟️ Crave \"||\"\"]}{stream.filename::~now[\"⏯️ NOW \"||\"\"]}{stream.filename::~starplus[\"🌟 Star+ \"||\"\"]}{stream.filename::~vrv[\"🕹️ VRV \"||\"\"]}{stream.filename::~ovid[\"🎓 OViD \"||\"\"]}\n{stream.seeders::exists::isfalse[\"👥 𝑁/𝐴 \"||\"\"]}{stream.seeders::exists[\"👥 {stream.seeders} \"||\"\"]}\n{stream.filename}"
+    }
+  },
+  "preferredQualities": [
+    "BluRay REMUX",
+    "BluRay",
+    "WEB-DL",
+    "WEBRip",
+    "HDRip",
+    "HC HD-Rip",
+    "DVDRip",
+    "HDTV",
+    "CAM",
+    "TS",
+    "TC",
+    "SCR",
+    "Unknown"
+  ],
+  "preferredResolutions": [
+    "2160p",
+    "1440p",
+    "1080p",
+    "720p"
+  ],
+  "excludedQualities": [],
+  "excludedVisualTags": [],
+  "sortCriteria": {
+    "global": [
+      {
+        "key": "library",
+        "direction": "desc"
+      },
+      {
+        "key": "resolution",
+        "direction": "desc"
+      },
+      {
+        "key": "language",
+        "direction": "desc"
+      },
+      {
+        "key": "quality",
+        "direction": "desc"
+      },
+      {
+        "key": "cached",
+        "direction": "desc"
+      }
+    ],
+    "series": []
+  },
+  "deduplicator": {
+    "enabled": true,
+    "multiGroupBehaviour": "aggressive",
+    "keys": [
+      "filename",
+      "infoHash"
+    ],
+    "cached": "single_result",
+    "uncached": "per_service",
+    "p2p": "single_result"
+  },
+  "trusted": false,
+  "addonName": "AIOStreams | ElfHosted",
+  "addonDescription": "The Ultimate Stremio Experience.",
+  "excludedResolutions": [],
+  "includedResolutions": [],
+  "requiredResolutions": [],
+  "includedQualities": [],
+  "requiredQualities": [],
+  "excludedLanguages": [],
+  "includedLanguages": [],
+  "requiredLanguages": [],
+  "preferredLanguages": [
+    "French",
+    "Multi",
+    "English"
+  ],
+  "includedVisualTags": [],
+  "requiredVisualTags": [],
+  "preferredVisualTags": [],
+  "excludedAudioTags": [],
+  "includedAudioTags": [],
+  "requiredAudioTags": [],
+  "preferredAudioTags": [],
+  "excludedAudioChannels": [],
+  "includedAudioChannels": [],
+  "requiredAudioChannels": [],
+  "preferredAudioChannels": [],
+  "excludedStreamTypes": [],
+  "includedStreamTypes": [],
+  "requiredStreamTypes": [],
+  "preferredStreamTypes": [],
+  "excludedEncodes": [],
+  "includedEncodes": [],
+  "requiredEncodes": [],
+  "preferredEncodes": [],
+  "preferredRegexPatterns": [],
+  "requiredKeywords": [],
+  "excludedKeywords": [],
+  "excludeSeederRange": [
+    0,
+    1000
+  ],
+  "requiredSeederRange": [
+    3,
+    1000
+  ],
+  "seederRangeTypes": [],
+  "excludeCached": false,
+  "excludeCachedFromAddons": [],
+  "excludeCachedFromServices": [],
+  "excludeCachedFromStreamTypes": [],
+  "excludeUncached": false,
+  "excludeUncachedFromAddons": [],
+  "excludeUncachedFromServices": [],
+  "excludeUncachedFromStreamTypes": [],
+  "excludedStreamExpressions": [],
+  "requiredStreamExpressions": [],
+  "preferredStreamExpressions": [],
+  "dynamicAddonFetching": {
+    "enabled": false,
+    "condition": "((count(cached(resolution(regexMatched(totalStreams), '2160p'))) >= 1) or (count(cached(resolution(regexMatched(totalStreams), '1440p'))) >= 1) or ((count(cached(resolution(regexMatched(totalStreams), '1080p'))) >= 2) and (count(cached(resolution(totalStreams, '2160p','1440p'))) == 0)) or ((count(cached(resolution(regexMatched(totalStreams), '720p','576p','480p','360p','240p','144p'))) >= 3) and (count(cached(resolution(totalStreams, '2160p','1440p','1080p'))) == 0)) or (totalTimeTaken > 5000))"
+  },
+  "groups": {
+    "enabled": false,
+    "groupings": []
+  },
+  "proxy": {
+    "enabled": false,
+    "id": "mediaflow",
+    "proxiedAddons": [],
+    "proxiedServices": []
+  },
+  "resultLimits": {
+    "global": 30
+  },
+  "size": {
+    "global": {
+      "movies": [
+        0,
+        100000000000
+      ]
+    }
+  },
+  "hideErrorsForResources": [],
+  "statistics": {
+    "statsToShow": [
+      "addon",
+      "filter"
+    ]
+  },
+  "yearMatching": {
+    "requestTypes": [],
+    "addons": []
+  },
+  "titleMatching": {
+    "requestTypes": [],
+    "addons": []
+  },
+  "seasonEpisodeMatching": {
+    "requestTypes": [],
+    "addons": []
+  },
+  "autoPlay": {
+    "attributes": [
+      "service",
+      "proxied",
+      "resolution",
+      "quality",
+      "encode",
+      "audioTags",
+      "visualTags",
+      "languages",
+      "releaseGroup"
+    ]
+  },
+  "precacheNextEpisode": true,
+  "alwaysPrecache": true,
+  "catalogModifications": [
+    {
+      "id": "f68e3b0.tmdb.trending",
+      "name": "Trending",
+      "type": "movie",
+      "enabled": true,
+      "shuffle": false,
+      "rpdb": true,
+      "hideable": true,
+      "searchable": false,
+      "addonName": "The Movie Database"
+    },
+    {
+      "id": "f68e3b0.tmdb.trending",
+      "name": "Trending",
+      "type": "series",
+      "enabled": true,
+      "shuffle": false,
+      "rpdb": true,
+      "hideable": true,
+      "searchable": false,
+      "addonName": "The Movie Database"
+    },
+    {
+      "id": "0d2e3b0.aisearch.home.1.series",
+      "type": "series",
+      "name": "AI Recommendations",
+      "shuffle": false,
+      "enabled": true,
+      "rpdb": true,
+      "hideable": true,
+      "searchable": false,
+      "addonName": "AISearch (custom)"
+    },
+    {
+      "id": "0d2e3b0.aisearch.home.0.movie",
+      "type": "movie",
+      "name": "AI Recommendations",
+      "shuffle": false,
+      "enabled": true,
+      "rpdb": true,
+      "hideable": true,
+      "searchable": false,
+      "addonName": "AISearch (custom)"
+    },
+    {
+      "id": "c38e3b0.tv-sport",
+      "type": "tv",
+      "name": "⚽ Chaînes Sport",
+      "shuffle": false,
+      "enabled": true,
+      "rpdb": true,
+      "hideable": true,
+      "searchable": false,
+      "addonName": "TV en direct (custom)"
+    },
+    {
+      "id": "c9ae3b0.netflix-movie-united-states",
+      "name": "🔴 Netflix - Top 10 United States",
+      "type": "movie",
+      "enabled": true,
+      "shuffle": false,
+      "rpdb": true,
+      "hideable": true,
+      "searchable": false,
+      "addonName": "Top-Streaming (custom)"
+    },
+    {
+      "id": "2e0e3b0.netflix-movie-france",
+      "name": "🔴 Netflix - Top 10 France",
+      "type": "movie",
+      "enabled": true,
+      "shuffle": false,
+      "rpdb": true,
+      "hideable": true,
+      "searchable": false,
+      "addonName": "Top-streaming FR (custom)"
+    },
+    {
+      "id": "c9ae3b0.netflix-series-united-states",
+      "name": "🔴 Netflix - Top 10 United States",
+      "type": "series",
+      "enabled": true,
+      "shuffle": false,
+      "rpdb": true,
+      "hideable": true,
+      "searchable": false,
+      "addonName": "Top-Streaming (custom)"
+    },
+    {
+      "id": "2e0e3b0.netflix-series-france",
+      "name": "🔴 Netflix - Top 10 France",
+      "type": "series",
+      "enabled": true,
+      "shuffle": false,
+      "rpdb": true,
+      "hideable": true,
+      "searchable": false,
+      "addonName": "Top-streaming FR (custom)"
+    },
+    {
+      "id": "c9ae3b0.amazon-prime-movie-united-states",
+      "name": "📦 Amazon Prime Video - Top 10 United States",
+      "type": "movie",
+      "enabled": true,
+      "shuffle": false,
+      "rpdb": true,
+      "hideable": true,
+      "searchable": false,
+      "addonName": "Top-Streaming (custom)"
+    },
+    {
+      "id": "2e0e3b0.amazon-prime-movie-france",
+      "name": "📦 Amazon Prime Video - Top 10 France",
+      "type": "movie",
+      "enabled": true,
+      "shuffle": false,
+      "rpdb": true,
+      "hideable": true,
+      "searchable": false,
+      "addonName": "Top-streaming FR (custom)"
+    },
+    {
+      "id": "c9ae3b0.amazon-prime-series-united-states",
+      "name": "📦 Amazon Prime Video - Top 10 United States",
+      "type": "series",
+      "enabled": true,
+      "shuffle": false,
+      "rpdb": true,
+      "hideable": true,
+      "searchable": false,
+      "addonName": "Top-Streaming (custom)"
+    },
+    {
+      "id": "2e0e3b0.amazon-prime-series-france",
+      "name": "📦 Amazon Prime Video - Top 10 France",
+      "type": "series",
+      "enabled": true,
+      "shuffle": false,
+      "rpdb": true,
+      "hideable": true,
+      "searchable": false,
+      "addonName": "Top-streaming FR (custom)"
+    },
+    {
+      "id": "c9ae3b0.hbo-max-movie-united-states",
+      "name": "🎭 HBO Max - Top 10 United States",
+      "type": "movie",
+      "enabled": true,
+      "shuffle": false,
+      "rpdb": true,
+      "hideable": true,
+      "searchable": false,
+      "addonName": "Top-Streaming (custom)"
+    },
+    {
+      "id": "c9ae3b0.hbo-max-series-united-states",
+      "name": "🎭 HBO Max - Top 10 United States",
+      "type": "series",
+      "enabled": true,
+      "shuffle": false,
+      "rpdb": true,
+      "hideable": true,
+      "searchable": false,
+      "addonName": "Top-Streaming (custom)"
+    },
+    {
+      "id": "c9ae3b0.apple-tv-movie-united-states",
+      "name": "🍎 Apple TV - Top 10 United States",
+      "type": "movie",
+      "enabled": true,
+      "shuffle": false,
+      "rpdb": true,
+      "hideable": true,
+      "searchable": false,
+      "addonName": "Top-Streaming (custom)"
+    },
+    {
+      "id": "c9ae3b0.apple-tv-series-united-states",
+      "name": "🍎 Apple TV - Top 10 United States",
+      "type": "series",
+      "enabled": true,
+      "shuffle": false,
+      "rpdb": true,
+      "hideable": true,
+      "searchable": false,
+      "addonName": "Top-Streaming (custom)"
+    },
+    {
+      "id": "c9ae3b0.disney-unified-united-states",
+      "name": "🏰 Disney+ - Top 10 United States - Movies",
+      "type": "series",
+      "enabled": true,
+      "shuffle": false,
+      "rpdb": true,
+      "hideable": true,
+      "searchable": false,
+      "addonName": "Top-Streaming (custom)"
+    },
+    {
+      "id": "c9ae3b0.paramount-plus-movie-united-states",
+      "name": "🗻 Paramount+ - Top 10 United States",
+      "type": "movie",
+      "enabled": true,
+      "shuffle": false,
+      "rpdb": true,
+      "hideable": true,
+      "searchable": false,
+      "addonName": "Top-Streaming (custom)"
+    },
+    {
+      "id": "c9ae3b0.paramount-plus-series-united-states",
+      "name": "🗻 Paramount+ - Top 10 United States",
+      "type": "series",
+      "enabled": true,
+      "shuffle": false,
+      "rpdb": true,
+      "hideable": true,
+      "searchable": false,
+      "addonName": "Top-Streaming (custom)"
+    },
+    {
+      "id": "2e0e3b0.canal-movie-france",
+      "name": "📡 Canal+ - Top 10 France",
+      "type": "movie",
+      "enabled": true,
+      "shuffle": false,
+      "rpdb": true,
+      "hideable": true,
+      "searchable": false,
+      "addonName": "Top-streaming FR (custom)"
+    },
+    {
+      "id": "2e0e3b0.canal-series-france",
+      "name": "📡 Canal+ - Top 10 France",
+      "type": "series",
+      "enabled": true,
+      "shuffle": false,
+      "rpdb": true,
+      "hideable": true,
+      "searchable": false,
+      "addonName": "Top-streaming FR (custom)"
+    },
+    {
+      "id": "c9ae3b0.crunchyroll-unified-united-states",
+      "name": "🍥 Crunchyroll - Top 10 United States - Movies",
+      "type": "series",
+      "enabled": true,
+      "shuffle": false,
+      "rpdb": true,
+      "hideable": true,
+      "searchable": false,
+      "addonName": "Top-Streaming (custom)"
+    },
+    {
+      "id": "f68e3b0.tmdb.search",
+      "name": "Search",
+      "type": "movie",
+      "enabled": true,
+      "shuffle": false,
+      "rpdb": true,
+      "hideable": false,
+      "searchable": false,
+      "addonName": "The Movie Database"
+    },
+    {
+      "id": "f68e3b0.tmdb.search",
+      "name": "Search",
+      "type": "series",
+      "enabled": true,
+      "shuffle": false,
+      "rpdb": true,
+      "hideable": false,
+      "searchable": false,
+      "addonName": "The Movie Database"
+    },
+    {
+      "id": "0d2e3b0.aisearch.top",
+      "type": "movie",
+      "name": "AI Movie Search",
+      "shuffle": false,
+      "enabled": true,
+      "rpdb": true,
+      "hideable": false,
+      "searchable": false,
+      "addonName": "AISearch (custom)"
+    },
+    {
+      "id": "0d2e3b0.aisearch.top",
+      "type": "series",
+      "name": "AI Series Search",
+      "shuffle": false,
+      "enabled": true,
+      "rpdb": true,
+      "hideable": false,
+      "searchable": false,
+      "addonName": "AISearch (custom)"
+    },
+    {
+      "id": "c38e3b0.tv-general",
+      "type": "tv",
+      "name": "📺 Chaînes Générale",
+      "shuffle": false,
+      "enabled": true,
+      "rpdb": true,
+      "hideable": true,
+      "searchable": false,
+      "addonName": "TV en direct (custom)"
+    },
+    {
+      "id": "c38e3b0.tv-news",
+      "type": "tv",
+      "name": "📰 Chaînes Info",
+      "shuffle": false,
+      "enabled": true,
+      "rpdb": true,
+      "hideable": true,
+      "searchable": false,
+      "addonName": "TV en direct (custom)"
+    },
+    {
+      "id": "c38e3b0.tv-cine",
+      "type": "tv",
+      "name": "🎬 Chaînes Cinéma",
+      "shuffle": false,
+      "enabled": true,
+      "rpdb": true,
+      "hideable": true,
+      "searchable": false,
+      "addonName": "TV en direct (custom)"
+    },
+    {
+      "id": "c38e3b0.tv-jeunesse",
+      "type": "tv",
+      "name": "🧒 Chaînes Jeunesse",
+      "shuffle": false,
+      "enabled": true,
+      "rpdb": true,
+      "hideable": true,
+      "searchable": false,
+      "addonName": "TV en direct (custom)"
+    },
+    {
+      "id": "c38e3b0.tv-docu",
+      "type": "tv",
+      "name": "🌍 Chaînes Documentaires",
+      "shuffle": false,
+      "enabled": true,
+      "rpdb": true,
+      "hideable": true,
+      "searchable": false,
+      "addonName": "TV en direct (custom)"
+    },
+    {
+      "id": "c38e3b0.tv-music",
+      "type": "tv",
+      "name": "🎵 Chaînes Musique",
+      "shuffle": false,
+      "enabled": true,
+      "rpdb": true,
+      "hideable": true,
+      "searchable": false,
+      "addonName": "TV en direct (custom)"
+    },
+    {
+      "id": "f68e3b0.tmdb.year",
+      "name": "Year",
+      "type": "movie",
+      "enabled": false,
+      "shuffle": false,
+      "rpdb": true,
+      "hideable": true,
+      "searchable": false,
+      "addonName": "The Movie Database"
+    },
+    {
+      "id": "f68e3b0.tmdb.year",
+      "name": "Year",
+      "type": "series",
+      "enabled": false,
+      "shuffle": false,
+      "rpdb": true,
+      "hideable": true,
+      "searchable": false,
+      "addonName": "The Movie Database"
+    },
+    {
+      "id": "f68e3b0.tmdb.language",
+      "name": "Language",
+      "type": "movie",
+      "enabled": false,
+      "shuffle": false,
+      "rpdb": true,
+      "hideable": true,
+      "searchable": false,
+      "addonName": "The Movie Database"
+    },
+    {
+      "id": "f68e3b0.tmdb.language",
+      "name": "Language",
+      "type": "series",
+      "enabled": false,
+      "shuffle": false,
+      "rpdb": true,
+      "hideable": true,
+      "searchable": false,
+      "addonName": "The Movie Database"
+    },
+    {
+      "id": "f68e3b0.tmdb.top",
+      "name": "Popular",
+      "type": "series",
+      "enabled": false,
+      "shuffle": false,
+      "rpdb": true,
+      "hideable": true,
+      "searchable": false,
+      "addonName": "The Movie Database"
+    },
+    {
+      "id": "f68e3b0.tmdb.top",
+      "name": "Popular",
+      "type": "movie",
+      "enabled": false,
+      "shuffle": false,
+      "rpdb": true,
+      "hideable": true,
+      "searchable": false,
+      "addonName": "The Movie Database"
+    }
+  ],
+  "externalDownloads": false,
+  "cacheAndPlay": {
+    "streamTypes": [
+      "usenet"
+    ]
+  }
+}
