@@ -21,19 +21,19 @@ default-groups = ["dev", "docs"]
 [dependency-groups]
 # if you add new dependencies here, make sure to add them to [tool.uv] default-groups up above
 dev = [
-    "pre-commit == 4.5.0",
-    "pytest == 9.0.1",
+    "pre-commit == 4.5.1",
+    "pytest == 9.0.2",
     "pytest-asyncio == 1.3.0",
-    "ruff==0.14.6",
-    "ty==0.0.7"
+    "ruff==0.14.13",
+    "ty==0.0.12"
 ]
 docs = [
     "mkdocs == 1.6.1",
-    "mkdocs-material==9.7.0",
+    "mkdocs-material==9.7.1",
     "mkdocstrings==0.30.1",
     "mkdocs-mermaid2-plugin==1.2.3",
     "mkdocs-gen-files==0.6.0",
-    "mkdocstrings-python==1.19.0",
+    "mkdocstrings-python==2.0.1",
     "mkdocs-same-dir==0.1.3",
     "mkdocs-exclude==1.0.2"
 ]
