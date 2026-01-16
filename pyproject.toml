@@ -29,7 +29,7 @@ dev = [
 ]
 docs = [
     "mkdocs == 1.6.1",
-    "mkdocs-material==9.7.0",
+    "mkdocs-material==9.7.1",
     "mkdocstrings==0.30.1",
     "mkdocs-mermaid2-plugin==1.2.3",
     "mkdocs-gen-files==0.6.0",
