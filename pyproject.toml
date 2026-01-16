@@ -22,7 +22,7 @@ default-groups = ["dev", "docs"]
 # if you add new dependencies here, make sure to add them to [tool.uv] default-groups up above
 dev = [
     "pre-commit == 4.5.0",
-    "pytest == 9.0.1",
+    "pytest==9.0.2",
     "pytest-asyncio == 1.3.0",
     "ruff==0.14.6",
     "ty==0.0.7"
