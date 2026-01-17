@@ -9,6 +9,7 @@ from pydantic import BaseModel, ConfigDict
 from awesome_os.tasks.managers.darwin_brew import DarwinBrewManager, DarwinBrewCaskManager
 from awesome_os.tasks.managers.arch_yay import ArchYayManager
 from awesome_os.tasks.system.help import show_commands
+from awesome_os.tasks.system.font import install_jetbrainsmono_nerd_font
 from awesome_os.tasks.system.zsh import (
     apply_p10k_force,
     apply_zshrc_force,
@@ -90,6 +91,10 @@ def get_system_action_sections(
 ) -> list[tuple[str, list[SystemAction]]]:
     home = Path.home()
     sections: list[tuple[str, list[SystemAction]]] = []
+
+    #################
+    ## Linux & Darwin
+    #################
     if system in {"darwin", "linux"}:
         # help
         sections.append(
@@ -101,33 +106,44 @@ def get_system_action_sections(
             )
         )
         # zsh
+        zsh_actions: list[SystemAction] = []
+
+        zsh_actions.extend(
+            [
+                SystemAction(
+                    label="install JetBrainsMono Nerd Font",
+                    run=install_jetbrainsmono_nerd_font,
+                    confirm=True,
+                    confirm_message="Install JetBrainsMono Nerd Font for terminals?",
+                ),
+                SystemAction(
+                    label="apply ~/.zshrc",
+                    run=apply_zshrc_force,
+                    confirm=True,
+                    confirm_message="This will overwrite ~/.zshrc if it exists. Proceed? (A backup will be created)",
+                    backup_target=(home / ".zshrc"),
+                ),
+                SystemAction(
+                    label="apply ~/.p10k.zsh",
+                    run=apply_p10k_force,
+                    confirm=True,
+                    confirm_message="FiraCode Nerd Font is required for best results. \n"
+                    "This will overwrite ~/.p10k.zsh if it exists. Proceed? (A backup will be created)",
+                    backup_target=(home / ".p10k.zsh"),
+                ),
+                SystemAction(label="sync zsh plugins/theme", run=sync_zsh_plugins_and_theme),
+                SystemAction(
+                    label="set zsh as default shell",
+                    run=set_zsh_as_default_shell,
+                    confirm=True,
+                    confirm_message="Set your default shell to zsh?",
+                ),
+            ]
+        )
         sections.append(
             (
                 "zsh",
-                [
-                    SystemAction(
-                        label="apply ~/.zshrc",
-                        run=apply_zshrc_force,
-                        confirm=True,
-                        confirm_message="This will overwrite ~/.zshrc if it exists. Proceed? (A backup will be created)",
-                        backup_target=(home / ".zshrc"),
-                    ),
-                    SystemAction(
-                        label="apply ~/.p10k.zsh",
-                        run=apply_p10k_force,
-                        confirm=True,
-                        confirm_message="FiraCode Nerd Font is required for best results. \n"
-                        "This will overwrite ~/.p10k.zsh if it exists. Proceed? (A backup will be created)",
-                        backup_target=(home / ".p10k.zsh"),
-                    ),
-                    SystemAction(label="sync zsh plugins/theme", run=sync_zsh_plugins_and_theme),
-                    SystemAction(
-                        label="set zsh as default shell",
-                        run=set_zsh_as_default_shell,
-                        confirm=True,
-                        confirm_message="Set your default shell to zsh?",
-                    ),
-                ],
+                zsh_actions,
             )
         )
         # zsh uninstall
@@ -157,7 +173,9 @@ def get_system_action_sections(
             )
         )
 
-    # NVIDIA
+    ########
+    ## NVIDIA
+    ########
     if system in {"windows", "linux"}:
         nvidia_actions: list[SystemAction] = [
             SystemAction(label="detect nvidia", run=detect_nvidia)
@@ -213,6 +231,9 @@ def get_system_action_sections(
             )
         )
 
+    ########
+    ## Windows
+    ########
     if system == "windows":
         settings_path = (
             Path(os.environ.get("LOCALAPPDATA", ""))
@@ -273,6 +294,9 @@ def get_system_action_sections(
             )
         )
 
+        ########
+        ## Windows:  WSL
+        ########
         sections.append(
             (
                 "Advanced WSL",
@@ -334,10 +358,19 @@ def get_system_action_sections(
             )
         )
 
+        ########
+        ## Windows: Utilities
+        ########
         sections.append(
             (
                 "Windows utilities",
                 [
+                    SystemAction(
+                        label="install JetBrainsMono Nerd Font",
+                        run=install_jetbrainsmono_nerd_font,
+                        confirm=True,
+                        confirm_message="Install JetBrainsMono Nerd Font for terminals?",
+                    ),
                     SystemAction(
                         label="Update Windows Terminal default UI",
                         run=apply_windows_terminal_ui_defaults,
