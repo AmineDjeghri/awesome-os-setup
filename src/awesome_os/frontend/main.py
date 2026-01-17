@@ -12,6 +12,7 @@ from awesome_os.frontend.controller import AppController
 from awesome_os.frontend.runner import JobRunner
 from awesome_os.detect_os import build_packages_for_os
 from awesome_os.tasks.factory import get_system_action_sections, SystemAction
+from awesome_os.tasks.sudo import sudo_preauth
 
 
 def run_app() -> None:
@@ -127,6 +128,7 @@ def main():
             "You are launching the UI from a directory that does not look like the repo root. "
             "For the intended workflow, run it from the repo root (or use install_unix.sh / make)."
         )
+    sudo_preauth()
     run_app()
 
 
