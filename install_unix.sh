@@ -3,6 +3,19 @@ set -e  # Exit on error
 
 echo "📦 Setting up Awesome OS Setup..."
 
+if [ "$(uname -s 2>/dev/null)" = "Linux" ]; then
+    if ! command -v make >/dev/null 2>&1; then
+        echo "🔧 'make' not found. Installing..."
+        if command -v apt-get >/dev/null 2>&1; then
+            sudo apt-get update
+            sudo apt-get install -y make
+        else
+            echo "❌ Could not determine package manager to install 'make'. Please install it manually and re-run."
+            exit 1
+        fi
+    fi
+fi
+
 REPO_URL="https://github.com/AmineDjeghri/awesome-os-setup.git"
 FOLDER_NAME="awesome-os-setup"
 CURRENT_DIR_NAME=$(basename "$PWD")  # Get the current folder name
