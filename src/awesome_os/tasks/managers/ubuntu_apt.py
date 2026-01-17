@@ -16,6 +16,7 @@ from awesome_os import logger
 from awesome_os.tasks.commands import run
 
 from awesome_os.tasks.managers.base import InstallResult
+from awesome_os.tasks.sudo import sudo_non_interactive_ok, sudo_required_details
 from awesome_os.tasks.task import TaskResult
 
 
@@ -48,9 +49,15 @@ class UbuntuAptManager:
 
     def install(self, package: str) -> InstallResult:
         """Install a package using `apt-get`."""
+        if not sudo_non_interactive_ok():
+            return InstallResult(
+                ok=False,
+                summary=f"Failed to install {package} (sudo password required)",
+                details=sudo_required_details(),
+            )
         logger.info(f"Installing {package} via {self.name}...")
-        update_res = run(["sudo", "apt", "update", "-y"], check=False)
-        install_res = run(["sudo", "apt", "install", "-y", package], check=False)
+        update_res = run(["sudo", "-n", "apt-get", "update"], check=False)
+        install_res = run(["sudo", "-n", "apt-get", "install", "-y", package], check=False)
         if update_res.returncode == 0 and install_res.returncode == 0:
             return InstallResult(ok=True, summary=f"Installed {package}")
 
@@ -62,21 +69,39 @@ class UbuntuAptManager:
         return InstallResult(ok=False, summary=f"Failed to install {package}", details=details)
 
     def update(self) -> TaskResult:
-        res = run(["sudo", "apt-get", "update", "-y"], check=False)
+        if not sudo_non_interactive_ok():
+            return TaskResult(
+                ok=False,
+                summary="apt update: sudo password required",
+                details=sudo_required_details(),
+            )
+        res = run(["sudo", "-n", "apt-get", "update"], check=False)
         if res.returncode == 0:
             return TaskResult(ok=True, summary="apt update: done")
         details = (res.stdout + "\n" + res.stderr).strip()
         return TaskResult(ok=False, summary="apt update: failed", details=details)
 
     def upgrade(self) -> TaskResult:
-        res = run(["sudo", "apt-get", "upgrade", "-y"], check=False)
+        if not sudo_non_interactive_ok():
+            return TaskResult(
+                ok=False,
+                summary="apt upgrade: sudo password required",
+                details=sudo_required_details(),
+            )
+        res = run(["sudo", "-n", "apt-get", "upgrade", "-y"], check=False)
         if res.returncode == 0:
             return TaskResult(ok=True, summary="apt upgrade: done")
         details = (res.stdout + "\n" + res.stderr).strip()
         return TaskResult(ok=False, summary="apt upgrade: failed", details=details)
 
     def cleanup(self) -> TaskResult:
-        res = run(["sudo", "apt-get", "autoremove", "-y"], check=False)
+        if not sudo_non_interactive_ok():
+            return TaskResult(
+                ok=False,
+                summary="apt cleanup: sudo password required",
+                details=sudo_required_details(),
+            )
+        res = run(["sudo", "-n", "apt-get", "autoremove", "-y"], check=False)
         if res.returncode == 0:
             return TaskResult(ok=True, summary="apt cleanup (autoremove): done")
         details = (res.stdout + "\n" + res.stderr).strip()
