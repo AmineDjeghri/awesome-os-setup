@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import json
+import getpass
 import os
 import platform
 import re
@@ -10,6 +11,7 @@ from pathlib import Path
 
 from awesome_os.tasks.system.git import _git_clone
 from awesome_os.tasks.commands import run
+from awesome_os.tasks.sudo import sudo_non_interactive_ok, sudo_required_details
 from awesome_os.tasks.task import TaskResult
 
 
@@ -288,7 +290,19 @@ def set_zsh_as_default_shell() -> TaskResult:
             details=f"Run manually: chsh -s {zsh_path}",
         )
 
-    res = run([chsh_path, "-s", zsh_path], check=False)
+    if system == "linux":
+        if not sudo_non_interactive_ok():
+            return TaskResult(
+                ok=False,
+                summary="failed to set default shell to zsh (sudo password required)",
+                details=sudo_required_details(),
+            )
+
+        user = getpass.getuser()
+        res = run(["sudo", "-n", chsh_path, "-s", zsh_path, user], check=False)
+    else:
+        res = run([chsh_path, "-s", zsh_path], check=False)
+
     details = (res.stdout + "\n" + res.stderr).strip()
     if res.returncode == 0:
         return TaskResult(
@@ -327,7 +341,19 @@ def set_bash_as_default_shell() -> TaskResult:
             details=f"Run manually: chsh -s {bash_path}",
         )
 
-    res = run([chsh_path, "-s", bash_path], check=False)
+    if system == "linux":
+        if not sudo_non_interactive_ok():
+            return TaskResult(
+                ok=False,
+                summary="failed to set default shell to bash (sudo password required)",
+                details=sudo_required_details(),
+            )
+
+        user = getpass.getuser()
+        res = run(["sudo", "-n", chsh_path, "-s", bash_path, user], check=False)
+    else:
+        res = run([chsh_path, "-s", bash_path], check=False)
+
     details = (res.stdout + "\n" + res.stderr).strip()
     if res.returncode == 0:
         return TaskResult(
