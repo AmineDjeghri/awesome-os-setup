@@ -10,6 +10,7 @@ packages:
         - fzf
         - btop
         - neofetch
+        - lsd
     snap:
       apps:
         - code
