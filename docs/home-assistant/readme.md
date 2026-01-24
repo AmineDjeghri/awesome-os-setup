@@ -367,6 +367,17 @@ sudo virsh attach-device haos /dev/stdin --persistent <<EOF
 </hostdev>
 EOF
 ````
+
+or using the bus and device:
+````
+sudo virsh attach-device haos /dev/stdin --persistent <<EOF
+<hostdev mode='subsystem' type='usb' managed='yes'>
+  <source>
+    <address bus='1' device='12'/>
+  </source>
+</hostdev>
+EOF
+````
   - Run `sudo virsh reboot haos`
   - Go to Home Assistant -> Settings -> System -> Hardware -> All Hardware -> search for 'Sonoff'
   - Flash it using this [tutorial](https://blog.dautek.fr/comment-installer-le-dongle-zigbee-et-thread-sonoff-mg24-sur-home-assistant)
@@ -376,14 +387,17 @@ EOF
 
 
 ## Other stuff
-- HAOS backup with google drive: https://github.com/sabeechen/hassio-google-drive-backup
+- **HAOS backup & restoration** with google drive: https://github.com/sabeechen/hassio-google-drive-backup
   - Test the backup at least once to see it everything works: https://youtu.be/xXXW7sQ9rqs?t=274
   - Backup keeps everything, even cloudflare configuration (delete the cookies if you see that the login page is not showing using your domaine name)
-- SAMBA : https://www.youtube.com/watch?v=Vu_oxefjd0I
+  - Samba backup addon: https://github.com/thomasmauerer/hassio-addons/tree/master/samba-backup
+  - After a restoration, everything should work as expected,
+    - you need to clean the cookies on your broswer because of cloudflare.
+    - the Sonoff MG24, can be unrecoginized, just wait a bit, if it is not recognized, detach it and attach it again.
+- **SAMBA** to access HA files from windows, macOS etc.. , this is useful for uploading backups for example: https://www.youtube.com/watch?v=Vu_oxefjd0I
 - Read about common tasks : https://www.home-assistant.io/common-tasks/os/#installing-and-using-the-samba-add-on
-- Alexa Media player : https://www.youtube.com/watch?v=TDdREzkigIE&t
-Dreame vaccum:
-- Dreame : : "dreame vacuum home assistant" https://share.google/frXsgWNgnjGPGeMQM
-- Use version >2 , it supports multiple account (dreamehome, xiaomi etc..)
--
-LG: Better use the integration from HACS
+- **Alexa Media player** : https://www.youtube.com/watch?v=TDdREzkigIE&t
+- **Dreame vaccum**:
+  - Dreame : : "dreame vacuum home assistant" https://share.google/frXsgWNgnjGPGeMQM
+  - Use version >2 , it supports multiple account (dreamehome, xiaomi etc..)
+- **LG**: Better use the integration from HACS
