@@ -61,9 +61,6 @@ extend-exclude = ["*.ipynb"]
 line-length = 100
 
 # Enable all `pydocstyle` rules, limiting to those that adhere to the Google convention via `convention = "google"`
-select = ["D", "F401"]
-ignore = ["D100", "D101", "D102", "D103", "D104", "D107", "D417"]
-
-[tool.ruff.pydocstyle]
-# Use Google-style docstrings.
-convention = "google"
+lint.select = ["D", "F401"]
+lint.ignore = ["D100", "D101", "D102", "D103", "D104", "D107", "D417"]
+lint.pydocstyle.convention = "google"

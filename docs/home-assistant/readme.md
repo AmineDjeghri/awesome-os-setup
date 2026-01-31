@@ -5,8 +5,8 @@
 ### Setup
 
 - Set up an Ubuntu Server on a laptop.
-  - You better have Ethernet connection. If you only have wifi, buy a usb  ethernet adapter. It's worth it and you will be able to use the bridge mode which is not available with wifi.
-  - boot up ubuntu from a usb drive, select the language, keyboard layout, and timezone. In the network section, select the Ethernet connection, an IP 192.168.x.x will be assigned.
+  - You  better have Ethernet connection. If you only have wifi, buy a usb  ethernet adapter. It's worth it and you will be able to use the bridge mode which is not available with wifi.
+  - boot up ubuntu from an usb drive, select the language, keyboard layout, and timezone. In the network section, select the Ethernet connection, an IP 192.168.x.x will be assigned.
   - Wait for mirror to be configured.
   - Assign some partitions : `ext4` 100GB for `/` and some space for var/lib. `/var/lib` is where most application data lives. KVM/Libvirt stores virtual machine disks in /var/lib/libvirt/images. Docker (if you use it for AdGuard) stores everything in /var/lib/docker.
   - Install `openssh-server` and manage it remotely using SSH from another machine so you can copy-paste commands from the documentation.
@@ -182,7 +182,7 @@ sudo virt-install --name haos --description "Home Assistant OS" --os-variant=gen
 You need to differentiate between:
 
 - HOST IP (the IP of the laptop): `ip addr` example: `192.168.1.86`
-- VM-IP or HAOS-IP (the IP of the HAOS VM) example: `192.168.122.243`
+- VM-IP or HAOS-IP (the IP of the HAOS VM) example: `192.168.1.20`
 - Both have IPs assigned from the router. The HAOS VM uses a bridge, so it gets an IP from the router just like a regular device.
 - These IPs can change if we restart the router, we will assign static ip to the VM.
 
@@ -347,13 +347,14 @@ You should now have:
 - Always search for an open source integration before using a proprietary app. For example TP-link, Dreame, LG ThinQ, Bosch Home connect have open sources integrations and are far better than the proprietary apps.
 - Some devices need their app to work properly or to display more functionalities. For example LG, Bosch. I always advice to install the app for these devices even if you can control them later in Home Assistant..
 
+
 #### Matter over Wi-Fi
 - You don't need a matter controller for that, you just need matter devices and Home Assistant.
 
-#### Matter Over thread devices
+
+#### Matter Over thread and Zigbee devices
 - If the device does Matter over Thread though, you will need a Thread Border Router (TBR) on your network like the [Sonoff MG24](https://www.amazon.fr/SONOFF-Dongle-PMG24-Dongle-Plus-MG24/dp/B0FMJD288B) or Apple HomePod Mini or latest Amazon Echo devices that have a thread router capability.
 - Do not use Aqara M100 because it is proprietary and not well-supported in Home Assistant.
-
 - How to setup Sonoff MG24
   - Attach to usb port, run `usb-devices` on ubuntu and get Vendor and  ProdID
   - Run
@@ -382,22 +383,94 @@ EOF
   - Go to Home Assistant -> Settings -> System -> Hardware -> All Hardware -> search for 'Sonoff'
   - Flash it using this [tutorial](https://blog.dautek.fr/comment-installer-le-dongle-zigbee-et-thread-sonoff-mg24-sur-home-assistant)
 
-#todo:
-- backup vm, HAOS,
+
+- If you want only thread: flash Sonoff for thread only.
+- if you want both Thread controller and Zigbee, use Multipan with the MG24. Here is a tutorial:
+  - French : https://sonoff.tech/fr-fr/blogs/news/how-to-use-multipan-in-home-assistant-with-sonoff-dongle
+  - English: https://www.sonoff.in/blog/product-guides-3/how-to-use-multipan-in-home-assistant-with-sonoff-zbdongle-e-36
+  - deactivate ZHA, and add devices: https://youtu.be/KA4XvVhyCtE?t=112
+  - if you are facing anssue with the onboarding no loading after submitting, check this : https://community.home-assistant.io/t/smlight-slzb-06-new-installation-can-not-pass-the-zigbee2mqtt-onboarding-page/908462/2
 
 
-## Other stuff
-- **HAOS backup & restoration** with google drive: https://github.com/sabeechen/hassio-google-drive-backup
+### Apps / Addons
+- **Adguard home** :
+  - for DNS and DHCP (do not forget to add IPV4 and IPV6 DNS servers to your router). Disable safe search.
+  - For Ip addresses names resolving : check [this section](#adguard-home-address-naming-resolution-using-the-router-freebox)
+
+- **Cloudflared**
+- **Donetick** Addon
+- **File Editor**
+- **Get HACS**
+- **Home Assistant Google Drive backup**: https://github.com/sabeechen/hassio-google-drive-backup
   - Test the backup at least once to see it everything works: https://youtu.be/xXXW7sQ9rqs?t=274
   - Backup keeps everything, even cloudflare configuration (delete the cookies if you see that the login page is not showing using your domaine name)
   - Samba backup addon: https://github.com/thomasmauerer/hassio-addons/tree/master/samba-backup
   - After a restoration, everything should work as expected,
     - you need to clean the cookies on your broswer because of cloudflare.
     - the Sonoff MG24, can be unrecoginized, just wait a bit, if it is not recognized, detach it and attach it again.
-- **SAMBA** to access HA files from windows, macOS etc.. , this is useful for uploading backups for example: https://www.youtube.com/watch?v=Vu_oxefjd0I
+- **Samba Share**: to access HA files from windows, macOS etc.. , this is useful for uploading backups for example: https://www.youtube.com/watch?v=Vu_oxefjd0I
 - Read about common tasks : https://www.home-assistant.io/common-tasks/os/#installing-and-using-the-samba-add-on
+
+- **Controllers / Routers Addons:**
+  - **Home assistant matter hub**
+    - Control devices using your voice with Alexa and Matter hub addon:
+    -  https://github.com/t0bst4r/home-assistant-matter-hub
+    - Transform any device into a Matter device
+    - Use it with Alexa and Google Home. If Alexa doesn't discover the hub, use Google Home app then use it to add the hub to alexa from Google Home.
+    - Tutorial: https://www.youtube.com/watch?v=-TMzuHFo_-g
+    - You need to add labels to entities and not devices
+  - **Matter Server**
+  - **Mosquitto broker**
+  - **Silicon Labs Multiprotocol**
+  - **SONOFF Dongle Flasher**
+  - **Zigbee2MQTT**
+- **Terminal & SSH**: https://lazyadmin.nl/smart-home/enable-ssh-home-assistant/
+- **motionEye** : https://www.home-assistant.io/integrations/motioneye/
+
+### Integrations:
+- **HACS** : the best is to use community integrations, they have more features.
+- **AdGuard Home**
 - **Alexa Media player** : https://www.youtube.com/watch?v=TDdREzkigIE&t
+- **Android TV Remote**
+- **Matter**
+- **Thread**
+- **motionEye** : https://www.home-assistant.io/integrations/motioneye/
 - **Dreame vaccum**:
   - Dreame : : "dreame vacuum home assistant" https://share.google/frXsgWNgnjGPGeMQM
   - Use version >2 , it supports multiple account (dreamehome, xiaomi etc..)
 - **LG**: Better use the integration from HACS
+- Other integrations : LG, FReebox, Freemobile, Dreame, Home Connect Alt
+- Volets Profalux Zigbee: https://perso.aquilenet.fr/~sven337/francais/2023/06/02/Appairage-de-volets-Profalux-Zigbee.html
+
+### Automation & scenes
+  - 🤖 Automation = When something happens → do something
+    - Always use entities instead of devices. Entities have unique names.
+  - 🎬 Scene = Set things to a predefined state. A scene is just a snapshot of states.
+  - 👉 Automations trigger scenes
+  - When you add an entity, you can select a default behavior (toggle , show info, etc..) . For example a camera move down button, the default behavior is to ``show more info``, but you can change it to ``toggle`` so when you press that button, it will move the camera.
+
+
+
+## AdGuard Home address naming resolution using the router (Freebox)
+- The following will show you how to get the names of the devices in AdGuard home using your router (this example is for Freebox API).
+- You will notice that your AdGuard Home (AGH) logs contains anonymous entries like "FREE SAS" or raw IPv6 addresses (e.g., fe80::...).
+- We create a Python script on Ubuntu that will get all the information from the Freebox API and send it to the AdGuard Home API.
+- Steps:
+  - In the addon configuration in HA: open the port 8082, you should access the dashboard without authentication on ``HA-IP:8082``. the username and password are your Home assistant username and password (you can create a user named 'adguard' for it).
+  - Put the following scripts in the server:
+    - [freebox_auth.py](freebox_auth.py)
+    - [sync_adguard_home_ip_mac.py](sync_adguard_home_ip_mac.py)
+  - I am using Freebox pop as a router, so I use the script [freebox_auth.py](freebox_auth.py) to get the token ``uv run freebox_auth.py``
+  - then I use this script in the server to automatically update Adguard home: [sync_adguard_home_ip_mac.py](sync_adguard_home_ip_mac.py) to automatically resolve IPV6 addresses and clients names. ``uv run sync_adguard_home_ip_mac.py``
+  - Make a cronjob for it by adding this line at the end of ``crontab -e`` (change the path of uv and the script)
+````sh
+# For example
+* * * * * /home/amine/.local/bin/uv run sync_adguard_home_ip_mac.py
+````
+
+- Check Settings -> Client settings -> **Persistent clients settings** .
+- This script will run every minute. If it discovers a new device, it will update the log file ``sync_agh.log`` with the latest sync information.
+
+# todo:
+- backup vm
+- Lan architecture : Router Freebox = Honor Router 3  (bridge) - Ubuntu server (HAOS ( Adguard DNS + DHCP + Script for IPV6 update & naming resolution))
