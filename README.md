@@ -6,8 +6,21 @@
 |---------------------------------------------------------------|--------------------------------------------------------------------|
 | ![Windows WSL Terminal](docs/images/windows_wsl_terminal.png) | ![Desktop with terminals](docs/images/desktop_with_terminals.jpeg) |
 
-The image you are looking at is a screenshot of a WSL Ubuntu terminal in Windows 11. The top bar is an app called GlazeWM that is a tiling WM that lets you organize windows and adjust their layout on the fly by using keyboard-driven commands.
-You can follow this repository to get a similar setup on Windows11, Linux or both.
+An opinionated setup **app + documentation hub** for building a fast, clean, and consistent environment across **Windows**, **Linux**, **macOS**, **WSL2**, and even your **living room stack** (**Google TV** + **Stremio**) and **home server** (**Home Assistant**).
+
+Improve your UX and productivity with a reproducible setup for:
+
+- Development tools and package management
+- WSL2 workflows
+- GPU drivers
+- Terminal UX (Zsh/Oh-My-Zsh/Powerlevel10k)
+- Window tiling management
+- Home automation (Home Assistant)
+- TV setup (Google TV + Stremio)
+
+The image above is a screenshot of a WSL Ubuntu terminal in Windows 11. The top bar is an app called GlazeWM (a tiling window manager) that lets you organize windows and adjust their layout on the fly using keyboard-driven commands.
+
+You can follow this repository to get a similar setup on Windows 11, Linux, macOS, or a hybrid workflow (Windows + WSL).
 
 
 ![Windows 11](https://img.shields.io/badge/Windows%2011-%230079d5.svg?style=for-the-badge&logo=Windows%2011&logoColor=white)
@@ -25,6 +38,8 @@ You can follow this repository to get a similar setup on Windows11, Linux or bot
   * [What is this repo?](#what-is-this-repo)
     * [Features & Benefits](#features--benefits)
     * [Docs and websites](#docs-and-websites)
+    * [Home server (Ubuntu Server + KVM + Home Assistant)](#home-server-ubuntu-server--kvm--home-assistant)
+    * [TV setup (Google TV + Stremio)](#tv-setup-google-tv--stremio)
   * [Project TODO / Roadmap](#project-todo--roadmap)
     * [Docs & site](#docs--site)
     * [Quality & UX](#quality--ux)
@@ -87,7 +102,7 @@ This repo is a personal “OS setup Terminal UI App”:
   - Add a dedicated **Ubuntu profile** with an icon.
 
 - **Curated documentation**
-  - Windows & Linux workflows, TV setup, app shortcuts, and browser extensions, mirrored to a static site via `mkdocs`.
+  - Windows & Linux workflows, TV setup (Google TV + Stremio), home server (Ubuntu Server + KVM + Home Assistant), app shortcuts, and browser extensions, mirrored to a static site via `mkdocs`.
 
 
 ### Docs and websites
@@ -104,11 +119,16 @@ This repo is a personal “OS setup Terminal UI App”:
 - **TV setup docs**: Read me about it
   here: [README](docs/android-tv/readme.md) / [website](https://setup.aminedjeghri.com/tv_setup.html)
 
+- **Home server / Home Assistant docs**:
+  here: [README](docs/home-server/readme.md)
+
 - **Apps setup docs**:
-  [README](docs/apps/apps_configuration_and_shorcuts.md) / [website](https://setup.aminedjeghri.com/shortcuts_and_apps_setup.html)
+  [README](docs/apps_configuration_and_shorcuts.md) / [website](https://setup.aminedjeghri.com/shortcuts_and_apps_setup.html)
 
 - **Websites & Browser extensions docs**:
-  [README](docs/apps/awesome_websites_browser_extensions.md) / [website](https://setup.aminedjeghri.com/awesome-websites.html)
+  [README](docs/awesome_websites_browser_extensions.md) / [website](https://setup.aminedjeghri.com/awesome-websites.html)
+
+
 
 **For Windows users: Why you should use WSL2?**
 WSL2 enables users to run Linux applications and use command-line tools natively on their Windows machines.

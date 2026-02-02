@@ -2,14 +2,30 @@
 Set-StrictMode -Version Latest
 $ErrorActionPreference = 'Stop'
 
-# Ensure we run from the script directory (repo root when invoked locally)
-$ScriptDir = Split-Path -Parent $MyInvocation.MyCommand.Path
-if ($ScriptDir) { Set-Location $ScriptDir }
-
 $RepoFolderName = 'awesome-os-setup'
+
+$StartDir = (Get-Location).Path
+
+# destination for cloning
+$ScriptDir = $null
+if ($PSScriptRoot) { $ScriptDir = $PSScriptRoot }
 
 # If we are anywhere inside an existing git checkout of this repo, update it and continue from repo root.
 $git = Get-Command git -ErrorAction SilentlyContinue
+if (-not $git) {
+    $wingetPath = Ensure-Winget
+    if ($wingetPath) {
+        try {
+            Write-Host "Attempting: winget install -e --id Git.Git" -ForegroundColor DarkYellow
+            & $wingetPath install -e --id Git.Git --accept-source-agreements --accept-package-agreements
+            $git = Get-Command git -ErrorAction SilentlyContinue
+        } catch {
+            Write-Host "winget install Git.Git failed: $_" -ForegroundColor DarkYellow
+        }
+    }
+}
+
+$RepoRoot = $null
 if ($git) {
     try {
         $isInside = & $git.Source rev-parse --is-inside-work-tree 2>$null
@@ -19,7 +35,8 @@ if ($git) {
                 $leaf = Split-Path -Leaf $repoRoot
                 if ($leaf -eq $RepoFolderName) {
                     Write-Host "Detected existing git checkout: $repoRoot" -ForegroundColor Green
-                    Set-Location $repoRoot
+                    $RepoRoot = $repoRoot
+                    Set-Location $RepoRoot
                     Write-Host "Pulling (fast-forward only)..." -ForegroundColor Yellow
                     & $git.Source pull --ff-only
                 }
@@ -27,6 +44,40 @@ if ($git) {
         }
     } catch {
         Write-Host "Git repo detection/pull skipped: $_" -ForegroundColor DarkYellow
+    }
+}
+
+# If not already in a checkout, clone (or reuse) into the directory the user invoked the script from.
+if (-not $RepoRoot) {
+    $destination = Join-Path $StartDir $RepoFolderName
+    if (Test-Path $destination) {
+        if ($git) {
+            try {
+                Write-Host "Found existing folder: $destination" -ForegroundColor Green
+                Set-Location $destination
+                $isInside = & $git.Source rev-parse --is-inside-work-tree 2>$null
+                if ($LASTEXITCODE -eq 0 -and $isInside -eq 'true') {
+                    Write-Host "Pulling (fast-forward only)..." -ForegroundColor Yellow
+                    & $git.Source pull --ff-only
+                    $RepoRoot = $destination
+                } else {
+                    throw "Folder exists but is not a git repo: $destination"
+                }
+            } catch {
+                throw $_
+            }
+        } else {
+            throw "Git is required to clone/update the repo, but 'git' was not found in PATH. Install Git and re-run."
+        }
+    } else {
+        if (-not $git) {
+            throw "Git is required to clone the repo, but 'git' was not found in PATH. Install Git and re-run."
+        }
+        Write-Host "Cloning repo into: $destination" -ForegroundColor Yellow
+        Set-Location $StartDir
+        & $git.Source clone "https://github.com/AmineDjeghri/awesome-os-setup.git" $RepoFolderName
+        $RepoRoot = $destination
+        Set-Location $RepoRoot
     }
 }
 
@@ -125,7 +176,7 @@ function Invoke-Make {
     if ($resolved) { $candidates += $resolved }
     $candidates += @('make','mingw32-make','gmake')
 
-    $makefile = Join-Path $ScriptDir 'Makefile'
+    $makefile = Join-Path $RepoRoot 'Makefile'
 
     foreach ($c in $candidates) {
         try {
