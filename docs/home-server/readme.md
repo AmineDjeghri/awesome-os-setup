@@ -336,111 +336,174 @@ You should now have:
 - ✅ Cloudflare Access login in front of HA
 - ✅ Email or Google login
 - ✅ MFA
-- ✅ 24h session
+- ✅ 1 month session
 
 ---
 
-### Home Assistant Devices and integrations
-- Integrations
-- Addons
-- Other repositories like : HACS
-- Always search for an open source integration before using a proprietary app. For example TP-link, Dreame, LG ThinQ, Bosch Home connect have open sources integrations and are far better than the proprietary apps.
-- Some devices need their app to work properly or to display more functionalities. For example LG, Bosch. I always advice to install the app for these devices even if you can control them later in Home Assistant..
+### Home Assistant devices, add-ons, and integrations
 
+- **Integrations**: built into Home Assistant (Settings -> Devices & services).
+- **Add-ons (Apps)**: services that run alongside Home Assistant OS (AdguardHome,Cloudflared...etc).
+- **Repositories**: additional catalogs for community add-ons and integrations (example: HACS).
+
+Notes:
+
+- Always search for an open-source integration before using a proprietary app. For example: TP-link, Dreame, LG ThinQ, Bosch Home Connect have open-source integrations and are far better than the proprietary apps.
+- Some devices still need their vendor app for initial setup or extra features (example: LG, Bosch). It’s fine to keep the app installed even if you control the device later in Home Assistant.
 
 #### Matter over Wi-Fi
-- You don't need a matter controller for that, you just need matter devices and Home Assistant.
 
+-  TBD
 
-#### Matter Over thread and Zigbee devices
-- If the device does Matter over Thread though, you will need a Thread Border Router (TBR) on your network like the [Sonoff MG24](https://www.amazon.fr/SONOFF-Dongle-PMG24-Dongle-Plus-MG24/dp/B0FMJD288B) or Apple HomePod Mini or latest Amazon Echo devices that have a thread router capability.
+#### Matter over Thread and Zigbee devices
+
+- If the device does Matter over Thread, you will need a Thread Border Router (TBR) on your network. Personally, I recommend [Sonoff MG24](https://www.amazon.fr/SONOFF-Dongle-PMG24-Dongle-Plus-MG24/dp/B0FMJD288B) . It even supports both Thread and Zigbee and the same time.
 - Do not use Aqara M100 because it is proprietary and not well-supported in Home Assistant.
-- How to setup Sonoff MG24
-  - Attach to usb port, run `usb-devices` on ubuntu and get Vendor and  ProdID
-  - Run
-````sh
-sudo virsh attach-device haos /dev/stdin --persistent <<EOF
-<hostdev mode='subsystem' type='usb' managed='yes'>
-  <source>
-    <vendor id='0x10c4'/>
-    <product id='0xea60'/>
-  </source>
-</hostdev>
-EOF
-````
 
-or using the bus and device:
-````
-sudo virsh attach-device haos /dev/stdin --persistent <<EOF
-<hostdev mode='subsystem' type='usb' managed='yes'>
-  <source>
-    <address bus='1' device='12'/>
-  </source>
-</hostdev>
-EOF
-````
-  - Run `sudo virsh reboot haos`
-  - Go to Home Assistant -> Settings -> System -> Hardware -> All Hardware -> search for 'Sonoff'
-  - Flash it using this [tutorial](https://blog.dautek.fr/comment-installer-le-dongle-zigbee-et-thread-sonoff-mg24-sur-home-assistant)
+How to setup Sonoff MG24:
 
+ - Attach to usb port, run `usb-devices` on ubuntu and get Vendor and ProdID.
+ - Run:
 
-- If you want only thread: flash Sonoff for thread only.
-- if you want both Thread controller and Zigbee, use Multipan with the MG24. Here is a tutorial:
-  - French : https://sonoff.tech/fr-fr/blogs/news/how-to-use-multipan-in-home-assistant-with-sonoff-dongle
-  - English: https://www.sonoff.in/blog/product-guides-3/how-to-use-multipan-in-home-assistant-with-sonoff-zbdongle-e-36
-  - deactivate ZHA, and add devices: https://youtu.be/KA4XvVhyCtE?t=112
-  - if you are facing anssue with the onboarding no loading after submitting, check this : https://community.home-assistant.io/t/smlight-slzb-06-new-installation-can-not-pass-the-zigbee2mqtt-onboarding-page/908462/2
+ ```sh
+ sudo virsh attach-device haos /dev/stdin --persistent <<EOF
+ <hostdev mode='subsystem' type='usb' managed='yes'>
+   <source>
+     <vendor id='0x10c4'/>
+     <product id='0xea60'/>
+   </source>
+ </hostdev>
+ EOF
+ ```
 
+ Or using the bus and device:
 
-### Apps / Addons
-- **Adguard home** :
-  - for DNS and DHCP (do not forget to add IPV4 and IPV6 DNS servers to your router). Disable safe search.
-  - For Ip addresses names resolving : check [this section](#adguard-home-address-naming-resolution-using-the-router-freebox)
+ ```sh
+ sudo virsh attach-device haos /dev/stdin --persistent <<EOF
+ <hostdev mode='subsystem' type='usb' managed='yes'>
+   <source>
+     <address bus='1' device='12'/>
+   </source>
+ </hostdev>
+ EOF
+ ```
 
-- **Cloudflared**
-- **Donetick** Addon
-- **File Editor**
-- **Get HACS**
-- **Home Assistant Google Drive backup**: https://github.com/sabeechen/hassio-google-drive-backup
-  - Test the backup at least once to see it everything works: https://youtu.be/xXXW7sQ9rqs?t=274
-  - Backup keeps everything, even cloudflare configuration (delete the cookies if you see that the login page is not showing using your domaine name)
-  - Samba backup addon: https://github.com/thomasmauerer/hassio-addons/tree/master/samba-backup
-  - After a restoration, everything should work as expected,
-    - you need to clean the cookies on your broswer because of cloudflare.
-    - the Sonoff MG24, can be unrecoginized, just wait a bit, if it is not recognized, detach it and attach it again.
-- **Samba Share**: to access HA files from windows, macOS etc.. , this is useful for uploading backups for example: https://www.youtube.com/watch?v=Vu_oxefjd0I
-- Read about common tasks : https://www.home-assistant.io/common-tasks/os/#installing-and-using-the-samba-add-on
+ - Run `sudo virsh reboot haos`.
+ - Go to Home Assistant -> Settings -> System -> Hardware -> All Hardware -> search for `Sonoff`.
+ - Flash it using this [tutorial](https://blog.dautek.fr/comment-installer-le-dongle-zigbee-et-thread-sonoff-mg24-sur-home-assistant).
 
-- **Controllers / Routers Addons:**
-  - **Home assistant matter hub**
-    - Control devices using your voice with Alexa and Matter hub addon:
-    -  https://github.com/t0bst4r/home-assistant-matter-hub
-    - Transform any device into a Matter device
-    - Use it with Alexa and Google Home. If Alexa doesn't discover the hub, use Google Home app then use it to add the hub to alexa from Google Home.
-    - Tutorial: https://www.youtube.com/watch?v=-TMzuHFo_-g
-    - You need to add labels to entities and not devices
-  - **Matter Server**
-  - **Mosquitto broker**
-  - **Silicon Labs Multiprotocol**
-  - **SONOFF Dongle Flasher**
-  - **Zigbee2MQTT**
-- **Terminal & SSH**: https://lazyadmin.nl/smart-home/enable-ssh-home-assistant/
-- **motionEye** : https://www.home-assistant.io/integrations/motioneye/
+ If you want only thread: flash Sonoff for thread only.
 
-### Integrations:
-- **HACS** : the best is to use community integrations, they have more features.
-- **AdGuard Home**
-- **Alexa Media player** : https://www.youtube.com/watch?v=TDdREzkigIE&t
+ If you want both Thread controller and Zigbee, use Multipan with the MG24. Tutorials:
+
+ - French: https://sonoff.tech/fr-fr/blogs/news/how-to-use-multipan-in-home-assistant-with-sonoff-dongle
+ - English: https://www.sonoff.in/blog/product-guides-3/how-to-use-multipan-in-home-assistant-with-sonoff-zbdongle-e-36
+ - Deactivate ZHA, and add devices: https://youtu.be/KA4XvVhyCtE?t=112
+ - If you are facing an issue with onboarding not loading after submitting, check: https://community.home-assistant.io/t/smlight-slzb-06-new-installation-can-not-pass-the-zigbee2mqtt-onboarding-page/908462/2
+
+ ### Apps / Add-ons
+
+ - **AdGuard Home**
+   - DNS and DHCP (do not forget to add IPv4 and IPv6 DNS servers to your router). Disable safe search.
+   - For IP address name resolving, check [this section](#adguard-home-address-naming-resolution-using-the-router-freebox).
+   - Docs/repo: https://github.com/hassio-addons/addon-adguard-home
+
+ - **Cloudflared** (Cloudflare Tunnel)
+   - Repo: https://github.com/homeassistant-apps/app-cloudflared
+
+ - **Donetick** add-on
+   - Repo: https://github.com/donetick/hassio-addons
+
+ - **File editor** :
+   - Docs: https://github.com/home-assistant/addons/tree/master/configurator
+   - How to install: https://github.com/home-assistant/addons/blob/master/configurator/DOCS.md
+
+ - **HACS** ("Get HACS") : https://www.hacs.xyz/
+
+ - **Home Assistant Google Drive Backup**
+   - Repo: https://github.com/sabeechen/hassio-google-drive-backup
+   - Backup everything except media.
+   - Test the backup at least once: https://youtu.be/xXXW7sQ9rqs?t=274
+   - Backup keeps everything, even addons configuration (delete cookies if the login page is not showing on your domain name).
+   - Samba backup add-on: https://github.com/thomasmauerer/hassio-addons/tree/master/samba-backup
+   - After a restoration, everything should work as expected:
+     - Clean cookies in your browser because of Cloudflare.
+     - The Sonoff MG24 can be unrecognized: wait a bit; if still not recognized, detach it and attach it again.
+
+ - **Samba Share**
+   - Docs: https://github.com/home-assistant/addons/tree/master/samba
+   - How to install: https://github.com/home-assistant/addons/blob/master/samba/DOCS.md
+   - Useful video example: https://www.youtube.com/watch?v=Vu_oxefjd0I
+   - Common tasks: https://www.home-assistant.io/common-tasks/os/#installing-and-using-the-samba-add-on
+
+ - **Terminal & SSH**
+   - Guide: https://lazyadmin.nl/smart-home/enable-ssh-home-assistant/
+
+ - **motionEye**
+   - Integration docs: https://www.home-assistant.io/integrations/motioneye/
+
+ #### Controllers / routers add-ons
+
+ - **Home Assistant Matter Hub**
+   - Repo: https://github.com/t0bst4r/home-assistant-matter-hub
+   - Tutorial: https://www.youtube.com/watch?v=-TMzuHFo_-g
+   - Notes:
+     - Transform any device into a Matter device.
+     - Use it with Alexa and Google Home. If Alexa doesn't discover the hub, use Google Home app, then add it to Alexa from Google Home.
+     - You need to add labels to entities (not devices).
+
+ - **Matter Server**
+
+ - **Mosquitto broker**
+
+ - **Silicon Labs Multiprotocol**
+
+ - **Silicon Labs Flasher** (useful for multiprotocol / firmware)
+   - Official add-on docs: https://github.com/home-assistant/addons/tree/master/silabs_flasher
+
+ - **SONOFF Dongle Flasher**
+
+ - **Zigbee2MQTT**
+
+ ### Integrations
+
+ - **HACS**
+   - The best is to use community integrations when available; they often have more features.
+ - **AdGuard Home**
+   - Add-on repo (service): https://github.com/hassio-addons/addon-adguard-home
+
+ - **Alexa Media Player**
+   - Repo: https://github.com/alandtse/alexa_media_player
+   - Video guide you referenced: https://www.youtube.com/watch?v=TDdREzkigIE&t
+   - Docs: https://www.home-assistant.io/integrations/alexa_media_player/
+
 - **Android TV Remote**
+
 - **Matter**
+
 - **Thread**
-- **motionEye** : https://www.home-assistant.io/integrations/motioneye/
-- **Dreame vaccum**:
-  - Dreame : : "dreame vacuum home assistant" https://share.google/frXsgWNgnjGPGeMQM
-  - Use version >2 , it supports multiple account (dreamehome, xiaomi etc..)
-- **LG**: Better use the integration from HACS
-- Other integrations : LG, FReebox, Freemobile, Dreame, Home Connect Alt
-- Volets Profalux Zigbee: https://perso.aquilenet.fr/~sven337/francais/2023/06/02/Appairage-de-volets-Profalux-Zigbee.html
+
+ - **motionEye**
+   - https://www.home-assistant.io/integrations/motioneye/
+
+ - **Dreame vacuum**
+   - Community integration repo: https://github.com/Tasshack/dreame-vacuum
+   - Do not use the version 1. Use version > 2 (supports multiple accounts: dreamehome, xiaomi, etc.).
+
+ - **LG**
+   - Better use the integration from HACS.
+   - Common community integration: https://github.com/ollo69/ha-smartthinq-sensors
+   - Docs: https://www.home-assistant.io/integrations/lg/
+ - ** Home Connect Alt**
+   - https://github.com/ekutner/home-connect-hass
+
+- Other integrations: Freebox, Freemobile
+
+  - Freebox: https://www.home-assistant.io/integrations/freebox/
+  - Freemobile: https://www.home-assistant.io/integrations/freemobile/
+
+ - Volets Profalux Zigbee:
+   - https://perso.aquilenet.fr/~sven337/francais/2023/06/02/Appairage-de-volets-Profalux-Zigbee.html
 
 ### Automation & scenes
   - 🤖 Automation = When something happens → do something
