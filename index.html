@@ -979,7 +979,7 @@
   <span class="md-ellipsis">
     
   
-    Home assistant
+    Home server
   
 
     
@@ -995,7 +995,7 @@
             <span class="md-nav__icon md-icon"></span>
             
   
-    Home assistant
+    Home server
   
 
           </label>
@@ -1008,14 +1008,14 @@
   
   
     <li class="md-nav__item">
-      <a href="docs/home-assistant/readme/" class="md-nav__link">
+      <a href="docs/home-server/readme/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    laptop as a server
+    Laptop as a server
   
 
     
@@ -2642,8 +2642,19 @@
 </tr>
 </tbody>
 </table>
-<p>The image you are looking at is a screenshot of a WSL Ubuntu terminal in Windows 11. The top bar is an app called GlazeWM that is a tiling WM that lets you organize windows and adjust their layout on the fly by using keyboard-driven commands.
-You can follow this repository to get a similar setup on Windows11, Linux or both.</p>
+<p>An opinionated setup <strong>app + documentation hub</strong> for building a fast, clean, and consistent environment across <strong>Windows</strong>, <strong>Linux</strong>, <strong>macOS</strong>, <strong>WSL2</strong>, and even your <strong>living room stack</strong> (<strong>Google TV</strong> + <strong>Stremio</strong>) and <strong>home server</strong> (<strong>Home Assistant</strong>).</p>
+<p>Improve your UX and productivity with a reproducible setup for:</p>
+<ul>
+<li>Development tools and package management</li>
+<li>WSL2 workflows</li>
+<li>GPU drivers</li>
+<li>Terminal UX (Zsh/Oh-My-Zsh/Powerlevel10k)</li>
+<li>Window tiling management</li>
+<li>Home automation (Home Assistant)</li>
+<li>TV setup (Google TV + Stremio)</li>
+</ul>
+<p>The image above is a screenshot of a WSL Ubuntu terminal in Windows 11. The top bar is an app called GlazeWM (a tiling window manager) that lets you organize windows and adjust their layout on the fly using keyboard-driven commands.</p>
+<p>You can follow this repository to get a similar setup on Windows 11, Linux, macOS, or a hybrid workflow (Windows + WSL).</p>
 <p><img alt="Windows 11" src="https://img.shields.io/badge/Windows%2011-%230079d5.svg?style=for-the-badge&amp;logo=Windows%2011&amp;logoColor=white" />
 <img alt="macOS" src="https://img.shields.io/badge/mac%20os-000000?style=for-the-badge&amp;logo=macos&amp;logoColor=F0F0F0" />
 <a href="https://www.microsoft.com/en-in/windows"><img alt="Linux" src="https://img.shields.io/badge/-Linux-grey?style=for-the-badge&amp;logo=linux" /></a>
@@ -2661,6 +2672,8 @@ You can follow this repository to get a similar setup on Windows11, Linux or bot
 <li><a href="#what-is-this-repo">What is this repo?</a><ul>
 <li><a href="#features--benefits">Features &amp; Benefits</a></li>
 <li><a href="#docs-and-websites">Docs and websites</a></li>
+<li><a href="#home-server-ubuntu-server--kvm--home-assistant">Home server (Ubuntu Server + KVM + Home Assistant)</a></li>
+<li><a href="#tv-setup-google-tv--stremio">TV setup (Google TV + Stremio)</a></li>
 </ul>
 </li>
 <li><a href="#project-todo--roadmap">Project TODO / Roadmap</a><ul>
@@ -2738,7 +2751,7 @@ You can follow this repository to get a similar setup on Windows11, Linux or bot
 <li>
 <p><strong>Curated documentation</strong></p>
 </li>
-<li>Windows &amp; Linux workflows, TV setup, app shortcuts, and browser extensions, mirrored to a static site via <code>mkdocs</code>.</li>
+<li>Windows &amp; Linux workflows, TV setup (Google TV + Stremio), home server (Ubuntu Server + KVM + Home Assistant), app shortcuts, and browser extensions, mirrored to a static site via <code>mkdocs</code>.</li>
 </ul>
 <h3 id="docs-and-websites">Docs and websites</h3>
 <ul>
@@ -2759,12 +2772,16 @@ You can follow this repository to get a similar setup on Windows11, Linux or bot
   here: <a href="docs/android-tv/readme/">README</a> / <a href="https://setup.aminedjeghri.com/tv_setup.html">website</a></p>
 </li>
 <li>
+<p><strong>Home server / Home Assistant docs</strong>:
+  here: <a href="docs/home-server/readme/">README</a></p>
+</li>
+<li>
 <p><strong>Apps setup docs</strong>:
-  <a href="docs/apps/apps_configuration_and_shorcuts/">README</a> / <a href="https://setup.aminedjeghri.com/shortcuts_and_apps_setup.html">website</a></p>
+  <a href="docs/apps_configuration_and_shorcuts/">README</a> / <a href="https://setup.aminedjeghri.com/shortcuts_and_apps_setup.html">website</a></p>
 </li>
 <li>
 <p><strong>Websites &amp; Browser extensions docs</strong>:
-  <a href="docs/apps/awesome_websites_browser_extensions/">README</a> / <a href="https://setup.aminedjeghri.com/awesome-websites.html">website</a></p>
+  <a href="docs/awesome_websites_browser_extensions/">README</a> / <a href="https://setup.aminedjeghri.com/awesome-websites.html">website</a></p>
 </li>
 </ul>
 <p><strong>For Windows users: Why you should use WSL2?</strong>
