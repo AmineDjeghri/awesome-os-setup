@@ -2631,14 +2631,12 @@
 <table>
 <thead>
 <tr>
-<th>Windows WSL Terminal</th>
-<th>Desktop with terminals</th>
+<th>App Showcase</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><img alt="Windows WSL Terminal" src="docs/images/windows_wsl_terminal.png" /></td>
-<td><img alt="Desktop with terminals" src="docs/images/desktop_with_terminals.jpeg" /></td>
+<td><img alt="Desktop with terminals" src="docs/images/app_showcase.gif" /></td>
 </tr>
 </tbody>
 </table>
@@ -2653,8 +2651,8 @@
 <li>Home automation (Home Assistant)</li>
 <li>TV setup (Google TV + Stremio)</li>
 </ul>
-<p>The image above is a screenshot of a WSL Ubuntu terminal in Windows 11. The top bar is an app called GlazeWM (a tiling window manager) that lets you organize windows and adjust their layout on the fly using keyboard-driven commands.</p>
-<p>You can follow this repository to get a similar setup on Windows 11, Linux, macOS, or a hybrid workflow (Windows + WSL).</p>
+<p>The image above is the app that runs on your terminal, it supports multiple OSes (Windows, Linux, macOS, WSL2) and can be used with a mouse to click on the buttons.
+You can follow this repository to get a similar setup on Windows 11, Linux, macOS, or a hybrid workflow (Windows + WSL).</p>
 <p><img alt="Windows 11" src="https://img.shields.io/badge/Windows%2011-%230079d5.svg?style=for-the-badge&amp;logo=Windows%2011&amp;logoColor=white" />
 <img alt="macOS" src="https://img.shields.io/badge/mac%20os-000000?style=for-the-badge&amp;logo=macos&amp;logoColor=F0F0F0" />
 <a href="https://www.microsoft.com/en-in/windows"><img alt="Linux" src="https://img.shields.io/badge/-Linux-grey?style=for-the-badge&amp;logo=linux" /></a>
@@ -2672,8 +2670,6 @@
 <li><a href="#what-is-this-repo">What is this repo?</a><ul>
 <li><a href="#features--benefits">Features &amp; Benefits</a></li>
 <li><a href="#docs-and-websites">Docs and websites</a></li>
-<li><a href="#home-server-ubuntu-server--kvm--home-assistant">Home server (Ubuntu Server + KVM + Home Assistant)</a></li>
-<li><a href="#tv-setup-google-tv--stremio">TV setup (Google TV + Stremio)</a></li>
 </ul>
 </li>
 <li><a href="#project-todo--roadmap">Project TODO / Roadmap</a><ul>
@@ -2694,8 +2690,13 @@
 <p>If you are using a headless server (ubuntu-server for example), prefer to use a client with a GUI and connect to the server via SSH so you can copy-paste the commands and use Awesome-OS with a mouse.</p>
 <h4 id="windows-11">Windows 11</h4>
 <p>Get started with one command (run it in PowerShell as administrator):</p>
-<pre><code class="language-powershell">iex ((New-Object System.Net.WebClient).DownloadString('https://raw.githubusercontent.com/AmineDjeghri/awesome-os-setup/main/install_windows.ps1'))
+<pre><code class="language-powershell">$u='https://raw.githubusercontent.com/AmineDjeghri/awesome-os-setup/main/install_windows.ps1'; $p=&quot;$env:TEMP\install_windows.ps1&quot;; iwr $u -UseBasicParsing -OutFile $p; powershell -ExecutionPolicy Bypass -File $p
 </code></pre>
+<p>Run it from the directory where you want the <code>awesome-os-setup</code> folder to be created. I the repertory already exists, it will update it.</p>
+<blockquote>
+<p>[!TIP]
+You can fork this repository and change the apps/packages you need so it reflects what you want to install in your environment.</p>
+</blockquote>
 <h2 id="what-is-this-repo">What is this repo?</h2>
 <p>This repo is a personal “OS setup Terminal UI App”:</p>
 <h3 id="features-benefits">Features &amp; Benefits</h3>
@@ -2822,6 +2823,7 @@ regardless of their workplace constraints.</p>
 <p>Based on your needs, you can choose your OS.</p>
 <h2 id="project-todo-roadmap">Project TODO / Roadmap</h2>
 <ul>
+<li>[ ] add missing apps</li>
 <li>[ ] Some dotfiles integration (GlazeWM, aerospace, raycast...)</li>
 <li>[ ] Chezmoi integration</li>
 </ul>
