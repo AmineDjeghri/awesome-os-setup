@@ -2,9 +2,9 @@
 
 ![Logo](docs/images/logo.png)
 
-| Windows WSL Terminal                                          | Desktop with terminals                                             |
-|---------------------------------------------------------------|--------------------------------------------------------------------|
-| ![Windows WSL Terminal](docs/images/windows_wsl_terminal.png) | ![Desktop with terminals](docs/images/desktop_with_terminals.jpeg) |
+| App Showcase                                            |
+|---------------------------------------------------------|
+| ![Desktop with terminals](docs/images/app_showcase.gif) |
 
 An opinionated setup **app + documentation hub** for building a fast, clean, and consistent environment across **Windows**, **Linux**, **macOS**, **WSL2**, and even your **living room stack** (**Google TV** + **Stremio**) and **home server** (**Home Assistant**).
 
@@ -18,8 +18,8 @@ Improve your UX and productivity with a reproducible setup for:
 - Home automation (Home Assistant)
 - TV setup (Google TV + Stremio)
 
-The image above is a screenshot of a WSL Ubuntu terminal in Windows 11. The top bar is an app called GlazeWM (a tiling window manager) that lets you organize windows and adjust their layout on the fly using keyboard-driven commands.
 
+The image above is the app that runs on your terminal, it supports multiple OSes (Windows, Linux, macOS, WSL2) and can be used with a mouse to click on the buttons.
 You can follow this repository to get a similar setup on Windows 11, Linux, macOS, or a hybrid workflow (Windows + WSL).
 
 
@@ -38,8 +38,6 @@ You can follow this repository to get a similar setup on Windows 11, Linux, macO
   * [What is this repo?](#what-is-this-repo)
     * [Features & Benefits](#features--benefits)
     * [Docs and websites](#docs-and-websites)
-    * [Home server (Ubuntu Server + KVM + Home Assistant)](#home-server-ubuntu-server--kvm--home-assistant)
-    * [TV setup (Google TV + Stremio)](#tv-setup-google-tv--stremio)
   * [Project TODO / Roadmap](#project-todo--roadmap)
     * [Docs & site](#docs--site)
     * [Quality & UX](#quality--ux)
@@ -62,8 +60,13 @@ If you are using a headless server (ubuntu-server for example), prefer to use a 
 #### Windows 11
 Get started with one command (run it in PowerShell as administrator):
 ```powershell
-iex ((New-Object System.Net.WebClient).DownloadString('https://raw.githubusercontent.com/AmineDjeghri/awesome-os-setup/main/install_windows.ps1'))
+$u='https://raw.githubusercontent.com/AmineDjeghri/awesome-os-setup/main/install_windows.ps1'; $p="$env:TEMP\install_windows.ps1"; iwr $u -UseBasicParsing -OutFile $p; powershell -ExecutionPolicy Bypass -File $p
 ```
+
+Run it from the directory where you want the `awesome-os-setup` folder to be created. I the repertory already exists, it will update it.
+
+> [!TIP]
+> You can fork this repository and change the apps/packages you need so it reflects what you want to install in your environment.
 
 ## What is this repo?
 
@@ -151,7 +154,7 @@ regardless of their workplace constraints.
 Based on your needs, you can choose your OS.
 
 ## Project TODO / Roadmap
-
+- [ ] add missing apps
 - [ ] Some dotfiles integration (GlazeWM, aerospace, raycast...)
 - [ ] Chezmoi integration
 
