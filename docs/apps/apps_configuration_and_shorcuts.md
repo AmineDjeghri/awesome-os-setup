@@ -90,16 +90,28 @@ Download [Windows store](https://apps.microsoft.com/detail/XP89DCGQ3K6VLD?hl). [
 - Install the community plugins: TBD
 - Install the community themes: TBD
 - Sync: use Google Drive ou GitHub to sync the repositories remotely.
-- Git :
-- if you are on Windows. Install git on windows (PowerShell: 'winget install git.git').
-- Create an ssh key (go to your ssh folder on windows) and add it to git (if you have wsl, you can copy the ssh key from
-  one to another)
-- add global username and email with git config
+- Git : always use the git clone with HTTPS and not SSH. Use a classic token and not the password.
+- Run ``git config --global credential.helper store`` to save the credentials for the user after the first push/pull.
+- if you are on Windows. Install git on Windows (PowerShell: 'winget install git.git').
 - You can configure the git plugin in settings to automatically push and pull every x minutes.
 - The source control panel can be found on the left panel. Maybe need to change the size of the left panel to view it
 - if you face a problem with dubious ownership of repository, run this
   command `git config --global --add safe.directory '*'`
-- if you face a problem with fatal: could not read Username for 'https://github.com'. go to the folder from a terminal and run git pull. If you are on MacOS, you need to use a token instead of writing your password.
+- if you face a problem with fatal: could not read Username for 'https://github.com'. go to the folder from a terminal and run git pull.
+
+- Sync files with iOS using iCloud:
+  * Download obsidian on your mobile, and check if the obsidian folder is available in iCloud in the Files app .
+  * Download the obsidian git repository in your phone (either with your phone or a computer) and place it in the obsidian folder in iCloud.
+  * Open Obsidian app, it should show you the discovered vaults (your GitHub repo ), open it.
+  * Wait a little bit then reload the obsidian app if the community plugins aren't visible.
+  * After entering the repo, git will ask you a remote URL and you might get a lot of popups about a problem with git (ssh, remote url, etc..):
+    * Using Obsidian mobile app, inside your vault, open the command palette, and search for 'git delete remote'. And delete any if present.
+    * Search in the command palette for ``git edit remote`` and add the name of the remote which is 'origin' and the https url of your repo.
+    * If you don't know how to do it, check the equivalent on Obsidian Desktop app. The mobile app is a bit tricky to set up the name and the url of the remote.
+  * Configure the parameters of the git plugin in obsidian and put your username, token, email... configure also a commit message to specify that the changes where from your phone.
+  * Make sure that the theme is the same as the one on your computer. Since sometimes Obsidian on your mobile forces change the theme. Usually the files '.obsidian/app.json' and '.obsidian/appearance.json' will change and a copy of them is made named ``appearance_2.json`` and ``app_2.json`` . Use the copies to revert the changes.
+
+
 ## 1.7. DisplayFusion (Windows only & paid)
 
 - DisplayFusion is a program that will help you to manage your multiple monitors. It allows you to create different
