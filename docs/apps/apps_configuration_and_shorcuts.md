@@ -9,8 +9,9 @@ Apps configuration and shortcuts
   * [1.2. GlazeWM (windows only)](#12-glazewm-windows-only)
   * [1.3. PowerToys (windows only)](#13-powertoys-windows-only)
   * [1.4. Windows Terminal (windows only)](#14-windows-terminal-windows-only)
-  * [1.5. Sublime Text 4 (All platforms)](#15-sublime-text-4-all-platforms)
+  * [1.5. ZED (All platforms)](#15-zed-all-platforms)
   * [1.6. Obsidian (All platforms)](#16-obsidian-all-platforms)
+    * [Sync Obsidian vaults with iOS:](#sync-obsidian-vaults-with-ios)
   * [1.7. DisplayFusion (Windows only & paid)](#17-displayfusion-windows-only--paid)
   * [1.8. Files](#18-files)
   * [1.9. PyCharm (All platforms)](#19-pycharm-all-platforms)
@@ -23,7 +24,6 @@ Apps configuration and shortcuts
   * [1.11. Google colab:](#111-google-colab)
   * [1.12. Powerpoint:](#112-powerpoint)
   * [1.13. Streamio (Streaming on all platforms)](#113-streamio-streaming-on-all-platforms)
-    * [1.13.1. Installation:](#1131-installation)
   * [1.14. WinToys](#114-wintoys)
 <!-- TOC -->
 
@@ -99,7 +99,7 @@ Download [Windows store](https://apps.microsoft.com/detail/XP89DCGQ3K6VLD?hl). [
   command `git config --global --add safe.directory '*'`
 - if you face a problem with fatal: could not read Username for 'https://github.com'. go to the folder from a terminal and run git pull.
 
-- Sync files with iOS using iCloud:
+### Sync Obsidian vaults with iOS:
   * Download obsidian on your mobile, and check if the obsidian folder is available in iCloud in the Files app .
   * Download the obsidian git repository in your phone (either with your phone or a computer) and place it in the obsidian folder in iCloud.
   * Open Obsidian app, it should show you the discovered vaults (your GitHub repo ), open it.
