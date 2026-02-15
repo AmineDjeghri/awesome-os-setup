@@ -445,8 +445,8 @@ How to setup Sonoff MG24:
  #### Controllers / routers add-ons
 
  - **Home Assistant Matter Hub**
-   - Repo: https://github.com/t0bst4r/home-assistant-matter-hub
-   - Tutorial: https://www.youtube.com/watch?v=-TMzuHFo_-g
+   - Repo: https://github.com/RiDDiX/home-assistant-matter-hub
+   - Tutorial (old version but should work): https://www.youtube.com/watch?v=-TMzuHFo_-g
    - Notes:
      - Transform any device into a Matter device.
      - Use it with Alexa and Google Home. If Alexa doesn't discover the hub, use Google Home app, then add it to Alexa from Google Home.
