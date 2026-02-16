@@ -24,16 +24,16 @@ dev = [
     "pre-commit == 4.5.1",
     "pytest == 9.0.2",
     "pytest-asyncio == 1.3.0",
-    "ruff==0.14.13",
-    "ty==0.0.12"
+    "ruff==0.15.1",
+    "ty==0.0.17"
 ]
 docs = [
     "mkdocs == 1.6.1",
     "mkdocs-material==9.7.1",
-    "mkdocstrings==0.30.1",
+    "mkdocstrings==1.0.3",
     "mkdocs-mermaid2-plugin==1.2.3",
     "mkdocs-gen-files==0.6.0",
-    "mkdocstrings-python==2.0.1",
+    "mkdocstrings-python==2.0.2",
     "mkdocs-same-dir==0.1.3",
     "mkdocs-exclude==1.0.2"
 ]
