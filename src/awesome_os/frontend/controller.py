@@ -210,7 +210,12 @@ class AppController:
             return
 
         ts = datetime.now().strftime("%Y%m%d_%H%M%S")
-        default_backup = target.with_name(f"{target.name}_{ts}_backup_{target.suffix}")
+        # Construct backup name: original_name_timestamp_backup.ext (or just original_name_timestamp_backup)
+        if target.suffix:
+            stem = target.stem
+            default_backup = target.with_name(f"{stem}_{ts}_backup{target.suffix}")
+        else:
+            default_backup = target.with_name(f"{target.name}_{ts}_backup")
 
         def _run_action_with_backup() -> None:
             try:

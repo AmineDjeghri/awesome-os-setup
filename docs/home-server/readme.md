@@ -1,4 +1,38 @@
-# Laptop as a server
+# Home server (Ubuntu Server, KVM, Home Assistant OS)
+
+<!-- TOC -->
+* [Home server (Ubuntu Server, KVM, Home Assistant OS)](#home-server-ubuntu-server-kvm-home-assistant-os)
+  * [Ubuntu Server 24.04](#ubuntu-server-2404)
+    * [Setup](#setup)
+    * [First checks / updates](#first-checks--updates)
+    * [Lid closed (Laptop)](#lid-closed-laptop)
+  * [Home Assistant](#home-assistant)
+    * [Virtualization](#virtualization)
+    * [Install KVM (Kernel-based Virtual Machine) and libvirt](#install-kvm-kernel-based-virtual-machine-and-libvirt)
+      * [Create a bridge configuration](#create-a-bridge-configuration)
+    * [Home Assistant OS in a VM](#home-assistant-os-in-a-vm)
+      * [inside HA in your browser or mobile app:](#inside-ha-in-your-browser-or-mobile-app)
+    * [2. Accessing HAOS from outside your local network  — Cloudflare Tunnel Setup](#2-accessing-haos-from-outside-your-local-network--cloudflare-tunnel-setup)
+        * [1️⃣ Basic Information (Top Section)](#1-basic-information-top-section)
+        * [2️⃣ Add Public Hostname (IMPORTANT)](#2-add-public-hostname-important)
+        * [3️⃣ Browser Rendering Settings](#3-browser-rendering-settings)
+        * [4️⃣ Policies (MOST IMPORTANT PART)](#4-policies-most-important-part)
+        * [5️⃣ (Optional) Add a Second Policy – Emergency Lockdown](#5-optional-add-a-second-policy--emergency-lockdown)
+        * [6️⃣ Login Methods](#6-login-methods)
+        * [Go back to the previous page to see the policies](#go-back-to-the-previous-page-to-see-the-policies)
+        * [7️⃣ Save the Application ✅](#7-save-the-application-)
+      * [Activate MFA](#activate-mfa)
+    * [Home Assistant devices, add-ons, and integrations](#home-assistant-devices-add-ons-and-integrations)
+      * [Matter over Wi-Fi](#matter-over-wi-fi)
+      * [Matter over Thread and Zigbee devices](#matter-over-thread-and-zigbee-devices)
+    * [Apps / Add-ons](#apps--add-ons)
+      * [Controllers / routers add-ons](#controllers--routers-add-ons)
+    * [Integrations](#integrations)
+    * [Automation & scenes](#automation--scenes)
+  * [AdGuard Home address naming resolution using the router (Freebox)](#adguard-home-address-naming-resolution-using-the-router-freebox)
+* [todo:](#todo)
+<!-- TOC -->
+
 
 ## Ubuntu Server 24.04
 
@@ -469,6 +503,8 @@ How to setup Sonoff MG24:
 
  - **HACS**
    - The best is to use community integrations when available; they often have more features.
+ - **Mushroom cards** : https://github.com/piitaya/lovelace-mushroom#installation
+ - **Auto entities** : https://github.com/thomasloven/lovelace-auto-entities
  - **AdGuard Home**
    - Add-on repo (service): https://github.com/hassio-addons/addon-adguard-home
 
@@ -505,14 +541,17 @@ How to setup Sonoff MG24:
  - Volets Profalux Zigbee:
    - https://perso.aquilenet.fr/~sven337/francais/2023/06/02/Appairage-de-volets-Profalux-Zigbee.html
 
+ - HA Label State: https://github.com/andrew-codechimp/HA-Label-State
+
 ### Automation & scenes
   - 🤖 Automation = When something happens → do something
     - Always use entities instead of devices. Entities have unique names.
   - 🎬 Scene = Set things to a predefined state. A scene is just a snapshot of states.
   - 👉 Automations trigger scenes
   - When you add an entity, you can select a default behavior (toggle , show info, etc..) . For example a camera move down button, the default behavior is to ``show more info``, but you can change it to ``toggle`` so when you press that button, it will move the camera.
-
-
+  - Show offline devices and addons : Add a filter card that shows 'not_home' and 'unavailable' entities and addons. You need to go to an addon in devices, and enable the 'running' entity to be able to use it in the card.
+  - when you rename a device, you can auto recreate the IDs.
+  - Usee labels to group entities. For example, a 'entity status' label and 'addon status' label to detect offline devices and addons without the need to add each device in the condition.
 
 ## AdGuard Home address naming resolution using the router (Freebox)
 - The following will show you how to get the names of the devices in AdGuard home using your router (this example is for Freebox API).

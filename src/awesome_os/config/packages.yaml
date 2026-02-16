@@ -15,11 +15,11 @@ packages:
       apps:
         - code
   darwin:
-    brews:
+    brew:
       core:
         - git
         - zsh
-    casks:
+    cask:
       apps:
         - brave-browser
         - raycast
