@@ -833,7 +833,7 @@
   <span class="md-ellipsis">
     
   
-    Laptop as a server
+    Home server (Ubuntu Server, KVM, Home Assistant OS)
   
 
     
@@ -2896,7 +2896,12 @@
 <span class="normal">227</span>
 <span class="normal">228</span>
 <span class="normal">229</span>
-<span class="normal">230</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span><span class="w"> </span><span class="nc">AppController</span><span class="p">:</span>
+<span class="normal">230</span>
+<span class="normal">231</span>
+<span class="normal">232</span>
+<span class="normal">233</span>
+<span class="normal">234</span>
+<span class="normal">235</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span><span class="w"> </span><span class="nc">AppController</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Controller for handling UI events and dispatching background work.</span>
 
 <span class="sd">    The controller is responsible for:</span>
@@ -3084,7 +3089,12 @@
             <span class="k">return</span>
 
         <span class="n">ts</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s2">&quot;%Y%m</span><span class="si">%d</span><span class="s2">_%H%M%S&quot;</span><span class="p">)</span>
-        <span class="n">default_backup</span> <span class="o">=</span> <span class="n">target</span><span class="o">.</span><span class="n">with_name</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">target</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">_</span><span class="si">{</span><span class="n">ts</span><span class="si">}</span><span class="s2">_backup_</span><span class="si">{</span><span class="n">target</span><span class="o">.</span><span class="n">suffix</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="c1"># Construct backup name: original_name_timestamp_backup.ext (or just original_name_timestamp_backup)</span>
+        <span class="k">if</span> <span class="n">target</span><span class="o">.</span><span class="n">suffix</span><span class="p">:</span>
+            <span class="n">stem</span> <span class="o">=</span> <span class="n">target</span><span class="o">.</span><span class="n">stem</span>
+            <span class="n">default_backup</span> <span class="o">=</span> <span class="n">target</span><span class="o">.</span><span class="n">with_name</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">stem</span><span class="si">}</span><span class="s2">_</span><span class="si">{</span><span class="n">ts</span><span class="si">}</span><span class="s2">_backup</span><span class="si">{</span><span class="n">target</span><span class="o">.</span><span class="n">suffix</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">default_backup</span> <span class="o">=</span> <span class="n">target</span><span class="o">.</span><span class="n">with_name</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">target</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">_</span><span class="si">{</span><span class="n">ts</span><span class="si">}</span><span class="s2">_backup&quot;</span><span class="p">)</span>
 
         <span class="k">def</span><span class="w"> </span><span class="nf">_run_action_with_backup</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
             <span class="k">try</span><span class="p">:</span>

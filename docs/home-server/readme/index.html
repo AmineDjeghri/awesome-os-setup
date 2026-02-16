@@ -27,7 +27,7 @@
     
     
       
-        <title>Laptop as a server - Stremio Addon Python Template</title>
+        <title>Home server (Ubuntu Server, KVM, Home Assistant OS) - Stremio Addon Python Template</title>
       
     
     
@@ -80,7 +80,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#laptop-as-a-server" class="md-skip">
+        <a href="#home-server-ubuntu-server-kvm-home-assistant-os" class="md-skip">
           Skip to content
         </a>
       
@@ -116,7 +116,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Laptop as a server
+              Home server (Ubuntu Server, KVM, Home Assistant OS)
             
           </span>
         </div>
@@ -847,7 +847,7 @@
   <span class="md-ellipsis">
     
   
-    Laptop as a server
+    Home server (Ubuntu Server, KVM, Home Assistant OS)
   
 
     
@@ -865,7 +865,7 @@
   <span class="md-ellipsis">
     
   
-    Laptop as a server
+    Home server (Ubuntu Server, KVM, Home Assistant OS)
   
 
     
@@ -3059,7 +3059,48 @@
 
 
 
-<h1 id="laptop-as-a-server">Laptop as a server</h1>
+<h1 id="home-server-ubuntu-server-kvm-home-assistant-os">Home server (Ubuntu Server, KVM, Home Assistant OS)</h1>
+<!-- TOC -->
+<ul>
+<li><a href="#home-server-ubuntu-server-kvm-home-assistant-os">Home server (Ubuntu Server, KVM, Home Assistant OS)</a></li>
+<li><a href="#ubuntu-server-2404">Ubuntu Server 24.04</a><ul>
+<li><a href="#setup">Setup</a></li>
+<li><a href="#first-checks--updates">First checks / updates</a></li>
+<li><a href="#lid-closed-laptop">Lid closed (Laptop)</a></li>
+</ul>
+</li>
+<li><a href="#home-assistant">Home Assistant</a><ul>
+<li><a href="#virtualization">Virtualization</a></li>
+<li><a href="#install-kvm-kernel-based-virtual-machine-and-libvirt">Install KVM (Kernel-based Virtual Machine) and libvirt</a></li>
+<li><a href="#create-a-bridge-configuration">Create a bridge configuration</a></li>
+<li><a href="#home-assistant-os-in-a-vm">Home Assistant OS in a VM</a></li>
+<li><a href="#inside-ha-in-your-browser-or-mobile-app">inside HA in your browser or mobile app:</a></li>
+<li><a href="#2-accessing-haos-from-outside-your-local-network--cloudflare-tunnel-setup">2. Accessing HAOS from outside your local network  — Cloudflare Tunnel Setup</a><ul>
+<li><a href="#1-basic-information-top-section">1️⃣ Basic Information (Top Section)</a></li>
+<li><a href="#2-add-public-hostname-important">2️⃣ Add Public Hostname (IMPORTANT)</a></li>
+<li><a href="#3-browser-rendering-settings">3️⃣ Browser Rendering Settings</a></li>
+<li><a href="#4-policies-most-important-part">4️⃣ Policies (MOST IMPORTANT PART)</a></li>
+<li><a href="#5-optional-add-a-second-policy--emergency-lockdown">5️⃣ (Optional) Add a Second Policy – Emergency Lockdown</a></li>
+<li><a href="#6-login-methods">6️⃣ Login Methods</a></li>
+<li><a href="#go-back-to-the-previous-page-to-see-the-policies">Go back to the previous page to see the policies</a></li>
+<li><a href="#7-save-the-application-">7️⃣ Save the Application ✅</a></li>
+</ul>
+</li>
+<li><a href="#activate-mfa">Activate MFA</a></li>
+<li><a href="#home-assistant-devices-add-ons-and-integrations">Home Assistant devices, add-ons, and integrations</a></li>
+<li><a href="#matter-over-wi-fi">Matter over Wi-Fi</a></li>
+<li><a href="#matter-over-thread-and-zigbee-devices">Matter over Thread and Zigbee devices</a></li>
+<li><a href="#apps--add-ons">Apps / Add-ons</a></li>
+<li><a href="#controllers--routers-add-ons">Controllers / routers add-ons</a></li>
+<li><a href="#integrations">Integrations</a></li>
+<li><a href="#automation--scenes">Automation &amp; scenes</a></li>
+</ul>
+</li>
+<li><a href="#adguard-home-address-naming-resolution-using-the-router-freebox">AdGuard Home address naming resolution using the router (Freebox)</a></li>
+<li><a href="#todo">todo:</a></li>
+</ul>
+<!-- TOC -->
+
 <h2 id="ubuntu-server-2404">Ubuntu Server 24.04</h2>
 <h3 id="setup">Setup</h3>
 <ul>
@@ -3573,6 +3614,8 @@ Go to  Cloudflare Zero Trust -&gt; Access Controls -&gt; Applications -&gt; Self
 <ul>
 <li><strong>HACS</strong></li>
 <li>The best is to use community integrations when available; they often have more features.</li>
+<li><strong>Mushroom cards</strong> : https://github.com/piitaya/lovelace-mushroom#installation</li>
+<li><strong>Auto entities</strong> : https://github.com/thomasloven/lovelace-auto-entities</li>
 <li><strong>AdGuard Home</strong></li>
 <li>
 <p>Add-on repo (service): https://github.com/hassio-addons/addon-adguard-home</p>
@@ -3629,7 +3672,12 @@ Go to  Cloudflare Zero Trust -&gt; Access Controls -&gt; Applications -&gt; Self
 <li>
 <p>Volets Profalux Zigbee:</p>
 </li>
-<li>https://perso.aquilenet.fr/~sven337/francais/2023/06/02/Appairage-de-volets-Profalux-Zigbee.html</li>
+<li>
+<p>https://perso.aquilenet.fr/~sven337/francais/2023/06/02/Appairage-de-volets-Profalux-Zigbee.html</p>
+</li>
+<li>
+<p>HA Label State: https://github.com/andrew-codechimp/HA-Label-State</p>
+</li>
 </ul>
 <h3 id="automation-scenes">Automation &amp; scenes</h3>
 <ul>
@@ -3640,6 +3688,9 @@ Go to  Cloudflare Zero Trust -&gt; Access Controls -&gt; Applications -&gt; Self
 <li>🎬 Scene = Set things to a predefined state. A scene is just a snapshot of states.</li>
 <li>👉 Automations trigger scenes</li>
 <li>When you add an entity, you can select a default behavior (toggle , show info, etc..) . For example a camera move down button, the default behavior is to <code>show more info</code>, but you can change it to <code>toggle</code> so when you press that button, it will move the camera.</li>
+<li>Show offline devices and addons : Add a filter card that shows 'not_home' and 'unavailable' entities and addons. You need to go to an addon in devices, and enable the 'running' entity to be able to use it in the card.</li>
+<li>when you rename a device, you can auto recreate the IDs.</li>
+<li>Usee labels to group entities. For example, a 'entity status' label and 'addon status' label to detect offline devices and addons without the need to add each device in the condition.</li>
 </ul>
 <h2 id="adguard-home-address-naming-resolution-using-the-router-freebox">AdGuard Home address naming resolution using the router (Freebox)</h2>
 <ul>
