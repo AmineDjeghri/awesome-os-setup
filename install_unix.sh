@@ -51,7 +51,14 @@ if [ -t 1 ]; then
   make install 2>&1 | tee -a "$LOGFILE"
 
   if command -v script >/dev/null 2>&1; then
-    script -q -a -c "make run" "$LOGFILE"
+    OS_NAME=$(uname -s 2>/dev/null)
+    if [ "$OS_NAME" = "Darwin" ]; then
+      # macOS: script logfile command [args...]
+      script -q -a "$LOGFILE" make run
+    else
+      # Linux and others: script -c "command" logfile
+      script -q -a -c "make run" "$LOGFILE"
+    fi
   else
     echo "⚠️  'script' not found; running UI without logging to preserve TTY."
     make run
