@@ -32,6 +32,8 @@ from awesome_os.tasks.managers.base import PackageManager
 from awesome_os.tasks.managers.ubuntu_snap import UbuntuSnapManager
 from awesome_os.tasks.managers.ubuntu_apt import UbuntuAptManager
 from awesome_os.tasks.managers.windows_winget import WindowsWingetManager
+from awesome_os.tasks.managers.windows_msstore import WindowsMSStoreManager
+from awesome_os.tasks.managers.windows_webinstall import WindowsWebInstallManager
 from awesome_os.tasks.task import TaskResult
 from awesome_os.tasks.system.windows_tasks import (
     apply_windows_terminal_ui_defaults,
@@ -54,7 +56,11 @@ from awesome_os.tasks.system.windows_wsl_tasks import (
 _PACKAGE_MANAGER_FACTORY_BY_DISTRO: dict[str, dict[str, Callable[[], PackageManager]]] = {
     "ubuntu": {"apt": UbuntuAptManager, "snap": UbuntuSnapManager},
     "darwin": {"brew": DarwinBrewManager, "cask": DarwinBrewCaskManager},
-    "windows": {"winget": WindowsWingetManager},
+    "windows": {
+        "winget": WindowsWingetManager,
+        "msstore": WindowsMSStoreManager,
+        "webinstall": WindowsWebInstallManager,
+    },
     "arch": {"yay": ArchYayManager},
 }
 

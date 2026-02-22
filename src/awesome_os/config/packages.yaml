@@ -68,55 +68,58 @@ packages:
         - vesktop
   windows:
     winget:
-      core:
-        - Microsoft.WindowsTerminal
-
-      browsers:
+      Browsers:
         - Brave.Brave
+        - ImputNet.Helium
         - Mozilla.Firefox
         - Microsoft.Edge
-      messaging:
-        - Facebook.Messenger
+        - Zen-Team.Zen-Browser
+      Messaging:
         - Discord.Discord
         - WhatsApp.WhatsApp
         - Viber.Viber
         - Telegram.TelegramDesktop
-        - Snapchat.Snapchat
-        - Instagram.Instagram
-      meetings:
+      Meetings:
         - Zoom.Zoom
         - Microsoft.Teams
-      media:
+      Media:
+        - Stremio.Stremio.Beta
         - VideoLAN.VLC
         - Spotify.Spotify
         - Apple.AppleMusic
-      gaming:
+      Gaming:
         - Valve.Steam
         - EpicGames.EpicGamesLauncher
         - Nvidia.GeForceExperience
         - Ubisoft.Connect
         - SideQuestVR.SideQuest
-      documents:
+      Drives:
         - Google.GoogleDrive
         - Microsoft.OneDrive
         - Apple.iCloud
-        - Microsoft.Office
-        - Adobe.Acrobat.Reader.64-bit
-        - Notion.Notion
-        - SublimeHQ.SublimeText.4
-        - Obsidian.Obsidian
-      editing:
+      Editing:
         - OBSProject.OBSStudio
-        - Adobe.CreativeCloud
         - ByteDance.CapCut
         - Microsoft.Clipchamp
         - Canva.Canva
-      dev:
-        - JetBrains.PyCharm.Community
-        - JetBrains.PyCharm.Professional
+      Text Editors:
+        - Obsidian.Obsidian
+        - Notion.Notion
+        - PDFgear.PDFgear
+      Dev_tools:
+        - Microsoft.WindowsTerminal
+        - JetBrains.Toolbox
+        - Comfy.ComfyUI-Desktop
         - Docker.DockerDesktop
         - Microsoft.VisualStudioCode
-      utilities:
+        - MongoDB.Compass.Full
+      Devices Software:
+        - Logitech.GHUB
+        - Brother.iPrintScan
+        - SteelSeries.GG
+        - SteelSeries.SteelSeriesEngine
+      Utilities:
+        - glzr-io.glazewm
         - NordVPN.NordVPN
         - qBittorrent.qBittorrent
         - Microsoft.PowerToys
@@ -126,5 +129,19 @@ packages:
         - File-New-Project.EarTrumpet
         - RevoUninstaller.RevoUninstaller
         - REALiX.HWiNFO
-      UXUI:
-        - glzr-io.glazewm
+        - touchbyte.PhotoSync
+        - AnyDesk.AnyDesk
+        - BinaryFortress.DisplayFusion
+        - RARLab.WinRAR
+      Winget UI Manager:
+        - MartiCliment.UniGetUI
+
+    msstore:
+      Devices Software:
+        - msi center
+      Utilities:
+        - "ChatGPT"
+    webinstall:
+      Devices Software:
+        - '[Ryzen Master](https://www.amd.com/fr/products/software/ryzen-master.html#download)'
+        - '[Turtle Beach](https://support.turtlebeach.com/s/downloads?language=fr#)'
