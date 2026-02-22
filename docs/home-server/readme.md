@@ -576,3 +576,12 @@ How to setup Sonoff MG24:
 # todo:
 - backup vm
 - Lan architecture : Router Freebox = Honor Router 3  (bridge) - Ubuntu server (HAOS ( Adguard DNS + DHCP + Script for IPV6 update & naming resolution))
+
+- add cards :
+https://github.com/PiotrMachowski/lovelace-xiaomi-vacuum-map-card
+mushroom card
+auto entities
+kioske mode
+custom sidebar
+label state
+room card
