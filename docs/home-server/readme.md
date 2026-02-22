@@ -582,8 +582,6 @@ https://github.com/PiotrMachowski/lovelace-xiaomi-vacuum-map-card
 mushroom card
 auto entities
 kioske mode
-custom sidebar 
-label state 
+custom sidebar
+label state
 room card
-
-
