@@ -7,7 +7,7 @@ from awesome_os.tasks.managers.base import InstallResult
 from awesome_os.tasks.task import TaskResult
 
 
-class WindowsWebInstallManager:
+class WebInstallManager:
     name = "webinstall"
 
     def is_installed(self, package: str) -> bool:
