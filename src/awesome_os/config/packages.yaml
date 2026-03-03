@@ -16,22 +16,70 @@ packages:
         - code
   darwin:
     brew:
-      core:
+      Core:
         - git
         - zsh
+        - curl
     cask:
-      apps:
-        - brave-browser
-        - raycast
-        - ghostty
-        - jordanbaird-ice # Menu bar management tool
-        - shottr
-        - swift-quit
-        - alt-tab
-        - anydesk
-        - obsidian
-        - zed
-        - discord
+      AI:
+        - ollama-app # https://github.com/ollama/ollama
+        - chatgpt
+        - anythingllm # All-in-one AI app https://github.com/Mintplex-Labs/anything-llm
+        - https://github.com/MCPJam/inspector
+      Browsers:
+        - Brave-browser
+        - Helium-browser
+
+      Messaging:
+        - Discord
+        - WhatsApp
+        - Viber
+        - Telegram
+      Meetings:
+        - Zoom
+        - microsoft-teams
+      Media:
+        - Stremio
+        - VLC
+      Gaming:
+        -
+      Drives:
+        - Google-Drive
+
+      Editing:
+        - CapCut
+        - Canva
+      Text Editors:
+        - Obsidian
+        - Notion
+      Dev_tools:
+        - uv
+        - Pycharm
+        - Ghostty
+        - Zed
+        - ComfyUI
+        - Docker-Desktop
+
+      Devices Software:
+        - test
+      Utilities:
+        - Raycast # Launcher https://www.raycast.com/
+        - Swift-Quit # quitting of macOS apps when closing their windows. https://github.com/onebadidea/swiftquit
+        - Jordanbaird-ice # Menu bar management tool https://github.com/jordanbaird/Ice
+        - Shottr # Screen capture tool https://shottr.cc/
+        - Alt-Tab # Windows alt-tab on macOS https://github.com/lwouis/alt-tab-macos
+        - AnyDesk
+        - lihaoyun6/tap/quickrecorder # Screen recording tool https://github.com/lihaoyun6/QuickRecorder
+        - nikitabobko/tap/aerospace # Tiling window manager https://github.com/nikitabobko/AeroSpace
+        - badgeify # Apps in menu bar https://badgeify.app/
+        - bing-wallpaper # Bing daily image as your wallpaper https://bingwallpaper.microsoft.com/
+
+    webinstall:
+      AI:
+        - '[MCPJam Inspector](https://github.com/MCPJam/inspector/releases)'
+      Text Editors:
+        - '[PDFgear](https://www.pdfgear.com/pdfgear-for-mac/)'
+
   arch:
     yay:
       core:
@@ -68,55 +116,58 @@ packages:
         - vesktop
   windows:
     winget:
-      core:
-        - Microsoft.WindowsTerminal
-
-      browsers:
+      Browsers:
         - Brave.Brave
+        - ImputNet.Helium
         - Mozilla.Firefox
         - Microsoft.Edge
-      messaging:
-        - Facebook.Messenger
+        - Zen-Team.Zen-Browser
+      Messaging:
         - Discord.Discord
         - WhatsApp.WhatsApp
         - Viber.Viber
         - Telegram.TelegramDesktop
-        - Snapchat.Snapchat
-        - Instagram.Instagram
-      meetings:
+      Meetings:
         - Zoom.Zoom
         - Microsoft.Teams
-      media:
+      Media:
+        - Stremio.Stremio.Beta
         - VideoLAN.VLC
         - Spotify.Spotify
         - Apple.AppleMusic
-      gaming:
+      Gaming:
         - Valve.Steam
         - EpicGames.EpicGamesLauncher
         - Nvidia.GeForceExperience
         - Ubisoft.Connect
         - SideQuestVR.SideQuest
-      documents:
+      Drives:
         - Google.GoogleDrive
         - Microsoft.OneDrive
         - Apple.iCloud
-        - Microsoft.Office
-        - Adobe.Acrobat.Reader.64-bit
-        - Notion.Notion
-        - SublimeHQ.SublimeText.4
-        - Obsidian.Obsidian
-      editing:
+      Editing:
         - OBSProject.OBSStudio
-        - Adobe.CreativeCloud
         - ByteDance.CapCut
         - Microsoft.Clipchamp
         - Canva.Canva
-      dev:
-        - JetBrains.PyCharm.Community
-        - JetBrains.PyCharm.Professional
+      Text Editors:
+        - Obsidian.Obsidian
+        - Notion.Notion
+        - PDFgear.PDFgear
+      Dev_tools:
+        - Microsoft.WindowsTerminal
+        - JetBrains.PyCharm
+        - Comfy.ComfyUI-Desktop
         - Docker.DockerDesktop
         - Microsoft.VisualStudioCode
-      utilities:
+        - MongoDB.Compass.Full
+      Devices Software:
+        - Logitech.GHUB
+        - Brother.iPrintScan
+        - SteelSeries.GG
+        - SteelSeries.SteelSeriesEngine
+      Utilities:
+        - glzr-io.glazewm
         - NordVPN.NordVPN
         - qBittorrent.qBittorrent
         - Microsoft.PowerToys
@@ -126,5 +177,21 @@ packages:
         - File-New-Project.EarTrumpet
         - RevoUninstaller.RevoUninstaller
         - REALiX.HWiNFO
-      UXUI:
-        - glzr-io.glazewm
+        - touchbyte.PhotoSync
+        - AnyDesk.AnyDesk
+        - BinaryFortress.DisplayFusion
+        - RARLab.WinRAR
+      Winget UI Manager:
+        - MartiCliment.UniGetUI
+
+    msstore:
+      Devices Software:
+        - msi center
+      AI:
+        - "ChatGPT"
+    webinstall:
+      AI:
+        - '[MCPJam Inspector](https://github.com/MCPJam/inspector/releases)'
+      Devices Software:
+        - '[Ryzen Master](https://www.amd.com/fr/products/software/ryzen-master.html#download)'
+        - '[Turtle Beach](https://support.turtlebeach.com/s/downloads?language=fr#)'
