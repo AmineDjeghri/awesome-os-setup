@@ -1,7 +1,6 @@
 # Windows 11 & WSL setup
 
 ![Windows WSL Terminal with taskbar](../images/windows_wsl_terminal_taskbar.png)
-![windows setup_image](../images/windows_setup_image.jpeg)
 
 The image you are looking at is a screenshot of a WSL Ubuntu terminal in Windows 11. The top bar is an app called
 GlazeWM.
@@ -16,10 +15,6 @@ You can follow this repository to get a similar setup.
       * [🎧Audio settings](#audio-settings)
       * [🖥️ Monitor and Display Settings](#-monitor-and-display-settings)
   * [2. Software](#2-software)
-    * [2.1. Web Browsers:](#21-web-browsers)
-    * [2.2. Messaging](#22-messaging)
-    * [2.3. Meetings and Video Conferences](#23-meetings-and-video-conferences)
-    * [2.4. Media, Music, and Entertainment:](#24-media-music-and-entertainment)
     * [2.5. Image & Video Editing:](#25-image--video-editing)
     * [2.6. Documents, Storage & Editing:](#26-documents-storage--editing)
     * [2.7. Gaming:](#27-gaming)
@@ -35,11 +30,7 @@ You can follow this repository to get a similar setup.
   * [4. More (deprecated)](#4-more-deprecated)
 <!-- TOC -->
 
-Get started with one command (PowerShell):
-
-```powershell
-iex ((New-Object System.Net.WebClient).DownloadString('https://raw.githubusercontent.com/AmineDjeghri/awesome-os-setup/main/docs/windows_workflow/setup_windows.ps1'))
-```
+Install the Awesome-OS-Setup TUI [app](../../README.md#windows-11)
 
 ## 1. Windows account & configuration
 
@@ -67,8 +58,9 @@ iex ((New-Object System.Net.WebClient).DownloadString('https://raw.githubusercon
   lock [here](https://consumer.huawei.com/en/support/content/en-us15592807/##:~:text=Click%20the%20Windows%20icon%20and,Screen%20and%20Sleep%20to%20Never)
 - If you have a 3200mhz RAM, and it runs bellow this frequency, activate XMP profile in the BIOS
 - Turn off usb ports and pc lights when in sleep mode in the BIOS
+
 #### 🎧Audio settings
-  - If you have bluetooth and audio devices, you can sort them in audio settings → use as default for both audio and
+  - If you have Bluetooth and audio devices, you can sort them in audio settings → use as default for both audio and
     communications.
   - You can also deactivate some audio devices if the are unused in the audio settings. Check this [link](https://www.reddit.com/r/Windows10/comments/hcxksq/how_do_you_remove_an_unused_device_from_the_sound/)
   - Deactivate lowering communication sounds in advanced audio settings.
@@ -116,7 +108,7 @@ iex ((New-Object System.Net.WebClient).DownloadString('https://raw.githubusercon
        -  You can use DisplayFusion to easily create profiles for different configurations (e.g., a "Gaming" profile for one monitor, a "Work" profile for two, or a "Movie" profile for the TV).
 
 - Windows UI/UX Tips:
-    - Hide the Windows taskbar (right-click on the taskbar -> taskbar settings-> taskbar behavior (at the bottom) ->
+    - Hide the Windows taskbar (right-click on the taskbar → taskbar settings→ taskbar behavior (at the bottom) →
       automatically hide the taskbar).
     - Pin some folders and drivers, Recycle Bin in the file explorer. Fast browsing: right-click on the file explorer in
       the taskbar to show the shortcut to the pinned folders.
@@ -159,21 +151,17 @@ Other apps, websites and tips: (DEPRECATED)
 
 ## 2. Software
 
-Automatic installation of these apps is available with this command:
+Automatic installation of these apps is available with the Awesome-OS-Setup TUI [app](../../README.md#windows-11)
 
-```powershell
-iex ((New-Object System.Net.WebClient).DownloadString('https://raw.githubusercontent.com/AmineDjeghri/awesome-os-setup/main/docs/windows_workflow/setup_windows.ps1'))
-```
+All the Apps are available at [packages.yaml](../../src/awesome_os/config/packages.yaml). Check the Windows section.
 
-### 2.1. Web Browsers:
+For App configuration, check [apps_configuration_and_shorcuts.md](../apps/apps_configuration_and_shorcuts.md)
 
-- Brave (or Edge or Firefox). Remember to change your sync settings
-  bookmarks...ect. use two browsers: one for work and the other for personal use on your work computer.
-- [browser_extensions.md](awesome_websites_browser_extensions.md): useful extensions for productivity & security
+For browser extensions, check [browser_extensions.md](../apps/awesome_websites_browser_extensions.md)
 
-### 2.2. Messaging
+- Remember to sync your settings bookmarks...ect.
+- Use two browsers / or two profiles: one for work and the other for personal use.
 
-- **Social networks**:  Facebook Messenger, Discord, WhatsApp, Viber, Telegram, Snapchat, Instagram
 - **Agenda & Mail**: Google Calendar, Gmail
     - create an app shortcut with brave & add them to the taskbar it will act like an app in windows, and activate the
       notifications.
@@ -184,24 +172,6 @@ iex ((New-Object System.Net.WebClient).DownloadString('https://raw.githubusercon
       add brave to 'mail' & 'agenda.' Go to brave://settings/handlers and add gmail and agenda. Open now the gmail
       website and accept brave as the default app.
 
-### 2.3. Meetings and Video Conferences
-
-- Zoom, Microsoft Teams, Google Meet, Discord. Use the browser or the webview version for better performance and less
-  memory usage.
-
-### 2.4. Media, Music, and Entertainment:
-
-- **Video player** :VideoLAN VLC
-- **Music player**: Spotify, Apple Music
-- **Streaming Services**:
-    - Netflix, Prime Video, MyCanal ...ect.
-      Browser is better in terms of stability, lists,
-      content and vpn use.
-      On the other hand, Netflix from the store app and Netflix on Edge browser can handle 7.1 and 4k
-      streaming.
-    - Stremio with Debrid (to replace Netflix, Prime Video, Disney+, Spotify, Apple Music).
-      Check my personal settings [here](../apps_configuration_and_shorcuts.md##113-streamio-streaming-on-all-platforms))
-
 ### 2.5. Image & Video Editing:
 
 - **Software recording**: OBS Studio
@@ -211,7 +181,7 @@ iex ((New-Object System.Net.WebClient).DownloadString('https://raw.githubusercon
 ### 2.6. Documents, Storage & Editing:
 
 - **Cloud Storage**: Google Drive, Microsoft OneDrive, iCloud, Mega Drive (free 50GB)
-- **Files explorer**: Files (Check my personal settings [here](../apps_configuration_and_shorcuts.md##18-files))
+- **Files explorer**: Files (Check my personal settings [here](../apps/apps_configuration_and_shorcuts.md##18-files))
 - **Files editing**: Microsoft 365, Office 2021
 - **PDF Editing**: Adobe Acrobat Reader DC, Sejda (3 free tasks per hour)
 
@@ -223,12 +193,6 @@ iex ((New-Object System.Net.WebClient).DownloadString('https://raw.githubusercon
 - **Game recording**: OBS Studio or native Windows screen recorder `⊞ + G` or `⊞ + alt + R`
 - **Game utilities**: DS4Windows, Nvidia GeForce Experience (For Nvidia GPU)
 
-### 2.8. Security & Privacy
-
-- **VPN** : ProtonVPN or NordVPN
-- **Torrent client**: qBitTorrent
-- **Remote Desktop**: AnyDesk
-- **Antivirus**: Windows defender or Kaspersky Cloud free
 
 ### 2.9. Utilities
 
@@ -240,17 +204,16 @@ iex ((New-Object System.Net.WebClient).DownloadString('https://raw.githubusercon
 - **Desktop enhancements** :
     - Microsoft Bing Wallpaper. Change your wallpaper every day with Bing's wallpaper.
     - GlazeWM (tiling window manager). Check my personal
-      settings [here](../apps_configuration_and_shorcuts.md##12-glazewm-windows-only)
+      settings [here](../apps/apps_configuration_and_shorcuts.md#12-glazewm-and-zebar-windows-only)
     - Wintoys :
         - You can use this app to access easily the most used settings in Windows.
         - Set up, debloat, optimize, repair, and tweak your operating system in a simple, time-saving, yet safe
           approach.
         - For example, you can use this app to stop and uninstall Windows apps like 'Dev
           Home.'that can't be uninstalled using Windows or using Revo Uninstaller
-    - Microsoft PowerToys. My personal shortcuts & tips & settings for this
-      app [here](../apps_configuration_and_shorcuts.md##13-powertoys-windows-only)
+    - Raycast
     - DisplayFusion. Check my personal
-      settings [here](../apps_configuration_and_shorcuts.md##17-displayfusion-windows-only--paid)
+      settings [here](../apps/apps_configuration_and_shorcuts.md#111-displayfusion-windows-only--paid)
     - Revo Uninstaller
     - HWiNFO (Link to my settings [here](../../src/awesome_os/config/windows/HWINFO_settings.reg)
     - CCleaner
@@ -261,17 +224,17 @@ iex ((New-Object System.Net.WebClient).DownloadString('https://raw.githubusercon
 - Microsoft Windows Terminal: Always use Windows terminal. It contains all the terminals in one place (ubuntu,
   PowerShell, wsl, cmd...ect). You can right-click on any folder to open it.
     - My personal shortcuts & tips & settings for this
-      app [here](../apps_configuration_and_shorcuts.md##14-windows-terminal-windows-only)
+      app [here](../apps/apps_configuration_and_shorcuts.md##14-windows-terminal-windows-only)
 - PowerShell
   7 :[link](https://learn.microsoft.com/en-us/powershell/scripting/install/installing-powershell-on-windows?WT.mc_id=THOMASMAURER-blog-thmaure&view=powershell-7.3&viewFallbackFrom=powershell-7).
   Change the default terminal in Windows Terminal, and activate the "run always as administrator in the default profile"
 - JetBrains PyCharm (Community and Professional), IntelliJ IDEA, Webstorm, WriterSide. Check my personal
-  settings [here](../apps_configuration_and_shorcuts.md##19-pycharm-all-platforms)
+  settings [here](../apps/apps_configuration_and_shorcuts.md##19-pycharm-all-platforms)
 - Docker Desktop: Requires WSL (see the WSL section). You can start, stop, delete containers easily, access & edit files
   right inside the container without the need of a terminal.
-- Sublime Text 4. Check my personal settings [here](../apps_configuration_and_shorcuts.md##15-sublime-text-4-all-platforms)
+- Sublime Text 4. Check my personal settings [here](../apps/apps_configuration_and_shorcuts.md##15-sublime-text-4-all-platforms)
 - Visual Studio Code
-- Obsidian. Link to my settings [here](../apps_configuration_and_shorcuts.md##16-obsidian-all-platforms)
+- Obsidian. Link to my settings [here](../apps/apps_configuration_and_shorcuts.md##16-obsidian-all-platforms)
 - Notion
 - Game development: Unity, Unreal Engine, Blender
 - SFTP: Filezilla: for SFTP (work with a private key: add it in edit/connection/sftp or use pageant)
@@ -297,7 +260,9 @@ machine.
   best thing is to combine the power of Windows with WSL.
 
 ### 3.1. Install WSL:
-- Automatic installation of WSL available with this [command](##1-2-software)
+![windows setup_image](../images/windows_setup_image.jpeg)
+- Automatic installation of WSL available with the Awesome-OS-Setup TUI [app](../../README.md#linux--wsl2--macos)
+- Run the script in Windows Terminal
 - Or manual installation: Run this command in PowerShell ``` wsl --install ```. You can also select the drive where you want to install it instead of the default 'C' drive and this is what I recommand doing.
 
 - Restart your computer
@@ -339,7 +304,7 @@ shell, install Miniconda, CUDA, and more:
 - [1. Linux Setup Guide](../linux/README.md): A set of configurations, dotfiles and a script to
   automatically set up a powerful terminal & shell utilities(zsh, fzf...), themes like Powerlvl10k, Conda, GPU drivers,
   and more on Linux/WSL2.
-- [2. Windows, WSL & apps settings/tips](../apps_configuration_and_shorcuts)
+- [2. Windows, WSL & apps settings/tips](../apps/apps_configuration_and_shorcuts)
 - [3. Cuda & Pytorch installation inside conda](https://github.com/AmineDjeghri/ai-on-premise-project-template/blob/main/cuda_pytorch_install.md)
 
 

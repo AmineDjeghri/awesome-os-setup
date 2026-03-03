@@ -6,25 +6,23 @@ Apps configuration and shortcuts
 * [Apps configuration and shortcuts](#apps-configuration-and-shortcuts)
 * [1. Shortcuts and app configurations](#1-shortcuts-and-app-configurations)
   * [1.1. Windows shortcuts](#11-windows-shortcuts)
-  * [1.2. GlazeWM (windows only)](#12-glazewm-windows-only)
+  * [1.2. GlazeWM and Zebar (windows only)](#12-glazewm-and-zebar-windows-only)
   * [1.3. PowerToys (windows only)](#13-powertoys-windows-only)
   * [1.4. Windows Terminal (windows only)](#14-windows-terminal-windows-only)
   * [1.5. ZED (All platforms)](#15-zed-all-platforms)
-  * [1.6. Obsidian (All platforms)](#16-obsidian-all-platforms)
+  * [1.6. Raycast](#16-raycast)
+  * [1.7. Obsidian (All platforms)](#17-obsidian-all-platforms)
     * [Sync Obsidian vaults with iOS:](#sync-obsidian-vaults-with-ios)
-  * [1.7. DisplayFusion (Windows only & paid)](#17-displayfusion-windows-only--paid)
   * [1.8. Files](#18-files)
   * [1.9. PyCharm (All platforms)](#19-pycharm-all-platforms)
-    * [1.9.1. Tips & tricks](#191-tips--tricks)
+    * [1.9.1. Tips & tricks (All platforms)](#191-tips--tricks-all-platforms)
     * [1.9.2. Personal pycharm shortcuts](#192-personal-pycharm-shortcuts)
     * [1.9.3. Python remote interpreter (SSH /WSL)](#193-python-remote-interpreter-ssh-wsl)
     * [1.9.4. Pycharm remote deployment](#194-pycharm-remote-deployment)
     * [1.9.5. Remote SSH for ReactJS](#195-remote-ssh-for-reactjs)
   * [1.10. HWINFO:](#110-hwinfo)
-  * [1.11. Google colab:](#111-google-colab)
+  * [1.11. DisplayFusion (Windows only & paid)](#111-displayfusion-windows-only--paid)
   * [1.12. Powerpoint:](#112-powerpoint)
-  * [1.13. Streamio (Streaming on all platforms)](#113-streamio-streaming-on-all-platforms)
-  * [1.14. WinToys](#114-wintoys)
 <!-- TOC -->
 
 # 1. Shortcuts and app configurations
@@ -37,33 +35,24 @@ Settings and shortcuts for some apps that I use on Windows 11.
 - Lock screen: `win + L`
 - WIP
 
-## 1.2. GlazeWM (windows only)
-
-- Install the GlazeWM tiling window manager.
-- Automatic installation of the settings available with this [command](windows_workflow/README.md#12-software).
-  Select the seventh option.
+## 1.2. GlazeWM and Zebar (windows only)
+- Automatic installation of the settings available with the Awesome-OS-Setup TUI [app](../../README.md#windows-11) by selecting `Sync GlazeWM config`.
 - Manual installation:
-    - Download my config [file](windows_workflow/config.yaml) and put it in `C:\Users\%userprofile%\.glaze-wm`
+    - Download [my .glaze-wm config folder](../../src/awesome_os/config/windows/.glzr) and place it in `C:\Users\%userprofile%\.glaze-wm`
 
-shortcuts: You can read more about the
-shortcuts [here](https://github.com/glazerdesktop/GlazeWM?tab=readme-ov-file#general)
+shortcuts: You can read more about the shortcuts :
+- [GlazeWM](https://github.com/glzr-io/glazewm?tab=readme-ov-file#config-documentation)
+- [Zebar](https://github.com/glzr-io/zebar)
 
 - close a window: `alt + shift + q`:
 - reload the config: `alt + shift + r`:
 - Maximize & un-maximize : `alt + f`
-- hide: `alt+m` (use `alt+f` to make it appear again)
-- switch between multiple full-screen apps in the same workspace : `alt + tab`
-- If you are using Citrix Worskpace nad want to only use one monitor, then resize its window by moving a little bit the
-  border before maximizing it (i Know that you can't resize a window if glazewm is running, but this is just to tell
-  citrix that you are in a single monitor).
-  Check [this](https://help-docs.citrix.com/en-us/citrix-workspace-app/windows/multi-monitor-support.html) to understand
-  how dual monitor works on Citrix.
+- Hide: `alt+m` (use `alt+f` to make it appear again)
+- Switch between multiple full-screen apps in the same workspace : `alt + tab`
+- If a window (like a dialog box) is missing or missized, moving it to another workspace will usually fix the issue.
 
 ## 1.3. PowerToys (windows only)
 
--
-Download [Windows store](https://apps.microsoft.com/detail/XP89DCGQ3K6VLD?hl). [Docs](https://learn.microsoft.com/en-us/windows/powertoys/run#features)
-- Or use my Windows script to install it via the terminal. [Link](windows_workflow/README.md#2-software)
 - I use it mainly for: Search (alt + space) for applications folders or files & Killing a process instead of using task
   manager.
 - You can also access files and folders from the search bar with alt + space then paste the path
@@ -81,7 +70,10 @@ Download [Windows store](https://apps.microsoft.com/detail/XP89DCGQ3K6VLD?hl). [
 ## 1.5. ZED (All platforms)
 - (TBD)
 
-## 1.6. Obsidian (All platforms)
+
+## 1.6. Raycast
+
+## 1.7. Obsidian (All platforms)
 
 - Obsidian plugins are saved inside the vault (a folder). You need to copy the .obisidian folder every time you create a
   new vault to keep the same plugins and workspace
@@ -112,20 +104,6 @@ Download [Windows store](https://apps.microsoft.com/detail/XP89DCGQ3K6VLD?hl). [
   * Make sure that the theme is the same as the one on your computer. Since sometimes Obsidian on your mobile forces change the theme. Usually the files '.obsidian/app.json' and '.obsidian/appearance.json' will change and a copy of them is made named ``appearance_2.json`` and ``app_2.json`` . Use the copies to revert the changes.
 
 
-## 1.7. DisplayFusion (Windows only & paid)
-
-- DisplayFusion is a program that will help you to manage your multiple monitors. It allows you to create different
-  profiles for your monitor setups, such as single, dual, or triple monitors. You can configure specific applications to
-  always open on designated monitors within each profile. With just one click, you can switch between these profiles,
-  and DisplayFusion will automatically rearrange your windows according to the rules you set. This makes it easy to
-  adapt your workspace to different scenarios, whether you're working with one monitor or multiple monitors.
-- Link to my settings containing different profile for 1, 2, 3 and TV
-  settings. [here](windows_workflow/win_dotfiles/DisplayFusion Backup.reg)
-    - use the Steam version (it can be used on multiple computers with the same steam account)
-    - it adds a lot of features to Windows monitor settings.
-    - There are four apps available after the installation. The main ones are: DisplayFusion and "monitor settings
-      displayfusion"
-
 ## 1.8. Files
 
 - Files: Replace the Windows File Explorer. Manage all your files with increased productivity. Work across multiple
@@ -140,7 +118,7 @@ Download [Windows store](https://apps.microsoft.com/detail/XP89DCGQ3K6VLD?hl). [
 - I prefer to use PyCharm & other Intellij products like WriterSide...(the Pro version is free for students)
 - My personal shortcuts & tips & settings for this app [here](../shortcuts_and_apps_setup.md#1-5-pycharm)
 
-### 1.9.1. Tips & tricks
+### 1.9.1. Tips & tricks (All platforms)
 
 - I've been using PyCharm (professional edition) for more than 3 years now, even if I used VSCode for 2 years before
   that, the Intellij suite is just amazing. Intellij suite with all the plugins for students is completely free.
@@ -214,27 +192,27 @@ Some of them are re-mapped :
 The macos shortcuts are inverted in my system so i can use the same commands as in windows. The ones in this list works for both since i use the name of the key and not the real inverted key.
 **Panels & windows :**
 
-| Panel                        | Windows (MacOS) Shortcut
-|------------------------------|----------------------------------------|
-| Press the blue button        | alt+p  (command+p)                                |
-| project panel          alt+P |                                        |
-| terminal panel               | alt + T  (command+t)                                |
-| new terminal                 | alt maj T                              |
+| Panel                        | Windows (MacOS) Shortcut                     |
+|------------------------------|----------------------------------------------|
+| Press the blue button        | alt+p  (command+p)                           |
+| project panel          alt+P |                                              |
+| terminal panel               | alt + T  (command+t)                         |
+| new terminal                 | alt maj T                                    |
 | settings                     | ctrl+alt+S (fn+,)then type with the keyboard |
-| **Git**                      |                                        |
-| Git commit  panel            | ctrl + K (command +t)                              |
-| Git panel                    | alt + g (command +g)                               |
-| Git update                   | not defined yet                        |
-| git emoji                    | show toolbar like alt+w then alt+g     |
-| git emoji                     | open git panel with alt+k then alt+ctrl+g                  |
-| git menu                     | show toolbar like alt+w then alt+g     |
-| git menu                     | show toolbar like alt+w then alt+g     |
-| **run/debug**                |                                        |
-| debug                        | maj + F9                               |
-| git menu                     | alt+9                                  |
-| debug panel                  | show toolbar like alt+w then alt+g     |
-| run                          | maj +F10                               |
-| run panel                    | alt+ 0                                 |
+| **Git**                      |                                              |
+| Git commit  panel            | ctrl + K (command +t)                        |
+| Git panel                    | alt + g (command +g)                         |
+| Git update                   | not defined yet                              |
+| git emoji                    | show toolbar like alt+w then alt+g           |
+| git emoji                    | open git panel with alt+k then alt+ctrl+g    |
+| git menu                     | show toolbar like alt+w then alt+g           |
+| git menu                     | show toolbar like alt+w then alt+g           |
+| **run/debug**                |                                              |
+| debug                        | maj + F9                                     |
+| git menu                     | alt+9                                        |
+| debug panel                  | show toolbar like alt+w then alt+g           |
+| run                          | maj +F10                                     |
+| run panel                    | alt+ 0                                       |
 
 **Code editor**
 
@@ -320,32 +298,17 @@ the Always mode.
 - import settings: double-click on the downloaded file to restore settings. Check
   mine [here](../src/awesome_os/config/windows/HWINFO_settings.reg)
 
-## 1.11. Google colab:
 
-- Add this code to prevent it from
-  disconnecting. [source](https://colab.research.google.com/github/oobabooga/AI-Notebooks/blob/main/Colab-TextGen-GPU.ipynb#scrollTo=f7TVVj_z4flw)
+## 1.11. DisplayFusion (Windows only & paid)
 
-```py
-# @title 1. Keep this tab alive to prevent Colab from disconnecting you { display-mode: "form" }
-
-# @markdown Press play on the music player that will appear below:
-%%html
-< audio
-src = "https://oobabooga.github.io/silence.m4a"
-controls >
-```
-
-## 1.12. Powerpoint:
-
-**Turn a PDF to black and white**
-Convert to pptx (IlovePDF)
-Open with PowerPoint (Office 2016)
-(If you want to remove the background: view -> Slide Master: click on the first one then click on the background and
-delete, return by closing with the red cross: close the Master view)
-Print color and select full black and white
-
-## 1.13. Streamio (Streaming on all platforms)
-
-- Check [this file](tv_setup.md#what-is-stremio-)
-
-## 1.14. WinToys
+- DisplayFusion is a program that will help you to manage your multiple monitors. It allows you to create different
+  profiles for your monitor setups, such as single, dual, or triple monitors. You can configure specific applications to
+  always open on designated monitors within each profile. With just one click, you can switch between these profiles,
+  and DisplayFusion will automatically rearrange your windows according to the rules you set. This makes it easy to
+  adapt your workspace to different scenarios, whether you're working with one monitor or multiple monitors.
+- Link to my settings containing different profile for 1, 2, 3 and TV
+  settings. [here](windows_workflow/win_dotfiles/DisplayFusion Backup.reg)
+    - use the Steam version (it can be used on multiple computers with the same steam account)
+    - it adds a lot of features to Windows monitor settings.
+    - There are four apps available after the installation. The main ones are: DisplayFusion and "monitor settings
+      displayfusion"

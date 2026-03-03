@@ -113,6 +113,22 @@ def get_system_action_sections(
                 ],
             )
         )
+
+        # Package managers (apt, snap, brew...)
+        factories = _PACKAGE_MANAGER_FACTORY_BY_DISTRO.get(distro, {})
+        for manager_name, factory in factories.items():
+            pm = factory()
+            sections.append(
+                (
+                    manager_name,
+                    [
+                        SystemAction(label="update", run=pm.update),
+                        SystemAction(label="upgrade", run=pm.upgrade),
+                        SystemAction(label="cleanup", run=pm.cleanup),
+                    ],
+                )
+            )
+
         # zsh
         zsh_actions: list[SystemAction] = []
 
@@ -393,21 +409,6 @@ def get_system_action_sections(
                         confirm=True,
                         confirm_message="This will download and overwrite GlazeWM config.yaml. Proceed?",
                     ),
-                ],
-            )
-        )
-
-    # Package managers (apt, snap, brew...)
-    factories = _PACKAGE_MANAGER_FACTORY_BY_DISTRO.get(distro, {})
-    for manager_name, factory in factories.items():
-        pm = factory()
-        sections.append(
-            (
-                manager_name,
-                [
-                    SystemAction(label="update", run=pm.update),
-                    SystemAction(label="upgrade", run=pm.upgrade),
-                    SystemAction(label="cleanup", run=pm.cleanup),
                 ],
             )
         )

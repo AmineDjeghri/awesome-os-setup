@@ -126,10 +126,10 @@ This repo is a personal “OS setup Terminal UI App”:
   here: [README](docs/home-server/readme.md)
 
 - **Apps setup docs**:
-  [README](docs/apps_configuration_and_shorcuts.md) / [website](https://setup.aminedjeghri.com/shortcuts_and_apps_setup.html)
+  [README](docs/apps/apps_configuration_and_shorcuts.md) / [website](https://setup.aminedjeghri.com/shortcuts_and_apps_setup.html)
 
 - **Websites & Browser extensions docs**:
-  [README](docs/awesome_websites_browser_extensions.md) / [website](https://setup.aminedjeghri.com/awesome-websites.html)
+  [README](docs/apps/awesome_websites_browser_extensions.md) / [website](https://setup.aminedjeghri.com/awesome-websites.html)
 
 
 

@@ -55,15 +55,14 @@ Check the readme file.
 
 #### a. Local development
 
-- Requires Debian (Ubuntu 22.04) or MacOS.
-- Python will be installed using uv.
+- Requires Linux, Windows or MacOS.
+- Python and UV will be installed if they are not already installed.
 - git clone the repository
 - Install the package in editable mode with one of the following commands :
     - ``make install-dev`` the recommended way. it uses uv and will automatically create a .venv folder inside the
       project and install the dependencies
     - or ``uv pip install -e .`` will install the package in your selected environment (venv, or conda or ...)
-    - (note recommended)  or ``pip install -e .`` if you don't have uv (we strongly recommend starting using uv)
-
+- Run the scripts locally with `./install_unix.sh` for Linux and macOS or `./install_windows.ps1` for Windows.
 - run ``make pre-commit install`` to install pre-commit hooks
 - To install the GitHub actions locally, run ``make install-act``
 

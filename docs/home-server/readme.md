@@ -525,7 +525,10 @@ How to setup Sonoff MG24:
  - **Dreame vacuum**
    - Community integration repo: https://github.com/Tasshack/dreame-vacuum
    - Do not use the version 1. Use version > 2 (supports multiple accounts: dreamehome, xiaomi, etc.).
-
+   - Maps for the vaccum:
+     - https://github.com/PiotrMachowski/lovelace-xiaomi-vacuum-map-card
+     - https://github.com/noambergauz/dreame-vacuum-map-card
+ - Script for voice assistant cleaning per room : https://github.com/Magnum9O/HA_BluePrints
  - **LG**
    - Better use the integration from HACS.
    - Common community integration: https://github.com/ollo69/ha-smartthinq-sensors
@@ -546,8 +549,14 @@ How to setup Sonoff MG24:
 ### Automation & scenes
   - 🤖 Automation = When something happens → do something
     - Always use entities instead of devices. Entities have unique names.
-  - 🎬 Scene = Set things to a predefined state. A scene is just a snapshot of states.
+  - 🎬 Scene = Rarely used. Set things to a predefined state. A scene is just a snapshot of states.
+  - Script: is a sequence of actions that can be triggered by an automation or manually.
   - 👉 Automations trigger scenes
+  - An example : I want to arm the alarm when I leave my home
+    - Automation 1 : if my phone is not available in home assistant -> Call a script to arm the alarm,
+    - Script 1: turn on the alarm, turn on the lock of doors, activate the camera's high motion detections ..etc
+    - Automation 2: if the alarm is triggered -> send notifications, run sound on the alarm ...
+  - Scripts are usually created so we can activate them manually or with an automation. They don't have conditions.
   - When you add an entity, you can select a default behavior (toggle , show info, etc..) . For example a camera move down button, the default behavior is to ``show more info``, but you can change it to ``toggle`` so when you press that button, it will move the camera.
   - Show offline devices and addons : Add a filter card that shows 'not_home' and 'unavailable' entities and addons. You need to go to an addon in devices, and enable the 'running' entity to be able to use it in the card.
   - when you rename a device, you can auto recreate the IDs.

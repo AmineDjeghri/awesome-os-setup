@@ -29,7 +29,7 @@ def confirm(
     """
     mb = ttk.TTkMessageBox(
         parent=parent,
-        title=TTkString(title),
+        title=TTkString(f" {title} ", ttk.TTkColor.fg("#00ff00") + ttk.TTkColor.bg("#004400")),
         icon=ttk.TTkMessageBox.Icon.Question,
         text=TTkString(text),
         standardButtons=(
@@ -61,8 +61,8 @@ def prompt_text(
     """
     dialog = ttk.TTkWindow(
         parent=parent,
-        title=title,
-        size=(80, 9),
+        title=TTkString(f" {title} ", ttk.TTkColor.fg("#00aaff") + ttk.TTkColor.bg("#003355")),
+        size=(80, 18),
         border=True,
         layout=ttk.TTkVBoxLayout(),
     )
