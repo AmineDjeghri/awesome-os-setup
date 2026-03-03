@@ -97,11 +97,9 @@ def run_app() -> None:
         controller.ui_log("Unsupported OS")
 
     # Display actions buttons
-    controller.ui_log(f"[DEBUG] Loading actions for system={system}, distro={distro}")
     for section_name, actions in get_system_action_sections(
         system=system, distro=distro, info=info
     ):
-        controller.ui_log(f"[DEBUG] Section: {section_name} with {len(actions)} actions")
         row = ttk.TTkFrame(parent=footer, layout=ttk.TTkHBoxLayout())
         ttk.TTkLabel(parent=row, text=f"{section_name}:", maxWidth=14)
         for action in actions:
