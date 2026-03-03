@@ -1,25 +1,17 @@
 from __future__ import annotations
 
 import os
-from pathlib import Path
-from typing import Callable
-
-from pydantic import BaseModel, ConfigDict
-
-from awesome_os.tasks.managers.darwin_brew import DarwinBrewManager, DarwinBrewCaskManager
-from awesome_os.tasks.managers.arch_yay import ArchYayManager
-from awesome_os.tasks.system.help import show_commands
-from awesome_os.tasks.system.font import install_jetbrainsmono_nerd_font
-from awesome_os.tasks.system.zsh import (
-    apply_p10k_force,
-    apply_zshrc_force,
-    set_bash_as_default_shell,
-    set_zsh_as_default_shell,
-    sync_zsh_plugins_and_theme,
-    uninstall_oh_my_zsh_and_p10k,
-    uninstall_zsh_apt,
-)
 from awesome_os.detect_os import _is_wsl
+from awesome_os.tasks.managers.arch_yay import ArchYayManager
+from awesome_os.tasks.managers.base import PackageManager
+from awesome_os.tasks.managers.darwin_brew import DarwinBrewManager, DarwinBrewCaskManager
+from awesome_os.tasks.managers.ubuntu_apt import UbuntuAptManager
+from awesome_os.tasks.managers.ubuntu_snap import UbuntuSnapManager
+from awesome_os.tasks.managers.windows_msstore import WindowsMSStoreManager
+from awesome_os.tasks.managers.webinstall import WebInstallManager
+from awesome_os.tasks.managers.windows_winget import WindowsWingetManager
+from awesome_os.tasks.system.font import install_jetbrainsmono_nerd_font
+from awesome_os.tasks.system.help import show_commands
 from awesome_os.tasks.system.nvidia_tasks import (
     detect_cuda,
     detect_nvidia,
@@ -28,11 +20,6 @@ from awesome_os.tasks.system.nvidia_tasks import (
     setup_nvidia_windows,
     setup_nvidia_wsl_instructions,
 )
-from awesome_os.tasks.managers.base import PackageManager
-from awesome_os.tasks.managers.ubuntu_snap import UbuntuSnapManager
-from awesome_os.tasks.managers.ubuntu_apt import UbuntuAptManager
-from awesome_os.tasks.managers.windows_winget import WindowsWingetManager
-from awesome_os.tasks.task import TaskResult
 from awesome_os.tasks.system.windows_tasks import (
     apply_windows_terminal_ui_defaults,
     download_glazewm_config,
@@ -50,11 +37,32 @@ from awesome_os.tasks.system.windows_wsl_tasks import (
     wsl_move,
     add_windows_terminal_ubuntu_profile,
 )
+from awesome_os.tasks.system.zsh import (
+    apply_p10k_force,
+    apply_zshrc_force,
+    set_bash_as_default_shell,
+    set_zsh_as_default_shell,
+    sync_zsh_plugins_and_theme,
+    uninstall_oh_my_zsh_and_p10k,
+    uninstall_zsh_apt,
+)
+from awesome_os.tasks.task import TaskResult
+from pathlib import Path
+from pydantic import BaseModel, ConfigDict
+from typing import Callable
 
 _PACKAGE_MANAGER_FACTORY_BY_DISTRO: dict[str, dict[str, Callable[[], PackageManager]]] = {
     "ubuntu": {"apt": UbuntuAptManager, "snap": UbuntuSnapManager},
-    "darwin": {"brew": DarwinBrewManager, "cask": DarwinBrewCaskManager},
-    "windows": {"winget": WindowsWingetManager},
+    "darwin": {
+        "brew": DarwinBrewManager,
+        "cask": DarwinBrewCaskManager,
+        "webinstall": WebInstallManager,
+    },
+    "windows": {
+        "winget": WindowsWingetManager,
+        "msstore": WindowsMSStoreManager,
+        "webinstall": WebInstallManager,
+    },
     "arch": {"yay": ArchYayManager},
 }
 
@@ -91,6 +99,21 @@ def get_system_action_sections(
 ) -> list[tuple[str, list[SystemAction]]]:
     home = Path.home()
     sections: list[tuple[str, list[SystemAction]]] = []
+
+    # Package managers (apt, snap, brew...) - at the top for quick access
+    factories = _PACKAGE_MANAGER_FACTORY_BY_DISTRO.get(distro, {})
+    for manager_name, factory in factories.items():
+        pm = factory()
+        sections.append(
+            (
+                manager_name,
+                [
+                    SystemAction(label="update", run=pm.update),
+                    SystemAction(label="upgrade", run=pm.upgrade),
+                    SystemAction(label="cleanup", run=pm.cleanup),
+                ],
+            )
+        )
 
     #################
     ## Linux & Darwin
@@ -385,21 +408,6 @@ def get_system_action_sections(
                         confirm=True,
                         confirm_message="This will download and overwrite GlazeWM config.yaml. Proceed?",
                     ),
-                ],
-            )
-        )
-
-    # Package managers (apt, snap, brew...)
-    factories = _PACKAGE_MANAGER_FACTORY_BY_DISTRO.get(distro, {})
-    for manager_name, factory in factories.items():
-        pm = factory()
-        sections.append(
-            (
-                manager_name,
-                [
-                    SystemAction(label="update", run=pm.update),
-                    SystemAction(label="upgrade", run=pm.upgrade),
-                    SystemAction(label="cleanup", run=pm.cleanup),
                 ],
             )
         )
