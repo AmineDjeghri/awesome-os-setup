@@ -102,8 +102,6 @@ def get_system_action_sections(
 
     # Package managers (apt, snap, brew...) - at the top for quick access
     factories = _PACKAGE_MANAGER_FACTORY_BY_DISTRO.get(distro, {})
-    print(f"[DEBUG] system={system}, distro={distro}, factories found: {list(factories.keys())}")
-    exit()
     for manager_name, factory in factories.items():
         pm = factory()
         sections.append(
