@@ -442,20 +442,17 @@ How to setup Sonoff MG24:
   * For IP address name resolving, check [this section](#adguard-home-address-naming-resolution-using-the-router-freebox).
   * Docs/repo: https://github.com/hassio-addons/addon-adguard-home
 
-* **Cloudflared** (Cloudflare Tunnel)
-    * Repo: https://github.com/homeassistant-apps/app-cloudflared
+* [Cloudflared](https://github.com/homeassistant-apps/app-cloudflared) (Cloudflare Tunnel)
 
-* **Donetick**
-   - Repo: https://github.com/donetick/hassio-addons
+* [Donetick](https://github.com/donetick/hassio-addons)
 
 * **File editor** :
   * Docs: https://github.com/home-assistant/addons/tree/master/configurator
   * How to install: https://github.com/home-assistant/addons/blob/master/configurator/DOCS.md
 
-* **HACS** ("Get HACS") : https://www.hacs.xyz/
+* [Home Assistant Community Store (HACS)](https://www.hacs.xyz/)
 
-* **Home Assistant Google Drive Backup**
-    * Repo: https://github.com/sabeechen/hassio-google-drive-backup
+* [Home Assistant Google Drive Backup](https://github.com/sabeechen/hassio-google-drive-backup)
     * Backup everything except media.
     * Test the backup at least once: https://youtu.be/xXXW7sQ9rqs?t=274
     * Backup keeps everything, even addons configuration (delete cookies if the login page is not showing on your domain name).
@@ -464,12 +461,11 @@ How to setup Sonoff MG24:
         * Clean cookies in your browser because of Cloudflare.
         * The Sonoff MG24 can be unrecognized: wait a bit; if still not recognized, detach it and attach it again.
 
-* **Linky** : https://github.com/bokub/ha-linky
+* [Linky](https://github.com/bokub/ha-linky)
 
-* **motionEye**
-  * Integration docs: https://www.home-assistant.io/integrations/motioneye/
+* [motionEye](https://www.home-assistant.io/integrations/motioneye/)
 
-* **n8n**
+* [n8n](https://github.com/Rbillon59/hass-n8n)
 
 * **Samba Backup**
 
@@ -479,8 +475,7 @@ How to setup Sonoff MG24:
     * Useful video example: https://www.youtube.com/watch?v=Vu_oxefjd0I
     * Common tasks: https://www.home-assistant.io/common-tasks/os/#installing-and-using-the-samba-add-on
 
-* **Terminal & SSH**
-    * Guide: https://lazyadmin.nl/smart-home/enable-ssh-home-assistant/
+* [Terminal & SSH](https://lazyadmin.nl/smart-home/enable-ssh-home-assistant/)
 
 This next section is about controllers / routers add-ons :
 
@@ -498,8 +493,7 @@ This next section is about controllers / routers add-ons :
 
 * **Silicon Labs Multiprotocol**
 
-* **Silicon Labs Flasher** (useful for multiprotocol / firmware)
-   - Official add-on docs: https://github.com/home-assistant/addons/tree/master/silabs_flasher
+* [Silicon Labs Flasher](https://github.com/home-assistant/addons/tree/master/silabs_flasher) (useful for multiprotocol / firmware)
 
 * **SONOFF Dongle Flasher**
 
