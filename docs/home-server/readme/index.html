@@ -1138,10 +1138,32 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#automation-scenes" class="md-nav__link">
+  <a href="#integrations" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Automation &amp; scenes
+        Integrations
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dashboard-cards" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Dashboard &amp; Cards
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#automations-scenes-script-helpers-and-entities" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Automations, Scenes, Script, Helpers and Entities
       
     </span>
   </a>
@@ -2962,10 +2984,32 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#automation-scenes" class="md-nav__link">
+  <a href="#integrations" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Automation &amp; scenes
+        Integrations
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dashboard-cards" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Dashboard &amp; Cards
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#automations-scenes-script-helpers-and-entities" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Automations, Scenes, Script, Helpers and Entities
       
     </span>
   </a>
@@ -3130,6 +3174,7 @@
 <li>Wait for mirror to be configured.</li>
 <li>Assign some partitions : <code>ext4</code> 100GB for <code>/</code> and some space for var/lib. <code>/var/lib</code> is where most application data lives. KVM/Libvirt stores virtual machine disks in /var/lib/libvirt/images. Docker (if you use it for AdGuard) stores everything in /var/lib/docker.</li>
 <li>Install <code>openssh-server</code> and manage it remotely using SSH from another machine so you can copy-paste commands from the documentation.</li>
+<li>enable ssh auto start : <code>sudo systemctl enable ssh</code> and  <code>sudo systemctl start ssh</code></li>
 </ul>
 <h3 id="first-checks-updates">First checks / updates</h3>
 <ul>
@@ -3535,20 +3580,16 @@ Go to  Cloudflare Zero Trust -&gt; Access Controls -&gt; Applications -&gt; Self
 <li><strong>AdGuard Home</strong></li>
 <li>DNS and DHCP (do not forget to add IPv4 and IPv6 DNS servers to your router). Disable safe search.</li>
 <li>For IP address name resolving, check <a href="#adguard-home-address-naming-resolution-using-the-router-freebox">this section</a>.</li>
+<li>Docs/repo: https://github.com/hassio-addons/addon-adguard-home</li>
+<li>Add Google and Cloudflare DNS servers (both IPV4 and IPV6) as 2nd and 3rd options incase the self-hosted AdGuard Home breaks.</li>
 <li>
-<p>Docs/repo: https://github.com/hassio-addons/addon-adguard-home</p>
+<p>Make heavy tests (Restart the server, restart HA, restart the router, cut the power off...) after setting AdGuard Home because if something breaks, you will not be able to access your home assistant.</p>
 </li>
 <li>
-<p><strong>Cloudflared</strong> (Cloudflare Tunnel)</p>
+<p><a href="https://github.com/homeassistant-apps/app-cloudflared">Cloudflared</a> (Cloudflare Tunnel)</p>
 </li>
 <li>
-<p>Repo: https://github.com/homeassistant-apps/app-cloudflared</p>
-</li>
-<li>
-<p><strong>Donetick</strong> add-on</p>
-</li>
-<li>
-<p>Repo: https://github.com/donetick/hassio-addons</p>
+<p><a href="https://github.com/donetick/hassio-addons">Donetick</a></p>
 </li>
 <li>
 <p><strong>File editor</strong> :</p>
@@ -3558,44 +3599,60 @@ Go to  Cloudflare Zero Trust -&gt; Access Controls -&gt; Applications -&gt; Self
 <p>How to install: https://github.com/home-assistant/addons/blob/master/configurator/DOCS.md</p>
 </li>
 <li>
-<p><strong>HACS</strong> ("Get HACS") : https://www.hacs.xyz/</p>
+<p><a href="https://www.hacs.xyz/">Home Assistant Community Store (HACS)</a></p>
 </li>
 <li>
-<p><strong>Home Assistant Google Drive Backup</strong></p>
-</li>
-<li>Repo: https://github.com/sabeechen/hassio-google-drive-backup</li>
+<p><a href="https://github.com/sabeechen/hassio-google-drive-backup">Home Assistant Google Drive Backup</a></p>
+<ul>
 <li>Backup everything except media.</li>
 <li>Test the backup at least once: https://youtu.be/xXXW7sQ9rqs?t=274</li>
 <li>Backup keeps everything, even addons configuration (delete cookies if the login page is not showing on your domain name).</li>
 <li>Samba backup add-on: https://github.com/thomasmauerer/hassio-addons/tree/master/samba-backup</li>
-<li>
-<p>After a restoration, everything should work as expected:</p>
-<ul>
+<li>After a restoration, everything should work as expected:<ul>
 <li>Clean cookies in your browser because of Cloudflare.</li>
 <li>The Sonoff MG24 can be unrecognized: wait a bit; if still not recognized, detach it and attach it again.</li>
 </ul>
 </li>
+</ul>
+</li>
+<li>
+<p><a href="https://github.com/bokub/ha-linky">Linky</a></p>
+</li>
+<li>
+<p><a href="https://www.home-assistant.io/integrations/motioneye/">motionEye</a></p>
+</li>
+<li>
+<p>Music/Audio addons :</p>
+</li>
+<li>Navidrome:</li>
+<li>Use it with Octo-Fiesta (and <a href="https://tidal.squid.wtf/">Tidal</a> as a backend)</li>
+<li>Music Assistant Addon</li>
+<li>
+<p>Clients : https://www.navidrome.org/apps/</p>
+<ul>
+<li>For example Narjo for iOS</li>
+</ul>
+</li>
+<li>
+<p><a href="https://github.com/Rbillon59/hass-n8n">n8n</a></p>
+</li>
+<li>
+<p><strong>Samba Backup</strong></p>
+</li>
 <li>
 <p><strong>Samba Share</strong></p>
-</li>
+<ul>
 <li>Docs: https://github.com/home-assistant/addons/tree/master/samba</li>
 <li>How to install: https://github.com/home-assistant/addons/blob/master/samba/DOCS.md</li>
 <li>Useful video example: https://www.youtube.com/watch?v=Vu_oxefjd0I</li>
-<li>
-<p>Common tasks: https://www.home-assistant.io/common-tasks/os/#installing-and-using-the-samba-add-on</p>
-</li>
-<li>
-<p><strong>Terminal &amp; SSH</strong></p>
-</li>
-<li>
-<p>Guide: https://lazyadmin.nl/smart-home/enable-ssh-home-assistant/</p>
-</li>
-<li>
-<p><strong>motionEye</strong></p>
-</li>
-<li>Integration docs: https://www.home-assistant.io/integrations/motioneye/</li>
+<li>Common tasks: https://www.home-assistant.io/common-tasks/os/#installing-and-using-the-samba-add-on</li>
 </ul>
-<p>#### Controllers / routers add-ons</p>
+</li>
+<li>
+<p><a href="https://lazyadmin.nl/smart-home/enable-ssh-home-assistant/">Terminal &amp; SSH</a></p>
+</li>
+</ul>
+<p>This next section is about controllers / routers add-ons :</p>
 <ul>
 <li><strong>Home Assistant Matter Hub</strong></li>
 <li>Repo: https://github.com/RiDDiX/home-assistant-matter-hub</li>
@@ -3618,10 +3675,7 @@ Go to  Cloudflare Zero Trust -&gt; Access Controls -&gt; Applications -&gt; Self
 <p><strong>Silicon Labs Multiprotocol</strong></p>
 </li>
 <li>
-<p><strong>Silicon Labs Flasher</strong> (useful for multiprotocol / firmware)</p>
-</li>
-<li>
-<p>Official add-on docs: https://github.com/home-assistant/addons/tree/master/silabs_flasher</p>
+<p><a href="https://github.com/home-assistant/addons/tree/master/silabs_flasher">Silicon Labs Flasher</a> (useful for multiprotocol / firmware)</p>
 </li>
 <li>
 <p><strong>SONOFF Dongle Flasher</strong></p>
@@ -3630,12 +3684,8 @@ Go to  Cloudflare Zero Trust -&gt; Access Controls -&gt; Applications -&gt; Self
 <p><strong>Zigbee2MQTT</strong></p>
 </li>
 </ul>
-<p>### Integrations</p>
+<h3 id="integrations">Integrations</h3>
 <ul>
-<li><strong>HACS</strong></li>
-<li>The best is to use community integrations when available; they often have more features.</li>
-<li><strong>Mushroom cards</strong> : https://github.com/piitaya/lovelace-mushroom#installation</li>
-<li><strong>Auto entities</strong> : https://github.com/thomasloven/lovelace-auto-entities</li>
 <li><strong>AdGuard Home</strong></li>
 <li>
 <p>Add-on repo (service): https://github.com/hassio-addons/addon-adguard-home</p>
@@ -3649,19 +3699,16 @@ Go to  Cloudflare Zero Trust -&gt; Access Controls -&gt; Applications -&gt; Self
 <p>Docs: https://www.home-assistant.io/integrations/alexa_media_player/</p>
 </li>
 <li>
-<p><strong>Android TV Remote</strong></p>
+<p><strong>Android TV Remote</strong> : Control your TV.</p>
 </li>
 <li>
-<p><strong>Matter</strong></p>
+<p><strong>Backup</strong> :</p>
 </li>
 <li>
-<p><strong>Thread</strong></p>
+<p><strong>Brother Printer</strong></p>
 </li>
 <li>
-<p><strong>motionEye</strong></p>
-</li>
-<li>
-<p>https://www.home-assistant.io/integrations/motioneye/</p>
+<p><strong>C.A.F.E</strong>: https://github.com/FezVrasta/cafe-hass</p>
 </li>
 <li>
 <p><strong>Dreame vacuum</strong></p>
@@ -3669,58 +3716,111 @@ Go to  Cloudflare Zero Trust -&gt; Access Controls -&gt; Applications -&gt; Self
 <li>Community integration repo: https://github.com/Tasshack/dreame-vacuum</li>
 <li>Do not use the version 1. Use version &gt; 2 (supports multiple accounts: dreamehome, xiaomi, etc.).</li>
 <li>Maps for the vaccum:<ul>
-<li>https://github.com/PiotrMachowski/lovelace-xiaomi-vacuum-map-card</li>
 <li>https://github.com/noambergauz/dreame-vacuum-map-card</li>
 </ul>
 </li>
-<li>Script for voice assistant cleaning per room : https://github.com/Magnum9O/HA_BluePrints</li>
-<li><strong>LG</strong></li>
-<li>Better use the integration from HACS.</li>
-<li>Common community integration: https://github.com/ollo69/ha-smartthinq-sensors</li>
-<li>Docs: https://www.home-assistant.io/integrations/lg/</li>
-<li>** Home Connect Alt**</li>
 <li>
-<p>https://github.com/ekutner/home-connect-hass</p>
+<p>Script for voice assistant cleaning per room : https://github.com/Magnum9O/HA_BluePrints</p>
 </li>
 <li>
-<p>Other integrations: Freebox, Freemobile</p>
+<p><strong>Free Mobile</strong> : https://www.home-assistant.io/integrations/freemobile/</p>
 </li>
 <li>
-<p>Freebox: https://www.home-assistant.io/integrations/freebox/</p>
+<p><strong>Freebox</strong> : https://www.home-assistant.io/integrations/freebox/</p>
 </li>
 <li>
-<p>Freemobile: https://www.home-assistant.io/integrations/freemobile/</p>
+<p><strong>HACS</strong>: The best is to use Home Assistant Community Store integrations when available; they often have more features.</p>
 </li>
 <li>
-<p>Volets Profalux Zigbee:</p>
+<p><strong>Home Assistant Supervisor</strong></p>
 </li>
 <li>
-<p>https://perso.aquilenet.fr/~sven337/francais/2023/06/02/Appairage-de-volets-Profalux-Zigbee.html</p>
+<p><strong>Home Connect Alt</strong> : https://github.com/ekutner/home-connect-hass for Bosch devices</p>
+</li>
+<li>
+<p><strong>Matter</strong></p>
+</li>
+<li>
+<p><strong>Mobile App</strong></p>
+</li>
+<li>
+<p><strong>MotionEye</strong></p>
+</li>
+<li>
+<p>https://www.home-assistant.io/integrations/motioneye/</p>
+</li>
+<li>
+<p><strong>MQTT</strong></p>
+</li>
+<li>Volets Profalux Zigbee: https://perso.aquilenet.fr/~sven337/francais/2023/06/02/Appairage-de-volets-Profalux-Zigbee.html</li>
+<li>
+<p>Windows (start, lock, restart, sleep...) :  <a href="https://github.com/hass-agent/HASS.Agent">HASS Agent</a></p>
+</li>
+<li>
+<p><strong>Open Thread Border Router</strong></p>
+</li>
+<li>
+<p><strong>SmartThinQ LGE Sensors</strong> : https://github.com/ollo69/ha-smartthinq-sensors</p>
+</li>
+<li>
+<p><strong>Sun</strong></p>
+</li>
+<li>
+<p><strong>Tapo: Cameras Control</strong></p>
+</li>
+<li>
+<p><strong>Thread</strong></p>
+</li>
+<li>
+<p><strong>TP-Link Smart Home</strong></p>
 </li>
 <li>
 <p>HA Label State: https://github.com/andrew-codechimp/HA-Label-State</p>
 </li>
 </ul>
-<h3 id="automation-scenes">Automation &amp; scenes</h3>
+<h3 id="dashboard-cards">Dashboard &amp; Cards</h3>
 <ul>
-<li>🤖 Automation = When something happens → do something<ul>
+<li><strong>Auto entities</strong> : https://github.com/thomasloven/lovelace-auto-entities</li>
+<li><strong>Custom sidebar</strong>: https://github.com/elchininet/custom-sidebar</li>
+<li><strong>Kiosk Mode</strong>: https://github.com/NemesisRE/kiosk-mode</li>
+<li><strong>Mushroom cards</strong> : https://github.com/piitaya/lovelace-mushroom#installation</li>
+<li><strong>Universal Remote Card</strong> : https://github.com/Nerwyn/universal-remote-card</li>
+</ul>
+<h3 id="automations-scenes-script-helpers-and-entities">Automations, Scenes, Script, Helpers and Entities</h3>
+<ul>
+<li><strong>🤖 Automation</strong> = When something happens → do something<ul>
 <li>Always use entities instead of devices. Entities have unique names.</li>
 </ul>
 </li>
-<li>🎬 Scene = Rarely used. Set things to a predefined state. A scene is just a snapshot of states.</li>
+<li><strong>🎬 Scene</strong> = Rarely used. Set things to a predefined state. A scene is just a snapshot of states.<ul>
 <li>Script: is a sequence of actions that can be triggered by an automation or manually.</li>
-<li>👉 Automations trigger scenes</li>
+</ul>
+</li>
+<li><strong>👉 Automations</strong> trigger scenes</li>
 <li>An example : I want to arm the alarm when I leave my home<ul>
-<li>Automation 1 : if my phone is not available in home assistant -&gt; Call a script to arm the alarm,</li>
+<li>Automation 1 : if my phone is not available in home assistant (using freebox device tracker) -&gt; Call a script to arm the alarm,</li>
 <li>Script 1: turn on the alarm, turn on the lock of doors, activate the camera's high motion detections ..etc</li>
 <li>Automation 2: if the alarm is triggered -&gt; send notifications, run sound on the alarm ...</li>
 </ul>
 </li>
-<li>Scripts are usually created so we can activate them manually or with an automation. They don't have conditions.</li>
+<li>
+<p><strong>Scripts</strong> are usually created so we can activate them manually or with an automation. They don't have conditions.</p>
+</li>
+<li>
+<p><strong>Helpers</strong></p>
+<ul>
+<li><a href="https://github.com/andrew-codechimp/HA-Label-State">HA Label State</a></li>
+</ul>
+</li>
+<li>
+<p><strong>Entities</strong></p>
+<ul>
 <li>When you add an entity, you can select a default behavior (toggle , show info, etc..) . For example a camera move down button, the default behavior is to <code>show more info</code>, but you can change it to <code>toggle</code> so when you press that button, it will move the camera.</li>
 <li>Show offline devices and addons : Add a filter card that shows 'not_home' and 'unavailable' entities and addons. You need to go to an addon in devices, and enable the 'running' entity to be able to use it in the card.</li>
-<li>when you rename a device, you can auto recreate the IDs.</li>
-<li>Usee labels to group entities. For example, a 'entity status' label and 'addon status' label to detect offline devices and addons without the need to add each device in the condition.</li>
+<li>When you rename a device, you can auto recreate the IDs. Changing the entity id doesn't propagate in scripts and automation so before changing the id of an entity, click on related, open in new tabs all the related stuff , change the id then change the id in the related stuff</li>
+<li>Use labels to group entities. For example, an 'entity status' label and 'addon status' label to detect offline devices and addons without the need to add each device in the condition. You need the</li>
+</ul>
+</li>
 </ul>
 <h2 id="adguard-home-address-naming-resolution-using-the-router-freebox">AdGuard Home address naming resolution using the router (Freebox)</h2>
 <ul>
@@ -3758,7 +3858,6 @@ mushroom card
 auto entities
 kioske mode
 custom sidebar
-label state
 room card</p>
 </li>
 </ul>
