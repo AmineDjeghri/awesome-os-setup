@@ -102,7 +102,7 @@ the Projectivy and add Stremio and Nuvio there. Also make it the default launche
               ---
 
               ##### 📂 Step 4 — Import Your Settings
-              1. Download[ my configuration file](../src/awesome_os/config/others/aiostreams-config.json)
+              1. Download [my configuration file](../../src/awesome_os/config/others/aiostreams-config.json)
               2. Go to **“Navigate and Install”**.
               3. Click **Import**.
               4. Select and upload your saved configuration file. You will an error message saying that 'StreamFusion API Key is invalid' which is normal for now.

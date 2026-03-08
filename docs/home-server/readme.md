@@ -44,7 +44,7 @@
   - Wait for mirror to be configured.
   - Assign some partitions : `ext4` 100GB for `/` and some space for var/lib. `/var/lib` is where most application data lives. KVM/Libvirt stores virtual machine disks in /var/lib/libvirt/images. Docker (if you use it for AdGuard) stores everything in /var/lib/docker.
   - Install `openssh-server` and manage it remotely using SSH from another machine so you can copy-paste commands from the documentation.
-
+  - enable ssh auto start : `sudo systemctl enable ssh` and  `sudo systemctl start ssh`
 ### First checks / updates
 
 - Run updates:
@@ -437,48 +437,60 @@ How to setup Sonoff MG24:
 
  ### Apps / Add-ons
 
- - **AdGuard Home**
-   - DNS and DHCP (do not forget to add IPv4 and IPv6 DNS servers to your router). Disable safe search.
-   - For IP address name resolving, check [this section](#adguard-home-address-naming-resolution-using-the-router-freebox).
-   - Docs/repo: https://github.com/hassio-addons/addon-adguard-home
+* **AdGuard Home**
+  * DNS and DHCP (do not forget to add IPv4 and IPv6 DNS servers to your router). Disable safe search.
+  * For IP address name resolving, check [this section](#adguard-home-address-naming-resolution-using-the-router-freebox).
+  * Docs/repo: https://github.com/hassio-addons/addon-adguard-home
+  * Add Google and Cloudflare DNS servers (both IPV4 and IPV6) as 2nd and 3rd options incase the self-hosted AdGuard Home breaks.
+  * Make heavy tests (Restart the server, restart HA, restart the router, cut the power off...) after setting AdGuard Home because if something breaks, you will not be able to access your home assistant.
 
- - **Cloudflared** (Cloudflare Tunnel)
-   - Repo: https://github.com/homeassistant-apps/app-cloudflared
 
- - **Donetick** add-on
-   - Repo: https://github.com/donetick/hassio-addons
+* [Cloudflared](https://github.com/homeassistant-apps/app-cloudflared) (Cloudflare Tunnel)
 
- - **File editor** :
-   - Docs: https://github.com/home-assistant/addons/tree/master/configurator
-   - How to install: https://github.com/home-assistant/addons/blob/master/configurator/DOCS.md
+* [Donetick](https://github.com/donetick/hassio-addons)
 
- - **HACS** ("Get HACS") : https://www.hacs.xyz/
+* **File editor** :
+  * Docs: https://github.com/home-assistant/addons/tree/master/configurator
+  * How to install: https://github.com/home-assistant/addons/blob/master/configurator/DOCS.md
 
- - **Home Assistant Google Drive Backup**
-   - Repo: https://github.com/sabeechen/hassio-google-drive-backup
-   - Backup everything except media.
-   - Test the backup at least once: https://youtu.be/xXXW7sQ9rqs?t=274
-   - Backup keeps everything, even addons configuration (delete cookies if the login page is not showing on your domain name).
-   - Samba backup add-on: https://github.com/thomasmauerer/hassio-addons/tree/master/samba-backup
-   - After a restoration, everything should work as expected:
-     - Clean cookies in your browser because of Cloudflare.
-     - The Sonoff MG24 can be unrecognized: wait a bit; if still not recognized, detach it and attach it again.
+* [Home Assistant Community Store (HACS)](https://www.hacs.xyz/)
 
- - **Samba Share**
-   - Docs: https://github.com/home-assistant/addons/tree/master/samba
-   - How to install: https://github.com/home-assistant/addons/blob/master/samba/DOCS.md
-   - Useful video example: https://www.youtube.com/watch?v=Vu_oxefjd0I
-   - Common tasks: https://www.home-assistant.io/common-tasks/os/#installing-and-using-the-samba-add-on
+* [Home Assistant Google Drive Backup](https://github.com/sabeechen/hassio-google-drive-backup)
+    * Backup everything except media.
+    * Test the backup at least once: https://youtu.be/xXXW7sQ9rqs?t=274
+    * Backup keeps everything, even addons configuration (delete cookies if the login page is not showing on your domain name).
+    * Samba backup add-on: https://github.com/thomasmauerer/hassio-addons/tree/master/samba-backup
+    * After a restoration, everything should work as expected:
+        * Clean cookies in your browser because of Cloudflare.
+        * The Sonoff MG24 can be unrecognized: wait a bit; if still not recognized, detach it and attach it again.
 
- - **Terminal & SSH**
-   - Guide: https://lazyadmin.nl/smart-home/enable-ssh-home-assistant/
+* [Linky](https://github.com/bokub/ha-linky)
 
- - **motionEye**
-   - Integration docs: https://www.home-assistant.io/integrations/motioneye/
+* [motionEye](https://www.home-assistant.io/integrations/motioneye/)
 
- #### Controllers / routers add-ons
+* Music/Audio addons :
+  * Navidrome:
+  * Use it with Octo-Fiesta (and [Tidal](https://tidal.squid.wtf/) as a backend)
+  * Music Assistant Addon
+  * Clients : https://www.navidrome.org/apps/
+    * For example Narjo for iOS
 
- - **Home Assistant Matter Hub**
+
+* [n8n](https://github.com/Rbillon59/hass-n8n)
+
+* **Samba Backup**
+
+* **Samba Share**
+    * Docs: https://github.com/home-assistant/addons/tree/master/samba
+    * How to install: https://github.com/home-assistant/addons/blob/master/samba/DOCS.md
+    * Useful video example: https://www.youtube.com/watch?v=Vu_oxefjd0I
+    * Common tasks: https://www.home-assistant.io/common-tasks/os/#installing-and-using-the-samba-add-on
+
+* [Terminal & SSH](https://lazyadmin.nl/smart-home/enable-ssh-home-assistant/)
+
+This next section is about controllers / routers add-ons :
+
+* **Home Assistant Matter Hub**
    - Repo: https://github.com/RiDDiX/home-assistant-matter-hub
    - Tutorial (old version but should work): https://www.youtube.com/watch?v=-TMzuHFo_-g
    - Notes:
@@ -486,81 +498,110 @@ How to setup Sonoff MG24:
      - Use it with Alexa and Google Home. If Alexa doesn't discover the hub, use Google Home app, then add it to Alexa from Google Home.
      - You need to add labels to entities (not devices).
 
- - **Matter Server**
+* **Matter Server**
 
- - **Mosquitto broker**
+* **Mosquitto broker**
 
- - **Silicon Labs Multiprotocol**
+* **Silicon Labs Multiprotocol**
 
- - **Silicon Labs Flasher** (useful for multiprotocol / firmware)
-   - Official add-on docs: https://github.com/home-assistant/addons/tree/master/silabs_flasher
+* [Silicon Labs Flasher](https://github.com/home-assistant/addons/tree/master/silabs_flasher) (useful for multiprotocol / firmware)
 
- - **SONOFF Dongle Flasher**
+* **SONOFF Dongle Flasher**
 
- - **Zigbee2MQTT**
+* **Zigbee2MQTT**
 
- ### Integrations
-
- - **HACS**
-   - The best is to use community integrations when available; they often have more features.
- - **Mushroom cards** : https://github.com/piitaya/lovelace-mushroom#installation
- - **Auto entities** : https://github.com/thomasloven/lovelace-auto-entities
- - **AdGuard Home**
+### Integrations
+* **AdGuard Home**
    - Add-on repo (service): https://github.com/hassio-addons/addon-adguard-home
 
- - **Alexa Media Player**
+* **Alexa Media Player**
    - Repo: https://github.com/alandtse/alexa_media_player
    - Video guide you referenced: https://www.youtube.com/watch?v=TDdREzkigIE&t
    - Docs: https://www.home-assistant.io/integrations/alexa_media_player/
 
-- **Android TV Remote**
+* **Android TV Remote** : Control your TV.
 
-- **Matter**
+* **Backup** :
 
-- **Thread**
+* **Brother Printer**
 
- - **motionEye**
-   - https://www.home-assistant.io/integrations/motioneye/
+* **C.A.F.E**: https://github.com/FezVrasta/cafe-hass
 
- - **Dreame vacuum**
-   - Community integration repo: https://github.com/Tasshack/dreame-vacuum
-   - Do not use the version 1. Use version > 2 (supports multiple accounts: dreamehome, xiaomi, etc.).
-   - Maps for the vaccum:
-     - https://github.com/PiotrMachowski/lovelace-xiaomi-vacuum-map-card
-     - https://github.com/noambergauz/dreame-vacuum-map-card
- - Script for voice assistant cleaning per room : https://github.com/Magnum9O/HA_BluePrints
- - **LG**
-   - Better use the integration from HACS.
-   - Common community integration: https://github.com/ollo69/ha-smartthinq-sensors
-   - Docs: https://www.home-assistant.io/integrations/lg/
- - ** Home Connect Alt**
-   - https://github.com/ekutner/home-connect-hass
+* **Dreame vacuum**
+  * Community integration repo: https://github.com/Tasshack/dreame-vacuum
+  * Do not use the version 1. Use version > 2 (supports multiple accounts: dreamehome, xiaomi, etc.).
+  * Maps for the vaccum:
+    - https://github.com/noambergauz/dreame-vacuum-map-card
+  * Script for voice assistant cleaning per room : https://github.com/Magnum9O/HA_BluePrints
 
-- Other integrations: Freebox, Freemobile
+* **Free Mobile** : https://www.home-assistant.io/integrations/freemobile/
 
-  - Freebox: https://www.home-assistant.io/integrations/freebox/
-  - Freemobile: https://www.home-assistant.io/integrations/freemobile/
+* **Freebox** : https://www.home-assistant.io/integrations/freebox/
 
- - Volets Profalux Zigbee:
-   - https://perso.aquilenet.fr/~sven337/francais/2023/06/02/Appairage-de-volets-Profalux-Zigbee.html
+* **HACS**: The best is to use Home Assistant Community Store integrations when available; they often have more features.
 
- - HA Label State: https://github.com/andrew-codechimp/HA-Label-State
 
-### Automation & scenes
-  - 🤖 Automation = When something happens → do something
-    - Always use entities instead of devices. Entities have unique names.
-  - 🎬 Scene = Rarely used. Set things to a predefined state. A scene is just a snapshot of states.
-  - Script: is a sequence of actions that can be triggered by an automation or manually.
-  - 👉 Automations trigger scenes
-  - An example : I want to arm the alarm when I leave my home
-    - Automation 1 : if my phone is not available in home assistant -> Call a script to arm the alarm,
-    - Script 1: turn on the alarm, turn on the lock of doors, activate the camera's high motion detections ..etc
-    - Automation 2: if the alarm is triggered -> send notifications, run sound on the alarm ...
-  - Scripts are usually created so we can activate them manually or with an automation. They don't have conditions.
-  - When you add an entity, you can select a default behavior (toggle , show info, etc..) . For example a camera move down button, the default behavior is to ``show more info``, but you can change it to ``toggle`` so when you press that button, it will move the camera.
-  - Show offline devices and addons : Add a filter card that shows 'not_home' and 'unavailable' entities and addons. You need to go to an addon in devices, and enable the 'running' entity to be able to use it in the card.
-  - when you rename a device, you can auto recreate the IDs.
-  - Usee labels to group entities. For example, a 'entity status' label and 'addon status' label to detect offline devices and addons without the need to add each device in the condition.
+* **Home Assistant Supervisor**
+
+* **Home Connect Alt** : https://github.com/ekutner/home-connect-hass for Bosch devices
+
+* **Matter**
+
+* **Mobile App**
+
+* **MotionEye**
+  - https://www.home-assistant.io/integrations/motioneye/
+
+* **MQTT**
+  * Volets Profalux Zigbee: https://perso.aquilenet.fr/~sven337/francais/2023/06/02/Appairage-de-volets-Profalux-Zigbee.html
+  * Windows (start, lock, restart, sleep...) :  [HASS Agent](https://github.com/hass-agent/HASS.Agent)
+
+
+* **Open Thread Border Router**
+
+* **SmartThinQ LGE Sensors** : https://github.com/ollo69/ha-smartthinq-sensors
+
+* **Sun**
+
+* **Tapo: Cameras Control**
+
+* **Thread**
+
+* **TP-Link Smart Home**
+
+
+
+* HA Label State: https://github.com/andrew-codechimp/HA-Label-State
+
+### Dashboard & Cards
+* **Auto entities** : https://github.com/thomasloven/lovelace-auto-entities
+* **Custom sidebar**: https://github.com/elchininet/custom-sidebar
+* **Kiosk Mode**: https://github.com/NemesisRE/kiosk-mode
+* **Mushroom cards** : https://github.com/piitaya/lovelace-mushroom#installation
+* **Universal Remote Card** : https://github.com/Nerwyn/universal-remote-card
+
+
+### Automations, Scenes, Script, Helpers and Entities
+* **🤖 Automation** = When something happens → do something
+    * Always use entities instead of devices. Entities have unique names.
+* **🎬 Scene** = Rarely used. Set things to a predefined state. A scene is just a snapshot of states.
+    * Script: is a sequence of actions that can be triggered by an automation or manually.
+* **👉 Automations** trigger scenes
+* An example : I want to arm the alarm when I leave my home
+    * Automation 1 : if my phone is not available in home assistant (using freebox device tracker) -> Call a script to arm the alarm,
+    * Script 1: turn on the alarm, turn on the lock of doors, activate the camera's high motion detections ..etc
+    * Automation 2: if the alarm is triggered -> send notifications, run sound on the alarm ...
+* **Scripts** are usually created so we can activate them manually or with an automation. They don't have conditions.
+
+* **Helpers**
+    * [HA Label State](https://github.com/andrew-codechimp/HA-Label-State)
+
+* **Entities**
+    * When you add an entity, you can select a default behavior (toggle , show info, etc..) . For example a camera move down button, the default behavior is to ``show more info``, but you can change it to ``toggle`` so when you press that button, it will move the camera.
+    * Show offline devices and addons : Add a filter card that shows 'not_home' and 'unavailable' entities and addons. You need to go to an addon in devices, and enable the 'running' entity to be able to use it in the card.
+    * When you rename a device, you can auto recreate the IDs. Changing the entity id doesn't propagate in scripts and automation so before changing the id of an entity, click on related, open in new tabs all the related stuff , change the id then change the id in the related stuff
+    * Use labels to group entities. For example, an 'entity status' label and 'addon status' label to detect offline devices and addons without the need to add each device in the condition. You need the
+
 
 ## AdGuard Home address naming resolution using the router (Freebox)
 - The following will show you how to get the names of the devices in AdGuard home using your router (this example is for Freebox API).
@@ -592,5 +633,4 @@ mushroom card
 auto entities
 kioske mode
 custom sidebar
-label state
 room card

@@ -101,15 +101,39 @@ def get_system_action_sections(
     sections: list[tuple[str, list[SystemAction]]] = []
 
     # Package managers (apt, snap, brew...) - at the top for quick access
+    # Only show primary package managers to avoid duplication
+    primary_managers = {
+        "windows": ["winget"],
+        "ubuntu": ["apt"],
+        "darwin": ["brew"],
+        "arch": ["yay"],
+    }
+
     factories = _PACKAGE_MANAGER_FACTORY_BY_DISTRO.get(distro, {})
-    for manager_name, factory in factories.items():
+    allowed_managers = primary_managers.get(distro, list(factories.keys()))
+
+    for manager_name in allowed_managers:
+        factory = factories.get(manager_name)
+        if factory is None:
+            continue
         pm = factory()
         sections.append(
             (
                 manager_name,
                 [
-                    SystemAction(label="update", run=pm.update),
-                    SystemAction(label="upgrade", run=pm.upgrade),
+                    SystemAction(
+                        label="update",
+                        run=pm.update,
+                        confirm=True,
+                        confirm_message=f"This will only update the {manager_name} package list/cache. Run the upgrade action to upgrade all packages. "
+                        f"Proceed?",
+                    ),
+                    SystemAction(
+                        label="upgrade",
+                        run=pm.upgrade,
+                        confirm=True,
+                        confirm_message=f"This will iterate through packages and upgrade them one by one. You may be prompted to accept installation for some apps. Proceed?",
+                    ),
                     SystemAction(label="cleanup", run=pm.cleanup),
                 ],
             )
