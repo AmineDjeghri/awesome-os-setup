@@ -44,7 +44,7 @@
   - Wait for mirror to be configured.
   - Assign some partitions : `ext4` 100GB for `/` and some space for var/lib. `/var/lib` is where most application data lives. KVM/Libvirt stores virtual machine disks in /var/lib/libvirt/images. Docker (if you use it for AdGuard) stores everything in /var/lib/docker.
   - Install `openssh-server` and manage it remotely using SSH from another machine so you can copy-paste commands from the documentation.
-
+  - enable ssh auto start : `sudo systemctl enable ssh` and  `sudo systemctl start ssh`
 ### First checks / updates
 
 - Run updates:
@@ -441,6 +441,9 @@ How to setup Sonoff MG24:
   * DNS and DHCP (do not forget to add IPv4 and IPv6 DNS servers to your router). Disable safe search.
   * For IP address name resolving, check [this section](#adguard-home-address-naming-resolution-using-the-router-freebox).
   * Docs/repo: https://github.com/hassio-addons/addon-adguard-home
+  * Add Google and Cloudflare DNS servers (both IPV4 and IPV6) as 2nd and 3rd options incase the self-hosted AdGuard Home breaks.
+  * Make heavy tests (Restart the server, restart HA, restart the router, cut the power off...) after setting AdGuard Home because if something breaks, you will not be able to access your home assistant.
+
 
 * [Cloudflared](https://github.com/homeassistant-apps/app-cloudflared) (Cloudflare Tunnel)
 
@@ -464,6 +467,14 @@ How to setup Sonoff MG24:
 * [Linky](https://github.com/bokub/ha-linky)
 
 * [motionEye](https://www.home-assistant.io/integrations/motioneye/)
+
+* Music/Audio addons :
+  * Navidrome:
+  * Use it with Octo-Fiesta (and [Tidal](https://tidal.squid.wtf/) as a backend)
+  * Music Assistant Addon
+  * Clients : https://www.navidrome.org/apps/
+    * For example Narjo for iOS
+
 
 * [n8n](https://github.com/Rbillon59/hass-n8n)
 
@@ -564,7 +575,6 @@ This next section is about controllers / routers add-ons :
 
 ### Dashboard & Cards
 * **Auto entities** : https://github.com/thomasloven/lovelace-auto-entities
-
 * **Custom sidebar**: https://github.com/elchininet/custom-sidebar
 * **Kiosk Mode**: https://github.com/NemesisRE/kiosk-mode
 * **Mushroom cards** : https://github.com/piitaya/lovelace-mushroom#installation
