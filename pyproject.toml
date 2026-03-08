@@ -25,11 +25,11 @@ dev = [
     "pytest == 9.0.2",
     "pytest-asyncio == 1.3.0",
     "ruff==0.15.1",
-    "ty==0.0.17"
+    "ty==0.0.18"
 ]
 docs = [
     "mkdocs == 1.6.1",
-    "mkdocs-material==9.7.1",
+    "mkdocs-material==9.7.2",
     "mkdocstrings==1.0.3",
     "mkdocs-mermaid2-plugin==1.2.3",
     "mkdocs-gen-files==0.6.0",
