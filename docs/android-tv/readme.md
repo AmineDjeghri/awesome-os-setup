@@ -69,7 +69,7 @@ the Projectivy and add Stremio and Nuvio there. Also make it the default launche
       - Test Stremio/Nuvio with a simple config :
          - Log in with your regular account into Stremio or Nuvio.
          - Subscribe to AllDebrid (or Real Debrid or Torbox). For All Debrid : https://alldebrid.com/ , do not select the free trial, it doesn't work.
-         - Configure this addon for example: CometFR addon https://comet.stremiofr.com/ , use the AllDebrid api key.
+         - Configure this addon for example: CometFR addon https://comet.stremiofr.com/ , Add in 'Debrid Service' AllDebrid and put your api key. UNCHECK the 'Enable torrents'
          - Go back to Stremio/Nuvio -> Addons, install addon -> and copy the manifest URL.
          - Select a movie, you should see the streams (the results to watch a movie). IF not, go to AllDebrid and accept the IP address request.
            
