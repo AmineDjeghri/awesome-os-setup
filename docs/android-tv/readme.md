@@ -66,11 +66,21 @@ the Projectivy and add Stremio and Nuvio there. Also make it the default launche
   - If you want to understand everything, there is [a complete and detailed tutorial](https://guides.viren070.me/stremio/).
   - If you know how to use Stremio, the same steps apply to Nuvio.
   - Setup :
+      - Test Stremio/Nuvio with a simple config :
+         - Log in with your regular account into Stremio or Nuvio.
+         - Subscribe to AllDebrid (or Real Debrid or Torbox). For All Debrid : https://alldebrid.com/ , do not select the free trial, it doesn't work.
+         - Configure this addon for example: CometFR addon https://comet.stremiofr.com/ , use the AllDebrid api key.
+         - Go back to Stremio/Nuvio -> Addons, install addon -> and copy the manifest URL.
+         - Select a movie, you should see the streams (the results to watch a movie). IF not, go to AllDebrid and accept the IP address request.
+           
+         🚨 IMPORTANT  
+         Since addons are hosted in different servers, everytime you add a new addon, you need to go to AllDebrid and validate the IP Address.
+         
       - After making any change to any addon, you don't need to close the application to synchronize the changes, just click on the addons tab, and go back to home.
         - My recommended Setup:
           - AIOStreams:
 
-              #### 🌐 AIOStreams + Stremio Configuration Guide
+              #### 🌐 AIOStreams + Nuvio Configuration Guide
 
               ##### 🧩 What is AIOStreams?
               AIOStreams is an all-in-one **Stremio addon manager** that lets you organize, install, and sync all your favorite addons in one place.
