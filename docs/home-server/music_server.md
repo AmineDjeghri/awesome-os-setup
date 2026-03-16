@@ -128,6 +128,7 @@ Tagging is usually done automatically via **MusicBrainz**.
 Beets computes a **match distance score** to determine the best candidate using the match section.
 
 #### Workflow:
+- My [config.yaml](../../src/awesome_os/config/unix/beets/config.yaml)
 What I advise to play with is:
 - Use `-v` to see the output or `-vv` to see the details.
 - Use `autotag: yes` with `write: no` will not write metadata into the files. This is useful to preview the changes.
