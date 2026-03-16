@@ -5,15 +5,23 @@ packages:
         - git
         - curl
         - zsh
+        - wget
+      Dev_tools:
+        - docker-compose
       terminal_tools:
         - bat
         - fzf
         - btop
         - neofetch
-        - lsd
+      webinstall:
+        Dev_tools:
+          - '[Docker](https://doc.ubuntu-fr.org/docker#depot_apt_docker)'
+
     snap:
       apps:
         - code
+      terminal_tools:
+        - lsd
   darwin:
     brew:
       Core:

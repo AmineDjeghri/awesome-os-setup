@@ -26,9 +26,9 @@
       * [Matter over Wi-Fi](#matter-over-wi-fi)
       * [Matter over Thread and Zigbee devices](#matter-over-thread-and-zigbee-devices)
     * [Apps / Add-ons](#apps--add-ons)
-      * [Controllers / routers add-ons](#controllers--routers-add-ons)
     * [Integrations](#integrations)
-    * [Automation & scenes](#automation--scenes)
+    * [Dashboard & Cards](#dashboard--cards)
+    * [Automations, Scenes, Script, Helpers and Entities](#automations-scenes-script-helpers-and-entities)
   * [AdGuard Home address naming resolution using the router (Freebox)](#adguard-home-address-naming-resolution-using-the-router-freebox)
 * [todo:](#todo)
 <!-- TOC -->
@@ -62,7 +62,7 @@ sudo apt update && sudo apt upgrade
 ssh username@192.168.x.x
 ```
 
-- I customized the shell environment by installing Zsh and tools from the [Awesome OS](https://github.com/AmineDjeghri/awesome-os-setup) to improve usability and productivity.
+- I customized the shell environment by installing Zsh and tools from the [Awesome OS Setup](../../README.md) to improve usability and productivity.
 
 ### Lid closed (Laptop)
 
@@ -474,6 +474,8 @@ How to setup Sonoff MG24:
   * Music Assistant Addon
   * Clients : https://www.navidrome.org/apps/
     * For example Narjo for iOS
+  * Auto tagger : Beets
+  * You can check this [music server setup](music_server.md)
 
 
 * [n8n](https://github.com/Rbillon59/hass-n8n)
