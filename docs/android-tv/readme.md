@@ -72,10 +72,10 @@ the Projectivy and add Stremio and Nuvio there. Also make it the default launche
          - Configure this addon for example: CometFR addon https://comet.stremiofr.com/ , Add in 'Debrid Service' AllDebrid and put your api key. UNCHECK the 'Enable torrents'
          - Go back to Stremio/Nuvio -> Addons, install addon -> and copy the manifest URL.
          - Select a movie, you should see the streams (the results to watch a movie). IF not, go to AllDebrid and accept the IP address request.
-           
-         🚨 IMPORTANT  
+
+         🚨 IMPORTANT
          Since addons are hosted in different servers, everytime you add a new addon, you need to go to AllDebrid and validate the IP Address.
-         
+
       - After making any change to any addon, you don't need to close the application to synchronize the changes, just click on the addons tab, and go back to home.
         - My recommended Setup:
           - AIOStreams:
