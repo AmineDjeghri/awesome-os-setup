@@ -303,8 +303,10 @@ Rules (choose ONE of these methods):
 
 If using Google / Microsoft / GitHub:
 
-- Include -> Identity Provider -> Google
-- Include -> Emails ending in -> `@gmail.com`
+- You can for example add GitHub following [this](https://developers.cloudflare.com/cloudflare-one/integrations/identity-providers/github/).
+- Adding the integration automatically adds it as a login method to all the applications. Don't add the provider as a login method to the policy, otherwise, it will accept all the users using that provider.
+- Keep the emails in the policy. https://developers.cloudflare.com/cloudflare-one/access-controls/policies/#require
+- If you want to disable the login, create a policy with action allow and an include rule 'everyone'
 
 ❌ Do NOT use:
 
@@ -368,7 +370,7 @@ You should now have:
 
 - ✅ Cloudflare Tunnel (no ports open)
 - ✅ Cloudflare Access login in front of HA
-- ✅ Email or Google login
+- ✅ Email (or Google login or GitHub)
 - ✅ MFA
 - ✅ 1 month session
 
