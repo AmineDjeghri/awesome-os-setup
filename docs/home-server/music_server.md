@@ -146,6 +146,16 @@ Add these commands to your crontab with `crontab -e`  to run it:
 You can also create a script to trigger them everytime your folder is updated.
 
 
+### Finding duplicates:
+Run this command :`beet duplicates -k title -k albumartist --full -p`
+
+or to delete : `beet duplicates -k title -k albumartist --delete`
+
+Add this to your crontab with `crontab -e`  to run it every 12 hours
+```bash
+0 */12 * * * date >> ~/beets-duplicates.log && echo "Running duplicates..." >> ~/beets-duplicates.log && ~/.venv/bin/beet duplicates -k title -k albumartist --delete >> ~/beets-duplicates.log 2>&1
+```
+
 [Chroma ](https://beets.readthedocs.io/en/stable/plugins/chroma.html#chromaprint-acoustid-plugin) :
 
 **Chromaprint :**
