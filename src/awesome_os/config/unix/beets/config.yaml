@@ -184,3 +184,9 @@ lastgenre:
 musicbrainz:
   extra_tags: [alias, year] # https://beets.readthedocs.io/en/stable/plugins/musicbrainz.html#conf-extra_tags
   search_limit: 7
+
+duplicates:
+  keys: [title, albumartist]
+  tiebreak:
+    items: [bitrate, added]
+  delete: no
