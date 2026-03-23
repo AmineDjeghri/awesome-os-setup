@@ -29,7 +29,7 @@ import:
 
 
 match: # Used by Autotagging
-  strong_rec_thresh: 0.95           # Strong recommendation > 90%.  Accepted automatically if distance < strong_rec_thresh (except in “timid” mode)
+  strong_rec_thresh: 0.05           # Strong recommendation > 95%.  Accepted automatically if distance < strong_rec_thresh (except in “timid” mode)
   medium_rec_thresh: 0.3            # Medium recommendation. Suggest a track if its distance < medium threshold (works when quiet mode is disabled)
   track_length_grace: 2            # Allow up to 2 seconds difference without penalty
   track_length_max: 10              # Cap maximum penalty at 5 seconds difference.
