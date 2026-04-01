@@ -128,9 +128,8 @@ def sync():
         if "l3connectivities" in dev:
             for conn in dev["l3connectivities"]:
                 # We specifically want IPv6 global (2a01...) and link-local (fe80...)
-                # We add 'reachable' and 'active' addresses.
-                if conn.get("reachable") or conn.get("active"):
-                    ip_list.add(conn["addr"])
+                # We add all addresses including unreachable ones to track offline devices
+                ip_list.add(conn["addr"])
 
         final_ids = list(ip_list)
 
@@ -140,10 +139,10 @@ def sync():
             existing_client = agh_clients[mac]
             current_ids = set(existing_client["ids"])
 
-            # Only update if we found NEW IPs not currently in AdGuard
-            if not set(final_ids).issubset(current_ids):
-                print(f"Updating '{name}' - Found new IPs")
-                new_ids = list(current_ids.union(final_ids))
+            # Replace IPs with current list from Freebox (removes stale IPs)
+            if set(final_ids) != current_ids:
+                print(f"Updating '{name}' - Syncing IPs")
+                new_ids = final_ids
 
                 payload = {
                     "name": existing_client["name"],  # Identifying name
