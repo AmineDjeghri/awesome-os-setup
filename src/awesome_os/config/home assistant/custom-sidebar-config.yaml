@@ -71,19 +71,27 @@ order:
     order: 5
 
   - new_item: true
-    item: integrations
+    item: Integrations
     href: "/config/integrations"
     icon: mdi:puzzle
-    icon_color: "#9C27B0"
-    text_color: "#9C27B0"
+    icon_color: "#1b499f"
+    text_color: "#1b499f"
     order: 6
 
   - new_item: true
-    item: automations
+    item: Automations
     href: "/config/automation"
     icon: mdi:robot
-    icon_color: "#FF9800"
-    text_color: "#FF9800"
+    icon_color: "#568a46"
+    text_color: "#568a46"
+    order: 7
+
+  - new_item: true
+    item: Apps
+    href: "/config/apps"
+    icon: mdi:robot
+    icon_color: "#ebc14b"
+    text_color: "#ebc14b"
     order: 7
 
   - item: hacs
