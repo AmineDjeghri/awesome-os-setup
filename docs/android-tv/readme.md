@@ -121,11 +121,12 @@ the Projectivy and add Stremio and Nuvio there. Also make it the default launche
 
               ---
 
-              ##### 🔑 Step 5 — Enable Your Debrid Services and TMDB API
+              ##### 🔑 Step 5 — Enable Your Debrid Services, TMDB API and Posters
               1. In AIOStreams, go to **Services**.
               2. Enable your preferred **Debrid service** (e.g.,  AllDebrid, Real-Debrid, TorBox).  I am using All Debrid, if you choose another Debrid provider, you will need to edit the provider in each addon (which is very easy since it's just a select box)
               3. Enter your API key.
-              4. After adding your Debrid api key, go down and look for 'TMDB' and follow the instructions to add your TMDB API keys.
+              4. After adding your Debrid api key, scroll down to find the Metadata section, and look for 'TMDB' and follow the instructions to add your TMDB API keys.
+              5. After adding your TMDB api key, scroll down to find the Posters section, select RPDB and enter the following api key : `t0-free-rpdb`. Check the options bellow like '  Use Poster Service for Library/Continue Watching
 
               ---
 
