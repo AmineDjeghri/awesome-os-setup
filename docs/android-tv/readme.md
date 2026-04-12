@@ -248,3 +248,8 @@ the Projectivy and add Stremio and Nuvio there. Also make it the default launche
            items with today's date).
           - If you didn't rate some movies & tv shows, you can add them to history in Trakt to avoid being recommended by the 'AI Search' addon.
          - If you want to synchronize Trakt with IMDB you can use [IMDB-Trakt-Syncer](https://github.com/RileyXX/IMDB-Trakt-Syncer). You can rate what you watch on IMDB or trakt and run the python app to sync everything.
+      #### Collections 
+         todo: insert image of collections here
+         - we use here our own collections (netflix..etc, no need to use another addon)
+         - follow this tutorial made by the community, no need to install aiometada.
+         - start the video from 2min35 https://www.reddit.com/r/Nuvio/s/7bTcL9OcmZ
