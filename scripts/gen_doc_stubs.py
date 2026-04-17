@@ -1,6 +1,6 @@
-"""This script walks through the source code and generates a markdown file for each python file.
+"""This script walks through the source code and generates a Markdown file for each python file.
 
-The goal is then for the markdown files to be used by mkdocs to call the plugin mkdocstring.
+The goal is then for the Markdown files to be used by mkdocs to call the plugin MkDocstring.
 """
 
 from pathlib import Path

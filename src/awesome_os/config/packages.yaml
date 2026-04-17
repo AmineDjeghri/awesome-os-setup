@@ -5,15 +5,23 @@ packages:
         - git
         - curl
         - zsh
+        - wget
+      Dev_tools:
+        - docker-compose
       terminal_tools:
         - bat
         - fzf
         - btop
         - neofetch
-        - lsd
+      webinstall:
+        Dev_tools:
+          - '[Docker](https://doc.ubuntu-fr.org/docker#depot_apt_docker)'
+
     snap:
       apps:
         - code
+      terminal_tools:
+        - lsd
   darwin:
     brew:
       Core:
@@ -130,9 +138,11 @@ packages:
       Meetings:
         - Zoom.Zoom
         - Microsoft.Teams
+
       Media:
         - Stremio.Stremio.Beta
         - VideoLAN.VLC
+        - Feishin.Feishin
         - Spotify.Spotify
         - Apple.AppleMusic
       Gaming:
@@ -140,6 +150,7 @@ packages:
         - EpicGames.EpicGamesLauncher
         - Nvidia.GeForceExperience
         - Ubisoft.Connect
+        - Meta.Oculus
         - SideQuestVR.SideQuest
       Drives:
         - Google.GoogleDrive
@@ -147,28 +158,30 @@ packages:
         - Apple.iCloud
       Editing:
         - OBSProject.OBSStudio
-        - ByteDance.CapCut
-        - Microsoft.Clipchamp
+        - Meltytech.Shotcut
         - Canva.Canva
       Text Editors:
         - Obsidian.Obsidian
         - Notion.Notion
         - PDFgear.PDFgear
       Dev_tools:
+        - astral-sh.uv
         - Microsoft.WindowsTerminal
         - JetBrains.PyCharm
         - Comfy.ComfyUI-Desktop
         - Docker.DockerDesktop
         - Microsoft.VisualStudioCode
         - MongoDB.Compass.Full
+        - ZedIndustries.Zed
+        - GnuWin32.Make
       Devices Software:
         - Logitech.GHUB
         - Brother.iPrintScan
         - SteelSeries.GG
-        - SteelSeries.SteelSeriesEngine
+
       Utilities:
         - glzr-io.glazewm
-        - NordVPN.NordVPN
+        - NordSecurity.NordVPN
         - qBittorrent.qBittorrent
         - Microsoft.PowerToys
         - ShareX.ShareX
@@ -181,14 +194,19 @@ packages:
         - AnyDesk.AnyDesk
         - BinaryFortress.DisplayFusion
         - RARLab.WinRAR
+        - Hass.Agent
       Winget UI Manager:
         - MartiCliment.UniGetUI
 
     msstore:
       Devices Software:
-        - msi center
+        - MSI Center
       AI:
-        - "ChatGPT"
+        - ChatGPT
+      Utilities:
+        - Wintoys
+        - Raycast
+        - Windows HDR Calibration
     webinstall:
       AI:
         - '[MCPJam Inspector](https://github.com/MCPJam/inspector/releases)'

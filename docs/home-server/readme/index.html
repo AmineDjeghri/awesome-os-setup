@@ -13,7 +13,7 @@
       
       
       
-        <link rel="prev" href="../../apps/awesome_websites_browser_extensions/">
+        <link rel="prev" href="../music_server/">
       
       
         <link rel="next" href="../../linux/">
@@ -733,6 +733,8 @@
       
         
       
+        
+      
     
     
     
@@ -775,6 +777,34 @@
 
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../music_server/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Music server
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
             
               
                 
@@ -3101,7 +3131,7 @@
     
     
       <li class="md-path__item">
-        <a href="./" class="md-path__link">
+        <a href="../music_server/" class="md-path__link">
           
   <span class="md-ellipsis">
     Home server
@@ -3155,9 +3185,9 @@
 <li><a href="#matter-over-wi-fi">Matter over Wi-Fi</a></li>
 <li><a href="#matter-over-thread-and-zigbee-devices">Matter over Thread and Zigbee devices</a></li>
 <li><a href="#apps--add-ons">Apps / Add-ons</a></li>
-<li><a href="#controllers--routers-add-ons">Controllers / routers add-ons</a></li>
 <li><a href="#integrations">Integrations</a></li>
-<li><a href="#automation--scenes">Automation &amp; scenes</a></li>
+<li><a href="#dashboard--cards">Dashboard &amp; Cards</a></li>
+<li><a href="#automations-scenes-script-helpers-and-entities">Automations, Scenes, Script, Helpers and Entities</a></li>
 </ul>
 </li>
 <li><a href="#adguard-home-address-naming-resolution-using-the-router-freebox">AdGuard Home address naming resolution using the router (Freebox)</a></li>
@@ -3194,7 +3224,7 @@
 <pre><code class="language-bash">ssh username@192.168.x.x
 </code></pre>
 <ul>
-<li>I customized the shell environment by installing Zsh and tools from the <a href="https://github.com/AmineDjeghri/awesome-os-setup">Awesome OS</a> to improve usability and productivity.</li>
+<li>I customized the shell environment by installing Zsh and tools from the <a href="../../../">Awesome OS Setup</a> to improve usability and productivity.</li>
 </ul>
 <h3 id="lid-closed-laptop">Lid closed (Laptop)</h3>
 <ul>
@@ -3457,8 +3487,10 @@ Go to  Cloudflare Zero Trust -&gt; Access Controls -&gt; Applications -&gt; Self
 <p>✅ Alternative: Identity provider</p>
 <p>If using Google / Microsoft / GitHub:</p>
 <ul>
-<li>Include -&gt; Identity Provider -&gt; Google</li>
-<li>Include -&gt; Emails ending in -&gt; <code>@gmail.com</code></li>
+<li>You can for example add GitHub following <a href="https://developers.cloudflare.com/cloudflare-one/integrations/identity-providers/github/">this</a>.</li>
+<li>Adding the integration automatically adds it as a login method to all the applications. Don't add the provider as a login method to the policy, otherwise, it will accept all the users using that provider.</li>
+<li>Keep the emails in the policy. https://developers.cloudflare.com/cloudflare-one/access-controls/policies/#require</li>
+<li>If you want to disable the login, create a policy with action allow and an include rule 'everyone'</li>
 </ul>
 <p>❌ Do NOT use:</p>
 <ul>
@@ -3514,7 +3546,7 @@ Go to  Cloudflare Zero Trust -&gt; Access Controls -&gt; Applications -&gt; Self
 <ul>
 <li>✅ Cloudflare Tunnel (no ports open)</li>
 <li>✅ Cloudflare Access login in front of HA</li>
-<li>✅ Email or Google login</li>
+<li>✅ Email (or Google login or GitHub)</li>
 <li>✅ MFA</li>
 <li>✅ 1 month session</li>
 </ul>
@@ -3627,11 +3659,13 @@ Go to  Cloudflare Zero Trust -&gt; Access Controls -&gt; Applications -&gt; Self
 <li>Navidrome:</li>
 <li>Use it with Octo-Fiesta (and <a href="https://tidal.squid.wtf/">Tidal</a> as a backend)</li>
 <li>Music Assistant Addon</li>
-<li>
-<p>Clients : https://www.navidrome.org/apps/</p>
-<ul>
+<li>Clients : https://www.navidrome.org/apps/<ul>
 <li>For example Narjo for iOS</li>
 </ul>
+</li>
+<li>Auto tagger : Beets</li>
+<li>
+<p>You can check this <a href="../music_server/">music server setup</a></p>
 </li>
 <li>
 <p><a href="https://github.com/Rbillon59/hass-n8n">n8n</a></p>
