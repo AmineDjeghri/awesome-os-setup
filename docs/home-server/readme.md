@@ -26,9 +26,9 @@
       * [Matter over Wi-Fi](#matter-over-wi-fi)
       * [Matter over Thread and Zigbee devices](#matter-over-thread-and-zigbee-devices)
     * [Apps / Add-ons](#apps--add-ons)
-      * [Controllers / routers add-ons](#controllers--routers-add-ons)
     * [Integrations](#integrations)
-    * [Automation & scenes](#automation--scenes)
+    * [Dashboard & Cards](#dashboard--cards)
+    * [Automations, Scenes, Script, Helpers and Entities](#automations-scenes-script-helpers-and-entities)
   * [AdGuard Home address naming resolution using the router (Freebox)](#adguard-home-address-naming-resolution-using-the-router-freebox)
 * [todo:](#todo)
 <!-- TOC -->
@@ -62,7 +62,7 @@ sudo apt update && sudo apt upgrade
 ssh username@192.168.x.x
 ```
 
-- I customized the shell environment by installing Zsh and tools from the [Awesome OS](https://github.com/AmineDjeghri/awesome-os-setup) to improve usability and productivity.
+- I customized the shell environment by installing Zsh and tools from the [Awesome OS Setup](../../README.md) to improve usability and productivity.
 
 ### Lid closed (Laptop)
 
@@ -303,8 +303,10 @@ Rules (choose ONE of these methods):
 
 If using Google / Microsoft / GitHub:
 
-- Include -> Identity Provider -> Google
-- Include -> Emails ending in -> `@gmail.com`
+- You can for example add GitHub following [this](https://developers.cloudflare.com/cloudflare-one/integrations/identity-providers/github/).
+- Adding the integration automatically adds it as a login method to all the applications. Don't add the provider as a login method to the policy, otherwise, it will accept all the users using that provider.
+- Keep the emails in the policy. https://developers.cloudflare.com/cloudflare-one/access-controls/policies/#require
+- If you want to disable the login, create a policy with action allow and an include rule 'everyone'
 
 ❌ Do NOT use:
 
@@ -368,7 +370,7 @@ You should now have:
 
 - ✅ Cloudflare Tunnel (no ports open)
 - ✅ Cloudflare Access login in front of HA
-- ✅ Email or Google login
+- ✅ Email (or Google login or GitHub)
 - ✅ MFA
 - ✅ 1 month session
 
@@ -474,6 +476,8 @@ How to setup Sonoff MG24:
   * Music Assistant Addon
   * Clients : https://www.navidrome.org/apps/
     * For example Narjo for iOS
+  * Auto tagger : Beets
+  * You can check this [music server setup](music_server.md)
 
 
 * [n8n](https://github.com/Rbillon59/hass-n8n)

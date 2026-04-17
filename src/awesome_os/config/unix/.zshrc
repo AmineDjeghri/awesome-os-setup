@@ -123,6 +123,7 @@ fi
 # ============================================================================
 if command -v uv >/dev/null 2>&1; then
   alias python="uv run python"
+  alias python3="uv run python"
   # Completions for uv
   eval "$(uv generate-shell-completion zsh)"
 fi

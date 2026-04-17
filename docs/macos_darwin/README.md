@@ -2,89 +2,61 @@
 
 This document describes how to get a productive macOS setup (terminal + apps + UX tweaks) consistent with the rest of this repo.
 
-**Table of contents**
-<!-- TOC -->
-* [macOS (Darwin) setup](#macos-darwin-setup)
-  * [1. Key goals](#1-key-goals)
-  * [2. Prerequisites](#2-prerequisites)
-  * [3. Package manager (Homebrew)](#3-package-manager-homebrew)
-  * [4. Terminal setup (Zsh + Oh My Zsh + Powerlevel10k)](#4-terminal-setup-zsh--oh-my-zsh--powerlevel10k)
-  * [5. Developer tools](#5-developer-tools)
-  * [6. Recommended apps](#6-recommended-apps)
-    * [6.1. Raycast](#61-raycast)
-    * [6.2. AltTab](#62-alttab)
-    * [6.3. AeroSpace + JankyBorders](#63-aerospace--jankyborders)
-  * [7. UI/UX tweaks](#7-uiux-tweaks)
-  * [8. Keyboard layout: macOS vs Windows](#8-keyboard-layout-macos-vs-windows)
-  * [9. Notes](#9-notes)
-<!-- TOC -->
 
-## 1. Key goals
+## Windows/Linux behavior mimicking in macOS
 
-- Get a modern terminal stack (Zsh + Oh My Zsh + Powerlevel10k + useful CLI tools).
-- Install core apps via Homebrew (and brew casks).
+If you're coming from Windows or Linux, macOS has some different behaviors. You can remap keys to make the layout feel closer to Windows. This is useful if you frequently switch between macOS and Windows/Linux, as it reduces muscle memory conflicts and makes your workflow more consistent across platforms.
 
-## 2. Prerequisites
+Here are useful tweaks to make it feel more familiar:
+- **Invert mouse scrolling**: By default, macOS uses "natural" scrolling (like on iOS). To get Windows-like scrolling behavior, go to **System Settings > Mouse** and invert the scrolling.
+- **Keyboard layout**: Change macOS shortcuts to behave like Linux/Windows (This is useful if you want to use the same keyboard layout to copy-paste on all your devices)
+  ![SCR-20241117-sbna.png](SCR-20241117-sbna.png)
 
-- macOS 15+ recommended.
-- Internet connection.
-- Apple ID (optional but useful for the App Store).
+Keep the mapping consistent and avoid mixing multiple remap tools.
 
-All the following apps and commands are available in
+After doing this, when you see some tutorials using macOS keyboard shortcuts, remember that you changed the keyboard layout.
+- **Command (⌘)** is the macOS equivalent of **Ctrl** and handles most system shortcuts (copy, paste, save, etc.). After remapping, the **Globe key** (leftmost modifier key) becomes your Command key, functioning exactly like the **Ctrl** key on Windows/Linux keyboards.
 
-## 3. Package manager (Homebrew)
+- **Option (⌥)** is similar to **Alt** on Windows and is used for special characters and alternative shortcuts. After remapping, the **Option key** (rightmost modifier key) becomes your secondary modifier, equivalent to **Alt** on Windows/Linux.
 
-Install Homebrew:
+- **Control (⌃)** is typically used for secondary actions like interrupting commands in the terminal (Ctrl+C). After remapping, the **Option key** replaces Control for these terminal operations, so you'll use **Option+C** to cancel instead of **Ctrl+C**.
 
-```sh
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-```
+- **Globe key** (the dedicated key on the far left) which is used for emojis and switch between languages has been remapped to function as **Control (⌃)**, providing the traditional Control key functionality when needed.
 
-Ensure `brew` is available:
+- **Delete** behaves like Backspace on Windows. To delete characters forward (like Delete on Windows), use **Fn + Delete**.
 
-```sh
-echo "export PATH=/opt/homebrew/bin:$PATH" >> ~/.zshrc
-```
+After remapping our keys, to copy-paste, it will be the same as in Windows/Linux keyboard:
+- **Globe** + **C** to copy
+- **Globe** + **V** to paste
 
-## 4. Terminal setup (Zsh + Oh My Zsh + Powerlevel10k)
 
-Recommended order:
+## Installation Process
 
-1. Install Oh My Zsh first (it modifies `~/.zshrc`).
-2. Install FiraCode Nerd font from [here](https://github.com/ryanoasis/nerd-fonts/releases/download/v3.4.0/FiraCode.zip).
-3. Install the Powerlevel10k theme.
-4. Install CLI tools (`bat`, `btop`, `fastfetch`, `lsd`, ...).
+The Awesome OS Setup provides a **Terminal UI (TUI) application** that guides you through the installation process. Once you run the one-liner installer, you'll see an interactive interface with the following steps:
 
-Notes:
+Use [README.md](../../README.md#linux--wsl2--macos) as it automatically handles the OS setup with the interactive TUI application.
 
-- `bat` is the macOS equivalent of Ubuntu’s `batcat`.
-- If you set aliases in `~/.zshrc`, keep them small and obvious.
 
-Example:
+### 1. Package Selection
+The app displays all available packages from [packages.yaml](../../src/awesome_os/config/packages.yaml) organized by category:
+- **Core tools**: `git`, `curl`, `zsh`
+- **Dev tools**: `uv`, `Pycharm`, `Ghostty`, `Zed`, `Docker-Desktop`
+- **Utilities**: `Raycast`, `Alt-Tab`, `AeroSpace`, `Shottr`
+- **Messaging**: `Discord`, `WhatsApp`, `Telegram`
+- **Media**: `Stremio`, `VLC`
 
-```sh
-echo 'alias cat="bat"' >> ~/.zshrc
-```
+You can multi-select packages using the interactive interface.
 
-## 5. Developer tools
 
-- Install Xcode Command Line Tools:
+### 2. Terminal Setup (Zsh + Oh My Zsh + Powerlevel10k)
+This section is the same as Linux. Follow the terminal ZSH instructions in [Linux](../linux/README.md#2-terminal-setup-zsh--oh-my-zsh--powerlevel10k).
 
-```sh
-xcode-select --install
-```
+## 3. Recommended apps
 
-- Prefer `uv` over Python's system at `/usr/bin/python3`.
+This repo’s [packages.yaml](../../src/awesome_os/config/packages.yaml) includes my macOS `brew` packages and `cask` recommended apps.
 
-```sh
-echo 'alias python="uv run python"' >> ~/.zshrc
-```
-
-## 6. Recommended apps
-
-This repo’s `packages.yaml` includes macOS `brew` packages and `cask` apps.
-
-### 6.1. Raycast
+Here is some config files for some apps:
+### 3.1. Raycast
 
 - Use Raycast as a “PowerShell equivalent” launcher.
 - Replace Spotlight:
@@ -92,20 +64,16 @@ This repo’s `packages.yaml` includes macOS `brew` packages and `cask` apps.
   - Configure the same shortcut for Raycast.
 - Finder is still useful for macOS-specific settings and edge cases.
 
-
-### 6.2. AltTab
-
-- Brings a Windows-like Alt-Tab experience.
-- Useful if you remap keys to be more Windows-like.
-
-### 6.3. AeroSpace + JankyBorders
+### 3.2. AeroSpace + JankyBorders
 
 - AeroSpace: tiling window manager.
   - Tutorial: https://www.youtube.com/watch?v=-FoWClVHG5g
   - Docs: https://nikitabobko.github.io/AeroSpace/
 - JankyBorders: adds window borders (requires AeroSpace).
+- My config : [.aerospace.toml](../../src/awesome_os/config/darwin/.aerospace.toml)
 
-## 7. UI/UX tweaks
+
+## 4. UI/UX tweaks
 
 - Enable sudo with Touch ID:
 
@@ -121,16 +89,8 @@ sed -e 's/^#auth/auth/' /etc/pam.d/sudo_local.template | sudo tee /etc/pam.d/sud
   - Show path bar.
   - Show hidden files: `command + shift + .`
 
-## 8. Keyboard layout: macOS vs Windows
-![SCR-20241117-sbna.png](SCR-20241117-sbna.png)
-- **Command (⌘)** is the macOS equivalent of **Ctrl** for most shortcuts.
-- **Option (⌥)** is similar to **Alt**.
-- **Control (⌃)** is often used for secondary actions (e.g. Control+Click is right-click).
-- **Delete** behaves like Backspace. Forward delete is `Fn + Delete`.
 
-If you remap keys to make the layout feel closer to Windows, keep the mapping consistent and avoid mixing multiple remap tools.
-
-## 9. Notes
+## 5. Notes
 
 - Some apps do not have import/export settings and require manual configuration (e.g. Ice, AltTab).
 - Some apps might need manual installation (e.g. Badgeify).

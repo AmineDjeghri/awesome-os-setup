@@ -15,8 +15,9 @@ import hashlib
 
 # --- CONFIGURATION ---
 # AdGuard Home Config
-AGH_URL = "http://<HAOS_IP>:8082"
-AGH_USER = "adguard"  # Create a user named 'adguard' with local access only in Home Assistant
+# Try first the creds in the browser before using them here.
+AGH_URL = "http://<HAOS_IP>:8082"  # Direct AdGuard port, not through Ingress
+AGH_USER = "adguard"  # C (if adguard is in home assistant create a user , you need to uncheck 'local access' only in Home Assistant
 AGH_PASS = "PASSWORD"
 
 # Freebox Config
@@ -78,23 +79,64 @@ def get_fbx_devices(session_token):
         return []
 
 
+def test_agh_connection():
+    """Test connection to AdGuard Home before syncing."""
+    try:
+        print("Testing AdGuard Home connection...")
+        r = requests.get(f"{AGH_URL}/control/status", auth=(AGH_USER, AGH_PASS), timeout=5)
+        if r.status_code == 200:
+            print(f"✓ AdGuard Home connected successfully")
+            return True
+        else:
+            print(f"✗ AdGuard Home returned status {r.status_code}")
+            print(f"  Response: {r.text[:200]}")
+            return False
+    except requests.exceptions.ConnectionError as e:
+        print(f"✗ Cannot connect to AdGuard Home at {AGH_URL}")
+        print(f"  Error: {e}")
+        return False
+    except requests.exceptions.Timeout:
+        print(f"✗ AdGuard Home connection timed out at {AGH_URL}")
+        return False
+    except Exception as e:
+        print(f"✗ Unexpected error testing AdGuard connection: {e}")
+        return False
+
+
 def get_agh_clients():
     """Fetch existing AdGuard clients to preserve settings."""
     try:
-        r = requests.get(f"{AGH_URL}/control/clients", auth=(AGH_USER, AGH_PASS))
-        # Map existing clients by their MAC address (if available in ids)
-        client_map = {}
-        for c in r.json().get("clients", []):
+        r = requests.get(f"{AGH_URL}/control/clients", auth=(AGH_USER, AGH_PASS), timeout=5)
+        if r.status_code != 200:
+            print(f"Warning: Failed to fetch clients from AdGuard (status {r.status_code})")
+            return {}
+        # Map existing clients by MAC address and by name
+        client_map_by_mac = {}
+        client_map_by_name = {}
+        clients = r.json().get("clients", [])
+        for c in clients:
+            # Map by MAC address
             for ident in c["ids"]:
                 if ":" in ident and len(ident) == 17:  # Simple MAC check
-                    client_map[ident.lower()] = c
-        return client_map
-    except:
-        return {}
+                    client_map_by_mac[ident.lower()] = c
+            # Map by client name
+            client_map_by_name[c.get("name", "").lower()] = c
+        return {"by_mac": client_map_by_mac, "by_name": client_map_by_name}
+    except Exception as e:
+        print(f"Error fetching AdGuard clients: {e}")
+        return {"by_mac": {}, "by_name": {}}
 
 
 def sync():
     print("--- Starting Sync via Freebox API ---")
+
+    # 0. Test AdGuard connection first
+    if not test_agh_connection():
+        print("ERROR: Cannot proceed without AdGuard connection. Check configuration:")
+        print(f"  AGH_URL: {AGH_URL}")
+        print(f"  AGH_USER: {AGH_USER}")
+        print("  Make sure credentials are correct and AdGuard is accessible.")
+        return
 
     # 1. Login to Freebox
     token = fbx_login()
@@ -107,18 +149,28 @@ def sync():
 
     # 3. Get Current AdGuard State
     agh_clients = get_agh_clients()
+    agh_by_mac = agh_clients.get("by_mac", {})
+    agh_by_name = agh_clients.get("by_name", {})
 
     synced_count = 0
+    skipped_count = 0
 
     for dev in fbx_devices:
         # We only care about devices with a MAC address
         if "l2ident" not in dev or dev["l2ident"]["type"] != "mac_address":
+            dev_name = dev.get("primary_name") or dev.get("default_name") or "Unknown"
+            l2_info = dev.get("l2ident", {})
+            print(f"Skipping '{dev_name}' - No MAC address (l2ident: {l2_info})")
+            skipped_count += 1
             continue
 
         mac = dev["l2ident"]["id"].lower()
 
         # Determine the best name: User-set name > Hostname > MAC
         name = dev.get("primary_name") or dev.get("default_name") or mac
+
+        # Try to find existing client by MAC first, then by name
+        existing_client = agh_by_mac.get(mac) or agh_by_name.get(name.lower())
 
         # --- Collect IPs ---
         # The Freebox 'l3connectivities' list contains ALL IPs (IPv4, IPv6 Global, IPv6 Link-Local)
@@ -128,22 +180,20 @@ def sync():
         if "l3connectivities" in dev:
             for conn in dev["l3connectivities"]:
                 # We specifically want IPv6 global (2a01...) and link-local (fe80...)
-                # We add 'reachable' and 'active' addresses.
-                if conn.get("reachable") or conn.get("active"):
-                    ip_list.add(conn["addr"])
+                # We add all addresses including unreachable ones to track offline devices
+                ip_list.add(conn["addr"])
 
         final_ids = list(ip_list)
 
         # --- Sync to AdGuard ---
-        if mac in agh_clients:
+        if existing_client:
             # UPDATE EXISTING
-            existing_client = agh_clients[mac]
             current_ids = set(existing_client["ids"])
 
-            # Only update if we found NEW IPs not currently in AdGuard
-            if not set(final_ids).issubset(current_ids):
-                print(f"Updating '{name}' - Found new IPs")
-                new_ids = list(current_ids.union(final_ids))
+            # Replace IPs with current list from Freebox (removes stale IPs)
+            if set(final_ids) != current_ids:
+                print(f"Updating '{name}' - Syncing IPs")
+                new_ids = final_ids
 
                 payload = {
                     "name": existing_client["name"],  # Identifying name
@@ -170,7 +220,7 @@ def sync():
             print(f"Creating new client: '{name}'")
             payload = {"name": name, "ids": final_ids, "use_global_settings": True}
             try:
-                requests.post(
+                r = requests.post(
                     f"{AGH_URL}/control/clients/add", auth=(AGH_USER, AGH_PASS), json=payload
                 )
                 synced_count += 1
@@ -178,7 +228,7 @@ def sync():
                 print(f"Failed to create {name}: {e}")
 
     print(
-        f"Sync Complete. Updated/Created {synced_count} devices. Time: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}"
+        f"Sync Complete. Updated/Created {synced_count} devices, Skipped {skipped_count} devices. Time: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}"
     )
 
 

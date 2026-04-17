@@ -16,13 +16,12 @@ Apps configuration and shortcuts
   * [1.8. Files](#18-files)
   * [1.9. PyCharm (All platforms)](#19-pycharm-all-platforms)
     * [1.9.1. Tips & tricks (All platforms)](#191-tips--tricks-all-platforms)
-    * [1.9.2. Personal pycharm shortcuts](#192-personal-pycharm-shortcuts)
+    * [1.9.2. Personal PyCharm shortcuts](#192-personal-pycharm-shortcuts)
     * [1.9.3. Python remote interpreter (SSH /WSL)](#193-python-remote-interpreter-ssh-wsl)
     * [1.9.4. Pycharm remote deployment](#194-pycharm-remote-deployment)
     * [1.9.5. Remote SSH for ReactJS](#195-remote-ssh-for-reactjs)
   * [1.10. HWINFO:](#110-hwinfo)
   * [1.11. DisplayFusion (Windows only & paid)](#111-displayfusion-windows-only--paid)
-  * [1.12. Powerpoint:](#112-powerpoint)
 <!-- TOC -->
 
 # 1. Shortcuts and app configurations
@@ -116,7 +115,7 @@ shortcuts: You can read more about the shortcuts :
 ## 1.9. PyCharm (All platforms)
 
 - I prefer to use PyCharm & other Intellij products like WriterSide...(the Pro version is free for students)
-- My personal shortcuts & tips & settings for this app [here](../shortcuts_and_apps_setup.md#1-5-pycharm)
+- My personal shortcuts & tips & settings for this app [here](#192-personal-pycharm-shortcuts)
 
 ### 1.9.1. Tips & tricks (All platforms)
 
@@ -183,13 +182,13 @@ shortcuts: You can read more about the shortcuts :
 - (To confirm) Pycharm Jupyter Notebook: Use the one provided in Pycharm. It provides better autocomplete.
 - WriterSide issue : files eit
 
-### 1.9.2. Personal pycharm shortcuts
+### 1.9.2. Personal PyCharm shortcuts
 
 Official[Link to Cheatsheet](https://resources.jetbrains.com/storage/products/pycharm/docs/PyCharm_ReferenceCard.pdf)
 
 Some of them are re-mapped :
 
-The macos shortcuts are inverted in my system so i can use the same commands as in windows. The ones in this list works for both since i use the name of the key and not the real inverted key.
+The macOS shortcuts are inverted in my system so i can use the same commands as in windows. The ones in this list works for both since i use the name of the key and not the real inverted key.
 **Panels & windows :**
 
 | Panel                        | Windows (MacOS) Shortcut                     |
