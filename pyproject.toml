@@ -32,7 +32,7 @@ docs = [
     "mkdocs-material==9.7.2",
     "mkdocstrings==1.0.3",
     "mkdocs-mermaid2-plugin==1.2.3",
-    "mkdocs-gen-files==0.6.0",
+    "mkdocs-gen-files==0.6.1",
     "mkdocstrings-python==2.0.3",
     "mkdocs-same-dir==0.1.3",
     "mkdocs-exclude==1.0.2"
