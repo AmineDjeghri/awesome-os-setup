@@ -90,9 +90,12 @@ shortcuts: You can read more about the shortcuts :
   command `git config --global --add safe.directory '*'`
 - if you face a problem with fatal: could not read Username for 'https://github.com'. go to the folder from a terminal and run git pull.
 
+- Best plugins:
+  * Todoist Sync - Tutorial : https://www.youtube.com/watch?v=2j77GQRN5do
+
 ### Sync Obsidian vaults with iOS:
-  * Download obsidian on your mobile, and check if the obsidian folder is available in iCloud in the Files app .
-  * Download the obsidian git repository in your phone (either with your phone or a computer) and place it in the obsidian folder in iCloud.
+  * Download obsidian from the App Store, and check if the obsidian folder is available in iCloud in the Files app .
+  * Download the obsidian git repository in your phone → iCloud (either with your phone or a computer) and place it in the obsidian folder in iCloud.
   * Open Obsidian app, it should show you the discovered vaults (your GitHub repo ), open it.
   * Wait a little bit then reload the obsidian app if the community plugins aren't visible.
   * After entering the repo, git will ask you a remote URL and you might get a lot of popups about a problem with git (ssh, remote url, etc..):

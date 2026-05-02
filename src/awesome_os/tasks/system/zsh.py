@@ -310,7 +310,7 @@ def set_zsh_as_default_shell() -> TaskResult:
             summary="default shell set to zsh",
             details=(
                 details
-                or "Log out and back in (or restart your terminal) for changes to take effect."
+                or "Log out and back in (or restart your terminal) then write `zsh` for changes to take effect."
             ),
         )
 
