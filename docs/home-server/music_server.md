@@ -49,7 +49,7 @@ Client → Navidrome
 ---
 ### 3. Octo-Fiesta (Auto-Download songs)
 
-Octo-Fiesta is a **proxy server** that sits between the client and Navidrome.
+[Octo-Fiesta](https://github.com/V1ck3s/octo-fiesta) is a **proxy server** that sits between the client and Navidrome.
 
 Instead of connecting the client directly to Navidrome, you connect it to Octo-Fiesta.
 

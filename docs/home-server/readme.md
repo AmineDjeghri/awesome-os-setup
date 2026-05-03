@@ -125,7 +125,11 @@ A network bridge in KVM allows your virtual machines to appear directly on the s
 
 - With a bridge: VMs act like physical machines on your network. They get an IP from your router (or DHCP server) just like your host, and other devices can communicate with them directly.
 
-- This works only with Ethernet, not with wifi.
+- This works only with Ethernet, not with Wi-Fi.
+
+>> Important:
+> The bridge will create new Mac Addresses. So if you had a DHCP with devices that used static IP through the bridge, you will need to update it.
+> For adguard, you will need to go to DHCP settings, delete the old client and create a new one in DHCP leases after it detects the new IP address.
 
 How to:
 - Identify your network interface with `ip addr`, it should look like `enp0s31f6` or `enx001`  It is where you can see eth0.
@@ -413,26 +417,26 @@ How to setup Sonoff MG24:
  - Run:
 
  ```sh
- sudo virsh attach-device haos /dev/stdin --persistent <<EOF
- <hostdev mode='subsystem' type='usb' managed='yes'>
-   <source>
-     <vendor id='0x10c4'/>
-     <product id='0xea60'/>
-   </source>
- </hostdev>
- EOF
+sudo virsh attach-device haos /dev/stdin --persistent <<EOF
+<hostdev mode='subsystem' type='usb' managed='yes'>
+  <source>
+    <vendor id='0x10c4'/>
+    <product id='0xea60'/>
+  </source>
+</hostdev>
+EOF
  ```
 
  Or using the bus and device:
 
  ```sh
- sudo virsh attach-device haos /dev/stdin --persistent <<EOF
- <hostdev mode='subsystem' type='usb' managed='yes'>
-   <source>
-     <address bus='1' device='12'/>
-   </source>
- </hostdev>
- EOF
+sudo virsh attach-device haos /dev/stdin --persistent <<EOF
+<hostdev mode='subsystem' type='usb' managed='yes'>
+ <source>
+   <address bus='1' device='12'/>
+ </source>
+</hostdev>
+EOF
  ```
 
  - Run `sudo virsh reboot haos`.
@@ -482,7 +486,8 @@ How to setup Sonoff MG24:
 * [motionEye](https://www.home-assistant.io/integrations/motioneye/)
 
 * Music/Audio addons :
-  * Navidrome:
+  * [Navidrome](https://github.com/alexbelgium/hassio-addons/tree/master/navidrome)
+  * [Octo-Fiesta](https://github.com/AmineDjeghri/ha-addons/tree/main/addons/octo-fiesta)
   * Use it with Octo-Fiesta (and [Tidal](https://tidal.squid.wtf/) as a backend)
   * Music Assistant Addon
   * Clients : https://www.navidrome.org/apps/
@@ -623,7 +628,7 @@ This next section is about controllers / routers add-ons :
 - adguard can be used as DNS and DHCP. If so, Go to Freebox Settings -> DHCP -> first, put your  Adguard DNS server, save then deactivate the DHCP server then save again.
 - Check the address here
 - Don't touch the IPV6 settings.
-- Set static IPs in adguard Home.
+- Set static IPs in adguard Home. If  you previously had devices using a bridge network, and you did reset that bridge, check again their mac addresses and set static IPs in adguard home and restart the network / devices .
 - Restart the router. (Make sure the router DHCP is off and the DNS is pointing to the AdGuard Home)
 - The following will show you how to get the names of the devices in AdGuard home using your router (this example is for Freebox API).
 - You will notice that your AdGuard Home (AGH) logs contains anonymous entries like "FREE SAS" or raw IPv6 addresses (e.g., fe80::...).
