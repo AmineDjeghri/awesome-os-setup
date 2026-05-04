@@ -504,7 +504,7 @@ EOF
 
 
 * [n8n](https://github.com/Rbillon59/hass-n8n)
-Update the config of the addon if you want to use the webhooks and the api :
+Update the config of the addon if you want to use the (forms and chat...etc) since they rely on webhooks and the api :
   * In network enable both ports.
   * Update the config of the addon. Since we changed the N8N_EDITOR_BASE_URL, you will not be able to access it from HAOS Ingress. You must use the new address.
   ```yaml
