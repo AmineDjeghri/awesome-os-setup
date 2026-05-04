@@ -218,10 +218,10 @@ sudo virt-install --name haos --description "Home Assistant OS" --os-variant=gen
 
 - Now we need to check if HAOS is running:
   - `sudo virsh list --all`, you should see the VM running named `haos`
-  - Go to `http://homeassistant.local:8123/`. This is the default address of the HAOS VM.
-    - Or find the IP address of the HAOS VM: From your router’s DHCP table (recommended) on your router app/website. As you can understand, the VM is like a device that is connected to the router, that is why the router assigned it an IP address.
+  - Find the IP address of the HAOS VM: From your router’s DHCP table (recommended) on your router app/website. As you can understand, the VM is like a device that is connected to the router, that is why the router assigned it an IP address.
     - The default port is `8123`
     - Check if HAOS is running : open a browser and go to `http://<HAOS-IP>:8123` or use curl: ``curl -v http://<HAOS-IP>:8123``
+    - Go to `http://homeassistant.local:8123/`. This is the default address if the name is `homeassistant` in Settings -> System -> Network -> Hostname : `homeassistant` . If the name is something else like 'ha' the address will be `http://ha.local:8123/`.
   - You should see the Home Assistant login page.
   - If you have a backup, select 'Backup' then reboot it with `sudo virsh reboot haos` then go HAOS settings -> Configure network interfaces -> IPv4 -> Static and set the IP address that was previously set .
   - Back on your terminal, activate the autostart: `sudo virsh autostart haos`
@@ -235,9 +235,15 @@ You need to differentiate between:
 - Both have IPs assigned from the router. The HAOS VM uses a bridge, so it gets an IP from the router just like a regular device.
 - These IPs can change if we restart the router, we will assign static ip to the VM.
 
+If you want to resize the VM disk:
+```bash
+sudo qemu-img resize /var/lib/libvirt/images/haos_ova-16.3.qcow2 +20G
+```
+
+
 #### inside HA in your browser or mobile app:
 
-- In your browser, go to `http://<HOST-IP>:8123`, for example `http://192.168.1.86:8123`.
+- In your browser, go to  `http://<HOST-IP>:8123`, for example `http://homeassistant.local:8123` or `http://192.168.1.86:8123`.
 - Create an account.
 - User settings: Profile -> General-> language, date format, number format, etc.
 - Check Advanced mode in General settings.
@@ -463,6 +469,7 @@ EOF
 
 
 * [Cloudflared](https://github.com/homeassistant-apps/app-cloudflared) (Cloudflare Tunnel)
+  - Create tunnels for the addons that you want. For example an app running on http://homeassistant.local:8081
 
 * [Donetick](https://github.com/donetick/hassio-addons)
 
@@ -497,6 +504,7 @@ EOF
 
 
 * [n8n](https://github.com/Rbillon59/hass-n8n)
+  * Port 8081: This is strictly for Webhooks and APIs. It does not serve the graphical user interface (GUI). To be able to use the webhooks, use cloudflare to create a tunnel for the api and export the env variable as mentioned in the [docs](https://github.com/Rbillon59/hass-n8n#webhooks-triggers-and-n8n-api).
 
 * **Samba Backup**
 
