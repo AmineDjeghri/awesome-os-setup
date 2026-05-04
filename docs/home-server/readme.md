@@ -504,7 +504,20 @@ EOF
 
 
 * [n8n](https://github.com/Rbillon59/hass-n8n)
-  * Port 8081: This is strictly for Webhooks and APIs. It does not serve the graphical user interface (GUI). To be able to use the webhooks, use cloudflare to create a tunnel for the api and export the env variable as mentioned in the [docs](https://github.com/Rbillon59/hass-n8n#webhooks-triggers-and-n8n-api).
+Update the config of the addon if you want to use the webhooks and the api :
+  * In network enable both ports.
+  * Update the config of the addon. Since we changed the N8N_EDITOR_BASE_URL, you will not be able to access it from HAOS Ingress. You must use the new address.
+  ```yaml
+  timezone: Europe/Paris
+  env_vars_list:
+    - "WEBHOOK_URL: http://homeassistant.local:8081/"
+    - "N8N_PATH: /"
+    - "N8N_EDITOR_BASE_URL: http://homeassistant.local:5678/"
+  cmd_line_args: ""
+  ```
+
+It is better to use an external WEBHOOK_URL for the api so external applications can use it.
+
 
 * **Samba Backup**
 
