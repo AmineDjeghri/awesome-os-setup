@@ -613,6 +613,9 @@ This next section is about controllers / routers add-ons :
 
 
 * HA Label State: https://github.com/andrew-codechimp/HA-Label-State
+  * Create two helpers for : entities & addons(apps) with 4 status: off,unavailable, unknown, not_home (away=not_home in raw format)
+  * You need to always look at the raw format of the state to see the status of the entity or addon. For example IKEA water-leak sensor's translated status is 'Dry' but the raw format is 'off'. But when the detector is really off, the state is 'unavailable' so our automation can still be triggered.
+  * Example [addons_offline.yaml](../../src/awesome_os/config/unix/home_server-and-home_assistant/automations_with_label_state/addons_offline.yaml) & [low_battery.yaml](../../src/awesome_os/config/unix/home_server-and-home_assistant/automations_with_label_state/low_battery.yaml)
 
 ### Dashboard & Cards
 * **Auto entities** : https://github.com/thomasloven/lovelace-auto-entities
@@ -657,10 +660,10 @@ This next section is about controllers / routers add-ons :
 - Steps:
   - In the addon configuration in HA: open the port 8082, you should access the dashboard without authentication on ``HA-IP:8082``. the username and password are your Home assistant username and password (you can create a user named 'adguard' for it).
   - Put the following scripts in the server:
-    - [freebox_auth.py](freebox_auth.py)
-    - [sync_adguard_home_ip_mac.py](sync_adguard_home_ip_mac.py)
-  - I am using Freebox pop as a router, so I use the script [freebox_auth.py](freebox_auth.py) to get the token ``uv run freebox_auth.py``
-  - then I use this script in the server to automatically update Adguard home: [sync_adguard_home_ip_mac.py](sync_adguard_home_ip_mac.py) to automatically resolve IPV6 addresses and clients names. ``uv run sync_adguard_home_ip_mac.py``
+    - [freebox_auth.py](../../src/awesome_os/config/unix/home_server-and-home_assistant/freebox_auth.py)
+    - [sync_adguard_home_ip_mac.py](../../src/awesome_os/config/unix/home_server-and-home_assistant/sync_adguard_home_ip_mac.py)
+  - I am using Freebox pop as a router, so I use the script [freebox_auth.py](../../src/awesome_os/config/unix/home%20server%20and%20home%20assistant/freebox_auth.py) to get the token ``uv run freebox_auth.py``
+  - then I use this script in the server to automatically update Adguard home: [sync_adguard_home_ip_mac.py](../../src/awesome_os/config/unix/home%20server%20and%20home%20assistant/sync_adguard_home_ip_mac.py) to automatically resolve IPV6 addresses and clients names. ``uv run sync_adguard_home_ip_mac.py``
   - Make a cronjob for it by adding this line at the end of ``crontab -e`` (change the path of uv and the script)
 ````sh
 # For example
