@@ -145,3 +145,82 @@ Issues:
   upload the package (wheel).
 - Using GitHub actions, just make sure you have this
   set : https://github.com/actions/deploy-pages/issues/33#issuecomment-1198635538
+
+## Commit Convention
+
+Format: `[emoji] <type>[(<scope>)][!]: <description>`
+
+The emoji prefix is **optional** — both forms are valid:
+```
+feat: add token refresh
+✨ feat: add token refresh
+```
+
+---
+
+### Types & Release Impact
+
+| Emoji | Type | Aliases | Release | Example |
+|---|---|---|---|---|
+| ✨ | `feat` | `feature` | 🟡 **minor** | `✨ feat(auth): add GitHub App token rotation` |
+| 🐛 | `fix` | `bugfix`, `hotfix` | 🟢 **patch** | `🐛 fix(llm): handle null response from API` |
+| ⚡️ | `perf` | — | 🟢 **patch** | `⚡️ perf(cache): reduce install time` |
+| 💥 | `feat!` | `BREAKING CHANGE` footer | 🔴 **major** | `💥 feat!: redesign agent card schema` |
+| ♻️ | `refactor` | — | — | `♻️ refactor: clean up plugin factory` |
+| 📝 | `docs` | — | — | `📝 docs: update README setup section` |
+| 🎨 | `style` | — | — | `🎨 style: format with ruff` |
+| 🧪 | `test` | — | — | `🧪 test: add unit tests for auth module` |
+| 🔧 | `chore` | — | — | `🔧 chore: bump dependencies` |
+| 👷 | `ci` | — | — | `👷 ci: optimize uv cache strategy` |
+| 📦 | `build` | — | — | `📦 build: update hatchling config` |
+
+---
+
+### Scopes (optional)
+
+Use a scope to narrow the context:
+```
+feat(github): ...
+fix(llm): ...
+perf(cache): ...
+ci(runner): ...
+```
+
+Common scopes: `github`, `llm`, `auth`, `agent`, `cache`, `api`, `ci`, `deps`
+
+---
+
+### Breaking Changes
+
+Two ways to declare a breaking change (triggers **major** bump):
+
+**1. `!` after the type:**
+```
+feat!(auth): remove legacy token endpoint
+```
+
+**2. `BREAKING CHANGE:` footer:**
+```
+feat(auth): redesign token flow
+
+BREAKING CHANGE: /v1/token removed, use /v2/auth instead
+```
+
+---
+
+### Examples
+
+```
+✨ feat(github): add support for GitHub App token rotation
+🐛 fix(llm): handle empty response from SecureGPT API
+⚡️ perf(cache): persist .venv between CI runs
+💥 feat!(agent): redesign A2A message schema
+
+♻️ refactor: clean up plugin factory initialization
+📝 docs: add deployment guide for Kubernetes
+🧪 test: add integration tests for GitHub auth flow
+🔧 chore: update pre-commit hooks
+👷 ci: add pull_request trigger to pipeline
+```
+
+
