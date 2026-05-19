@@ -650,6 +650,67 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#commit-convention" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Commit Convention
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Commit Convention">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#types-release-impact" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Types &amp; Release Impact
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scopes-optional" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Scopes (optional)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#breaking-changes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Breaking Changes
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Examples
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2709,6 +2770,67 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#commit-convention" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Commit Convention
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Commit Convention">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#types-release-impact" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Types &amp; Release Impact
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scopes-optional" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Scopes (optional)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#breaking-changes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Breaking Changes
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Examples
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2891,6 +3013,137 @@ By participating, you are expected to uphold this code. Please report unacceptab
 <li>Using GitHub actions, just make sure you have this
   set : https://github.com/actions/deploy-pages/issues/33#issuecomment-1198635538</li>
 </ul>
+<h2 id="commit-convention">Commit Convention</h2>
+<p>Format: <code>[emoji] &lt;type&gt;[(&lt;scope&gt;)][!]: &lt;description&gt;</code></p>
+<p>The emoji prefix is <strong>optional</strong> — both forms are valid:</p>
+<pre><code>feat: add token refresh
+✨ feat: add token refresh
+</code></pre>
+<hr />
+<h3 id="types-release-impact">Types &amp; Release Impact</h3>
+<table>
+<thead>
+<tr>
+<th>Emoji</th>
+<th>Type</th>
+<th>Aliases</th>
+<th>Release</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>✨</td>
+<td><code>feat</code></td>
+<td><code>feature</code></td>
+<td>🟡 <strong>minor</strong></td>
+<td><code>✨ feat(auth): add GitHub App token rotation</code></td>
+</tr>
+<tr>
+<td>🐛</td>
+<td><code>fix</code></td>
+<td><code>bugfix</code>, <code>hotfix</code></td>
+<td>🟢 <strong>patch</strong></td>
+<td><code>🐛 fix(llm): handle null response from API</code></td>
+</tr>
+<tr>
+<td>⚡️</td>
+<td><code>perf</code></td>
+<td>—</td>
+<td>🟢 <strong>patch</strong></td>
+<td><code>⚡️ perf(cache): reduce install time</code></td>
+</tr>
+<tr>
+<td>💥</td>
+<td><code>feat!</code></td>
+<td><code>BREAKING CHANGE</code> footer</td>
+<td>🔴 <strong>major</strong></td>
+<td><code>💥 feat!: redesign agent card schema</code></td>
+</tr>
+<tr>
+<td>♻️</td>
+<td><code>refactor</code></td>
+<td>—</td>
+<td>—</td>
+<td><code>♻️ refactor: clean up plugin factory</code></td>
+</tr>
+<tr>
+<td>📝</td>
+<td><code>docs</code></td>
+<td>—</td>
+<td>—</td>
+<td><code>📝 docs: update README setup section</code></td>
+</tr>
+<tr>
+<td>🎨</td>
+<td><code>style</code></td>
+<td>—</td>
+<td>—</td>
+<td><code>🎨 style: format with ruff</code></td>
+</tr>
+<tr>
+<td>🧪</td>
+<td><code>test</code></td>
+<td>—</td>
+<td>—</td>
+<td><code>🧪 test: add unit tests for auth module</code></td>
+</tr>
+<tr>
+<td>🔧</td>
+<td><code>chore</code></td>
+<td>—</td>
+<td>—</td>
+<td><code>🔧 chore: bump dependencies</code></td>
+</tr>
+<tr>
+<td>👷</td>
+<td><code>ci</code></td>
+<td>—</td>
+<td>—</td>
+<td><code>👷 ci: optimize uv cache strategy</code></td>
+</tr>
+<tr>
+<td>📦</td>
+<td><code>build</code></td>
+<td>—</td>
+<td>—</td>
+<td><code>📦 build: update hatchling config</code></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="scopes-optional">Scopes (optional)</h3>
+<p>Use a scope to narrow the context:</p>
+<pre><code>feat(github): ...
+fix(llm): ...
+perf(cache): ...
+ci(runner): ...
+</code></pre>
+<p>Common scopes: <code>github</code>, <code>llm</code>, <code>auth</code>, <code>agent</code>, <code>cache</code>, <code>api</code>, <code>ci</code>, <code>deps</code></p>
+<hr />
+<h3 id="breaking-changes">Breaking Changes</h3>
+<p>Two ways to declare a breaking change (triggers <strong>major</strong> bump):</p>
+<p><strong>1. <code>!</code> after the type:</strong></p>
+<pre><code>feat!(auth): remove legacy token endpoint
+</code></pre>
+<p><strong>2. <code>BREAKING CHANGE:</code> footer:</strong></p>
+<pre><code>feat(auth): redesign token flow
+
+BREAKING CHANGE: /v1/token removed, use /v2/auth instead
+</code></pre>
+<hr />
+<h3 id="examples">Examples</h3>
+<pre><code>✨ feat(github): add support for GitHub App token rotation
+🐛 fix(llm): handle empty response from SecureGPT API
+⚡️ perf(cache): persist .venv between CI runs
+💥 feat!(agent): redesign A2A message schema
+
+♻️ refactor: clean up plugin factory initialization
+📝 docs: add deployment guide for Kubernetes
+🧪 test: add integration tests for GitHub auth flow
+🔧 chore: update pre-commit hooks
+👷 ci: add pull_request trigger to pipeline
+</code></pre>
 
 
 
