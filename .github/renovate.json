@@ -4,7 +4,6 @@
     "config:recommended",
     "group:linters",
     ":semanticCommits",
-    ":semanticCommitType(fix)",
     ":dependencyDashboard"
   ],
   "labels": [
