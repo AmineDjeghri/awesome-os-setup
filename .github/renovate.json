@@ -23,13 +23,26 @@
   },
   "osvVulnerabilityAlerts": true,
   "pinDigests": false,
-  "pre-commit": {
-    "enabled": true
-  },
   "packageRules": [
     {
-      "description": "Apply 7-day cooldown to all dependencies",
-      "matchDatasources": ["*"],
+      "description": "Group pre-commit updates",
+      "matchManagers": ["pre-commit"],
+      "groupName": "pre-commit dependencies",
+      "groupSlug": "pre-commit",
+      "minimumReleaseAge": "7 days"
+    },
+    {
+      "description": "Group Python/pip updates",
+      "matchManagers": ["pip", "pep621"],
+      "groupName": "python dependencies",
+      "groupSlug": "python",
+      "minimumReleaseAge": "7 days"
+    },
+    {
+      "description": "Group GitHub Actions updates",
+      "matchManagers": ["github-actions"],
+      "groupName": "github-actions",
+      "groupSlug": "github-actions",
       "minimumReleaseAge": "7 days"
     }
   ],
