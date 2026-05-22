@@ -24,6 +24,9 @@
   },
   "osvVulnerabilityAlerts": true,
   "pinDigests": true,
+  "pre-commit": {
+    "enabled": true
+  },
   "packageRules": [
     {
       "description": "Apply 7-day cooldown to all dependencies",
