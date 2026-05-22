@@ -14,7 +14,6 @@
     "renovate"
   ],
   "commitMessageTopic": "{{datasource}} dependency {{depName}}",
-  "separateMinorPatch": true,
   "mode": "full",
   "prCreation": "immediate",
   "prConcurrentLimit": 10,
@@ -48,5 +47,6 @@
       "minimumReleaseAge": "7 days"
     }
   ],
-  "platformAutomerge": false
+  "platformAutomerge": false,
+  "lockFileMaintenance": { "enabled": true }
 }
