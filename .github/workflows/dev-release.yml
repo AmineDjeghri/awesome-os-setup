@@ -62,13 +62,15 @@ jobs:
           # Disable git pre-commit hooks
           git config core.hooksPath /dev/null
           echo "::group::Semantic Release output"
-          NEW_VERSION=$(uv run semantic-release version --print 2>/dev/null | tr -d '[:space:]')
+          NEW_VERSION=$(uv run semantic-release version --print | tr -d '[:space:]')
           if [ -n "$NEW_VERSION" ]; then
             uv run semantic-release version
-            echo "released=true" >> $GITHUB_OUTPUT
-            echo "version=$NEW_VERSION" >> $GITHUB_OUTPUT
+            {
+              echo "released=true"
+              echo "version=$NEW_VERSION"
+            } >> "$GITHUB_OUTPUT"
           else
-            echo "released=false" >> $GITHUB_OUTPUT
+            echo "released=false" >> "$GITHUB_OUTPUT"
             echo "No releasable commits found — skipping candidate release."
           fi
           echo "::endgroup::"
