@@ -71,7 +71,6 @@ Run it from the directory where you want the `awesome-os-setup` folder to be cre
 
 This repo is a personal “OS setup Terminal UI App”:
 
-
 ### Features & Benefits
 
 - **One‑liner installers**
