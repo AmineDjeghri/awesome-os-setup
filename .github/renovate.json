@@ -16,7 +16,6 @@
   ],
   "commitMessageTopic": "{{datasource}} dependency {{depName}}",
   "mode": "full",
-  "minimumReleaseAge": "7 days",
   "prCreation": "immediate",
   "vulnerabilityAlerts": {
     "enabled": true,
@@ -30,6 +29,7 @@
   "packageRules": [
     {
       "description": "Apply 7-day cooldown to all dependencies",
+      "matchDatasources": ["*"],
       "minimumReleaseAge": "7 days"
     }
   ],
