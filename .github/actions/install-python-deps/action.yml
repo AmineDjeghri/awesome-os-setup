@@ -13,9 +13,6 @@ runs:
 #          ${{ runner.os }}-uv-
 
     - name: Install Python Dependencies
-      env:
-        UV_CACHE_DIR: /home/runner/.cache/uv
-        UV_HTTP_TIMEOUT: 120 # seconds
       shell: bash
       run: |
         make install-uv
