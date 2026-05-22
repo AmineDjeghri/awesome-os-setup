@@ -15,8 +15,11 @@
     "renovate"
   ],
   "commitMessageTopic": "{{datasource}} dependency {{depName}}",
+  "separateMinorPatch": true,
   "mode": "full",
   "prCreation": "immediate",
+  "prConcurrentLimit": 10,
+  "prHourlyLimit": 10,
   "vulnerabilityAlerts": {
     "enabled": true,
     "addLabels": ["security"]
