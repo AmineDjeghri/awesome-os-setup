@@ -3189,6 +3189,8 @@ By participating, you are expected to uphold this code. Please report unacceptab
 <li>Renovate runs on a schedule</li>
 <li>Creates PRs for dependency updates with the <code>renovate</code> label</li>
 <li><strong>7-day cooldown for all dependencies</strong> — prevents immediate adoption of potentially malicious releases</li>
+<li><strong>PyPI dependencies are not pinned</strong> — we rely on <code>uv.lock</code> for reproducible builds. Renovate updates <code>pyproject.toml</code> version constraints, and <code>uv.lock</code> is regenerated to lock specific versions</li>
+<li><strong>Security PRs are not grouped</strong> — vulnerability alerts bypass grouping rules and open immediately as standalone PRs to ensure fast remediation</li>
 <li><strong>What to do</strong>:</li>
 <li>Review all Renovate PRs manually — they require human approval before merging</li>
 <li>A dependency dashboard issue is created automatically to track pending updates</li>
