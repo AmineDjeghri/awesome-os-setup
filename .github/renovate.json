@@ -2,8 +2,8 @@
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": [
     "config:recommended",
-    ":semanticCommitTypeAll(chore)",
     ":semanticCommits",
+    ":semanticCommitTypeAll(chore)",
     ":dependencyDashboard"
   ],
   "labels": [
