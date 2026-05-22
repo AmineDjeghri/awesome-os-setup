@@ -62,9 +62,9 @@ jobs:
           # Disable git pre-commit hooks
           git config core.hooksPath /dev/null
           echo "::group::Semantic Release output"
-          NEW_VERSION=$(uv run semantic-release version --print | tr -d '[:space:]')
+          NEW_VERSION=$(uv run semantic-release version --print -v | tr -d '[:space:]')
           if [ -n "$NEW_VERSION" ]; then
-            uv run semantic-release version
+            uv run semantic-release version -v
             {
               echo "released=true"
               echo "version=$NEW_VERSION"
