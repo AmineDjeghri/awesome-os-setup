@@ -15,8 +15,9 @@
     "renovate"
   ],
   "commitMessageTopic": "{{datasource}} dependency {{depName}}",
+  "mode": "full",
   "minimumReleaseAge": "7 days",
-  "prCreation": "not-pending",
+  "prCreation": "immediate",
   "vulnerabilityAlerts": {
     "enabled": true,
     "addLabels": ["security"]
