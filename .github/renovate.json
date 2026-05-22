@@ -22,7 +22,7 @@
     "addLabels": ["security"]
   },
   "osvVulnerabilityAlerts": true,
-  "pinDigests": true,
+  "pinDigests": false,
   "pre-commit": {
     "enabled": true
   },
