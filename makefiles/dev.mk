@@ -7,7 +7,7 @@ run: ## Run the Stremio Addon (Dev Mode)
 	@echo "Starting server..."
 	@$(UV) run python src/awesome_os/frontend/main.py
 
-pre-commit-install:
+pre-commit-install: install-dev
 	@echo "${YELLOW}=========> Installing pre-commit...${NC}"
 	$(UV) run pre-commit install
 

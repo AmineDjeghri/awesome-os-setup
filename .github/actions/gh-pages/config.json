@@ -1,0 +1,11 @@
+{
+    "cname": null,
+    "custom_404": false,
+    "build_type": "legacy",
+    "source": {
+        "branch": "gh-pages",
+        "path": "/"
+    },
+    "public": false,
+    "https_enforced": true
+}

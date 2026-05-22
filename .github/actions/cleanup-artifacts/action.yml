@@ -1,0 +1,14 @@
+name: 'Cleanup Artifacts & Caches'
+description: 'Clean build artifacts, test caches, and Python cache files'
+
+runs:
+  using: 'composite'
+  steps:
+    - name: Clean build artifacts & test caches
+      shell: bash
+      run: |
+        rm -rf "$GITHUB_WORKSPACE/dist" \
+               "$GITHUB_WORKSPACE/build" \
+               "$GITHUB_WORKSPACE/site"
+        find "$GITHUB_WORKSPACE/src" "$GITHUB_WORKSPACE/tests" \
+             -type d -name "__pycache__" -exec rm -rf {} + 2>/dev/null || true

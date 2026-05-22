@@ -1,0 +1,33 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": [
+    "config:recommended",
+    "group:linters",
+    ":semanticCommits",
+    ":semanticCommitType(fix)",
+    ":dependencyDashboard"
+  ],
+  "labels": [
+    "renovate",
+    "dependencies"
+  ],
+  "dependencyDashboardLabels": [
+    "renovate"
+  ],
+  "commitMessageTopic": "{{datasource}} dependency {{depName}}",
+  "minimumReleaseAge": "7 days",
+  "prCreation": "not-pending",
+  "vulnerabilityAlerts": {
+    "enabled": true,
+    "addLabels": ["security"]
+  },
+  "osvVulnerabilityAlerts": true,
+  "pinDigests": true,
+  "packageRules": [
+    {
+      "description": "Apply 7-day cooldown to all dependencies",
+      "minimumReleaseAge": "7 days"
+    }
+  ],
+  "platformAutomerge": false
+}

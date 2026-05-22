@@ -1,0 +1,57 @@
+# GitHub Automatically Generated Release Notes Configuration
+# Docs: https://docs.github.com/en/repositories/releasing-projects-on-github/automatically-generated-release-notes
+#
+# - Contributor @username attribution is automatic per PR/commit
+# - "Full Changelog: vX...vY" link is automatic
+# - Categories group entries by PR labels
+# - Bot authors are excluded globally
+
+changelog:
+  exclude:
+    labels:
+      - ignore-for-release
+    authors:
+      - github-actions[bot]
+      - dependabot[bot]
+      - pre-commit-ci[bot]
+  categories:
+    - title: "🚀 New Features"
+      labels:
+        - enhancement
+        - feature
+        - "type: feature"
+    - title: "🐛 Bug Fixes"
+      labels:
+        - bug
+        - fix
+        - hotfix
+        - "type: fix"
+    - title: "⚡️ Performance"
+      labels:
+        - performance
+        - perf
+    - title: "📝 Documentation"
+      labels:
+        - documentation
+        - docs
+    - title: "♻️ Refactoring"
+      labels:
+        - refactor
+        - refactoring
+    - title: "🔧 Maintenance"
+      labels:
+        - chore
+        - maintenance
+        - cleanup
+    - title: "👷 CI/CD"
+      labels:
+        - ci
+        - github-actions
+        - "type: ci"
+    - title: "⬆️ Dependency Updates"
+      labels:
+        - dependencies
+        - deps
+    - title: "🔀 Other Changes"
+      labels:
+        - "*"
