@@ -10,6 +10,7 @@ packages:
         - docker-compose
       terminal_tools:
         - bat
+        - lsd
         - fzf
         - btop
         - neofetch
@@ -20,8 +21,7 @@ packages:
     snap:
       apps:
         - code
-      terminal_tools:
-        - lsd
+
   darwin:
     brew:
       Core:
@@ -30,6 +30,10 @@ packages:
         - curl
       Dev_tools:
         - uv
+      terminal_tools:
+        - bat
+        - lsd
+        - btop
     cask:
       AI:
         - ollama-app # https://github.com/ollama/ollama
