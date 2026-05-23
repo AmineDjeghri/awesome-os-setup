@@ -16,5 +16,5 @@ NC=\033[0m
 ifeq ($(OS),Windows_NT)
 UV := uv
 else
-UV := "$$HOME/.local/bin/uv" # keep the quotes incase the path contains spaces
+UV := $(shell command -v uv 2>/dev/null || echo "$$HOME/.local/bin/uv")
 endif

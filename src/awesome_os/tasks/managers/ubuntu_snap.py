@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-from awesome_os import logger
+from awesome_os.settings import get_logger
 from awesome_os.tasks.commands import run
 from awesome_os.tasks.managers.base import InstallResult
 from awesome_os.tasks.sudo import sudo_non_interactive_ok, sudo_required_details
@@ -15,7 +15,7 @@ class UbuntuSnapManager:
         return res.returncode == 0
 
     def install(self, package: str) -> InstallResult:
-        logger.info(f"Installing {package} via {self.name}...")
+        get_logger().info(f"Installing {package} via {self.name}...")
         if not sudo_non_interactive_ok():
             return InstallResult(
                 ok=False,
