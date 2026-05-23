@@ -28,6 +28,8 @@ packages:
         - git
         - zsh
         - curl
+      Dev_tools:
+        - uv
     cask:
       AI:
         - ollama-app # https://github.com/ollama/ollama
@@ -61,15 +63,12 @@ packages:
         - Obsidian
         - Notion
       Dev_tools:
-        - uv
         - Pycharm
         - Ghostty
         - Zed
         - ComfyUI
         - Docker-Desktop
 
-      Devices Software:
-        - test
       Utilities:
         - Raycast # Launcher https://www.raycast.com/
         - Swift-Quit # quitting of macOS apps when closing their windows. https://github.com/onebadidea/swiftquit
