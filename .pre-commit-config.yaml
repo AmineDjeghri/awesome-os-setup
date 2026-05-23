@@ -58,10 +58,10 @@ repos:
 #    hooks:
 #      - id: pip-audit
 
-  - repo: https://github.com/rhysd/actionlint
-    rev: v1.7.12
-    hooks:
-      - id: actionlint
+#  - repo: https://github.com/rhysd/actionlint
+#    rev: v1.7.12
+#    hooks:
+#      - id: actionlint
 
 #  - repo: https://github.com/zizmorcore/zizmor-pre-commit
 #    rev: v1.25.2
@@ -75,3 +75,9 @@ repos:
 #      - id: markdown-link-check
 #        name: Markdown Link Check
 #        args: ['--config', '.markdown-link-check.json']
+
+#  - repo: https://github.com/PyCQA/bandit
+#    rev: 1.9.2
+#    hooks:
+#      - id: bandit
+#        exclude: ^tests/

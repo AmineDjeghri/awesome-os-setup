@@ -1,13 +1,13 @@
 [project]
 name = "awesome-os-setup"
-version = "0.1.0"
+version = "1.0.1"
 description = "A terminal-based interactive app that helps you setup and enhance your OS."
 readme = "README.md"
-requires-python = ">=3.13"
+requires-python = ">=3.14,<3.15"
 dependencies = [
     # Engineering
     "pyTermTk==0.48.1a0",
-    "pydantic==2.12.5",
+    "pydantic==2.13.4",
     "pydantic-settings>=2.12.0",
     "loguru==0.7.3",
     "PyYAML==6.0.3",
@@ -21,20 +21,21 @@ default-groups = ["dev", "docs"]
 [dependency-groups]
 # if you add new dependencies here, make sure to add them to [tool.uv] default-groups up above
 dev = [
-    "pre-commit == 4.5.1",
-    "pytest == 9.0.2",
+    "pre-commit ==4.6.0",
+    "pytest ==9.0.3",
     "pytest-asyncio == 1.3.0",
-    "ruff==0.15.5",
-    "ty==0.0.18"
+    "ruff==0.15.13",
+    "ty==0.0.36",
+    "python-semantic-release==10.5.3"
 ]
 docs = [
     "mkdocs == 1.6.1",
-    "mkdocs-material==9.7.2",
-    "mkdocstrings==1.0.3",
+    "mkdocs-material==9.7.6",
+    "mkdocstrings==1.0.4",
     "mkdocs-mermaid2-plugin==1.2.3",
-    "mkdocs-gen-files==0.6.0",
+    "mkdocs-gen-files==0.6.1",
     "mkdocstrings-python==2.0.3",
-    "mkdocs-same-dir==0.1.3",
+    "mkdocs-same-dir==0.1.5",
     "mkdocs-exclude==1.0.2"
 ]
 
@@ -46,9 +47,8 @@ build-backend = "hatchling.build"
 [tool.hatch.build.targets.wheel]
 packages = ["src/awesome_os"]
 
-## inside the root folder, you can run `uv run --directory . hello`
+## inside the root folder, you can run `uv run --directory . awesome-os` or directly awesome-os if the .venv is activated
 [project.scripts]
-hello = "awesome_os:hello" # will read from __init__.py.
 awesome-os = "awesome_os.frontend.main:main"
 
 ############### pytest configuration

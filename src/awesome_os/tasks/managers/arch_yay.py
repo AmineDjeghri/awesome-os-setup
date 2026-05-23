@@ -11,7 +11,7 @@ import shutil
 import tempfile
 from pathlib import Path
 
-from awesome_os import logger
+from awesome_os.settings import get_logger
 from awesome_os.tasks.commands import join_argv, run
 from awesome_os.tasks.managers.base import InstallResult
 from awesome_os.tasks.task import TaskResult
@@ -129,7 +129,7 @@ class ArchYayManager:
                 ok=False, summary="yay not found on PATH", details="Ensure `yay` is installed."
             )
 
-        logger.info(f"Installing {package} via yay...")
+        get_logger().info(f"Installing {package} via yay...")
         res = run([yay, "-S", "--needed", "--noconfirm", package], check=False)
         if res.returncode == 0:
             return InstallResult(ok=True, summary=f"{package}: installed (yay)")

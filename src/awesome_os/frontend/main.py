@@ -7,7 +7,7 @@ from pathlib import Path
 import TermTk as ttk
 from TermTk import TTkString
 
-from awesome_os import logger
+from awesome_os.settings import get_logger
 from awesome_os.frontend.controller import AppController
 from awesome_os.frontend.runner import JobRunner
 from awesome_os.detect_os import build_packages_for_os
@@ -124,7 +124,7 @@ def run_app() -> None:
 
 def main():
     if not Path.cwd().name == "awesome-os-setup":
-        logger.warning(
+        get_logger().warning(
             "You are launching the UI from a directory that does not look like the repo root. "
             "For the intended workflow, run it from the repo root (or use install_unix.sh / make)."
         )

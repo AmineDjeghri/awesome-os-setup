@@ -25,7 +25,7 @@ concurrency:
 
 jobs:
   quality-checks:
-    name: "Quality Checks"
+    name: "👷 Quality Check & Tests"
     uses: ./.github/workflows/quality-and-tests.yml
     secrets: inherit  # pragma: allowlist secret
 
@@ -64,13 +64,15 @@ jobs:
           # Disable git pre-commit hooks
           git config core.hooksPath /dev/null
           echo "::group::Semantic Release output"
-          NEW_VERSION=$(uv run semantic-release version --print 2>/dev/null | tr -d '[:space:]')
+          NEW_VERSION=$(uv run semantic-release -v version --print | tr -d '[:space:]')
           if [ -n "$NEW_VERSION" ]; then
-            uv run semantic-release version
-            echo "released=true" >> $GITHUB_OUTPUT
-            echo "version=$NEW_VERSION" >> $GITHUB_OUTPUT
+            uv run semantic-release -v version
+            {
+              echo "released=true"
+              echo "version=$NEW_VERSION"
+            } >> "$GITHUB_OUTPUT"
           else
-            echo "released=false" >> $GITHUB_OUTPUT
+            echo "released=false" >> "$GITHUB_OUTPUT"
             echo "No releasable commits found — skipping release."
           fi
           echo "::endgroup::"
@@ -82,28 +84,8 @@ jobs:
           # Re-enable git pre-commit hooks
           git config --unset-all core.hooksPath || true
 
-      - name: Cleanup Artifacts
-        if: always()
-        uses: ./.github/actions/cleanup-artifacts
-
-  build-and-publish:
-    name: "📦 Build & Publish (Stable)"
-    runs-on: ubuntu-latest
-    needs: release
-    timeout-minutes: 15
-    if: needs.release.outputs.released == 'true'
-    steps:
-      - name: Check Out
-        uses: actions/checkout@v6
-        with:
-          fetch-depth: 0
-
-
-      - name: Install Python Dependencies
-        uses: ./.github/actions/install-python-deps
-
       - name: Build Package
-        id: build
+        if: steps.semantic_release.outputs.released == 'true'
         shell: bash
         run: |
           echo "::group::Build output"
@@ -111,29 +93,15 @@ jobs:
           echo "::endgroup::"
 
       - name: Publish to GitHub Release
-        id: publish_gh
+        if: steps.semantic_release.outputs.released == 'true'
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GH_ENTERPRISE_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         shell: bash
         run: |
-          VERSION="${{ needs.release.outputs.version }}"
-          if [ -z "$VERSION" ]; then
-            echo "ERROR: No version from semantic release"
-            exit 1
-          fi
+          VERSION="${{ steps.semantic_release.outputs.version }}"
           export GH_HOST=$(echo "$GITHUB_SERVER_URL" | sed 's|https://||')
-          if gh release view "v${VERSION}" &>/dev/null; then
-            gh release upload "v${VERSION}" dist/*.whl dist/*.tar.gz --clobber
-          else
-            PREV_TAG=$(git tag --sort=-version:refname | grep -E '^v[0-9]' | sed -n '1p')
-            CHANGELOG=$(git log "${PREV_TAG}"..HEAD --oneline 2>/dev/null | head -20 || echo "Release $VERSION")
-            gh release create "v${VERSION}" dist/*.whl dist/*.tar.gz \
-              --title "v${VERSION}" \
-              --notes "## Changelog
-
-              $CHANGELOG"
-          fi
+          gh release upload "v${VERSION}" dist/*.whl dist/*.tar.gz --clobber
 
       - name: Cleanup Artifacts
         if: always()
@@ -142,9 +110,9 @@ jobs:
   docs:
     name: "📚 Deploy Docs"
     runs-on: ubuntu-latest
-    needs: [release, build-and-publish]
+    needs: [release]
     timeout-minutes: 5
-    if: needs.build-and-publish.result == 'success'
+    if: needs.release.outputs.released == 'true'
     steps:
       - name: Check Out
         uses: actions/checkout@v6
@@ -170,7 +138,7 @@ jobs:
   summary:
     name: "📋 Summary"
     runs-on: ubuntu-latest
-    needs: [quality-checks, release, build-and-publish, docs]
+    needs: [quality-checks, release, docs]
     if: always()
     timeout-minutes: 5
     steps:
@@ -181,7 +149,6 @@ jobs:
           VERSION="${{ needs.release.outputs.version }}"
           QC="${{ needs.quality-checks.result }}"
           REL="${{ needs.release.result }}"
-          BUILD_PUB="${{ needs.build-and-publish.result }}"
           DOCS="${{ needs.docs.result }}"
 
           status_icon() { if [ "$1" == "success" ]; then echo "✅"; elif [ "$1" == "skipped" ]; then echo "⏭️"; else echo "❌"; fi; }
@@ -189,9 +156,9 @@ jobs:
           echo "## 🚀 Main Release Pipeline" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
 
-          if [ "$BUILD_PUB" == "success" ] && [ "$DOCS" == "success" ]; then
+          if [ "$REL" == "success" ] && [ "$DOCS" == "success" ]; then
             echo "> 🎉 **Release \`v$VERSION\` completed successfully**" >> $GITHUB_STEP_SUMMARY
-          elif [ "$BUILD_PUB" == "skipped" ]; then
+          elif [ "$REL" == "skipped" ]; then
             echo "> ℹ️ **No releasable commits** — nothing published." >> $GITHUB_STEP_SUMMARY
           else
             echo "> ⚠️ **Release completed with issues** — check logs above." >> $GITHUB_STEP_SUMMARY
@@ -201,6 +168,5 @@ jobs:
           echo "| Step | Status |" >> $GITHUB_STEP_SUMMARY
           echo "|------|--------|" >> $GITHUB_STEP_SUMMARY
           echo "| 🧹 Quality Checks | $(status_icon $QC) |" >> $GITHUB_STEP_SUMMARY
-          echo "| 🏷️ Semantic Release | $(status_icon $REL) |" >> $GITHUB_STEP_SUMMARY
-          echo "| 📦 Build & Publish | $(status_icon $BUILD_PUB) |" >> $GITHUB_STEP_SUMMARY
+          echo "| 🏷️ Semantic Release & Build | $(status_icon $REL) |" >> $GITHUB_STEP_SUMMARY
           echo "| 📚 Deploy Docs | $(status_icon $DOCS) |" >> $GITHUB_STEP_SUMMARY

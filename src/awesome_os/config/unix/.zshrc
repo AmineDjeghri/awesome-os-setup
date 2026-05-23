@@ -20,9 +20,6 @@ fi
 # Ensure local user binaries are found
 export PATH="$HOME/.local/bin:$PATH"
 
-
-
-
 # Oh My Zsh
 export ZSH="$HOME/.oh-my-zsh" # Path to your oh-my-zsh installation.
 ZSH_THEME="powerlevel10k/powerlevel10k" # Set name of the theme to load
@@ -49,18 +46,6 @@ source $ZSH/oh-my-zsh.sh
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-
-# Aliases for both MacOS and Linux. For a full list of active aliases, run `alias`.
-alias zshrc="pycharm -e ~/.zshrc"
-alias cat="bat"
-alias ls="lsd"
-alias top="btop"
-
-# Aliases for Linux.
-if [ "$IS_LINUX" = true ]; then
-  alias bat="batcat"
-fi
-
 
 # ============================================================================
 # PATH Configuration
@@ -126,6 +111,20 @@ if command -v uv >/dev/null 2>&1; then
   alias python3="uv run python"
   # Completions for uv
   eval "$(uv generate-shell-completion zsh)"
+fi
+
+# ============================================================================
+# Aliases for both MacOS and Linux. For a full list of active aliases, run `alias`.
+# ============================================================================
+alias zshrc="pycharm -e ~/.zshrc"
+if command -v bat >/dev/null 2>&1; then
+  alias cat="bat"
+fi
+if command -v lsd >/dev/null 2>&1; then
+  alias ls="lsd"
+fi
+if command -v btop >/dev/null 2>&1; then
+  alias top="btop"
 fi
 
 # ============================================================================
