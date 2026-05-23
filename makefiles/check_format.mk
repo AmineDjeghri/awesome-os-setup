@@ -1,11 +1,7 @@
-# Development targets
-# This file contains targets for running and developing the application
+# Check Format targets
+# This file contains targets for checking code format
 
-.PHONY: run pre-commit-install pre-commit lint format
-
-run: ## Run the Stremio Addon (Dev Mode)
-	@echo "Starting server..."
-	@$(UV) run python src/awesome_os/frontend/main.py
+.PHONY: pre-commit-install pre-commit lint format
 
 pre-commit-install: install-dev
 	@echo "${YELLOW}=========> Installing pre-commit...${NC}"

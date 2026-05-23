@@ -160,6 +160,8 @@ cython_debug/
 #  option (not recommended) you can uncomment the following to ignore the entire idea folder.
 .idea/
 
+uv.lock
+
 docs/macos_darwin/zed
 !docs/macos_darwin/zed/keymap.json
 !docs/macos_darwin/zed/settings.json
