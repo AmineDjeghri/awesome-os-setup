@@ -1,0 +1,52 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": [
+    "config:recommended",
+    ":semanticCommits",
+    ":semanticCommitTypeAll(chore)",
+    ":dependencyDashboard"
+  ],
+  "labels": [
+    "renovate",
+    "dependencies"
+  ],
+  "dependencyDashboardLabels": [
+    "renovate"
+  ],
+  "commitMessageTopic": "{{datasource}} dependency {{depName}}",
+  "mode": "full",
+  "prCreation": "immediate",
+  "prConcurrentLimit": 10,
+  "prHourlyLimit": 10,
+  "vulnerabilityAlerts": {
+    "enabled": true,
+    "addLabels": ["security"]
+  },
+  "osvVulnerabilityAlerts": true,
+  "pinDigests": false,
+  "packageRules": [
+    {
+      "description": "Group pre-commit updates",
+      "matchManagers": ["pre-commit"],
+      "groupName": "pre-commit dependencies",
+      "groupSlug": "pre-commit",
+      "minimumReleaseAge": "7 days"
+    },
+    {
+      "description": "Group Python/pip updates",
+      "matchManagers": ["pip", "pep621"],
+      "groupName": "python dependencies",
+      "groupSlug": "python",
+      "minimumReleaseAge": "7 days"
+    },
+    {
+      "description": "Group GitHub Actions updates",
+      "matchManagers": ["github-actions"],
+      "groupName": "github-actions",
+      "groupSlug": "github-actions",
+      "minimumReleaseAge": "7 days"
+    }
+  ],
+  "platformAutomerge": false,
+  "lockFileMaintenance": { "enabled": true }
+}

@@ -1,0 +1,52 @@
+name: ✨ Feature Request
+description: Suggest an idea for this project
+title: "[FEATURE] "
+labels: [enhancement]
+body:
+  - type: markdown
+    attributes:
+      value: "## Describe the feature"
+  - type: textarea
+    id: description
+    attributes:
+      label: What problem does this solve?
+      description: Clear description of what you want and why
+      placeholder: "This feature should..."
+    validations:
+      required: true
+
+  - type: textarea
+    id: solution
+    attributes:
+      label: Proposed solution
+      description: How should this feature work?
+      placeholder: "The feature should..."
+    validations:
+      required: true
+
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives considered
+      description: Any alternative approaches you've thought about
+      placeholder: "Other ways to solve this..."
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: scope
+    attributes:
+      label: Impact area
+      options:
+        - label: Agent logic
+        - label: GitHub integration
+        - label: LLM interaction
+        - label: Testing
+        - label: Documentation
+        - label: CI/CD
+
+  - type: textarea
+    id: additional
+    attributes:
+      label: Additional context
+      placeholder: "Screenshots, mockups, or other info"

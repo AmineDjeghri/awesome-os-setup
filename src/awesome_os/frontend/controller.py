@@ -14,7 +14,7 @@ import shutil
 
 import TermTk as ttk
 
-from awesome_os import logger
+from awesome_os.settings import get_logger
 from awesome_os.detect_os import PackageRef
 from awesome_os.tasks.factory import SystemAction, get_package_manager
 
@@ -56,7 +56,7 @@ class AppController:
     def ui_log(self, message: str) -> None:
         """Log to both the UI log panel and the Python logger."""
         self._log.append(message + "\n")
-        logger.debug(message)
+        get_logger().debug(message)
 
     def set_busy(self, busy: bool) -> None:
         """Enable/disable actions depending on whether a job is running."""

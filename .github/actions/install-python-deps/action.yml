@@ -1,29 +1,27 @@
 name: 'Install Python Dependencies'
-description: 'Install Python dependencies using uv and make'
+description: 'Install uv and Python dependencies for the project'
 
 runs:
   using: 'composite'
   steps:
-      - name: Restore cache venv
-        uses: actions/cache/restore@v4
-        with:
-          path: |
-            .venv
-            ~/.cache/uv
+#    - name: Restore uv cache (project-scoped)
+#      uses: actions/cache/restore@v4
+#      with:
+#        path: ${{ github.workspace }}/.cache/uv #todo: not sure if it works with /home/runner/.cache/uv
+#        key: ${{ runner.os }}-uv-${{ hashFiles('uv.lock') }}
+#        restore-keys: |
+#          ${{ runner.os }}-uv-
 
-          key: ${{ runner.os }}-venv-${{ hashFiles('uv.lock') }}
+    - name: Install Python Dependencies
+      shell: bash
+      run: |
+        make install-uv
+        make install-dev
 
-      - name: Install uv and Python dependencies
-        shell: bash
-        run: |
-          cp .env.example .env
-          make install-dev
-
-      - name: Save cache venv
-        uses: actions/cache/save@v4
-        with:
-          path: |
-            .venv
-            ~/.cache/uv
-
-          key: ${{ runner.os }}-venv-${{ hashFiles('uv.lock') }}
+    #  actions/cache@v4 (the combined action) automatically saves at the end of the job — but only when used in an actual workflow job step, not inside a composite action. So we need to explicitly save the cache here.
+#    - name: Save uv cache
+#      if: success()
+#      uses: actions/cache/save@v4
+#      with:
+#        path: /home/runner/.cache/uv  #todo: not sure if it works with /home/runner/.cache/uv
+#        key: ${{ runner.os }}-uv-${{ hashFiles('uv.lock') }}

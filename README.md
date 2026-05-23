@@ -16,8 +16,7 @@ Improve your UX and productivity with a reproducible setup for:
 - Terminal UX (Zsh/Oh-My-Zsh/Powerlevel10k)
 - Window tiling management
 - Home automation (Home Assistant)
-- TV setup (Google TV + Stremio)
-
+- TV setup (Google TV + Stremio/Nuvio)
 
 The image above is the app that runs on your terminal, it supports multiple OSes (Windows, Linux, macOS, WSL2) and can be used with a mouse to click on the buttons.
 You can follow this repository to get a similar setup on Windows 11, Linux, macOS, or a hybrid workflow (Windows + WSL).
@@ -71,7 +70,6 @@ Run it from the directory where you want the `awesome-os-setup` folder to be cre
 ## What is this repo?
 
 This repo is a personal “OS setup Terminal UI App”:
-
 
 ### Features & Benefits
 

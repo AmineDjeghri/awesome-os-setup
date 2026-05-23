@@ -1,0 +1,20 @@
+{
+  "ignorePatterns": [
+    {
+      "pattern": "^https?://(localhost|127\\.0\\.0\\.1|0\\.0\\.0\\.0|192\\.168\\.|10\\.|172\\.(1[6-9]|2[0-9]|3[01])\\.)(:\\d+)?(/.*)?$"
+    },
+    {
+      "pattern": "^mailto:"
+    }
+  ],
+  "replacementPatterns": [
+    {
+      "pattern": "^/",
+      "replacement": "{{BASEURL}}/"
+    }
+  ],
+  "timeout": "5s",
+  "retryOn429": false,
+  "retryCount": 0,
+  "aliveStatusCodes": [200, 206, 301, 302, 303, 304, 307, 308]
+}

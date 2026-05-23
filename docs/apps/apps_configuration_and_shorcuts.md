@@ -125,6 +125,7 @@ shortcuts: You can read more about the shortcuts :
 - I've been using PyCharm (professional edition) for more than 3 years now, even if I used VSCode for 2 years before
   that, the Intellij suite is just amazing. Intellij suite with all the plugins for students is completely free.
 - Change the default location of projects : instead of PycharmProjects. Settings -> Appearance & behavior -> system settings
+- Change the terminal font to JetBrainsMono Nerd Font: Settings -> Tools -> Terminal -> Font settings
 - If you are on Windows, use pycharm with WSL.
 - Sync pycharm settings : https://www.jetbrains.com/help/pycharm/sharing-your-ide-settings.html#IDE_settings_sync
 - You can save your current layout (all plugin positions) by going to Window | Layouts | Save Current Layout as New and

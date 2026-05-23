@@ -1,13 +1,13 @@
 [project]
 name = "awesome-os-setup"
-version = "0.1.0"
+version = "1.0.0"
 description = "A terminal-based interactive app that helps you setup and enhance your OS."
 readme = "README.md"
-requires-python = ">=3.13"
+requires-python = ">=3.14,<3.15"
 dependencies = [
     # Engineering
     "pyTermTk==0.48.1a0",
-    "pydantic==2.12.5",
+    "pydantic==2.13.4",
     "pydantic-settings>=2.12.0",
     "loguru==0.7.3",
     "PyYAML==6.0.3",
@@ -21,20 +21,21 @@ default-groups = ["dev", "docs"]
 [dependency-groups]
 # if you add new dependencies here, make sure to add them to [tool.uv] default-groups up above
 dev = [
-    "pre-commit == 4.5.1",
-    "pytest == 9.0.2",
+    "pre-commit ==4.6.0",
+    "pytest ==9.0.3",
     "pytest-asyncio == 1.3.0",
-    "ruff==0.15.5",
-    "ty==0.0.18"
+    "ruff==0.15.13",
+    "ty==0.0.36",
+    "python-semantic-release==10.5.3"
 ]
 docs = [
     "mkdocs == 1.6.1",
-    "mkdocs-material==9.7.2",
-    "mkdocstrings==1.0.3",
+    "mkdocs-material==9.7.6",
+    "mkdocstrings==1.0.4",
     "mkdocs-mermaid2-plugin==1.2.3",
-    "mkdocs-gen-files==0.6.0",
+    "mkdocs-gen-files==0.6.1",
     "mkdocstrings-python==2.0.3",
-    "mkdocs-same-dir==0.1.3",
+    "mkdocs-same-dir==0.1.5",
     "mkdocs-exclude==1.0.2"
 ]
 
@@ -46,9 +47,8 @@ build-backend = "hatchling.build"
 [tool.hatch.build.targets.wheel]
 packages = ["src/awesome_os"]
 
-## inside the root folder, you can run `uv run --directory . hello`
+## inside the root folder, you can run `uv run --directory . awesome-os` or directly awesome-os if the .venv is activated
 [project.scripts]
-hello = "awesome_os:hello" # will read from __init__.py.
 awesome-os = "awesome_os.frontend.main:main"
 
 ############### pytest configuration
@@ -64,3 +64,94 @@ line-length = 100
 lint.select = ["D", "F401"]
 lint.ignore = ["D100", "D101", "D102", "D103", "D104", "D107", "D417"]
 lint.pydocstyle.convention = "google"
+
+
+# python-semantic-release configuration
+[tool.semantic_release]
+version_toml = ["pyproject.toml:project.version"]
+version_pattern = "v(?P<version>\\d+\\.\\d+\\.\\d+(?:[-.]\\w+)?)"  # matches v1.0.0, v1.0.0-rc.1, etc.
+upload_to_vcs_release = false  # Semantic-release automatically creates GitHub releases. Publication is handled by main-release.yml and dev-release.yml
+commit_author = "github-actions[bot] <github-actions[bot]@users.noreply.github.com>"
+commit_message = "chore(release): v{version} [skip ci]"
+
+[tool.semantic_release.branches.main]
+match = "main"
+prerelease = false
+
+[tool.semantic_release.branches.dev]
+match = "dev"
+prerelease = true
+prerelease_token = "rc"  # release candidate: 1.1.0-rc.1, 1.1.0-rc.2, etc.
+
+# ---------------------------------------------------------------------------
+# Commit Convention:  [emoji] <type>[(<scope>)][!]: <description>
+#
+# Main Branch (production releases):
+#   ✨ feat / feature          → minor bump  (1.0.0 → 1.1.0)
+#   🐛 fix / bugfix / hotfix   → patch bump  (1.0.0 → 1.0.1)
+#   ⚡️ perf                    → patch bump
+#   💥 feat! / BREAKING CHANGE → major bump  (1.0.0 → 2.0.0)
+#
+# Dev Branch (release candidates):
+#   ✨ feat / feature          → rc bump    (1.1.0-rc.1 → 1.1.0-rc.2)
+#   🐛 fix / bugfix / hotfix   → rc bump    (1.1.0-rc.1 → 1.1.0-rc.2)
+#   💥 feat! / BREAKING CHANGE → rc bump    (1.1.0-rc.1 → 1.1.0-rc.2)
+#
+# No Release (all branches):
+#   ♻️ refactor  🧪 test  📝 docs  🎨 style  🔧 chore  👷 ci  📦 build
+#
+# Emoji prefix is optional. Both forms work:
+#   "feat: add token refresh"
+#   "✨ feat: add token refresh"
+# ---------------------------------------------------------------------------
+
+[tool.semantic_release.commit_parser_options]
+minor_tags = ["feat", "feature"]
+patch_tags  = ["fix", "bugfix", "hotfix", "perf"]
+allowed_tags = [
+    "feat", "feature",
+    "fix", "bugfix", "hotfix",
+    "perf",
+    "refactor",
+    "chore",
+    "ci",
+    "docs",
+    "style",
+    "test",
+    "build",
+]
+default_bump_level = 0
+
+[tool.semantic_release.changelog]
+# Patterns matched against the full raw commit subject — anchored with ^[^\w]*
+# to handle optional leading emoji before the type keyword
+exclude_commit_patterns = [
+    '''^[^\w]*chore(\([^)]*\))?[!:]''',
+    '''^[^\w]*ci(\([^)]*\))?[!:]''',
+    '''^[^\w]*style(\([^)]*\))?[!:]''',
+    '''^[^\w]*test(\([^)]*\))?[!:]''',
+    '''^[^\w]*build(\([^)]*\))?[!:]''',
+    '''^Merge ''',
+    '''^Revert ''',
+]
+
+[tool.mypy]
+plugins = ['pydantic.mypy', 'loguru_mypy']
+ignore_missing_imports = true
+
+# ---------------------------------------------------------------------------
+[tool.commitizen]
+name = "cz_customize"
+tag_format = "v$version"
+version_scheme = "semver"
+encoding = "utf-8"
+
+[tool.commitizen.customize]
+# Supports optional leading emoji before the conventional commit type:
+#   "feat: add thing"          ✅
+#   "✨ feat: add thing"        ✅
+#   "✨ feat(scope): add thing" ✅
+#   "feat!: breaking"          ✅
+schema_pattern = '(?s)^[^\w\n]*(feat|feature|fix|bugfix|hotfix|perf|refactor|docs|style|test|chore|ci|build)(\(\S+\))?!?:\ [^\n\r]+((\n\n.*)|(\s*))?$'
+bump_pattern = '^(feat|feature|fix|bugfix|hotfix|perf)'
+bump_map = {"feat" = "MINOR", "feature" = "MINOR", "fix" = "PATCH", "bugfix" = "PATCH", "hotfix" = "PATCH", "perf" = "PATCH"}
