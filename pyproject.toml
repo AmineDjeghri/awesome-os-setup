@@ -8,7 +8,7 @@ dependencies = [
     # Engineering
     "pyTermTk==0.48.1a0",
     "pydantic==2.13.4",
-    "pydantic-settings>=2.12.0",
+    "pydantic-settings==2.12.0",
     "loguru==0.7.3",
     "PyYAML==6.0.3",
 ]
@@ -51,9 +51,10 @@ packages = ["src/awesome_os"]
 [project.scripts]
 awesome-os = "awesome_os.frontend.main:main"
 
-############### pytest configuration
+#### pytest configuration
 [tool.pytest.ini_options]
-pythonpath = ["src"]
+asyncio_mode = "strict"
+asyncio_default_fixture_loop_scope = "function"
 
 ############### ruff configuration
 [tool.ruff]
