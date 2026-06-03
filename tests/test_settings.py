@@ -36,24 +36,24 @@ class TestGetCachedSettings:
         from awesome_os.settings import get_cached_settings
 
         settings = get_cached_settings()
-        assert settings.DEV_MODE is False
+        assert settings.logging_level == "DEBUG"
 
     def test_dev_mode_from_env(self, monkeypatch):
         """DEV_MODE should be True when the env var is set."""
-        monkeypatch.setenv("DEV_MODE", "true")
+        monkeypatch.setenv("LOGGING_LEVEL", "INFO")
         from awesome_os.settings import get_cached_settings
 
         settings = get_cached_settings()
-        assert settings.DEV_MODE is True
+        assert settings.logging_level == "INFO"
 
 
 class TestGetLogger:
     """Tests for the get_logger() singleton factory."""
 
     def test_is_singleton(self):
-        """Repeated calls must return the exact same logger instance."""
+        """Repeated calls must return loggers bound to the same underlying instance."""
         from awesome_os.settings import get_logger
 
         l1 = get_logger()
         l2 = get_logger()
-        assert l1 is l2
+        assert l1._core is l2._core

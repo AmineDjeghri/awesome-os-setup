@@ -6,7 +6,7 @@ import sys
 from typing import Optional
 
 from loguru import logger as _loguru_logger
-from pydantic import Field
+from pydantic import Field, AliasChoices
 from pydantic_settings import BaseSettings, SettingsConfigDict
 
 
@@ -24,9 +24,10 @@ class ApplicationSettings(BaseEnvironmentSettings):
     """
 
     # --- Runtime ---
-    DEV_MODE: bool = Field(
-        default=False,
-        description="Enable verbose TRACE-level logging",
+    logging_level: str = Field(
+        default="DEBUG",
+        validation_alias=AliasChoices("LOGGING_LEVEL", "logging_level"),
+        description="Log level (TRACE, DEBUG, INFO, WARNING, ERROR, CRITICAL)",
     )
 
     # Example of a model validator
@@ -57,15 +58,27 @@ _logger_initialized: bool = False
 
 
 def get_logger():
-    """Return a configured loguru logger.
+    """Return a loguru logger bound to the app namespace.
 
-    Log level is ``TRACE`` when ``DEV_MODE=True``, otherwise ``INFO``.
+    Log level is controlled by LOGGING_LEVEL setting.
     """
     global _logger_initialized
     if not _logger_initialized:
-        settings = get_cached_settings()
-        _loguru_logger.remove()
-        level = "TRACE" if settings.DEV_MODE else "INFO"
-        _loguru_logger.add(sys.stderr, level=level)
+        _cfg = get_cached_settings()
+        level = _cfg.logging_level
+
+        # Remove the default loguru sink (ID 0) to prevent a duplicate when we add our logger.
+        try:
+            _loguru_logger.remove(0)
+        except ValueError:
+            pass  # already removed
+
+        _loguru_logger.add(
+            sys.stderr,
+            level=level,
+            filter=lambda record: record["extra"].get("name") == "awesome-os",
+        )
+
         _logger_initialized = True
-    return _loguru_logger
+
+    return _loguru_logger.bind(name="awesome-os")
