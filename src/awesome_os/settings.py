@@ -3,7 +3,6 @@
 from __future__ import annotations
 
 import sys
-from typing import Optional
 
 from loguru import logger as _loguru_logger
 from pydantic import Field, AliasChoices
@@ -38,47 +37,25 @@ class ApplicationSettings(BaseEnvironmentSettings):
     #     return self
 
 
-# Cached singleton
-_cached_settings: Optional[ApplicationSettings] = None
+def _initialize_logger():
+    """Initialize the loguru logger with app-specific configuration."""
+    settings = ApplicationSettings()
+    level = settings.logging_level
 
+    # Remove the default loguru sink (ID 0) to prevent a duplicate when we add our logger.
+    try:
+        _loguru_logger.remove(0)
+    except ValueError:
+        pass  # already removed
 
-def get_cached_settings() -> ApplicationSettings:
-    """Return the cached settings.
-
-    On the first call the settings are loaded from env / .env.
-    Subsequent calls return the same instance.
-    """
-    global _cached_settings
-    if _cached_settings is None:
-        _cached_settings = ApplicationSettings()
-    return _cached_settings
-
-
-_logger_initialized: bool = False
-
-
-def get_logger():
-    """Return a loguru logger bound to the app namespace.
-
-    Log level is controlled by LOGGING_LEVEL setting.
-    """
-    global _logger_initialized
-    if not _logger_initialized:
-        _cfg = get_cached_settings()
-        level = _cfg.logging_level
-
-        # Remove the default loguru sink (ID 0) to prevent a duplicate when we add our logger.
-        try:
-            _loguru_logger.remove(0)
-        except ValueError:
-            pass  # already removed
-
-        _loguru_logger.add(
-            sys.stderr,
-            level=level,
-            filter=lambda record: record["extra"].get("name") == "awesome-os",
-        )
-
-        _logger_initialized = True
+    _loguru_logger.add(
+        sys.stderr,
+        level=level,
+        filter=lambda record: record["extra"].get("name") == "awesome-os",
+    )
 
     return _loguru_logger.bind(name="awesome-os")
+
+
+settings = ApplicationSettings()
+logger = _initialize_logger()

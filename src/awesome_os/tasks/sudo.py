@@ -6,7 +6,7 @@ import subprocess
 import threading
 import time
 
-from awesome_os.settings import get_logger
+from awesome_os.settings import logger
 from awesome_os.tasks.commands import run
 
 
@@ -32,7 +32,7 @@ def sudo_preauth() -> None:
 
     res = subprocess.run(["sudo", "-v"], check=False)
     if res.returncode != 0:
-        get_logger().warning("sudo authentication failed; sudo-required actions may not work")
+        logger.warning("sudo authentication failed; sudo-required actions may not work")
         return
 
     def _keepalive() -> None:

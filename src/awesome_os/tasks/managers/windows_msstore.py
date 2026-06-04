@@ -2,7 +2,7 @@ from __future__ import annotations
 
 import shutil
 
-from awesome_os.settings import get_logger
+from awesome_os.settings import logger
 from awesome_os.tasks.commands import run
 from awesome_os.tasks.managers.base import InstallResult
 from awesome_os.tasks.task import TaskResult
@@ -35,7 +35,7 @@ class WindowsMSStoreManager:
                 details="Install App Installer (winget) from Microsoft Store, then restart the terminal.",
             )
 
-        get_logger().info(f"Installing {package} via {self.name} (MS Store)...")
+        logger.info(f"Installing {package} via {self.name} (MS Store)...")
         argv = [
             winget,
             "install",

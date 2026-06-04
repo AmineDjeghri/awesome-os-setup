@@ -4,7 +4,7 @@ from typing import Callable, Iterable
 
 from pydantic import BaseModel, ConfigDict
 
-from awesome_os.settings import get_logger
+from awesome_os.settings import logger
 
 
 class TaskResult(BaseModel):
@@ -28,18 +28,18 @@ class Task(BaseModel):
 def run_tasks(tasks: Iterable[Task]) -> list[TaskResult]:
     results: list[TaskResult] = []
     for t in tasks:
-        get_logger().info(f"==> {t.title}")
+        logger.info(f"==> {t.title}")
         try:
             if t.check():
-                get_logger().info("Already applied. Skipping.")
+                logger.info("Already applied. Skipping.")
                 results.append(TaskResult(ok=True, summary=f"{t.title}: already applied"))
                 continue
             res = t.run()
             results.append(res)
-            get_logger().info(res.summary)
+            logger.info(res.summary)
             if res.details:
-                get_logger().info(res.details)
+                logger.info(res.details)
         except Exception as e:  # noqa: BLE001
             results.append(TaskResult(ok=False, summary=f"{t.title}: failed", details=str(e)))
-            get_logger().error(f"ERROR: {e}")
+            logger.error(f"ERROR: {e}")
     return results

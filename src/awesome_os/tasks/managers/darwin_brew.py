@@ -2,7 +2,7 @@ from __future__ import annotations
 
 import shutil
 
-from awesome_os.settings import get_logger
+from awesome_os.settings import logger
 from awesome_os.tasks.commands import run
 from awesome_os.tasks.managers.base import InstallResult
 from awesome_os.tasks.task import TaskResult
@@ -45,7 +45,7 @@ class DarwinBrewManager:
                 ),
             )
 
-        get_logger().info(f"Installing {package} via {self.name}...")
+        logger.info(f"Installing {package} via {self.name}...")
         res = run([brew, "install", package], check=False)
         if res.returncode == 0:
             return InstallResult(ok=True, summary=f"Installed {package}")
@@ -134,7 +134,7 @@ class DarwinBrewCaskManager:
                 ),
             )
 
-        get_logger().info(f"Installing cask {package} via brew...")
+        logger.info(f"Installing cask {package} via brew...")
         res = run([brew, "install", "--cask", package], check=False)
         if res.returncode == 0:
             return InstallResult(ok=True, summary=f"Installed cask {package}")
