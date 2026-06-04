@@ -2,6 +2,14 @@
 
 <!-- version list -->
 
+## v1.2.0 (2026-06-04)
+
+### Features
+
+- Update logging configuration and enhance logger initialization
+  ([`0e7dc05`](https://github.com/AmineDjeghri/awesome-os-setup/commit/0e7dc05b45c057f49e6467fa5dc4004c7adf6b26))
+
+
 ## v1.1.0 (2026-06-04)
 
 ### Features
