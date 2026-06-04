@@ -37,9 +37,8 @@ class ApplicationSettings(BaseEnvironmentSettings):
     #     return self
 
 
-def _initialize_logger():
+def _initialize_logger(settings: ApplicationSettings):
     """Initialize the loguru logger with app-specific configuration."""
-    settings = ApplicationSettings()
     level = settings.logging_level
 
     # Remove the default loguru sink (ID 0) to prevent a duplicate when we add our logger.
@@ -58,4 +57,4 @@ def _initialize_logger():
 
 
 settings = ApplicationSettings()
-logger = _initialize_logger()
+logger = _initialize_logger(settings)
