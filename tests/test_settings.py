@@ -1,59 +1,43 @@
-"""Unit tests for settings.py — get_cached_settings() and get_logger()."""
+"""Unit tests for settings.py — module-level settings and logger instances."""
 
 from __future__ import annotations
 
-import pytest
 
+class TestSettings:
+    """Tests for the module-level settings instance."""
 
-def _reset_settings_module():
-    """Reset the module-level singletons so each test starts clean."""
-    import awesome_os.settings as s
+    def test_settings_is_singleton(self):
+        """The settings instance should be a singleton."""
+        from awesome_os.settings import settings as s1
+        from awesome_os.settings import settings as s2
 
-    s._cached_settings = None
-    s._logger_initialized = False
-
-
-@pytest.fixture(autouse=True)
-def reset_singletons():
-    _reset_settings_module()
-    yield
-    _reset_settings_module()
-
-
-class TestGetCachedSettings:
-    """Tests for the get_cached_settings() singleton factory."""
-
-    def test_is_singleton(self):
-        """Repeated calls must return the exact same instance."""
-        from awesome_os.settings import get_cached_settings
-
-        s1 = get_cached_settings()
-        s2 = get_cached_settings()
         assert s1 is s2
 
-    def test_dev_mode_defaults_to_false(self):
-        """DEV_MODE should be False when not set in the environment."""
-        from awesome_os.settings import get_cached_settings
+    def test_logging_level_defaults_to_debug(self):
+        """logging_level should default to DEBUG when not set in the environment."""
+        from awesome_os.settings import settings
 
-        settings = get_cached_settings()
         assert settings.logging_level == "DEBUG"
 
-    def test_dev_mode_from_env(self, monkeypatch):
-        """DEV_MODE should be True when the env var is set."""
+    def test_logging_level_from_env(self, monkeypatch):
+        """logging_level should be read from LOGGING_LEVEL environment variable."""
         monkeypatch.setenv("LOGGING_LEVEL", "INFO")
-        from awesome_os.settings import get_cached_settings
+        # Need to reimport to pick up the new env var
+        import importlib
+        import awesome_os.settings
 
-        settings = get_cached_settings()
+        importlib.reload(awesome_os.settings)
+        from awesome_os.settings import settings
+
         assert settings.logging_level == "INFO"
 
 
-class TestGetLogger:
-    """Tests for the get_logger() singleton factory."""
+class TestLogger:
+    """Tests for the module-level logger instance."""
 
-    def test_is_singleton(self):
-        """Repeated calls must return loggers bound to the same underlying instance."""
-        from awesome_os.settings import get_logger
+    def test_logger_is_singleton(self):
+        """The logger instance should be a singleton."""
+        from awesome_os.settings import logger as l1
+        from awesome_os.settings import logger as l2
 
-        l1 = get_logger()
-        l2 = get_logger()
         assert l1._core is l2._core

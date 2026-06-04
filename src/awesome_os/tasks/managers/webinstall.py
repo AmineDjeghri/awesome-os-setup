@@ -2,7 +2,7 @@ from __future__ import annotations
 
 import webbrowser
 
-from awesome_os.settings import get_logger
+from awesome_os.settings import logger
 from awesome_os.tasks.managers.base import InstallResult
 from awesome_os.tasks.task import TaskResult
 
@@ -21,7 +21,7 @@ class WebInstallManager:
         Args:
             package: The URL to open in the browser
         """
-        get_logger().info(f"Opening download page in browser: {package}")
+        logger.info(f"Opening download page in browser: {package}")
 
         try:
             # Open the URL in the default browser

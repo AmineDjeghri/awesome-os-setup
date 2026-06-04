@@ -1336,28 +1336,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#src.awesome_os.settings.get_cached_settings" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        get_cached_settings
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#src.awesome_os.settings.get_logger" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        get_logger
-      
-    </span>
-  </a>
-  
-</li>
-      
     </ul>
   
 </nav>
@@ -2502,28 +2480,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#src.awesome_os.settings.get_cached_settings" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        get_cached_settings
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#src.awesome_os.settings.get_logger" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        get_logger
-      
-    </span>
-  </a>
-  
-</li>
-      
     </ul>
   
 </nav>
@@ -2675,7 +2631,8 @@ overridden by a <code>.env</code> file.</p>
 
               <details class="mkdocstrings-source">
                 <summary>Source code in <code>src/awesome_os/settings.py</code></summary>
-                <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">19</span>
+                <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">18</span>
+<span class="normal">19</span>
 <span class="normal">20</span>
 <span class="normal">21</span>
 <span class="normal">22</span>
@@ -2686,8 +2643,7 @@ overridden by a <code>.env</code> file.</p>
 <span class="normal">27</span>
 <span class="normal">28</span>
 <span class="normal">29</span>
-<span class="normal">30</span>
-<span class="normal">31</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span><span class="w"> </span><span class="nc">ApplicationSettings</span><span class="p">(</span><span class="n">BaseEnvironmentSettings</span><span class="p">):</span>
+<span class="normal">30</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span><span class="w"> </span><span class="nc">ApplicationSettings</span><span class="p">(</span><span class="n">BaseEnvironmentSettings</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Configuration for awesome-os-setup.</span>
 
 <span class="sd">    Values are read from environment variables and optionally</span>
@@ -2752,10 +2708,10 @@ overridden by a <code>.env</code> file.</p>
 
               <details class="mkdocstrings-source">
                 <summary>Source code in <code>src/awesome_os/settings.py</code></summary>
-                <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">13</span>
+                <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">12</span>
+<span class="normal">13</span>
 <span class="normal">14</span>
-<span class="normal">15</span>
-<span class="normal">16</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span><span class="w"> </span><span class="nc">BaseEnvironmentSettings</span><span class="p">(</span><span class="n">BaseSettings</span><span class="p">):</span>
+<span class="normal">15</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span><span class="w"> </span><span class="nc">BaseEnvironmentSettings</span><span class="p">(</span><span class="n">BaseSettings</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Base settings for environment configuration.&quot;&quot;&quot;</span>
 
     <span class="n">model_config</span> <span class="o">=</span> <span class="n">SettingsConfigDict</span><span class="p">(</span><span class="n">env_file</span><span class="o">=</span><span class="s2">&quot;.env&quot;</span><span class="p">,</span> <span class="n">extra</span><span class="o">=</span><span class="s2">&quot;ignore&quot;</span><span class="p">)</span>
@@ -2783,121 +2739,6 @@ overridden by a <code>.env</code> file.</p>
 
 </div>
 
-
-<div class="doc doc-object doc-function">
-
-
-<h2 id="src.awesome_os.settings.get_cached_settings" class="doc doc-heading">
-            <code class="highlight language-python"><span class="n">get_cached_settings</span><span class="p">()</span></code>
-
-</h2>
-
-
-    <div class="doc doc-contents ">
-
-        <p>Return the cached settings.</p>
-<p>On the first call the settings are loaded from env / .env.
-Subsequent calls return the same instance.</p>
-
-
-            <details class="mkdocstrings-source">
-              <summary>Source code in <code>src/awesome_os/settings.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">45</span>
-<span class="normal">46</span>
-<span class="normal">47</span>
-<span class="normal">48</span>
-<span class="normal">49</span>
-<span class="normal">50</span>
-<span class="normal">51</span>
-<span class="normal">52</span>
-<span class="normal">53</span>
-<span class="normal">54</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">get_cached_settings</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">ApplicationSettings</span><span class="p">:</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;Return the cached settings.</span>
-
-<span class="sd">    On the first call the settings are loaded from env / .env.</span>
-<span class="sd">    Subsequent calls return the same instance.</span>
-<span class="sd">    &quot;&quot;&quot;</span>
-    <span class="k">global</span> <span class="n">_cached_settings</span>
-    <span class="k">if</span> <span class="n">_cached_settings</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-        <span class="n">_cached_settings</span> <span class="o">=</span> <span class="n">ApplicationSettings</span><span class="p">()</span>
-    <span class="k">return</span> <span class="n">_cached_settings</span>
-</code></pre></div></td></tr></table></div>
-            </details>
-    </div>
-
-</div>
-
-<div class="doc doc-object doc-function">
-
-
-<h2 id="src.awesome_os.settings.get_logger" class="doc doc-heading">
-            <code class="highlight language-python"><span class="n">get_logger</span><span class="p">()</span></code>
-
-</h2>
-
-
-    <div class="doc doc-contents ">
-
-        <p>Return a loguru logger bound to the app namespace.</p>
-<p>Log level is controlled by LOGGING_LEVEL setting.</p>
-
-
-            <details class="mkdocstrings-source">
-              <summary>Source code in <code>src/awesome_os/settings.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">60</span>
-<span class="normal">61</span>
-<span class="normal">62</span>
-<span class="normal">63</span>
-<span class="normal">64</span>
-<span class="normal">65</span>
-<span class="normal">66</span>
-<span class="normal">67</span>
-<span class="normal">68</span>
-<span class="normal">69</span>
-<span class="normal">70</span>
-<span class="normal">71</span>
-<span class="normal">72</span>
-<span class="normal">73</span>
-<span class="normal">74</span>
-<span class="normal">75</span>
-<span class="normal">76</span>
-<span class="normal">77</span>
-<span class="normal">78</span>
-<span class="normal">79</span>
-<span class="normal">80</span>
-<span class="normal">81</span>
-<span class="normal">82</span>
-<span class="normal">83</span>
-<span class="normal">84</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">get_logger</span><span class="p">():</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;Return a loguru logger bound to the app namespace.</span>
-
-<span class="sd">    Log level is controlled by LOGGING_LEVEL setting.</span>
-<span class="sd">    &quot;&quot;&quot;</span>
-    <span class="k">global</span> <span class="n">_logger_initialized</span>
-    <span class="k">if</span> <span class="ow">not</span> <span class="n">_logger_initialized</span><span class="p">:</span>
-        <span class="n">_cfg</span> <span class="o">=</span> <span class="n">get_cached_settings</span><span class="p">()</span>
-        <span class="n">level</span> <span class="o">=</span> <span class="n">_cfg</span><span class="o">.</span><span class="n">logging_level</span>
-
-        <span class="c1"># Remove the default loguru sink (ID 0) to prevent a duplicate when we add our logger.</span>
-        <span class="k">try</span><span class="p">:</span>
-            <span class="n">_loguru_logger</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
-        <span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
-            <span class="k">pass</span>  <span class="c1"># already removed</span>
-
-        <span class="n">_loguru_logger</span><span class="o">.</span><span class="n">add</span><span class="p">(</span>
-            <span class="n">sys</span><span class="o">.</span><span class="n">stderr</span><span class="p">,</span>
-            <span class="n">level</span><span class="o">=</span><span class="n">level</span><span class="p">,</span>
-            <span class="nb">filter</span><span class="o">=</span><span class="k">lambda</span> <span class="n">record</span><span class="p">:</span> <span class="n">record</span><span class="p">[</span><span class="s2">&quot;extra&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;name&quot;</span><span class="p">)</span> <span class="o">==</span> <span class="s2">&quot;awesome-os&quot;</span><span class="p">,</span>
-        <span class="p">)</span>
-
-        <span class="n">_logger_initialized</span> <span class="o">=</span> <span class="kc">True</span>
-
-    <span class="k">return</span> <span class="n">_loguru_logger</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;awesome-os&quot;</span><span class="p">)</span>
-</code></pre></div></td></tr></table></div>
-            </details>
-    </div>
-
-</div>
 
 
 

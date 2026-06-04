@@ -12,7 +12,7 @@ Notes:
 
 from __future__ import annotations
 
-from awesome_os.settings import get_logger
+from awesome_os.settings import logger
 from awesome_os.tasks.commands import run
 
 from awesome_os.tasks.managers.base import InstallResult
@@ -55,7 +55,7 @@ class UbuntuAptManager:
                 summary=f"Failed to install {package} (sudo password required)",
                 details=sudo_required_details(),
             )
-        get_logger().info(f"Installing {package} via {self.name}...")
+        logger.info(f"Installing {package} via {self.name}...")
         update_res = run(["sudo", "-n", "apt-get", "update"], check=False)
         install_res = run(["sudo", "-n", "apt-get", "install", "-y", package], check=False)
         if update_res.returncode == 0 and install_res.returncode == 0:
