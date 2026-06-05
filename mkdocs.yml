@@ -1,6 +1,6 @@
-site_name: Stremio Addon Python Template
+site_name: Awesome OS Setup
 site_description: Documentation
-site_author: Amine Djeghri
+site_author: Amine DJEGHRI
 docs_dir: .
 # site_url: #TODO: Fill when deployment CI added
 #site_dir: public
@@ -12,6 +12,8 @@ theme:
 
   name: "material" # https://squidfunk.github.io/mkdocs-material/getting-started/
   language: en
+  logo: docs/images/logo.png
+  favicon: docs/images/logo.png
   features: # https://squidfunk.github.io/mkdocs-material/setup/
     - search.suggest
     - search.highlight
@@ -43,17 +45,54 @@ theme:
 plugins:
   - mkdocstrings:
       default_handler: python
-      import:
-        - https://docs.python-requests.org/en/master/objects.inv
-      load_external_modules: true
       handlers:
         python:
-          paths: [., source]
+          paths: [src, docs]
   - gen-files:
       scripts:
         - scripts/gen_doc_stubs.py
+        - scripts/gen_example_pages.py
   - search
   - same-dir
+  - mermaid2
+  - literate-nav:
+      nav_file: SUMMARY.md
   - exclude:
       glob:
         - node_modules/**
+        - .venv/**
+        - docker_data/**
+        - dist/**
+        - reports/**
+        - bin/**
+        - docker/**
+        - .idea/**
+        - .github/**
+        - .ruff_cache/**
+        - .deepeval/**
+        - .deepteam/**
+        - .changelog/**
+        - docs/examples/data/sample.*
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - md_in_html
+  - toc:
+      permalink: true
+  - pymdownx.details
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.superfences
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - tables
+
+nav:
+  - Home: README.md
+  - Examples: docs/examples/
+  - API Reference: package/
+  - Changelog: CHANGELOG.md
+  - Contributing: CONTRIBUTING.md

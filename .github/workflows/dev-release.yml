@@ -59,6 +59,7 @@ jobs:
         shell: bash
         run: |
           export PATH="$HOME/.local/bin:$PATH"
+          export PYTHONPATH="${PYTHONPATH}:."
           # Disable git pre-commit hooks
           git config core.hooksPath /dev/null
           echo "::group::Semantic Release output"

@@ -7,10 +7,10 @@ build-package: ## Build package (wheel)
 	@echo "${YELLOW}=========> Building python package and wheel...${NC}"
 	@$(UV) build
 
-deploy-doc-local: ## Deploy documentation locally
+deploy-doc-local: install-dev ## Deploy documentation locally
 	@echo "${YELLOW}Deploying documentation locally...${NC}"
 	@$(UV) run mkdocs build && $(UV) run mkdocs serve
 
-deploy-doc-gh: ## Deploy documentation to GitHub Pages
+deploy-doc-gh: install-dev ## Deploy documentation to GitHub Pages
 	@echo "${YELLOW}Deploying documentation in github actions..${NC}"
 	@$(UV) run mkdocs build && $(UV) run mkdocs gh-deploy
