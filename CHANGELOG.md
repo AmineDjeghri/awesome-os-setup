@@ -2,6 +2,14 @@
 
 <!-- version list -->
 
+## v1.3.0 (2026-06-05)
+
+### Features
+
+- Enhance documentation deployment and add emoji support for commit messages
+  ([`f820195`](https://github.com/AmineDjeghri/awesome-os-setup/commit/f8201955315a649060dfc4efb7baa5028118d5dc))
+
+
 ## v1.2.0 (2026-06-04)
 
 ### Features
