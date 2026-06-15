@@ -24,8 +24,8 @@ dev = [
     "pre-commit ==4.6.0",
     "pytest ==9.0.3",
     "pytest-asyncio ==1.4.0",
-    "ruff==0.15.14",
-    "ty==0.0.40",
+    "ruff==0.15.16",
+    "ty==0.0.45",
     "python-semantic-release==10.5.3"
 ]
 docs = [
@@ -34,7 +34,7 @@ docs = [
     "mkdocstrings>=1.0.0,<1.0.5",
     "mkdocs-mermaid2-plugin>=1.1.1,<1.2.4",
     "mkdocs-gen-files>=0.5.0,<0.7.0",
-    "mkdocstrings-python>=2.0.0,<2.0.4",
+    "mkdocstrings-python>=2.0.4,<2.0.5",
     "mkdocs-same-dir>=0.1.0,<0.1.6",
     "mkdocs-exclude>=1.0.0,<1.0.3",
     "mkdocs-literate-nav>=0.6.0,<0.6.4",
