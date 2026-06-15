@@ -29,15 +29,15 @@ dev = [
     "python-semantic-release==10.5.3"
 ]
 docs = [
-    "mkdocs == 1.6.1",
-    "mkdocs-material==9.7.6",
-    "mkdocstrings==1.0.4",
-    "mkdocs-mermaid2-plugin==1.2.3",
-    "mkdocs-gen-files==0.6.1",
-    "mkdocstrings-python==2.0.3",
-    "mkdocs-same-dir==0.1.5",
-    "mkdocs-exclude==1.0.2",
-    "mkdocs-literate-nav==0.6.3",
+    "mkdocs >= 1.6.1,<1.6.2",
+    "mkdocs-material>=9.5.41,<9.7.7",
+    "mkdocstrings>=1.0.0,<1.0.5",
+    "mkdocs-mermaid2-plugin>=1.1.1,<1.2.4",
+    "mkdocs-gen-files>=0.5.0,<0.7.0",
+    "mkdocstrings-python>=2.0.0,<2.0.4",
+    "mkdocs-same-dir>=0.1.0,<0.1.6",
+    "mkdocs-exclude>=1.0.0,<1.0.3",
+    "mkdocs-literate-nav>=0.6.0,<0.6.4",
 ]
 
 # Build configuration to make this an installable package
