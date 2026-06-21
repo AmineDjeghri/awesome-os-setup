@@ -37,7 +37,7 @@ jobs:
       version: ${{ steps.semantic_release.outputs.version }}
     steps:
       - name: Check Out
-        uses: actions/checkout@v6
+        uses: actions/checkout@v7
         with:
           fetch-depth: 0
 
