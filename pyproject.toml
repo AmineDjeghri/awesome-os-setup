@@ -16,7 +16,7 @@ dependencies = [
 ############### uv configuration
 [tool.uv]
 managed = true
-default-groups = ["dev", "docs"]
+default-groups = []
 
 [dependency-groups]
 # if you add new dependencies here, make sure to add them to [tool.uv] default-groups up above
