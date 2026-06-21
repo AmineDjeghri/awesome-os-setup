@@ -8,7 +8,7 @@ dependencies = [
     # Engineering
     "pyTermTk==0.48.1a0",
     "pydantic==2.13.4",
-    "pydantic-settings==2.14.1",
+    "pydantic-settings==2.14.2",
     "loguru==0.7.3",
     "PyYAML==6.0.3",
 ]
