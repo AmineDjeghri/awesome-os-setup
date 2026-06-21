@@ -31,7 +31,13 @@ install: install-uv ## Install dependencies using uv
 	@$(UV) sync
 	@echo "${GREEN}Dependencies installed.${NC}"
 
-install-dev: install-uv ## Install dev dependencies using uv
-	@echo "${YELLOW}=========> Installing dev dependencies (required, dev and docs)...${NC}"
-	@$(UV) sync --dev
-	@echo "${GREEN}Dev dependencies installed.${NC}"
+install-dev: ## Install all dev dependencies
+	@echo "${YELLOW}=========> Installing dependencies...\n  \
+	 Development dependencies (dev & docs) will be installed by install-dev.${NC}"
+	@$(UV) sync --all-groups
+	@echo "${GREEN}Dependencies installed.${NC}"
+
+install-prod: ## Install prod dependencies
+	@echo "${YELLOW}=========> Installing dependencies (PROD)...${NC}"
+	@$(UV) sync
+	@echo "${GREEN}Dependencies installed.${NC}"
