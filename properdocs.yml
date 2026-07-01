@@ -91,7 +91,9 @@ markdown_extensions:
   - tables
 
 nav:
-  - Home: README.md
+  - Home:
+    - Overview: README.md
+    - Documentation: docs/
   - Examples: docs/examples/
   - API Reference: package/
   - Changelog: CHANGELOG.md

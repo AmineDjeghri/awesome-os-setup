@@ -32,7 +32,6 @@ dev = [
     { name = "ruff" },
 ]
 docs = [
-    { name = "mkdocs" },
     { name = "mkdocs-exclude" },
     { name = "mkdocs-gen-files" },
     { name = "mkdocs-literate-nav" },
@@ -41,6 +40,7 @@ docs = [
     { name = "mkdocs-same-dir" },
     { name = "mkdocstrings" },
     { name = "mkdocstrings-python" },
+    { name = "properdocs" },
 ]
 
 [package.metadata]
@@ -61,7 +61,6 @@ dev = [
     { name = "ruff", specifier = "==0.15.18" },
 ]
 docs = [
-    { name = "mkdocs", specifier = "==1.6.1" },
     { name = "mkdocs-exclude", specifier = "==1.0.2" },
     { name = "mkdocs-gen-files", specifier = "==0.6.1" },
     { name = "mkdocs-literate-nav", specifier = "==0.6.3" },
@@ -70,6 +69,7 @@ docs = [
     { name = "mkdocs-same-dir", specifier = "==0.1.5" },
     { name = "mkdocstrings", specifier = "==1.0.4" },
     { name = "mkdocstrings-python", specifier = "==2.0.5" },
+    { name = "properdocs", specifier = "==1.6.7" },
 ]
 
 [[package]]

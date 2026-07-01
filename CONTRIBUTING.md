@@ -14,7 +14,7 @@ By participating, you are expected to uphold this code. Please report unacceptab
 ## 3. Best practices 💡
 
 - Docstring your functions and classes, it is even more important as it is used to generate the documentation with
-  Mkdocs
+  properdocs
 - If you use an IDE (like PyCharm), define src the "source" folder and test the "test" folder so your IDE can help you
   auto import files
 - Use the `make` commands to run your code, it is easier and faster than writing the full command (and check the

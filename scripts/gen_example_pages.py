@@ -10,7 +10,9 @@ examples_root = Path("docs/examples")
 index_rows: list[str] = []
 summary_lines = ["* [Overview](index.md)\n"]
 
-for path in sorted(p for p in examples_root.glob("*.py") if p.stem != "__init__"):
+for path in sorted(
+    p for p in examples_root.rglob("*.py") if p.stem != "__init__" and "__pycache__" not in p.parts
+):
     source = path.read_text()
 
     try:
@@ -22,8 +24,13 @@ for path in sorted(p for p in examples_root.glob("*.py") if p.stem != "__init__"
     title = path.stem.replace("_", " ").title()
     first_line = docstring.split("\n")[0].rstrip(".") if docstring else ""
 
-    index_rows.append(f"| [{title}]({path.stem}.md) | {first_line} |")
-    summary_lines.append(f"* [{title}]({path.stem}.md)\n")
+    # Preserve subfolder structure relative to examples_root
+    rel_path = path.relative_to(examples_root)
+    doc_rel = rel_path.with_suffix(".md")
+
+    # Use subfolder prefix in index and summary (e.g. "scripts/run_evaluation_example")
+    index_rows.append(f"| [{title}]({doc_rel}) | {first_line} |")
+    summary_lines.append(f"* [{title}]({doc_rel})\n")
 
     lines = [f"# {title}", ""]
     if docstring:
@@ -35,7 +42,7 @@ for path in sorted(p for p in examples_root.glob("*.py") if p.stem != "__init__"
         "",
     ]
 
-    doc_path = Path("docs/examples") / path.with_suffix(".md").name
+    doc_path = Path("docs/examples") / doc_rel
     with mkdocs_gen_files.open(doc_path, "w") as f:
         f.write("\n".join(lines))
 

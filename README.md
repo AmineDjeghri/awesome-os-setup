@@ -62,7 +62,7 @@ Get started with one command (run it in PowerShell as administrator):
 $u='https://raw.githubusercontent.com/AmineDjeghri/awesome-os-setup/main/install_windows.ps1'; $p="$env:TEMP\install_windows.ps1"; iwr $u -UseBasicParsing -OutFile $p; powershell -ExecutionPolicy Bypass -File $p
 ```
 
-Run it from the directory where you want the `awesome-os-setup` folder to be created. I the repertory already exists, it will update it.
+Run it from the directory where you want the `awesome-os-setup` folder to be created. If the repertory already exists, it will update it.
 
 > [!TIP]
 > You can fork this repository and change the apps/packages you need so it reflects what you want to install in your environment.
@@ -103,31 +103,31 @@ This repo is a personal “OS setup Terminal UI App”:
   - Add a dedicated **Ubuntu profile** with an icon.
 
 - **Curated documentation**
-  - Windows & Linux workflows, TV setup (Google TV + Stremio), home server (Ubuntu Server + KVM + Home Assistant), app shortcuts, and browser extensions, mirrored to a static site via `mkdocs`.
+  - Windows & Linux workflows, TV setup (Google TV + Stremio), home server (Ubuntu Server + KVM + Home Assistant), app shortcuts, and browser extensions, mirrored to a static site via `properdocs`.
 
 
 ### Docs and websites
 
 - **Windows/WSL2 docs**:
-  here: [windows_workflow_README.](docs/windows_workflow/README.md) / [Website](https://setup.aminedjeghri.com/readme-windows.html)
+  here: [LINK](docs/windows_workflow/README.md)
 
 - **Linux/WSL2 docs**:
-  here: [README](docs/linux/README.md) / [website](https://setup.aminedjeghri.com/readme-unix.html)
+  here: [LINK](docs/linux/README.md)
 
 - **macOS docs**:
-  here: [README](docs/macos_darwin/README.md) / [website](https://setup.aminedjeghri.com/readme-macos.html)
+  here: [LINK](docs/macos_darwin/README.md)
 
 - **TV setup docs**: Read me about it
-  here: [README](docs/android-tv/readme.md) / [website](https://setup.aminedjeghri.com/tv_setup.html)
+  here: [LINK](docs/android-tv/readme.md)
 
 - **Home server / Home Assistant docs**:
-  here: [README](docs/home-server/readme.md)
+  here: [LINK](docs/home-server/readme.md)
 
 - **Apps setup docs**:
-  [README](docs/apps/apps_configuration_and_shorcuts.md) / [website](https://setup.aminedjeghri.com/shortcuts_and_apps_setup.html)
+  [LINK](docs/apps/apps_configuration_and_shorcuts.md)
 
 - **Websites & Browser extensions docs**:
-  [README](docs/apps/awesome_websites_browser_extensions.md) / [website](https://setup.aminedjeghri.com/awesome-websites.html)
+  [LINK](docs/apps/awesome_websites_browser_extensions.md)
 
 
 
@@ -159,7 +159,6 @@ Based on your needs, you can choose your OS.
 ### Docs & site
 
 - [ ] Fix broken README one‑liners (curl/wget URLs to this repo) and update URL to main branch
-- [ ] Update `mkdocs.yml`:
 
 ### Quality & UX
 
