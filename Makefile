@@ -7,7 +7,8 @@ include makefiles/common.mk
 
 # Include all modular makefiles
 include makefiles/install.mk
-include makefiles/dev.mk
+include makefiles/run.mk
+include makefiles/check_format.mk
 include makefiles/test.mk
 include makefiles/clean.mk
 include makefiles/ci.mk
