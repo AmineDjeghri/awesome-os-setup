@@ -1,0 +1,8 @@
+# Run targets
+# This file contains targets for running the application
+
+.PHONY: run
+
+run: ## Run the Stremio Addon (Dev Mode)
+	@echo "Starting server..."
+	@$(UV) run python src/awesome_os/frontend/main.py
