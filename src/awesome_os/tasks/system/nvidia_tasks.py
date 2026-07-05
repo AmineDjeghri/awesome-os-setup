@@ -64,13 +64,17 @@ def setup_nvidia_wsl_instructions() -> TaskResult:
         ok=True,
         summary="NVIDIA setup: WSL detected",
         details=(
-            "You are running inside WSL. Install/update the NVIDIA driver on Windows (host), then restart WSL.\n"
+            "You are running inside WSL.\n"
+            "IMPORTANT: Do NOT install any NVIDIA GPU Linux driver inside WSL 2.\n"
+            "The Windows host driver is used directly by WSL 2.\n\n"
             "Steps:\n"
-            "1) Install latest NVIDIA Windows driver from https://www.nvidia.com/en-us/drivers/\n"
-            "2) Reboot Windows\n"
-            "3) In PowerShell: nvidia-smi\n"
-            "4) In PowerShell: wsl --shutdown\n"
-            "5) Re-open your Ubuntu/WSL terminal and run: nvidia-smi"
+            "1) Verify the Windows driver is installed: open PowerShell and run: nvidia-smi\n"
+            "   If nvidia-smi is missing, install the latest NVIDIA Windows driver from https://www.nvidia.com/en-us/drivers/\n"
+            "   then reboot Windows.\n"
+            "2) In PowerShell: wsl --shutdown\n"
+            "3) Re-open your Ubuntu/WSL terminal and run: nvidia-smi\n\n"
+            "For CUDA inside WSL 2, follow the official guide:\n"
+            "https://docs.nvidia.com/cuda/wsl-user-guide/index.html#cuda-support-for-wsl-2"
         ),
     )
 

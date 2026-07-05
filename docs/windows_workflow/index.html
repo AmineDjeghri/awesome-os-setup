@@ -2524,6 +2524,23 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="3.2. Linux/WSL Setup - terminal, shell, Miniconda, CUDA &amp; More:">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cuda-on-wsl2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CUDA on WSL2
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
           <li class="md-nav__item">
@@ -3019,6 +3036,13 @@ shell, install Miniconda, CUDA, and more:</p>
 <li><a href="../apps/apps_configuration_and_shorcuts">2. Windows, WSL &amp; apps settings/tips</a></li>
 <li><a href="https://github.com/AmineDjeghri/ai-on-premise-project-template/blob/main/cuda_pytorch_install.md">3. Cuda &amp; Pytorch installation inside conda</a></li>
 </ul>
+<h4 id="cuda-on-wsl2">CUDA on WSL2<a class="headerlink" href="#cuda-on-wsl2" title="Permanent link">&para;</a></h4>
+<blockquote>
+<p><strong>Important:</strong> You must have the NVIDIA GPU driver already installed on Windows. Verify with <code>nvidia-smi</code> in PowerShell.
+<strong>Do NOT install any NVIDIA GPU Linux driver inside WSL 2</strong> — the Windows host driver is used directly.</p>
+</blockquote>
+<p>Follow the official CUDA WSL guide:
+<a href="https://docs.nvidia.com/cuda/wsl-user-guide/index.html#cuda-support-for-wsl-2">CUDA Support for WSL 2</a></p>
 <h3 id="33-wsl2-utilities-tips-tricks">3.3. WSL2 Utilities, Tips &amp; Tricks :<a class="headerlink" href="#33-wsl2-utilities-tips-tricks" title="Permanent link">&para;</a></h3>
 <ul>
 <li>Take a look at <a href="https://github.com/sirredbeard/awesome-wsl">awesome-wsl</a></li>
