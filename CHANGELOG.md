@@ -2,6 +2,34 @@
 
 <!-- version list -->
 
+## v1.4.0 (2026-07-05)
+
+### Features
+
+- Add Docker post-install instructions for Ubuntu in documentation
+  ([`2dfe92e`](https://github.com/AmineDjeghri/awesome-os-setup/commit/2dfe92e16b26afe3fc5e72b3a056253abe0bff63))
+
+### Refactoring
+
+- Improve NVIDIA setup instructions for WSL and add CUDA installation guidance in documentation
+  ([`a435c29`](https://github.com/AmineDjeghri/awesome-os-setup/commit/a435c29958acd8dd5aa324b1c255078ee1521707))
+
+- Update development dependencies in pyproject.toml for improved compatibili
+  ([`7e4f117`](https://github.com/AmineDjeghri/awesome-os-setup/commit/7e4f11797d449f03094c3d381dfddcbaaf8ca8c6))
+
+- Update documentation dependencies to use version ranges
+  ([`714d506`](https://github.com/AmineDjeghri/awesome-os-setup/commit/714d5066b3ccc8b6a441972d9c2e144462790243))
+
+- Update documentation deployment to use properdocs and improve example indexing
+  ([`4eb4b85`](https://github.com/AmineDjeghri/awesome-os-setup/commit/4eb4b858d2c29e060e7bacaf27181505ec174e42))
+
+- Update install.mk to improve dependency installation process
+  ([`7036315`](https://github.com/AmineDjeghri/awesome-os-setup/commit/703631537620bf3206735f2f9c686526682a6ac6))
+
+- **makefiles**: Reorganize includes and extract run target
+  ([`f058638`](https://github.com/AmineDjeghri/awesome-os-setup/commit/f058638b0110320444a4f96efed89b340ff53609))
+
+
 ## v1.3.0 (2026-06-05)
 
 ### Features
