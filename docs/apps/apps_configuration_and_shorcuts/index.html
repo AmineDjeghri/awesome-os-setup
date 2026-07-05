@@ -2502,8 +2502,9 @@
 <li><a href="#195-remote-ssh-for-reactjs">1.9.5. Remote SSH for ReactJS</a></li>
 </ul>
 </li>
-<li><a href="#110-hwinfo">1.10. HWINFO:</a></li>
-<li><a href="#111-displayfusion-windows-only--paid">1.11. DisplayFusion (Windows only &amp; paid)</a></li>
+<li><a href="#110-bitwarden-all-platforms">1.10. Bitwarden (All platforms)</a></li>
+<li><a href="#111-hwinfo">1.11. HWINFO:</a></li>
+<li><a href="#112-displayfusion-windows-only--paid">1.12. DisplayFusion (Windows only &amp; paid)</a></li>
 </ul>
 <!-- TOC -->
 
@@ -2976,13 +2977,27 @@ the Always mode.</p>
 <li>package manager: yarn, for example</li>
 <li>environment: <code>PATH=</code> put the result of the command <code>echo $PATH</code></li>
 </ul>
-<h2 id="110-hwinfo">1.10. HWINFO:<a class="headerlink" href="#110-hwinfo" title="Permanent link">&para;</a></h2>
+<h2 id="110-bitwarden-all-platforms">1.10. Bitwarden (All platforms)<a class="headerlink" href="#110-bitwarden-all-platforms" title="Permanent link">&para;</a></h2>
+<p>Bitwarden is an open-source password manager available on Windows, macOS, Linux, iOS, Android, and as a browser extension.</p>
+<p><strong>Tips &amp; tricks:</strong>
+- You can share passwords with other people by creating an <strong>Organisation</strong> and <strong>Collections</strong>. A password can belong to multiple collections, so you can share it with two different organizations independently.
+- The <strong>browser extension</strong> is the main daily driver — install it on all your browsers.
+- On Windows: activate <strong>Unlock with Windows Hello</strong> in the extension settings for fast, secure unlock.
+- On Windows: enable <strong>Start automatically on login</strong> and disable <strong>Close to tray</strong> so Bitwarden is always available.
+- Activate <strong>Two-Factor Authentication (2FA)</strong> in your account settings.
+- You can <strong>import passwords</strong> from another password manager directly from the web vault: Settings → Import data.</p>
+<p><strong>Vaultwarden (self-hosted open-source Bitwarden backend):</strong>
+- Vaultwarden is a lightweight, open-source reimplementation of the Bitwarden server API.
+- All official Bitwarden clients (iOS, Android, Windows, macOS, browser extensions) work with it — just point them at your self-hosted URL.
+- Install it as a <strong>Home Assistant add-on</strong>: https://github.com/hassio-addons/app-vaultwarden
+- After installing, configure your Bitwarden clients to use your self-hosted server URL instead of <code>bitwarden.com</code>.</p>
+<h2 id="111-hwinfo">1.11. HWINFO:<a class="headerlink" href="#111-hwinfo" title="Permanent link">&para;</a></h2>
 <ul>
 <li>export file: regedit -&gt; <code>Ordinateur\HKEY_CURRENT_USER\Software\HWiNFO64</code></li>
 <li>import settings: double-click on the downloaded file to restore settings. Check
   mine <a href="../src/awesome_os/config/windows/HWINFO_settings.reg">here</a></li>
 </ul>
-<h2 id="111-displayfusion-windows-only-paid">1.11. DisplayFusion (Windows only &amp; paid)<a class="headerlink" href="#111-displayfusion-windows-only-paid" title="Permanent link">&para;</a></h2>
+<h2 id="112-displayfusion-windows-only-paid">1.12. DisplayFusion (Windows only &amp; paid)<a class="headerlink" href="#112-displayfusion-windows-only-paid" title="Permanent link">&para;</a></h2>
 <ul>
 <li>DisplayFusion is a program that will help you to manage your multiple monitors. It allows you to create different
   profiles for your monitor setups, such as single, dual, or triple monitors. You can configure specific applications to
