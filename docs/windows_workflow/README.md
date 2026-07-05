@@ -307,6 +307,14 @@ shell, install Miniconda, CUDA, and more:
 - [2. Windows, WSL & apps settings/tips](../apps/apps_configuration_and_shorcuts)
 - [3. Cuda & Pytorch installation inside conda](https://github.com/AmineDjeghri/ai-on-premise-project-template/blob/main/cuda_pytorch_install.md)
 
+#### CUDA on WSL2
+
+> **Important:** You must have the NVIDIA GPU driver already installed on Windows. Verify with `nvidia-smi` in PowerShell.
+> **Do NOT install any NVIDIA GPU Linux driver inside WSL 2** — the Windows host driver is used directly.
+
+Follow the official CUDA WSL guide:
+[CUDA Support for WSL 2](https://docs.nvidia.com/cuda/wsl-user-guide/index.html#cuda-support-for-wsl-2)
+
 
 ### 3.3. WSL2 Utilities, Tips & Tricks :
 

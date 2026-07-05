@@ -48,3 +48,13 @@ Additional system configuration options (only if you have NVIDIA GPU):
 - **Setup NVIDIA (WSL)**: Configure NVIDIA drivers for WSL2
 - **Detect CUDA**: Check CUDA installation
 - **Setup CUDA (Advanced)**: Configure CUDA for GPU computing
+
+### CUDA Installation (Native Linux)
+
+To install CUDA on native Linux, follow the pre-installation actions from the official guide:
+[CUDA Installation Guide for Linux](https://docs.nvidia.com/cuda/archive/12.6.0/cuda-installation-guide-linux/index.html#pre-installation-actions)
+
+### CUDA in Docker
+
+To enable GPU support inside Docker containers, install the NVIDIA Container Toolkit:
+[NVIDIA Container Toolkit Install Guide (apt — Ubuntu/Debian)](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/install-guide.html#with-apt-ubuntu-debian)
