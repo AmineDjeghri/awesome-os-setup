@@ -480,6 +480,11 @@ How to setup Sonoff MG24:
   * You can check this [music server setup](music_server.md)
 
 
+* **Vaultwarden** (self-hosted Bitwarden backend)
+  * Lightweight, open-source reimplementation of the Bitwarden server API. All official Bitwarden clients (iOS, Android, Windows, macOS, browser extensions) work with it.
+  * Addon repo: https://github.com/hassio-addons/app-vaultwarden
+  * After installing, point your Bitwarden clients to your self-hosted server URL instead of `bitwarden.com`.
+
 * [n8n](https://github.com/Rbillon59/hass-n8n)
 
 * **Samba Backup**

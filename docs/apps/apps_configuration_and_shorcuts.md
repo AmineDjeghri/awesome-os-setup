@@ -20,8 +20,9 @@ Apps configuration and shortcuts
     * [1.9.3. Python remote interpreter (SSH /WSL)](#193-python-remote-interpreter-ssh-wsl)
     * [1.9.4. Pycharm remote deployment](#194-pycharm-remote-deployment)
     * [1.9.5. Remote SSH for ReactJS](#195-remote-ssh-for-reactjs)
-  * [1.10. HWINFO:](#110-hwinfo)
-  * [1.11. DisplayFusion (Windows only & paid)](#111-displayfusion-windows-only--paid)
+  * [1.10. Bitwarden (All platforms)](#110-bitwarden-all-platforms)
+  * [1.11. HWINFO:](#111-hwinfo)
+  * [1.12. DisplayFusion (Windows only & paid)](#112-displayfusion-windows-only--paid)
 <!-- TOC -->
 
 # 1. Shortcuts and app configurations
@@ -292,14 +293,32 @@ the Always mode.
 - package manager: yarn, for example
 - environment: `PATH=` put the result of the command `echo $PATH`
 
-## 1.10. HWINFO:
+## 1.10. Bitwarden (All platforms)
+
+Bitwarden is an open-source password manager available on Windows, macOS, Linux, iOS, Android, and as a browser extension.
+
+**Tips & tricks:**
+- You can share passwords with other people by creating an **Organisation** and **Collections**. A password can belong to multiple collections, so you can share it with two different organizations independently.
+- The **browser extension** is the main daily driver — install it on all your browsers.
+- On Windows: activate **Unlock with Windows Hello** in the extension settings for fast, secure unlock.
+- On Windows: enable **Start automatically on login** and disable **Close to tray** so Bitwarden is always available.
+- Activate **Two-Factor Authentication (2FA)** in your account settings.
+- You can **import passwords** from another password manager directly from the web vault: Settings → Import data.
+
+**Vaultwarden (self-hosted open-source Bitwarden backend):**
+- Vaultwarden is a lightweight, open-source reimplementation of the Bitwarden server API.
+- All official Bitwarden clients (iOS, Android, Windows, macOS, browser extensions) work with it — just point them at your self-hosted URL.
+- Install it as a **Home Assistant add-on**: https://github.com/hassio-addons/app-vaultwarden
+- After installing, configure your Bitwarden clients to use your self-hosted server URL instead of `bitwarden.com`.
+
+## 1.11. HWINFO:
 
 - export file: regedit -> ``Ordinateur\HKEY_CURRENT_USER\Software\HWiNFO64``
 - import settings: double-click on the downloaded file to restore settings. Check
   mine [here](../src/awesome_os/config/windows/HWINFO_settings.reg)
 
 
-## 1.11. DisplayFusion (Windows only & paid)
+## 1.12. DisplayFusion (Windows only & paid)
 
 - DisplayFusion is a program that will help you to manage your multiple monitors. It allows you to create different
   profiles for your monitor setups, such as single, dual, or triple monitors. You can configure specific applications to

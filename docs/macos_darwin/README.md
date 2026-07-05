@@ -86,7 +86,7 @@ sed -e 's/^#auth/auth/' /etc/pam.d/sudo_local.template | sudo tee /etc/pam.d/sud
   - Hold `command` then drag the icon out of the menu bar (not all apps support it).
 - Finder:
   - Show tab bar.
-  - Show path bar.
+  - Show path bar: View → Show Path Bar (or `Option + Command + P`). The path bar at the bottom of the Finder window shows the full path to the current folder and lets you click any part of it to navigate directly there.
   - Show hidden files: `command + shift + .`
 
 
