@@ -90,3 +90,29 @@ jobs:
       - name: Cleanup Artifacts
         if: always()
         uses: ./.github/actions/cleanup-artifacts
+
+  integration-macos:
+    name: "🍎 Integration Tests (macOS latest)"
+    runs-on: macos-latest
+    needs: pre-commit
+    timeout-minutes: 20
+    steps:
+      - name: Check Out
+        uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+
+      - name: Install Python Dependencies
+        uses: ./.github/actions/install-python-deps
+
+      - name: Run Integration Tests
+        id: integration_tests_macos
+        shell: bash
+        run: |
+          echo "::group::Integration tests output"
+          make test-integration
+          echo "::endgroup::"
+
+      - name: Cleanup Artifacts
+        if: always()
+        uses: ./.github/actions/cleanup-artifacts
