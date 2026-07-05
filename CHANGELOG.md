@@ -2,6 +2,14 @@
 
 <!-- version list -->
 
+## v1.5.0 (2026-07-05)
+
+### Features
+
+- Add integration tests for macOS and Ubuntu task functions
+  ([`39cc3b9`](https://github.com/AmineDjeghri/awesome-os-setup/commit/39cc3b9f87009d2a6b0e834c4bb234d215bfbcf5))
+
+
 ## v1.4.0 (2026-07-05)
 
 ### Features
