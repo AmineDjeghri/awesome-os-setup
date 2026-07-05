@@ -54,7 +54,20 @@ Additional system configuration options (only if you have NVIDIA GPU):
 To install CUDA on native Linux, follow the pre-installation actions from the official guide:
 [CUDA Installation Guide for Linux](https://docs.nvidia.com/cuda/archive/12.6.0/cuda-installation-guide-linux/index.html#pre-installation-actions)
 
+
 ### CUDA in Docker
 
 To enable GPU support inside Docker containers, install the NVIDIA Container Toolkit:
 [NVIDIA Container Toolkit Install Guide (apt — Ubuntu/Debian)](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/install-guide.html#with-apt-ubuntu-debian)
+
+### Docker post-install: run without sudo (Ubuntu)
+
+By default, Docker requires `sudo` to run. To allow your user (and any tools or scripts) to use Docker without `sudo`, add yourself to the `docker` group:
+
+```sh
+sudo groupadd docker          # create the group (usually already exists)
+sudo usermod -aG docker $USER # add your user to the group
+newgrp docker                 # activate the change in the current shell
+```
+
+> **Pro Tip:** `newgrp docker` only applies to the current terminal window. For a permanent, system-wide effect, log out of your SSH session and log back in.

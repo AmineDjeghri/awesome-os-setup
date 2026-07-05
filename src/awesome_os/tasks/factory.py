@@ -12,6 +12,7 @@ from awesome_os.tasks.managers.webinstall import WebInstallManager
 from awesome_os.tasks.managers.windows_winget import WindowsWingetManager
 from awesome_os.tasks.system.font import install_jetbrainsmono_nerd_font
 from awesome_os.tasks.system.help import show_commands
+from awesome_os.tasks.system.docker_tasks import docker_post_install_ubuntu
 from awesome_os.tasks.system.nvidia_tasks import (
     detect_cuda,
     detect_nvidia,
@@ -215,6 +216,22 @@ def get_system_action_sections(
                         run=set_bash_as_default_shell,
                         confirm=True,
                         confirm_message="Set your default shell to bash?",
+                    ),
+                ],
+            )
+        )
+
+    ########
+    ## Docker
+    ########
+    if distro == "ubuntu":
+        sections.append(
+            (
+                "docker",
+                [
+                    SystemAction(
+                        label="post-install: run docker without sudo",
+                        run=docker_post_install_ubuntu,
                     ),
                 ],
             )
