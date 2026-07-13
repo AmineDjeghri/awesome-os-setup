@@ -83,60 +83,60 @@ hl.env("XDG_MENU_PREFIX", "arch-")
 
 
 -- Hyprbars
+if hl.plugin.hyprbars then
 
-hl.config({
-  plugin = {
-    hyprbars = {
-      bar_height = 28,
+  hl.config({
+    plugin = {
+      hyprbars = {
+        bar_height = 28,
 
-      -- Glassy Catppuccin Mocha look
-      bar_color = "rgba(313244dd)",
-      bar_blur = true,
+        -- Glassy Catppuccin Mocha look
+        bar_color = "rgba(313244dd)",
+        bar_blur = true,
 
-      bar_title_enabled = true,
-      bar_text_size = 11,
+        bar_title_enabled = true,
+        bar_text_size = 11,
 
-      bar_part_of_window = true,
-      bar_precedence_over_border = true,
+        bar_part_of_window = true,
+        bar_precedence_over_border = true,
 
-      -- Double click title bar = float
-      on_double_click= "hyprctl dispatch 'hl.dsp.window.float({ action = \"toggle\" })'",
+        -- Double click title bar = float
+        on_double_click = "hyprctl dispatch 'hl.dsp.window.float({ action = \"toggle\" })'",
+      },
     },
-  },
-})
+  })
 
 
--- Close button
-hl.plugin.hyprbars.add_button({
-  bg_color = "rgba(f38ba8ff)",
-  fg_color = "rgba(1e1e2eff)",
-  size = 14,
-  icon = "󰅖",
-  action = "hyprctl dispatch 'hl.dsp.window.close()'",
-})
+  -- Close button
+  hl.plugin.hyprbars.add_button({
+    bg_color = "rgba(f38ba8ff)",
+    fg_color = "rgba(1e1e2eff)",
+    size = 14,
+    icon = "󰅖",
+    action = "hyprctl dispatch 'hl.dsp.window.close()'",
+  })
 
 
--- Fullscreen button
-hl.plugin.hyprbars.add_button({
-  bg_color = "rgba(f9e2afff)",
-  fg_color = "rgba(1e1e2eff)",
-  size = 14,
-  icon = "󰐘",
-  action = [[hyprctl dispatch 'hl.dsp.window.fullscreen({ mode = "maximized", action = "toggle" })']],
-})
+  -- Maximize button
+  hl.plugin.hyprbars.add_button({
+    bg_color = "rgba(f9e2afff)",
+    fg_color = "rgba(1e1e2eff)",
+    size = 14,
+    icon = "󰐘",
+    action = [[hyprctl dispatch 'hl.dsp.window.fullscreen({ mode = "maximized", action = "toggle" })']],
+  })
 
 
--- Minimize
-hl.plugin.hyprbars.add_button({
-  bg_color = "rgba(a6e3a1ff)",
-  fg_color = "rgba(1e1e2eff)",
-  size = 14,
-  icon = "󰖰",
-  action = "",
-})
+  -- Minimize
+  hl.plugin.hyprbars.add_button({
+    bg_color = "rgba(a6e3a1ff)",
+    fg_color = "rgba(1e1e2eff)",
+    size = 14,
+    icon = "󰖰",
+    action = [[hyprctl dispatch 'hl.dsp.window.move({workspace = "special:minimized" })']],
+  })
 
-
-
+end
 
 -----------------------
 ---- LOOK AND FEEL ----
@@ -327,7 +327,7 @@ local closeWindowBind = hl.bind(mainMod .. " + C", hl.dsp.window.close())
 -- closeWindowBind:set_enabled(false)
 hl.bind(mainMod .. " + M", hl.dsp.exec_cmd("command -v hyprshutdown >/dev/null 2>&1 && hyprshutdown || hyprctl dispatch 'hl.dsp.exit()'"))
 hl.bind(mainMod .. " + E", hl.dsp.exec_cmd(fileManager))
-hl.bind(mainMod .. " + V", hl.dsp.window.float({ action = "toggle" }))
+-- hl.bind(mainMod .. " + V", hl.dsp.window.float({ action = "toggle" }))
 hl.bind(mainMod .. " + SPACE", hl.dsp.exec_cmd(menu))
 hl.bind(mainMod .. " + P", hl.dsp.window.pseudo())
 hl.bind(mainMod .. " + J", hl.dsp.layout("togglesplit"))    -- dwindle only
@@ -340,10 +340,27 @@ hl.bind(mainMod .. " + down",  hl.dsp.focus({ direction = "down" }))
 
 -- Switch workspaces with mainMod + [0-9]
 -- Move active window to a workspace with mainMod + SHIFT + [0-9]
-for i = 1, 10 do
-    local key = i % 10 -- 10 maps to key 0
-    hl.bind(mainMod .. " + " .. key,             hl.dsp.focus({ workspace = i}))
-    hl.bind(mainMod .. " + SHIFT + " .. key,     hl.dsp.window.move({ workspace = i }))
+-- Workspace keys (AZERTY/QWERTY independent)
+-- code:10 = & in azerty or 1 in qwerty
+-- code:19 = à or 0 key
+for workspace = 1, 10 do
+    local keycode = 9 + workspace
+
+    -- ALT + number → switch workspace
+    hl.bind(
+        mainMod .. " + code:" .. keycode,
+        hl.dsp.focus({
+            workspace = workspace
+        })
+    )
+
+    -- ALT + SHIFT + number → move window to workspace
+    hl.bind(
+        mainMod .. " + SHIFT + code:" .. keycode,
+        hl.dsp.window.move({
+            workspace = workspace
+        })
+    )
 end
 
 -- Example special workspace (scratchpad)
