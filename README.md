@@ -6,6 +6,18 @@
 |---------------------------------------------------------|
 | ![Desktop with terminals](docs/images/app_showcase.gif) |
 
+
+> [!NOTE]
+> **Update notes**
+>
+> | Platform | Version / Details | Updated |
+> |---|---|---|
+> | macOS | 26 | July 2026 |
+> | CachyOS | Linux `7.1.3-2-cachyos` | July 2026 |
+> | Ubuntu (server) | 24/26 | June 2026 |
+> | Windows 11 / WSL 2 | 11 | May 2026 |
+
+
 An opinionated setup **app + documentation hub** for building a fast, clean, and consistent environment across **Windows**, **Linux**, **macOS**, **WSL2**, and even your **living room stack** (**Google TV** + **Stremio**) and **home server** (**Home Assistant**).
 
 Improve your UX and productivity with a reproducible setup for:
@@ -43,6 +55,8 @@ You can follow this repository to get a similar setup on Windows 11, Linux, macO
   * [Check the documentation](#check-the-documentation)
   * [Contributing (For developers)](#contributing-for-developers)
 <!-- TOC -->
+
+
 
 
 ### Get started
