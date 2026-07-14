@@ -47,7 +47,7 @@ hl.on("hyprland.start", function ()
    hl.exec_cmd("nm-applet")
    hl.exec_cmd("waybar & hyprpaper & firefox")
    hl.exec_cmd("vicinae server")
-   hl.exec_cmd("noctalia")
+   hl.exec_cmd("qs -c noctalia-shell")
    hl.exec_cmd("XDG_MENU_PREFIX=arch- kbuildsycoca6 ")
 end)
 
@@ -61,7 +61,7 @@ end)
 hl.env("XCURSOR_SIZE", "24")
 hl.env("HYPRCURSOR_SIZE", "24")
 hl.env("XDG_MENU_PREFIX", "arch-")
-
+hl.env("QT_QPA_PLATFORMTHEME", "qt6ct")
 
 -----------------------
 ----- PERMISSIONS -----
@@ -314,6 +314,18 @@ hl.device({
 local mainMod = "ALT" -- Sets "ALT" key as main modifier (Was set to SUPER previously).
 
 -- Example binds, see https://wiki.hypr.land/Configuring/Basics/Binds/ for more
+
+-- Screenshot:
+-- Screenshot: select area and edit with Satty
+hl.bind("CTRL + PRINT", hl.dsp.exec_cmd(
+    "grim -g \"$(slurp)\" - | satty --filename -"
+))
+
+-- Screenshot: fullscreen monitor capture to clipboard and copy
+hl.bind("PRINT", hl.dsp.exec_cmd(
+    "grim - | wl-copy"
+))
+
 
 -- hymission
 hl.bind(mainMod .. "+TAB", function()
