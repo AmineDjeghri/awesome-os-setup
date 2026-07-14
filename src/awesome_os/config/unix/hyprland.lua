@@ -47,7 +47,7 @@ hl.on("hyprland.start", function ()
    hl.exec_cmd("nm-applet")
    hl.exec_cmd("waybar & hyprpaper & firefox")
    hl.exec_cmd("vicinae server")
-   hl.exec_cmd("qs -c noctalia-shell")
+   hl.exec_cmd("noctalia")
    hl.exec_cmd("XDG_MENU_PREFIX=arch- kbuildsycoca6 ")
 end)
 
