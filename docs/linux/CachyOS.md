@@ -90,11 +90,29 @@ Copy personal configuration files for:
 
 in Dolphin . show hidden files
 
+test shortcuts : alt+f for fullscreen for example .
 
 
+---
+Hyprland Plugins:
 
+sudo pacman -S \
+cpio \
+cmake \
+git \
+meson \
+gcc \
+base-devel
 
-The new Noctalia desktop should now appear.
+sudo pacman -S nlohmann-json
+
+hyprpm update
+
+hyprpm add https://github.com/gfhdhytghd/hymission
+
+hyprpm enable hymission
+
+hyprpm reload
 
 ---
 
@@ -538,3 +556,12 @@ APPs to try:
 - Spectacle: https://apps.kde.org/spectacle/
 - KDE connect
 - 
+
+sudo pacman -S \
+ripgrep \
+fd \
+fzf \
+jq \
+tree \
+btop \
+fastfetch
