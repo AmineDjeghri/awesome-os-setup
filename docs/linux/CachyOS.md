@@ -91,10 +91,12 @@ Copy personal configuration files for:
 in Dolphin . show hidden files
 
 test shortcuts : alt+f for fullscreen for example .
+you can also choose theme in noctualia settings -> themes and apply theme . (I don't advice for that), i like to keep my personal themes)
 
+(don't delete qt6 and 5 themes , for now i didn't figure out how to delete noctalia theme without affecting other stuff)
 
 ---
-Hyprland Plugins:
+Hyprland Plugins (hymission and hyprbars:
 
 sudo pacman -S \
 cpio \
@@ -112,8 +114,17 @@ hyprpm add https://github.com/gfhdhytghd/hymission
 
 hyprpm enable hymission
 
+Test ALT TAB
+
+
+hyprpm add https://github.com/hyprwm/hyprland-plugins
+hyprpm enable hyprbars
+Test drag and drop, and close, maximise windows
+
 hyprpm reload
 
+hyprpm list
+You can now use alt-tab
 ---
 
 sudo pacman -S grim slurp satty wl-clipboard
