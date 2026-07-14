@@ -59,6 +59,8 @@ Filesystem:
 
 # After First Boot
 
+sudo pacman -Syu
+
 Verify NVIDIA drivers.
 
 ```bash
@@ -76,21 +78,21 @@ If this shows the GPU information, the NVIDIA driver is working correctly.
 Install:
 
 - Helium Browser
-
-Install the preferred terminal.
-
-- Install Ghostty
+- zed
+- Ghostty
 - Remove Kitty later
 - Remove Alacritty later
 
 Copy personal configuration files for:
 
-- Hyprland
+- Hyprland . https://github.com/AmineDjeghri/awesome-os-setup/blob/main/src/awesome_os/config/unix/hyprland.lua
 - Noctalia
 
-'hyprctl reload'
+in Dolphin . show hidden files
 
-Reboot.
+
+
+
 
 The new Noctalia desktop should now appear.
 
