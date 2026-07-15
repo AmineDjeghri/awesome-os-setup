@@ -134,23 +134,17 @@ sudo pacman -S grim slurp satty wl-clipboard
 
 
 
-# KDE Theme Integration
+# Noctalia Theme Integration
 
-## Problem
-
-KDE applications inside Hyprland look inconsistent.
 
 Examples:
 
 - Dolphin
+ If you use Noctalia you can change applications themes directly from noctalia .
+Doplhin can be set again to othere theems by goign to Dolphin -> Menu bar (3 bars) -> Configure -> Window Color Scheeme -> Breeze Dark.
 
-Reason:
-
-Hyprland is only a window manager.
-
-It does **not** configure Qt themes automatically like KDE Plasma does.
-
----
+## qt6ct
+``qt6ct``
 
 ## Required Packages
 
@@ -165,32 +159,6 @@ qt6ct \
 
 ```
 
-### Package explanations
-
-### breeze
-
-The default KDE Qt theme.
-
-Provides:
-
-- window styling
-- widgets
-- buttons
-- menus
-
-**Recommended:** Yes
-
----
-
-### breeze-icons
-
-Official KDE icon theme.
-
-Without it many KDE apps display incorrect or missing icons.
-
-**Recommended:** Yes
-
----
 
 ### breeze-gtk
 
