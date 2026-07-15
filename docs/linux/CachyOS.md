@@ -69,6 +69,7 @@ nvidia-smi
 
 If this shows the GPU information, the NVIDIA driver is working correctly.
 
+You can also check and click on the temps in the top bar (noctalia) to seee detailed things about your pc (cpu temp, gpu name, system information without going to the settings)
 ---
 
 # Install Applications
@@ -127,6 +128,7 @@ hyprpm list
 You can now use alt-tab
 ---
 
+## Screnshot & annotation tools (CTRL + print) check my hyprland config
 sudo pacman -S grim slurp satty wl-clipboard
 
 
