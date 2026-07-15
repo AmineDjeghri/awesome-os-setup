@@ -134,17 +134,55 @@ sudo pacman -S grim slurp satty wl-clipboard
 
 
 
-# Noctalia Theme Integration
-
-
-Examples:
+# Theme Integration
 
 - Dolphin
  If you use Noctalia you can change applications themes directly from noctalia .
-Doplhin can be set again to othere theems by goign to Dolphin -> Menu bar (3 bars) -> Configure -> Window Color Scheeme -> Breeze Dark.
+Doplhin can be set again to other theems by goign to Dolphin -> Menu bar (3 bars) -> Configure -> Window Color Scheeme -> Breeze Dark.
 
 ## qt6ct
 ``qt6ct``
+
+
+
+
+# Utilities
+
+Install:
+
+```bash
+sudo pacman -S wdisplays
+```
+
+GUI monitor configuration.
+
+---
+
+```bash
+sudo pacman -S brightnessctl
+```
+
+Brightness control.
+
+---
+
+```bash
+sudo pacman -S wlsunset
+```
+
+Night light (blue light filter).
+
+
+You can now control some stuff directly in noctalia 
+
+
+
+
+
+---------------------------------------------------------------------------------------------------
+
+
+
 
 ## Required Packages
 
@@ -459,31 +497,7 @@ Recommended.
 
 ---
 
-# Utilities
 
-Install:
-
-```bash
-sudo pacman -S wdisplays
-```
-
-GUI monitor configuration.
-
----
-
-```bash
-sudo pacman -S brightnessctl
-```
-
-Brightness control.
-
----
-
-```bash
-sudo pacman -S wlsunset
-```
-
-Night light (blue light filter).
 
 ---
 
