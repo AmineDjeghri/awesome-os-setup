@@ -176,13 +176,10 @@ Night light (blue light filter).
 You can now control some stuff directly in noctalia 
 
 
-### breeze-gtk
-
-Makes GTK applications (Firefox, Chromium, etc.) visually match KDE applications.
 sudo pacman -S breeze-gtk
-
-
-sudo pacman -S  polkit-kde-agent 
+sudo pacman -S kde-gtk-config
+`sudo pacman -S qt5-wayland qt6-wayland`
+`sudo pacman -S hyprpolkitagent`
 ---------------------------------------------------------------------------------------------------
 
 
