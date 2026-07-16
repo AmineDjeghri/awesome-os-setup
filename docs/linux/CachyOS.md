@@ -170,6 +170,9 @@ Brightness control.
 sudo pacman -S wlsunset
 ```
 
+ `sudo pacman -S ddcutil`
+`sudo modprobe i2c-dev`
+ 
 Night light (blue light filter).
 
 
