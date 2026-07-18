@@ -78,9 +78,10 @@ You can also check and click on the temps in the top bar (noctalia) to seee deta
 
 Install:
 
-- Helium Browser
-- zed
-- Ghostty
+- Helium Browser sudo pacman 
+- Vicinae curl -fsSL https://vicinae.com/install | bash
+- zed sudo pacman
+- Ghostty sudo pacman
 - Remove Kitty later
 - Remove Alacritty later
 
