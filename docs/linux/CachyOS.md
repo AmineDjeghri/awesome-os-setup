@@ -184,6 +184,9 @@ sudo pacman -S breeze-gtk
 sudo pacman -S kde-gtk-config
 `sudo pacman -S qt5-wayland qt6-wayland`
 `sudo pacman -S hyprpolkitagent`
+
+paru -S pycharm
+install claude : https://aur.archlinux.org/packages/pycharm
 ---------------------------------------------------------------------------------------------------
 
 
