@@ -10,7 +10,6 @@ packages:
         - docker-compose
       terminal_tools:
         - bat # cat clone with syntax highlighting
-        - lsd # ls replacement with icons and colors
         - fzf # fuzzy finder
         - btop # resource monitor (CPU/RAM/disk/net)
         - fastfetch # system info summary shown on shell startup
@@ -18,7 +17,7 @@ packages:
         - eza # modern ls replacement (successor to exa)
         - ripgrep # fast recursive grep, binary is `rg`
         - fd-find # fast find replacement; binary is installed as `fdfind`, not `fd`
-        - tldr # simplified, example-based man pages
+        - tealdeer # fast tldr client (Rust), simplified example-based man pages
         - zoxide # smarter `cd` that learns your habits
         - tmux # terminal multiplexer
         - neovim # modernized vim
@@ -37,19 +36,17 @@ packages:
         - git
         - zsh
         - curl
-      Dev_tools:
-        - uv # fast Python package/project manager
       terminal_tools:
         - bat # cat clone with syntax highlighting
-        - lsd # ls replacement with icons and colors
         - btop # resource monitor (CPU/RAM/disk/net)
         - duf # disk usage/free utility, nicer than `df`
+        - dua-cli # fast interactive disk usage analyzer (Rust), binary is `dua`, replaces `du`
         - fastfetch # system info summary shown on shell startup
         - fzf # fuzzy finder
         - eza # modern ls replacement (successor to exa)
         - ripgrep # fast recursive grep, binary is `rg`
         - fd # fast find replacement
-        - tldr # simplified, example-based man pages
+        - tealdeer # fast tldr client (Rust), simplified example-based man pages
         - zoxide # smarter `cd` that learns your habits
         - tmux # terminal multiplexer
         - neovim # modernized vim
@@ -119,7 +116,6 @@ packages:
         - zsh
         - base-devel
       Dev_tools:
-        - uv # fast Python package/project manager
         - docker
         - docker-compose
         - cmake
@@ -131,13 +127,13 @@ packages:
         - bat # cat clone with syntax highlighting
         - fzf # fuzzy finder
         - eza # modern ls replacement (successor to exa)
-        - lsd # ls replacement with icons and colors
         - ripgrep # fast recursive grep, binary is `rg`
         - fd # fast find replacement
-        - tldr # simplified, example-based man pages
+        - tealdeer # fast tldr client (Rust), simplified example-based man pages
         - zoxide # smarter `cd` that learns your habits
         - btop # resource monitor (CPU/RAM/disk/net)
         - duf # disk usage/free utility, nicer than `df`
+        - dua-cli # fast interactive disk usage analyzer (Rust), binary is `dua`, replaces `du`
         - fastfetch # replaces neofetch, which is deprecated upstream
         - tmux # terminal multiplexer
         - neovim # modernized vim
@@ -229,7 +225,6 @@ packages:
         - Notion.Notion
         - PDFgear.PDFgear
       Dev_tools:
-        - astral-sh.uv
         - Microsoft.WindowsTerminal
         - JetBrains.PyCharm
         - Comfy.ComfyUI-Desktop

@@ -24,7 +24,7 @@ class ApplicationSettings(BaseEnvironmentSettings):
 
     # --- Runtime ---
     logging_level: str = Field(
-        default="DEBUG",
+        default="CRITICAL",
         validation_alias=AliasChoices("LOGGING_LEVEL", "logging_level"),
         description="Log level (TRACE, DEBUG, INFO, WARNING, ERROR, CRITICAL)",
     )

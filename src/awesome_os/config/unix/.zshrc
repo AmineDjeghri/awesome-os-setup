@@ -119,12 +119,54 @@ fi
 alias zshrc="pycharm -e ~/.zshrc"
 if command -v bat >/dev/null 2>&1; then
   alias cat="bat"
+  export MANROFFOPT="-c"
+  export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 fi
-if command -v lsd >/dev/null 2>&1; then
-  alias ls="lsd"
+if command -v eza >/dev/null 2>&1; then
+  alias ls='eza -a --icons --group-directories-first'
+  alias ll='eza -la --icons --group-directories-first --header --git'
+  alias lt='eza -a --tree --icons --level=2 --group-directories-first'
+  alias l.="eza -a | grep -e '^\.'"
 fi
+if command -v journalctl >/dev/null 2>&1; then
+  alias jctl="journalctl -p 3 -xb"
+fi
+alias ..='cd ..'
+alias ...='cd ../..'
+alias ....='cd ../../..'
+alias .....='cd ../../../..'
+alias ......='cd ../../../../..'
+alias grep='grep --color=auto'
+alias fgrep='fgrep --color=auto'
+alias egrep='egrep --color=auto'
+
+backup() {
+  cp "$1" "$1.bak"
+}
 if command -v btop >/dev/null 2>&1; then
   alias top="btop"
+fi
+if command -v duf >/dev/null 2>&1; then
+  alias df="duf"
+fi
+if command -v dua >/dev/null 2>&1; then
+  alias du="dua"
+  alias dui="dua i" # interactive TUI mode
+fi
+# fd is packaged as `fd` on Arch/CachyOS/macOS, but as `fdfind` on Debian/Ubuntu.
+if ! command -v fd >/dev/null 2>&1 && command -v fdfind >/dev/null 2>&1; then
+  alias fd="fdfind"
+fi
+# zoxide - smarter `cd` that learns your habits
+if command -v zoxide >/dev/null 2>&1; then
+  eval "$(zoxide init zsh)"
+fi
+
+# ============================================================================
+# fastfetch - system info summary shown on shell startup (interactive shells only)
+# ============================================================================
+if [[ $- == *i* ]] && command -v fastfetch >/dev/null 2>&1; then
+  fastfetch
 fi
 
 # ============================================================================
