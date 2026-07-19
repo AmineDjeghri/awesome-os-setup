@@ -11,6 +11,7 @@ from awesome_os.tasks.managers.ubuntu_snap import UbuntuSnapManager
 from awesome_os.tasks.managers.windows_msstore import WindowsMSStoreManager
 from awesome_os.tasks.managers.webinstall import WebInstallManager
 from awesome_os.tasks.managers.windows_winget import WindowsWingetManager
+from awesome_os.tasks.system.chezmoi import chezmoi_apply, chezmoi_diff, chezmoi_re_add
 from awesome_os.tasks.system.font import install_jetbrainsmono_nerd_font
 from awesome_os.tasks.system.help import show_commands
 from awesome_os.tasks.system.docker_tasks import docker_post_install_linux
@@ -41,11 +42,8 @@ from awesome_os.tasks.system.windows_wsl_tasks import (
     add_windows_terminal_ubuntu_profile,
 )
 from awesome_os.tasks.system.zsh import (
-    apply_p10k_force,
-    apply_zshrc_force,
     set_bash_as_default_shell,
     set_zsh_as_default_shell,
-    sync_zsh_plugins_and_theme,
     uninstall_oh_my_zsh_and_p10k,
     uninstall_zsh_apt,
 )
@@ -107,7 +105,6 @@ def get_package_manager(*, distro: str, manager: str) -> PackageManager | None:
 def get_system_action_sections(
     *, system: str, distro: str, info: str | None
 ) -> list[tuple[str, list[SystemAction]]]:
-    home = Path.home()
     sections: list[tuple[str, list[SystemAction]]] = []
 
     # Package managers (apt, snap, brew...) - at the top for quick access
@@ -173,27 +170,27 @@ def get_system_action_sections(
                     confirm=True,
                     confirm_message="Install JetBrainsMono Nerd Font for terminals?",
                 ),
+                SystemAction(label="chezmoi: diff", run=chezmoi_diff),
                 SystemAction(
-                    label="apply ~/.zshrc",
-                    run=apply_zshrc_force,
+                    label="chezmoi: apply",
+                    run=chezmoi_apply,
                     confirm=True,
-                    confirm_message="This will overwrite ~/.zshrc if it exists. Proceed? (A backup will be created)",
-                    backup_target=(home / ".zshrc"),
+                    confirm_message="This applies chezmoi-managed dotfiles (.zshrc, .p10k.zsh) "
+                    "and clones oh-my-zsh/plugins/theme (declared in .chezmoiexternal.toml) "
+                    "to your home directory. Run 'chezmoi: diff' first to preview. Proceed?",
                 ),
                 SystemAction(
-                    label="apply ~/.p10k.zsh",
-                    run=apply_p10k_force,
+                    label="chezmoi: re-add",
+                    run=chezmoi_re_add,
                     confirm=True,
-                    confirm_message="FiraCode Nerd Font is required for best results. \n"
-                    "This will overwrite ~/.p10k.zsh if it exists. Proceed? (A backup will be created)",
-                    backup_target=(home / ".p10k.zsh"),
+                    confirm_message="This pulls your current dotfiles back into the repo's chezmoi source dir, "
+                    "overwriting the vendored versions there. Proceed?",
                 ),
-                SystemAction(label="sync zsh plugins/theme", run=sync_zsh_plugins_and_theme),
                 SystemAction(
                     label="set zsh as default shell",
                     run=set_zsh_as_default_shell,
                     confirm=True,
-                    confirm_message="Set your default shell to zsh?",
+                    confirm_message="Set your default shell to zsh? (OS reboot required)",
                 ),
             ]
         )

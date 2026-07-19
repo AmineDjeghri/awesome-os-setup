@@ -8,6 +8,7 @@ packages:
         - wget
       Dev_tools:
         - docker-compose
+        - chezmoi # dotfile manager
       terminal_tools:
         - bat # cat clone with syntax highlighting
         - fzf # fuzzy finder
@@ -36,6 +37,8 @@ packages:
         - git
         - zsh
         - curl
+      Dev_tools:
+        - chezmoi # dotfile manager
       terminal_tools:
         - bat # cat clone with syntax highlighting
         - btop # resource monitor (CPU/RAM/disk/net)
@@ -123,6 +126,7 @@ packages:
         - meson # build system used by GNOME/many C/C++ projects
         - zed
         - ghostty
+        - chezmoi # dotfile manager
       terminal_tools:
         - bat # cat clone with syntax highlighting
         - fzf # fuzzy finder

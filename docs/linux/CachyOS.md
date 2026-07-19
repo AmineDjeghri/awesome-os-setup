@@ -150,8 +150,15 @@ hyprbars.
 CachyOS defaults to **fish** as the login shell, with `cachyos-fish-config` and
 `cachyos-zsh-config` both installed.
 
-This setup moves to **zsh** with oh-my-zsh and the powerlevel10k prompt, managed
-by the app's `zsh` actions.
+This setup moves to **zsh** with oh-my-zsh and the powerlevel10k prompt. `.zshrc` and
+`.p10k.zsh`, plus oh-my-zsh itself and all its plugins/theme, are managed via
+[chezmoi](https://www.chezmoi.io/), with its source directory vendored inside this
+repo at `src/awesome_os/config/chezmoi/`. oh-my-zsh/plugins/theme are declared as
+`git-repo` externals in `.chezmoiexternal.toml`, so a single `chezmoi: apply` clones
+and applies everything — no separate sync step or ordering to worry about. Use the
+app's `chezmoi: diff` action to preview changes before `chezmoi: apply` — chezmoi has
+no auto-backup, so review the diff first. `set zsh as default shell` remains a
+separate `zsh` action.
 ---
 
 ## Theming

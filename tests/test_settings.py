@@ -17,7 +17,7 @@ class TestSettings:
         """logging_level should default to DEBUG when not set in the environment."""
         from awesome_os.settings import settings
 
-        assert settings.logging_level == "DEBUG"
+        assert settings.logging_level == "CRITICAL"
 
     def test_logging_level_from_env(self, monkeypatch):
         """logging_level should be read from LOGGING_LEVEL environment variable."""

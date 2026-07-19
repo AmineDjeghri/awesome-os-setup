@@ -1,56 +1,14 @@
 from __future__ import annotations
 
-import json
 import getpass
 import os
 import platform
-import re
 import shutil
-from importlib import resources
 from pathlib import Path
 
-from awesome_os.tasks.system.git import _git_clone
 from awesome_os.tasks.commands import run
 from awesome_os.tasks.sudo import sudo_non_interactive_ok, sudo_required_details
 from awesome_os.tasks.task import TaskResult
-
-
-def _read_packaged_text_config(filename: str) -> str:
-    pkg = resources.files("awesome_os")
-    # Prefer root config/ for backward compatibility, but fall back to unix/
-    # where dotfile templates live.
-    candidates = [
-        pkg / "config" / filename,
-        pkg / "config" / "unix" / filename,
-    ]
-    last_err: Exception | None = None
-    for p in candidates:
-        try:
-            return p.read_text(encoding="utf-8")
-        except Exception as e:  # noqa: BLE001
-            last_err = e
-            continue
-    raise FileNotFoundError(f"Packaged config not found: {filename}") from last_err
-
-
-def apply_zshrc_force() -> TaskResult:
-    dest = Path.home() / ".zshrc"
-    try:
-        content = _read_packaged_text_config(".zshrc")
-        dest.write_text(content, encoding="utf-8")
-    except Exception as e:  # noqa: BLE001
-        return TaskResult(ok=False, summary="write ~/.zshrc: failed", details=str(e))
-    return TaskResult(ok=True, summary="wrote ~/.zshrc")
-
-
-def apply_p10k_force() -> TaskResult:
-    dest = Path.home() / ".p10k.zsh"
-    try:
-        content = _read_packaged_text_config(".p10k.zsh")
-        dest.write_text(content, encoding="utf-8")
-    except Exception as e:  # noqa: BLE001
-        return TaskResult(ok=False, summary="write ~/.p10k.zsh: failed", details=str(e))
-    return TaskResult(ok=True, summary="wrote ~/.p10k.zsh")
 
 
 def uninstall_oh_my_zsh_and_p10k() -> TaskResult:
@@ -137,138 +95,6 @@ def uninstall_zsh_apt() -> TaskResult:
     )
 
 
-def _parse_plugins_from_zshrc(zshrc_text: str) -> list[str]:
-    m = re.search(r"plugins=\((.*?)\n\s*\)", zshrc_text, flags=re.DOTALL)
-    if not m:
-        return []
-    block = m.group(1)
-    plugins: list[str] = []
-    for line in block.splitlines():
-        stripped = line.strip()
-        if not stripped:
-            continue
-        plugins.extend(stripped.split())
-    return plugins
-
-
-def _parse_theme_from_zshrc(zshrc_text: str) -> str | None:
-    m = re.search(r'^\s*ZSH_THEME\s*=\s*"([^"]*)"', zshrc_text, flags=re.MULTILINE)
-    if not m:
-        return None
-    raw = (m.group(1) or "").strip()
-    if not raw:
-        return None
-    return raw.split("/", 1)[0]
-
-
-def sync_zsh_plugins_and_theme() -> TaskResult:
-    if shutil.which("git") is None:
-        return TaskResult(ok=False, summary="git not found on PATH (required to sync zsh plugins)")
-
-    try:
-        user_zshrc = Path.home() / ".zshrc"
-        if user_zshrc.exists():
-            zshrc_text = user_zshrc.read_text(encoding="utf-8")
-        else:
-            zshrc_text = _read_packaged_text_config(".zshrc")
-    except Exception as e:  # noqa: BLE001
-        return TaskResult(ok=False, summary="read config .zshrc: failed", details=str(e))
-
-    try:
-        pkg = resources.files("awesome_os")
-        # Same fallback logic as the dotfile templates.
-        try:
-            raw = (pkg / "config" / "zshrc_external_plugins.json").read_text(encoding="utf-8")
-        except Exception:  # noqa: BLE001
-            raw = (pkg / "config" / "unix" / "zshrc_external_plugins.json").read_text(
-                encoding="utf-8"
-            )
-        registry = json.loads(raw)
-    except Exception as e:  # noqa: BLE001
-        return TaskResult(
-            ok=False, summary="read zshrc_external_plugins.json: failed", details=str(e)
-        )
-
-    plugins = _parse_plugins_from_zshrc(zshrc_text)
-    theme = _parse_theme_from_zshrc(zshrc_text)
-
-    home = Path.home()
-    omz_dir = home / ".oh-my-zsh"
-    zsh_custom = Path(os.environ.get("ZSH_CUSTOM", str(omz_dir / "custom")))
-
-    actions: list[str] = []
-
-    omz_url = str(registry.get("oh_my_zsh") or "").strip()
-    if not omz_url:
-        omz_url = "https://github.com/ohmyzsh/ohmyzsh.git"
-
-    if not omz_dir.exists():
-        res = _git_clone(url=omz_url, dest=omz_dir)
-        actions.append(res.summary)
-        if res.details:
-            actions.append(res.details)
-        if not res.ok:
-            return TaskResult(
-                ok=False,
-                summary="sync zsh plugins/theme: failed",
-                details="\n".join(actions).strip(),
-            )
-    else:
-        actions.append("exists: oh-my-zsh")
-
-    (zsh_custom / "themes").mkdir(parents=True, exist_ok=True)
-    (zsh_custom / "plugins").mkdir(parents=True, exist_ok=True)
-
-    plugin_urls = registry.get("plugins") if isinstance(registry.get("plugins"), dict) else {}
-    theme_urls = registry.get("themes") if isinstance(registry.get("themes"), dict) else {}
-
-    for name in plugins:
-        url = (plugin_urls.get(name) if isinstance(plugin_urls, dict) else None) or ""
-        url = str(url).strip()
-        if not url:
-            actions.append(f"skipped: {name} (no url mapping or internal plugin)")
-            continue
-        dest = zsh_custom / "plugins" / name
-        if dest.exists():
-            actions.append(f"exists: {name}")
-            continue
-        res = _git_clone(url=url, dest=dest)
-        actions.append(res.summary)
-        if res.details:
-            actions.append(res.details)
-        if not res.ok:
-            return TaskResult(
-                ok=False,
-                summary="sync zsh plugins/theme: failed",
-                details="\n".join(actions).strip(),
-            )
-
-    if theme:
-        url = (theme_urls.get(theme) if isinstance(theme_urls, dict) else None) or ""
-        url = str(url).strip()
-        if not url:
-            actions.append(f"skipped theme: {theme} (no url mapping)")
-        else:
-            dest = zsh_custom / "themes" / theme
-            if dest.exists():
-                actions.append(f"exists theme: {theme}")
-            else:
-                res = _git_clone(url=url, dest=dest)
-                actions.append(res.summary)
-                if res.details:
-                    actions.append(res.details)
-                if not res.ok:
-                    return TaskResult(
-                        ok=False,
-                        summary="sync zsh plugins/theme: failed",
-                        details="\n".join(actions).strip(),
-                    )
-
-    return TaskResult(
-        ok=True, summary="sync zsh plugins/theme: ok", details="\n".join(actions).strip()
-    )
-
-
 def set_zsh_as_default_shell() -> TaskResult:
     system = platform.system().lower()
     if system not in {"linux", "darwin"}:
@@ -308,10 +134,7 @@ def set_zsh_as_default_shell() -> TaskResult:
         return TaskResult(
             ok=True,
             summary="default shell set to zsh",
-            details=(
-                details
-                or "Log out and back in (or restart your terminal) for changes to take effect."
-            ),
+            details=f"{details}\nreboot your PC".strip() if details else "reboot your PC",
         )
 
     hint = f"Run manually: chsh -s {zsh_path}"
@@ -356,13 +179,16 @@ def set_bash_as_default_shell() -> TaskResult:
 
     details = (res.stdout + "\n" + res.stderr).strip()
     if res.returncode == 0:
+        logout_hint = (
+            "You must fully log out of your desktop/graphical session and log back in "
+            "(or reboot) for this to take effect — opening a new terminal window is not "
+            "enough, since the running session's environment (e.g. systemd --user) still "
+            "has the old shell cached until you start a new login session."
+        )
         return TaskResult(
             ok=True,
             summary="default shell set to bash",
-            details=(
-                details
-                or "Log out and back in (or restart your terminal) for changes to take effect."
-            ),
+            details=f"{details}\n{logout_hint}".strip() if details else logout_hint,
         )
 
     hint = f"Run manually: chsh -s {bash_path}"
