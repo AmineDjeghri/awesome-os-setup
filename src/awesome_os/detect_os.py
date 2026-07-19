@@ -47,14 +47,25 @@ def _is_wsl() -> bool:
         return False
 
 
-def detect_os() -> OSInfo:
-    system = platform.system().lower()
+def detect_os(
+    *,
+    system: str | None = None,
+    os_release_path: Path | None = None,
+    is_wsl: bool | None = None,
+) -> OSInfo:
+    """Detect the current OS/distro.
+
+    The keyword-only overrides let tests exercise this function for real
+    (real filesystem paths, no mocking) against a Linux distro other than
+    the one actually running the test suite.
+    """
+    system = (system or platform.system()).lower()
     if system == "windows":
         return OSInfo(family="windows", distro="windows")
     if system == "darwin":
         return OSInfo(family="darwin", distro="darwin")
     if system == "linux":
-        os_release = Path("/etc/os-release")
+        os_release = os_release_path or Path("/etc/os-release")
         if not os_release.exists():
             distro = "linux"
         else:
@@ -66,23 +77,8 @@ def detect_os() -> OSInfo:
                 data[k.strip()] = v.strip().strip('"')
 
             distro = data.get("ID", "linux").lower()
-            id_like = data.get("ID_LIKE", "").lower()
-
-            # Normalize Arch-based distros to a single identifier so we can use one package
-            # catalog and one package-manager backend.
-            arch_like_ids = {
-                "arch",
-                "manjaro",
-                "endeavouros",
-                "garuda",
-                "arcolinux",
-                "cachyos",
-            }
-            if distro in arch_like_ids or "arch" in id_like.split():
-                distro = "arch"
-        return OSInfo(
-            family=system, distro=distro, info="OS running inside WSL" if _is_wsl() else None
-        )
+        wsl = _is_wsl() if is_wsl is None else is_wsl
+        return OSInfo(family=system, distro=distro, info="OS running inside WSL" if wsl else None)
     return OSInfo(family="unknown", distro="unknown")
 
 

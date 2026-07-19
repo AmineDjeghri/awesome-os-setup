@@ -294,7 +294,7 @@ def set_zsh_as_default_shell() -> TaskResult:
         if not sudo_non_interactive_ok():
             return TaskResult(
                 ok=False,
-                summary="failed to set default shell to zsh (sudo password required)",
+                summary="failed to set default shell to zsh (sudo password required). Run an interactive command first to cache your sudo credentials.)",
                 details=sudo_required_details(),
             )
 
@@ -345,7 +345,7 @@ def set_bash_as_default_shell() -> TaskResult:
         if not sudo_non_interactive_ok():
             return TaskResult(
                 ok=False,
-                summary="failed to set default shell to bash (sudo password required)",
+                summary="failed to set default shell to bash (sudo password required). Run an interactive command first to cache your sudo credentials.)",
                 details=sudo_required_details(),
             )
 

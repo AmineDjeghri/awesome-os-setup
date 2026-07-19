@@ -8,17 +8,12 @@ The Awesome OS Setup provides a **Terminal UI (TUI) application** that guides yo
 
 Use [README.md](../../README.md#linux--wsl2--macos) as it automatically handles the OS setup with the interactive TUI application.
 
-Before installing packages, it's recommended to update your system:
-```sh
-apt update    # Refresh package lists
-apt upgrade   # Upgrade installed packages
-apt cleanup   # Remove unused packages
-```
+Before installing packages, it's recommended to update your system.
 
 ### 1. Package Selection
 The app displays all available packages from [packages.yaml](../../src/awesome_os/config/packages.yaml) organized by category:
 - **Core tools**: `git`, `curl`, `zsh`
-- **Terminal tools**: `bat`, `btop`, `fzf`, `lsd`, `neofetch`
+- **Terminal tools**: `bat`, `btop`, `fzf`, `lsd`, `fastfetch`
 - **Apps**: Code editor, messaging apps, media players, etc.
 
 You can multi-select packages using the interactive interface.

@@ -103,6 +103,197 @@ class TestUbuntuAptManager:
             assert UbuntuAptManager().is_installed("curl") is True
 
 
+class TestArchPacmanManager:
+    """Tests for the Arch pacman package manager backend."""
+
+    def test_install_pacman_not_found(self):
+        """install() should return ok=False when pacman is not on PATH."""
+        from awesome_os.tasks.managers.arch_pacman import ArchPacmanManager
+
+        with patch("shutil.which", return_value=None):
+            result = ArchPacmanManager().install("fd")
+        assert result.ok is False
+        assert "pacman not found" in result.summary
+
+    def test_install_no_sudo(self):
+        """install() should fail immediately when passwordless sudo is unavailable."""
+        from awesome_os.tasks.managers.arch_pacman import ArchPacmanManager
+
+        with (
+            patch("shutil.which", return_value="/usr/bin/pacman"),
+            patch(
+                "awesome_os.tasks.managers.arch_pacman.sudo_non_interactive_ok",
+                return_value=False,
+            ),
+        ):
+            result = ArchPacmanManager().install("fd")
+        assert result.ok is False
+        assert "sudo" in result.summary.lower()
+
+    def test_install_success(self):
+        """install() should return ok=True and run pacman through sudo -n, since pacman writes as root."""
+        from awesome_os.tasks.managers.arch_pacman import ArchPacmanManager
+
+        mock_run = MagicMock(return_value=MagicMock(returncode=0, stdout="", stderr=""))
+        with (
+            patch("shutil.which", return_value="/usr/bin/pacman"),
+            patch(
+                "awesome_os.tasks.managers.arch_pacman.sudo_non_interactive_ok",
+                return_value=True,
+            ),
+            patch("awesome_os.tasks.managers.arch_pacman.run", mock_run),
+        ):
+            result = ArchPacmanManager().install("fd")
+        assert result.ok is True
+        assert "pacman" in result.summary
+        argv = mock_run.call_args[0][0]
+        assert argv[:2] == ["sudo", "-n"]
+        assert argv[-1] == "fd"
+
+    def test_install_failure(self):
+        """install() should return ok=False when pacman exits with a non-zero code."""
+        from awesome_os.tasks.managers.arch_pacman import ArchPacmanManager
+
+        mock_result = MagicMock(returncode=1, stdout="", stderr="target not found")
+        with (
+            patch("shutil.which", return_value="/usr/bin/pacman"),
+            patch(
+                "awesome_os.tasks.managers.arch_pacman.sudo_non_interactive_ok",
+                return_value=True,
+            ),
+            patch("awesome_os.tasks.managers.arch_pacman.run", return_value=mock_result),
+        ):
+            result = ArchPacmanManager().install("nope")
+        assert result.ok is False
+
+    def test_is_installed(self):
+        """is_installed() should reflect the returncode of `pacman -Q`."""
+        from awesome_os.tasks.managers.arch_pacman import ArchPacmanManager
+
+        with (
+            patch("shutil.which", return_value="/usr/bin/pacman"),
+            patch(
+                "awesome_os.tasks.managers.arch_pacman.run", return_value=MagicMock(returncode=0)
+            ),
+        ):
+            assert ArchPacmanManager().is_installed("git") is True
+        with (
+            patch("shutil.which", return_value="/usr/bin/pacman"),
+            patch(
+                "awesome_os.tasks.managers.arch_pacman.run", return_value=MagicMock(returncode=1)
+            ),
+        ):
+            assert ArchPacmanManager().is_installed("nope") is False
+
+
+class TestArchParuManager:
+    """Tests for the Arch paru AUR helper backend."""
+
+    @staticmethod
+    def _which_side_effect(paru_path, pacman_path="/usr/bin/pacman"):
+        def _which(name):
+            return {"paru": paru_path, "pacman": pacman_path}.get(name)
+
+        return _which
+
+    def test_install_bootstraps_paru_via_pacman_when_missing(self):
+        """A missing paru is a normal pacman -S on CachyOS, not an AUR build."""
+        from awesome_os.tasks.managers.arch_paru import ArchParuManager
+
+        # First two `_paru()` checks (before/inside `_ensure_paru`) see nothing;
+        # once the bootstrap "runs", later checks see paru on PATH.
+        which_calls = iter([None, "/usr/bin/pacman", "/usr/bin/paru", "/usr/bin/paru"])
+        bootstrap_result = MagicMock(returncode=0, stdout="", stderr="")
+        install_result = MagicMock(returncode=0, stdout="", stderr="")
+        mock_run = MagicMock(side_effect=[bootstrap_result, install_result])
+        with (
+            patch("shutil.which", side_effect=lambda name: next(which_calls)),
+            patch(
+                "awesome_os.tasks.managers.arch_paru.sudo_non_interactive_ok",
+                return_value=True,
+            ),
+            patch("awesome_os.tasks.managers.arch_paru.run", mock_run),
+        ):
+            result = ArchParuManager().install("brave-browser")
+        assert result.ok is True
+        bootstrap_argv = mock_run.call_args_list[0][0][0]
+        assert bootstrap_argv == [
+            "sudo",
+            "-n",
+            "/usr/bin/pacman",
+            "-S",
+            "--needed",
+            "--noconfirm",
+            "paru",
+        ]
+
+    def test_install_no_pacman_and_no_paru(self):
+        """Without pacman on PATH there is no way to bootstrap paru at all."""
+        from awesome_os.tasks.managers.arch_paru import ArchParuManager
+
+        with patch("shutil.which", side_effect=self._which_side_effect(None, None)):
+            result = ArchParuManager().install("brave-browser")
+        assert result.ok is False
+        assert "pacman" in result.details.lower()
+        assert "not found" in result.details.lower()
+
+    def test_install_no_sudo_does_not_bootstrap(self):
+        """Without passwordless sudo, bootstrapping must not attempt pacman -S."""
+        from awesome_os.tasks.managers.arch_paru import ArchParuManager
+
+        mock_run = MagicMock()
+        with (
+            patch("shutil.which", side_effect=self._which_side_effect(None)),
+            patch(
+                "awesome_os.tasks.managers.arch_paru.sudo_non_interactive_ok",
+                return_value=False,
+            ),
+            patch("awesome_os.tasks.managers.arch_paru.run", mock_run),
+        ):
+            result = ArchParuManager().install("brave-browser")
+        assert result.ok is False
+        assert "sudo" in result.details.lower()
+        mock_run.assert_not_called()
+
+    def test_install_success(self):
+        """install() should return ok=True and must not prefix paru with sudo, since paru escalates on its own."""
+        from awesome_os.tasks.managers.arch_paru import ArchParuManager
+
+        mock_run = MagicMock(return_value=MagicMock(returncode=0, stdout="", stderr=""))
+        with (
+            patch("shutil.which", side_effect=self._which_side_effect("/usr/bin/paru")),
+            patch("awesome_os.tasks.managers.arch_paru.run", mock_run),
+        ):
+            result = ArchParuManager().install("brave-browser")
+        assert result.ok is True
+        assert "paru" in result.summary
+        argv = mock_run.call_args[0][0]
+        assert argv[0] == "/usr/bin/paru"
+        assert "sudo" not in argv
+
+    def test_install_failure(self):
+        """install() should return ok=False when paru exits with a non-zero code."""
+        from awesome_os.tasks.managers.arch_paru import ArchParuManager
+
+        mock_result = MagicMock(returncode=1, stdout="", stderr="build failed")
+        with (
+            patch("shutil.which", side_effect=self._which_side_effect("/usr/bin/paru")),
+            patch("awesome_os.tasks.managers.arch_paru.run", return_value=mock_result),
+        ):
+            result = ArchParuManager().install("nope")
+        assert result.ok is False
+
+    def test_is_installed_queries_pacman(self):
+        """AUR packages land in pacman's local DB, so is_installed() uses pacman -Q."""
+        from awesome_os.tasks.managers.arch_paru import ArchParuManager
+
+        with (
+            patch("shutil.which", return_value="/usr/bin/pacman"),
+            patch("awesome_os.tasks.managers.arch_paru.run", return_value=MagicMock(returncode=0)),
+        ):
+            assert ArchParuManager().is_installed("pycharm") is True
+
+
 class TestWebInstallManager:
     """Tests for the web-based (browser-open) install backend."""
 

@@ -52,7 +52,7 @@ class UbuntuAptManager:
         if not sudo_non_interactive_ok():
             return InstallResult(
                 ok=False,
-                summary=f"Failed to install {package} (sudo password required)",
+                summary=f"Failed to install {package} (sudo password required). Run an interactive command first to cache your sudo credentials.)",
                 details=sudo_required_details(),
             )
         logger.info(f"Installing {package} via {self.name}...")
@@ -72,7 +72,7 @@ class UbuntuAptManager:
         if not sudo_non_interactive_ok():
             return TaskResult(
                 ok=False,
-                summary="apt update: sudo password required",
+                summary="apt update: sudo password required). Run an interactive command first to cache your sudo credentials.",
                 details=sudo_required_details(),
             )
         res = run(["sudo", "-n", "apt-get", "update"], check=False)
@@ -85,7 +85,7 @@ class UbuntuAptManager:
         if not sudo_non_interactive_ok():
             return TaskResult(
                 ok=False,
-                summary="apt upgrade: sudo password required",
+                summary="apt upgrade: sudo password required). Run an interactive command first to cache your sudo credentials.",
                 details=sudo_required_details(),
             )
         res = run(["sudo", "-n", "apt-get", "upgrade", "-y"], check=False)
@@ -98,7 +98,7 @@ class UbuntuAptManager:
         if not sudo_non_interactive_ok():
             return TaskResult(
                 ok=False,
-                summary="apt cleanup: sudo password required",
+                summary="apt cleanup: sudo password required). Run an interactive command first to cache your sudo credentials.",
                 details=sudo_required_details(),
             )
         res = run(["sudo", "-n", "apt-get", "autoremove", "-y"], check=False)

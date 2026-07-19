@@ -9,14 +9,23 @@ packages:
       Dev_tools:
         - docker-compose
       terminal_tools:
-        - bat
-        - lsd
-        - fzf
-        - btop
-        - neofetch
-      webinstall:
-        Dev_tools:
-          - '[Docker](https://doc.ubuntu-fr.org/docker#depot_apt_docker)'
+        - bat # cat clone with syntax highlighting
+        - lsd # ls replacement with icons and colors
+        - fzf # fuzzy finder
+        - btop # resource monitor (CPU/RAM/disk/net)
+        - fastfetch # system info summary shown on shell startup
+        - duf # disk usage/free utility, nicer than `df`
+        - eza # modern ls replacement (successor to exa)
+        - ripgrep # fast recursive grep, binary is `rg`
+        - fd-find # fast find replacement; binary is installed as `fdfind`, not `fd`
+        - tldr # simplified, example-based man pages
+        - zoxide # smarter `cd` that learns your habits
+        - tmux # terminal multiplexer
+        - neovim # modernized vim
+
+    webinstall:
+      Dev_tools:
+        - '[Docker](https://doc.ubuntu-fr.org/docker#depot_apt_docker)'
 
     snap:
       apps:
@@ -29,11 +38,21 @@ packages:
         - zsh
         - curl
       Dev_tools:
-        - uv
+        - uv # fast Python package/project manager
       terminal_tools:
-        - bat
-        - lsd
-        - btop
+        - bat # cat clone with syntax highlighting
+        - lsd # ls replacement with icons and colors
+        - btop # resource monitor (CPU/RAM/disk/net)
+        - duf # disk usage/free utility, nicer than `df`
+        - fastfetch # system info summary shown on shell startup
+        - fzf # fuzzy finder
+        - eza # modern ls replacement (successor to exa)
+        - ripgrep # fast recursive grep, binary is `rg`
+        - fd # fast find replacement
+        - tldr # simplified, example-based man pages
+        - zoxide # smarter `cd` that learns your habits
+        - tmux # terminal multiplexer
+        - neovim # modernized vim
     cask:
       AI:
         - ollama-app # https://github.com/ollama/ollama
@@ -91,40 +110,82 @@ packages:
       Text Editors:
         - '[PDFgear](https://www.pdfgear.com/pdfgear-for-mac/)'
 
-  arch:
-    yay:
+  cachyos:
+    pacman:
       core:
         - git
         - curl
+        - wget
         - zsh
-      terminal_tools:
-        - bat
-        - fzf
-        - btop
-        - neofetch
-        - eza
-        - lsd
-        - ripgrep
-        - tldr
-        - zoxide
+        - base-devel
+      Dev_tools:
+        - uv # fast Python package/project manager
         - docker
-        - lazygit
-        - lazydocker
-        - tmux
-        - neovim
-        - python
-        - bpytop
-        - fd
-        - opencode
-      apps:
-        - brave-browser
-        - vicinae
+        - docker-compose
+        - cmake
+        - make
+        - meson # build system used by GNOME/many C/C++ projects
+        - zed
         - ghostty
+      terminal_tools:
+        - bat # cat clone with syntax highlighting
+        - fzf # fuzzy finder
+        - eza # modern ls replacement (successor to exa)
+        - lsd # ls replacement with icons and colors
+        - ripgrep # fast recursive grep, binary is `rg`
+        - fd # fast find replacement
+        - tldr # simplified, example-based man pages
+        - zoxide # smarter `cd` that learns your habits
+        - btop # resource monitor (CPU/RAM/disk/net)
+        - duf # disk usage/free utility, nicer than `df`
+        - fastfetch # replaces neofetch, which is deprecated upstream
+        - tmux # terminal multiplexer
+        - neovim # modernized vim
+      apps:
+        - wine # runs Windows applications on Linux
+        - dolphin # KDE file manager
+      Fonts:
+        - ttf-jetbrains-mono-nerd # matches the JetBrainsMono Nerd Font used elsewhere in this project
+      Browsers:
+        - helium-browser-bin
+        - brave-bin
+      Gaming:
         - steam
-        - obsidian
+      Messaging:
+        - telegram-desktop
+        - vesktop # Discord enhanced
+      Media:
         - vlc
-        - wine
-        - vesktop
+      Text Editors:
+        - obsidian
+      AI:
+        - ollama
+      Hyprland desktop:
+        - hyprpolkitagent
+        - noctalia
+        - wdisplays # GUI monitor configuration
+        - wlsunset # night light / blue light filter
+        - brightnessctl
+        - ddcutil # external monitor brightness over I2C
+        - qt5-wayland
+        - qt6-wayland
+        - breeze-gtk
+        - kde-gtk-config
+      Screenshots:
+        - grim
+        - slurp
+        - satty
+        - wl-clipboard
+    paru:
+      Utilities:
+        - vicinae-bin # Raycast-style launcher https://vicinae.com
+        - anydesk-bin
+        - nordvpn-bin
+      Dev_tools:
+        - pycharm # Unified edition
+      Meetings:
+        - zoom
+
   windows:
     winget:
       Browsers:

@@ -1,217 +1,182 @@
 # CachyOS Hyprland Developer Workstation Setup
 
-> Work in Progress
+> Work in progress.
 >
-> This document tracks my migration from Windows to a native Linux development workstation.
-> It will be updated as the setup is tested and refined.
+> This document tracks a migration from Windows to a native Linux development
+> workstation. It is updated as the setup is tested and refined.
+
+## Goal
+
+Replace a Windows 11 + WSL workflow with a fully native Linux environment.
+
+| Before     | After                            |
+|------------|----------------------------------|
+| Windows 11 | CachyOS                          |
+| WSL        | Native Linux development         |
+| GlazeWM    | Hyprland (no KDE Plasma desktop) |
+| ShareX     | grim + slurp + satty             |
+| Raycast    | Vicinae                          |
+| —          | Noctalia (bar / control centre)  |
+| —          | Ghostty (terminal)               |
+| —          | Native Linux gaming              |
+
+KDE applications (Dolphin, Spectacle) are used where they are the best option.
 
 ---
 
-# Goal
+## Installation
 
-Replace my Windows workflow with a fully native Linux environment.
+### Secure Boot
 
-## Previous setup
+Disabled — the CachyOS installer was blocked by Secure Boot.
 
-- Windows 11
-- WSL
-- GlazeWM
-- ShareX
-- Raycast
+### Bootloader and filesystem
 
-## New setup
+- Bootloader: **Limine**
+- Filesystem: **Btrfs**
+- Encryption: **LUKS**
 
-- CachyOS
-- Hyprland (without KDE Plasma desktop)
-- Noctalia
-- Ghostty
-- Vicinae
-- KDE applications where useful
-- Native Linux gaming
-- Native Linux development
+### After first boot
 
----
-
-# Installation
-
-## Secure Boot
-
-Disabled.
-
-Reason:
-
-The CachyOS installer was blocked by Secure Boot.
-
----
-
-## Bootloader
-
-Selected:
-
-- Limine
-
-Filesystem:
-
-- Btrfs
-- LUKS disk encryption
-
----
-
-# After First Boot
-
+```bash
 sudo pacman -Syu
+```
 
-Verify NVIDIA drivers.
+Verify the NVIDIA driver:
 
 ```bash
 nvidia-smi
 ```
 
-If this shows the GPU information, the NVIDIA driver is working correctly.
+If this prints GPU information, the driver is working. CachyOS ships the NVIDIA
+stack preinstalled and keeps the kernel module in sync with the running kernel,
+so there is normally nothing to install.
 
-You can also check and click on the temps in the top bar (noctalia) to seee detailed things about your pc (cpu temp, gpu name, system information without going to the settings)
----
-
-# Install Applications
-
-
-
-Install:
-
-- Helium Browser sudo pacman 
-- Vicinae curl -fsSL https://vicinae.com/install | bash
-- zed sudo pacman
-- Ghostty sudo pacman
-- Remove Kitty later
-- Remove Alacritty later
-
-Copy personal configuration files for:
-
-- Hyprland . https://github.com/AmineDjeghri/awesome-os-setup/blob/main/src/awesome_os/config/unix/hyprland.lua
-- Noctalia
-
-in Dolphin . show hidden files
-
-test shortcuts : alt+f for fullscreen for example .
-you can also choose theme in noctualia settings -> themes and apply theme . (I don't advice for that), i like to keep my personal themes)
-
-(don't delete qt6 and 5 themes , for now i didn't figure out how to delete noctalia theme without affecting other stuff)
+You can also click the temperature readout in the Noctalia top bar to see CPU
+temperature, GPU name and general system information without opening settings.
 
 ---
-Hyprland Plugins (hymission and hyprbars:
 
-sudo pacman -S \
-cpio \
-cmake \
-git \
-meson \
-gcc \
-base-devel
+## Packages
 
-sudo pacman -S nlohmann-json
+Most of the packages below are managed by this project — run the app and install
+them from the UI rather than by hand:
 
-hyprpm update
+```bash
+sudo pacman -S make
 
-hyprpm add https://github.com/gfhdhytghd/hymission
+./install_unix.sh
+```
 
-hyprpm enable hymission
+The catalog lives in `src/awesome_os/config/packages.yaml`, under a single
+`cachyos:` key. This project targets CachyOS specifically — generic Arch and
+other derivatives are not supported.
 
-Test ALT TAB
+Two package managers are used:
 
+- **pacman** — official repositories
+- **paru** — AUR. CachyOS ships paru by default;
 
-hyprpm add https://github.com/hyprwm/hyprland-plugins
-hyprpm enable hyprbars
-Test drag and drop, and close, maximise windows
+### Manual fallback
 
-hyprpm reload
+If you are setting up before the app is available:
 
-hyprpm list
-You can now use alt-tab
----
+```bash
+# Core CLI
+sudo pacman -S ripgrep fd fzf jq tree btop fastfetch bat eza zoxide
 
-## Screnshot & annotation tools (CTRL + print) check my hyprland config
+# Build tooling (needed for Hyprland plugins)
+sudo pacman -S base-devel cmake meson cpio git nlohmann-json
+
+# Screenshot and annotation (bound to CTRL+Print in the Hyprland config)
 sudo pacman -S grim slurp satty wl-clipboard
 
+# Display and brightness
+sudo pacman -S wdisplays brightnessctl wlsunset ddcutil
+sudo modprobe i2c-dev            # required by ddcutil for external monitors
 
+# Theming and Wayland integration
+sudo pacman -S breeze-gtk kde-gtk-config qt5-wayland qt6-wayland hyprpolkitagent
 
-
-# Theme Integration
-
-- Dolphin
- If you use Noctalia you can change applications themes directly from noctalia .
-Doplhin can be set again to other theems by goign to Dolphin -> Menu bar (3 bars) -> Configure -> Window Color Scheeme -> Breeze Dark.
-
-## qt6ct
-``qt6ct``
-
-
-
-
-# Utilities
-
-Install:
-
-```bash
-sudo pacman -S wdisplays
-```
-
-GUI monitor configuration.
-
----
-
-```bash
-sudo pacman -S brightnessctl
-```
-
-Brightness control.
-
----
-
-```bash
-sudo pacman -S wlsunset
-```
-
- `sudo pacman -S ddcutil`
-`sudo modprobe i2c-dev`
- 
-Night light (blue light filter).
-
-
-You can now control some stuff directly in noctalia 
-
-
-sudo pacman -S breeze-gtk
-sudo pacman -S kde-gtk-config
-`sudo pacman -S qt5-wayland qt6-wayland`
-`sudo pacman -S hyprpolkitagent`
-
+# AUR
 paru -S pycharm
-install claude : https://aur.archlinux.org/packages/pycharm
----------------------------------------------------------------------------------------------------
+```
 
 
+Vicinae has its own installer:
 
-# Still To Do
+```bash
+curl -fsSL https://vicinae.com/install | bash
+```
 
-- Install Gaming Packages from CachyOS Hello
+---
+
+## Desktop
+
+### Configuration files
+
+Copy the personal configuration for Hyprland and Noctalia into `~/.config`.
+Enable **View → Show Hidden Files** in Dolphin to see the directory.
+
+Verify the keybindings afterward — for example `ALT+F` for fullscreen.
+
+### Hyprland plugins
+
+`hyprpm` builds plugins from source, so the build tooling above must be
+installed first.
+
+```bash
+hyprpm update
+
+# ALT+TAB window switcher
+hyprpm add https://github.com/gfhdhytghd/hymission
+hyprpm enable hymission
+
+# Title bars: drag, close, maximise
+hyprpm add https://github.com/hyprwm/hyprland-plugins
+hyprpm enable hyprbars
+
+hyprpm reload
+hyprpm list
+```
+
+Test `ALT+TAB` for the switcher, and dragging / closing / maximising windows for
+hyprbars.
+
+---
+
+## Shell
+
+CachyOS defaults to **fish** as the login shell, with `cachyos-fish-config` and
+`cachyos-zsh-config` both installed.
+
+This setup moves to **zsh** with oh-my-zsh and the powerlevel10k prompt, managed
+by the app's `zsh` actions.
+---
+
+## Theming
+
+Noctalia can set application themes directly (**Noctalia settings → Themes**).
+Personal themes are kept rather than using the bundled ones.
+
+Do not remove the Qt5/Qt6 theme packages — the Noctalia theme cannot currently
+be removed without affecting them.
+
+- **Dolphin**: Menu (hamburger) → Configure → Window Color Scheme → Breeze Dark
+- **Qt**: run `qt6ct` (and `qt5ct`) to configure Qt application theming
+
+---
+
+## Still to do
+- Install gaming packages from CachyOS Hello
 - Configure Vicinae
-- Finish Hyprland plugin setup
-- Test desktop integration
-- Verify theming consistency
-- Remove unnecessary packages after testing
+- configure Noctalia
+- Test desktop integration end to end
+- Verify theming consistency across GTK and Qt applications
+- Remove Kitty and Alacritty once Ghostty is confirmed
+- Remove other unnecessary packages after testing
 
+### Applications to try
 
-
-APPs to try: 
-- Spectacle: https://apps.kde.org/spectacle/
-- KDE connect
-- 
-
-sudo pacman -S \
-ripgrep \
-fd \
-fzf \
-jq \
-tree \
-btop \
-fastfetch
+- [Spectacle](https://apps.kde.org/spectacle/) — screenshots
+- KDE Connect — phone integration

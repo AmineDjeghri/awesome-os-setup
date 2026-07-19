@@ -19,7 +19,7 @@ class UbuntuSnapManager:
         if not sudo_non_interactive_ok():
             return InstallResult(
                 ok=False,
-                summary=f"Failed to install {package} (sudo password required)",
+                summary=f"Failed to install {package} (sudo password required). Run an interactive command first to cache your sudo credentials.)",
                 details=sudo_required_details(),
             )
         argv = ["sudo", "-n", "snap", "install", package]
@@ -33,7 +33,7 @@ class UbuntuSnapManager:
         if not sudo_non_interactive_ok():
             return TaskResult(
                 ok=False,
-                summary="snap refresh: sudo password required",
+                summary="snap refresh: sudo password required). Run an interactive command first to cache your sudo credentials.",
                 details=sudo_required_details(),
             )
         res = run(["sudo", "-n", "snap", "refresh"], check=False)

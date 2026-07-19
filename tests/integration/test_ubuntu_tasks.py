@@ -7,14 +7,13 @@ Run with: make test-integration
 
 from __future__ import annotations
 
-import platform
-
 import pytest
 
-# Skip the entire module if not running on Linux
+from awesome_os.detect_os import detect_os
+
+# Skip the entire module unless running on Ubuntu specifically.
 pytestmark = pytest.mark.skipif(
-    platform.system().lower() != "linux",
-    reason="Integration tests require a Linux system",
+    detect_os().distro != "ubuntu", reason="Integration tests require an Ubuntu system"
 )
 
 

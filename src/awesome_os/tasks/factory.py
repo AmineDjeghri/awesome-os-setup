@@ -2,7 +2,8 @@ from __future__ import annotations
 
 import os
 from awesome_os.detect_os import _is_wsl
-from awesome_os.tasks.managers.arch_yay import ArchYayManager
+from awesome_os.tasks.managers.arch_pacman import ArchPacmanManager
+from awesome_os.tasks.managers.arch_paru import ArchParuManager
 from awesome_os.tasks.managers.base import PackageManager
 from awesome_os.tasks.managers.darwin_brew import DarwinBrewManager, DarwinBrewCaskManager
 from awesome_os.tasks.managers.ubuntu_apt import UbuntuAptManager
@@ -12,11 +13,12 @@ from awesome_os.tasks.managers.webinstall import WebInstallManager
 from awesome_os.tasks.managers.windows_winget import WindowsWingetManager
 from awesome_os.tasks.system.font import install_jetbrainsmono_nerd_font
 from awesome_os.tasks.system.help import show_commands
-from awesome_os.tasks.system.docker_tasks import docker_post_install_ubuntu
+from awesome_os.tasks.system.docker_tasks import docker_post_install_linux
 from awesome_os.tasks.system.nvidia_tasks import (
     detect_cuda,
     detect_nvidia,
     setup_cuda,
+    setup_nvidia_arch,
     setup_nvidia_ubuntu,
     setup_nvidia_windows,
     setup_nvidia_wsl_instructions,
@@ -53,7 +55,11 @@ from pydantic import BaseModel, ConfigDict
 from typing import Callable
 
 _PACKAGE_MANAGER_FACTORY_BY_DISTRO: dict[str, dict[str, Callable[[], PackageManager]]] = {
-    "ubuntu": {"apt": UbuntuAptManager, "snap": UbuntuSnapManager},
+    "ubuntu": {
+        "apt": UbuntuAptManager,
+        "snap": UbuntuSnapManager,
+        "webinstall": WebInstallManager,
+    },
     "darwin": {
         "brew": DarwinBrewManager,
         "cask": DarwinBrewCaskManager,
@@ -64,7 +70,10 @@ _PACKAGE_MANAGER_FACTORY_BY_DISTRO: dict[str, dict[str, Callable[[], PackageMana
         "msstore": WindowsMSStoreManager,
         "webinstall": WebInstallManager,
     },
-    "arch": {"yay": ArchYayManager},
+    "cachyos": {
+        "pacman": ArchPacmanManager,
+        "paru": ArchParuManager,
+    },
 }
 
 
@@ -107,7 +116,7 @@ def get_system_action_sections(
         "windows": ["winget"],
         "ubuntu": ["apt"],
         "darwin": ["brew"],
-        "arch": ["yay"],
+        "cachyos": ["pacman", "paru"],
     }
 
     factories = _PACKAGE_MANAGER_FACTORY_BY_DISTRO.get(distro, {})
@@ -195,43 +204,45 @@ def get_system_action_sections(
             )
         )
         # zsh uninstall
-        sections.append(
-            (
-                "zsh uninstall",
-                [
-                    SystemAction(
-                        label="uninstall: oh-my-zsh + p10k files",
-                        run=uninstall_oh_my_zsh_and_p10k,
-                        confirm=True,
-                        confirm_message="This will delete oh-my-zsh and related zsh config files. Proceed?",
-                    ),
-                    SystemAction(
-                        label="uninstall zsh (apt)",
-                        run=uninstall_zsh_apt,
-                        confirm=True,
-                        confirm_message="This will uninstall zsh via apt (sudo required). Proceed?",
-                    ),
-                    SystemAction(
-                        label="set bash as default shell",
-                        run=set_bash_as_default_shell,
-                        confirm=True,
-                        confirm_message="Set your default shell to bash?",
-                    ),
-                ],
+        zsh_uninstall_actions: list[SystemAction] = [
+            SystemAction(
+                label="uninstall: oh-my-zsh + p10k files",
+                run=uninstall_oh_my_zsh_and_p10k,
+                confirm=True,
+                confirm_message="This will delete oh-my-zsh and related zsh config files. Proceed?",
+            ),
+        ]
+        # apt-only, so it always fails on Arch/macOS. Only offer it where it can work.
+        if distro == "ubuntu":
+            zsh_uninstall_actions.append(
+                SystemAction(
+                    label="uninstall zsh (apt)",
+                    run=uninstall_zsh_apt,
+                    confirm=True,
+                    confirm_message="This will uninstall zsh via apt (sudo required). Proceed?",
+                )
+            )
+        zsh_uninstall_actions.append(
+            SystemAction(
+                label="set bash as default shell",
+                run=set_bash_as_default_shell,
+                confirm=True,
+                confirm_message="Set your default shell to bash?",
             )
         )
+        sections.append(("zsh uninstall", zsh_uninstall_actions))
 
     ########
     ## Docker
     ########
-    if distro == "ubuntu":
+    if distro in {"ubuntu", "cachyos"}:
         sections.append(
             (
                 "docker",
                 [
                     SystemAction(
                         label="post-install: run docker without sudo",
-                        run=docker_post_install_ubuntu,
+                        run=docker_post_install_linux,
                     ),
                 ],
             )
@@ -270,6 +281,15 @@ def get_system_action_sections(
                     run=setup_nvidia_ubuntu,
                     confirm=True,
                     confirm_message="This will attempt to install NVIDIA drivers on Ubuntu (reboot required). Proceed?",
+                )
+            )
+        elif distro == "cachyos":
+            nvidia_actions.append(
+                SystemAction(
+                    label=f"setup nvidia ({distro})",
+                    run=setup_nvidia_arch,
+                    confirm=True,
+                    confirm_message="This will report NVIDIA driver status and show the right packages for your kernel. Proceed?",
                 )
             )
         else:

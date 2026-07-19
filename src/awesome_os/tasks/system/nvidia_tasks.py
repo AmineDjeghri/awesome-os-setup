@@ -79,6 +79,27 @@ def setup_nvidia_wsl_instructions() -> TaskResult:
     )
 
 
+def setup_nvidia_arch() -> TaskResult:
+    """CachyOS: report driver status and point at the right packages."""
+    if _command_exists("nvidia-smi"):
+        return TaskResult(
+            ok=True,
+            summary="NVIDIA setup: drivers already present",
+            details=(
+                "nvidia-smi is available. CachyOS ships it preinstalled and keeps the kernel module in sync with the\n"
+                "running kernel, so no action is needed.\n\n"
+            ),
+        )
+
+    return TaskResult(
+        ok=True,
+        summary="NVIDIA setup: drivers not detected",
+        details=(
+            "nvidia-smi was not found. CachyOS ships it preinstalled, check your installation"
+        ),
+    )
+
+
 def setup_nvidia_ubuntu() -> TaskResult:
     """Setup NVIDIA driver on Ubuntu."""
     if _is_wsl():
