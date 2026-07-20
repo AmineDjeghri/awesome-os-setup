@@ -14,7 +14,9 @@ def _detect_with_release(text: str, tmp_path):
     """Run the real detect_os() against a real os-release file on disk."""
     from personal_os_setup import detect_os
 
-    return detect_os.detect_os(system="Linux", is_wsl=False)
+    os_release_path = tmp_path / "os-release"
+    os_release_path.write_text(text, encoding="utf-8")
+    return detect_os.detect_os(system="Linux", os_release_path=os_release_path, is_wsl=False)
 
 
 class TestDetectOS:
