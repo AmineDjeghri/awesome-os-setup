@@ -1,4 +1,4 @@
-"""Awesome OS Setup - Terminal-based interactive app for OS setup and enhancement."""
+"""Personal OS Setup - Terminal-based interactive app for OS setup and enhancement."""
 
 from __future__ import annotations
 

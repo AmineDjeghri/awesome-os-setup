@@ -50,10 +50,10 @@ def _initialize_logger(settings: ApplicationSettings):
     _loguru_logger.add(
         sys.stderr,
         level=level,
-        filter=lambda record: record["extra"].get("name") == "awesome-os",
+        filter=lambda record: record["extra"].get("name") == "personal-os-setup",
     )
 
-    return _loguru_logger.bind(name="awesome-os")
+    return _loguru_logger.bind(name="personal-os-setup")
 
 
 settings = ApplicationSettings()

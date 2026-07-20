@@ -27,7 +27,7 @@ class JobRunner:
         self.ui_events: queue.Queue[UIEvent] = queue.Queue()
         self.jobs: queue.Queue[Job | None] = queue.Queue()
         self._thread = threading.Thread(
-            target=self._worker, name="awesome-os-ui-worker", daemon=True
+            target=self._worker, name="personal-os-setup-ui-worker", daemon=True
         )
         self._started = False
 

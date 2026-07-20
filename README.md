@@ -65,10 +65,10 @@ You can follow this repository to get a similar setup on Windows 11, Linux, macO
 Get started with one command in bash/zsh:
 
 ```bash
-sh -c "$(wget https://raw.githubusercontent.com/AmineDjeghri/awesome-os-setup/main/install_unix.sh -O -)"
+sh -c "$(wget https://raw.githubusercontent.com/AmineDjeghri/personal-os-setup/main/install_unix.sh -O -)"
 ```
 
-If you are using a headless server (ubuntu-server for example), prefer to use a client with a GUI and connect to the server via SSH so you can copy-paste the commands and use Awesome-OS with a mouse.
+If you are using a headless server (ubuntu-server for example), prefer to use a client with a GUI and connect to the server via SSH so you can copy-paste the commands and use Personal-OS-Setup with a mouse.
 
 #### Windows 11
 Get started with one command (run it in PowerShell as administrator):
@@ -76,7 +76,7 @@ Get started with one command (run it in PowerShell as administrator):
 $u='https://raw.githubusercontent.com/AmineDjeghri/personal-os-setup/main/install_windows.ps1'; $p="$env:TEMP\install_windows.ps1"; iwr $u -UseBasicParsing -OutFile $p; powershell -ExecutionPolicy Bypass -File $p
 ```
 
-Run it from the directory where you want the `awesome-os-setup` folder to be created. If the repertory already exists, it will update it.
+Run it from the directory where you want the `personal-os-setup` folder to be created. If the repertory already exists, it will update it.
 
 > [!TIP]
 > You can fork this repository and change the apps/packages you need so it reflects what you want to install in your environment.
@@ -97,7 +97,7 @@ This repo is a personal “OS setup Terminal UI App”:
     - System action sections (WSL tools, Windows utilities, package managers).
 
 - **Unified package catalog**
-  - `src/awesome_os/config/packages.yaml` as a single source of truth for packages.
+  - `src/personal_os_setup/config/packages.yaml` as a single source of truth for packages.
   - Concrete backends implemented:
     - Linux:
       - Ubuntu: `UbuntuAptManager`, `UbuntuSnapManager`,

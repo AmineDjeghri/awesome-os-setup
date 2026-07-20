@@ -104,7 +104,7 @@ def download_glazewm_config() -> TaskResult:
     dest_dir.mkdir(parents=True, exist_ok=True)
     dest = dest_dir / "config.yaml"
 
-    url = "https://raw.githubusercontent.com/AmineDjeghri/awesome-os-setup/main/docs/windows_workflow/win_dotfiles/.glzr/glazewm/config.yaml"
+    url = "https://raw.githubusercontent.com/AmineDjeghri/personal-os-setup/main/docs/windows_workflow/win_dotfiles/.glzr/glazewm/config.yaml"
 
     try:
         with urlopen(url) as resp:  # noqa: S310

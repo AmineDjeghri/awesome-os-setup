@@ -68,7 +68,7 @@ sudo pacman -S make
 ./install_unix.sh
 ```
 
-The catalog lives in `src/awesome_os/config/packages.yaml`, under a single
+The catalog lives in `src/personal_os_setup/config/packages.yaml`, under a single
 `cachyos:` key. This project targets CachyOS specifically — generic Arch and
 other derivatives are not supported.
 
@@ -153,7 +153,7 @@ CachyOS defaults to **fish** as the login shell, with `cachyos-fish-config` and
 This setup moves to **zsh** with oh-my-zsh and the powerlevel10k prompt. `.zshrc` and
 `.p10k.zsh`, plus oh-my-zsh itself and all its plugins/theme, are managed via
 [chezmoi](https://www.chezmoi.io/), with its source directory vendored inside this
-repo at `src/awesome_os/config/chezmoi/`. oh-my-zsh/plugins/theme are declared as
+repo at `src/personal_os_setup/config/chezmoi/`. oh-my-zsh/plugins/theme are declared as
 `git-repo` externals in `.chezmoiexternal.toml`, so a single `chezmoi: apply` clones
 and applies everything — no separate sync step or ordering to worry about. Use the
 app's `chezmoi: diff` action to preview changes before `chezmoi: apply` — chezmoi has

@@ -45,4 +45,6 @@ def sudo_preauth() -> None:
                 stderr=subprocess.DEVNULL,
             )
 
-    threading.Thread(target=_keepalive, name="awesome-os-sudo-keepalive", daemon=True).start()
+    threading.Thread(
+        target=_keepalive, name="personal-os-setup-sudo-keepalive", daemon=True
+    ).start()

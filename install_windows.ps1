@@ -81,7 +81,7 @@ if (-not $RepoRoot) {
     }
 }
 
-Write-Host "Awesome OS Setup (Windows)" -ForegroundColor Yellow
+Write-Host "Personal OS Setup (Windows)" -ForegroundColor Yellow
 
 function Resolve-Make {
     $candidates = @('make', 'mingw32-make', 'gmake')

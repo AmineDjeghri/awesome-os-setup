@@ -18,7 +18,7 @@ class CommandResult(BaseModel):
 
 
 _stream_sink: contextvars.ContextVar[Callable[[str], None] | None] = contextvars.ContextVar(
-    "awesome_os_commands_stream_sink", default=None
+    "personal_os_setup_commands_stream_sink", default=None
 )
 
 

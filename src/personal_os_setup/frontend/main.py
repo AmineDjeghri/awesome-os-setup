@@ -22,7 +22,7 @@ def run_app() -> None:
     root = ttk.TTk()
     win = ttk.TTkWindow(
         parent=root,
-        title="Awesome OS Setup",
+        title="Personal OS Setup",
         size=(150, 50),
         border=True,
         layout=ttk.TTkVBoxLayout(),

@@ -62,7 +62,7 @@ sudo apt update && sudo apt upgrade
 ssh username@192.168.x.x
 ```
 
-- I customized the shell environment by installing Zsh and tools from the [Awesome OS Setup](../../README.md) to improve usability and productivity.
+- I customized the shell environment by installing Zsh and tools from the [Personal OS Setup](../../README.md) to improve usability and productivity.
 
 ### Lid closed (Laptop)
 
