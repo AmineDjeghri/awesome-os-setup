@@ -2,6 +2,22 @@
 
 <!-- version list -->
 
+## v1.6.0 (2026-07-20)
+
+### Documentation
+
+- Improve documentation clarity
+  ([`a5f4a96`](https://github.com/AmineDjeghri/personal-os-setup/commit/a5f4a9647f9f089434c7799d1cf721a8b310149b))
+
+- Improve documentation clarity
+  ([`8531fd7`](https://github.com/AmineDjeghri/personal-os-setup/commit/8531fd79ebb6404028ae648722c7de8a4568d586))
+
+### Features
+
+- Cachy os (#88) ([#88](https://github.com/AmineDjeghri/personal-os-setup/pull/88),
+  [`46051e1`](https://github.com/AmineDjeghri/personal-os-setup/commit/46051e15662319d63a943cb43026c7531b734c99))
+
+
 ## v1.5.0 (2026-07-05)
 
 ### Features
