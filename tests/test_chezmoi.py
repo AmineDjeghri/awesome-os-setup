@@ -4,7 +4,7 @@ from __future__ import annotations
 
 from unittest.mock import MagicMock, patch
 
-from awesome_os.tasks.system.chezmoi import (
+from personal_os_setup.tasks.system.chezmoi import (
     chezmoi_apply,
     chezmoi_diff,
     chezmoi_re_add,
@@ -43,7 +43,7 @@ class TestChezmoiDiff:
         mock_result = MagicMock(returncode=0, stdout="diff --git a/.zshrc...", stderr="")
         with (
             patch("shutil.which", return_value="/usr/bin/chezmoi"),
-            patch("awesome_os.tasks.system.chezmoi.run", return_value=mock_result),
+            patch("personal_os_setup.tasks.system.chezmoi.run", return_value=mock_result),
         ):
             result = chezmoi_diff()
         assert result.ok is True
@@ -54,7 +54,7 @@ class TestChezmoiDiff:
         mock_result = MagicMock(returncode=0, stdout="", stderr="")
         with (
             patch("shutil.which", return_value="/usr/bin/chezmoi"),
-            patch("awesome_os.tasks.system.chezmoi.run", return_value=mock_result),
+            patch("personal_os_setup.tasks.system.chezmoi.run", return_value=mock_result),
         ):
             result = chezmoi_diff()
         assert result.ok is True
@@ -69,7 +69,7 @@ class TestChezmoiApply:
         mock_result = MagicMock(returncode=0, stdout="wrote .zshrc", stderr="")
         with (
             patch("shutil.which", return_value="/usr/bin/chezmoi"),
-            patch("awesome_os.tasks.system.chezmoi.run", return_value=mock_result),
+            patch("personal_os_setup.tasks.system.chezmoi.run", return_value=mock_result),
         ):
             result = chezmoi_apply()
         assert result.ok is True
@@ -79,7 +79,7 @@ class TestChezmoiApply:
         mock_result = MagicMock(returncode=1, stdout="", stderr="permission denied")
         with (
             patch("shutil.which", return_value="/usr/bin/chezmoi"),
-            patch("awesome_os.tasks.system.chezmoi.run", return_value=mock_result),
+            patch("personal_os_setup.tasks.system.chezmoi.run", return_value=mock_result),
         ):
             result = chezmoi_apply()
         assert result.ok is False
@@ -94,7 +94,7 @@ class TestChezmoiReAdd:
         mock_result = MagicMock(returncode=0, stdout="re-added .zshrc", stderr="")
         with (
             patch("shutil.which", return_value="/usr/bin/chezmoi"),
-            patch("awesome_os.tasks.system.chezmoi.run", return_value=mock_result),
+            patch("personal_os_setup.tasks.system.chezmoi.run", return_value=mock_result),
         ):
             result = chezmoi_re_add()
         assert result.ok is True
@@ -105,7 +105,7 @@ class TestChezmoiReAdd:
         mock_result = MagicMock(returncode=1, stdout="", stderr="some error")
         with (
             patch("shutil.which", return_value="/usr/bin/chezmoi"),
-            patch("awesome_os.tasks.system.chezmoi.run", return_value=mock_result),
+            patch("personal_os_setup.tasks.system.chezmoi.run", return_value=mock_result),
         ):
             result = chezmoi_re_add()
         assert result.ok is False

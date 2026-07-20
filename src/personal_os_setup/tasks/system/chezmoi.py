@@ -4,12 +4,12 @@ import shutil
 from importlib import resources
 from pathlib import Path
 
-from awesome_os.tasks.commands import run
-from awesome_os.tasks.task import TaskResult
+from personal_os_setup.tasks.commands import run
+from personal_os_setup.tasks.task import TaskResult
 
 
 def chezmoi_source_dir() -> Path:
-    return Path(str(resources.files("awesome_os") / "config" / "chezmoi"))
+    return Path(str(resources.files("personal_os_setup") / "config" / "chezmoi"))
 
 
 def _chezmoi_path() -> str | None:

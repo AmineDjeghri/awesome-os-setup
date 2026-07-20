@@ -13,7 +13,7 @@ import queue
 import threading
 from typing import Callable
 
-from awesome_os.tasks import commands
+from personal_os_setup.tasks import commands
 
 
 UIEvent = tuple[str, str]

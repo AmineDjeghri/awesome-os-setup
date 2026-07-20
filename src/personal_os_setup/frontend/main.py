@@ -7,12 +7,12 @@ from pathlib import Path
 import TermTk as ttk
 from TermTk import TTkString
 
-from awesome_os.settings import logger
-from awesome_os.frontend.controller import AppController
-from awesome_os.frontend.runner import JobRunner
-from awesome_os.detect_os import build_packages_for_os
-from awesome_os.tasks.factory import get_system_action_sections, SystemAction
-from awesome_os.tasks.sudo import sudo_preauth
+from personal_os_setup.settings import logger
+from personal_os_setup.frontend.controller import AppController
+from personal_os_setup.frontend.runner import JobRunner
+from personal_os_setup.detect_os import build_packages_for_os
+from personal_os_setup.tasks.factory import get_system_action_sections, SystemAction
+from personal_os_setup.tasks.sudo import sudo_preauth
 
 
 def run_app() -> None:

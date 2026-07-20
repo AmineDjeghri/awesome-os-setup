@@ -2,9 +2,9 @@ from __future__ import annotations
 
 import webbrowser
 
-from awesome_os.settings import logger
-from awesome_os.tasks.managers.base import InstallResult
-from awesome_os.tasks.task import TaskResult
+from personal_os_setup.settings import logger
+from personal_os_setup.tasks.managers.base import InstallResult
+from personal_os_setup.tasks.task import TaskResult
 
 
 class WebInstallManager:

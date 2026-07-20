@@ -38,7 +38,7 @@ Use [README.md](../../README.md#linux--wsl2--macos) as it automatically handles 
 
 
 ### 1. Package Selection
-The app displays all available packages from [packages.yaml](../../src/awesome_os/config/packages.yaml) organized by category:
+The app displays all available packages from [packages.yaml](../../src/personal_os_setup/config/packages.yaml) organized by category:
 - **Core tools**: `git`, `curl`, `zsh`
 - **Dev tools**: `uv`, `Pycharm`, `Ghostty`, `Zed`, `Docker-Desktop`
 - **Utilities**: `Raycast`, `Alt-Tab`, `AeroSpace`, `Shottr`
@@ -53,7 +53,7 @@ This section is the same as Linux. Follow the terminal ZSH instructions in [Linu
 
 ## 3. Recommended apps
 
-This repo’s [packages.yaml](../../src/awesome_os/config/packages.yaml) includes my macOS `brew` packages and `cask` recommended apps.
+This repo’s [packages.yaml](../../src/personal_os_setup/config/packages.yaml) includes my macOS `brew` packages and `cask` recommended apps.
 
 Here is some config files for some apps:
 ### 3.1. Raycast
@@ -70,7 +70,7 @@ Here is some config files for some apps:
   - Tutorial: https://www.youtube.com/watch?v=-FoWClVHG5g
   - Docs: https://nikitabobko.github.io/AeroSpace/
 - JankyBorders: adds window borders (requires AeroSpace).
-- My config : [.aerospace.toml](../../src/awesome_os/config/darwin/.aerospace.toml)
+- My config : [.aerospace.toml](../../src/personal_os_setup/config/darwin/.aerospace.toml)
 
 
 ## 4. UI/UX tweaks

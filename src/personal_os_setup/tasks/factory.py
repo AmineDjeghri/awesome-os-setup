@@ -1,21 +1,21 @@
 from __future__ import annotations
 
 import os
-from awesome_os.detect_os import _is_wsl
-from awesome_os.tasks.managers.arch_pacman import ArchPacmanManager
-from awesome_os.tasks.managers.arch_paru import ArchParuManager
-from awesome_os.tasks.managers.base import PackageManager
-from awesome_os.tasks.managers.darwin_brew import DarwinBrewManager, DarwinBrewCaskManager
-from awesome_os.tasks.managers.ubuntu_apt import UbuntuAptManager
-from awesome_os.tasks.managers.ubuntu_snap import UbuntuSnapManager
-from awesome_os.tasks.managers.windows_msstore import WindowsMSStoreManager
-from awesome_os.tasks.managers.webinstall import WebInstallManager
-from awesome_os.tasks.managers.windows_winget import WindowsWingetManager
-from awesome_os.tasks.system.chezmoi import chezmoi_apply, chezmoi_diff, chezmoi_re_add
-from awesome_os.tasks.system.font import install_jetbrainsmono_nerd_font
-from awesome_os.tasks.system.help import show_commands
-from awesome_os.tasks.system.docker_tasks import docker_post_install_linux
-from awesome_os.tasks.system.nvidia_tasks import (
+from personal_os_setup.detect_os import _is_wsl
+from personal_os_setup.tasks.managers.arch_pacman import ArchPacmanManager
+from personal_os_setup.tasks.managers.arch_paru import ArchParuManager
+from personal_os_setup.tasks.managers.base import PackageManager
+from personal_os_setup.tasks.managers.darwin_brew import DarwinBrewManager, DarwinBrewCaskManager
+from personal_os_setup.tasks.managers.ubuntu_apt import UbuntuAptManager
+from personal_os_setup.tasks.managers.ubuntu_snap import UbuntuSnapManager
+from personal_os_setup.tasks.managers.windows_msstore import WindowsMSStoreManager
+from personal_os_setup.tasks.managers.webinstall import WebInstallManager
+from personal_os_setup.tasks.managers.windows_winget import WindowsWingetManager
+from personal_os_setup.tasks.system.chezmoi import chezmoi_apply, chezmoi_diff, chezmoi_re_add
+from personal_os_setup.tasks.system.font import install_jetbrainsmono_nerd_font
+from personal_os_setup.tasks.system.help import show_commands
+from personal_os_setup.tasks.system.docker_tasks import docker_post_install_linux
+from personal_os_setup.tasks.system.nvidia_tasks import (
     detect_cuda,
     detect_nvidia,
     setup_cuda,
@@ -24,11 +24,11 @@ from awesome_os.tasks.system.nvidia_tasks import (
     setup_nvidia_windows,
     setup_nvidia_wsl_instructions,
 )
-from awesome_os.tasks.system.windows_tasks import (
+from personal_os_setup.tasks.system.windows_tasks import (
     apply_windows_terminal_ui_defaults,
     download_glazewm_config,
 )
-from awesome_os.tasks.system.windows_wsl_tasks import (
+from personal_os_setup.tasks.system.windows_wsl_tasks import (
     wsl_install,
     wsl_list_online,
     wsl_list_verbose,
@@ -41,13 +41,13 @@ from awesome_os.tasks.system.windows_wsl_tasks import (
     wsl_move,
     add_windows_terminal_ubuntu_profile,
 )
-from awesome_os.tasks.system.zsh import (
+from personal_os_setup.tasks.system.zsh import (
     set_bash_as_default_shell,
     set_zsh_as_default_shell,
     uninstall_oh_my_zsh_and_p10k,
     uninstall_zsh_apt,
 )
-from awesome_os.tasks.task import TaskResult
+from personal_os_setup.tasks.task import TaskResult
 from pathlib import Path
 from pydantic import BaseModel, ConfigDict
 from typing import Callable

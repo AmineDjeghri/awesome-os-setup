@@ -4,7 +4,7 @@ from typing import Callable, Iterable
 
 from pydantic import BaseModel, ConfigDict
 
-from awesome_os.settings import logger
+from personal_os_setup.settings import logger
 
 
 class TaskResult(BaseModel):

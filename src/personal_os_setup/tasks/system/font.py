@@ -9,14 +9,14 @@ from importlib import resources
 from importlib.resources.abc import Traversable
 from pathlib import Path
 
-from awesome_os.detect_os import _is_wsl
+from personal_os_setup.detect_os import _is_wsl
 
-from awesome_os.tasks.commands import run
-from awesome_os.tasks.task import TaskResult
+from personal_os_setup.tasks.commands import run
+from personal_os_setup.tasks.task import TaskResult
 
 
 def _packaged_font_zip() -> Traversable:
-    pkg = resources.files("awesome_os")
+    pkg = resources.files("personal_os_setup")
     candidates = [
         pkg / "config" / "JetBrainsMonoNerdFont-Regular.zip",
         pkg / "config" / "unix" / "JetBrainsMonoNerdFont-Regular.zip",

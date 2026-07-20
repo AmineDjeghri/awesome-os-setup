@@ -1,7 +1,7 @@
 #!/bin/sh
 set -e  # Exit on error
 
-echo "📦 Setting up Awesome OS Setup..."
+echo "📦 Setting up Personal OS Setup..."
 
 if [ "$(uname -s 2>/dev/null)" = "Linux" ]; then
     if ! command -v make >/dev/null 2>&1; then
@@ -16,8 +16,8 @@ if [ "$(uname -s 2>/dev/null)" = "Linux" ]; then
     fi
 fi
 
-REPO_URL="https://github.com/AmineDjeghri/awesome-os-setup.git"
-FOLDER_NAME="awesome-os-setup"
+REPO_URL="https://github.com/AmineDjeghri/personal-os-setup.git"
+FOLDER_NAME="personal-os-setup"
 CURRENT_DIR_NAME=$(basename "$PWD")  # Get the current folder name
 
 echo "📦 Checking repository setup..."

@@ -38,7 +38,7 @@ Settings and shortcuts for some apps that I use on Windows 11.
 ## 1.2. GlazeWM and Zebar (windows only)
 - Automatic installation of the settings available with the Awesome-OS-Setup TUI [app](../../README.md#windows-11) by selecting `Sync GlazeWM config`.
 - Manual installation:
-    - Download [my .glaze-wm config folder](../../src/awesome_os/config/windows/.glzr) and place it in `C:\Users\%userprofile%\.glaze-wm`
+    - Download [my .glaze-wm config folder](../../src/personal_os_setup/config/windows/.glzr) and place it in `C:\Users\%userprofile%\.glaze-wm`
 
 shortcuts: You can read more about the shortcuts :
 - [GlazeWM](https://github.com/glzr-io/glazewm?tab=readme-ov-file#config-documentation)

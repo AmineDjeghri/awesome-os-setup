@@ -3,9 +3,9 @@ from __future__ import annotations
 import json
 import uuid
 
-from awesome_os.tasks.commands import run
-from awesome_os.tasks.system.windows_tasks import _windows_terminal_settings_path
-from awesome_os.tasks.task import TaskResult
+from personal_os_setup.tasks.commands import run
+from personal_os_setup.tasks.system.windows_tasks import _windows_terminal_settings_path
+from personal_os_setup.tasks.task import TaskResult
 
 
 def wsl_install(value: str) -> TaskResult:

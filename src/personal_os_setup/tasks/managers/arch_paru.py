@@ -11,11 +11,11 @@ from __future__ import annotations
 
 import shutil
 
-from awesome_os.settings import logger
-from awesome_os.tasks.commands import join_argv, run
-from awesome_os.tasks.managers.base import InstallResult
-from awesome_os.tasks.sudo import sudo_non_interactive_ok, sudo_required_details
-from awesome_os.tasks.task import TaskResult
+from personal_os_setup.settings import logger
+from personal_os_setup.tasks.commands import join_argv, run
+from personal_os_setup.tasks.managers.base import InstallResult
+from personal_os_setup.tasks.sudo import sudo_non_interactive_ok, sudo_required_details
+from personal_os_setup.tasks.task import TaskResult
 
 
 def _format_failed(argv: list[str], stdout: str, stderr: str) -> str:

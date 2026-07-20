@@ -6,9 +6,9 @@ import platform
 import shutil
 from pathlib import Path
 
-from awesome_os.tasks.commands import run
-from awesome_os.tasks.sudo import sudo_non_interactive_ok, sudo_required_details
-from awesome_os.tasks.task import TaskResult
+from personal_os_setup.tasks.commands import run
+from personal_os_setup.tasks.sudo import sudo_non_interactive_ok, sudo_required_details
+from personal_os_setup.tasks.task import TaskResult
 
 
 def uninstall_oh_my_zsh_and_p10k() -> TaskResult:

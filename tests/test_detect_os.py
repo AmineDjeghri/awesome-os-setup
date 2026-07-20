@@ -12,7 +12,7 @@ BUILD_ID=rolling
 
 def _detect_with_release(text: str, tmp_path):
     """Run the real detect_os() against a real os-release file on disk."""
-    from awesome_os import detect_os
+    from personal_os_setup import detect_os
 
     return detect_os.detect_os(system="Linux", is_wsl=False)
 
@@ -43,7 +43,7 @@ class TestPackageCatalog:
     }
 
     def _catalog(self):
-        from awesome_os.detect_os import PackageCatalog
+        from personal_os_setup.detect_os import PackageCatalog
 
         return PackageCatalog(data=self.CATALOG)
 
@@ -65,15 +65,15 @@ class TestPackagesYaml:
 
         import yaml
 
-        from awesome_os.detect_os import PackageCatalog
+        from personal_os_setup.detect_os import PackageCatalog
 
-        pkg = resources.files("awesome_os")
+        pkg = resources.files("personal_os_setup")
         data = yaml.safe_load((pkg / "config" / "packages.yaml").read_text(encoding="utf-8"))
         return PackageCatalog(data=data)
 
     def test_every_manager_has_a_backend(self):
         """Each manager named in the catalog must resolve to a real backend."""
-        from awesome_os.tasks.factory import get_package_manager
+        from personal_os_setup.tasks.factory import get_package_manager
 
         catalog = self._catalog()
         for distro in ("ubuntu", "darwin", "windows", "cachyos"):

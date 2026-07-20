@@ -4,7 +4,7 @@ from typing import Protocol
 
 from pydantic import BaseModel, ConfigDict
 
-from awesome_os.tasks.task import TaskResult
+from personal_os_setup.tasks.task import TaskResult
 
 
 class InstallResult(BaseModel):

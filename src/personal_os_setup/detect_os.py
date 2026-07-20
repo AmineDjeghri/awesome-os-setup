@@ -101,7 +101,7 @@ def build_packages_for_os() -> tuple[str, str, str | None, list[PackageRef]]:
     system = os_info.family
     distro = os_info.distro
     info = os_info.info
-    pkg = resources.files("awesome_os")
+    pkg = resources.files("personal_os_setup")
     data = yaml.safe_load((pkg / "config" / "packages.yaml").read_text(encoding="utf-8")) or {}
     if not isinstance(data, dict):
         data = {}

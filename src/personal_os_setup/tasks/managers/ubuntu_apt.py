@@ -4,20 +4,20 @@ This installer wraps `apt-get` to provide a simple, uniform interface for the
 setup application.
 
 Notes:
-    - Commands are executed via `awesome_os.commands.run`.
-    - Logging goes through `awesome_os.logger`.
+    - Commands are executed via `personal_os_setup.commands.run`.
+    - Logging goes through `personal_os_setup.logger`.
     - `install()` currently runs `apt-get update` before installing each
       package. This is safe but can be slow; batching may be added later.
 """
 
 from __future__ import annotations
 
-from awesome_os.settings import logger
-from awesome_os.tasks.commands import run
+from personal_os_setup.settings import logger
+from personal_os_setup.tasks.commands import run
 
-from awesome_os.tasks.managers.base import InstallResult
-from awesome_os.tasks.sudo import sudo_non_interactive_ok, sudo_required_details
-from awesome_os.tasks.task import TaskResult
+from personal_os_setup.tasks.managers.base import InstallResult
+from personal_os_setup.tasks.sudo import sudo_non_interactive_ok, sudo_required_details
+from personal_os_setup.tasks.task import TaskResult
 
 
 class UbuntuAptManager:

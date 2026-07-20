@@ -153,7 +153,7 @@ Other apps, websites and tips: (DEPRECATED)
 
 Automatic installation of these apps is available with the Awesome-OS-Setup TUI [app](../../README.md#windows-11)
 
-All the Apps are available at [packages.yaml](../../src/awesome_os/config/packages.yaml). Check the Windows section.
+All the Apps are available at [packages.yaml](../../src/personal_os_setup/config/packages.yaml). Check the Windows section.
 
 For App configuration, check [apps_configuration_and_shorcuts.md](../apps/apps_configuration_and_shorcuts.md)
 
@@ -215,7 +215,7 @@ For browser extensions, check [browser_extensions.md](../apps/awesome_websites_b
     - DisplayFusion. Check my personal
       settings [here](../apps/apps_configuration_and_shorcuts.md#111-displayfusion-windows-only--paid)
     - Revo Uninstaller
-    - HWiNFO (Link to my settings [here](../../src/awesome_os/config/windows/HWINFO_settings.reg)
+    - HWiNFO (Link to my settings [here](../../src/personal_os_setup/config/windows/HWINFO_settings.reg)
     - CCleaner
 
 ### 2.10. Development & Programming

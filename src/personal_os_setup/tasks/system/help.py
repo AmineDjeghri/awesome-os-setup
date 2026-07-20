@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-from awesome_os.tasks.task import TaskResult
+from personal_os_setup.tasks.task import TaskResult
 
 
 def show_commands() -> TaskResult:

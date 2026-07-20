@@ -14,12 +14,12 @@ import shutil
 
 import TermTk as ttk
 
-from awesome_os.settings import logger
-from awesome_os.detect_os import PackageRef
-from awesome_os.tasks.factory import SystemAction, get_package_manager
+from personal_os_setup.settings import logger
+from personal_os_setup.detect_os import PackageRef
+from personal_os_setup.tasks.factory import SystemAction, get_package_manager
 
-from awesome_os.frontend.dialogs import confirm, prompt_text
-from awesome_os.frontend.runner import JobRunner
+from personal_os_setup.frontend.dialogs import confirm, prompt_text
+from personal_os_setup.frontend.runner import JobRunner
 
 
 class AppController:
@@ -28,7 +28,7 @@ class AppController:
     The controller is responsible for:
     - updating UI state (busy/disabled controls)
     - writing logs to the UI
-    - enqueuing long-running work to :class:`~awesome_os.frontend.runner.JobRunner`
+    - enqueuing long-running work to :class:`~personal_os_setup.frontend.runner.JobRunner`
     """
 
     def __init__(

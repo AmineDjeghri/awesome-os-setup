@@ -11,7 +11,7 @@ Use [README.md](../../README.md#linux--wsl2--macos) as it automatically handles 
 Before installing packages, it's recommended to update your system.
 
 ### 1. Package Selection
-The app displays all available packages from [packages.yaml](../../src/awesome_os/config/packages.yaml) organized by category:
+The app displays all available packages from [packages.yaml](../../src/personal_os_setup/config/packages.yaml) organized by category:
 - **Core tools**: `git`, `curl`, `zsh`
 - **Terminal tools**: `bat`, `btop`, `fzf`, `lsd`, `fastfetch`
 - **Apps**: Code editor, messaging apps, media players, etc.
@@ -31,7 +31,7 @@ The app provides buttons to automate the terminal configuration:
 
 **.env Detection**: The configuration automatically detects and loads `.env` files from your project directories, making environment variables available in your shell session without manual setup.
 
-See the [zshrc configuration file](../../src/awesome_os/config/unix/.zshrc) for the default configuration used by this project.
+See the [zshrc configuration file](../../src/personal_os_setup/config/unix/.zshrc) for the default configuration used by this project.
 
 If you need to revert changes:
 - Uninstall Oh My Zsh and Powerlevel10k files

@@ -6,8 +6,8 @@ import subprocess
 import threading
 import time
 
-from awesome_os.settings import logger
-from awesome_os.tasks.commands import run
+from personal_os_setup.settings import logger
+from personal_os_setup.tasks.commands import run
 
 
 def sudo_non_interactive_ok() -> bool:

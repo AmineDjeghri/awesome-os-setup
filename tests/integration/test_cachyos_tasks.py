@@ -9,7 +9,7 @@ from __future__ import annotations
 
 import pytest
 
-from awesome_os.detect_os import detect_os
+from personal_os_setup.detect_os import detect_os
 
 # Skip the entire module unless running on CachyOS specifically.
 pytestmark = pytest.mark.skipif(
@@ -22,33 +22,33 @@ class TestArchPacmanManager:
 
     def test_is_installed_known_package(self):
         """Pacman should report 'pacman' itself as installed on any CachyOS runner."""
-        from awesome_os.tasks.managers.arch_pacman import ArchPacmanManager
+        from personal_os_setup.tasks.managers.arch_pacman import ArchPacmanManager
 
         assert ArchPacmanManager().is_installed("pacman") is True
 
     def test_is_installed_nonexistent_package(self):
         """Pacman should report a clearly fake package as not installed."""
-        from awesome_os.tasks.managers.arch_pacman import ArchPacmanManager
+        from personal_os_setup.tasks.managers.arch_pacman import ArchPacmanManager
 
         assert ArchPacmanManager().is_installed("this-package-does-not-exist-xyz") is False
 
     def test_update_succeeds(self):
         """Pacman -Sy should succeed given passwordless sudo."""
-        from awesome_os.tasks.managers.arch_pacman import ArchPacmanManager
+        from personal_os_setup.tasks.managers.arch_pacman import ArchPacmanManager
 
         result = ArchPacmanManager().update()
         assert result.ok is True, f"pacman update failed: {result.summary}\n{result.details}"
 
     def test_cleanup_succeeds(self):
         """Pacman -Sc (with --noconfirm) should succeed given passwordless sudo."""
-        from awesome_os.tasks.managers.arch_pacman import ArchPacmanManager
+        from personal_os_setup.tasks.managers.arch_pacman import ArchPacmanManager
 
         result = ArchPacmanManager().cleanup()
         assert result.ok is True, f"pacman cleanup failed: {result.summary}\n{result.details}"
 
     def test_install_and_check_curl(self):
         """Installing curl via pacman should succeed and be detectable via is_installed()."""
-        from awesome_os.tasks.managers.arch_pacman import ArchPacmanManager
+        from personal_os_setup.tasks.managers.arch_pacman import ArchPacmanManager
 
         mgr = ArchPacmanManager()
         result = mgr.install("curl")
@@ -61,7 +61,7 @@ class TestArchParuManager:
 
     def test_is_installed_nonexistent_package(self):
         """Pacman's local DB should report a clearly fake AUR package as not installed."""
-        from awesome_os.tasks.managers.arch_paru import ArchParuManager
+        from personal_os_setup.tasks.managers.arch_paru import ArchParuManager
 
         assert ArchParuManager().is_installed("this-package-does-not-exist-xyz") is False
 
@@ -77,7 +77,7 @@ class TestDetectOS:
 
     def test_detect_os_returns_linux_cachyos(self):
         """detect_os() should return family='linux', distro='cachyos' on a CachyOS box."""
-        from awesome_os.detect_os import detect_os
+        from personal_os_setup.detect_os import detect_os
 
         info = detect_os()
         assert info.family == "linux"
@@ -85,7 +85,7 @@ class TestDetectOS:
 
     def test_is_wsl_false_on_native_runner(self):
         """A native CachyOS install is not WSL."""
-        from awesome_os.detect_os import _is_wsl
+        from personal_os_setup.detect_os import _is_wsl
 
         assert _is_wsl() is False
 
@@ -98,9 +98,9 @@ class TestPackagesConfig:
 
         import yaml
 
-        from awesome_os.detect_os import PackageCatalog, iter_packages
+        from personal_os_setup.detect_os import PackageCatalog, iter_packages
 
-        pkg = resources.files("awesome_os")
+        pkg = resources.files("personal_os_setup")
         data = yaml.safe_load((pkg / "config" / "packages.yaml").read_text(encoding="utf-8")) or {}
         catalog = PackageCatalog(data=data)
         return list(iter_packages(catalog.for_distro("cachyos")))
@@ -116,7 +116,7 @@ class TestPackagesConfig:
 
     def test_build_packages_for_os(self):
         """build_packages_for_os() should detect CachyOS and return a non-empty package list."""
-        from awesome_os.detect_os import build_packages_for_os
+        from personal_os_setup.detect_os import build_packages_for_os
 
         system, distro, info, packages = build_packages_for_os()
         assert system == "linux"

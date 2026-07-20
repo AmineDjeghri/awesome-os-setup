@@ -5,7 +5,7 @@ import os
 from pathlib import Path
 from urllib.request import urlopen
 
-from awesome_os.tasks.task import TaskResult
+from personal_os_setup.tasks.task import TaskResult
 
 
 def _windows_terminal_settings_path() -> Path:

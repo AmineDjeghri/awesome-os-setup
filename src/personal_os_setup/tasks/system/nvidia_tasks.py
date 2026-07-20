@@ -3,9 +3,9 @@ from __future__ import annotations
 import platform
 import shutil
 
-from awesome_os.detect_os import _is_wsl
-from awesome_os.tasks.commands import run
-from awesome_os.tasks.task import TaskResult
+from personal_os_setup.detect_os import _is_wsl
+from personal_os_setup.tasks.commands import run
+from personal_os_setup.tasks.task import TaskResult
 
 
 def _command_exists(cmd: str) -> bool:
