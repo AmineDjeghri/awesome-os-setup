@@ -16,6 +16,7 @@ repos:
       - id: check-toml
       - id: check-yaml
       - id: check-json
+        exclude: ^src/personal_os_setup/config/chezmoi/dot_config/zed/settings\.json$
       - id: end-of-file-fixer
       #      - id: requirements-txt-fixer
       #        exclude: ^requirements/.*$

@@ -1,5 +1,5 @@
 [project]
-name = "awesome-os-setup"
+name = "personal-os-setup"
 version = "1.5.0"
 description = "A terminal-based interactive app that helps you setup and enhance your OS."
 readme = "README.md"
@@ -46,11 +46,11 @@ requires = ["hatchling>=1.27.0"]
 build-backend = "hatchling.build"
 
 [tool.hatch.build.targets.wheel]
-packages = ["src/awesome_os"]
+packages = ["src/personal_os_setup"]
 
-## inside the root folder, you can run `uv run --directory . awesome-os` or directly awesome-os if the .venv is activated
+## inside the root folder, you can run `uv run --directory . personal-os-setup` or directly personal-os-setup if the .venv is activated
 [project.scripts]
-awesome-os = "awesome_os.frontend.main:main"
+personal-os-setup = "personal_os_setup.frontend.main:main"
 
 #### pytest configuration
 [tool.pytest.ini_options]

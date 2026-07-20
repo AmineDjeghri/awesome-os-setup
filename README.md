@@ -1,4 +1,4 @@
-# Awesome OS Setup
+# Personal OS Setup
 
 ![Logo](docs/images/logo.png)
 
@@ -10,12 +10,12 @@
 > [!NOTE]
 > **Update notes**
 >
-> | Platform | Version / Details | Updated |
-> |---|---|---|
-> | macOS | 26 | July 2026 |
-> | CachyOS | Linux `7.1.3-2-cachyos` | July 2026 |
-> | Ubuntu (server) | 24/26 | June 2026 |
-> | Windows 11 / WSL 2 | 11 | May 2026 |
+> | Platform           | Version / Details       | Updated   |
+> |--------------------|-------------------------|-----------|
+> | macOS              | 26                      | July 2026 |
+> | CachyOS            | Linux `7.1.3-2-cachyos` | July 2026 |
+> | Ubuntu (server)    | 24/26                   | June 2026 |
+> | Windows 11 / WSL 2 | 11                      | May 2026  |
 
 
 An opinionated setup **app + documentation hub** for building a fast, clean, and consistent environment across **Windows**, **Linux**, **macOS**, **WSL2**, and even your **living room stack** (**Google TV** + **Stremio**) and **home server** (**Home Assistant**).
@@ -42,9 +42,9 @@ You can follow this repository to get a similar setup on Windows 11, Linux, macO
 
 **Table of contents**
 <!-- TOC -->
-* [Awesome OS Setup](#awesome-os-setup)
+* [Personal OS Setup](#personal-os-setup)
     * [Get started](#get-started)
-      * [Linux / WSL2 / MacOS](#linux--wsl2--macos)
+      * [Linux / WSL2 / macOS](#linux--wsl2--macos)
       * [Windows 11](#windows-11)
   * [What is this repo?](#what-is-this-repo)
     * [Features & Benefits](#features--benefits)
@@ -61,22 +61,22 @@ You can follow this repository to get a similar setup on Windows 11, Linux, macO
 
 ### Get started
 
-#### Linux / WSL2 / MacOS
+#### Linux / WSL2 / macOS
 Get started with one command in bash/zsh:
 
 ```bash
-sh -c "$(wget https://raw.githubusercontent.com/AmineDjeghri/awesome-os-setup/main/install_unix.sh -O -)"
+sh -c "$(wget https://raw.githubusercontent.com/AmineDjeghri/personal-os-setup/main/install_unix.sh -O -)"
 ```
 
-If you are using a headless server (ubuntu-server for example), prefer to use a client with a GUI and connect to the server via SSH so you can copy-paste the commands and use Awesome-OS with a mouse.
+If you are using a headless server (ubuntu-server for example), prefer to use a client with a GUI and connect to the server via SSH so you can copy-paste the commands and use Personal-OS-Setup with a mouse.
 
 #### Windows 11
 Get started with one command (run it in PowerShell as administrator):
 ```powershell
-$u='https://raw.githubusercontent.com/AmineDjeghri/awesome-os-setup/main/install_windows.ps1'; $p="$env:TEMP\install_windows.ps1"; iwr $u -UseBasicParsing -OutFile $p; powershell -ExecutionPolicy Bypass -File $p
+$u='https://raw.githubusercontent.com/AmineDjeghri/personal-os-setup/main/install_windows.ps1'; $p="$env:TEMP\install_windows.ps1"; iwr $u -UseBasicParsing -OutFile $p; powershell -ExecutionPolicy Bypass -File $p
 ```
 
-Run it from the directory where you want the `awesome-os-setup` folder to be created. If the repertory already exists, it will update it.
+Run it from the directory where you want the `personal-os-setup` folder to be created. If the repertory already exists, it will update it.
 
 > [!TIP]
 > You can fork this repository and change the apps/packages you need so it reflects what you want to install in your environment.
@@ -97,7 +97,7 @@ This repo is a personal “OS setup Terminal UI App”:
     - System action sections (WSL tools, Windows utilities, package managers).
 
 - **Unified package catalog**
-  - `src/awesome_os/config/packages.yaml` as a single source of truth for packages.
+  - `src/personal_os_setup/config/packages.yaml` as a single source of truth for packages.
   - Concrete backends implemented:
     - Linux:
       - Ubuntu: `UbuntuAptManager`, `UbuntuSnapManager`,

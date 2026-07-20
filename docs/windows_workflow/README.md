@@ -30,7 +30,7 @@ You can follow this repository to get a similar setup.
   * [4. More (deprecated)](#4-more-deprecated)
 <!-- TOC -->
 
-Install the Awesome-OS-Setup TUI [app](../../README.md#windows-11)
+Install the Personal-OS-Setup TUI [app](../../README.md#windows-11)
 
 ## 1. Windows account & configuration
 
@@ -151,9 +151,9 @@ Other apps, websites and tips: (DEPRECATED)
 
 ## 2. Software
 
-Automatic installation of these apps is available with the Awesome-OS-Setup TUI [app](../../README.md#windows-11)
+Automatic installation of these apps is available with the Personal-OS-Setup TUI [app](../../README.md#windows-11)
 
-All the Apps are available at [packages.yaml](../../src/awesome_os/config/packages.yaml). Check the Windows section.
+All the Apps are available at [packages.yaml](../../src/personal_os_setup/config/packages.yaml). Check the Windows section.
 
 For App configuration, check [apps_configuration_and_shorcuts.md](../apps/apps_configuration_and_shorcuts.md)
 
@@ -215,7 +215,7 @@ For browser extensions, check [browser_extensions.md](../apps/awesome_websites_b
     - DisplayFusion. Check my personal
       settings [here](../apps/apps_configuration_and_shorcuts.md#111-displayfusion-windows-only--paid)
     - Revo Uninstaller
-    - HWiNFO (Link to my settings [here](../../src/awesome_os/config/windows/HWINFO_settings.reg)
+    - HWiNFO (Link to my settings [here](../../src/personal_os_setup/config/windows/HWINFO_settings.reg)
     - CCleaner
 
 ### 2.10. Development & Programming
@@ -261,7 +261,7 @@ machine.
 
 ### 3.1. Install WSL:
 ![windows setup_image](../images/windows_setup_image.jpeg)
-- Automatic installation of WSL available with the Awesome-OS-Setup TUI [app](../../README.md#linux--wsl2--macos)
+- Automatic installation of WSL available with the Personal-OS-Setup TUI [app](../../README.md#linux--wsl2--macos)
 - Run the script in Windows Terminal
 - Or manual installation: Run this command in PowerShell ``` wsl --install ```. You can also select the drive where you want to install it instead of the default 'C' drive and this is what I recommand doing.
 

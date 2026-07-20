@@ -138,7 +138,7 @@ This page is where you manage everything related to your addons.
 ---
 
 ##### 📂 Step 4 — Import Your Settings
-1. Download [my configuration file](../../src/awesome_os/config/others/aiostreams-config.json)
+1. Download [my configuration file](../../src/personal_os_setup/config/others/aiostreams-config.json)
 2. Go to **“Navigate and Install”**.
 3. Click **Import**.
 4. Select and upload your saved configuration file. You will an error message saying that some Keys are missing which is normal for now.

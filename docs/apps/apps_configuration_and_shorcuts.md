@@ -36,9 +36,9 @@ Settings and shortcuts for some apps that I use on Windows 11.
 - WIP
 
 ## 1.2. GlazeWM and Zebar (windows only)
-- Automatic installation of the settings available with the Awesome-OS-Setup TUI [app](../../README.md#windows-11) by selecting `Sync GlazeWM config`.
+- Automatic installation of the settings available with the personal-OS-Setup TUI [app](../../README.md#windows-11) by selecting `Sync GlazeWM config`.
 - Manual installation:
-    - Download [my .glaze-wm config folder](../../src/awesome_os/config/windows/.glzr) and place it in `C:\Users\%userprofile%\.glaze-wm`
+    - Download [my .glaze-wm config folder](../../src/personal_os_setup/config/windows/.glzr) and place it in `C:\Users\%userprofile%\.glaze-wm`
 
 shortcuts: You can read more about the shortcuts :
 - [GlazeWM](https://github.com/glzr-io/glazewm?tab=readme-ov-file#config-documentation)
@@ -315,7 +315,7 @@ Bitwarden is an open-source password manager available on Windows, macOS, Linux,
 
 - export file: regedit -> ``Ordinateur\HKEY_CURRENT_USER\Software\HWiNFO64``
 - import settings: double-click on the downloaded file to restore settings. Check
-  mine [here](../src/awesome_os/config/windows/HWINFO_settings.reg)
+  mine [here](../src/personal_os_setup/config/windows/HWINFO_settings.reg)
 
 
 ## 1.12. DisplayFusion (Windows only & paid)

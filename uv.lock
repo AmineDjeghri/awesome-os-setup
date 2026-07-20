@@ -12,67 +12,6 @@ wheels = [
 ]
 
 [[package]]
-name = "awesome-os-setup"
-version = "1.5.0"
-source = { editable = "." }
-dependencies = [
-    { name = "loguru" },
-    { name = "pydantic" },
-    { name = "pydantic-settings" },
-    { name = "pytermtk" },
-    { name = "pyyaml" },
-]
-
-[package.dev-dependencies]
-dev = [
-    { name = "pre-commit" },
-    { name = "pytest" },
-    { name = "pytest-asyncio" },
-    { name = "python-semantic-release" },
-    { name = "ruff" },
-]
-docs = [
-    { name = "mkdocs-exclude" },
-    { name = "mkdocs-gen-files" },
-    { name = "mkdocs-literate-nav" },
-    { name = "mkdocs-material" },
-    { name = "mkdocs-mermaid2-plugin" },
-    { name = "mkdocs-same-dir" },
-    { name = "mkdocstrings" },
-    { name = "mkdocstrings-python" },
-    { name = "properdocs" },
-]
-
-[package.metadata]
-requires-dist = [
-    { name = "loguru", specifier = "==0.7.3" },
-    { name = "pydantic", specifier = "==2.13.4" },
-    { name = "pydantic-settings", specifier = "==2.14.2" },
-    { name = "pytermtk", specifier = "==0.48.1a0" },
-    { name = "pyyaml", specifier = "==6.0.3" },
-]
-
-[package.metadata.requires-dev]
-dev = [
-    { name = "pre-commit", specifier = "==4.6.0" },
-    { name = "pytest", specifier = "==9.1.1" },
-    { name = "pytest-asyncio", specifier = "==1.4.0" },
-    { name = "python-semantic-release", specifier = "==10.5.3" },
-    { name = "ruff", specifier = "==0.15.20" },
-]
-docs = [
-    { name = "mkdocs-exclude", specifier = "==1.0.2" },
-    { name = "mkdocs-gen-files", specifier = "==0.6.1" },
-    { name = "mkdocs-literate-nav", specifier = "==0.6.3" },
-    { name = "mkdocs-material", specifier = "==9.7.6" },
-    { name = "mkdocs-mermaid2-plugin", specifier = "==1.2.3" },
-    { name = "mkdocs-same-dir", specifier = "==0.1.5" },
-    { name = "mkdocstrings", specifier = "==1.0.4" },
-    { name = "mkdocstrings-python", specifier = "==2.0.5" },
-    { name = "properdocs", specifier = "==1.6.7" },
-]
-
-[[package]]
 name = "babel"
 version = "2.18.0"
 source = { registry = "https://pypi.org/simple" }
@@ -648,6 +587,67 @@ source = { registry = "https://pypi.org/simple" }
 sdist = { url = "https://files.pythonhosted.org/packages/5a/82/42f767fc1c1143d6fd36efb827202a2d997a375e160a71eb2888a925aac1/pathspec-1.1.1.tar.gz", hash = "sha256:17db5ecd524104a120e173814c90367a96a98d07c45b2e10c2f3919fff91bf5a", size = 135180, upload-time = "2026-04-27T01:46:08.907Z" }
 wheels = [
     { url = "https://files.pythonhosted.org/packages/f1/d9/7fb5aa316bc299258e68c73ba3bddbc499654a07f151cba08f6153988714/pathspec-1.1.1-py3-none-any.whl", hash = "sha256:a00ce642f577bf7f473932318056212bc4f8bfdf53128c78bbd5af0b9b20b189", size = 57328, upload-time = "2026-04-27T01:46:07.06Z" },
+]
+
+[[package]]
+name = "personal-os-setup"
+version = "1.5.0"
+source = { editable = "." }
+dependencies = [
+    { name = "loguru" },
+    { name = "pydantic" },
+    { name = "pydantic-settings" },
+    { name = "pytermtk" },
+    { name = "pyyaml" },
+]
+
+[package.dev-dependencies]
+dev = [
+    { name = "pre-commit" },
+    { name = "pytest" },
+    { name = "pytest-asyncio" },
+    { name = "python-semantic-release" },
+    { name = "ruff" },
+]
+docs = [
+    { name = "mkdocs-exclude" },
+    { name = "mkdocs-gen-files" },
+    { name = "mkdocs-literate-nav" },
+    { name = "mkdocs-material" },
+    { name = "mkdocs-mermaid2-plugin" },
+    { name = "mkdocs-same-dir" },
+    { name = "mkdocstrings" },
+    { name = "mkdocstrings-python" },
+    { name = "properdocs" },
+]
+
+[package.metadata]
+requires-dist = [
+    { name = "loguru", specifier = "==0.7.3" },
+    { name = "pydantic", specifier = "==2.13.4" },
+    { name = "pydantic-settings", specifier = "==2.14.2" },
+    { name = "pytermtk", specifier = "==0.48.1a0" },
+    { name = "pyyaml", specifier = "==6.0.3" },
+]
+
+[package.metadata.requires-dev]
+dev = [
+    { name = "pre-commit", specifier = "==4.6.0" },
+    { name = "pytest", specifier = "==9.1.1" },
+    { name = "pytest-asyncio", specifier = "==1.4.0" },
+    { name = "python-semantic-release", specifier = "==10.5.3" },
+    { name = "ruff", specifier = "==0.15.20" },
+]
+docs = [
+    { name = "mkdocs-exclude", specifier = "==1.0.2" },
+    { name = "mkdocs-gen-files", specifier = "==0.6.1" },
+    { name = "mkdocs-literate-nav", specifier = "==0.6.3" },
+    { name = "mkdocs-material", specifier = "==9.7.6" },
+    { name = "mkdocs-mermaid2-plugin", specifier = "==1.2.3" },
+    { name = "mkdocs-same-dir", specifier = "==0.1.5" },
+    { name = "mkdocstrings", specifier = "==1.0.4" },
+    { name = "mkdocstrings-python", specifier = "==2.0.5" },
+    { name = "properdocs", specifier = "==1.6.7" },
 ]
 
 [[package]]

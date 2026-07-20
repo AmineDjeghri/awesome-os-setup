@@ -1,0 +1,29 @@
+[".oh-my-zsh"]
+    type = "git-repo"
+    url = "https://github.com/ohmyzsh/ohmyzsh.git"
+    refreshPeriod = "168h"
+
+[".oh-my-zsh/custom/plugins/zsh-autocomplete"]
+    type = "git-repo"
+    url = "https://github.com/marlonrichert/zsh-autocomplete.git"
+    refreshPeriod = "168h"
+
+[".oh-my-zsh/custom/plugins/zsh-autosuggestions"]
+    type = "git-repo"
+    url = "https://github.com/zsh-users/zsh-autosuggestions.git"
+    refreshPeriod = "168h"
+
+[".oh-my-zsh/custom/plugins/zsh-syntax-highlighting"]
+    type = "git-repo"
+    url = "https://github.com/zsh-users/zsh-syntax-highlighting.git"
+    refreshPeriod = "168h"
+
+[".oh-my-zsh/custom/plugins/fzf-zsh-plugin"]
+    type = "git-repo"
+    url = "https://github.com/unixorn/fzf-zsh-plugin.git"
+    refreshPeriod = "168h"
+
+[".oh-my-zsh/custom/themes/powerlevel10k"]
+    type = "git-repo"
+    url = "https://github.com/romkatv/powerlevel10k.git"
+    refreshPeriod = "168h"
