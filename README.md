@@ -73,7 +73,7 @@ If you are using a headless server (ubuntu-server for example), prefer to use a 
 #### Windows 11
 Get started with one command (run it in PowerShell as administrator):
 ```powershell
-$u='https://raw.githubusercontent.com/AmineDjeghri/awesome-os-setup/main/install_windows.ps1'; $p="$env:TEMP\install_windows.ps1"; iwr $u -UseBasicParsing -OutFile $p; powershell -ExecutionPolicy Bypass -File $p
+$u='https://raw.githubusercontent.com/AmineDjeghri/personal-os-setup/main/install_windows.ps1'; $p="$env:TEMP\install_windows.ps1"; iwr $u -UseBasicParsing -OutFile $p; powershell -ExecutionPolicy Bypass -File $p
 ```
 
 Run it from the directory where you want the `awesome-os-setup` folder to be created. If the repertory already exists, it will update it.

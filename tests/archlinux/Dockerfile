@@ -23,7 +23,7 @@ USER tester
 
 WORKDIR /home/tester/awesome-os-setup
 
-# COPY --chown=tester:tester . /home/tester/awesome-os-setup
+# COPY --chown=tester:tester . /home/tester/personal-os-setup
 # Mount local repo folder as a volume
 VOLUME /home/tester/awesome-os-setup
 

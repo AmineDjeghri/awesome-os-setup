@@ -1,4 +1,4 @@
-"""Settings and logging configuration for awesome-os-setup."""
+"""Settings and logging configuration for personal-os-setup."""
 
 from __future__ import annotations
 
@@ -16,7 +16,7 @@ class BaseEnvironmentSettings(BaseSettings):
 
 
 class ApplicationSettings(BaseEnvironmentSettings):
-    """Configuration for awesome-os-setup.
+    """Configuration for personal-os-setup.
 
     Values are read from environment variables and optionally
     overridden by a ``.env`` file.

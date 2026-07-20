@@ -2,7 +2,7 @@
 Set-StrictMode -Version Latest
 $ErrorActionPreference = 'Stop'
 
-$RepoFolderName = 'awesome-os-setup'
+$RepoFolderName = 'personal-os-setup'
 
 $StartDir = (Get-Location).Path
 
@@ -75,7 +75,7 @@ if (-not $RepoRoot) {
         }
         Write-Host "Cloning repo into: $destination" -ForegroundColor Yellow
         Set-Location $StartDir
-        & $git.Source clone "https://github.com/AmineDjeghri/awesome-os-setup.git" $RepoFolderName
+        & $git.Source clone "https://github.com/AmineDjeghri/personal-os-setup.git" $RepoFolderName
         $RepoRoot = $destination
         Set-Location $RepoRoot
     }

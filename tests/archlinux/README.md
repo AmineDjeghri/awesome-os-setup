@@ -8,13 +8,13 @@ It copies the `awesome-os-setup/` repo into the container user's home so you can
 From the `awesome-os-setup/` directory:
 
 ```bash
-docker build -f tests/archlinux/Dockerfile -t awesome-os-setup-arch-test .
+docker build -f tests/archlinux/Dockerfile -t personal-os-setup-arch-test .
 ```
 
 ### Run (interactive) and mount
 
 ```bash
-docker run --rm -it -v "$(pwd):/home/tester/awesome-os-setup" awesome-os-setup-arch-test
+docker run --rm -it -v "$(pwd):/home/tester/awesome-os-setup" personal-os-setup-arch-test
 ```
 
 This drops you into `bash` in:

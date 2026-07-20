@@ -123,7 +123,7 @@ def run_app() -> None:
 
 
 def main():
-    if not Path.cwd().name == "awesome-os-setup":
+    if not Path.cwd().name == "personal-os-setup":
         logger.warning(
             "You are launching the UI from a directory that does not look like the repo root. "
             "For the intended workflow, run it from the repo root (or use install_unix.sh / make)."
